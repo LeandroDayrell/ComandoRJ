@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap');
+
+@font-face {
+    font-family: 'Conv_digital-7';
+    src: url('../fonts/digital-7.eot');
+    src: local('☺'), url('../fonts/digital-7.woff') format('woff'), url('../fonts/digital-7.ttf') format('truetype'), url('../fonts/digital-7.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Conv_digital-7';
+    position: relative;
+    overflow: hidden;
+    top: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+ul {
+    padding-inline-start: 27px;
+    margin-block-start: 6px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.salty {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 500;
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(rgba(23, 23, 23, 1), rgba(0, 0, 0, .6));
+    color: #fff;
+    font-size: 12px;
+    text-shadow: 1px 1px #000000;
+    font-weight: bold;
+}
+
+.salty .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.salty .container .box {
+    background: rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    width: 450px;
+    display: grid;
+    padding: 20px;
+}
+
+.salty .container .box div:first-child {
+    margin-top: 10px;
+}
+
+.salty .container .box img {
+    -webkit-filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, .5));
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, .5));
+}
+
+.radio {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    margin-bottom: -5px;
+    margin-right: 260px;
+    display: none;
+}
+
+.radio .menu {
+    width: 117px;
+    display: grid;
+    position: absolute;
+    bottom: 71px;
+    left: 67px;
+}
+
+.radio .menu div {
+    display: flex;
+}
+
+.radio .menu div .item {
+    width: 37px;
+    height: 40px;
+}
+
+.mhz {
+    margin-top: 12px;
+    margin-left: 19px;
+    background-color: transparent;
+}
+
+.off {
+    position: absolute;
+    top: 419px;
+    width: 37px;
+    height: 47px;
+    opacity: .0;
+    margin-left: 144px;
+}
+
+.onoff button {
+    padding: 40px 55px;
+    opacity: .0;
+}
+
+.display {
+    margin-top: -245px;
+    position: absolute;
+    margin-left: 29px;
+}
+
+.frequency {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    padding: 11px 30px;
+    font-size: 23px;
+}

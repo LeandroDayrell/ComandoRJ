@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/index.js"></script>
+</head>
+<body style="background-color: transparent;display: none;">
+    <div class="container">
+        <header>
+            <div class="header_title">
+                <img src="https://media.discordapp.net/attachments/712795746633515099/713426754336849950/512x_bg.png?width=499&height=499"> 
+                <p style="text-transform: uppercase;font-weight: 600;">Unknown</p>
+            </div>
+        </header>
+
+        <section>
+            <div class="section_content">
+                <div class="section_content_all">
+                    <div class="section_content_header">
+                        <div style="display: flex;max-width: 200px;">
+                            <div data-category="all" class="section_content_item" onclick="garages.tab(this);">Todos</div>
+                            <div data-category="car" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Carros</div>
+                            <div data-category="motorcycle" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Motos</div>
+                            <div data-category="truck" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Caminhões</div>
+                            <div data-category="helicopter" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Helicóptero</div>
+                            <div data-category="bus" class="section_content_item" onclick="garages.setablect(this);" style="display: none;">Ônibus</div>
+                            <div data-category="boat" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Barcos</div>
+                            <div data-category="jeysky" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Jetsky</div>
+                            <div data-category="bike" class="section_content_item" onclick="garages.tab(this);" style="display: none;">Bicicleta</div>
+                        </div>
+                        <div class="section_content_nav" onclick="garages.nav();">«</div>
+                        <div class="section_content_search">
+                            <input placeholder="Search...">
+                            <i class="icon far fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="section_content_itens">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer_content">
+                <button class="spawn action" style="margin-left: 3px;" onclick="garages.spawn();"><span class="material-icons">alt_route</span></button>
+                <button class="despawn action" onclick="garages.despawn();"><span class="material-icons">transit_enterexit</span></button>
+                <button class="fare action" onclick="garages.fare();"><span class="material-icons">payments</span></button>
+                <button class="close action" onclick="garages.close();"><span class="material-icons">clear</span></button>
+            </div>
+        </footer>
+    </div>
+    <script src="js/font.js"></script>
+</body>
+
+</html>

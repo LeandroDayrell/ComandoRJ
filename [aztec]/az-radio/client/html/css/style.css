@@ -1,0 +1,65 @@
+@font-face {
+	font-family: 'Conv_digital-7';
+	src: url('fonts/digital-7.eot');
+	src: local('☺'), url('fonts/digital-7.woff') format('woff'), url('fonts/digital-7.ttf') format('truetype'), url('fonts/digital-7.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+    font-family: 'Conv_digital-7';
+    position: relative;    
+    overflow: hidden;    
+    top: 0;
+    display: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.walkietalkie {
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.mhz{
+  margin-top: 12px;
+  margin-left: 19px;
+  background-color: transparent;
+}
+
+.off {
+  position: absolute;
+  top: 419px;
+  width: 37px;
+  height: 47px;
+  opacity: .0;
+  margin-left: 144px;
+}
+
+.onoff button {
+ padding: 40px 55px;
+ opacity: .0;
+}
+
+.display {
+  margin-top: -245px;
+  position: absolute;
+  margin-left: 29px;
+}
+
+.frequency {  
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  padding: 11px 30px;
+  font-size: 23px;
+}
