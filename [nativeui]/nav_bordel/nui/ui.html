@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="ui.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="actionmenu">
+			<div id="mainmenu">
+				<button class="menuoption" data-sub="municoes">Bebidas</button>
+				<button class="menuoption" data-sub="utilidades">Drogas</button>
+				<button class="menuoption" data-action="fechar">Fechar</button>
+			</div>
+
+			<div data-parent="mainmenu" id="municoes" style="display: none;">
+				<button class="menuoption" data-sub="municoes-comprar">Comprar</button>
+			</div>
+			<div data-parent="municoes" id="municoes-comprar" style="display: none;">
+				<button class="menuoption" data-action="bordel-comprar-vodka"><l>Vodka</l><r>$50</r></button>
+				<button class="menuoption" data-action="bordel-comprar-tequila"><l>Tequila</l><r>$50</r></button>
+				<button class="menuoption" data-action="bordel-comprar-cerveja"><l>Cerveja</l><r>$50</r></button>
+				<button class="menuoption" data-action="bordel-comprar-whisky"><l>Whisky</l><r>$50</r></button>
+				<button class="menuoption" data-action="bordel-comprar-conhaque"><l>Conhaque</l><r>$50</r></button>
+				<button class="menuoption" data-action="bordel-comprar-absinto"><l>Absinto</l><r>$50</r></button>
+			</div>
+
+			<div data-parent="mainmenu" id="utilidades" style="display: none;">
+				<button class="menuoption" data-sub="utilidades-comprar">Comprar</button>
+			</div>
+			<div data-parent="utilidades" id="utilidades-comprar" style="display: none;">
+				<button class="menuoption" data-action="bordel-comprar-cocaina"><l>Cocaina</l><r>$1.000</r></button>
+				<button class="menuoption" data-action="bordel-comprar-crack"><l>Crack</l><r>$1.000</r></button>
+				<button class="menuoption" data-action="bordel-comprar-maconha"><l>Maconha</l><r>$1.000</r></button>
+			</div>
+		</div>
+		<script src="ui.js" type="text/javascript"></script>
+	</body>
+</html>
