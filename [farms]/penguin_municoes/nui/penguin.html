@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Produção de munições Start Shop</title>
+        <link rel="stylesheet" type="text/css" href="penguin.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,900&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="actionmenu" style="display: none;">
+            <div class="conteudo">
+                <div class="menu">
+                    <p><b>PRODUÇÃO MUNIÇÕES:</b></p>
+                </div>
+				<div id="wrap">
+				<div class="logo"><img src="https://i.imgur.com/q2HY2So.png"></div>
+				</div>
+                <div class="itens">
+                    <section class="sessaoItens">
+                        <div class="conteudoItens">
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Polvora</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-polvora" class="menuoption"><b>PENERAR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377020950970398/peneira.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377028014440600/polvorabomba.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377017520160778/papolvora.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377525999829022/polvorafloco.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- Peneira;</li>
+                                            <li>- Bomba caseira;</li>
+                                            <li>- Pá com polvora de bomba caseira;</li>
+                                            <li>- Polvora em flocos;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Capsula</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-capsula" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754376999795032144/ferroderretido.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377002215145553/modelagem.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- Ferro Derretido;</li>
+                                            <li>- Modelagem da Capsula;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>  
+
+							<div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/763054327391584326/maleta_para_transporte_de_pistola_cor_preta_32_1_20180222142933.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Kit Costura</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-kitcostura" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/763052643698081832/unnamed-removebg-preview.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/763052128939671572/Sem_Titulo-1.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 1x Kvelar;</li>
+                                            <li>- 1x Tecido e agulhas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377005079855114/municaofuzil.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de AK-103</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-ak103" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                       <!--     <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377005079855114/municaofuzil.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de Imbel</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-uzi" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                            
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377005079855114/municaofuzil.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de MTAR</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-mtar" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377014298804304/municaosmg.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de Sig Sauer</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-zig" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <!--        <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377014298804304/municaosmg.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de SMG</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-smg" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>  -->
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377014298804304/municaosmg.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de Micro UZI</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-microuzi" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377011300139168/municaoshotgun.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de Remington</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-shotgun" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377008166731857/municaopistola.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de FIVE-SEVEN</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-fiveseven" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377008166731857/municaopistola.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>Munição de SNS PISTOL</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-snspistol" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377042761482340/capsulas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754376893075030016/754377023912149041/polvora.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 20x Capsulas;</li>
+                                            <li>- 20x Polvoras peneradas;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/763040940075122698/6866940_preview.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>COLETE</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m-pistol" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/763054327391584326/maleta_para_transporte_de_pistola_cor_preta_32_1_20180222142933.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/763051035526430742/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 5x Kit Costura;</li>
+                                            <li>- 1x ColetePack;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="penguin.js" type="text/javascript"></script>
+    </body>
+</html>

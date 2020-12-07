@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Produção de Armas Start Shop</title>
+        <link rel="stylesheet" type="text/css" href="penguin.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,900&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="actionmenu" style="display: none;">
+            <div class="conteudo">
+                <div class="menu">
+                    <p><b>PRODUÇÃO DE ARMAMENTOS:</b></p>
+                </div>
+			<div id="wrap">
+  <div class="logo"><img src="https://i.imgur.com/q2HY2So.png"></div>
+			</div>	
+                <div class="itens">
+                    <section class="sessaoItens">
+                        <div class="conteudoItens">
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378532393713764/ak47.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>AK-47</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-ak103" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 250x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!--    <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378477893058640/imbel.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>IMBEL</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-imbel" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 250x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                            
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762679960841879602/Sem_Titulo-1.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>MTAR</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-mtar" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 200x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378523791065118/smg.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>SIG SAUER</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-sigsauer" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 175x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                           <!-- <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378523791065118/smg.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>SMG</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-smg" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 125x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378480744923237/microuzi.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>MICRO UZI</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-microuzi" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 125x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378514035114044/remington.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>REMINGTON</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-remington" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 125x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378528174374975/sns.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>PISTOL SNS</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-pistolsns" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 100x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378478085996704/glock.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>PISTOLA Five-Seven</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-fiveseven" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 75x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                          <!--  <div class="itemSessao item-item" category="armas">
+                                <div class="item-info">
+                                    <div class="fotoItem">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378479361065040/m1911.png">
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="nomeItem">
+                                            <p><b>PISTOLA M1911</b></p>
+                                        </div>
+                                        <div class="produzir">
+                                            <button data-action="produzir-m1911" class="menuoption"><b>PRODUZIR</b></button>
+                                        </div>
+                                    </div>
+                                    <div class="ingreItemI">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378519664001124/sacopecas.png">
+                                    </div>
+                                    <div class="ingreItemII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378509681426583/placa-metal.png">
+                                    </div>
+                                    <div class="ingreItemIII">
+                                        <img src="https://cdn.discordapp.com/attachments/754378407797719100/754378494737121320/molas.png">
+                                    </div>
+                                    <div class="ingreItemIV">
+                                        <img src="https://cdn.discordapp.com/attachments/705812876396331609/762767312046391377/maleta_para_transporte_de_pistola_cor_tan_804_1_20180222141733.png">
+                                    </div>
+                                    <div class="descItem">
+                                        <ul>
+                                            <li>- 50x Peças de arma;</li>
+                                            <li>- 1x Gatilho;</li>
+                                            <li>- 2x Molas;</li>
+                                            <li>- 1x Pack da arma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="penguin.js" type="text/javascript"></script>
+    </body>
+</html>
