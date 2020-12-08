@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="nui://vrp_scoreboard/html/listener.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="nui://vrp_scoreboard/html/style.css">
+</head>
+
+<body>
+	<div style="display: none;" id="wrap">
+
+		<div class="header">
+			<div class="jobs">
+			    <p style="color:#fa0707;"> 🚧 <span id="bopee">0</span> </p>
+				<p style="color:#5ea1e0;"> 👮🏻 <span id="police">0</span> </p>
+				<p style="color:red;"> 👨‍⚕️ <span id="ems">0</span> </p>
+				<p style="color:grey;"> 🔧 <span id="mechanic">0</span> </p>
+				<p style="color:#8234c7;"> 🔫 <span id="pcc">0</span> </p>
+				<p style="color:#c90000;"> 👹 <span id="cv">0</span> </p>
+				<p style="color:#39db4c;"> 🍀 <span id="tcp">0</span> </p>
+				<p style="color:#d49037;"> 🍁 <span id="ada">0</span> </p>
+				<p style="color:#3673cf;"> ㊗️ <span id="yakuza">0</span> </p>
+				<p style="color:#574e43;"> 🛵 <span id="motoclub">0</span> </p>
+				<p style="color:#525252;"> 💣 <span id="milicia">0</span> </p>
+				<p style="color:#ffffff;"> 🧥 <span id="cosanostra">0</span> </p>
+				<p style="color:#ffffff;"> 🔪 <span id="tca">0</span> </p>
+				<p style="color:#ffffff;"> 🏎️ <span id="dk">0</span> </p>
+			</div>
+		</div>
+
+		<div class="playerlist">
+			<table id="playerlist" width="100%">
+				<tr class="heading">
+					<th>Nome</th>
+					<th>ID</th>
+					<th>Ping</th>
+					<th>Nome</th>
+					<th>ID</th>
+					<th>Ping</th>
+					<th>Nome</th>
+					<th>ID</th>
+					<th>Ping</th>
+				</tr>
+			</table>
+		</div>
+
+		<div class="serverinfo">
+			Jogadores: <span id="player_count">0</span> / <span id="max_players">0</span> <span style="font-size: 1.2vw">|</span>
+			Servidor Online: <span id="server_uptime"></span><span style="font-size: 1.2vw"> |</span>
+			Você Está Online: <span id="play_time"></span>
+		</div>
+
+	</div>
+</body>
+
+</html>
