@@ -63,7 +63,7 @@ end)
 
 Citizen.CreateThread(function()	
 	while true do
-		Citizen.Wait(2)
+		local nyoSleep = 500
 		local ply = PlayerPedId()
 		if not IsPedInAnyVehicle(ply, false) then
 			local plyCoords = GetEntityCoords(ply)
@@ -71,12 +71,14 @@ Citizen.CreateThread(function()
 				for key,value in pairs(details.point) do
 					local distance = #(plyCoords - vector3(value.x, value.y, value.z))
 					if distance <= 5 then
+					nyoSleep = 1
 						if details.permission == nil or details.status then
 							DrawMarker(details.marker,value.x,value.y,value.z-0.80,0,0,0,0,0,0,0.2,0.2,0.2,186,51,212,20,1,0,0,0)
 							DrawMarker(23,value.x,value.y,value.z-0.97,0,0,0,0,0,0,1.0,1.0,0.5,186,51,212,20,0,0,0,0)
 						end
 					end
-					if distance <= 1.3 then					
+					if distance <= 1.3 then	
+						nyoSleep = 1
 						if IsControlJustPressed(0, 38) then
 							vAZ.currentGarage = garage							
 							if details.permission == nil or details.status then
@@ -90,6 +92,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(nyoSleep)
 	end
 end)
 

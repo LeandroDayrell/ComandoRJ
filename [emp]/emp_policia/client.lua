@@ -76,14 +76,15 @@ local locs = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local nyoSleep = 500
 		if not servico then
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
 			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
 
-			if distance <= 30.0 then
+			if distance <= 10.0 then
+			nyoSleep = 1 
 				DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
 				if distance <= 1.5 then
 					if IsControlJustPressed(0,38) and emP.checkPermission() then
@@ -94,6 +95,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+	Citizen.Wait(nyoSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

@@ -123,7 +123,7 @@ local races = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local nyoSleep = 500
 		if not inrace then
 			local ped = PlayerPedId()
 			local vehicle = GetVehiclePedIsUsing(ped)
@@ -131,7 +131,8 @@ Citizen.CreateThread(function()
 			local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
 			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
 
-			if distance <= 30.0 then
+			if distance <= 10.0 then
+			nyoSleep = 1
 				if IsEntityAVehicle(vehicle) and GetVehicleClass(vehicle) ~= 8 and GetPedInVehicleSeat(vehicle,-1) == ped then
 					DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.96,0,0,0,0,0,0,10.0,10.0,1.0,0,95,140,50,0,0,0,0)
 					if distance <= 5.9 then
@@ -156,6 +157,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(nyoSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

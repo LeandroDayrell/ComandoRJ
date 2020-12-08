@@ -19,12 +19,13 @@ local CoordenadaZ = 48.88
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local nyoSleep = 500
 		if not roubando then
 			local ped = PlayerPedId()
 			local vehicle = GetVehiclePedIsUsing(ped)
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(ped),CoordenadaX,CoordenadaY,CoordenadaZ,true)
-			if distance <= 50 then
+			if distance <= 20 then
+			nyoSleep = 1
 				DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.96,0,0,0,0,0,0,5.0,5.0,0.5,211,176,72,20,0,0,0,0)
 				if distance <= 3.1 and IsControlJustPressed(0,38) and GetPedInVehicleSeat(vehicle,-1) == ped and emP.checkPermission() then
 					if emP.checkVehicle() then
@@ -43,6 +44,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(nyoSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
