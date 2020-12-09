@@ -2,11 +2,11 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 		if IsControlJustPressed(0, vAZ.Keys['L']) then
-			local vehicle = vRP.getNearestVehicle(10)
+			local vehicle = vRP.getNearestVehicle(5)
 			if IsEntityAVehicle(vehicle) then
-				--if not vAZ.WhitelistClassVehicle({14, 15, 16}, vehicle) then
+				if not vAZ.whitelistClassVehicle(vAZ.config.class, vehicle) then
 					vAZserver.ToggleVehicleLock(vehicle, GetEntityModel(vehicle), GetVehicleNumberPlateText(vehicle))
-				--end
+				end
 			end
 		end
 	end
@@ -17,9 +17,13 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 		local ply = PlayerPedId()
 		if IsPedInAnyVehicle(ply, false) then
-			if GetVehicleDoorLockStatus(GetVehiclePedIsIn(ply, false)) == 2 then
+			local vehicle = GetVehiclePedIsIn(ply, false)
+			if vAZ.whitelistClassVehicle(vAZ.config.class, vehicle) then
+				SetVehicleDoorsLocked(vehicle, 1)
+			end
+			if GetVehicleDoorLockStatus(vehicle) == 2 then
 				DisableControlAction(0, 75)
-			elseif GetVehicleDoorLockStatus(GetVehiclePedIsIn(ply, false)) == 1 then
+			elseif GetVehicleDoorLockStatus(vehicle) == 1 then
 				EnableControlAction(0, 75)
 			end
 		end
@@ -46,6 +50,9 @@ vAZ.ToggleLock = function(index)
 		local vehicle = NetToVeh(index)
 		if DoesEntityExist(vehicle) then			
 			if IsEntityAVehicle(vehicle) then
+				if GetVehicleClass(vehicle) == 8 and GetVehicleClass(vehicle) == 13 and GetVehicleClass(vehicle) == 14 and GetVehicleClass(vehicle) == 15 and GetVehicleClass(vehicle) == 16 then
+					return
+				end
 				if GetVehicleDoorLockStatus(vehicle) == 1 then
 					SetVehicleDoorsLocked(vehicle, 2)
 				else

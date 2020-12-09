@@ -10,7 +10,7 @@ vAZ.Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
-vAZ.DrawReactText = function(x, y, z, text, background)
+vAZ.drawReactText = function(x, y, z, text, background)
 	local camCoords = GetGameplayCamCoord()
     local dist = #(vector3(x, y, z) - camCoords)
 	local scale = 200 / (GetGameplayCamFov() * dist)
@@ -28,7 +28,7 @@ vAZ.DrawReactText = function(x, y, z, text, background)
     end
 end
 
-vAZ.ClosestVehicleArea = function(x, y, z, radius)
+vAZ.closestVehicleArea = function(x, y, z, radius)
 	for id,flag in pairs({0,2,4,6,7,23,127,260,2146,2175,12294,16384,16386,20503,32768,67590,67711,98309,100359}) do
 		local vehicle = GetClosestVehicle(x, y, z, radius, false, flag)		
 		if vehicle ~= 0 and vehicle ~= nil then
@@ -38,9 +38,9 @@ vAZ.ClosestVehicleArea = function(x, y, z, radius)
 	return 0
 end
 
-vAZ.GetSpaceNoVehicle = function(spaces)
+vAZ.getSpaceNoVehicle = function(spaces)
 	for id,spawn in pairs(spaces) do
-		if vAZ.ClosestVehicleArea(spawn.x, spawn.y, spawn.z, 5.0) == 0 then
+		if vAZ.closestVehicleArea(spawn.x, spawn.y, spawn.z, 5.0) == 0 then
 			return spawn
 		end
 		Citizen.Wait(5)
@@ -48,78 +48,85 @@ vAZ.GetSpaceNoVehicle = function(spaces)
 	return 0
 end
 
-local spawnLocation = nil
-
-vAZ.SpawnGarageVehicle = function(model, plate, engine, body, fuel, custom)
-	local mhash = GetHashKey(model)
-	while not HasModelLoaded(mhash) do
-		RequestModel(mhash)
+vAZ.spawnGarageVehicle = function(model, plate, engine, body, fuel, custom)
+	local plyPed = vAZ.player.ped()
+	local plyCoords = GetEntityCoords(plyPed)
+	local vehicleHash = GetHashKey(model)
+	while not HasModelLoaded(vehicleHash) do
+		RequestModel(vehicleHash)
 		Citizen.Wait(10)
 	end
-	if HasModelLoaded(mhash) then
-		spawnLocation = vAZ.GetSpaceNoVehicle(config.garages[vAZ.currentGarage].spaces)
-		if spawnLocation ~= 0 then
-            if vAZ.currentGarage == #config.garages then
-                spawnLocation.x = spawnLocation.x + 2
-            end
-			nveh = CreateVehicle(mhash, spawnLocation.x, spawnLocation.y, spawnLocation.z, spawnLocation.h,true,false)
-			netveh = VehToNet(nveh)
+	if HasModelLoaded(vehicleHash) then
+		for type,garages in pairs(vAZ.config.garages) do
+			for id,garage in pairs(garages) do
+				for key,value in pairs(garage.point) do
+					local distance = #(plyCoords - vector3(value.x, value.y, value.z))                        
+					if distance <= 1 then
+						local spawnLocation = vAZ.getSpaceNoVehicle(garage.spaces)
+						if spawnLocation ~= 0 then
+							local vehicle = CreateVehicle(vehicleHash, spawnLocation.x, spawnLocation.y, spawnLocation.z, spawnLocation.h,true,false)
+							local vehicleNet = VehToNet(vehicle)
+			
+							Citizen.Wait(50)
+							local i = 0
+							FreezeEntityPosition(vehicle, true)
+							while (i < 5) do
+								i = i + 1
+								Citizen.Wait(5)
+							end
+							FreezeEntityPosition(vehicle, false)
+			
+							NetworkRegisterEntityAsNetworked(vehicle)
+							while not NetworkGetEntityIsNetworked(vehicle) do
+								NetworkRegisterEntityAsNetworked(vehicle)
+								Citizen.Wait(1)
+							end
+			
+							if NetworkDoesNetworkIdExist(vehicleNet) then
+								SetEntitySomething(vehicle, true)
+								if NetworkGetEntityIsNetworked(vehicle) then
+									SetNetworkIdExistsOnAllMachines(vehicleNet, true)
+								end
+							end
+							
+							local netVehicleEntity = NetToEnt(vehicleNet)
+							local netVehicle = NetToVeh(vehicleNet)
+			
+							NetworkFadeInEntity(netVehicleEntity, true)
+							SetVehicleIsStolen(netVehicle, false)
+							SetVehicleNeedsToBeHotwired(netVehicle, false)
+							SetEntityInvincible(netVehicle, false)
+							SetVehicleNumberPlateText(netVehicle, plate)
+							SetEntityAsMissionEntity(netVehicle, true, true)
+							SetVehicleHasBeenOwnedByPlayer(netVehicle, true)
+			
+							SetVehRadioStation(netVehicle, "OFF")
+							
+							SetVehicleEngineHealth(netVehicle, (engine + 0.00))
+							SetVehicleBodyHealth(netVehicle, (body + 0.00))
+							SetVehicleFuelLevel(netVehicle, (fuel + 0.00))
+			
+							SetVehicleAsNoLongerNeeded(Citizen.PointerValueIntInitialized(vehicle))
+							SetModelAsNoLongerNeeded(vehicleHash)
+							
+							if not vAZ.whitelistClassVehicle(vAZ.config.class, netVehicle) then
+								SetVehicleDoorsLocked(netVehicle, 2)
+							end
 
-			Citizen.Wait(50)
-			local i = 0
-			FreezeEntityPosition(nveh, true)
-			while (i < 5) do
-				i = i + 1
-				Citizen.Wait(5)
-			end
-			FreezeEntityPosition(nveh, false)
-
-			NetworkRegisterEntityAsNetworked(nveh)
-			while not NetworkGetEntityIsNetworked(nveh) do
-				NetworkRegisterEntityAsNetworked(nveh)
-				Citizen.Wait(1)
-			end
-
-			if NetworkDoesNetworkIdExist(netveh) then
-				SetEntitySomething(nveh,true)
-				if NetworkGetEntityIsNetworked(nveh) then
-					SetNetworkIdExistsOnAllMachines(netveh,true)
+							if custom then
+								vAZ.setVehicleMods(custom, nveh)
+							end
+			
+							return true, vehicle, vehicleNet
+						else
+							TriggerEvent('Notify', 'importante', 'Todas as vagas estão ocupadas no momento')
+						end
+					end
 				end
 			end
-
-			NetworkFadeInEntity(NetToEnt(netveh), true)
-			SetVehicleIsStolen(NetToVeh(netveh), false)
-			SetVehicleNeedsToBeHotwired(NetToVeh(netveh), false)
-			SetEntityInvincible(NetToVeh(netveh), false)
-			SetVehicleNumberPlateText(NetToVeh(netveh), plate)
-			SetEntityAsMissionEntity(NetToVeh(netveh),true, true)
-			SetVehicleHasBeenOwnedByPlayer(NetToVeh(netveh), true)
-
-			SetVehRadioStation(NetToVeh(netveh), "OFF")
-			
-			SetVehicleEngineHealth(NetToVeh(netveh), parseInt(engine) + 0.0)
-			SetVehicleBodyHealth(NetToVeh(netveh), parseInt(body) + 0.0)
-			SetVehicleFuelLevel(NetToVeh(netveh), parseInt(fuel) + 0.0)
-
-			SetVehicleAsNoLongerNeeded(Citizen.PointerValueIntInitialized(nveh))
-			SetModelAsNoLongerNeeded(mhash)
-			
-			--if not vAZ.WhitelistClassVehicle({14, 15, 16}, NetToVeh(netveh)) then
-				SetVehicleDoorsLocked(NetToVeh(netveh), 2)
-			--end
-
-			if custom then
-				vAZ.setVehicleMods(custom, nveh)
-			end
-
-			vAZ.currentGarage = nil
-			
-			return true,nveh,VehToNet(nveh),model,mhash
-		else
-			TriggerEvent('Notify', 'importante', 'Todas as vagas estão ocupadas no momento')			
-		end
+		end			
 	end
-	return false,nil,nil,nil
+	return false, nil, nil, nil
 end
 
 vAZ.despawnVehicle = function(vnet)
@@ -136,10 +143,10 @@ vAZ.despawnVehicle = function(vnet)
 				DeleteVehicle(veh)				
 			end
 		end
-	end)
+	end)	
 end
 
-vAZ.WhitelistClassVehicle = function(table, vehicle)
+vAZ.whitelistClassVehicle = function(table, vehicle)
 	for id,class in pairs(table) do
 		if class == GetVehicleClass(vehicle) then
 			return true
@@ -148,20 +155,26 @@ vAZ.WhitelistClassVehicle = function(table, vehicle)
 	return false
 end
 
-vAZ.VehicleInAreaCabin = function(vehicle, cabins, distance)
+vAZ.vehicleInAreaCabin = function(vehicle, distance)
+	local plyPed = vAZ.player.ped()
+	local plyCoords = GetEntityCoords(plyPed)
 	local vehicle = NetToVeh(vehicle)
 	if DoesEntityExist(vehicle) then
-		for id,cabin in pairs(cabins) do
-			if GetDistanceBetweenCoords(GetEntityCoords(vehicle), cabin.x, cabin.y, cabin.z, true) <= distance then
-				return true				
+		for type,garages in pairs(vAZ.config.garages) do
+			for id,garage in pairs(garages) do
+				for key,value in pairs(garage.point) do
+					if #(plyCoords - vector3(value.x, value.y, value.z)) <= distance then
+						return true	
+					end
+				end
 			end
 		end
 	end
 	return false
 end
 
-vAZ.GetVehicleOccupants = function(driver, vehicle)
-	local seats = {0,2,3,4}
+vAZ.getVehicleOccupants = function(driver, vehicle)
+	local seats = {0, 2, 3, 4}
     local occupants = {}
     if NetworkDoesNetworkIdExist(vehicle) then
 		local vehicle = NetToVeh(vehicle)
@@ -180,37 +193,40 @@ vAZ.GetVehicleOccupants = function(driver, vehicle)
 	return occupants
 end
 
-vAZ.GetVehicleEngine = function(vnet)
-	if NetworkDoesNetworkIdExist(vnet) then
-		local vehicle = NetToVeh(vnet)
+vAZ.getVehicleEngine = function(vehicle)	
+	if NetworkDoesNetworkIdExist(vehicle) then
+		local vehicle = NetToVeh(vehicle)
 		if DoesEntityExist(vehicle) then
-			return GetVehicleEngineHealth(vehicle), GetVehicleBodyHealth(vehicle), GetVehicleFuelLevel(vehicle)
+			return true, GetVehicleEngineHealth(vehicle), GetVehicleBodyHealth(vehicle), GetVehicleFuelLevel(vehicle)	
 		end
 	end
-	return 1000, 1000, 100
+    return false, nil, nil, nil
 end
 
-vAZ.GetVehicleNet = function(vehicle)
-    return VehToNet(vehicle) or nil
+vAZ.getVehicleNet = function(vehicle)
+    return VehToNet(vehicle)
 end
 
-vAZ.CheckInStreet = function(model, plate)
+vAZ.getVehiclePlate = function(vehicle)
+    return GetVehicleNumberPlateText(vehicle)
+end
+
+vAZ.checkVehicleAlreadyOnStreet = function(model, plate)
 	for vehicle in EnumerateVehicles() do
 		if GetVehicleNumberPlateText(vehicle) == plate then
-			local hmodel = vAZserver.GetVehicleBy(GetEntityModel(vehicle), 'hash').model
-			if hmodel == model then
-				return true, vehicle, VehToNet(vehicle), hmodel, GetEntityModel(vehicle)
+			local data = vAZserver.getServerVehicle('hash', GetEntityModel(vehicle))
+			if data ~= nil and data.model == model then
+				return true, vehicle, VehToNet(vehicle)
 			end
 		end
     end
 	return false
 end
 
-vAZ.ModelName = function(radius)
+vAZ.getVehicleNearest = function(radius)
 	local vehicle = vRP.getNearestVehicle(radius)
-	if IsEntityAVehicle(vehicle) then		
-		local hash = GetEntityModel(vehicle)
-		local vehicleDB = vAZserver.GetVehicleBy(hash, 'hash')
+	if IsEntityAVehicle(vehicle) then
+		local vehicleDB = vAZserver.getServerVehicle('hash', GetEntityModel(vehicle))
 		if vehicleDB ~= nil then
 			local locked = GetVehicleDoorLockStatus(vehicle) >= 2
 			local x,y,z = table.unpack(GetEntityCoords(vehicle))
@@ -219,3 +235,94 @@ vAZ.ModelName = function(radius)
 	end
 	return nil, nil, nil, nil, nil, nil, nil, nil
 end
+
+vAZ.getVehicleAlreadyOnStreet = function(model, plate)
+	for vehicle in EnumerateVehicles() do
+		if IsEntityAVehicle(vehicle) then
+			if GetVehicleNumberPlateText(vehicle) == plate then
+				local data = vAZserver.getServerVehicle('hash', GetEntityModel(vehicle))
+				if data ~= nil and data.model == model then
+					return vehicle, VehToNet(vehicle), data.model, GetVehicleNumberPlateText(vehicle)
+				end
+			end
+		end
+	end
+	return nil, nil, nil, nil
+end
+
+vAZ.setVehicleMods = function(custom,veh)
+	if not veh then
+		veh = GetVehiclePedIsUsing(PlayerPedId())
+	end
+	if custom and veh then
+		SetVehicleModKit(veh,0)
+		if custom.colour then
+			SetVehicleColours(veh,tonumber(custom.colour.primary),tonumber(custom.colour.secondary))
+			SetVehicleExtraColours(veh,tonumber(custom.colour.pearlescent),tonumber(custom.colour.wheel))
+			if custom.colour.neon then
+				SetVehicleNeonLightsColour(veh,tonumber(custom.colour.neon[1]),tonumber(custom.colour.neon[2]),tonumber(custom.colour.neon[3]))
+			end
+			if custom.colour.smoke then
+				SetVehicleTyreSmokeColor(veh,tonumber(custom.colour.smoke[1]),tonumber(custom.colour.smoke[2]),tonumber(custom.colour.smoke[3]))
+			end
+			if custom.colour.custom then
+				if custom.colour.custom.primary then
+					SetVehicleCustomPrimaryColour(veh,tonumber(custom.colour.custom.primary[1]),tonumber(custom.colour.custom.primary[2]),tonumber(custom.colour.custom.primary[3]))
+				end
+				if custom.colour.custom.secondary then
+					SetVehicleCustomSecondaryColour(veh,tonumber(custom.colour.custom.secondary[1]),tonumber(custom.colour.custom.secondary[2]),tonumber(custom.colour.custom.secondary[3]))
+				end
+			end
+		end
+
+		if custom.plate then
+			--SetVehicleNumberPlateTextIndex(veh,tonumber(custom.plate.index))
+		end
+
+		SetVehicleWindowTint(veh,tonumber(custom.janela))
+		SetVehicleTyresCanBurst(veh,tonumber(custom.bulletproof))
+		SetVehicleWheelType(veh,tonumber(custom.wheel))
+
+		ToggleVehicleMod(veh,18,tonumber(custom.turbo))
+		ToggleVehicleMod(veh,20,tonumber(custom.fumaca))
+		ToggleVehicleMod(veh,22,tonumber(custom.farol))
+
+		if custom.neon then
+			SetVehicleNeonLightEnabled(veh,0,tonumber(custom.neon.left))
+			SetVehicleNeonLightEnabled(veh,1,tonumber(custom.neon.right))
+			SetVehicleNeonLightEnabled(veh,2,tonumber(custom.neon.front))
+			SetVehicleNeonLightEnabled(veh,3,tonumber(custom.neon.back))
+		end
+
+		if custom.mods ~= nil then
+			for i,mod in pairs(custom.mods) do
+				if i ~= 18 and i ~= 20 and i ~= 22 and i ~= 46 then
+					SetVehicleMod(veh,tonumber(i),tonumber(mod))
+				end
+			end
+		end
+		
+		SetVehicleMod(veh,23,tonumber(custom.tyres),custom.tyresvariation)
+		SetVehicleMod(veh,24,tonumber(custom.tyres),custom.tyresvariation)
+	end
+end
+
+RegisterNetEvent('az-garages:deletevehicle')
+AddEventHandler('az-garages:deletevehicle', function(vehicle)
+    NetworkRequestControlOfEntity(vehicle)    
+    local timeout = 2000
+    while timeout > 0 and not NetworkHasControlOfEntity(vehicle) do
+        Wait(100)
+        timeout = timeout - 100
+    end
+    SetEntityAsMissionEntity(vehicle, true, true)    
+    local timeout = 2000
+    while timeout > 0 and not IsEntityAMissionEntity(vehicle) do
+        Wait(100)
+        timeout = timeout - 100
+    end
+    Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized(vehicle))    
+    if DoesEntityExist(vehicle) then 
+        DeleteEntity(vehicle)
+    end 
+end)

