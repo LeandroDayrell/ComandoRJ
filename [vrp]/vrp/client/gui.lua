@@ -197,7 +197,7 @@ Citizen.CreateThread(function()
 				end
         	end
 		end
---[[
+
 		if IsControlJustPressed(0,289) then
 			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 100 and not menu_state.opened and not menu_celular then
 				if IsEntityPlayingAnim(ped,"anim@mp_player_intupperfinger","idle_a_fp",3) then
@@ -207,7 +207,7 @@ Citizen.CreateThread(function()
 				end
         	end
 		end
-]]
+
 		-- ASSOBIAR (ARROW DOWN)
 		if IsControlJustPressed(0,187) then
 			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 100 and not menu_state.opened and not menu_celular then
