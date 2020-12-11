@@ -501,11 +501,11 @@ local talktodmvped = true
 --DMV Ped interaction
 Citizen.CreateThread(function()
 	while true do
-		nyosleep = 500
+		crjSleep = 500
 		local pos = GetEntityCoords(GetPlayerPed(-1), false)
 		for k,v in pairs(cfg.dmv.peds) do
 			if(Vdist(v.x, v.y, v.z, pos.x, pos.y, pos.z) < 3.0)then
-			nyosleep = 1
+			crjSleep = 1
 				DisplayHelpText(lang.client.interact)
 				if(IsControlJustReleased(1, 47))then
 						if talktodmvped then
@@ -521,7 +521,7 @@ Citizen.CreateThread(function()
 				Menu.renderGUI(cfg.dmv.menu)
 			end
 		end
-		Citizen.Wait(nyosleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 

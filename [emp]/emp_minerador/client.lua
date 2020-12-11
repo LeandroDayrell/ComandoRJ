@@ -16,12 +16,12 @@ local segundos = 0
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2949.99,2766.82,39.15)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2949.99,2766.82,39.15-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -39,10 +39,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -51,12 +51,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2938.39,2770.59,39.09)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2938.39,2770.59,39.09-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -74,10 +74,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -86,12 +86,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2955.57,2771.08,39.05)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2955.57,2771.08,39.05-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then					
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -109,10 +109,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -121,12 +121,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2937.75,2773.34,39.24)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2937.75,2773.34,39.24-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -144,10 +144,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -156,12 +156,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2926.67,2794.25,40.69)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2926.67,2794.25,40.69-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -179,10 +179,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -191,12 +191,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2929.67,2789.19,39.98)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2929.67,2789.19,39.98-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -214,10 +214,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -226,12 +226,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2970.82,2775.00,38.23)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2970.82,2775.00,38.23-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -249,10 +249,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -261,12 +261,12 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),2958.28,2765.35,41.03)
 			if distancia <= 50 then 
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(1,2958.28,2765.35,41.03-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 1.8 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA COMEÇAR A MINERAR",4,0.5,0.93,0.50,255,255,255,180)
@@ -284,10 +284,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-			nyoSleep = 1
+			crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ QUEBRAR A PEDRA",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 

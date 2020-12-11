@@ -38,7 +38,7 @@ local Teleport = {
 
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		for k,v in pairs(Teleport) do
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
 			local distance2 = GetDistanceBetweenCoords(v.positionTo.x,v.positionTo.y,cdz2,x,y,z,true)
 
 			if distance <= 10 then
-			nyoSleep = 1
+			crjSleep = 1
 				DrawMarker(1,v.positionFrom.x,v.positionFrom.y,v.positionFrom.z-1,0,0,0,0,0,0,1.0,1.0,1.0,255,255,255,50,0,0,0,0)
 				if distance <= 1.5 then
 					if IsControlJustPressed(0,38) and func.checkPermission(v.positionTo.perm) then
@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
 			end
 
 			if distance2 <= 10 then
-			nyoSleep = 1
+			crjSleep = 1
 				DrawMarker(1,v.positionTo.x,v.positionTo.y,v.positionTo.z-1,0,0,0,0,0,0,1.0,1.0,1.0,255,255,255,50,0,0,0,0)
 				if distance2 <= 1.5 then
 					if IsControlJustPressed(0,38) and func.checkPermission(v.positionFrom.perm) then
@@ -67,7 +67,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -144,14 +144,14 @@ local locais = {
 
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		for k,v in pairs(locais) do
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
 			local distance = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
 			if distance <= 1.5 and not processo then
-			nyoSleep = 1
+			crjSleep = 1
 				drawTxt("PRESSIONE  ~b~E~w~  PARA COLETAR "..v.text,4,0.5,0.93,0.50,255,255,255,180)
 								--CV
 				DrawMarker(20,101.80870056152,6336.0366210938,31.375883102417,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,100,1,0,0,0)
@@ -224,7 +224,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

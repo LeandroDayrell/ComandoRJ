@@ -98,17 +98,17 @@ end)
 Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),2556.2380371094,4661.6108398438,34.075294494629,true)
 		if distance <= 30 then
 			DrawMarker(20,2556.2380371094,4661.6108398438,35.075294494629-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,100,1,0,0,0)
 			if distance <= 1.1 then
-			nyoSleep = 1
+			crjSleep = 1
 				if IsControlJustPressed(0,38) and emP.checkPermission() then
 					ToggleActionMenu()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)

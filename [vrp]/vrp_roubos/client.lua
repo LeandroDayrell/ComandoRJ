@@ -40,7 +40,7 @@ local locais = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		for _,item in pairs(locais) do
 			local ped = GetPlayerPed(-1)
 			local px,py,pz = table.unpack(GetEntityCoords(ped,true))
@@ -54,7 +54,7 @@ Citizen.CreateThread(function()
 				end
 			else
 				if distancia <= 20 then
-				nyoSleep = 1
+				crjSleep = 1
 					DrawMarker(29,item.x,item.y,item.z,0,0,0,0,0,0,1.0,0.7,1.0,50,150,50,200,1,0,0,1)
 					if distancia <= 1.5 then
 						DisplayHelpText("Aperte ~INPUT_THROW_GRENADE~ para iniciar o roubo")
@@ -69,7 +69,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

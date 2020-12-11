@@ -24,14 +24,14 @@ local vacas = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			for _,func in pairs(vacas) do
 				local ped = PlayerPedId()
 				local x,y,z = table.unpack(func)
 				local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),x,y,z)
 				if distancia <= 1.2 then
-				nyoSleep = 1
+				crjSleep = 1
 					drawTxt("PRESSIONE  ~b~E~w~  PARA ORDENHAR A VACA",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
 						if emP.checkPayment() then
@@ -44,10 +44,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-		nyoSleep = 1
+		crjSleep = 1
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ FINALIZAR A EXTRAÇÃO DO LEITE",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 

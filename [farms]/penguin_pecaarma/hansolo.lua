@@ -129,7 +129,7 @@ end)
 -------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 
 		for k,v in pairs(PegarRota) do
 			local ped = PlayerPedId()
@@ -139,7 +139,7 @@ Citizen.CreateThread(function()
 			local PegarRota = PegarRota[k]
 
 			if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), PegarRota.x, PegarRota.y, PegarRota.z, true ) <= 1 and not onmenu and not servicodificil and not servicomediano and not servicofacil then
-				nyoSleep = 1
+				crjSleep = 1
 				DrawText3D(PegarRota.x, PegarRota.y, PegarRota.z, "[~r~E~w~] Para acessar as ~r~ROTAS DE PEÇAS DE ARMA~w~.")
 				if distance <= 1.2 then
 					if IsControlJustPressed(0,38) and oC.checkPermissao() then
@@ -149,7 +149,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -------------------------------------------------------------------------------------------------

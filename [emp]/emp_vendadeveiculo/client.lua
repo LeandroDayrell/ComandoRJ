@@ -16,13 +16,13 @@ local CoordenadaZ = 26.672071456909
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function(source)
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not vendendo then
 			local ped = PlayerPedId()
 			local vehicle = GetVehiclePedIsUsing(ped)
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(ped),CoordenadaX,CoordenadaY,CoordenadaZ,true)
 			if distance <= 10 then
-				nyoSleep = 1
+				crjSleep = 1
 				DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.96,0,0,0,0,0,0,5.0,5.0,0.5,211,176,72,20,0,0,0,0)
 				DrawText3D(CoordenadaX, CoordenadaY, CoordenadaZ + 0.7, "PRESSIONE  ~b~E~w~  PARA VENDER O VEÍCULO")
 				if distance <= 3.1 and IsControlJustPressed(0,38) and GetPedInVehicleSeat(vehicle,-1) == ped and emP.checkPermission() and emP.certeza() then
@@ -42,7 +42,7 @@ Citizen.CreateThread(function(source)
 				end -- distancia 				
 			end -- distancia
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

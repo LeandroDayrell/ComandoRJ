@@ -16,14 +16,14 @@ local chuveiros = {
 
 Citizen.CreateThread(function()
     while true do
-    local nyoSleep = 500
+    local crjSleep = 500
         for k,v in pairs(chuveiros) do
             local ped = GetPlayerPed(-1)
             local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
             local distance = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
             if distance < 10 then  
-                nyoSleep = 1
+                crjSleep = 1
 				DrawText3D(v.x,v.y,v.z, v.text, 2.0, 4, 100)
                 DrawText3D(v.x,v.y,v.z-0.2, v.text2, 1.0, 4, 100)
                 if distance < 4 and IsControlPressed(0,38) then
@@ -35,7 +35,7 @@ Citizen.CreateThread(function()
             end     
 
         end 
-Citizen.Wait(nyoSleep)		
+Citizen.Wait(crjSleep)		
     end
 end)
 

@@ -51,7 +51,7 @@ local Teleport = {
 
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		for k,j in pairs(Teleport) do
 			local px,py,pz = table.unpack(GetEntityCoords(PlayerPedId(),true))
 			local unusedBool,coordz = GetGroundZFor_3dCoord(j.positionFrom.x,j.positionFrom.y,j.positionFrom.z,1)
@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
 			local distance2 = GetDistanceBetweenCoords(j.positionTo.x,j.positionTo.y,coordz2,px,py,pz,true)
 
 			if distance <= 7 then
-			nyoSleep = 1
+			crjSleep = 1
 				DrawMarker(1,j.positionFrom.x,j.positionFrom.y,j.positionFrom.z-1,0,0,0,0,0,0,1.0,1.0,1.0,255,255,255,50,0,0,0,0)
 				if distance <= 1.5 then
 					if IsControlJustPressed(0,38) then
@@ -70,7 +70,7 @@ Citizen.CreateThread(function()
 			end
 
 			if distance2 <= 7 then
-			nyoSleep = 1
+			crjSleep = 1
 				DrawMarker(1,j.positionTo.x,j.positionTo.y,j.positionTo.z-1,0,0,0,0,0,0,1.0,1.0,1.0,255,255,255,50,0,0,0,0)
 				if distance2 <= 1.5 then
 					if IsControlJustPressed(0,38) then
@@ -79,6 +79,6 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)

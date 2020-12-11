@@ -165,17 +165,17 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		local pos = GetEntityCoords(PlayerPedId(), true)
 		for k, j in pairs(banks) do
 			if(Vdist(pos.x, pos.y, pos.z, j.x, j.y, j.z) < 5.0) then
-			nyoSleep = 1
+			crjSleep = 1
 				if(Vdist(pos.x, pos.y, pos.z, j.x, j.y, j.z) < 1.0) then
 					draw3DText(j.x, j.y, j.z, "Pressione [~g~E~w~] para acessar o banco")
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 

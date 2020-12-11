@@ -15,7 +15,7 @@ local CoordenadaZ = 81.16
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		if not processo then
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
 			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
 
 			if distance <= 1.2 and not processo then
-			nyoSleep = 1
+			crjSleep = 1
 				drawTxt("PRESSIONE  ~b~E~w~  PARA EMPACOTAR ENCOMENDA",4,0.5,0.93,0.50,255,255,255,180)
 				if IsControlJustPressed(0,38) then
 					if func.checkPayment() then
@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

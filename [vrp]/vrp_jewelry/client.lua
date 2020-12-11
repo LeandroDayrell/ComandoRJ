@@ -41,13 +41,13 @@ local locais = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		local ped = PlayerPedId()
 		local x,y,z = table.unpack(GetEntityCoords(ped))
 		local bowz,cdz = GetGroundZFor_3dCoord(coordenadaX,coordenadaY,coordenadaZ)
 		local distance = GetDistanceBetweenCoords(coordenadaX,coordenadaY,cdz,x,y,z,true)
 		if distance <= 1.1 and not andamento then
-		nyoSleep = 1
+		crjSleep = 1
 			drawTxt("PRESSIONE  ~b~E~w~  PARA HACKEAR AS CÂMERAS DE SEGURANÇA",4,0.5,0.93,0.50,255,255,255,180)
 			if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 				func.checkJewelry(coordenadaX,coordenadaY,coordenadaZ,213.52,30,1)
@@ -55,13 +55,13 @@ Citizen.CreateThread(function()
 		end
 
 		if andamento and tipo == 1 then
-		nyoSleep = 1
+		crjSleep = 1
 			drawTxt("FALTAM ~g~"..segundos.." SEGUNDOS ~w~PARA TERMINAR DE HACKEAR AS CÂMERAS DE SEGURANÇA",4,0.5,0.93,0.50,255,255,255,180)
 		elseif andamento and tipo == 2 then
-		nyoSleep = 1
+		crjSleep = 1
 			drawTxt("FALTAM ~g~"..segundos.." SEGUNDOS ~w~PARA TERMINAR DE ROUBAR AS JOIAS",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -69,14 +69,14 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 		for _,v in pairs(locais) do
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
 			local distance = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
 			if distance <= 1.1 and not andamento then
-			nyoSleep = 1
+			crjSleep = 1
 				drawTxt("PRESSIONE  ~b~E~w~  PARA ROUBAR AS JOIAS",4,0.5,0.93,0.50,255,255,255,180)
 				if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 					if func.returnJewelry() then
@@ -87,7 +87,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

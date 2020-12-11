@@ -1293,26 +1293,26 @@ end
 
 Citizen.CreateThread(function()
     while true do
-        local nyoSleep = 500
+        local crjSleep = 500
         if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 257.21240234375,220.02471923828,106.28584289551,true) <= 1 then
-		nyoSleep = 1
+		crjSleep = 1
             DrawText3Ds(257.21240234375,220.02471923828,106.28584289551+0.5,"PRESSIONE ~r~E~w~ PARA EXPLODIR A PORTA")                
             if IsControlJustPressed(0,47) then
             end
         end
         if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 261.60485839844,221.7160949707,106.2834777832,true) <= 1 then
-		nyoSleep = 1
+		crjSleep = 1
             DrawText3Ds(261.60485839844,221.7160949707,106.2834777832+0.5,"PRESSIONE ~r~E~w~ PARA EXPLODIR A PORTA")                
             if IsControlJustPressed(0,47) then	
             end
         end
         if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 264.93884277344,219.90927124023,101.68327331543,true) <= 1 then
-		nyoSleep = 1
+		crjSleep = 1
             DrawText3Ds(264.93884277344,219.91927124023,101.68327331543+0.5,"PRESSIONE ~r~E~w~ PARA HACKEAR O BANCO")                
             if IsControlJustPressed(0,47) then	
             end
         end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
     end
 end)
 

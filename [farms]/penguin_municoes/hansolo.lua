@@ -148,7 +148,7 @@ end)
 -------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 
 		for k,v in pairs(prodMachine) do
 			local ped = PlayerPedId()
@@ -158,7 +158,7 @@ Citizen.CreateThread(function()
 			local prodMachine = prodMachine[k]
 
 			if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), prodMachine.x, prodMachine.y, prodMachine.z, true ) <= 1 and not onmenu and not produzindo then
-			nyoSleep = 1
+			crjSleep = 1
 				DrawText3D(prodMachine.x, prodMachine.y, prodMachine.z, "[~r~E~w~] Para acessar a ~r~PRODUÇÃO DE MUNIÇÕES~w~.")
 				if distance <= 1.2 then
 					if IsControlJustPressed(0,38) and oC.checkPermissao() and not produzindo then
@@ -168,7 +168,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 -------------------------------------------------------------------------------------------------

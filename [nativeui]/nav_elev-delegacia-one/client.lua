@@ -156,7 +156,7 @@ local elevadores = {
 Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 	while true do
-		local nyoSleep = 500
+		local crjSleep = 500
 
 		for k,v in pairs(elevadores) do
 			local ped = PlayerPedId()
@@ -170,7 +170,7 @@ Citizen.CreateThread(function()
 			end
 			
 			if distance <= 5 then
-			nyoSleep = 1
+			crjSleep = 1
 				DrawMarker(23,elev.x,elev.y,elev.z-0.97,0,0,0,0,0,0,1.0,1.0,0.5,20,20,20,240,0,0,0,0)
 				if distance <= 1.2 then
 					if IsControlJustPressed(0,38) then
@@ -179,7 +179,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(nyoSleep)
+		Citizen.Wait(crjSleep)
 	end
 end)
 
