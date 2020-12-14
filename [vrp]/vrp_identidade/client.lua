@@ -27,13 +27,13 @@ local css = [[
 		width: 300px;
 		min-height: 250px;
 		border-radius: 5px;
-		box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.08);
+		box-shadow: 0px 0px 3px rgba(273, 88, 85, 0.08);
 		text-align: center;
 		position: absolute;
 		right: 0.5%;
 		bottom: 23%;
 		font-family: 'Muli';
-		color: #f89406;
+		color: #017FFB;
 		padding-bottom: 15px;
 		z-index: 1;
 		overflow: hidden;
@@ -48,7 +48,7 @@ local css = [[
 	}
 
 	#DocumentSection:before {
-		background-color: #e87e04;
+		background-color: #0476E8;
 		top: -193%;
 		left: -100%;
 		transform: rotate(-5deg);
@@ -56,7 +56,7 @@ local css = [[
 	}
 
 	#DocumentSection:after {
-		background-color: #f89406;
+		background-color: #017FFB;
 		top: -191%;
 		left: -100%;
 		transform: rotate(-6deg);
@@ -91,11 +91,11 @@ local css = [[
 	}
 
 	#DocumentSection .each-info.person-job {
-		border-top: 1px solid rgba(248,148,6, 0.8);
-		border-bottom: 1px solid rgba(248,148,6, 0.8);
+		border-top: 1px solid rgba(1, 127, 251, 0.8);
+		border-bottom: 1px solid rgba(1, 127, 251, 0.8);
 		margin: 25px auto;
 		padding: 10px 0;
-		color: #f2f1ef;
+		color: #FFFFFF;
 		font-size: 18px;
 	}
 
@@ -116,7 +116,7 @@ local css = [[
 	#DocumentSection .secondary-info .each-info span {
 		float: right;
 		font-weight: bold;
-		color: #f2f1ef;
+		color: #FFFFFF;
 	}
 ]]
 
@@ -137,7 +137,7 @@ Citizen.CreateThread(function()
 					vip  = "Sem VIP"
 				end
 				if foto == nil or foto == "" then
-					foto  = "https://www.moxtra.com/service/themes/images/default/avatar-single-360.png"
+					foto  = "https://i.imgur.com/VT9lmIl.png"
 				end
 				local html = string.format("<div id='DocumentSection'><div class='avatar-img'><img src='%s'></div> <div class='infos'><div class='main-info'>"..
 					"<h1 class='each-info person-name'>%s %s</h1>"..
