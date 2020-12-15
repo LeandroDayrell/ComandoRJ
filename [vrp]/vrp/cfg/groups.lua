@@ -3252,6 +3252,7 @@ cfg.groups = {
     },
     "vip.permissao",
 	"bronze.permissao",
+	"color.weapon",
   },
   ["VIP Prata"] = {
     _config = {
@@ -3259,6 +3260,7 @@ cfg.groups = {
     },
     "vipp.permissao",
 	"prata.permissao",
+	"color.weapon",
   }, 
   ["VIP Ouro"] = {
     _config = {
@@ -3266,6 +3268,7 @@ cfg.groups = {
     },
     "vippp.permissao",
 	"ouro.permissao",
+	"color.weapon",
   }, 
   ["VIP Diamante"] = {
     _config = {
@@ -3273,6 +3276,7 @@ cfg.groups = {
     },
     "vipppp.permissao",
 	"diamante.permissao",
+	"color.weapon",
   },
    ["VIP Platina"] = {
     _config = {
@@ -3280,6 +3284,7 @@ cfg.groups = {
     },
     "vipppp.permissao",
 	"platina.permissao",
+	"color.weapon",
   },
    ["VIP Mafioso"] = {
     _config = {
@@ -3289,6 +3294,7 @@ cfg.groups = {
 	"mafioso.permissao",
 	"mafioso5.permissao",
 	"lavagem.vip",
+	"color.weapon",
   },
   ["VIP Supremo"] = {
     _config = {
@@ -3297,6 +3303,7 @@ cfg.groups = {
     "vippppp.permissao",
 	"supremo.permissao",
 	"lavagem.vip",
+	"color.weapon",
   },
   ["VIP Magnata"] = {
     _config = {
@@ -3305,12 +3312,14 @@ cfg.groups = {
     "vippppppp.permissao",
 	"magnata.permissao",
 	"lavagem.vip",
+	"color.weapon",
   },
   ["VIP Empresarial"] = {
     _config = {
       gtype = "vip",
     },
 	"lavagem.vip",
+	"color.weapon",
   },
   
   --== Sets ==--

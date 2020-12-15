@@ -73,6 +73,18 @@ Citizen.CreateThread(function()
         py = y
     end
 end)
+
+RegisterNetEvent('changeWeaponColor')
+AddEventHandler('changeWeaponColor', function(cor) 
+    local tinta = tonumber(cor)
+    local ped = PlayerPedId()
+    local arma = GetSelectedPedWeapon(ped)
+    if tinta >= 0 then
+        SetPedWeaponTintIndex(ped,arma,tinta)
+    end
+ 
+end)
+
 --bong
 RegisterCommand("bong",function(source, args)
     local player = PlayerPedId()

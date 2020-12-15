@@ -52,9 +52,22 @@ local user_id = vRP.getUserId(source)
 end)]]
 
 
+RegisterCommand('cor', function(source, args)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id, "color.weapon") or vRP.hasPermission(user_id,"admin.permissao") then
+        TriggerClientEvent('changeWeaponColor', source, args[1])
+    end
+end)
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ITEMLIST
 -----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 local itemlist = {
 	["sigpack"] = { index = "sigpack", nome = "sigpack" },
 	["municaosigpack"] = { index = "municaosigpack", nome = "municaosigpack" },
