@@ -16,7 +16,7 @@ end
 -- BUTTON
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("ButtonClick",function(data,cb)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if data == "segundo-andar" then
 		DoScreenFadeOut(1000)
 		menuactive = false

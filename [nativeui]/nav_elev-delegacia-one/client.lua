@@ -16,7 +16,7 @@ end
 -- BUTTON
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("ButtonClick",function(data,cb)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if data == "terraco-elev-one" then
 		DoScreenFadeOut(1000)
 		SetNuiFocus(false)

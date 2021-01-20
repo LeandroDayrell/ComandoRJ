@@ -140,7 +140,7 @@ local extras = {
 }
 
 RegisterCommand("extras",function(source,args)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	local x,y,z = table.unpack(GetEntityCoords(ped))
 	for k,v in pairs(extras) do
 		local distance = Vdist(x,y,z,v[1],v[2],v[3])

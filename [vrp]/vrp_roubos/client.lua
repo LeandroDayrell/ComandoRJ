@@ -42,7 +42,7 @@ Citizen.CreateThread(function()
 	while true do
 		local crjSleep = 500
 		for _,item in pairs(locais) do
-			local ped = GetPlayerPed(-1)
+			local ped = PlayerPedId()
 			local px,py,pz = table.unpack(GetEntityCoords(ped,true))
 			local unusedBool,coordz = GetGroundZFor_3dCoord(item.x,item.y,item.z,1)
 			local distancia = GetDistanceBetweenCoords(item.x,item.y,coordz,px,py,pz,true)
@@ -79,9 +79,9 @@ RegisterNetEvent("iniciarroubo")
 AddEventHandler("iniciarroubo",function(secs,head)
 	segundos = secs
 	andamento = true
-	SetEntityHeading(GetPlayerPed(-1),head)
-	SetPedComponentVariation(GetPlayerPed(-1),5,45,0,2)
-	SetCurrentPedWeapon(GetPlayerPed(-1),GetHashKey("WEAPON_UNARMED"),true)
+	SetEntityHeading(PlayerPedId(),head)
+	SetPedComponentVariation(PlayerPedId(),5,45,0,2)
+	SetCurrentPedWeapon(PlayerPedId(),GetHashKey("WEAPON_UNARMED"),true)
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CANCELAR ROUBO
@@ -122,7 +122,7 @@ Citizen.CreateThread(function()
 			segundos = segundos - 1
 			if segundos <= 0 then
 				andamento = false
-				ClearPedTasks(GetPlayerPed(-1))
+				ClearPedTasks(PlayerPedId())
 			end
 		end
 	end

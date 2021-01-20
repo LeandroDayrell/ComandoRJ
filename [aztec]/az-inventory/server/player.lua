@@ -2,63 +2,54 @@
 
 vAZ.temp.players = {}
 
-
-local webhooklinkinventario = "https://discordapp.com/api/webhooks/738869325863190548/P19H81mAVlSflGm-NTu86I7wb672Lg-KaQyJxd910enr53m403EGA8I0uQ6Hk_d72GA-"
-local webhooklinkpagedown = "https://discordapp.com/api/webhooks/732314240010027048/zEnXIBKh3txDKB0z0nWDLNuEksQSRc47iQ8RJcqIlLPDZDI8b3uE_w_H-veid9jya1EA"
-local webhooklinkenviarmoney = "https://discordapp.com/api/webhooks/732772522667540570/WQNXlTCncD7XElLfyaiq5y4U9PEmgpMbgJeo3P1rfCuWZ5CKfFiEqsKIrLM1QpgfJGsp"
-local webhooklinkdropou = "https://discordapp.com/api/webhooks/721731913072508948/FyEy_dQc7ja6whR-dbgA28IDEWbhN2YE2IPto8Zi_uktZ0nMiXLTSIbr-aAvpFIPipt4"
-
-function SendWebhookMessage(webhook,message)
-	if webhook ~= nil and webhook ~= "" then
-		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-	end
-end
-
-
 vAZ.getPlayerInventory = function(target, weapons)
-    local inventory = {}
+    local items = {}
     local user_id = vRP.getUserId(target)
     local source = vRP.getUserSource(user_id)
     local money = vRP.getMoney(user_id)
     local identity = vRP.getUserIdentity(user_id)
-    if money > 0 then
-        local data = vAZ.items['money']
-        if data ~= nil then
-            table.insert(inventory, {item = 'money', label = data.label, usable = data.usable, dropable = data.dropable, weight = data.weight, photo = data.photo, amount = money, description = data.description})
+    local inventory = vRP.getInventory(user_id)
+    if inventory ~= nil then
+        if money > 0 then
+            local data = vAZ.items['money']
+            if data ~= nil then
+                table.insert(items, {item = 'money', label = data.label, sendable = data.sendable, usable = data.usable, dropable = data.dropable, weight = data.weight, photo = data.photo, amount = money, description = data.description})
+            end
         end
-    end
-    if identity ~= nil then
-        local data = vAZ.items['wcard']
-        if data ~= nil then
-            table.insert(inventory, {item = 'wcard', label = data.label, usable = data.usable, dropable = data.dropable, weight = data.weight, photo = data.photo, amount = 1, 
-                description = 'PASSAPORTE: '..user_id..' | RG: '..identity.registration..' | Nome: '..identity.name..' '..identity.firstname..' | Sexo: N/A | Idade: '..identity.age
-            })
+        if identity ~= nil then
+            local data = vAZ.items['wcard']
+            if data ~= nil then
+                table.insert(items, {item = 'wcard', label = data.label, sendable = data.sendable, usable = data.usable, dropable = data.dropable, weight = data.weight, photo = data.photo, amount = 1, 
+                    description = 'PASSAPORTE: '..user_id..' | RG: '..identity.registration..' | Nome: '..identity.name..' '..identity.firstname..' | Sexo: N/A | Idade: '..identity.age
+                })
+            end
         end
-    end
-    if weapons then
-        for k,v in pairs(vRPclient.replaceWeapons(source, {})) do
-            vRP.giveInventoryItem(user_id, "wbody|"..k, 1, false)
-            if v.ammo > 0 then
-                vRP.giveInventoryItem(user_id, "wammo|"..k, v.ammo, false)
+        if weapons and not vRP.hasPermission(user_id, 'servico.permissao') then
+            for k,v in pairs(vRPclient.replaceWeapons(source, {})) do
+                vRP.giveInventoryItem(user_id, "wbody|"..k, 1, false)
+                if v.ammo > 0 then
+                    vRP.giveInventoryItem(user_id, "wammo|"..k, v.ammo, false)
+                end
+            end
+        end
+        for item,details in pairs(inventory) do
+            local data = vAZ.items[item]
+            if data ~= nil then
+                table.insert(items, {
+                    item = item,
+                    label = data.label,
+                    sendable = data.sendable or false,
+                    usable = data.usable or false,
+                    dropable = data.dropable or false,
+                    weight = data.weight,
+                    photo = data.photo,
+                    amount = parseInt(details.amount),
+                    description = data.description
+                })
             end
         end
     end
-    for item,details in pairs(vRP.getInventory(user_id)) do
-        local data = vAZ.items[item]
-        if data ~= nil then
-            table.insert(inventory, {
-                item = item,
-                label = data.label,
-                usable = data.usable,                
-                dropable = data.dropable,
-                weight = data.weight,
-                photo = data.photo,
-                amount = parseInt(details.amount),
-                description = data.description
-            })
-        end
-    end
-    return {user = user_id, weight = vRP.getInventoryWeight(user_id), maxweight = vRP.getInventoryMaxWeight(user_id), items = inventory}
+    return {user = user_id, weight = vRP.getInventoryWeight(user_id), maxweight = vRP.getInventoryMaxWeight(user_id), items = items}
 end
 
 vAZ.sendPlayerItemToInspect = function(item, amount, player, target)
@@ -68,20 +59,21 @@ vAZ.sendPlayerItemToInspect = function(item, amount, player, target)
     local target_id = vRP.getUserId(target)
     local target_source = vRP.getUserSource(target_id)
     if player_source and target_source then
-        if vAZ.itemAllowed(item) then
+        if not vAZ.itemNotAllowed(item) then
             if item == 'money' then
                 if vRP.tryPayment(player_id, amount) then
                     if vAZ.config.logs then
                         vAZ.webhook('inspect', 'user_id: '..target_id..', enviou ('..amount..'x '..item..') pro user_id: '..player_id)
                     end
                     vRP.giveMoney(target_id, amount)
-					SendWebhookMessage(webhooklinkinventario,  "``` [" ..player_id.."] Enviou ["..target_id.."] R$:"..amount.. "```")
                 end
             else
                 if vRP.getInventoryWeight(target_id) + vAZ.items[item].weight * amount <= vRP.getInventoryMaxWeight(target_id) then
                     if vRP.tryGetInventoryItem(player_id, item, amount, false) then
+                        if vAZ.config.logs then
+                            vAZ.webhook('inspect', 'user_id: '..target_id..', enviou ('..amount..'x '..item..') pro user_id: '..player_id)
+                        end
                         vRP.giveInventoryItem(target_id, item, amount, false)
-						SendWebhookMessage(webhooklinkinventario,  "``` [" ..player_id.."] Enviou ["..target_id.."] Item: " ..item .. " Qnt: "..amount.. "```")
                     end
                 else
                     TriggerClientEvent('Notify', player_source, 'negado', 'Espaço na mochila da vitima insulficiente')
@@ -100,14 +92,13 @@ vAZ.sendInspectItemToPlayer = function(item, amount, player, target)
     local target_id = vRP.getUserId(target)
     local target_source = vRP.getUserSource(target_id)
     if player_source and target_source then
-        if vAZ.itemAllowed(item) then
+        if not vAZ.itemNotAllowed(item) then
             if item == 'money' then
                 if vRP.tryPayment(player_id, amount) then
                     if vAZ.config.logs then
                         vAZ.webhook('inspect', 'user_id: '..target_id..', pegou ('..amount..'x '..item..') do user_id: '..player_id)
                     end
                     vRP.giveMoney(target_id, amount)
-					SendWebhookMessage(webhooklinkpagedown,  "``` UserID: [" ..target_id..', pegou ('..amount..'x '..item..') do UserID: '..player_id.. "```")
                 end
             else
                 if vRP.getInventoryWeight(target_id) + vAZ.items[item].weight * amount <= vRP.getInventoryMaxWeight(target_id) then
@@ -116,7 +107,6 @@ vAZ.sendInspectItemToPlayer = function(item, amount, player, target)
                             vAZ.webhook('inspect', 'user_id: '..target_id..', pegou ('..amount..'x '..item..') do user_id: '..player_id)
                         end
                         vRP.giveInventoryItem(target_id, item, amount, false)
-						SendWebhookMessage(webhooklinkpagedown,  "``` UserID:[" ..target_id.."] pegou UserID: ["..player_id.."] Item: " ..item .. " Qnt: "..amount.. "```")
                     end
                 else
                     TriggerClientEvent('Notify', target_source, 'negado', 'Espaço na mochila insulficiente')
@@ -133,24 +123,11 @@ vAZ.dropPlayerItem = function(item, amount, coords)
     local source = source
     local user_id = vRP.getUserId(source)
     if not vRPclient.isInComa(source) and not vRPclient.isHandcuffed(source) then
-        if item == 'money' then
-            if vRP.tryPayment(user_id, amount) then
-                if vAZ.config.logs then
-                    vAZ.webhook('items', 'user_id: '..user_id..', dropou ('..amount..'x '..item..') nas cordenadas: '..coords.x..', '..coords.y..', '..coords.z)
-                end
-                TriggerEvent('az-drop:createDrop', source, item, amount, coords.x, coords.y, coords.z)
-				SendWebhookMessage(webhooklinkdropou,  "``` [" ..user_id.."] dropou Qnt:["..amount.."] Item:" ..item .. " nas coodenadas " ..coords.x..', '..coords.y..', '..coords.z.. "```")
-            else
-                TriggerClientEvent('Notify', source, 'negado', 'Você não tem esse dinheiro todo!')
+        if item == 'money' and vRP.tryPayment(user_id, amount) or vRP.tryGetInventoryItem(user_id, item, amount, false) then
+            if vAZ.config.logs then
+                vAZ.webhook('items', 'user_id: '..user_id..', dropou ('..amount..'x '..item..') nas cordenadas: '..coords.x..', '..coords.y..', '..coords.z)
             end
-        else
-            if vRP.tryGetInventoryItem(user_id, item, amount, false) then
-                if vAZ.config.logs then
-                    vAZ.webhook('items', 'user_id: '..user_id..', dropou ('..amount..'x '..item..') nas cordenadas: '..coords.x..', '..coords.y..', '..coords.z)
-                end
-                TriggerEvent('az-drop:createDrop', source, item, amount, coords.x, coords.y, coords.z)
-				SendWebhookMessage(webhooklinkdropou,  "``` [" ..user_id.."] dropou Qnt:["..amount.."] Item:" ..item .. " nas coodenadas " ..coords.x..', '..coords.y..', '..coords.z.. "```")
-            end
+            TriggerEvent('az-drop:createDrop', source, item, amount, coords.x, coords.y, coords.z)
         end
         vAZclient.updateInventory(source, 'player', source, vAZ.getPlayerInventory(source))
     end
@@ -169,7 +146,7 @@ vAZ.usablePlayerItem = function(item, amount)
             end)
         else
             if vAZ.items[item].type == 'food' then
-                if vRP.tryGetInventoryItem(user_id, item, amount, false) then
+                if vRP.tryGetInventoryItem(user_id, item, tonumber(amount), false) then
                     if vAZ.config.logs then
                         vAZ.webhook('items', 'user_id: '..user_id..', comeu ('..amount..'x '..item..')')
                     end
@@ -183,7 +160,7 @@ vAZ.usablePlayerItem = function(item, amount)
                     end)
                 end
             elseif vAZ.items[item].type == 'drink' then
-                if vRP.tryGetInventoryItem(user_id, item, amount, false) then
+                if vRP.tryGetInventoryItem(user_id, item, tonumber(amount), false) then
                     if vAZ.config.logs then
                         vAZ.webhook('items', 'user_id: '..user_id..', bebeu ('..amount..'x '..item..')')
                     end
@@ -196,44 +173,42 @@ vAZ.usablePlayerItem = function(item, amount)
                         vRP.varyThirst(user_id, vAZ.items[item].increase.thirst * amount)
                     end)
                 end
-            elseif vAZ.items[item].type == 'equipment' then
-                
             else
                 if vAZ.match(item, "wammo", string.gsub(item, "wammo|", "")) then
                     local wammo = splitString(item, '|')
                     if wammo[2] then
-                        if amount == 1 then
-                            amount = vRP.getInventoryItemAmount(user_id, item)
-                            if amount > 250 then
-                                amount = 250
-                            end
-                        end
-                        local uweapons = vRPclient.getWeapons(source)
-                        if uweapons[wammo[2]] then
-                            if vRP.tryGetInventoryItem(user_id, item, amount, false) then
-                                local weapons = {}
-                                weapons[wammo[2]] = {ammo = amount}
-                                vRPclient._giveWeapons(source, weapons, false)
-                                if vAZ.config.logs then
-                                    vAZ.webhook('items', 'user_id: '..user_id..', recarregou ('..amount..'x '..wammo[2]..')')
+                        if item == 'wammo|'..wammo[2] then
+                            local amount = vRP.getInventoryItemAmount(user_id, 'wammo|'..wammo[2])
+                            local ramount = tonumber(amount)
+                            local uweapons = vRPclient.getWeapons(source)
+                            if uweapons[wammo[2]] then
+                                if vRP.tryGetInventoryItem(user_id, 'wammo|'..wammo[2], ramount, true) then
+                                    local weapons = {}
+                                    weapons[wammo[2]] = {ammo = ramount}
+                                    vRPclient._giveWeapons(source, weapons, false)
+                                    if vAZ.config.logs then
+                                        vAZ.webhook('items', 'user_id: '..user_id..', recarregou ('..amount..'x '..wammo[2]..')')
+                                    end
                                 end
                             end
                         end
                     end
                 elseif vAZ.match(item, "wbody", string.gsub(item, "wbody|", "")) then
                     local wbody = splitString(item, '|')
-                    local uweapons = vRPclient.getWeapons(source)
-                    if not uweapons[wbody[2]] then
-                        if vRP.tryGetInventoryItem(user_id, item, amount, false) then
-                            local weapons = {}
-                            if wbody[2] == 'WEAPON_PETROLCAN' then
-                                weapons[wbody[2]] = {ammo = 4500}
-                            else
-                                weapons[wbody[2]] = {ammo = 0}
-                            end
-                            vRPclient._giveWeapons(source, weapons)
-                            if vAZ.config.logs then
-                                vAZ.webhook('items', 'user_id: '..user_id..', equipou ('..amount..'x '..wbody[2]..')')
+                    if item == 'wbody|'..wbody[2] then
+                        local uweapons = vRPclient.getWeapons(source)
+                        if not uweapons[wbody[2]] then
+                            if vRP.tryGetInventoryItem(user_id, 'wbody|'..wbody[2], tonumber(amount), true) then
+                                local weapons = {}
+                                if wbody[2] == 'WEAPON_PETROLCAN' then
+                                    weapons[wbody[2]] = {ammo = 4500}
+                                else
+                                    weapons[wbody[2]] = {ammo = 0}
+                                end
+                                vRPclient._giveWeapons(source, weapons)
+                                if vAZ.config.logs then
+                                    vAZ.webhook('items', 'user_id: '..user_id..', equipou ('..amount..'x '..wbody[2]..')')
+                                end
                             end
                         end
                     end
@@ -262,7 +237,6 @@ vAZ.givePlayerItem = function(item, amount)
                     vRP.giveMoney(target_id, amount)                    
                     TriggerClientEvent('Notify', source, 'sucesso', 'Dinheiro enviado R$'..vAZ.money(amount)..'.')
                     TriggerClientEvent('Notify', target_source, 'sucesso', 'Você recebeu R$'..vAZ.money(amount)..', do ID: '..user_id..'.')
-					SendWebhookMessage(webhooklinkenviarmoney,  "``` [" ..user_id.."] Enviou ["..target_id.."] R$:"..amount.. "```")
                 end
             else
                 if vRP.getInventoryWeight(target_id) + vAZ.items[item].weight * amount <= vRP.getInventoryMaxWeight(target_id) then
@@ -271,7 +245,6 @@ vAZ.givePlayerItem = function(item, amount)
                             vAZ.webhook('items', 'user_id: '..user_id..', enviou ('..amount..'x '..item..') pro user_id: '..target_id)
                         end
                         vRP.giveInventoryItem(target_id, item, amount, false)
-						SendWebhookMessage(webhooklinkinventario,  "``` [" ..user_id.."] Enviou ["..target_id.."] Item:" ..item .. " Qnt: "..amount.. "```")
                     end
                 end
             end

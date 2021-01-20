@@ -71,3 +71,50 @@ AddEventHandler('az-inventory:firework:startExplosion', function(x, y, z)
     vAZ.loadPtfx('proj_xmas_firework')
     StartNetworkedParticleFxNonLoopedAtCoord('scr_firework_xmas_repeat_burst_rgw', x, y, z, 0.0, 180.0, 0.0, 100.0, false, false, false, false)
 end)
+
+
+RegisterNetEvent('reparar')
+AddEventHandler('reparar',function()
+	local vehicle = vRP.getNearestVehicle(3)
+	if IsEntityAVehicle(vehicle) then
+		TriggerServerEvent("tryreparar",VehToNet(vehicle))
+	end
+end)
+
+RegisterNetEvent('syncreparar')
+AddEventHandler('syncreparar',function(index)
+	if NetworkDoesNetworkIdExist(index) then
+		local v = NetToVeh(index)
+		local fuel = GetVehicleFuelLevel(v)
+		if DoesEntityExist(v) then
+			if IsEntityAVehicle(v) then
+				SetVehicleFixed(v)
+				SetVehicleDirtLevel(v, 0.0)
+				SetVehicleUndriveable(v, false)
+				Citizen.InvokeNative(0xAD738C3085FE7E11, v, true, true)
+				SetVehicleOnGroundProperly(v)
+				SetVehicleFuelLevel(v, fuel)
+			end
+		end
+	end
+end)
+
+RegisterNetEvent('repararmotor')
+AddEventHandler('repararmotor',function()
+	local vehicle = vRP.getNearestVehicle(3)
+	if IsEntityAVehicle(vehicle) then
+		TriggerServerEvent("trymotor", VehToNet(vehicle))
+	end
+end)
+
+RegisterNetEvent('syncmotor')
+AddEventHandler('syncmotor',function(index)
+	if NetworkDoesNetworkIdExist(index) then
+		local v = NetToVeh(index)
+		if DoesEntityExist(v) then
+			if IsEntityAVehicle(v) then
+				SetVehicleEngineHealth(v, 1000.0)
+			end
+		end
+	end
+end)

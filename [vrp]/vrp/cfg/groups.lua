@@ -1446,138 +1446,6 @@ cfg.groups = {
 	"player.blips",
   }, 
  
------------------------------------------ Policia Civil ---------------------------------------------
-
-  ["[PCRJ] - Delegado Geral"] = {
-    _config = {
-      gtype = "cargo",
-      onjoin = function(player) vRPclient._setCop(player,true) end,
-      onspawn = function(player) vRPclient._setCop(player,true) end,
-      onleave = function(player) vRPclient._setCop(player,false) end
-    },
-	"mission.policia",
-	"coronelpm.paycheck",
-	"policia.permissao",
-	"pm3.whitelisted",
-	"portas.policia",
-	"pctoogle.permissao",
-	"pcerjradio.permissao",
-	"policiaradio.permissao",
-	"operacao.permissao",
-	"polpar.permissao",
-	"police.assalto",
-	"bau.pc",
-	"naotoma.multa",
-    "police.menu",
-	"police.spikes",
-    "police.pc",
-	"police.freeze",
-	"police.jail",
-	"police.bmjail",
-	"police.bmfine",
-	"polpar1.permissao",
-	"policiachat.permissao",
-	"police.bmunjail",
-	"polparcarregar.permissao",
-	"police.bmcuff",
-	"policiacivil.permissao",
-	"police.fine",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize.weapons",
-	"policiachamado.permissao",
-    "police.seize.items",
-	"police.asklc",
-    "police.announce",
-    "-police.seizable",
-	-- NOVOS
-	"helipc.permissao",
-	"carropc.permissao",
-	"pcivil.permissao",
-	-- Salario
-	"DelegadoGeralPC.permissao",
-	"pmerj.permissao",
-	"player.blips",
-  },
-
-  ["[PCRJ] - Agente"] = {
-    _config = {
-      gtype = "cargo",
-      onjoin = function(player) vRPclient._setCop(player,true) end,
-      onspawn = function(player) vRPclient._setCop(player,true) end,
-      onleave = function(player) vRPclient._setCop(player,false) end
-    },
-	"mission.policia",
-	"coronelpm.paycheck",
-	"policiachamado.permissao",
-	"policia.permissao",
-	"polpar.permissao",
-	"pm3.whitelisted",
-	"portas.policia",
-	"police.assalto",
-	"pcerjradio.permissao",
-	"policiaradio.permissao",
-	"polpar1.permissao",
-	"bau.pc",
-	"naotoma.multa",
-	"pcagentetoogle.permissao",
-    "police.menu",
-	"police.spikes",
-    "police.pc",
-	"policiachat.permissao",
-	"police.freeze",
-	"police.jail",
-	"operacao.permissao",
-	"police.bmjail",
-	"police.bmfine",
-	"police.bmunjail",
-	"polparcarregar.permissao",
-	"policiacivil.permissao",
-	"police.bmcuff",
-	"police.fine",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize.weapons",
-    "police.seize.items",
-	"police.asklc",
-    "police.announce",
-    "-police.seizable",
-	-- NOVOS
-	"helipc.permissao",
-	"carropc.permissao",
-	"pcivil.permissao",
-	-- Salario
-	"EscrivaoPC.permissao",
-	"player.blips",
-  },
-  
-  ["PaisanaPCDelegado"] = {
-		_config = {
-			title = "À Paisana PCERJ",
-			gtype = "cargo"
-		},
-		"paisanapc.permissao",
-		"policiachat.permissao",
-		"player.blips",
-	},
-	["PaisanaPCAgente"] = {
-		_config = {
-			title = "À Paisana PCERJ",
-			gtype = "cargo"
-		},
-		"paisanapcagente.permissao",
-		"player.blips",
-		"policiachat.permissao"
-	},
- 
 
 ----------------------------------------- Policia Rodoviaria ---------------------------------------------  
  
@@ -1853,12 +1721,12 @@ cfg.groups = {
 		"policiachat.permissao"
 	},
   
------------------------------------------ MotoClub --------------------------------------------- 
+----------------------------------------- ILEGAL --------------------------------------------- 
   
-  ["[P.C.C] - Lider"] = {
+  ["[AZUL] - Lider"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~PCC") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~AZUL") end
     },
 	"fac.armas",
 	-----------------
@@ -1880,10 +1748,10 @@ cfg.groups = {
 	"pccfarm.permissao",
 	"bau.pcc",
   },
-  ["[P.C.C] - Gerente"] = {
+  ["[AZUL] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~PCC") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~AZUL") end
     },
 	"fac.armas",
 	-----------------
@@ -1904,10 +1772,10 @@ cfg.groups = {
 	"pccfarm.permissao",
 	"bau.pcc",
   },
-  ["[P.C.C] - Membro"] = {
+  ["[AZUL] - Membro"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~PCC") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~AZUL") end
     },
 	"fac.armas",
 	-----------------
@@ -1927,79 +1795,10 @@ cfg.groups = {
     "police.check",
 	"pccfarm.permissao",
   },
-  ["[T.C.A] - Lider"] = {
+  ["[VERMELHO] - Lider"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~T.C.A") end
-    },
-	"fac.armas",
-	-----------------
-	"hacker.service",
-	"contrabandista.service",
-	"tartaruga.service",
-	"metanfetamina.service",
-	"cocaina.service",
-	"maconha.service",
-	"bau.tca",
-	-----------------
-	"police.menu",
-	"police.bmcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-	"tcafarm.permissao",
-	"contratar.tca",
-  },  
-  ["[T.C.A] - Gerente"] = {
-    _config = { 
-		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um Gerente do ~r~T.C.A") end
-    },
-	"fac.armas",
-	-----------------
-	"hacker.service",
-	"contrabandista.service",
-	"tartaruga.service",
-	"metanfetamina.service",
-	"cocaina.service",
-	"maconha.service",
-	"bau.tca",
-	-----------------
-	"police.menu",
-	"police.bmcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-	"tcafarm.permissao",
-  }, 
-  ["[T.C.A] - Membro"] = {
-    _config = { 
-		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um Membro do ~r~T.C.A") end
-    },
-	"fac.armas",
-	-----------------
-	"hacker.service",
-	"contrabandista.service",
-	"tartaruga.service",
-	"metanfetamina.service",
-	"cocaina.service",
-	"maconha.service",
-	-----------------
-	"police.menu",
-	"police.bmcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-	"tcafarm.permissao",
-  },
-  ["[C.V] - Lider"] = {
-    _config = { 
-		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~CV") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~VERMELHO") end
     },
 	"fac.armas",
 	-----------------
@@ -2022,10 +1821,10 @@ cfg.groups = {
     "police.check",
 	"cvfarm.permissao",
   },  
-  ["[C.V] - Gerente"] = {
+  ["[VERMELHO] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um gerente do ~r~CV") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um gerente do ~r~VERMELHO") end
     },
 	"fac.armas",
 	-----------------
@@ -2046,10 +1845,10 @@ cfg.groups = {
     "police.check",
 	"cvfarm.permissao",
   },  
-  ["[C.V] - Membro"] = {
+  ["[VERMELHO] - Membro"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~CV") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~VERMELHO") end
     },
 	"fac.armas",
 	-----------------
@@ -2069,10 +1868,10 @@ cfg.groups = {
     "police.check",
 	"cvfarm.permissao",
   },  
-  ["[T.C.P] - Lider"] = {
+  ["[VERDE] - Lider"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~TCP") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~VERDE") end
     },
 	"fac.armas",
 	-----------------
@@ -2095,10 +1894,10 @@ cfg.groups = {
 	"tcpfarm.permissao",
 	"bau.tcp",
   },  
-  ["[T.C.P] - Gerente"] = {
+  ["[VERDE] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um gerente do ~r~TCP") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um gerente do ~r~VERDE") end
     },
 	"fac.armas",
 	-----------------
@@ -2119,10 +1918,10 @@ cfg.groups = {
 	"tcpfarm.permissao",
 	"bau.tcp",
   },  
-  ["[T.C.P] - Membro"] = {
+  ["[VERDE] - Membro"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~TCP") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~VERDE") end
     },
 	"fac.armas",
 	-----------------
@@ -2142,10 +1941,10 @@ cfg.groups = {
     "police.check",
 	"tcpfarm.permissao",
   },  
-  ["[A.D.A] - Lider"] = {
+  ["[LARANJA] - Lider"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider da ~r~ADA") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um lider da ~r~LARANJA") end
     },
 	"fac.armas",
 	-----------------
@@ -2168,10 +1967,10 @@ cfg.groups = {
 	"adaarma.permissao",
 	"bau.ada",
   },  
-  ["[A.D.A] - Gerente"] = {
+  ["[LARANJA] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um gerente da ~r~ADA") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um gerente da ~r~LARANJA") end
     },
 	"fac.armas",
 	-----------------
@@ -2193,10 +1992,10 @@ cfg.groups = {
 	"adaarma.permissao",
 	"bau.ada",
   },  
-  ["[A.D.A] - Membro"] = {
+  ["[LARANJA] - Membro"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro da ~r~ADA") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro da ~r~LARANJA") end
     },
 	"fac.armas",
 	-----------------
@@ -2217,7 +2016,7 @@ cfg.groups = {
     "police.check",
 	"adafarm.permissao",
   },
-  ["[Milicia] - Lider"] = {
+  ["[MILICIA] - Lider"] = {
     _config = { 
 		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"Você é um ~y~miliciano") end
@@ -2252,7 +2051,7 @@ cfg.groups = {
 	"bau.milicia",
 	"milicia.permissao",
   },  
-  ["[Milicia] - Gerente"] = {
+  ["[MILICIA] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"Você é um ~y~miliciano") end
@@ -2286,7 +2085,7 @@ cfg.groups = {
 	"bau.milicia",
 	"milicia.permissao",
   },  
-  ["[Milicia] - Membro"] = {
+  ["[MILICIA] - Membro"] = {
     _config = { 
 		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"Você é um ~y~miliciano") end
@@ -2319,11 +2118,11 @@ cfg.groups = {
 	"miliciafarm.permissao",
 	"milicia.permissao",
   },
-  ---------- Vanilla
-  ["[Vanilla] - Lider"] = {
+  ---------- UNKTEC
+  ["[UNKTEC] - Lider"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~Vanilla") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~UNKTEC") end
     },
 	"fac.armas",
 	"mercadonegro.permissao",
@@ -2348,10 +2147,10 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
   },
-  ["[Vanilla] - Gerente"] = {
+  ["[UNKTEC] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um Gerente do ~r~Vanilla") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um Gerente do ~r~UNKTEC") end
     },
 	"fac.armas",
 	"mercadonegro.permissao",
@@ -2375,10 +2174,10 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
   },
-  ["[Vanilla] - Membro"] = {
+  ["[UNKTEC] - Membro"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um Membro do ~r~Vanilla") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um Membro do ~r~UNKTEC") end
     },
 	"fac.armas",
 	"mercadonegro.permissao",
@@ -2606,7 +2405,7 @@ cfg.groups = {
   },  
   
   -- DRIFT KING
-  ["[D.K] - Lider"] = {
+  ["[LR] - Lider"] = {
     _config = { 
 		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"Você é um lider da ~r~DK") end
@@ -2635,7 +2434,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check"
   },  
-  ["[D.K] - Gerente"] = {
+  ["[LR] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"Você é um Gerente da ~r~DK") end
@@ -2663,7 +2462,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check"
   },
-  ["[D.K] - Membro"] = {
+  ["[LR] - Membro"] = {
     _config = { 
 		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"Você é um membro da ~r~DK") end
@@ -2691,10 +2490,10 @@ cfg.groups = {
     "police.check"
   },
   
-  ["[MOTOCLUB] - Lider"] = {
+  ["[MOTOCLUBE] - Lider"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~TCP") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um lider do ~r~MC") end
     },
 	"fac.armas",
 	"mercadonegro.permissao",
@@ -2728,10 +2527,10 @@ cfg.groups = {
 	"bau.mc",
 	"mcfarm.permissao",
   },  
-  ["[MOTOCLUB] - Gerente"] = {
+  ["[MOTOCLUBE] - Gerente"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um gerente do ~r~TCP") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um gerente do ~r~MC") end
     },
 	"fac.armas",
 	"mercadonegro.permissao",
@@ -2762,10 +2561,10 @@ cfg.groups = {
 	"bau.mc",
 	"mcfarm.permissao",
   },  
-  ["[MOTOCLUB] - Membro"] = {
+  ["[MOTOCLUBE] - Membro"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~TCP") end
+		onspawn = function(player) vRPclient._notify(player,"Você é um membro do ~r~MC") end
     },
 	"fac.armas",
 	"mercadonegro.permissao",
@@ -2793,84 +2592,8 @@ cfg.groups = {
 	"entrada.permissao",
 	"motoclub.permissao",
   },  
-  
-  
-  
-  
-  
-  ["[COSA NOSTRA] - Lider"] = {
-    _config = { 
-		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um lider da ~r~ADA") end
-    },
-	"fac.armas",
-	"mercadonegro.permissao",
-	-----------------
-	"contratar.mafia",
-	"hacker.service",
-	"contrabandista.service",
-	"tartaruga.service",
-	"metanfetamina.service",
-	"cocaina.service",
-	"maconha.service",
-	-----------------
-	"build.gun.cosanostra", -- ITEM TRANSFORME
-	"police.menu",
-	"police.bmcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-  },  
-  ["[COSA NOSTRA] - Gerente"] = {
-    _config = { 
-		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um gerente da ~r~ADA") end
-    },
-	"fac.armas",
-	"mercadonegro.permissao",
-	-----------------
-	"hacker.service",
-	"contrabandista.service",
-	"tartaruga.service",
-	"metanfetamina.service",
-	"cocaina.service",
-	"maconha.service",
-	-----------------
-	"build.gun.cosanostra", -- ITEM TRANSFORME
-	"police.menu",
-	"police.bmcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-  },  
-  ["[COSA NOSTRA] - Membro"] = {
-    _config = { 
-		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"Você é um membro da ~r~ADA") end
-    },
-	"fac.armas",
-	"mercadonegro.permissao",
-	-----------------
-	"hacker.service",
-	"contrabandista.service",
-	"tartaruga.service",
-	"metanfetamina.service",
-	"cocaina.service",
-	"maconha.service",
-	-----------------
-	"build.gun.cosanostra", -- ITEM TRANSFORME
-	"police.menu",
-	"police.bmcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-  },
-  --== EMPREGOS LEGAIS ==--
-  --== EMPREGOS LEGAIS ==--
-  --== EMPREGOS LEGAIS ==--
+
+----------------------------------------- EMPREGOS LEGAIS --------------------------------------------- 
   
   ["Taxi"] = {
 	_config = { gtype = "cargo" },
@@ -2890,7 +2613,7 @@ cfg.groups = {
 	"taxista.permissao"
   },
   
-   ["Bennys Dono"] = {
+  ["[SR] - Dono"] = {
     _config = { gtype = "cargo" },
 	"mecanico.permissao",
     "mecanico.service",
@@ -2900,37 +2623,57 @@ cfg.groups = {
 	"vehicle.repair",
     "vehicle.replace",
 	"mission.mecanico",
-	"mecanicopay.permissao",
-	"bennyscar.permissao",
-	"bennystoogledono.permissao",
-	"player.blips",
-	"contratar.ada",
-  },
-  ["PaisanaBennys Dono"] = {
-		_config = {
-			title = "À Paisana Bennys",
-			gtype = "cargo"
-		},
-		"paisanabennysdono.permissao",
-		"player.blips",
-	},
-  
-  ["Bennys"] = {
-    _config = { gtype = "cargo" },
-	"mecanico.permissao",
-    "mecanico.service",
-	"mecanico.kit",
-	"mecanico.garagem",
-	"mecanico.cloakroom",
-	"vehicle.repair",
-    "vehicle.replace",
-	"mission.mecanico",
-	"mecanicopay.permissao",
+	"srdono.permissao",
 	"bennyscar.permissao",
 	"player.blips",
 	"bennystoogle.permissao"
   },
-  ["PaisanaBennys"] = {
+    ["[SR] - Gerente"] = {
+    _config = { gtype = "cargo" },
+	"mecanico.permissao",
+    "mecanico.service",
+	"mecanico.kit",
+	"mecanico.garagem",
+	"mecanico.cloakroom",
+	"vehicle.repair",
+    "vehicle.replace",
+	"mission.mecanico",
+	"srgerente.permissao",
+	"bennyscar.permissao",
+	"player.blips",
+	"bennystoogle.permissao"
+  },
+    ["[SR] - Mecanico"] = {
+    _config = { gtype = "cargo" },
+	"mecanico.permissao",
+    "mecanico.service",
+	"mecanico.kit",
+	"mecanico.garagem",
+	"mecanico.cloakroom",
+	"vehicle.repair",
+    "vehicle.replace",
+	"mission.mecanico",
+	"srmecanico.permissao",
+	"bennyscar.permissao",
+	"player.blips",
+	"bennystoogle.permissao"
+  },
+    ["[SR] - Aux Mecanico"] = {
+    _config = { gtype = "cargo" },
+	"mecanico.permissao",
+    "mecanico.service",
+	"mecanico.kit",
+	"mecanico.garagem",
+	"mecanico.cloakroom",
+	"vehicle.repair",
+    "vehicle.replace",
+	"mission.mecanico",
+	"srauxmecanico.permissao",
+	"bennyscar.permissao",
+	"player.blips",
+	"bennystoogle.permissao"
+  },
+  ["PaisanaSR"] = {
 		_config = {
 			title = "À Paisana Bennys",
 			gtype = "cargo"
@@ -2938,28 +2681,6 @@ cfg.groups = {
 		"paisanabennys.permissao",
 		"player.blips",
 	},
-	
-  
-  ["Mecânico"] = {
-    _config = { gtype = "cargo" },
-	"mecanico.permissao",
-    "mecanico.service",
-	"mecanico.kit",
-	"mecanico.garagem",
-	"mecanico.cloakroom",
-	"vehicle.repair",
-    "vehicle.replace",
-	"mission.mecanico",
-	"mecanicopay.permissao",
-	"player.blips",
-
-  },
-    
-  -- ["Motorista de Onibus"] = {
-    -- _config = { gtype = "job" },
-	-- "onibus.service",
-    -- "onibus.paycheck",
-  -- },
   
   ["Pescador"] = {
     _config = { gtype = "job" },
@@ -2973,14 +2694,7 @@ cfg.groups = {
     "leiteiro.service",
 	"leiteiro.paycheck",
   },
-  
-  -- ["Transportador de Valores"] = {
-    -- _config = { gtype = "job" },
-	-- "valores.service",
-	-- "valores.garagem",
-	-- "valores.paycheck",
-  -- },
-  
+    
   ["Entregador iFood"] = {
     _config = { gtype = "job" },
 	"mission.entregador",
@@ -2989,65 +2703,33 @@ cfg.groups = {
 	"entregador.garagem",
 	"entregador.paycheck",
   },
-  
-  ["Farmaceutico"] = {
-    _config = { gtype = "job" },
-    "farmaceutico.service",
-	"farmaceutico.paycheck",
-  },
-  
+    
   ["Minerador de Diamante"] = {
-	_config = { gtype = "cargo" },
+	_config = { gtype = "job" },
     "diamante.service",
 	"diamante.paycheck",
   },
   
   ["Minerador de Ouro"] = {
-	_config = { gtype = "cargo" },
+	_config = { gtype = "job" },
     "ouro.service",
 	"ouro.paycheck",
   },
   
   ["Minerador de Cobre"] = {
-	_config = { gtype = "cargo" },
+	_config = { gtype = "job" },
     "cobre.service",
 	"cobre.paycheck",
   },
   
-  ["Catador de Trigo"] = {
-	_config = { gtype = "job" },
-    "trigo.service",
-	"trigo.paycheck",
-  },
-  
-  ["Garimpeiro de Sal"] = {
-	_config = { gtype = "job" },
-    "sal.service",
-	"sal.paycheck",
-  },
-  
   ["Caminhoneiro"] = {
-	_config = { gtype = "cargo" },
+	_config = { gtype = "job" },
     "caminhoneiro.service",
 	"caminhoneiro.paycheck",
   },
-  
-  ["Psicologo"] = {
-    _config = { gtype = "job" },
-	"psicologo.service",
-	"psicologo.paycheck",
-  },
-  
-  ["Prostituta"] = {
-    _config = { gtype = "job" },
-    "prostituta.cloakroom",
-	"prostituta.service",
-	"prostituta.paycheck",
-  },
-  
+
 ----------------------------------------- Jornalista --------------------------------------------- 
-  
-  ["Jornalista"] = {
+   ["Jornalista"] = {
     _config = { gtype = "cargo"},
     "jornal.garagem",
 	"jornal.service",
@@ -3055,10 +2737,9 @@ cfg.groups = {
     "jornalista.paycheck",
 	"jornal.whitelisted",
 	"weazel.permissao",
-	-- Salario
 	"Jornalista.permissao"
   },
-  ["Repórter"] = {
+  ["Redator"] = {
     _config = { gtype = "cargo"},
 	"jornal.garagem",
 	"jornal.service",
@@ -3066,7 +2747,6 @@ cfg.groups = {
     "reporter.paycheck",
 	"jornal.whitelisted",
 	"weazel.permissao",
-	-- Salario
 	"Reporter.permissao"
   },
   ["Diretor do Jornal"] = {
@@ -3077,7 +2757,6 @@ cfg.groups = {
     "diretorjornal.paycheck",
 	"jornal.whitelisted",
 	"weazel.permissao",
-	-- Salario
 	"DiretorJornal.permissao"
   },
   
@@ -3095,7 +2774,6 @@ cfg.groups = {
 	"advogado.cloakroom",
 	"advogado.paycheck",
 	"adv.whitelisted",
-	-- Salario
 	"Advogado.permissao"
   },
   ["ADVOGADO"] = {
@@ -3110,22 +2788,23 @@ cfg.groups = {
 	"advogado.cloakroom",
 	"advogado.paycheck",
 	"adv.whitelisted",
-	-- Salario
+	"Advogadopagamento.permissao",
 	"Advogado.permissao"
   },
-  ["Presidente da Justiça"] = {
+  ["Presidente da OAB"] = {
     _config = { 
 		gtype = "cargo",
-		onspawn = function(player) vRPclient._notify(player,"À serviço da lei como ~b~Presidente da Justiça.") end
+		onspawn = function(player) vRPclient._notify(player,"À serviço da lei como ~b~ Presidente da OAB.") end
 	},
-	"advogado.garagem",
+	"advogado.vehicle",
 	"advogado.service",
 	"advogado.oab",
+	"advogado.permissao",
 	"advogado.cloakroom",
-	"presidentej.paycheck",
+	"advogado.paycheck",
 	"adv.whitelisted",
-	-- Salario
-	"PresidenteDaJustica.permissao"
+	"Advogado.permissao",
+	"PresidenteDaOAB.permissao"
   },
   ["Promotor de Justiça"] = {
     _config = { 
@@ -3138,7 +2817,6 @@ cfg.groups = {
 	"advogado.cloakroom",
 	"promotorj.paycheck",
 	"adv.whitelisted",
-	-- Salario
 	"PromotorDaJustica.permissao"
   },
   
@@ -3209,24 +2887,10 @@ cfg.groups = {
     _config = { gtype = "job" },
 	"metanfetamina.service",
   },
-  
-  -- ["Traficante de Ecstasy"] = {
-    -- _config = { gtype = "job" },
-	-- "ecstasy.service",
-  -- },
-  
+
   ["Traficante de Tartaruga"] = {
 	_config = { gtype = "job" },
     "tartaruga.service",
-  },
-  
-  ["Contrabandista de Armas"] = {
-    _config = { 
-		gtype = "job",
-		onspawn = function(player) vRPclient._notify(player,"Contrabandista de Armas.") end
-	},
-	"mission.armas",
-    "contrabandista.service"
   },
   
   ["Hacker"] = {
@@ -3238,11 +2902,6 @@ cfg.groups = {
 	"hacker.hack"
   },
   
-  ["Ladrão de carros"] = {
-    _config = { gtype = "job" },
-	"mission.ladrao",
-	"mugger.mug"
-  },
   
 ----------------------------------------- VIPS --------------------------------------------- 
   
@@ -3343,18 +3002,12 @@ cfg.selectors = {
   ["Agência de Empregos"] = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 351, blipcolor = 47},
 	"UBER",
-    "Mecânico",
 	"Entregador iFood",
 	"Pescador",
-	"Farmaceutico",
 	"Leiteiro",
 	"Minerador de Diamante",
 	"Minerador de Ouro",
 	"Minerador de Cobre",
-	"Catador de Trigo",
-	"Garimpeiro de Sal",
-	"Prostituta",
-	"Psicologo",
 	"Caminhoneiro",
     "Desempregado"
   },

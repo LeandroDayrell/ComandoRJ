@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body style="background-color: transparent;display: none;">
+    <div class="container">
+        <header>
+            <div class="header_title">
+                <img src="https://media.discordapp.net/attachments/712795746633515099/713426754336849950/512x_bg.png?width=499&height=499" style="width: 49px;"> 
+                <p style="text-transform: uppercase;font-weight: 600;display: none;">Unknown</p>
+            </div>
+        </header>
+        <div class="section_content">
+            <div class="section_content_all">
+                <div class="section_content_header">
+                    <div class="section_content_search">
+                        <input placeholder="Procurar veículo...">
+                        <i class="icon far fa-search"></i>
+                    </div>
+                </div>
+                <div class="section_content_itens">
+                </div>
+            </div>
+        </div>
+        <div class="actions" style="padding: 0 15px 0 15px">
+            <button onclick="garage.spawn();" disabled>
+                <span class="material-icons" style="margin-right: 3px;font-size: 18px;margin-top: -1px;">alt_route</span> Retirar
+            </button>
+            <button onclick="garage.despawn();" disabled>
+                <span class="material-icons" style="margin-right: 2px;font-size: 22px;margin-top: -2px;">transit_enterexit</span> Guardar
+            </button>
+            <button onclick="garage.fare();" disabled>
+                <span class="material-icons" style="margin-right: 6px;font-size: 19px;margin-top: -2px;">payments</span> Pagar
+            </button>
+        </div>
+    </div>
+    <div class="infocar container" style="color:#fff;left: -433px;font-family: 'Bebas Neue';font-size: 25px;padding: 20px;border-radius: 5px;display: none;height: unset;min-height: 620px;">   
+        <div class="loading">
+            <img src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif" width="100" />
+        </div>
+        <div class="vehicle" style="display: none;">
+            <div class="title">
+                <span>Informações do veiculo</span>
+            </div>
+            <div class="imgcar">
+                <img src="https://img2.pngio.com/ferrari-599xx-evo-programme-racing-with-ferrari-ferrari-599xx-png-469_202.png" style="width: 340px;" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';">
+            </div>
+            <div class="infocar" style="margin-top: -2px;">
+                <b>Kuruma</b>
+                <br>
+                <div class="description" style="text-transform: inherit;font-family: 'Poppins', sans-serif;font-size: 12px;letter-spacing: normal;display: inline-block;word-break: break-word;max-height: 100px;overflow-y: scroll;">
+                    <span style="color: #ffffff80;"></span>  
+                </div>
+            </div>
+            <div class="details" style="display: grid;margin-top: 5px;">
+                <div class="tax multa">
+                    <a>Taxa</a>
+                    <span>-</span>
+                </div>
+                <div class="fare multa">
+                    <a>Liberação</a>
+                    <span>-</span>
+                </div>
+                <div class="ipva multa">
+                    <a>IPVA</a>
+                    <span>-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

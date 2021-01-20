@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="ui.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="actionmenu">
+			<div id="mainmenu">
+				<button class="menuoption" data-sub="itensjornal">Jornal e Carteira de Imprensa</button>
+				<button class="menuoption" data-action="fechar">Fechar</button>
+			</div>
+
+			<div data-parent="mainmenu" id="itensjornal" style="display: none;">
+				<button class="menuoption" data-sub="itensjornal-comprar">Pegar Carteira de Imprensa</button>
+				<button class="menuoption" data-sub="jornal-vender">Compras Jornal</button>
+			</div>
+			<div data-parent="mainmenu" id="itensjornal-comprar" style="display: none;">
+				<button class="menuoption" data-action="itensjornal-comprar-carteiraimprensa"><l>Carteira Imprensa</l><r>R$200.00</r></button>
+			</div>
+			<div data-parent="mainmenu" id="jornal-vender" style="display: none;">
+				<button class="menuoption" data-action="itensjornal-comprar-jornal"><l>Jornal x10</l><r>R$100.00</r></button>
+			</div>
+		</div>
+		<script src="ui.js" type="text/javascript"></script>
+	</body>
+</html>

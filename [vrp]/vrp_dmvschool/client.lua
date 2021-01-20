@@ -18,7 +18,7 @@
 
 
 function startIntro()
-	start_pos = GetEntityCoords(GetPlayerPed(-1))
+	start_pos = GetEntityCoords(PlayerPedId())
 	DIntro() 
 	tlock = false
 end
@@ -45,7 +45,7 @@ function vRPdmv.startTheory()
 end
 
 function vRPdmv.startPractical()
-	start_pos = GetEntityCoords(GetPlayerPed(-1))
+	start_pos = GetEntityCoords(PlayerPedId())
 	onTestBlipp = AddBlipForCoord(cfg.practical.steps[1].pos[1],cfg.practical.steps[1].pos[2],cfg.practical.steps[1].pos[3])
 	N_0x80ead8e2e1d5d52e(onTestBlipp)
 	SetBlipRoute(onTestBlipp, 1)

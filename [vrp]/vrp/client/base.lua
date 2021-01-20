@@ -28,7 +28,7 @@ function tvRP.getPosition()
 end
 
 function tvRP.getSpeed()
-  local vx,vy,vz = table.unpack(GetEntityVelocity(GetPlayerPed(-1)))
+  local vx,vy,vz = table.unpack(GetEntityVelocity(PlayerPedId()))
   return math.sqrt(vx*vx+vy*vy+vz*vz)
 end
 

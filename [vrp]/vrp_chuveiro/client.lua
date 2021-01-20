@@ -18,7 +18,7 @@ Citizen.CreateThread(function()
     while true do
     local crjSleep = 500
         for k,v in pairs(chuveiros) do
-            local ped = GetPlayerPed(-1)
+            local ped = PlayerPedId()
             local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
             local distance = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
@@ -40,7 +40,7 @@ Citizen.Wait(crjSleep)
 end)
 
 RegisterCommand("chuveiro",function()
-    local ped = GetPlayerPed(-1)
+    local ped = PlayerPedId()
     ClearPedBloodDamage(ped)
     --print("limpado")
 end)

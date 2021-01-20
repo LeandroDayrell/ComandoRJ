@@ -198,45 +198,13 @@ Citizen.CreateThread(function()
         	end
 		end
 
-		-- AGUARDAR (F2)
-		if IsControlJustPressed(0,289) and IsInputDisabled(0) then
-			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 101 and not menu_state.opened and not menu_celular then
-				if IsEntityPlayingAnim(ped,"mini@strip_club@idles@bouncer@base","base",3) then
-					StopAnimTask(ped,"mini@strip_club@idles@bouncer@base","base",2.0)
-					tvRP.stopAnimActived()
-				else
-					tvRP.playAnim(true,{"mini@strip_club@idles@bouncer@base","base"},true)
-				end
-        	end
-		end
-
-		-- DEDO DO MEIO (F3)
-		if IsControlJustPressed(0,170) and IsInputDisabled(0) then
-			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 101 and not menu_state.opened and not menu_celular then
+		 --DEDO DO MEIO (F3)
+		if IsControlJustPressed(0,170) then
+			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 100 and not menu_state.opened and not menu_celular then
 				if IsEntityPlayingAnim(ped,"anim@mp_player_intupperfinger","idle_a_fp",3) then
-					StopAnimTask(ped,"anim@mp_player_intupperfinger","idle_a_fp",2.0)
-					tvRP.stopAnimActived()
+					tvRP.DeletarObjeto()
 				else
-					tvRP.playAnim(true,{"anim@mp_player_intupperfinger","idle_a_fp"},true)
-				end
-        	end
-		end
-		
-		-- AJOELHAR (F5)
-		if IsControlJustPressed(0,166) and IsInputDisabled(0) then
-			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 101 and not menu_state.opened and not menu_celular then
-				if IsEntityPlayingAnim(ped,"random@arrests@busted","idle_a",3) then
-					StopAnimTask(ped,"random@arrests@busted","idle_a",2.0)
-					tvRP.stopAnimActived()
-				else
-					tvRP.playAnim(false,{"random@arrests","idle_2_hands_up"},false)
-					Citizen.Wait(4000)
-					tvRP.playAnim(false,{"random@arrests","kneeling_arrest_idle"},false)
-					Citizen.Wait(500)
-					tvRP.playAnim(false,{"random@arrests@busted","enter"},false)
-					Citizen.Wait(1000)
-					tvRP.playAnim(false,{"random@arrests@busted","idle_a"},true)
-					Citizen.Wait(100)
+					tvRP.playAnim(true,{{"anim@mp_player_intupperfinger","idle_a_fp"}},true)
 				end
         	end
 		end
@@ -298,7 +266,6 @@ Citizen.CreateThread(function()
 			if GetEntityHealth(ped) > 100 then
 				if not menu_state.opened then
 					tvRP.DeletarObjeto()
-					tvRP.DeleteCam()
 					ClearPedTasks(ped)
 				end
 			end

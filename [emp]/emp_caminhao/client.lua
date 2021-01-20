@@ -48,9 +48,9 @@ local gas = {
 	[12] = { ['x'] = -1803.10, ['y'] = 800.33, ['z'] = 138.51 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
--- CARS
+-- carros
 -----------------------------------------------------------------------------------------------------------------------------------------
-local cars = {
+local carros = {
 	[1] = { ['x'] = -774.19, ['y'] = -254.45, ['z'] = 37.10 },
 	[2] = { ['x'] = -231.64, ['y'] = -1170.94, ['z'] = 22.83 },
 	[3] = { ['x'] = 925.59, ['y'] = -8.79, ['z'] = 78.76 },
@@ -58,9 +58,9 @@ local cars = {
 	[5] = { ['x'] = 1209.15, ['y'] = 2712.03, ['z'] = 38.00 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
--- WOODS
+-- madeira
 -----------------------------------------------------------------------------------------------------------------------------------------
-local woods = {
+local madeira = {
 	[1] = { ['x'] = -581.20, ['y'] = 5317.28, ['z'] = 70.24 },
 	[2] = { ['x'] = 2701.74, ['y'] = 3450.62, ['z'] = 55.79 },
 	[3] = { ['x'] = 1203.52, ['y'] = -1309.33, ['z'] = 35.22 },
@@ -70,7 +70,7 @@ local woods = {
 -- SHOWS
 -----------------------------------------------------------------------------------------------------------------------------------------
 local show = {
-	[1] = { ['x'] = 1994.91, ['y'] = 3061.17, ['z'] = 47.04 },
+	[1] = { ['x'] = 203.81, ['y'] = 1243.26, ['z'] = 225.45 },
 	[2] = { ['x'] = -1397.32, ['y'] = -581.99, ['z'] = 30.28 },
 	[3] = { ['x'] = -552.43, ['y'] = 303.34, ['z'] = 83.21 },
 	[4] = { ['x'] = -227.52, ['y'] = -2051.27, ['z'] = 27.62 }
@@ -105,24 +105,24 @@ RegisterCommand("pack",function(source,args)
 			CoordenadaZ2 = gas[random].z
 			CriandoBlip(CoordenadaX2,CoordenadaY2,CoordenadaZ2)
 			TriggerEvent("Notify","importante","Entrega de <b>Combustível</b> iniciada, pegue o caminhão, a carga e vá até o destino marcado.")
-		elseif args[1] == "cars" then
+		elseif args[1] == "carros" then
 			servico = true
 			modules = args[1]
 			servehicle = 2091594960
 			random = emP.getTruckpoint(modules)
-			CoordenadaX2 = cars[random].x
-			CoordenadaY2 = cars[random].y
-			CoordenadaZ2 = cars[random].z
+			CoordenadaX2 = carros[random].x
+			CoordenadaY2 = carros[random].y
+			CoordenadaZ2 = carros[random].z
 			CriandoBlip(CoordenadaX2,CoordenadaY2,CoordenadaZ2)
 			TriggerEvent("Notify","importante","Entrega de <b>Veículos</b> iniciada, pegue o caminhão, a carga e vá até o destino marcado.")
-		elseif args[1] == "woods" then
+		elseif args[1] == "madeira" then
 			servico = true
 			modules = args[1]
 			servehicle = 2016027501
 			random = emP.getTruckpoint(modules)
-			CoordenadaX2 = woods[random].x
-			CoordenadaY2 = woods[random].y
-			CoordenadaZ2 = woods[random].z
+			CoordenadaX2 = madeira[random].x
+			CoordenadaY2 = madeira[random].y
+			CoordenadaZ2 = madeira[random].z
 			CriandoBlip(CoordenadaX2,CoordenadaY2,CoordenadaZ2)
 			TriggerEvent("Notify","importante","Entrega de <b>Madeiras</b> iniciada, pegue o caminhão, a carga e vá até o destino marcado.")
 		elseif args[1] == "show" then
@@ -136,7 +136,7 @@ RegisterCommand("pack",function(source,args)
 			CriandoBlip(CoordenadaX2,CoordenadaY2,CoordenadaZ2)
 			TriggerEvent("Notify","importante","Entrega de <b>Shows</b> iniciada, pegue o caminhão, a carga e vá até o destino marcado.")
 		else
-			TriggerEvent("Notify","aviso","<b>Disponíveis:</b> diesel, cars, show, woods e gas")
+			TriggerEvent("Notify","aviso","<b>Disponíveis:</b> diesel, carros, show, madeira e gas")
 		end
 	end
 end)

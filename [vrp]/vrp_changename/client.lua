@@ -13,7 +13,7 @@ RegisterCommand("identidade",function(source,args)
 end)
 
 function checkDistance()
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	local x,y,z = table.unpack(GetEntityCoords(ped))
 	local bowz,cdz = GetGroundZFor_3dCoord(x,y,z)
 	local distance = GetDistanceBetweenCoords(x,y,cdz,-551.03857421875,-192.28303527832,38.223083496094,true)

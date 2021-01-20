@@ -6,81 +6,62 @@ vRPclient = Tunnel.getInterface("vRP","vrp_payday")
 
 salarii = {
    -- Administração
-  {"Administrador.permissao", 20000},
-  {"Moderador.permissao", 15000}, 
-  {"Suporte.permissao", 10000},
-  {"AprovadorWL.permissao", 5000},
-  --{"vip.permissao", 8000},
-  --{"vipppppp.permissao", 25000},
-  -- Player/Jogadores
+  {"Administrador.permissao", 1000},
+  {"Moderador.permissao", 800}, 
+  {"Suporte.permissao", 500},
+  {"AprovadorWL.permissao", 500},
   {"Player.permissao", 500},
+  
   -- UBER
-  {"uber.permissao", 1500},
+  {"uber.permissao", 2000},
+  
   -- PMERJ
-  {"CmdGeral.permissao", 25000},
-  {"Recruta.permissao", 4500},
-  {"Soldado.permissao", 5000},
-  {"Cabo.permissao", 6000},
-  {"3Sargento.permissao", 7000},
-  {"2Sargento.permissao", 8000},
-  {"1Sargento.permissao", 9000},
-  {"SubTenente.permissao", 10000},
-  {"2Tenente.permissao", 11000},
-  {"1Tenente.permissao", 12000},
-  {"Capitao.permissao", 13000},
-  {"Major.permissao", 14000},
-  {"TenenteCoronel.permissao", 16000},
-  {"Coronel.permissao", 23000},
+  {"CmdGeral.permissao", 6000},
+  {"Recruta.permissao", 3000},
+  {"Soldado.permissao", 3500},
+  {"Cabo.permissao", 3500},
+  {"3Sargento.permissao", 4000},
+  {"2Sargento.permissao", 4000},
+  {"1Sargento.permissao", 4000},
+  {"SubTenente.permissao", 4500},
+  {"2Tenente.permissao", 4500},
+  {"1Tenente.permissao", 4500},
+  {"Capitao.permissao", 5000},
+  {"Major.permissao", 5000},
+  {"TenenteCoronel.permissao", 5500},
+  {"Coronel.permissao", 6000},
   -- Recom PMERJ
-  {"Recom.permissao", 15000},
+  {"recom.permissao", 500},
   -- Choque PMERJ
-  {"Choque.permissao", 15000},
-  -- BOPE PMERJ
-  {"CoronelBOPE.permissao", 20000},
-  {"TenenteCoronelBOPE.permissao", 15000},
-  {"MajorBOPE.permissao", 13000},
-  {"CapitaoBOPE.permissao", 12000},
-  {"TenenteBOPE.permissao", 11000},
-  {"AspiranteBOPE.permissao", 10000},
-  -- Policia Civil
-  {"DelegadoGeralPC.permissao", 20000},
-  {"DelegadoPC.permissao", 15000},
-  {"DelegadoAdjuntoPC.permissao", 13000},
-  {"InvestigadorPC.permissao", 10000},
-  {"PeritoCriminalPC.permissao", 8000},
-  {"EscrivaoPC.permissao", 10000},
-  {"prf.permissao", 15000},
+  {"Choque.permissao", 500},
+  -- PRF
+  {"prf.permissao", 1000},
   -- SAMU
-  {"ChefeSAMU.permissao", 20000},
-  {"CoordenadorSAMU.permissao", 16000},
-  {"MedicoSAMU.permissao", 14000},
-  {"EnfermeiroSAMU.permissao", 10000},
-  {"TecSAMU.permissao", 8000},
-  {"SocorristaSAMU.permissao", 5000},
-  -- Jornalista
-   --{"vipp.permissao", 9000},
-  ----
-  {"Jornalista.permissao", 10000},
-  {"Reporter.permissao", 11000},
-  {"DiretorJornal.permissao", 12000},
-  ----
-    --{"vippp.permissao", 10000},
+  {"ChefeSAMU.permissao", 7000},
+  {"CoordenadorSAMU.permissao", 6000},
+  {"MedicoSAMU.permissao", 5000},
+  {"EnfermeiroSAMU.permissao", 4000},
+  {"TecSAMU.permissao", 3000},
+  {"SocorristaSAMU.permissao", 2000},
+
+  -- JORNAL
+  {"Jornalista.permissao", 4000},
+  {"Reporter.permissao", 3000},
+  {"DiretorJornal.permissao", 6000},
   
-  -- Advocacia
-  {"Juiz.permissao", 10000},
-  {"PromotorDaJustica.permissao", 8000},
-  {"PresidenteDaJustica.permissao", 9000},
-  {"Advogado.permissao", 7500},
-  -- Desempregado
- -- {"vipppp.permissao", 15000},
-  
-  ----
-  --{"vippppppp.permissao", 30000},
-  {"desempregado.permissao", 2000},
-  -- VIPS
-  --{"vippppp.permissao", 20000},
+  -- Advocacia  - OBS
+  {"Juiz.permissao", 6000},
+  {"PromotorDaJustica.permissao", 5000},
+  {"PresidenteDaOAB.permissao", 4000},
+  {"Advogadopagamento.permissao", 3000},
+
+  {"desempregado.permissao", 500},
+
   -- MECANICO
-  {"mecanicopay.permissao", 5000},
+  {"srdono.permissao", 100},
+  {"srgerente.permissao", 2000},
+  {"srmecanico.permissao", 1500},
+  {"srauxmecanico.permissao", 1000},
 }
 
 RegisterServerEvent('crj:lot')

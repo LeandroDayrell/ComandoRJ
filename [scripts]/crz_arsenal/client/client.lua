@@ -22,7 +22,7 @@ if Menu then
 		Wait(0)
 		for _,lugares in pairs(arsenal) do
 			local x,y,z = table.unpack(lugares)
-			local distance = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)),x,y,z,true)
+			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),x,y,z,true)
 			DrawMarker(25,x,y+0.33,z-0.90,0,0,0,0,180.0,130.0,2.0,2.0,1.0,25,25,122,50,0,0,0,0)
 			if distance <= 2 then
 				if IsControlJustPressed(0, 51) then

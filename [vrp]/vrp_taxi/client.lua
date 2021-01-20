@@ -39,10 +39,10 @@ end
 Citizen.CreateThread(function()
   while true do
     Citizen.Wait(1000)
-    local ped = GetPlayerPed(-1)
+    local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped, false)
     if NoTaxi() and GetPedInVehicleSeat(veh, -1) ~= ped then
-      local ped = GetPlayerPed(-1)
+      local ped = PlayerPedId()
       local veh = GetVehiclePedIsIn(ped, false)
       TriggerEvent('taxi:updatebandeira', veh)
       openGui()
@@ -77,7 +77,7 @@ if TaxiGuiAtivo then
           TriggerEvent("pNotify:SendNotification", {text = msg , type = "success", layout = "centerLeft", queue = "global", theme = "gta", timeout = 5000})
         end
         inTaxi = true
-        local ped = GetPlayerPed(-1)
+        local ped = PlayerPedId()
         local veh = GetVehiclePedIsIn(ped, false)
         if(NoTaxi() and GetPedInVehicleSeat(veh, -1) == ped) then
           if IsControlJustReleased(0, 57)  then -- F10
@@ -116,7 +116,7 @@ end)
 
 RegisterNetEvent('taxi:toggleDisplay')
 AddEventHandler('taxi:toggleDisplay', function()
-  local ped = GetPlayerPed(-1)
+  local ped = PlayerPedId()
   local veh = GetVehiclePedIsIn(ped, false)
   if(NoTaxi() and GetPedInVehicleSeat(veh, -1) == ped) then
     if meterOpen then
@@ -136,7 +136,7 @@ end)
 
 RegisterNetEvent('taxi:toggleHire')
 AddEventHandler('taxi:toggleHire', function()
-  local ped = GetPlayerPed(-1)
+  local ped = PlayerPedId()
   local veh = GetVehiclePedIsIn(ped, false)
   if(NoTaxi() and GetPedInVehicleSeat(veh, -1) == ped) then
     if meterActive then
@@ -155,7 +155,7 @@ end)
 
 RegisterNetEvent('taxi:resetMeter')
 AddEventHandler('taxi:resetMeter', function()
-  local ped = GetPlayerPed(-1)
+  local ped = PlayerPedId()
   local veh = GetVehiclePedIsIn(ped, false)
   if(NoTaxi() and GetPedInVehicleSeat(veh, -1) == ped) then
     local _bandeira = DecorGetFloat(veh, "bandeiras")
@@ -171,7 +171,7 @@ end)
 
 --Verifique se o jogador está em um VEHICLE
 function IsInVehicle()
-  local ply = GetPlayerPed(-1)
+  local ply = PlayerPedId()
   if IsPedSittingInAnyVehicle(ply) then
     return true
   else
@@ -181,7 +181,7 @@ end
 
 --Confirma se o PLAYER está em um TT
 function NoTaxi()
-  local ped = GetPlayerPed(-1)
+  local ped = PlayerPedId()
   local veh = GetVehiclePedIsIn(ped, false)
   local model = GetEntityModel(veh)
   local displaytext = GetDisplayNameFromVehicleModel(model)
@@ -195,7 +195,7 @@ end
 
 --Verifique se o jogador está em um táxi
 function ReturnVehicle()
-  local ped = GetPlayerPed(-1)
+  local ped = PlayerPedId()
   local veh = GetVehiclePedIsIn(ped, false)
   local model = GetEntityModel(veh)
   local displaytext = GetDisplayNameFromVehicleModel(model)
@@ -204,7 +204,7 @@ end
 
 --Verifique se o jogador está perto de outro jogador
 function IsNearPlayer(player)
-  local ply = GetPlayerPed(-1)
+  local ply = PlayerPedId()
   local plyCoords = GetEntityCoords(ply, 0)
   local ply2 = GetPlayerPed(GetPlayerFromServerId(player))
   local ply2Coords = GetEntityCoords(ply2, 0)
@@ -235,7 +235,7 @@ end)
 RegisterNetEvent('vRP_taxi:user_settings')
 AddEventHandler('vRP_taxi:user_settings', function(action, value)
   if action ~= nil and NoTaxi() then
-    local ped = GetPlayerPed(-1)
+    local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped, false)
     if GetPedInVehicleSeat(veh, -1) == ped then
       if action == "show" then

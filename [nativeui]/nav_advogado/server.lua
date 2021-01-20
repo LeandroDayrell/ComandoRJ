@@ -7,8 +7,8 @@ Tunnel.bindInterface("nav_advogado",emP)
 -- ARRAY
 -----------------------------------------------------------------------------------------------------------------------------------------
 local valores = {
-	{ item = "contrato", quantidade = 10, compra = 100, venda = 0 },
-	{ item = "oab", quantidade = 1, compra = 1000, venda = 0 }
+	{ item = "contrato", quantidade = 10, compra = 30, venda = 0 },
+	{ item = "oab", quantidade = 1, compra = 200, venda = 0 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- COMPRAR

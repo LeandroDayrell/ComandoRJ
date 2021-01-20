@@ -2,46 +2,23 @@
 
 vAZ.temp.vehicles = {}
 
-vRP._prepare("vAZ/getVehicleByPlate", 'SELECT * FROM vrp_user_vehicles WHERE plate = @plate')
-vRP._prepare('vAZ/updateChestVehicle', 'UPDATE vrp_user_vehicles SET trunk = @trunk WHERE plate = @plate')
-vRP._prepare('vAZ/getVehicleByModel', 'SELECT * FROM vrp_vehicles WHERE model = @model')
-vRP._prepare('vAZ/getVehicleByHash', 'SELECT * FROM vrp_vehicles WHERE hash = @hash')
-
-
-local webhooklinkportamalas = "https://discordapp.com/api/webhooks/738872551836483664/yfwwYHHMKWoUQJtNa2XeL9jXip_Lpw9CvrZmUbu-yBFc5bsJECVQKe-ouuh7olYBKTJc"
-
-function SendWebhookMessage(webhook,message)
-	if webhook ~= nil and webhook ~= "" then
-		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-	end
-end
-
-vAZ.getVehicleInventory = function(plate, hash)
+vAZ.getVehicleInventory = function(plate, hash)    
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.temp.vehicles[plate] == nil then
-        local vehicle = vRP.query('vAZ/getVehicleByPlate', {plate = plate})
+        local vehicle = vRP.query('vAZ/GetPlayerVehiclePlate', {plate = plate})
         if #vehicle > 0 then
-            local maxweight = 0
-            local model = vRP.query('vAZ/getVehicleByModel', {model = vehicle[1].model})    
-            if #model > 0 then
-                maxweight = model[1].chest
-            end
-            if vehicle[1].trunk == nil or vehicle[1].trunk == '' then
+            local data = vAZgarage.getServerVehicle('model', vehicle[1].model)
+            local maxweight = (data ~= nil) and data.trunk or 0
+            local trunk = (vehicle[1].trunk == nil or vehicle[1].trunk == '') and {} or json.decode(vehicle[1].trunk)
+            if type(trunk) ~= 'table' then
                 trunk = {}
-            else
-                trunk = json.decode(vehicle[1].trunk)
-                if type(trunk) ~= 'table' then
-                    trunk = {}
-                end
             end
             vAZ.temp.vehicles[plate] = {owner = vehicle[1].user_id, model = vehicle[1].model, hash = hash, maxweight = maxweight, players = {}, inventory = trunk}
-        else            
-            local model = vRP.query('vAZ/getVehicleByHash', {hash = hash})    
-            if #model > 0 then
-                vAZ.temp.vehicles[plate] = {owner = 'temporary', model = model[1].model, hash = hash, maxweight = model[1].chest, players = {}, inventory = {}}
-            else
-                TriggerClientEvent('Notify', source, 'aviso', 'Veiculo não encontrado')
+        else          
+            local data = vAZgarage.getServerVehicle('hash', hash)
+            if data ~= nil then
+                vAZ.temp.vehicles[plate] = {owner = 'temporary', model = data.model, hash = hash, maxweight = data.trunk, players = {}, inventory = {}}
             end
         end
     end
@@ -50,7 +27,17 @@ vAZ.getVehicleInventory = function(plate, hash)
         for item,details in pairs(vAZ.temp.vehicles[plate].inventory) do
             local data = vAZ.items[item]
             if data ~= nil then
-                table.insert(inventory, {item = item, label = data.label, weight = data.weight, photo = data.photo, amount = parseInt(details.amount), description = data.description})
+                table.insert(inventory, {
+                    item = item,
+                    label = data.label,
+                    sendable = data.sendable or false,
+                    usable = data.usable or false,
+                    dropable = data.dropable or false,
+                    weight = data.weight,
+                    photo = data.photo,
+                    amount = parseInt(details.amount),
+                    description = data.description
+                })
             end
         end
         if vAZ.config.debug then
@@ -68,25 +55,13 @@ vAZ.sendPlayerItemToVehicle = function(item, amount, plate, entity)
     local user_id = vRP.getUserId(source)
     if vAZ.temp.vehicles[plate] ~= nil then
         if vAZ.temp.vehicles[plate].inventory ~= nil then
-            if vAZ.itemAllowed(item) then
+            if not vAZ.itemNotAllowed(item) then
                 if vAZ.getChestWeight(vAZ.temp.vehicles[plate].inventory) + vAZ.items[item].weight * amount <= vAZ.temp.vehicles[plate].maxweight then
-                    if item == 'money' then
-                        if vRP.tryPayment(user_id, amount) then
-                            if vAZ.temp.vehicles[plate].inventory[item] then
-							SendWebhookMessage(webhooklinkportamalas,  "``` UserID: ["..user_id.."] enviou ["..amount..'x '..item.."] do veiculo: "..vAZ.temp.vehicles[plate].model.." placa: "..plate.." ```")
-                                vAZ.temp.vehicles[plate].inventory[item] = {amount = (vAZ.temp.vehicles[plate].inventory[item].amount + amount)}
-                            else
-                                vAZ.temp.vehicles[plate].inventory[item] = {amount = amount}
-                            end
-                        end                   
-                    else
-                        if vRP.tryGetInventoryItem(user_id, item, amount, false) then
-                            if vAZ.temp.vehicles[plate].inventory[item] then
-								SendWebhookMessage(webhooklinkportamalas,  "``` user_id: "..user_id.." enviou ["..amount..'x '..item.."] do veiculo: "..vAZ.temp.vehicles[plate].model.." placa: "..plate.." ```")
-                                vAZ.temp.vehicles[plate].inventory[item] = {amount = (vAZ.temp.vehicles[plate].inventory[item].amount + amount)}
-                            else
-                                vAZ.temp.vehicles[plate].inventory[item] = {amount = amount}
-                            end    
+                    if item == 'money' and vRP.tryPayment(user_id, amount) or vRP.tryGetInventoryItem(user_id, item, amount, false) then
+                        if vAZ.temp.vehicles[plate].inventory[item] then
+                            vAZ.temp.vehicles[plate].inventory[item] = {amount = (vAZ.temp.vehicles[plate].inventory[item].amount + amount)}
+                        else
+                            vAZ.temp.vehicles[plate].inventory[item] = {amount = amount}
                         end
                     end
                     if vAZ.config.debug then
@@ -120,7 +95,7 @@ vAZ.sendVehicleItemToPlayer = function(item, amount, plate, entity)
         if vAZ.temp.vehicles[plate].inventory ~= nil then
             if vAZ.temp.vehicles[plate].inventory[item] then
                 if vAZ.temp.vehicles[plate].inventory[item].amount >= amount then
-                    if vAZ.itemAllowed(item) then
+                    if not vAZ.itemNotAllowed(item) then
                         if vRP.getInventoryWeight(user_id) + vAZ.items[item].weight * amount <= vRP.getInventoryMaxWeight(user_id) then
                             if (vAZ.temp.vehicles[plate].inventory[item].amount - amount) <= 0 then
                                 vAZ.temp.vehicles[plate].inventory[item] = nil
@@ -129,10 +104,8 @@ vAZ.sendVehicleItemToPlayer = function(item, amount, plate, entity)
                             end
                             if item == 'money' then
                                 vRP.giveMoney(user_id, parseInt(amount))
-								SendWebhookMessage(webhooklinkportamalas,  "``` user_id: "..user_id.." retirou ["..amount..'x '..item.."] do veiculo: "..vAZ.temp.vehicles[plate].model.." placa: "..plate.." ```")
                             else
                                 vRP.giveInventoryItem(user_id, item, amount, false)
-								SendWebhookMessage(webhooklinkportamalas,  "``` user_id: "..user_id.." retirou ["..amount..'x '..item.."] do veiculo: "..vAZ.temp.vehicles[plate].model.." placa: "..plate.." ```")
                             end
                             if vAZ.config.debug then
                                 print('[az-inventory][vehicle]['..plate..'] send item ('..amount..'x '..item..') to player user_id: '..user_id)
@@ -209,7 +182,7 @@ vAZ.removePlayerInVehicleTrunk = function(source, plate)
                 if vAZ.config.debug then
                     print('[az-inventory][vehicle]['..plate..'] trunk saved')
                 end
-                vRP.execute('vAZ/updateChestVehicle', {plate = plate, trunk = json.encode(vAZ.temp.vehicles[plate].inventory)})       
+                vRP.execute('vAZ/SetPlayerTrunkVehicle', {plate = plate, trunk = json.encode(vAZ.temp.vehicles[plate].inventory)})       
                 vAZ.temp.vehicles[plate] = nil
             end
         end
@@ -225,9 +198,9 @@ AddEventHandler("vRP:playerLeave", function(user_id, source)
                     if vAZ.config.debug then
                         print('[az-inventory][vehicle]['..plate..'] trunk saved')
                     end
-                    vRP.execute('vAZ/updateChestVehicle', {plate = plate, trunk = json.encode(vAZ.temp.vehicles[plate].inventory)})       
+                    vRP.execute('vAZ/SetPlayerTrunkVehicle', {plate = plate, trunk = json.encode(vAZ.temp.vehicles[plate].inventory)})       
                     vAZ.temp.vehicles[plate] = nil
-                end
+                end                
             end
         end
     end

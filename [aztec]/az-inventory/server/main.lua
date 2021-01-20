@@ -7,6 +7,9 @@ vAZclient = Tunnel.getInterface('az-inventory')
 vAZ = {}
 Tunnel.bindInterface('az-inventory', vAZ)
 
+vAZgarage = Proxy.getInterface('az-garages')
+vAZhomes = Proxy.getInterface('az-homes')
+
 vAZ.id = Tools.newIDGenerator()
 vAZ.temp = {}
 

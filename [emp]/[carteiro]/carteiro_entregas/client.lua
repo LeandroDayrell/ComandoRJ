@@ -102,7 +102,8 @@ Citizen.CreateThread(function()
 				if distance <= 2.5 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA ENTREGAR ENCOMENDAS",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
-						if IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("boxville2")) or IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("tribike3")) then
+						--if IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("boxville2")) or IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("tribike3")) then
+						if IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("tribike3")) then
 							if func.checkPayment() then
 								RemoveBlip(blips)
 								backentrega = selecionado

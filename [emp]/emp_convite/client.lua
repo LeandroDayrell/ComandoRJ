@@ -15,7 +15,7 @@ local CoordenadaX = 93.25
 local CoordenadaY = -1291.42
 local CoordenadaZ = 29.26
 -----------------------------------------------------------------------------------------------------------------------------------------
--- RESIDENCIAS
+-- RESIDENCIAS 93.25,-1291.42,29.26
 -----------------------------------------------------------------------------------------------------------------------------------------
 local locs = {
 	[1] = { ['x'] = 965.05, ['y'] = -542.04, ['z'] = 59.72 }, 
@@ -44,7 +44,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 				DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
 				if distance <= 1.2 then
-					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR ENTREGAS DE CONVITE",4,0.5,0.93,0.50,255,255,255,180)
+					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR ENTREGAS DE PEN DRIVER",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
 						servico = true
 						selecionado = math.random(9)
@@ -71,7 +71,7 @@ Citizen.CreateThread(function()
 			if distance <= 30.0 then
 				DrawMarker(23,locs[selecionado].x,locs[selecionado].y,locs[selecionado].z-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
 				if distance <= 1.2 then
-					drawTxt("PRESSIONE  ~b~E~w~  PARA ENTREGAR OS CONVITES",4,0.5,0.93,0.50,255,255,255,180)
+					drawTxt("PRESSIONE  ~b~E~w~  PARA ENTREGAR OS PEN DRIVER",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
 						if emP.checkPayment() then
 							RemoveBlip(blips)
@@ -128,6 +128,6 @@ function CriandoBlip(locs,selecionado)
 	SetBlipAsShortRange(blips,false)
 	SetBlipRoute(blips,true)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentString("Entrega de Convite")
+	AddTextComponentString("Entrega de Pen Driver")
 	EndTextCommandSetBlipName(blips)
 end

@@ -5,13 +5,13 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP","vrp_paydayvip")
 
 salariio = {
-  {"vip.permissao", 8000},
-  {"vipppppp.permissao", 25000},
-  {"vipp.permissao", 9000},
-  {"vippp.permissao", 10000},
-  {"vipppp.permissao", 15000},
-  {"vippppppp.permissao", 30000},
-  {"vippppp.permissao", 20000},
+	{"vip.permissao", 3000},
+	{"vipp.permissao", 4000},
+	{"vippp.permissao", 5000},
+	{"vipppp.permissao", 6000},
+	{"vippppp.permissao", 7000},
+	{"vipppppp.permissao", 8000},
+	{"vippppppp.permissao", 90000},
 }
 
 RegisterServerEvent('crj:dpt')

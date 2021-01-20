@@ -114,7 +114,7 @@ Citizen.CreateThread(function()
 			N_0x31698aa80e0223f8(i)
 		end
 
-		local playerPed = GetPlayerPed(-1)
+		local playerPed = PlayerPedId()
 		if IsEntityDead(playerPed) and alreadyDead == false then
 			local killer = GetPedKiller(playerPed)
 			--local killername = "unknown"

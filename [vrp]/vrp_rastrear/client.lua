@@ -2,7 +2,7 @@
 -- R A S T R E A R --
 RegisterNetEvent('rastrear')
 AddEventHandler('rastrear',function() 
-	local player = GetPlayerPed(-1)
+	local player = PlayerPedId()
 	if (IsPedSittingInAnyVehicle(player)) then 
 		saveVehicle = GetVehiclePedIsIn(player,true)
 		local vehicle = saveVehicle

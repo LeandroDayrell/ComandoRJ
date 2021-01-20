@@ -8,48 +8,112 @@ async(function()
     end
 end)
 
-local webhooklinklockpick = "https://discordapp.com/api/webhooks/737759163408449596/A7TITWZArcoK7n5O7_MOvCuKXWGiXMb9dvBANJh1iNGxi05OuM7850Yq2cKhLwhwwo8B"
-
-function SendWebhookMessage(webhook,message)
-	if webhook ~= nil and webhook ~= "" then
-		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-	end
-end
-
-vRP._prepare('vAZ/getVehicleByModel', 'SELECT * FROM vrp_vehicles WHERE model = @model')
-
-
-
 vAZ.handlers = {
-    ['colete'] = function(source, user_id, item, amount, cb)
-        if vRPclient.getArmour(source) > 0 then
-            TriggerClientEvent('Notify', source, 'aviso', 'Você já está usando colete.')
-        else
-            if vRP.tryGetInventoryItem(user_id, item, 1, false) then
-                vRPclient._playAnim(source, true, {{"switch@franklin@getting_ready", "002334_02_fras_v2_11_getting_dressed_exit"}}, false)
-                vRPclient.setArmour(source, 100)
+    ['mochila'] = function(source, user_id, item, amount, cb)
+        if vAZ.cooldown.get(user_id, item) <= 0 then
+            if vRP.tryGetInventoryItem(user_id, item, 1) then
+                vAZ.cooldown.push(user_id, item, 5)
+                vRPclient._playAnim(source, true, {{"clothingshirt", "try_shirt_positive_d"}}, false)
+                vRP.varyExp(user_id,"physical","strength",650)
+                Citizen.Wait(2500)
+                vRPclient._stopAnim(source, true)
                 cb(true)
+            end
+        else
+            TriggerClientEvent("Notify", source, "importante", "Aguarde "..vRPclient.getTimeFunction(source, vAZ.cooldown.get(user_id, item))..".")
+        end
+        cb(false)
+    end,
+    ['coletebalistico'] = function(source, user_id, item, amount, cb)
+        if vAZ.cooldown.get(user_id, item) <= 0 then
+            if vRPclient.getArmour(source) <= 90 and vRP.tryGetInventoryItem(user_id, item, 1) then
+                vAZ.cooldown.push(user_id, item, 5)
+                vRPclient._playAnim(source, true, {{"switch@franklin@getting_ready", "002334_02_fras_v2_11_getting_dressed_exit"}}, false)
+                TriggerClientEvent("progress", source, 2700, "vestindo colete")                
+                SetTimeout(2700, function()
+                    vRPclient.setArmour(source, 100)
+                    cb(true)
+                end)
+            end
+        else
+            TriggerClientEvent("Notify", source, "importante", "Aguarde "..vRPclient.getTimeFunction(source, vAZ.cooldown.get(user_id, item))..".")
+        end
+        cb(false)
+    end,
+    ['bandagem'] = function(source, user_id, item, amount, cb)  
+        local user_health = vRPclient.getHealth(source)      
+        if user_health > 101 and user_health < 251 then
+            if vAZ.cooldown.get(user_id, item) <= 0 then
+                if vRP.tryGetInventoryItem(user_id, item, 1) then
+                    vAZ.cooldown.push(user_id, item, 120)
+                    vRPclient._CarregarObjeto(source, "amb@world_human_clipboard@male@idle_a", "idle_c", "v_ret_ta_firstaid", 49, 60309)
+                    TriggerClientEvent('cancelando', source, true)
+                    TriggerClientEvent("progress", source, 20000, "bandagem")
+                    TriggerClientEvent('bandagem', source)
+                    SetTimeout(20000, function()
+                        TriggerClientEvent('cancelando', source, false)
+                        vRPclient._DeletarObjeto(source)
+                        TriggerClientEvent("Notify", source, "sucesso", "Bandagem utilizada com sucesso.", 8000)
+                    end)
+                end
+            else
+                TriggerClientEvent("Notify",source,"importante","Aguarde "..vRPclient.getTimeFunction(source, vAZ.cooldown.get(user_id, item))..".",8000)
+            end
+        else
+            TriggerClientEvent("Notify",source,"aviso","Você não pode utilizar de vida cheia ou nocauteado.", 8000)
+        end    
+        cb(false)
+    end,
+    ['energetico'] = function(source, user_id, item, amount, cb)
+        if vRP.tryGetInventoryItem(user_id, item, 1) then            
+            TriggerClientEvent('cancelando', source, true)
+            vRPclient._CarregarObjeto(source, "amb@world_human_drinking@beer@male@idle_a", "idle_a", vAZ.items[item].prop, 49, 28422)
+            TriggerClientEvent("progress", source, 20000, "bebendo")
+            SetTimeout(20000, function()
+                TriggerClientEvent('energeticos', source, true)
+                TriggerClientEvent('cancelando', source, false)
+                vRPclient._DeletarObjeto(source)
+                TriggerClientEvent("Notify", source, "sucesso", "Energético utilizado com sucesso.", 8000)
+            end)
+            SetTimeout(60000, function()
+                TriggerClientEvent('energeticos', source, false)
+                TriggerClientEvent("Notify", source, "aviso", "O efeito do energético passou e o coração voltou a bater normalmente.", 8000)
+            end)
+            cb(true)
+        end
+        cb(false)
+    end,
+    ['placa'] = function(source, user_id, item, amount, cb)
+        cb(false)
+    end,
+    ['morfina'] = function(source, user_id, item, amount, cb)
+        if #vRP.getUsersByPermission("polpar.permissao") <= 0 then
+            local nplayer = vRPclient.getNearestPlayer(source, 2)
+            if nplayer then
+                if vRPclient.isComa(nplayer) then
+                    if vRP.tryGetInventoryItem(user_id,"morfina",1) then
+                        TriggerClientEvent('cancelando',source,true)
+                        vRPclient._playAnim(source,false,{{"amb@medic@standing@tendtodead@base","base"},{"mini@cpr@char_a@cpr_str","cpr_pumpchest"}},true)
+                        TriggerClientEvent("progress",source,30000,"reanimando")
+                        SetTimeout(30000,function()
+                            vRPclient.networkRessurection(nplayer)
+                            vRPclient._stopAnim(source,false)
+                            TriggerClientEvent('cancelando',source,false)
+                        end)
+                        cb(true)
+                    end
+                else
+                    TriggerClientEvent("Notify",source,"importante","A pessoa precisa estar em coma para prosseguir.",8000)
+                end
             end
         end
         cb(false)
     end,
-    ['mochila'] = function(source, user_id, item, amount, cb)        
-        local bag = vRP.getExp(user_id, "physical", "strength")
-        if bag < 520 then
-            if vRP.tryGetInventoryItem(user_id, item, 1, false) then
-                vRP.varyExp(user_id, "physical", "strength", 520)
-                cb(true)
-			end
-		elseif bag >= 520 and bag < 1320 then
-			if vRP.tryGetInventoryItem(user_id, item, 1, false) then
-                vRP.varyExp(user_id, "physical", "strength", 800)
-                cb(true)
-			end
-		elseif bag >= 1320 and bag < 3300 then
-			if vRP.tryGetInventoryItem(user_id, item, 1, false) then
-                vRP.varyExp(user_id, "physical", "strength", 1980)
-                cb(true)
-			end
+    ['cirurgia'] = function(source, user_id, item, amount, cb)
+        if vRP.tryGetInventoryItem(user_id, "cirurgia", 1) then
+            cb(true)
+            vRP.setUData(user_id, "vRP:spawnController", parseInt(0))
+            vRP.kick(source, "Aparencia resetada")
         end
         cb(false)
     end,
@@ -70,9 +134,9 @@ vAZ.handlers = {
                 vRPclient._stopAnim(source, true)
                 vRPclient._stopAnim(source, false) 
                 vRPclient.playMovement(source, "MOVE_M@DRUNK@SLIGHTLYDRUNK",true,true,false,false)
-                vRPclient.playScreenEffect(source, "DMT_flight", 220) 
+                vRPclient.playScreenEffect(source, "DMT_flight", 120) 
             end)
-            SetTimeout(220000,function()
+            SetTimeout(120000,function()
                 vRPclient.resetMovement(source, false) 
             end)
             cb(true)
@@ -85,24 +149,9 @@ vAZ.handlers = {
             vRPclient._playAnim(source,true,{{"mp_player_int_uppersmoke","mp_player_int_smoke"}},false)
             SetTimeout(10000, function()
                 vRPclient.playMovement(source,"MOVE_M@DRUNK@SLIGHTLYDRUNK",true,true,false,false)
-                vRPclient.playScreenEffect(source, "DrugsTrevorClownsFight", 220) 
+                vRPclient.playScreenEffect(source, "DrugsTrevorClownsFight", 120) 
             end)
-            SetTimeout(220000, function()
-                vRPclient.resetMovement(source, false)
-            end)
-            cb(true)
-        end
-        cb(false)
-    end,
-	['cocainapesada'] = function(source, user_id, item, amount, cb)    
-        if vRP.tryGetInventoryItem(user_id, "cocainapesada", 1, false) then
-            TriggerClientEvent("Notify",source,"aviso","Cheirando Cocaina.")
-            vRPclient._playAnim(source,true,{{"mp_player_int_uppersmoke","mp_player_int_smoke"}},false)
-            SetTimeout(10000, function()
-                vRPclient.playMovement(source,"MOVE_M@DRUNK@SLIGHTLYDRUNK",true,true,false,false)
-                vRPclient.playScreenEffect(source, "DrugsTrevorClownsFight", 920) 
-            end)
-            SetTimeout(920000, function()
+            SetTimeout(120000, function()
                 vRPclient.resetMovement(source, false)
             end)
             cb(true)
@@ -123,54 +172,6 @@ vAZ.handlers = {
         end
         cb(false)
     end,
-	['lsd'] = function(source, user_id, item, amount, cb)    
-        if vRP.tryGetInventoryItem(user_id, "lsd", 1, false) then
-            TriggerClientEvent("Notify", source, "aviso", "Usando LSD PRA FICAR DOIDAO.")
-            SetTimeout(10000, function()
-                vRPclient.playMovement(source, "MOVE_M@DRUNK@SLIGHTLYDRUNK", true, true, false, false)
-                vRPclient.playScreenEffect(source, "DMT_flight", 120) 
-            end)
-            SetTimeout(120000, function()
-                vRPclient.resetMovement(source, false)
-            end)
-            cb(true)
-        end
-        cb(false)
-    end,
-	['tequila'] = function(source, user_id, item, amount, cb)    
-        if vRP.tryGetInventoryItem(user_id, "tequila", 1, false) then
-            TriggerClientEvent("Notify", source, "aviso", "Bebendo Tequila.")
-            SetTimeout(10000, function()
-                vRPclient.playMovement(source, "MOVE_M@DRUNK@SLIGHTLYDRUNK", true, true, false, false)
-                vRPclient.playScreenEffect(source, "DMT_flight", 120) 
-            end)
-            SetTimeout(120000, function()
-                vRPclient.resetMovement(source, false)
-            end)
-            cb(true)
-        end
-        cb(false)
-    end,
-	
-    ['energetico'] = function(source, user_id, item, amount, cb)    
-        if vRP.tryGetInventoryItem(user_id, "energetico", 1, false) then
-            TriggerClientEvent('cancelando', source, true)
-            vRPclient._CarregarObjeto(source, "amb@world_human_drinking@beer@male@idle_a", "idle_a", vAZ.items[item].prop, 49, 28422)
-            TriggerClientEvent("progress", source, 10000, "bebendo")
-            SetTimeout(10000, function()
-                TriggerClientEvent('energeticos', source, true)
-                TriggerClientEvent('cancelando', source, false)
-                vRPclient._DeletarObjeto(source)
-                TriggerClientEvent("Notify", source, "sucesso", "Energético utilizado com sucesso.")
-            end)
-            SetTimeout(60000, function()
-                TriggerClientEvent('energeticos', source, false)
-                TriggerClientEvent("Notify", source, "aviso", "O efeito do energético passou e o coração voltou a bater normalmente.")
-            end)
-            cb(true)
-        end
-        cb(false)
-    end,
     ['capuz'] = function(source, user_id, item, amount, cb)    
         if vRP.tryGetInventoryItem(user_id, "capuz", 1, false) then            
             local nplayer = vRPclient.getNearestPlayer(source, 2)
@@ -186,102 +187,120 @@ vAZ.handlers = {
         cb(false)
     end,
     ['lockpick'] = function(source, user_id, item, amount, cb)
+        if #vRP.getUsersByPermission("policia.permissao") < 3 then
+            TriggerClientEvent("Notify", source, "aviso", "Número insuficiente de policiais no momento para iniciar o roubo.")
+            return true
+        end
         local vehicle = vRPclient.getNearestVehicle(source, 5)
 		if vehicle then
-            local plate = vRPclient.getPlateVehicle(source, vehicle)   
-            local vnet = vRPclient.getNetVehicle(source, vehicle)
-            if vRP.hasPermission(user_id, "policia.permissao") then
-                TriggerClientEvent("syncLock", -1, vnet)
-                TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
-				return
-            end
-            if vRP.tryGetInventoryItem(user_id, item, 1, false) then            
-                TriggerClientEvent('cancelando', source, true)
-                vRPclient._playAnim(source, false, {{"amb@prop_human_parking_meter@female@idle_a", "idle_a_female"}}, true)
-                TriggerClientEvent("progress", source, 30000, "roubando")
-                SetTimeout(30000, function()
-                    TriggerClientEvent('cancelando', source, false)
-                    vRPclient._stopAnim(source, false)
-                    local owner = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})
-					local x,y,z = vRPclient.getPosition(source)
-                    if #owner > 0 then 
-                        if math.random(100) >= 1 then
-                            TriggerClientEvent("syncLock", -1, vnet)
+            local plate = vRPclient.getPlateVehicle(source, vehicle)
+            if plate ~= nil then
+                local spawned, vehicle = vAZgarage.getUserVehicle(user_id, plate)
+                if spawned then
+                    TriggerClientEvent('cancelando', source, true)
+                    vRPclient._playAnim(source, false, {{"amb@prop_human_parking_meter@female@idle_a", "idle_a_female"}}, true)
+                    TriggerClientEvent("progress", source, 30000, "roubando")
+                    SetTimeout(30000, function()
+                        TriggerClientEvent('cancelando', source, false)
+                        vRPclient._stopAnim(source, false)
+                        if math.random(100) >= 50 then
+                            vAZgarage.ToggleLock(vehicle.net)
                             TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
-							SendWebhookMessage(webhooklinklockpick,  "``` LockPick [" ..user_id.."]  Placa; " ..plate.. " local "..x..","..y..","..z..  "```")
-							TriggerClientEvent("Notify", source, "sucesso", "Corre noia, você roubou um carro.")
+                            if math.random(100) >= 70 then
+                                vRP.tryGetInventoryItem(user_id, item, 1)
+                            end
+                            cb(true)
                         else
-                            TriggerClientEvent("Notify", source, "negado", "Noia, você não conseguiu roubar esse veiculo, CORRE!.")
+                            TriggerClientEvent("Notify", source, "negado", "Roubo do veículo falhou e as autoridades foram acionadas.")
+                            local pick = {}
                             for k,v in pairs(vRP.getUsersByPermission("policia.permissao")) do
                                 local player = vRP.getUserSource(parseInt(v))
                                 if player then
                                     async(function()
                                         local id = vAZ.id:gen()
-                                        TriggerClientEvent('chatMessage',player,"911",{65,130,255},"Roubo na ^1"..mStreet.." ")
+                                        vRPclient._playSound(player, "CONFIRM_BEEP","HUD_MINI_GAME_SOUNDSET")
+                                        TriggerClientEvent('chatMessage', player, "911", {65,130,255}, "Roubo na ^1"..vRPclient.getStreetName(source).."^0 do veículo ^1"..vehicle.model.."^0 de placa ^1"..plate.."^0 verifique o ocorrido.")
                                         pick[id] = vRPclient.addBlip(player,x,y,z,153,84,"Ocorrência",0.5,false)
-                                        SetTimeout(60000,function() vRPclient.removeBlip(player,pick[id]) vAZ.id:free(id) end)
-										
+                                        SetTimeout(60000, function()
+                                            vRPclient.removeBlip(player, pick[id])
+                                            vAZ.id:free(id)
+                                        end)
                                     end)
                                 end
                             end
                         end
-                    else
-                        TriggerClientEvent("syncLock", -1, vnet)
-                        TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)                   
+                    end)
+                else
+                    if vRP.tryGetInventoryItem(user_id, item, 1) then
+                        local vnet = vRPclient.getNetVehicle(source, vehicle)
+                        vAZgarage.ToggleLock(vnet) 
+                        TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1) 
+                        cb(true)
                     end
-                end)
-                cb(true)
+                end
             end
         end
         cb(false)
     end,
-    --[[['masterpick'] = function(source, user_id, item, amount, cb)
+    ['masterpick'] = function(source, user_id, item, amount, cb)
+        if #vRP.getUsersByPermission("policia.permissao") < 4 then
+            TriggerClientEvent("Notify", source, "aviso", "Número insuficiente de policiais no momento para iniciar o roubo.")
+            return true
+        end
         local vehicle = vRPclient.getNearestVehicle(source, 5)
 		if vehicle then
-            local plate = vRPclient.getPlateVehicle(source, vehicle)   
-            local vnet = vRPclient.getNetVehicle(source, vehicle)
-            if vRP.hasPermission(user_id, "policia.permissao") then
-                TriggerClientEvent("syncLock", -1, vnet)
-                TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
-				return
-            end
-            if vRP.tryGetInventoryItem(user_id, item, 1, false) then            
-                TriggerClientEvent('cancelando', source, true)
-                vRPclient._playAnim(source, false, {{"amb@prop_human_parking_meter@female@idle_a", "idle_a_female"}}, true)
-                TriggerClientEvent("progress", source, 60000, "roubando")
-                SetTimeout(60000, function()
-                    TriggerClientEvent('cancelando', source, false)
-                    vRPclient._stopAnim(source, false)
-                    local owner = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})
-                    if #owner > 0 then
-                        TriggerClientEvent("syncLock", -1, vnet)
+            local plate = vRPclient.getPlateVehicle(source, vehicle)
+            if plate ~= nil then
+                local spawned, vehicle = vAZgarage.getUserVehicle(user_id, plate)
+                if spawned then
+                    TriggerClientEvent('cancelando', source, true)
+                    vRPclient._playAnim(source, false, {{"amb@prop_human_parking_meter@female@idle_a", "idle_a_female"}}, true)
+                    TriggerClientEvent("progress", source, 30000, "roubando")
+                    SetTimeout(30000, function()
+                        TriggerClientEvent('cancelando', source, false)
+                        vRPclient._stopAnim(source, false)
+                        vAZgarage.ToggleLock(vehicle.net)                        
                         TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
+                        if math.random(100) >= 50 then
+                            vRP.tryGetInventoryItem(user_id, item, 1)
+                        end
+
+                        TriggerClientEvent("Notify", source, "negado", "Roubo do veículo concluído e as autoridades foram acionadas.")
+                        local pick = {}
                         for k,v in pairs(vRP.getUsersByPermission("policia.permissao")) do
                             local player = vRP.getUserSource(parseInt(v))
                             if player then
                                 async(function()
                                     local id = vAZ.id:gen()
-                                    TriggerClientEvent('chatMessage',player,"911",{65,130,255},"Roubo na ^1"..mStreet.."^0 do veículo ^1"..mModel.."^0 de placa ^1"..mPlaca.."^0 verifique o ocorrido.")
+                                    vRPclient._playSound(player, "CONFIRM_BEEP","HUD_MINI_GAME_SOUNDSET")
+                                    TriggerClientEvent('chatMessage', player, "911", {65,130,255}, "Roubo na ^1"..vRPclient.getStreetName(source).."^0 do veículo ^1"..vehicle.model.."^0 de placa ^1"..plate.."^0 verifique o ocorrido.")
                                     pick[id] = vRPclient.addBlip(player,x,y,z,153,84,"Ocorrência",0.5,false)
-                                    SetTimeout(60000,function() vRPclient.removeBlip(player,pick[id]) vAZ.id:free(id) end)
+                                    SetTimeout(60000, function()
+                                        vRPclient.removeBlip(player, pick[id])
+                                        vAZ.id:free(id)
+                                    end)
                                 end)
                             end
                         end
-                    else
-                        TriggerClientEvent("syncLock", -1, vnet)
-                        TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
+                    end)
+                else
+                    if vRP.tryGetInventoryItem(user_id, item, 1) then
+                        local vnet = vRPclient.getNetVehicle(source, vehicle)
+                        vAZgarage.ToggleLock(vnet)  
+                        TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1) 
+                        cb(true)
                     end
-                end)
-                cb(true)
+                end
             end
         end
         cb(false)
-    end,]]
+    end,
     ['repairkit'] = function(source, user_id, item, amount, cb)
         if not vRPclient.isInVehicle(source) then
             local vehicle = vRPclient.getNearestVehicle(source, 7)		
             if vehicle then
                 if vRP.tryGetInventoryItem(user_id, item, 1, false) then
+                    TriggerClientEvent('cancelando', source, true)
                     vRPclient._playAnim(source, false, {{'mini@repair', 'fixing_a_player'}}, true)
                     TriggerClientEvent("progress", source, 30000, "reparando")
                     SetTimeout(30000, function()
@@ -306,7 +325,7 @@ vAZ.handlers = {
                     TriggerClientEvent('cancelando', source, true)
                     vRPclient._playAnim(source, false, {{"mini@repair", "fixing_a_player"}}, true)
                     TriggerClientEvent("progress", source, 30000, "reparando")
-                    SetTimeout(30000,function()
+                    SetTimeout(30000, function()
                         TriggerClientEvent('cancelando', source, false)
                         TriggerClientEvent('repararmotor', source, vehicle)
                         vRPclient._stopAnim(source, false)

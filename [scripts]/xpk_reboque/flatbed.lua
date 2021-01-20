@@ -68,7 +68,7 @@ end
 function getVehicleInDirection(coordFrom, coordTo)
     local rayHandle = CastRayPointToPoint(coordFrom.x, coordFrom.y,
             coordFrom.z, coordTo.x, coordTo.y, coordTo.z, 10,
-            GetPlayerPed(-1), 0)
+            PlayerPedId(), 0)
     local a, b, c, d, vehicle = GetRaycastResult(rayHandle)
     return vehicle
 end

@@ -2,7 +2,7 @@
 ------------ FUNÇÕES -------------
 ----------------------------------
 function DrillAnimation() --ANIMAÇÃO DO MAÇARICO
-	local playerPed = GetPlayerPed(-1)
+	local playerPed = PlayerPedId()
 	
 	Citizen.CreateThread(function()
         TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_WELDING", 0, false)               
@@ -147,7 +147,7 @@ end)
 
 Citizen.CreateThread(function() -- THREAD DO COFRE
 	while true do
-		local pos = GetEntityCoords(GetPlayerPed(-1), true)
+		local pos = GetEntityCoords(PlayerPedId(), true)
 
 		for k,v in pairs(banks)do
 			local pos2 = v.position
@@ -177,7 +177,7 @@ Citizen.CreateThread(function() -- THREAD DO COFRE
 			bank_drawTxt(0.66, 1.44, 1.0,1.0,0.4, "Roubando o banco, faltam ~r~" .. secondsRemaining .. "~w~ segundos para abrir o cofre", 255, 255, 255, 255)
 			
 			local pos2 = banks[bank].position
-			local ped = GetPlayerPed(-1)
+			local ped = PlayerPedId()
 			
             if IsEntityDead(ped) then
 			TriggerServerEvent('vrp_bancos:jogadormorreu', bank)
@@ -210,7 +210,7 @@ end)
 
 Citizen.CreateThread(function() -- THREAD DO HACKER
 	while true do
-		local pos = GetEntityCoords(GetPlayerPed(-1), true)
+		local pos = GetEntityCoords(PlayerPedId(), true)
 
 		for k,v in pairs(banks)do
 			local pos2 = v.hackearposition
@@ -238,7 +238,7 @@ Citizen.CreateThread(function() -- THREAD DO HACKER
 
 		if hackeando then
 			
-			local ped = GetPlayerPed(-1)
+			local ped = PlayerPedId()
             if IsEntityDead(ped) then
 			TriggerServerEvent('vrp_bancos:hackermorreu', bank)
 			end

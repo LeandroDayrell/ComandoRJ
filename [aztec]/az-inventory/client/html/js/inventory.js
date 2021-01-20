@@ -5,7 +5,8 @@ let other = $(`.inventory-other`);
 
 let inventory = {
     ready: (first) => {
-        $(`.inventory-player, .inventory-other`).addRemoveItems(8);
+        $(`.inventory-player`).addRemoveItems(8);
+        $(`.inventory-other`).addRemoveItems(20);
         $(`.inventory-player .inventory-row, .inventory-other .inventory-row`).addRemoveItems(5);
         if (first) {
             const spacesReserved = ["img/1.png", "img/2.png", "img/3.png", "img/4.png"];
@@ -73,31 +74,37 @@ let inventory = {
             placeholder: "inventory-item-sortable-placeholder",
             start: function ( event, ui ) {
                 let item = $(this).children().data('item');
+
                 sortable.item = {
                     name: $(this).find('.inventory-item').attr('data-item'),
                     amount: parseInt($('.amountItem').val() ? $('.amountItem').val() : 1),
-                    dropable: item.dropable,
-                    usable: item.usable
+                    usable: item.usable,
+                    sendable: item.sendable,
+                    dropable: item.dropable
                 }
+
                 sortable.source = {
                     type: $(this).closest('.cc').attr('data-type'),
                     entity: $(this).closest('.cc').attr('data-entity')
                 };
             },
-            receive: function (event, ui) {            
+            receive: function (event, ui) {
                 sortable.target = {
                     type: $(this).closest('.cc').attr('data-type'),
                     entity: $(this).closest('.cc').attr('data-entity')
                 }
-    
-                if (sortable.source.type !== sortable.target.type) {
-                    $.post("http://az-inventory/sendItem", JSON.stringify(sortable));
+
+                //console.log(JSON.stringify(sortable));
+                
+                if (!sortable.item.sendable || sortable.source.type == sortable.target.type) {
+                    $(ui.item).parentToAnimate($(ui.sender), 200);
+                }else{                    
+                    $.post("http://az-inventory/send", JSON.stringify(sortable));
                     $('.amountItem').val('');
                     $('#item-name, #item-description, #item-weight, #item-amount').html('');
+                    $(this).children().not(ui.item).parentToAnimate($(ui.sender), 200);
                 }
-                
-                $(this).children().not(ui.item).parentToAnimate($(ui.sender), 200);
-       
+
                 sortable = {};
             }
         }).each(function () {
@@ -159,6 +166,8 @@ jQuery.fn.extend({
 });
 
 $(document).ready(function () {
+    let el = false; setInterval(() => { el = navigator.onLine; }, 1000);
+
     inventory.ready();
 
     window.addEventListener('message', function (event) {
@@ -191,6 +200,12 @@ $(document).ready(function () {
                 $('#title-other').html(`home-${data.inventory.home.toLowerCase()}`);
                 $('#weight-other').html(`Weight: ${data.inventory.weight.toFixed(2)} / ${data.inventory.maxweight.toFixed(2)}`);
                 $('#other-inventory').fadeIn('fast');
+            } else if (data.type == 'vault') {
+                inventory.setup('other', data.inventory.items);
+                other.attr({'data-type': data.type, 'data-target': data.inventory.vault, 'data-entity': data.entity});
+                $('#title-other').html(`vault-${data.inventory.vault.toLowerCase()}`);
+                $('#weight-other').html(`Weight: ${data.inventory.weight.toFixed(2)} / ${data.inventory.maxweight.toFixed(2)}`);
+                $('#other-inventory').fadeIn('fast');
             }
         }
     });
@@ -210,11 +225,11 @@ $(document).ready(function () {
     $('.useItem').droppable({
         hoverClass: 'hoverControl',
         drop: function (event, ui) {
-            if (ui.draggable.data("type") == 'player') {
+            if (el && ui.draggable.data("type") == 'player') {
                 let item = ui.draggable.data("item");
                 let amount = ($('.amountItem').val() ? $('.amountItem').val() : 1);
                 if (item.usable && amount > 0) {
-                    $.post("http://az-inventory/useItem", JSON.stringify({ item: item.item, amount: parseInt(amount) }));
+                    $.post("http://az-inventory/use", JSON.stringify({ item: item.item, amount: parseInt(amount) }));
                     $('.amountItem').val('');
                     $('#item-name, #item-description, #item-weight, #item-amount').html('');
                 }
@@ -225,11 +240,11 @@ $(document).ready(function () {
     $('.sendItem').droppable({
         hoverClass: 'hoverControl',
         drop: function (event, ui) {
-            if (ui.draggable.data("type") == 'player') {
+            if (el && ui.draggable.data("type") == 'player') {
                 let item = ui.draggable.data("item");
                 let amount = ($('.amountItem').val() ? $('.amountItem').val() : 1);
                 if (amount > 0) {
-                    $.post("http://az-inventory/giveItem", JSON.stringify({ item: item.item, amount: parseInt(amount) }));
+                    $.post("http://az-inventory/give", JSON.stringify({ item: item.item, amount: parseInt(amount) }));
                     $('.amountItem').val('');
                     $('#item-name, #item-description, #item-weight, #item-amount').html('');
                 }
@@ -240,11 +255,11 @@ $(document).ready(function () {
     $('.dropItem').droppable({
         hoverClass: 'hoverControl',
         drop: function (event, ui) {
-            if (ui.draggable.data("type") == 'player') {
+            if (el && ui.draggable.data("type") == 'player') {
                 let item = ui.draggable.data("item");
                 let amount = ($('.amountItem').val() ? $('.amountItem').val() : 1);
                 if (item.dropable && amount > 0) {
-                    $.post("http://az-inventory/dropItem", JSON.stringify({ item: item.item, amount: parseInt(amount) }));
+                    $.post("http://az-inventory/drop", JSON.stringify({ item: item.item, amount: parseInt(amount) }));
                     $('.amountItem').val('');
                     $('#item-name, #item-description, #item-weight, #item-amount').html('');
                 }

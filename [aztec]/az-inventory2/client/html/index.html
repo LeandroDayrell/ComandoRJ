@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>az-inventory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+</head>
+<body style="background:transparent;">          
+    <div class="ui" style="display:none;">
+        <div class="inventory">
+            <div style="height: 316px;width: 200px;position: absolute;margin-left: 699px;margin-top: 105px;">                
+                <center>
+                    <input class="inventory-input searchItem" type="text" placeholder="Search" disabled>
+                    <input class="inventory-input amountItem" type="number" min="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="1">
+                    <button class="inventory-button useItem" style="margin-bottom: 4px;">USE</button>
+                    <button class="inventory-button sendItem" style="margin-bottom: 4px;">ENVIAR</button>
+                    <button class="inventory-button dropItem" style="margin-bottom: 55px;">DROPAR</button>
+                    <button class="inventory-button closeInventory" style="background: rgba(0,0,0,0.80);height: 50px;">FECHAR</button>
+                </center>
+            </div>
+            <div style="width: 592px;height: 536px;position: absolute;" id="personal-inventory">
+                <div class="top-bar-player" style="margin-left: 3px;margin-bottom: 17px;width: 592px;">
+                    <b id="title-player"> </b><br>                    
+                    <font id="weight-player" style="font-size: 13px;"> </font>
+                </div>
+                <div class="cc inventory-player custom-scrollbar">
+                    <div class="inventory-row">
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 1004px;display: none;" id="other-inventory">
+                <div class="top-bar-other" style="margin-left: 3px;margin-bottom: 17px;">
+                    <b id="title-other"></b><br>                    
+                    <font id="weight-other" style="font-size: 13px;"></font>
+                </div>
+                <div class="cc inventory-other custom-scrollbar">
+                    <div class="inventory-row">
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                        <div class="inventory-cell"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item-details" style="width: 500px;height: 128px;position: absolute;left: 50%;transform: translate(-50%, -50%);bottom: 60px;">
+            <div style="font-size: 11px;margin-left: 20px;margin-top: 12px;">
+                <font id="item-name" style="font-size: 24px;"></font>
+                <br>
+                <small id="item-description" style="font-size: 12px;"></small>
+                <br><br>
+                <font id="item-weight"></font>
+                <br>
+                <font id="item-amount"></font>
+            </div>
+        </div>
+    </div>
+    <script src="js/inventory.js"></script>
+</body>
+</html>

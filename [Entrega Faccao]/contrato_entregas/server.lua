@@ -31,7 +31,7 @@ function func.checkPayment()
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.tryGetInventoryItem(user_id,"contrato",quantidade[source]) then
-			vRP.giveMoney(user_id,math.random(500,600)*quantidade[source])
+			vRP.giveMoney(user_id,math.random(15,25)*quantidade[source])
 			quantidade[source] = nil
 			return true
 		else

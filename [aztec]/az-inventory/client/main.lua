@@ -30,16 +30,13 @@ Citizen.CreateThread(function()
         if IsControlJustReleased(0, vAZ.config.keys.vehicle) and not vAZ.nui then
             if not vRP.isInComa() and not vRP.isHandcuffed() then
                 local ply = PlayerPedId()
-                local plyCoords = GetEntityCoords(ply)
-                local vehicle = vRP.getNearestVehicle(5)
                 local source = GetPlayerServerId(NetworkGetPlayerIndexFromPed(ply))
-                if IsEntityAVehicle(vehicle) and GetVehicleDoorLockStatus(vehicle) <= 1 then
-                    local vehicleClass = GetVehicleClass(vehicle)
-                    local boot = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, 'boot'))
-                    local bootDistance = #(plyCoords - boot)
-                    local exhaust = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, 'exhaust'))
-                    local exhaustDistance = #(plyCoords - exhaust)
-                    if vehicleClass == 19 or vehicleClass == 20 or bootDistance <= 1.5 or bootDistance <= 1 and exhaustDistance <= 2 or bootDistance > 1000 and exhaustDistance <= 1 or exhaustDistance <= 1 then
+                local plyCoords = GetEntityCoords(ply)
+                local vehicle = vRP.getNearestVehicle(3)
+                if IsEntityAVehicle(vehicle) and GetVehicleDoorLockStatus(vehicle) == 1 then
+                    --local boot = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, 'boot'))
+                    --local exhaust = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, 'exhaust'))
+                    --if #(plyCoords - boot) <= 1 and #(plyCoords - exhaust) <= 2 or #(plyCoords - boot) > 1000 and #(plyCoords - exhaust) <= 1 or #(plyCoords - exhaust) <= 1 then
                         vAZ.nui = true
                         SendNUIMessage({action = "update", type = 'player', entity = source, inventory = vAZserver.getPlayerInventory(source)})
                         SendNUIMessage({action = "update", type = 'vehicle', entity = vehicle, inventory = vAZserver.getVehicleInventory(GetVehicleNumberPlateText(vehicle), GetEntityModel(vehicle))})                        
@@ -48,7 +45,7 @@ Citizen.CreateThread(function()
                         SendNUIMessage({action = "open"})
                         vAZ.data = {type = 'vehicle', entity = vehicle}
                         TriggerServerEvent("az-inventory:trunk", VehToNet(vehicle))
-                    end
+                    --end
                 end
             end
 		end
@@ -58,14 +55,14 @@ end)
 Citizen.CreateThread(function()
     while vAZ.config.debug do
         Citizen.Wait(0)
-        local vehicle = vRP.getNearestVehicle(10)
+        local vehicle = vRP.getNearestVehicle(5)
         if vehicle ~= nil then
             local ply = PlayerPedId()
             local plyCoords = GetEntityCoords(ply)
             for id,part in pairs({'boot', 'exhaust'}) do
                 local trunkCoords = GetWorldPositionOfEntityBone(tonumber(vehicle), GetEntityBoneIndexByName(vehicle, part))
-                local distance = #(plyCoords - trunkCoords)                
-                vAZ.DrawText3D(trunkCoords.x, trunkCoords.y, trunkCoords.z, '~r~Entity: ~w~'..vehicle..'~w~ - ~r~Class: ~w~'..GetVehicleClass(vehicle)..'~w~ - ~r~Part: ~w~'..part..'~w~ - ~r~Distance: ~w~'..math.ceil(distance))
+                local distance = #(plyCoords - trunkCoords)
+                vAZ.DrawText3D(trunkCoords.x, trunkCoords.y, trunkCoords.z, '~r~'..vehicle..'~w~ [~r~'..part..'~w~]~r~: ~w~'..math.ceil(distance))
             end            
         end
     end
@@ -74,8 +71,8 @@ end)
 RegisterNetEvent('az-inventory:home')
 AddEventHandler('az-inventory:home', function(owner_id, name)
     if not vAZ.nui then
-        local source = GetPlayerServerId(NetworkGetPlayerIndexFromPed(PlayerPedId()))
         if not vRP.isInComa() and not vRP.isHandcuffed() then
+            local source = GetPlayerServerId(NetworkGetPlayerIndexFromPed(PlayerPedId()))
             vAZ.nui = true
             SendNUIMessage({action = "update", type = 'player', entity = source, inventory = vAZserver.getPlayerInventory(source)})
             SendNUIMessage({action = "update", type = 'home', entity = name..':'..owner_id, inventory = vAZserver.getHomeInventory(owner_id, name)})            
@@ -93,23 +90,62 @@ Citizen.CreateThread(function()
         if IsControlJustReleased(0, vAZ.config.keys.inspect) and not vAZ.nui then
             if not vRP.isInComa() and not vRP.isHandcuffed() then
                 local player = vRP.getNearestPlayer(1.5)
-                local source = GetPlayerServerId(NetworkGetPlayerIndexFromPed(PlayerPedId()))
-                if vAZserver.playerIsInComa(player) or vAZserver.playerHasPermission(source, player) or vAZserver.playerInspect(player) then
-                    vAZ.nui = true
-                    SendNUIMessage({action = "update", type = 'player', entity = source, inventory = vAZserver.getPlayerInventory(source)})
-                    SendNUIMessage({action = "update", type = 'inspect', entity = player, inventory = vAZserver.getPlayerInventory(player, true)})               
-                    SetTimecycleModifier('hud_def_blur')
-                    SetNuiFocus(vAZ.nui, vAZ.nui)
-                    SendNUIMessage({action = "open"})
-                    vAZ.data = {type = 'inspect', entity = player}
+                if player ~= nil then
+                    local source = GetPlayerServerId(NetworkGetPlayerIndexFromPed(PlayerPedId()))
+                    if vAZserver.playerIsInComa(player) or vAZserver.playerHasPermission(source, player) or vAZserver.playerInspect(player) then
+                        vAZ.nui = true
+                        SendNUIMessage({action = "update", type = 'player', entity = source, inventory = vAZserver.getPlayerInventory(source)})
+                        SendNUIMessage({action = "update", type = 'inspect', entity = player, inventory = vAZserver.getPlayerInventory(player, true)})               
+                        SetTimecycleModifier('hud_def_blur')
+                        SetNuiFocus(vAZ.nui, vAZ.nui)
+                        SendNUIMessage({action = "open"})
+                        vAZ.data = {type = 'inspect', entity = player}
+                    end
                 end
             end
 		end
     end
 end)
 
-RegisterNUICallback('sendItem', function(data, cb)
-    if data.source.type == 'player' and data.target.type == 'vehicle' then
+Citizen.CreateThread(function()
+    while true do
+        local thread = 1000
+        if not vAZ.nui then
+            local plyPed = PlayerPedId()
+            local plyCoords = GetEntityCoords(plyPed)
+            for name,vault in pairs(vAZ.config.chests) do
+                local distance = #(plyCoords - vector3(vault.x, vault.y, vault.z))
+                if distance < 5 then
+                    thread = 5
+                    DrawMarker(32, vault.x, vault.y, vault.z - 0.80, 0, 0, 0, 0, 0, 0, 0.2, 0.2, 0.2, 158, 57, 233, 50, 1, 0, 0, 0)
+                    DrawMarker(23, vault.x, vault.y, vault.z - 0.97, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 0.5, 158, 57, 233, 120, 0, 0, 0, 0)
+                    if distance <= 1 then
+                        if IsControlJustReleased(0, vAZ.config.keys.vault) then
+                            if not vRP.isInComa() and not vRP.isHandcuffed() and vAZserver.vaultHasPermission(name) then
+                                local source = GetPlayerServerId(NetworkGetPlayerIndexFromPed(plyPed))
+                                vAZ.nui = true
+                                SendNUIMessage({action = "update", type = 'player', entity = source, inventory = vAZserver.getPlayerInventory(source)})
+                                SendNUIMessage({action = "update", type = 'vault', entity = name, inventory = vAZserver.getVaultInventory(name)})               
+                                SetTimecycleModifier('hud_def_blur')
+                                SetNuiFocus(vAZ.nui, vAZ.nui)
+                                SendNUIMessage({action = "open"})
+                                vAZ.data = {type = 'vault', entity = name}
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        Citizen.Wait(thread)
+    end
+end)
+
+RegisterNUICallback('send', function(data, cb)
+    if data.source.type == 'player' and data.target.type == 'vault' then
+        vAZserver.sendPlayerItemToVault(data.item.name, parseInt(data.item.amount), data.target.entity)
+    elseif data.source.type == 'vault' and data.target.type == 'player' then
+        vAZserver.sendVaultItemToPlayer(data.item.name, parseInt(data.item.amount), data.source.entity)
+    elseif data.source.type == 'player' and data.target.type == 'vehicle' then
         vAZserver.sendPlayerItemToVehicle(data.item.name, parseInt(data.item.amount), GetVehicleNumberPlateText(parseInt(data.target.entity)), data.target.entity)
     elseif data.source.type == 'vehicle' and data.target.type == 'player' then
         vAZserver.sendVehicleItemToPlayer(data.item.name, parseInt(data.item.amount), GetVehicleNumberPlateText(parseInt(data.source.entity)), data.source.entity)
@@ -124,15 +160,15 @@ RegisterNUICallback('sendItem', function(data, cb)
     end
 end)
 
-RegisterNUICallback('giveItem', function(data, cb)
+RegisterNUICallback('give', function(data, cb)
     vAZserver.givePlayerItem(data.item, parseInt(data.amount))
 end)
 
-RegisterNUICallback('dropItem', function(data, cb)
+RegisterNUICallback('drop', function(data, cb)
     vAZserver.dropPlayerItem(data.item, parseInt(data.amount), GetEntityCoords(PlayerPedId()))
 end)
 
-RegisterNUICallback('useItem', function(data, cb)
+RegisterNUICallback('use', function(data, cb)
     vAZserver.usablePlayerItem(data.item, parseInt(data.amount))
 end)
 
@@ -144,6 +180,8 @@ RegisterNUICallback('close', function(data, cb)
         TriggerServerEvent("az-inventory:trunk", VehToNet(parseInt(data.entity)))
     elseif data.type == 'home' then
         vAZserver.removePlayerInHomeChest(source, data.entity)
+    elseif data.type == 'vault' then
+        vAZserver.removePlayerInVault(source, data.entity)
     end
     vAZ.data = {}
 end)

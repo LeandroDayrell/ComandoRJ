@@ -1,18 +1,10 @@
 --[[ az-inventory:home ]]--
 
-vAZ.homes = module('cfg/homes')
+vAZ.homes = vAZhomes.getHomes() -- module('cfg/homes')
 vAZ.temp.homes = {}
 
-vRP._prepare('vAZ/getHomeByName', 'SELECT * FROM vrp_user_homes WHERE home = @home AND user_id = @user_id')
-vRP._prepare('vAZ/updateChestHome', 'UPDATE vrp_user_homes SET chest = @chest WHERE home = @home AND user_id = @user_id')
-
-local webhooklinkcasa = "https://discordapp.com/api/webhooks/746541381966626837/wSTKJ99wro_a3VirBxdbp_TMQDhmHmQEvIZhGp3LWgGjXHudXrqZ8IyJ2XpAMoWP4QwP"
-
-function SendWebhookMessage(webhook,message)
-	if webhook ~= nil and webhook ~= "" then
-		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-	end
-end
+vRP._prepare('vAZ/getHomeByName', 'SELECT * FROM vrp_homes_permissions WHERE home = @home AND user_id = @user_id')
+vRP._prepare('vAZ/updateChestHome', 'UPDATE vrp_homes_permissions SET chest = @chest WHERE home = @home AND user_id = @user_id')
 
 vAZ.getHomeInventory = function(owner_id, slot)
     local source = source
@@ -22,7 +14,7 @@ vAZ.getHomeInventory = function(owner_id, slot)
         local name = slot..':'..owner_id
         if vAZ.temp.homes[name] == nil then
             local home = vRP.query('vAZ/getHomeByName', {home = shome.name, user_id = owner_id})
-            if #home > 0 then
+            if #home > 0 then                
                 if home[1].chest == nil or home[1].chest == '' then
                     chest = {}
                 else
@@ -31,7 +23,7 @@ vAZ.getHomeInventory = function(owner_id, slot)
                         chest = {}
                     end
                 end            
-                vAZ.temp.homes[name] = {owner = home[1].user_id, name = name, number = home[1].number, maxweight = shome.slot[2]._config.weight, players = {}, inventory = chest}
+                vAZ.temp.homes[name] = {owner = home[1].user_id, name = name, maxweight = shome.weight, players = {}, inventory = chest}
             end
         end
         if vAZ.temp.homes[name] ~= nil then
@@ -39,7 +31,17 @@ vAZ.getHomeInventory = function(owner_id, slot)
             for item,details in pairs(vAZ.temp.homes[name].inventory) do
                 local data = vAZ.items[item]
                 if data ~= nil then
-                    table.insert(inventory, {item = item, label = data.label, weight = data.weight, photo = data.photo, amount = parseInt(details.amount), description = data.description})
+                    table.insert(inventory, {
+                        item = item,
+                        label = data.label,
+                        sendable = data.sendable or false,
+                        usable = data.usable or false,
+                        dropable = data.dropable or false,
+                        weight = data.weight,
+                        photo = data.photo,
+                        amount = parseInt(details.amount),
+                        description = data.description
+                    })
                 end
             end
             if vAZ.config.debug then
@@ -58,29 +60,18 @@ vAZ.sendPlayerItemToHome = function(item, amount, name)
     local user_id = vRP.getUserId(source)
     if vAZ.temp.homes[name] ~= nil then
         if vAZ.temp.homes[name].inventory ~= nil then
-            if vAZ.itemAllowed(item) then
+            if not vAZ.itemNotAllowed(item) then
                 if vAZ.getChestWeight(vAZ.temp.homes[name].inventory) + vAZ.items[item].weight * amount <= vAZ.temp.homes[name].maxweight then
-                    if item == 'money' then
-                        if vRP.tryPayment(user_id, amount) then
-                            if vAZ.temp.homes[name].inventory[item] then
-                                vAZ.temp.homes[name].inventory[item] = {amount = (vAZ.temp.homes[name].inventory[item].amount + amount)}
-                            else
-                                vAZ.temp.homes[name].inventory[item] = {amount = amount}
-                            end
-                        end
-                    else
-                        if vRP.tryGetInventoryItem(user_id, item, amount, false) then
-                            if vAZ.temp.homes[name].inventory[item] then
-                                vAZ.temp.homes[name].inventory[item] = {amount = (vAZ.temp.homes[name].inventory[item].amount + amount)}
-                            else
-                                vAZ.temp.homes[name].inventory[item] = {amount = amount}
-                            end    
+                    if item == 'money' and vRP.tryPayment(user_id, amount) or vRP.tryGetInventoryItem(user_id, item, amount, false) then
+                        if vAZ.temp.homes[name].inventory[item] then
+                            vAZ.temp.homes[name].inventory[item] = {amount = (vAZ.temp.homes[name].inventory[item].amount + amount)}
+                        else
+                            vAZ.temp.homes[name].inventory[item] = {amount = amount}
                         end
                     end
                     if vAZ.config.debug then
                         print('[az-inventory][home]['..name..'] send item ('..amount..'x '..item..') to home: '..name..' by user_id: '..user_id)
                     end
-					SendWebhookMessage(webhooklinkcasa,  "``` UserID: ["..user_id.."] enviou ["..amount..'x '..item.."] casa: "..name.. " ```")
                     if vAZ.config.logs then
                         vAZ.webhook('home', 'user_id: '..user_id..', colocou '..amount..'x '..item..' na casa: '..name)
                     end
@@ -110,7 +101,7 @@ vAZ.sendHomeItemToPlayer = function(item, amount, name)
         if vAZ.temp.homes[name].inventory ~= nil then
             if vAZ.temp.homes[name].inventory[item] then
                 if vAZ.temp.homes[name].inventory[item].amount >= amount then
-                    if vAZ.itemAllowed(item) then
+                    if not vAZ.itemNotAllowed(item) then
                         if vRP.getInventoryWeight(user_id) + vAZ.items[item].weight * amount <= vRP.getInventoryMaxWeight(user_id) then
                             if (vAZ.temp.homes[name].inventory[item].amount - amount) <= 0 then
                                 vAZ.temp.homes[name].inventory[item] = nil
@@ -122,7 +113,6 @@ vAZ.sendHomeItemToPlayer = function(item, amount, name)
                             else
                                 vRP.giveInventoryItem(user_id, item, amount, false)
                             end
-							SendWebhookMessage(webhooklinkcasa,  "``` UserID: ["..user_id.."] retirou ["..amount..'x '..item.."] casa: "..name.. " ```")
                             if vAZ.config.debug then
                                 print('[az-inventory][home]['..name..'] send item ('..amount..'x '..item..') to player user_id: '..user_id)
                             end
@@ -241,10 +231,8 @@ Citizen.CreateThread(function()
 end)
 
 vAZ.findHomeBySlot = function(slot)
-    for name,home in pairs(vAZ.homes.homes) do
-        if home.slot == slot then
-            return {name = name, data = home, slot = vAZ.homes.slot_types[slot][1]}
-        end
+    if vAZ.homes[slot] then
+        return {name = slot, weight = vAZ.homes[slot][3]}
     end
     return nil
 end

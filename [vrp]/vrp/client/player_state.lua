@@ -105,7 +105,7 @@ function tvRP.giveWeapons(weapons,clear_before)
 end
 
 function tvRP.setArmour(amount)
-	--SetPedArmour(GetPlayerPed(-1), amount)
+	--SetPedArmour(PlayerPedId(), amount)
 	TriggerEvent("newton",amount)
 end
 

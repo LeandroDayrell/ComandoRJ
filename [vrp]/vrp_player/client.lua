@@ -94,7 +94,7 @@ RegisterCommand("bong",function(source, args)
                 if IsEntityPlayingAnim( player, "anim@safehouse@bong", "bong_stage1", 3) then
                     DisableControlAction(0,48,true) 
                     DisableControlAction(0,37,true) 
-                    SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey("WEAPON_UNARMED"), true)
+                    SetCurrentPedWeapon(PlayerPedId(), GetHashKey("WEAPON_UNARMED"), true)
                 end
             end
         end) 
@@ -103,7 +103,7 @@ RegisterCommand("bong",function(source, args)
     local prop_name = prop_name or 'prop_bong_01'
     local secondaryprop_name = secondaryprop_name or 'p_cs_lighter_01'              
         if src.checkbong() then
-            if ( DoesEntityExist( player ) and not IsEntityDead( player )) and not IsPauseMenuActive() and not IsPedSwimming(GetPlayerPed(-1)) and not IsPedSwimmingUnderWater(GetPlayerPed(-1)) and not IsPedShooting(GetPlayerPed(-1)) and not IsPedDiving(GetPlayerPed(-1)) and not IsPedFalling(GetPlayerPed(-1)) then 
+            if ( DoesEntityExist( player ) and not IsEntityDead( player )) and not IsPauseMenuActive() and not IsPedSwimming(PlayerPedId()) and not IsPedSwimmingUnderWater(PlayerPedId()) and not IsPedShooting(PlayerPedId()) and not IsPedDiving(PlayerPedId()) and not IsPedFalling(PlayerPedId()) then 
                 loadAnimDict( ad )            
                 local x,y,z = table.unpack(GetEntityCoords(player))
                 prop = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
@@ -123,13 +123,13 @@ RegisterCommand("bong",function(source, args)
                 ClearPedSecondaryTask(PlayerPedId())
                 StartScreenEffect("DMT_flight",50000,false)
                 LoadAnimSet("MOVE_M@DRUNK@VERYDRUNK")   
-                SetPedMovementClipset(GetPlayerPed(-1), "MOVE_M@DRUNK@VERYDRUNK", 1.0)
+                SetPedMovementClipset(PlayerPedId(), "MOVE_M@DRUNK@VERYDRUNK", 1.0)
                 ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.4)
                 Wait(24000)
                 TriggerEvent("vrp_sound:source", 'love2', 0.2)                
                 Wait(25000)
                 StopAllScreenEffects()
-                ResetPedMovementClipset(GetPlayerPed(-1))
+                ResetPedMovementClipset(PlayerPedId())
             end
         end    
 end)
@@ -550,7 +550,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("mascara")
 AddEventHandler("mascara",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		vRP.playAnim(true,{{"misscommon@std_take_off_masks","take_off_mask_ps",1}},false)
 		Wait(700)
@@ -570,7 +570,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("blusa")
 AddEventHandler("blusa",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		SetPedComponentVariation(ped,8,15,0,2)
 		return
@@ -586,7 +586,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("jaqueta")
 AddEventHandler("jaqueta",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		SetPedComponentVariation(ped,11,15,0,2)
 		return
@@ -602,7 +602,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("coletes")
 AddEventHandler("coletes",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		SetPedComponentVariation(ped,9,15,0,2)
 		return
@@ -618,7 +618,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("calca")
 AddEventHandler("calca",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			SetPedComponentVariation(ped,4,18,0,2)
@@ -638,7 +638,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("maos")
 AddEventHandler("maos",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		SetPedComponentVariation(ped,3,15,0,2)
 		return
@@ -654,7 +654,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("acessorios")
 AddEventHandler("acessorios",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		SetPedComponentVariation(ped,7,0,0,2)
 		return
@@ -670,7 +670,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("sapatos")
 AddEventHandler("sapatos",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			SetPedComponentVariation(ped,6,34,0,2)
@@ -690,7 +690,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("chapeu")
 AddEventHandler("chapeu",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		vRP.playAnim(true,{{"veh@common@fp_helmet@","take_off_helmet_stand",1}},false)
 		Wait(700)
@@ -712,7 +712,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("oculos")
 AddEventHandler("oculos",function(index,color)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if index == nil then
 		vRP.playAnim(true,{{"misscommon@std_take_off_masks","take_off_mask_ps",1}},false)
 		Wait(400)
@@ -1116,7 +1116,7 @@ Citizen.CreateThread(function()
 end) ]]
 
 RegisterCommand('livery', function(source, args, rawCommand)
-    local Veh = GetVehiclePedIsIn(GetPlayerPed(-1))
+    local Veh = GetVehiclePedIsIn(PlayerPedId())
   local livery = tonumber(args[1])
 
   SetVehicleLivery(Veh, livery) --CHANGE livery(id)

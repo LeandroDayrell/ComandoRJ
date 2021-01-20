@@ -58,11 +58,11 @@ function DrawMissionText2(m_text, showtime)
 end
 
 function LocalPed()
-	return GetPlayerPed(-1)
+	return PlayerPedId()
 end
 
 function GetCar() 
-	return GetVehiclePedIsIn(GetPlayerPed(-1),false) 
+	return GetVehiclePedIsIn(PlayerPedId(),false) 
 end
 
 function Chat(debugg)
@@ -105,9 +105,9 @@ function EndTestTasks()
 	onTestEvent = 0
 	DamageControl = 0
 	Error = 0
-	TaskLeaveVehicle(GetPlayerPed(-1), veh, 0)
+	TaskLeaveVehicle(PlayerPedId(), veh, 0)
 	Wait(1000)
-	CarTargetForLock = GetPlayersLastVehicle(GetPlayerPed(-1))
+	CarTargetForLock = GetPlayersLastVehicle(PlayerPedId())
 	lockStatus = GetVehicleDoorLockStatus(CarTargetForLock)
 	SetVehicleDoorsLocked(CarTargetForLock, 2)
 	SetVehicleDoorsLockedForPlayer(CarTargetForLock, PlayerId(), false)
@@ -119,7 +119,7 @@ end
 
 function SpawnTestCar()
 	Citizen.Wait(0)
-	local myPed = GetPlayerPed(-1)
+	local myPed = PlayerPedId()
 	local player = PlayerId()
 	local vehicle = GetHashKey('emperor2')
 
@@ -148,7 +148,7 @@ end
 
 function DIntro()
 	Citizen.Wait(0)
-	local myPed = GetPlayerPed(-1)
+	local myPed = PlayerPedId()
 	DTutOpen = true
 	for k,v in ipairs(cfg.intro) do
 	  SetEntityCoords(myPed,v.pos[1],v.pos[2],v.pos[3],true, false, false,true)
@@ -169,7 +169,7 @@ end
 
 function DTut()
 	Citizen.Wait(0)
-	local myPed = GetPlayerPed(-1)
+	local myPed = PlayerPedId()
 	DTutOpen = true
 	SetEntityCoords(myPed,start_pos.x, start_pos.y, start_pos.z,true, false, false,true)
 	SetEntityHeading(myPed, 314.39)
@@ -190,8 +190,8 @@ end
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        local veh = GetVehiclePedIsUsing(GetPlayerPed(-1))
-		local ped = GetPlayerPed(-1)
+        local veh = GetVehiclePedIsUsing(PlayerPedId())
+		local ped = PlayerPedId()
 		if HasEntityCollidedWithAnything(veh) and DamageControl == 1 then
 		TriggerEvent("pNotify:SendNotification",{
             text = lang.client.pnotify.damaged,
@@ -210,7 +210,7 @@ Citizen.CreateThread(function()
 		  if onTestEvent == step then
 		    if onTestEvent ~= #cfg.practical.steps then
 		      local nstep = cfg.practical.steps[step+1]
-			  if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), event.pos[1], event.pos[2], event.pos[3], true) > 4.0001 then
+			  if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), event.pos[1], event.pos[2], event.pos[3], true) > 4.0001 then
 			  	DrawMarker(1,event.pos[1], event.pos[2], event.pos[3],0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5, 178, 236, 93, 155, 0, 0, 2, 0, 0, 0, 0)
 			  else
 			  	if onTestBlipp ~= nil and DoesBlipExist(onTestBlipp) then
@@ -222,9 +222,9 @@ Citizen.CreateThread(function()
 			  	if event.stop then
 			  	  DrawMissionText2(event.stop, 5000)
 			  	  PlaySound(-1, "RACE_PLACED", "HUD_AWARDS", 0, 0, 1)
-			  	  FreezeEntityPosition(GetVehiclePedIsUsing(GetPlayerPed(-1)), true) -- Freeze Entity
+			  	  FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId()), true) -- Freeze Entity
 			  	  Citizen.Wait(4000)
-			  	  FreezeEntityPosition(GetVehiclePedIsUsing(GetPlayerPed(-1)), false) -- Freeze Entity
+			  	  FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId()), false) -- Freeze Entity
 			  	end
 			  	if event.area then
 			  	  SpeedArea = event.area
@@ -237,7 +237,7 @@ Citizen.CreateThread(function()
 			  	onTestEvent = step+1
 			  end
 		    else
-			  if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)),event.pos[1], event.pos[2], event.pos[3], true) > 4.0001 then
+			  if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),event.pos[1], event.pos[2], event.pos[3], true) > 4.0001 then
 			  	DrawMarker(1,event.pos[1], event.pos[2], event.pos[3],0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5, 178, 236, 93, 155, 0, 0, 2, 0, 0, 0, 0)
 			  else
 			  	if onTestBlipp ~= nil and DoesBlipExist(onTestBlipp) then
@@ -269,7 +269,7 @@ end
 Citizen.CreateThread(function()
   while true do
     if onTtest then
-      local ply = GetPlayerPed(-1)
+      local ply = PlayerPedId()
       local active = true
       DisableControlAction(0, 1, active) -- LookLeftRight
       DisableControlAction(0, 2, active) -- LookUpDown
@@ -316,7 +316,7 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
-        if(IsPedInAnyVehicle(GetPlayerPed(-1), false)) and not TestDone and not onPtest and cfg.dmv.warn then
+        if(IsPedInAnyVehicle(PlayerPedId(), false)) and not TestDone and not onPtest and cfg.dmv.warn then
 		DrawMissionText2(lang.client.no_license, 2000)			
 		end
 	end
@@ -326,7 +326,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
 		CarSpeed = GetEntitySpeed(GetCar()) *  cfg.speed.mult
-        if(IsPedInAnyVehicle(GetPlayerPed(-1), false)) and CarSpeed >= cfg.speed.area[SpeedArea].limit and onPtest then
+        if(IsPedInAnyVehicle(PlayerPedId(), false)) and CarSpeed >= cfg.speed.area[SpeedArea].limit and onPtest then
 		TriggerEvent("pNotify:SendNotification",{
             text = string.gsub(lang.client.pnotify.speeding,"{1}", cfg.speed.area[SpeedArea].limit),
             type = "alert",
@@ -345,7 +345,7 @@ local speedLimit = 0
 Citizen.CreateThread( function()
     while true do 
         Citizen.Wait( 0 )   
-        local ped = GetPlayerPed(-1)
+        local ped = PlayerPedId()
         local vehicle = GetVehiclePedIsIn(ped, false)
         local vehicleModel = GetEntityModel(vehicle)
         local speed = GetEntitySpeed(vehicle)
@@ -409,7 +409,7 @@ end
 Citizen.CreateThread(function()
   while true do
     if onTtest then
-      local ply = GetPlayerPed(-1)
+      local ply = PlayerPedId()
       local active = true
       DisableControlAction(0, 1, active) -- LookLeftRight
       DisableControlAction(0, 2, active) -- LookUpDown
@@ -427,7 +427,7 @@ end)
 Citizen.CreateThread(function()
   while true do
     if DTutOpen then
-      local ply = GetPlayerPed(-1)
+      local ply = PlayerPedId()
       local active = true
 	  SetEntityVisible(ply, false)
 	  FreezeEntityPosition(ply, true)
@@ -502,7 +502,7 @@ local talktodmvped = true
 Citizen.CreateThread(function()
 	while true do
 		crjSleep = 500
-		local pos = GetEntityCoords(GetPlayerPed(-1), false)
+		local pos = GetEntityCoords(PlayerPedId(), false)
 		for k,v in pairs(cfg.dmv.peds) do
 			if(Vdist(v.x, v.y, v.z, pos.x, pos.y, pos.z) < 3.0)then
 			crjSleep = 1

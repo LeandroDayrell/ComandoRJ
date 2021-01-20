@@ -28,7 +28,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15 
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -63,7 +63,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15 
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -98,7 +98,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15 
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -133,7 +133,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15 
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -168,7 +168,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -203,7 +203,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15 
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -238,7 +238,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end
@@ -273,7 +273,7 @@ Citizen.CreateThread(function()
 					if IsControlJustPressed(0,38) and not IsPedInAnyVehicle(ped) then
 						if emP.checkPayment() then
 							processo = true
-							segundos = 10 
+							segundos = 15 
 							if not IsEntityPlayingAnim(ped,"amb@world_human_const_drill@male@drill@base","base") then
 								vRP._CarregarObjeto("amb@world_human_const_drill@male@drill@base","base","prop_tool_jackham",15,60309)
 							end

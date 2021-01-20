@@ -7,7 +7,7 @@ body {
 }
 
 #content {
-	
+	display: none;
 }
 
 .animate-zoom {
@@ -171,3 +171,7 @@ body {
     animation: logo_rot 1s linear infinite;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}

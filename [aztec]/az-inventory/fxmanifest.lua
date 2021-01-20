@@ -16,6 +16,7 @@ server_script {
     'server/player.lua',
     'server/vehicle.lua',
     'server/home.lua',
+    'server/vault.lua',
     'server/items.lua',
     'server/events.lua',
     'server/utils.lua'
@@ -30,3 +31,9 @@ files {
     'client/html/css/*.css',
     'client/html/img/*.png',
 }
+
+dependencies {
+    'vrp',
+    'az-drop',
+    'az-garages',
+} 

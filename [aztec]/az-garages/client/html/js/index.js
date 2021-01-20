@@ -35,7 +35,7 @@ let garage = {
                             <span>${Math.ceil((100 * (vehicle.fuel / 100)))}%</span>
                         </div>
                     </div>
-                    <img src="http://201.80.10.207/gtaimg/vehicles/v1/${vehicle.model}.png" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';">
+                    <img src="http://131.196.198.113/gtaimg/vehicles/v1/${vehicle.model}.png" onerror="this.onerror=null;this.src='https://i.imgur.com/acV4tCt.png';">
                 </div>
             `);
             el.click(ev => {
@@ -115,7 +115,7 @@ let garage = {
                 infoVehicle.find(`.vehicle > .infocar > .ipva > span`).html('Pago');
             }
 
-            infoVehicle.find(`.vehicle > .imgcar > img`).attr('src', `http://201.80.10.207/gtaimg/vehicles/v2/${vehicle.model}.png`);
+            infoVehicle.find(`.vehicle > .imgcar > img`).attr('src', `http://131.196.198.113/gtaimg/vehicles/v2/${vehicle.model}.png`);
 
             infoVehicle.find(`.loading`).hide();
             infoVehicle.find(`.vehicle`).fadeIn('fast');

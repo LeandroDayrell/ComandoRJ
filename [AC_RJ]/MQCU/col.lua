@@ -1,5 +1,5 @@
 AddEventHandler("newton", function(amount)
-	SetPedArmour(GetPlayerPed(-1),amount)
+	SetPedArmour(PlayerPedId(),amount)
 end)
 
 

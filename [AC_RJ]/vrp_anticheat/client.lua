@@ -137,10 +137,10 @@ defaultpedmodel = {
 Citizen.CreateThread(function()
 	while true do
 		Wait(100)
-		if IsPedInAnyVehicle(GetPlayerPed(-1)) then
+		if IsPedInAnyVehicle(PlayerPedId()) then
 		v = GetVehiclePedIsIn(playerPed, false)
 		end
-		playerPed = GetPlayerPed(-1)
+		playerPed = PlayerPedId()
 		if whitelisted == nil and playerPed and v then
 		if GetPedInVehicleSeat(v, -1) == playerPed then
 			checkCar(GetVehiclePedIsIn(playerPed, false))
@@ -180,7 +180,7 @@ Citizen.CreateThread(function()
 	while true do
 		Wait(15)
 
-		playerPed = GetPlayerPed(-1)
+		playerPed = PlayerPedId()
 		if playerPed then
 			playerModel = GetEntityModel(playerPed)
 

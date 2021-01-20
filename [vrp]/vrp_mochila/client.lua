@@ -11,7 +11,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 		if func.checkweight() then
-			local ped = GetPlayerPed(-1)
+			local ped = PlayerPedId()
 			if (GetEntityModel(ped) == GetHashKey("mp_m_freemode_01")) then
 				SetPedComponentVariation(ped, 7, 23, 0, 2)
 			end	
@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 end)
 
 --[[RegisterCommand("mochila",function(source,args)
-	local ped = GetPlayerPed(-1)
+	local ped = PlayerPedId()
 	if args[1] == "on" then
 		enableBackPack = true
 	elseif args[1] == "off" then

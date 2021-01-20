@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(500)
 		for i=1,#Config.RealWeapons,1 do
-			local ped = GetPlayerPed(-1)
+			local ped = PlayerPedId()
 			local weaponHash = GetHashKey(Config.RealWeapons[i].name)
 			if HasPedGotWeapon(ped,weaponHash,false) then
 				local empunhar = false
@@ -84,7 +84,7 @@ function SetGear(weapon)
 	local boneXRot   = 0.0
 	local boneYRot   = 0.0
 	local boneZRot   = 0.0
-	local ped  = GetPlayerPed(-1)
+	local ped  = PlayerPedId()
 	local model      = nil
 
 	for i=1,#Config.RealWeapons,1 do
@@ -126,7 +126,7 @@ function getWeapons()
 	local weapons = {}
 	for k,v in pairs(weapon_types) do
 		local hash = GetHashKey(v)
-		local ped = GetPlayerPed(-1)
+		local ped = PlayerPedId()
 		if HasPedGotWeapon(ped,hash) then
 			local weapon = {}
 			weapons[v] = weapon

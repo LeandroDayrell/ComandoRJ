@@ -7,65 +7,65 @@ Tunnel.bindInterface("emp_caminhao",emP)
 -- VARIAVEIS
 -----------------------------------------------------------------------------------------------------------------------------------------
 local gas = 1
-local cars = 1
+local carros = 1
 local show = 1
-local woods = 1
+local madeira = 1
 local diesel = 1
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PAYLIST
 -----------------------------------------------------------------------------------------------------------------------------------------
 local paylist = {
 	["diesel"] = {
-		[1] = { pay = math.random(17000,24000) },
-		[2] = { pay = math.random(17000,24000) },
-		[3] = { pay = math.random(17000,24000) },
-		[4] = { pay = math.random(17000,24000) },
-		[5] = { pay = math.random(17000,24000) },
-		[6] = { pay = math.random(17000,24000) }
+		[1] = { pay = math.random(720,770) },
+		[2] = { pay = math.random(570,600) },
+		[3] = { pay = math.random(570,600) },
+		[4] = { pay = math.random(680,710) },
+		[5] = { pay = math.random(940,1000) },
+		[6] = { pay = math.random(470,510) }
 	},
 	["gas"] = {
-		[1] = { pay = math.random(17000,24000) },
-		[2] = { pay = math.random(17000,24000) },
-		[3] = { pay = math.random(17000,24000) },
-		[4] = { pay = math.random(17000,24000) },
-		[5] = { pay = math.random(17000,24000) },
-		[6] = { pay = math.random(17000,24000) },
-		[7] = { pay = math.random(17000,24000) },
-		[8] = { pay = math.random(17000,24000) },
-		[9] = { pay = math.random(17000,24000) },
-		[10] = { pay = math.random(17000,24000) },
-		[11] = { pay = math.random(17000,24000) },
-		[12] = { pay = math.random(17000,24000) }
+		[1] = { pay = math.random(650,700) },
+		[2] = { pay = math.random(440,460) },
+		[3] = { pay = math.random(370,400) },
+		[4] = { pay = math.random(200,240) },
+		[5] = { pay = math.random(160,200) },
+		[6] = { pay = math.random(270,300) },
+		[7] = { pay = math.random(180,230) },
+		[8] = { pay = math.random(200,240) },
+		[9] = { pay = math.random(200,250) },
+		[10] = { pay = math.random(580,600) },
+		[11] = { pay = math.random(650,700) },
+		[12] = { pay = math.random(470,510) }
 	},
-	["cars"] = {
-		[1] = { pay = math.random(17000,24000) },
-		[2] = { pay = math.random(17000,24000) },
-		[3] = { pay = math.random(17000,24000) },
-		[4] = { pay = math.random(17000,24000) },
-		[5] = { pay = math.random(17000,24000) }
+	["carros"] = {
+		[1] = { pay = math.random(358,370) },
+		[2] = { pay = math.random(230,260) },
+		[3] = { pay = math.random(300,340) },
+		[4] = { pay = math.random(480,500) },
+		[5] = { pay = math.random(480,500) }
 	},
-	["woods"] = {
-		[1] = { pay = math.random(17000,24000) },
-		[2] = { pay = math.random(17000,24000) },
-		[3] = { pay = math.random(17000,24000) },
-		[4] = { pay = math.random(17000,24000) }
+	["madeira"] = {
+		[1] = { pay = math.random(850,900) },
+		[2] = { pay = math.random(660,700) },
+		[3] = { pay = math.random(170,200) },
+		[4] = { pay = math.random(400,450) }
 	},
 	["show"] = {
-		[1] = { pay = math.random(17000,24000) },
-		[2] = { pay = math.random(17000,24000) },
-		[3] = { pay = math.random(17000,24000) },
-		[4] = { pay = math.random(17000,24000) }
+		[1] = { pay = math.random(430,470) },
+		[2] = { pay = math.random(350,370) },
+		[3] = { pay = math.random(370,400) },
+		[4] = { pay = math.random(350,400) }
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHECKPAYMENT
 -----------------------------------------------------------------------------------------------------------------------------------------
-function emP.checkPayment(id,mod,health)
+function emP.checkPayment(id,mod)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		vRP.giveMoney(user_id,parseInt(paylist[mod][id].pay+health))
-		if mod == "cars" then
+		vRP.giveMoney(user_id,parseInt(paylist[mod][id].pay))
+		if mod == "carros" then
 			local value = vRP.getSData("meta:concessionaria")
 			local metas = json.decode(value) or 0
 			if metas then
@@ -73,7 +73,7 @@ function emP.checkPayment(id,mod,health)
 			end
 		end
 		if vRP.tryGetInventoryItem(user_id,"rebite",1) then
-			vRP.giveInventoryItem(user_id,"dinheirosujo",math.random(500,800))
+			vRP.giveInventoryItem(user_id,"dinheirosujo",math.random(100,150))
 		end
 	end
 end
@@ -85,8 +85,8 @@ Citizen.CreateThread(function()
 		Citizen.Wait(300000)
 		diesel = math.random(#paylist["diesel"])
 		gas = math.random(#paylist["gas"])
-		cars = math.random(#paylist["cars"])
-		woods = math.random(#paylist["woods"])
+		carros = math.random(#paylist["carros"])
+		madeira = math.random(#paylist["madeira"])
 		show = math.random(#paylist["show"])
 	end
 end)
@@ -98,10 +98,10 @@ function emP.getTruckpoint(point)
 		return parseInt(diesel)
 	elseif point == "gas" then
 		return parseInt(gas)
-	elseif point == "cars" then
-		return parseInt(cars)
-	elseif point == "woods" then
-		return parseInt(woods)
+	elseif point == "carros" then
+		return parseInt(carros)
+	elseif point == "madeira" then
+		return parseInt(madeira)
 	elseif point == "show" then
 		return parseInt(show)
 	end
