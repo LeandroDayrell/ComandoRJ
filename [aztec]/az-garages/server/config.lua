@@ -8,332 +8,149 @@ vAZ.config.ipva = 0.02
 
 vAZ.config.garages = {}
 vAZ.config.garages.service = {
-    [1] = {
-        permission = 'pf.permissao',
+     [1] = {
+        permission = 'pmerj.permissao',
         vehicles = {
-        --    "spincivil2",
-            "tahoe21pcesp",
-         --   "hiluxcivil",
+            "corollarj",
+            "r1250rj",
+            "xtz",
+            "focusrj",
+            "urusrj",
+            "frontierrj",
+            "hiluxpolicia",
+            "amarokrj"
         }
     },
     [2] = {
-        permission = 'bpchq.permissao',
+        permission = 'pmerj.permissao',
         vehicles = {
-            "amarokrota",
-		    "riot"
+            "predator"
         }
     },
     [3] = {
         permission = 'pmerj.permissao',
         vehicles = {
-            "spin17rp1",
-            "xtrocam37m2"
+            "polmav",
+            "swift"
         }
     },
     [4] = {
-        permission = 'cmdgeral.permissao',
+        permission = 'paramedico.permissao',
         vehicles = {
-            "amarokrota",
-            "riot",
-            "spin17rp1",
-            "amarokbaep",
-        --    "trailbaep4",
-            "xtrocam37m2"
+            "mercambulancia",
+		    "fordambulancia",
+		    "wheelchair",
+		    "jeepsamu"
         }
     },
     [5] = {
-        permission = 'policia.permissao',
-        vehicles = {
-            "policiaheli"
-        }
-    },
-    [6] = {
-        permission = 'policia.permissao',
-        vehicles = {
-            "policiaheli"
-        }
-    },
-    [7] = {
-        permission = 'paramedico.permissaoo',
-        vehicles = {
-            "paramedicobmwr1200",
-		    "paramedicoambu",
-		    "paramedicocharger2014"
-        }
-    },
-    [8] = {
         permission = 'weazel.permissao',
         vehicles = {
             "rumpo",
         }
     },
-    [9] = {
-        permission = 'paramedico.permissaoo',
+    [6] = {
+        permission = 'paramedico.permissao',
         vehicles = {
-            "paramedicobmwr1200",
-		    "paramedicoambu",
-		    "paramedicocharger2014"
+            "samumav",
         }
     },
-    [10] = {
-        permission = 'paramedico.permissaoo',
-        vehicles = {
-            "paramedicoheli",
-        --    "seasparrow",
-        --    "frogger"
-        }
-    },
-    [11] = {
+    [7] = {  
         permission = 'mecanico.permissao',
         vehicles = {
-            "flatbed3"
+            "flatbed"
         }
     },
-    [12] = {
-        permission = 'mecanico.permissao',
-        vehicles = {
-            "flatbed3"
-        }
-    },
-    [13] = {
+    [8] = {
         permission = 'taxista.permissao',
         vehicles = {
             "taxi"
         }
     },
-    [14] = {
-        permission = 'juiz.permissao',
-        vehicles = {
-            "baller6"
-        }
-    },
-    [15] = {
-        permission = 'advogado.permissao',
-        vehicles = {
-            "felon2"
-        }
-    },
-    [16] = {
+    [9] = {
         permission = 'bope.permissao',
         vehicles = {
-            "amarokbaep",
-       --     "trailbaep4",
-            "xtrocam37m2"
+            "amarokbope",
+            "frontierbope",
+            "caveiraobope",
+            "riot"
         }
     },
-    [17] = {
+    [10] = {
         permission = 'motoclub.permissao',
         vehicles = {
+            "deathbike",
+            "hexer",
             "sanctus",
-            "gburrito"
+            "gargoyle"
         }
     },
-    [18] = {
-        permission = 'motoclub.permissao',
+    [11] = {
+        permission = 'weazel.permissao',
         vehicles = {
-            "sanctus",
-            "gburrito"
+            "frogger"
         }
     },
-    [19] = {
-        permission = 'yakuza.permissao',
+    [12] = {
+        permission = 'dkfarm.permissao',
         vehicles = {
-            -- "superd",
-            -- "speedo"
+            "buccaneer2",
+            "faction2",
+            "faction3",
+            "moonbeam2",
+            "sabregt2",
+            "voodoo",
+		    "chino2"
         }
     },
-    [20] = {
-        permission = 'motoclub.permissao',
+   
+    [13] = {
         vehicles = {
-            "sanctus",
-            "gburrito"
+            "boxville2",
+            "tribike3"
         }
     },
-    [21] = {
-        permission = 'piloto.permissao',
+    [14] = {
         vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [22] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [23] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [24] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [25] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [26] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [27] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [28] = {
-        vehicles = {
-            "coach"
-        }
-    },
-    [29] = {
-        vehicles = {
-            "boxville4",
-		 --   "tribike3"
-        }
-    },
-    [30] = {
-        vehicles = {
+            "trash",
             "trash2"
         }
     },
-    [31] = {
-        vehicles = {
-            "tiptruck"
-        }
-    },
-    [32] = {
-        vehicles = {
-            "ratloader"
-        }
-    },
-    [33] = {
-        vehicles = {
-            "youga2"
-        }
-    },
-    [34] = {
+    [15] = {
         vehicles = {
             "phantom",
 		    "packer"
         }
     },
-    [35] = {
+    [16] = {
         vehicles = {
-            "dinghy",
-            "jetmax",
-            "marquis",
+            "dinghy"
+        }
+    },
+    [17] = {
+        vehicles = {
+            "dinghy"
+        }
+    },
+    [18] = {
+        vehicles = {
+            "dinghy"
+        }
+    },
+    [19] = {
+        vehicles = {
+            "dinghy"
+        }
+    },
+    [20] = {
+        vehicles = {
+            "coach",
+            "bus"
+        }
+    },
+	[21] = {
+        vehicles = {
             "seashark3",
-            "speeder",
-            "speeder2",
-            "squalo",
-            "suntrap",
-            "toro",
-            "toro2",
-            "tropic",
-            "tropic2"
-        }
-    },
-    [36] = {
-        vehicles = {
-            "dinghy",
-            "jetmax",
-            "marquis",
-            "seashark3",
-            "speeder",
-            "speeder2",
-            "squalo",
-            "suntrap",
-            "toro",
-            "toro2",
-            "tropic",
-            "tropic2"
-        }
-    },
-    [37] = {
-        vehicles = {
-            "dinghy",
-            "jetmax",
-            "marquis",
-            "seashark3",
-            "speeder",
-            "speeder2",
-            "squalo",
-            "suntrap",
-            "toro",
-            "toro2",
-            "tropic",
-            "tropic2"
-        }
-    },
-    [38] = {
-        vehicles = {
-            "dinghy",
-            "jetmax",
-            "marquis",
-            "seashark3",
-            "speeder",
-            "speeder2",
-            "squalo",
-            "suntrap",
-            "toro",
-            "toro2",
-            "tropic",
-            "tropic2"
-        }
-    },
-    [39] = {
-        vehicles = {
-            "faggio"
-        }
-    },
-    [40] = {
-        vehicles = {
-            "boxville4",
-		 --   "tribike3"
-        }
-    },
-    [41] = {
-        vehicles = {
-            "comet2"
-        }
-    },
-    [42] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [43] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
-        }
-    },
-    [44] = {
-        permission = 'piloto.permissao',
-        vehicles = {
-            "volatus",
-		    "swift2"
         }
     }
 }

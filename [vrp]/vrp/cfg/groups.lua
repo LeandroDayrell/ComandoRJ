@@ -2727,7 +2727,12 @@ cfg.groups = {
     "caminhoneiro.service",
 	"caminhoneiro.paycheck",
   },
-
+------ Imobiliária ---
+   ["Corretor"] = {
+    _config = { gtype = "cargo"},
+    "dyn.permissao",
+	"Jornalista.permissao"
+  },
 ----------------------------------------- Jornalista --------------------------------------------- 
    ["Jornalista"] = {
     _config = { gtype = "cargo"},
