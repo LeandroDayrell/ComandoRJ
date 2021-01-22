@@ -39,7 +39,9 @@ local src = {
 	[16] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "radiador", ['itemqtd'] = 1 },
 	[17] = { ['re'] = "radiador", ['reqtd'] = 1, ['item'] = "motor", ['itemqtd'] = 2 },
 	[18] = { ['re'] = "motor", ['reqtd'] = 2, ['item'] = "pecasroubada", ['itemqtd'] = 3 },
-	--[19] = { ['re'] = "fivesevenpack", ['reqtd'] = 1, ['item'] = "wbody|WEAPON_PISTOL_MK2", ['itemqtd'] = 1 },
+	
+		--JORNAL
+	[19] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "jornal", ['itemqtd'] = 3 },
 		--VANILLA
 	--[20] = { ['re'] = "snspack", ['reqtd'] = 1, ['item'] = "wbody|WEAPON_SNSPISTOL", ['itemqtd'] = 1 },
 	--[21] = { ['re'] = "municaosnspack", ['reqtd'] = 1, ['item'] = "wammo|WEAPON_SNSPISTOL", ['itemqtd'] = 50 },
