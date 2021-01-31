@@ -37,7 +37,9 @@ RegisterNUICallback('comprar', function(data, cb)
 	IsInShopMenu = false
 	SetNuiFocus(false, false)
 	local veh = data.id + 1
-	TriggerServerEvent('comprar:carro', veh)	
+	if veh ~= nil then
+		TriggerServerEvent('comprar:carro', veh)	
+	end
 end)
 
 RegisterNUICallback('fechar', function()

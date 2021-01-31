@@ -13,7 +13,7 @@ vRP._prepare("sRP/obter_endereco_pelo_nome", "SELECT * FROM vrp_user_homes WHERE
 vRP._prepare("sRP/obter_dono_casa", "SELECT user_id FROM vrp_user_homes WHERE home = @home AND number = @number")
 vRP._prepare("sRP/rm_endereco", "DELETE FROM vrp_user_homes WHERE user_id = @user_id")
 vRP._prepare("sRP/novo_rm_endereco", "DELETE FROM vrp_user_homes WHERE user_id = @user_id AND home = @home")
-vRP._prepare("NL/set_endereco", "INSERT INTO vrp_user_homes(user_id,home,number,locked,guardaRoupa,bau,bauLimite) VALUES(@user_id,@home,@number,@locked,@guardaRoupa,@bau,@bauLimite)")
+vRP._prepare("NL/set_endereco", "INSERT INTO vrp_user_homes(user_id,home,number,locked,guardaRoupa,chest,bauLimite) VALUES(@user_id,@home,@number,@locked,@guardaRoupa,@bau,@bauLimite)")
 vRP._prepare("NL/get_casa", "SELECT * FROM vrp_user_homes WHERE home = @home")
 
 vRP._prepare("vAZ/updateHomeWardrobe", "UPDATE vrp_user_homes SET guardaRoupa = @guardaRoupa WHERE home = @home")
@@ -36,8 +36,8 @@ async(function()
             name = id,
             owner = -1,
             locked = true,
-            entry = home.entrada,
-            exit = home.saida,
+            entry = home.entry,
+            exit = home.exit,
             chest = home.bau.localizacao,
             wardrobe = home.guardaRoupa
         }
@@ -50,9 +50,11 @@ async(function()
             vAZ.homes[home.home].locked = home.locked
         end
     end
-
-    print(json.encode(vAZ.homes))
 end)
+
+vAZ.getHomes = function()
+    return vAZ.homes
+end
 
 -- Players on area slot
 vAZ.GetUsersAreaSlot = function(name)
@@ -356,4 +358,11 @@ end)
 RegisterCommand("ggc", function(source,args,rawCommand)
     local source = source
     vAZclient.SetHomes(-1, vAZ.homes)
+end)
+
+RegisterCommand("bc", function(source,args,rawCommand)
+    local source = source
+    local user_id = vRP.getUserId(source)
+
+    TriggerEvent('az-homes:purchase', user_id, 'Casa PH CITY nº56')
 end)

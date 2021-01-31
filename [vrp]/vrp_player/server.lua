@@ -52,6 +52,17 @@ local user_id = vRP.getUserId(source)
 end)]]
 
 
+RegisterCommand('status',function(source,args,rawCommand)
+    local onlinePlayers = GetNumPlayerIndices()
+    local policia = vRP.getUsersByPermission("policia.permissao")
+    local paramedico = vRP.getUsersByPermission("paramedico.permissao")
+    local mec = vRP.getUsersByPermission("mecanico.permissao")
+    local staff = vRP.getUsersByPermission("admin.permissao")
+    local ilegal = vRP.getUsersByPermission("ilegal.permissao")
+    local user_id = vRP.getUserId(source)
+        TriggerClientEvent("Notify",source,"importante","<bold><b>Jogadores</b>: <b>"..onlinePlayers.."<br>Administração</b>: <b>"..#staff.."<br>Policiais</b>: <b>"..#policia.."<br>Ilegal</b>: <b>"..#ilegal.."<br>Paramédicos</b>: <b>"..#paramedico.."<br>Mecânicos</b> em serviço: <b>"..#mec.."</b></bold>.",9000)
+    end)
+
 RegisterCommand('cor', function(source, args)
     local source = source
     local user_id = vRP.getUserId(source)

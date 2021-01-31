@@ -1,9 +1,3 @@
-local Tunnel = module("vrp","lib/Tunnel")
-
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNCTION
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -12,9 +6,11 @@ function ToggleActionMenu()
 	menuactive = not menuactive
 	if menuactive then
 		SetNuiFocus(true,true)
+		TransitionToBlurred(1000)
 		SendNUIMessage({ showmenu = true })
 	else
 		SetNuiFocus(false)
+		TransitionFromBlurred(1000)
 		SendNUIMessage({ hidemenu = true })
 	end
 end
@@ -23,121 +19,85 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("ButtonClick",function(data,cb)
 	if data == "utilidades-comprar-isca" then
-		TriggerServerEvent("crj-comprar","isca")
+		TriggerServerEvent("departamento-comprar","isca")
+	elseif data == "utilidades-comprar-celular" then
+		TriggerServerEvent("departamento-comprar","celular")
 	elseif data == "utilidades-comprar-garrafa" then
-		TriggerServerEvent("crj-comprar","garrafavazia")
+		TriggerServerEvent("departamento-comprar","garrafavazia")
 	elseif data == "utilidades-comprar-militec" then
-		TriggerServerEvent("crj-comprar","militec")
+		TriggerServerEvent("departamento-comprar","militec")
 	elseif data == "utilidades-comprar-reparos" then
-		TriggerServerEvent("crj-comprar","repairkit")
-	elseif data == "utilidades-comprar-walkietalkie" then
-		TriggerServerEvent("crj-comprar","walkietalkie")
-	elseif data == "utilidades-comprar-rastreador" then
-   		TriggerServerEvent("crj-comprar","rastreador")
-	elseif data == "utilidades-comprar-croquettes" then
-		TriggerServerEvent("crj-comprar","croquettes")
+		TriggerServerEvent("departamento-comprar","repairkit")
 	elseif data == "utilidades-comprar-ferramentas" then
-		TriggerServerEvent("crj-comprar","ferramenta")
-	elseif data == "utilidades-comprar-roupas" then
-		TriggerServerEvent("crj-comprar","roupas")	
-	elseif data == "utilidades-comprar-mochila" then
-		TriggerServerEvent("crj-comprar","mochila")
-	elseif data == "utilidades-vender-alianca" then
-		TriggerServerEvent("departamento-venderbanco","alianca")	
-
+		TriggerServerEvent("departamento-comprar","ferramenta")
+	elseif data == "utilidades-comprar-bandagem" then
+		TriggerServerEvent("departamento-comprar","bandagem")
+	elseif data == "utilidades-comprar-serra" then
+		TriggerServerEvent("departamento-comprar","serra")
+	elseif data == "utilidades-comprar-furadeira" then
+		TriggerServerEvent("departamento-comprar","furadeira")	
+	elseif data == "utilidades-comprar-radio" then
+		TriggerServerEvent("departamento-comprar","radio")
 	elseif data == "utilidades-vender-isca" then
-		TriggerServerEvent("departamento-venderbanco","isca")
+		TriggerServerEvent("departamento-vender","isca")
 	elseif data == "utilidades-vender-garrafa" then
-		TriggerServerEvent("departamento-venderbanco","garrafavazia")
-	elseif data == "utilidades-vender-rastreador" then
-   		TriggerServerEvent("departamento-venderbanco","rastreador")
-	elseif data == "utilidades-vender-croquettes" then
-		TriggerServerEvent("departamento-venderbanco","croquettes")
+		TriggerServerEvent("departamento-vender","garrafavazia")
 	elseif data == "utilidades-vender-militec" then
-		TriggerServerEvent("departamento-venderbanco","militec")
+		TriggerServerEvent("departamento-vender","militec")
 	elseif data == "utilidades-vender-reparos" then
-		TriggerServerEvent("departamento-venderbanco","repairkit")
+		TriggerServerEvent("departamento-vender","repairkit")
 	elseif data == "utilidades-vender-ferramentas" then
-		TriggerServerEvent("departamento-venderbanco","ferramenta")
-	elseif data == "utilidades-vender-roupas" then
-		TriggerServerEvent("departamento-venderbanco","roupas")
-	elseif data == "utilidades-vender-mochila" then
-		TriggerServerEvent("departamento-venderbanco","mochila")
-	elseif data == "utilidades-vender-alianca" then
-		TriggerServerEvent("departamento-venderbanco","alianca")
-
+		TriggerServerEvent("departamento-vender","ferramenta")
+	elseif data == "utilidades-vender-serra" then
+		TriggerServerEvent("departamento-vender","serra")
+	elseif data == "utilidades-vender-furadeira" then
+		TriggerServerEvent("departamento-vender","furadeira")	
+	elseif data == "vestuario-comprar-mochila" then
+		TriggerServerEvent("departamento-comprar","mochila")
+	elseif data == "vestuario-comprar-roupas" then
+		TriggerServerEvent("departamento-comprar","roupas")	
+	elseif data == "vestuario-comprar-alianca" then
+		TriggerServerEvent("departamento-comprar","alianca")
+	elseif data == "vestuario-vender-mochila" then
+		TriggerServerEvent("departamento-vender","mochila")
+	elseif data == "vestuario-vender-alianca" then
+		TriggerServerEvent("departamento-vender","alianca")
 	elseif data == "bebidas-comprar-cerveja" then
-		TriggerServerEvent("crj-comprar","cerveja")
+		TriggerServerEvent("departamento-comprar","cerveja")
 	elseif data == "bebidas-comprar-tequila" then
-		TriggerServerEvent("crj-comprar","tequila")
+		TriggerServerEvent("departamento-comprar","tequila")
 	elseif data == "bebidas-comprar-vodka" then
-		TriggerServerEvent("crj-comprar","vodka")
+		TriggerServerEvent("departamento-comprar","vodka")
 	elseif data == "bebidas-comprar-whisky" then
-		TriggerServerEvent("crj-comprar","whisky")
+		TriggerServerEvent("departamento-comprar","whisky")
 	elseif data == "bebidas-comprar-conhaque" then
-		TriggerServerEvent("crj-comprar","conhaque")
+		TriggerServerEvent("departamento-comprar","conhaque")
 	elseif data == "bebidas-comprar-absinto" then
-		TriggerServerEvent("crj-comprar","absinto")
+		TriggerServerEvent("departamento-comprar","absinto")
 	elseif data == "bebidas-comprar-energetico" then
-		TriggerServerEvent("crj-comprar","energetico")
-	elseif data == "bebidas-comprar-agua" then
-		TriggerServerEvent("crj-comprar","agua")
-	elseif data == "bebidas-comprar-limonada" then
-		TriggerServerEvent("crj-comprar","limonada")
-	elseif data == "bebidas-comprar-refrigerante" then
-		TriggerServerEvent("crj-comprar","refrigerante")
-	elseif data == "bebidas-comprar-cafe" then
-		TriggerServerEvent("crj-comprar","cafe")
-
+		TriggerServerEvent("departamento-comprar","energetico")
+	elseif data == "alimentos-comprar-agua" then
+		TriggerServerEvent("departamento-comprar","agua")
+	elseif data == "alimentos-comprar-refri" then
+		TriggerServerEvent("departamento-comprar","refri")
+	elseif data == "alimentos-comprar-hamburguer" then
+		TriggerServerEvent("departamento-comprar","hamburguer")
+	elseif data == "alimentos-comprar-sanduiche" then
+		TriggerServerEvent("departamento-comprar","sanduiche")
 	elseif data == "bebidas-vender-cerveja" then
-		TriggerServerEvent("departamento-venderbanco","cerveja")
+		TriggerServerEvent("departamento-vender","cerveja")
 	elseif data == "bebidas-vender-tequila" then
-		TriggerServerEvent("departamento-venderbanco","tequila")
+		TriggerServerEvent("departamento-vender","tequila")
 	elseif data == "bebidas-vender-vodka" then
-		TriggerServerEvent("departamento-venderbanco","vodka")
+		TriggerServerEvent("departamento-vender","vodka")
 	elseif data == "bebidas-vender-whisky" then
-		TriggerServerEvent("departamento-venderbanco","whisky")
+		TriggerServerEvent("departamento-vender","whisky")
 	elseif data == "bebidas-vender-conhaque" then
-		TriggerServerEvent("departamento-venderbanco","conhaque")
+		TriggerServerEvent("departamento-vender","conhaque")
 	elseif data == "bebidas-vender-absinto" then
-		TriggerServerEvent("departamento-venderbanco","absinto")
+		TriggerServerEvent("departamento-vender","absinto")
 	elseif data == "bebidas-vender-energetico" then
-		TriggerServerEvent("departamento-venderbanco","energetico")		
-	elseif data == "bebidas-vender-agua" then
-		TriggerServerEvent("departamento-venderbanco","agua")
-	elseif data == "bebidas-vender-limonada" then
-		TriggerServerEvent("departamento-venderbanco","limonada")
-	elseif data == "bebidas-vender-refrigerante" then
-		TriggerServerEvent("departamento-venderbanco","refrigerante")
-	elseif data == "bebidas-vender-cafe" then
-		TriggerServerEvent("departamento-venderbanco","cafe")
-
-	elseif data == "comidas-comprar-chocolate" then
-		TriggerServerEvent("crj-comprar","chocolate")
-	elseif data == "comidas-comprar-salgadinho" then
-		TriggerServerEvent("crj-comprar","salgadinho")
-	elseif data == "comidas-comprar-rosquinha" then
-		TriggerServerEvent("crj-comprar","rosquinha")
-	elseif data == "comidas-comprar-pizza" then
-		TriggerServerEvent("crj-comprar","pizza")
-	elseif data == "comidas-comprar-pao" then
-		TriggerServerEvent("crj-comprar","pao")
-	elseif data == "comidas-comprar-sanduiche" then
-		TriggerServerEvent("crj-comprar","sanduiche")
-
-	elseif data == "comidas-vender-chocolate" then
-		TriggerServerEvent("departamento-venderbanco","chocolate")
-	elseif data == "comidas-vender-salgadinho" then
-		TriggerServerEvent("departamento-venderbanco","salgadinho")
-	elseif data == "comidas-vender-rosquinha" then
-		TriggerServerEvent("departamento-venderbanco","rosquinha")
-	elseif data == "comidas-vender-pizza" then
-		TriggerServerEvent("departamento-venderbanco","pizza")
-	elseif data == "comidas-vender-conhaque" then
-		TriggerServerEvent("departamento-venderbanco","pao")
-	elseif data == "comidas-vender-sanduiche" then
-		TriggerServerEvent("departamento-venderbanco","sanduiche")
-
+		TriggerServerEvent("departamento-vender","energetico")
 	elseif data == "fechar" then
 		ToggleActionMenu()
 	end
@@ -152,8 +112,6 @@ local marcacoes = {
 	{ -707.37,-913.68,19.21 },
 	{ -47.73,-1757.25,29.42 },
 	{ 373.90,326.91,103.56 },
-	{ 436.93838500977,-986.67510986328,30.689657211304 },
-	{ -1065.7474365234,-841.86126708984,5.1103501319885 },
 	{ -3243.10,1001.23,12.83 },
 	{ 1729.38,6415.54,35.03 },
 	{ 547.90,2670.36,42.15 },
@@ -167,31 +125,57 @@ local marcacoes = {
 	{ 1135.56,-982.20,46.41 },
 	{ 1165.91,2709.41,38.15 },
 	{ -1487.18,-379.02,40.16 },
-	{ -816.12249755859,-194.64167785645,37.590026855469 },
-	{ -1095.4796142578,-2594.6533203125,13.925128936768 },
-	{ 943.3779296875,1027.791015625,262.83688354492 },
-	{ 313.22964477539,-588.01440429688,43.215240478516 },
 	{ -1222.78,-907.22,12.32 },
-	{ 886.89581298828,-2097.873046875,35.591915130615 },
-	{1351.7724609375,-115.1529083252,121.64681243896},
-	{-1147.7247314453,4908.4013671875,220.96878051758},
+	{ -1074.1,-2735.98,0.82 }, -- aeroporto
+	{ -1089.11,-834.63,23.04 }, -- DP
+	{ 343.37,-597.72,43.13 } -- HP
+	
 }
 
 Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 	while true do
-		local crjSleep = 500
+		Citizen.Wait(5)
 		for _,mark in pairs(marcacoes) do
 			local x,y,z = table.unpack(mark)
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),x,y,z,true)
-			if distance <= 1.2 then
-			crjSleep = 1
+			if distance <= 2.0 then
+				DrawText3Ds(x,y,z+0.20,"~r~[E] ~w~Para Acessar a Loja")
 				if IsControlJustPressed(0,38) then
 					ToggleActionMenu()
 				end
 			end
-			
-			Citizen.Wait(crjSleep)
 		end
 	end
 end)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- FUNÇÕES
+-----------------------------------------------------------------------------------------------------------------------------------------
+function drawTxt(text,font,x,y,scale,r,g,b,a)
+	SetTextFont(font)
+	SetTextScale(scale,scale)
+	SetTextColour(r,g,b,a)
+	SetTextOutline()
+	SetTextCentre(1)
+	SetTextEntry("STRING")
+	AddTextComponentString(text)
+	DrawText(x,y)
+end
+
+function DrawText3Ds(x,y,z,text)
+    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
+    local px,py,pz=table.unpack(GetGameplayCamCoords())
+    
+    SetTextScale(0.34, 0.34)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 215)
+    SetTextEntry("STRING")
+    SetTextCentre(1)
+    AddTextComponentString(text)
+    DrawText(_x,_y)
+    local factor = (string.len(text)) / 370
+    DrawRect(_x,_y+0.0125, 0.001+ factor, 0.028, 0, 0, 0, 78)
+end

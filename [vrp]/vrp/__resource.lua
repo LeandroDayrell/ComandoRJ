@@ -15,7 +15,7 @@ server_scripts {
 	"modules/inventory.lua",
 	"modules/identity.lua",
 	"modules/survival.lua",
-	--"modules/home.lua",
+	"modules/home.lua",
 	--"modules/home_components.lua",
 	"modules/aptitude.lua",
 	"modules/basic_items.lua",

@@ -73,7 +73,7 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-		Citizen.Wait(5)      
+		Citizen.Wait(5)
 		local ply = PlayerPedId()
 		local plyCoords = GetEntityCoords(ply)
 		local distance = GetDistanceBetweenCoords(plyCoords, -128.48, -642.02, 168.84, true)
