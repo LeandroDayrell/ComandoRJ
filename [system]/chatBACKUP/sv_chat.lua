@@ -13,6 +13,15 @@ RegisterServerEvent('_chat:messageEntered')
 RegisterServerEvent('chat:clear')
 RegisterServerEvent('__cfx_internal:commandFallback')
 
+
+local webhooklinkchatgame = "https://discordapp.com/api/webhooks/719672373363867720/wPwCu3FLMnzAlD0SfMm26KpR4yRwgjVmFaN3b_kdtvFSeje9ugOyQSviGa1lKEmDe1CB"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 --[[AddEventHandler('_chat:messageEntered', function(author, color, message)
     if not message or not author then
         return
@@ -89,25 +98,11 @@ AddEventHandler('onServerResourceStart', function(resName)
         template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(36, 211, 242,1) 3%, rgba(36, 211, 242,0) 95%); border-radius: 15px 50px 30px 5px;" src="https://image.flaticon.com/icons/svg/1006/1006657.svg"> @{0}:<br>{1}</div>',
         args = { fal, message }
         })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /TW " ..message.. "```")
+		
     end)
 
-
-    RegisterCommand('ilegal', function(source, args, rawCommand)
-        local message = rawCommand:sub(8)
-        local user_id = vRP.getUserId(source)
-        if user_id ~= nil then
-            for k, v in pairs(vRP.getUsers()) do
-                if not vRP.hasPermission(k, "policia.permissao") then
-                    TriggerClientEvent('chat:addMessage', v, {
-                        template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(0, 0, 0,0.7) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><i class="fab fa-twitter"></i> @Anônimo: {1}</div>',
-                        args = { fal, message }
-                    })
-                end
-            end
-        end
-    end)
-
-    RegisterCommand('olx', function(source, args, rawCommand)
+    RegisterCommand('ml', function(source, args, rawCommand)
         local message = rawCommand:sub(3)
         local user_id = vRP.getUserId(source)
         local identity = vRP.getUserIdentity(user_id)
@@ -116,6 +111,7 @@ AddEventHandler('onServerResourceStart', function(resName)
             template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(212, 178, 44,0.9) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 20px" src="https://image.flaticon.com/icons/svg/1006/1006657.svg"> @{0}: {1}</div>',
             args = { fal, message }
         })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /ML " ..message.. "```")
     end, false)
     
     
@@ -129,6 +125,7 @@ AddEventHandler('onServerResourceStart', function(resName)
             template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(35, 142, 219,0.9) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 18px" src="https://image.flaticon.com/icons/svg/1022/1022484.svg"> @{0}: {1}</div>',
             args = { fal, message }
         })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /190 " ..message.. "```")
     end, false)
     
     RegisterCommand('190a', function(source, args, rawCommand)
@@ -139,6 +136,7 @@ AddEventHandler('onServerResourceStart', function(resName)
             template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(35, 142, 219,0.5) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 20px" src="https://image.flaticon.com/icons/svg/2067/2067824.svg"> @Bandidos:  {1}</div>',
             args = { fal, message }
         })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /190A " ..message.. "```")
     end, false)
     
     RegisterCommand('192', function(source, args, rawCommand)
@@ -150,6 +148,19 @@ AddEventHandler('onServerResourceStart', function(resName)
             template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(0, 100, 0,0.7) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 18px" src="https://image.flaticon.com/icons/svg/1142/1142131.svg"> @{0}: {1}</div>',
             args = { fal, message }
         })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /192 " ..message.. "```")
+    end, false)
+	
+	RegisterCommand('192a', function(source, args, rawCommand)
+        local message = rawCommand:sub(4)
+        local user_id = vRP.getUserId(source)
+        local identity = vRP.getUserIdentity(user_id)
+        fal = identity.name.. " " .. identity.firstname
+        TriggerClientEvent('chat:addMessage', -1, {
+            template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(0, 100, 0,0.7) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 18px" src="https://image.flaticon.com/icons/svg/1142/1142131.svg"> @{0}: {1}</div>',
+            args = { fal, message }
+        })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /192a " ..message.. "```")
     end, false)
     
     RegisterCommand('admin', function(source, args, rawCommand)
@@ -159,13 +170,14 @@ AddEventHandler('onServerResourceStart', function(resName)
         fal = identity.name.. " " .. identity.firstname
         if vRP.hasPermission(user_id, "owner.permissao") or vRP.hasPermission(user_id, "admin.permissao") or vRP.hasPermission(user_id, "moderador.permissao") or vRP.hasPermission(user_id, "wl.permissao") then
         TriggerClientEvent('chat:addMessage', -1, {
-            template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(255, 10, 10,0.7) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 17px" src="https://image.flaticon.com/icons/svg/138/138304.svg"> @PREFEITURA: {1}</div>',
+            template = '<div style="padding: 0.5vw; margin: 0.5vw; background-image: linear-gradient(to right, rgba(255, 10, 10,0.7) 3%, rgba(0, 0, 0,0) 95%); border-radius: 15px 50px 30px 5px;"><img style="width: 17px" src="https://image.flaticon.com/icons/svg/138/138304.svg"> #PREFEITURA: {1}</div>',
             args = { fal, message }
         })
+		SendWebhookMessage(webhooklinkchatgame,  "```" ..user_id.." /ADMIN " ..message.. "```")
         end
     end, false)
     
-    RegisterCommand('limpachat', function(source)
+    RegisterCommand('clear', function(source)
         local user_id = vRP.getUserId(source);
         if user_id ~= nil then
             if vRP.hasPermission(user_id, "admin.permissao") then

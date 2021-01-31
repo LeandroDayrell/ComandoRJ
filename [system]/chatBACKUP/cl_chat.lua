@@ -233,7 +233,7 @@ end)
 
 Citizen.CreateThread(function()
     TriggerEvent('chat:addSuggestion', '/olx')
-    TriggerEvent('chat:addSuggestion', '/ilegal')
+	TriggerEvent('chat:addSuggestion', '/roubo')
     TriggerEvent('chat:addSuggestion', '/192')
     TriggerEvent('chat:addSuggestion', '/190')
 end)
