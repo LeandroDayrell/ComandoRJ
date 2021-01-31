@@ -1,8 +1,5 @@
 local Tunnel = module("vrp","lib/Tunnel")
 
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
 
 local menuEnabled = false
 function ToggleActionMenu()

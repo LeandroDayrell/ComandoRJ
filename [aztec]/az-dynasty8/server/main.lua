@@ -6,15 +6,38 @@ vAZclient = Tunnel.getInterface('az-dynasty8')
 vAZ = {}
 Tunnel.bindInterface('az-dynasty8', vAZ)
 
-vRP._prepare("vPH/GetAllHomes", "SELECT * FROM vrp_imobiliaria")
-vRP._prepare("vPH/GetHomesForSales", "SELECT * FROM vrp_imobiliaria WHERE a_venda = true")
+vAZhomes = Proxy.getInterface('az-homes')
+
+vRP._prepare("vPH/GetAllHomes", "SELECT * FROM vrp_dynasty8")
+vRP._prepare("vPH/GetHomesForSales", "SELECT * FROM vrp_dynasty8 WHERE sale = true")
 vRP._prepare("vPH/GetUserHomeByName", "SELECT * FROM vrp_user_homes WHERE home = @home")
-vRP._prepare("vPH/GetHomeByName", "SELECT * FROM vrp_imobiliaria WHERE nome = @home")
-vRP._prepare("vPH/UpdateHomeAvailable", "UPDATE vrp_imobiliaria SET a_venda = @available WHERE nome = @home")
+vRP._prepare("vPH/GetHomeByName", "SELECT * FROM vrp_dynasty8 WHERE home = @home")
+vRP._prepare("vPH/UpdateHomeAvailable", "UPDATE vrp_dynasty8 SET sale = @available WHERE home = @home")
+vRP._prepare("vPH/InsertHomeSale", "INSERT INTO vrp_dynasty8 (home, price, category, image) VALUES (@home, @price, @category, @image)")
 
 local cfg = module("cfg/homes").casas
 local usersVisit = {}
 local dispatch = {}
+
+-- Initializing
+async(function()
+    local homes = vRP.query("vPH/GetAllHomes", {})
+
+    local search = function(entry)
+        for name,home in pairs(homes) do
+            if name == entry then
+                return true
+            end
+        end
+        return false
+    end
+
+    for name,home in pairs(vAZhomes.getHomes()) do
+        if not search(name) then
+            vRP.execute("vPH/InsertHomeSale", {home = name, price = cfg[name].preco, category = cfg[name].categoria, image = cfg[name].img})
+        end
+    end
+end)
 
 vAZ.CheckPermission = function(permission)
     local source = source
@@ -44,10 +67,10 @@ vAZ.GetHomesForSales = function()
     local homesDB = vRP.query("vPH/GetHomesForSales", {})
     if #homesDB > 0 then        
         for id,home in pairs(homesDB) do
-            if cfg[home.nome] then
-                home.entry = cfg[home.nome].entrada
-                home.exit = cfg[home.nome].saida
-                home.chest = cfg[home.nome].bau.limite
+            if cfg[home.home] then
+                home.entry = cfg[home.home].entry
+                home.exit = cfg[home.home].saida
+                home.chest = cfg[home.home].bau.limite
                 table.insert(homes, home)
             end            
         end
@@ -60,8 +83,8 @@ vAZ.GetHomeTypes = function()
     local homes = vRP.query("vPH/GetHomesForSales", {})
     if #homes > 0 then
         for id,home in pairs(homes) do            
-            if not vAZ.SearchHomeType(types, home.categoria) then
-                table.insert(types, home.categoria)
+            if not vAZ.SearchHomeType(types, home.category) then
+                table.insert(types, home.category)
             end
         end
     end
@@ -115,14 +138,14 @@ vAZ.PurchaseHome = function(data)
         if #available == 0 then
             local home = vRP.query("vPH/GetHomeByName", {home = data.name})
             if #home > 0 then
-                local ok = vRP.request(source, "Deseja comprar a residencia ?<br><br>Residencia:<b> "..data.name.."<br>Valor:<b> R$"..format(parseInt(home[1].preco)).."</b> ?", 30)
+                local ok = vRP.request(source, "Deseja comprar a residencia ?<br><br>Residencia:<b> "..data.name.."<br>Valor:<b> R$"..format(parseInt(home[1].price)).."</b> ?", 30)
                 if ok then
-                    if vRP.tryFullPayment(user_id, parseInt(home[1].preco)) then
+                    if vRP.tryFullPayment(user_id, parseInt(home[1].price)) then
                         vRP.execute("vPH/UpdateHomeAvailable", {home = data.name, available = false})                                
                         TriggerEvent('Homes:comprarCasa', user_id, data.name)
                         vAZclient.RemoveHomes(source_sales, data.name)
                         if source_sales then
-                            local commission = parseFloat(home[1].preco*(20/100))
+                            local commission = parseFloat(home[1].price*(20/100))
                             vRP.giveMoney(user_sales, parseInt(commission))
                             TriggerClientEvent('az-notify:default', source_sales, 'Dynasty8', 'Venda efetuada, Comissão de venda: <b>R$'..format(parseInt(commission))..'</b>!')                            
                         end
@@ -168,16 +191,16 @@ vAZ.VisitHomeTask = function(id, info)
                 cfg[info.name].visit, usersVisit[user_id], usersVisit[user_sales] = nil, nil, nil
                 local home = vRP.query("vPH/GetHomeByName", {home = info.name})
                 if #home > 0 then
-                    local ok = vRP.request(source, "Deseja comprar a residencia ?<br>Valor: <b>R$"..format(parseInt(home[1].preco)).."</b> ?", 30)
+                    local ok = vRP.request(source, "Deseja comprar a residencia ?<br>Valor: <b>R$"..format(parseInt(home[1].price)).."</b> ?", 30)
                     if ok then
                         local available = vRP.query("vPH/GetUserHomeByName", {home = info.name})
                         if #available == 0 then
-                            if vRP.tryFullPayment(user_id, parseInt(home[1].preco)) then
+                            if vRP.tryFullPayment(user_id, parseInt(home[1].price)) then
                                 vRP.execute("vPH/UpdateHomeAvailable", {home = info.name, available = false})                                
                                 TriggerEvent('Homes:comprarCasa', user_id, info.name)
                                 vAZclient.RemoveHomes(source_sales, info.name)
                                 if source_sales then
-                                    local commission = parseFloat(home[1].preco*(20/100))
+                                    local commission = parseFloat(home[1].price*(20/100))
                                     vRP.giveMoney(user_sales, parseInt(commission))
                                     TriggerClientEvent('az-notify:default', source_sales, 'Dynasty8', 'Venda efetuada, Comissão de venda: R$'..format(parseInt(commission))..'!')
                                 end
@@ -207,11 +230,11 @@ vAZ.GPSHome = function(data)
     local user_id = vRP.getUserId(source)
     if cfg[data.name] then
         TriggerClientEvent('az-notify:default', source, 'Dynasty8', 'Residencia: <b>'..data.name..'</b><br>Rota marcada em seu GPS!')
-        vRPclient._setGPS(source, cfg[data.name].entrada.x, cfg[data.name].entrada.y)
+        vRPclient._setGPS(source, cfg[data.name].entry.x, cfg[data.name].entry.y)
     end
 end
 
-vRP._prepare("vPH/SetPriceHome", "UPDATE vrp_imobiliaria SET preco = @price WHERE nome = @home")
+vRP._prepare("vPH/SetPriceHome", "UPDATE vrp_dynasty8 SET price = @price WHERE home = @home")
 vAZ.PriceHome = function(data)
     local source = source
     local user_id = vRP.getUserId(source)

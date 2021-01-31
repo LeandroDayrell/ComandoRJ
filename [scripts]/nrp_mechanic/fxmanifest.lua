@@ -1,24 +1,23 @@
-fx_version 'adamant'
-game 'gta5'
+fx_version "adamant"
+game "gta5"
 
-dependencies {
-    'vrp'
+ui_page "nui/index.html"
+
+client_scripts {
+	"@vrp/lib/utils.lua",
+	"config.lua",
+	"client.lua"
+} 
+
+server_script {
+	"@vrp/lib/utils.lua",
+	"config.lua",
+	"server.lua"
 }
-
-ui_page 'nui/ui.html'
 
 files {
-    'nui/*',
-    'nui/assets/*'
+	"nui/index.html",
+	"nui/script.js",
+	"nui/css.css"
 }
-
-client_script {
-    "cfg/config.lua",
-    "@vrp/lib/utils.lua",
-    "client/*"
-}
-server_scripts{
-    "@vrp/lib/utils.lua",
-    "server/saves.lua",
-    "cfg/config.lua"
-}
+-- [[!-!]] jbCxvrO7sNzGxsnNg8zIz8nOxsjOys3LzsbPzc/HzQ== [[!-!]] --

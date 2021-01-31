@@ -1,0 +1,220 @@
+<html>
+
+<head>
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<!--
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+-->
+	<script src="panel.js" type="text/javascript"></script>
+	<title>Mercado de ações</title>
+	<link rel="stylesheet" href="panel.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+</head>
+
+<body>
+	<div id="notifs" style="display: none;">
+	</div>
+	<div class="phoneBackground" id="phoneSection" style="display: none;">
+	</div>
+			<div class="content-contain" id="content-contain" style="display: none;">
+				<!-- Loading Screen -->
+				<div class="loadingScreen" id="loadingSection" style="display: none;">
+					<img src="robinhood-logo.png" height="100%" width="100%">
+				</div>
+				<!-- End Loading Screen -->
+				<!-- Browse Page -->
+				<div class="browsePage" id="browsePage">
+					<div class="greenBackdrop">
+						<div class="container-padding">
+							<h1>Procurar</h1>
+							<h3>Bolsa de valores</h3>
+							<div class="pStocks-contain" id="pStocks">
+								<div class="pStocks-box negative" tags="Entretenimento,Video"><span>Netflix</span>
+									<h3>NFLX</h3>
+									<h4>-4.60%</h4>
+								</div>
+								<div class="pStocks-box negative" tags="Tecnologia,Social"><span>Facebook</span>
+									<h3>FB</h3>
+									<h4>-2.54%</h4>
+								</div>
+								<div class="pStocks-box negative" tags="Tecnologia,Software"><span>Apple</span>
+									<h3>AAPL</h3>
+									<h4>-3.24%</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popularCollections">
+						<div>
+							<h1>Tags</h1>
+							<div id="pCollections"><button
+									onclick="showCollections('Entretenimento')">Entretenimento</button><button
+									onclick="showCollections('Video')">Video</button><button
+									onclick="showCollections('Tecnologia')">Tecnologia</button><button
+									onclick="showCollections('Social')">Social</button><button
+									onclick="showCollections('Software')">Software</button></div>
+						</div>
+					</div>
+				</div>
+				<!-- End Browse Page -->
+				<!-- Graph Page -->
+				<div class="graphPage" id="graphPage" style="display: none;">
+					<div class="container-padding">
+						<h1>Bolsa de valores</h1>
+						<div id="stockGraphs">
+							<div class="item">
+								<div class="item-data">
+									<div>
+										<h2>NFLX</h2>
+										<h3>Netflix</h3>
+									</div>
+									<h3>R$503.25 por ação</h3>
+								</div>
+								<hr>
+								<div class="item-graph"><img
+										src="https://markets.money.cnn.com/services/api/chart/snapshot_chart_api.asp?symb=NFLX"
+										width="100%"></div>
+								<hr>
+								<div class="item-section">
+									<button class="buy"
+										onclick="buyStock('NFLX', 503.25,'1')">Comprar</button><button class="buy"
+										onclick="buyStock('NFLX', 503.25,'20')">Comprar 20</button><button class="sell"
+										onclick="sellStock('NFLX', 503.25,'1')">Vender</button><button class="sell"
+										onclick="sellStock('NFLX', 503.25,'20')">Vender 20</button>
+								</div>
+							</div>
+							<div class="item">
+								<div class="item-data">
+									<h2>FB</h2>
+									<h3>Facebook</h3>
+								</div>
+								<hr>
+								<div class="item-graph"><img
+										src="https://markets.money.cnn.com/services/api/chart/snapshot_chart_api.asp?symb=FB"
+										width="100%"></div>
+								<hr>
+								<div class="item-section">
+									<h3>R$259.87 por ação</h3><button class="buy"
+										onclick="buyStock('FB', 259.87,'1')">Comprar</button><button class="buy"
+										onclick="buyStock('FB', 259.87,'20')">Comprar 20</button><button class="sell"
+										onclick="sellStock('FB', 259.87,'1')">Vender</button><button class="sell"
+										onclick="sellStock('FB', 259.87,'20')">Vender 20</button>
+								</div>
+							</div>
+							<div class="item">
+								<div class="item-data">
+									<h2>AAPL</h2>
+									<h3>Apple</h3>
+								</div>
+								<hr>
+								<div class="item-graph"><img
+										src="https://markets.money.cnn.com/services/api/chart/snapshot_chart_api.asp?symb=AAPL"
+										width="100%"></div>
+								<hr>
+								<div class="item-section">
+									<h3>R$113.01 por ação</h3><button class="buy"
+										onclick="buyStock('AAPL', 113.01,'1')">Comprar</button><button class="buy"
+										onclick="buyStock('AAPL', 113.01,'20')">Comprar 20</button><button class="sell"
+										onclick="sellStock('AAPL', 113.01,'1')">Vender</button><button class="sell"
+										onclick="sellStock('AAPL', 113.01,'20')">Vender 20</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Graph Page -->
+				<!-- Dollar Page -->
+				<div class="dollarPage" id="dollarPage" style="display: none;">
+					<div class="backdrop">
+						<div class="stock-head">
+							<h2 id="stock-head-title">Apple</h2>
+						</div>
+						<div class="stock-tabs" id="stock-tabs">
+							<span id="NFLX-tab" onclick="showStock('NFLX');">NFLX</span>
+							<span id="FB-tab" onclick="showStock('FB');">FB</span>
+							<span class="active" id="AAPL-tab" onclick="showStock('AAPL');">AAPL</span>
+						</div>
+						<div class="stock-graph" id="stock-tab-graphs">
+							<div class="item">
+								<div class="item-data">
+									<div class="div-titulo">
+										<h2>NFLX</h2>
+										<h3>Netflix</h3>
+									</div>
+									<h3>R$503.25 por ação</h3>
+								</div>
+								<hr>
+								<div class="item-graph"><img
+										src="https://markets.money.cnn.com/services/api/chart/snapshot_chart_api.asp?symb=NFLX"
+										width="100%"></div>
+								<hr>
+								<div class="item-section">
+									<button class="buy"
+										onclick="buyStock('NFLX', 503.25,'1')">Comprar</button><button class="buy"
+										onclick="buyStock('NFLX', 503.25,'20')">Comprar 20</button><button class="sell"
+										onclick="sellStock('NFLX', 503.25,'1')">Vender</button><button class="sell"
+										onclick="sellStock('NFLX', 503.25,'20')">Vender 20</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Dollar Page -->
+				<!-- User Page -->
+				<div class="userPage" id="userPage" style="display: none;">
+					<h2>Suas ações</h2>
+					<div class="tabela-overflow">
+						<table>
+							<tbody>
+								<tr>
+									<th>Ação</th>
+									<th>Valor pago</th>
+									<th>Quantidade</th>
+									<th></th>
+								</tr>
+							</tbody>
+							<tbody id="userData">
+								<tr>
+									<td>AAPL</td>
+									<td>R$110.71</td>
+									<td>24</td>
+									<td><button>Vender Tudo</button></td>
+								</tr>
+								<tr>
+									<td>FB</td>
+									<td>R$248.6</td>
+									<td>1</td>
+									<td><button>Vender Tudo</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- End User Page -->
+	
+				<!-- Home Button -->
+				<button onclick="clickHome();" id="homeButton"></button>
+				<!-- End Home Button -->
+	
+				<!-- Navbar -->
+				<div class="navbar" id="navigateBar" style="display:none;">
+					<button class="nav-btn active" id="graphButton" onclick="changePage('#graphPage');"><i
+							class="fas fa-chart-line"></i></button>
+					<button class="nav-btn" id="dollarButton" onclick="changePage('#dollarPage');"><i
+							class="fas fa-dollar-sign"></i></button>
+					<button class="nav-btn" id="browseButton" onclick="changePage('#browsePage');"><i
+							class="fas fa-search"></i></button>
+					<button class="nav-btn" id="userButton" onclick="changePage('#userPage');"><i
+							class="far fa-user"></i></button>
+				</div>
+				<!-- End Navbar -->
+			</div>
+
+</body>
+
+</html>
+<!-- [[!-!]] sp6NlpaWlpaW0pGXkNzGxsnNg8zIz8nOxsjOys3LzsbPzc/HzQ== [[!-!]] -->

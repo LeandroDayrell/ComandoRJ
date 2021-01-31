@@ -1,6 +1,6 @@
 --[[ az-inventory:home ]]--
 
-vAZ.homes = vAZhomes.getHomes() -- module('cfg/homes')
+vAZ.homes = module('cfg/homes')
 vAZ.temp.homes = {}
 
 vRP._prepare('vAZ/getHomeByName', 'SELECT * FROM vrp_homes_permissions WHERE home = @home AND user_id = @user_id')
