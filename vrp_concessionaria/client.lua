@@ -16,10 +16,10 @@ Citizen.CreateThread(function()
 
         local distance = GetDistanceBetweenCoords(
                              GetEntityCoords(GetPlayerPed(-1)),
-                             -46.979423522949,-1096.0981445313,26.422372817993 - 0.97, true)
+                             -792.11199951172,334.80032348633,85.700408935547 - 0.97, true)
 
         if distance <= 100 then
-            DrawMarker(23, -46.979423522949,-1096.0981445313,26.422372817993 - 0.97, 0, 0, 0, 0, 0, 0, 2.0, 2.0, 0.5,
+            DrawMarker(23, -792.11199951172,334.80032348633,85.700408935547 - 0.97, 0, 0, 0, 0, 0, 0, 2.0, 2.0, 0.5,
                        0, 95, 140, 80, 0, 0, 0, 0)
 
             if distance <= 2 then

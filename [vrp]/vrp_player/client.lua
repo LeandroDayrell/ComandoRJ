@@ -1126,3 +1126,48 @@ function drawNotification(Notification)
     AddTextComponentString(Notification)
     DrawNotification(false, false)
 end
+
+RegisterNetEvent("arrumarpneu")
+AddEventHandler("arrumarpneu",function()
+    local vehicle = vRP.getNearestVehicle(3)
+    if vehicle then
+        SetVehicleTyreFixed(vehicle,0,2)
+        SetVehicleTyreFixed(vehicle,0,3)
+        SetVehicleTyreFixed(vehicle,0,4)
+        SetVehicleTyreFixed(vehicle,0,5)
+    else
+        TriggerEvent("Notify","negado","Você precisa estar próximo de um <b>veículo</b>.")
+    end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(5)
+        local ped = PlayerPedId()
+        if IsPedInAnyVehicle(ped) then
+            local vehicle = GetVehiclePedIsIn(ped)
+            if GetPedInVehicleSeat(vehicle,-1) == ped then
+                local roll = GetEntityRoll(vehicle)
+                if (roll > 75.0 or roll < -75.0) and GetEntitySpeed(vehicle) < 2 then
+                      if IsVehicleTyreBurst(vehicle, wheel_rm1, 0) == false then
+                    SetVehicleTyreBurst(vehicle, 0, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 1, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 2, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 3, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 4, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 5, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 45, 1)
+                    Citizen.Wait(100)
+                    SetVehicleTyreBurst(vehicle, 47, 1)
+                    end
+                end
+            end
+        end
+    end
+end)

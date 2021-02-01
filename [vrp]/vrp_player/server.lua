@@ -2495,3 +2495,46 @@ RegisterCommand('paypal',function(source,args,rawCommand)
 		end
 	end
 end)
+
+
+RegisterCommand('jornal',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"event.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
+        local identity = vRP.getUserIdentity(user_id)
+        local mensagem = vRP.prompt(source,"Mensagem:","")
+        if mensagem == "" then
+            return
+        end
+        vRPclient.setDiv(-1,"jornal"," @keyframes blinking {    0%{ background-color: #ff3d50; border: 2px solid #871924; opacity: 0.8; } 25%{ background-color: #d22d99; border: 2px solid #901f69; opacity: 0.8; } 50%{ background-color: #55d66b; border: 2px solid #126620; opacity: 0.8; } 75%{ background-color: #22e5e0; border: 2px solid #15928f; opacity: 0.8; } 100%{ background-color: #222291; border: 2px solid #6565f2; opacity: 0.8; }  } .div_festinha { font-size: 11px; font-family: arial; color: rgba(255, 255, 255,1); padding: 20px; bottom: 10%; right: 5%; max-width: 500px; position: absolute; -webkit-border-radius: 5px; animation: blinking 1s infinite; } bold { font-size: 16px; }","<bold>"..mensagem.."</bold><br><br>Festeiro(a): "..identity.name.." "..identity.firstname)
+        SetTimeout(70000,function()
+            vRPclient.removeDiv(-1,"jornal")
+        end)
+    end
+end)
+
+
+if itemName == "pneu" then
+    if not vRPclient.inVehicle(source) then
+            local vehicle,vehNet = vRPclient.vehList(source,5)
+        if vehicle then
+            active[parseInt(user_id)] = 20
+            vRPclient.stopactive(source)
+            vCLIENT.closeInventory(source)
+            vCLIENT.blockButtons(source,true)
+            TriggerClientEvent("progress",source,20000)
+            vRPclient._playAnim(source,false,{"mini@repair","fixing_a_player"},true)
+
+            repeat
+                if active[parseInt(user_id)] == 0 then
+                    active[parseInt(user_id)] = -1
+                    if vRP.tryGetInventoryItem(user_id,itemName,1) then
+                        TriggerClientEvent('arrumarpneu',source)
+                        vCLIENT.blockButtons(source,false)
+                        vRPclient._stopAnim(source,false)
+                    end
+                end
+                Citizen.Wait(0)
+            until active[parseInt(user_id)] == -1
+        end
+    end
+end

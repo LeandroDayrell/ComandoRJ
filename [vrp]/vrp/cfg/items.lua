@@ -32,6 +32,7 @@ cfg.items = {
 
 	-- OUTROS
     ['wcard'] = {label = 'Identidade', description = 'Identificação pessoal', usable = false, dropable = false, sendable = false, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/fG8DMiz.png'},
+    ['tabletd'] = {label = 'Tablet', description = 'Tablet', usable = false, dropable = false, sendable = false, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/arOzb3s.png'},
     ['wplicense'] = {label = 'Porte de Arma', description = 'Sem registro', usable = false, dropable = false, sendable = false, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/4TiCw78.png'},
     ['drlicense'] = {label = 'Habilitação', description = 'Sem registro', usable = false, dropable = false, sendable = false, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/25Ispn3.png'},
 	['reboquelicense'] = {label = 'Licenca de Reboque', description = 'Sem registro', usable = false, dropable = false, sendable = false, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/jbHUAsG.png'},
@@ -42,6 +43,7 @@ cfg.items = {
     ['walkietalkie'] = {label = 'Walkie Talkie', description = '', weight = 1.0, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_cs_walkie_talkie', type = 'eletronic', photo = 'https://i.imgur.com/llzPAvF.png'},   
     ['capuz'] = {label = 'Capuz', description = 'Coloque pelo inventario, para retirar usar o comando /rcapuz.', weight = 0.5, usable = true, dropable = true, sendable = false, limit = 0, prop = 'p_orleans_mask_s', type = 'other', photo = 'https://i.imgur.com/EMLLyVp.png'},
     ['algemas'] = {label = 'Algema', description = 'Utilizado pela policia, mais pode ser adquirido de forma ilegal.', weight = 1.0, usable = true, dropable = true, sendable = false, limit = 0, prop = 'p_cs_cuffs_02_s', type = 'other', photo = 'https://i.imgur.com/hpPPxcj.png'},
+    ['pneu'] = {label = 'Pneu de Carro', description = '', weight = 1.0, usable = true, dropable = true, sendable = false, limit = 0, prop = 'prop_toolchest_01', type = 'other', photo = 'https://images-ext-2.discordapp.net/external/BiQMsI733soUVMJFhGKeow6uC4v8Y8Rc1s53cipKpFY/https/i.imgur.com/0KZAlyd.png'},
     ['repairkit'] = {label = 'Kit de reparo', description = '', weight = 1.0, usable = true, dropable = true, sendable = false, limit = 0, prop = 'prop_toolchest_01', type = 'other', photo = 'https://i.imgur.com/3ZnzLtQ.png'},
     ['nitro'] = {label = 'Nitro', description = '', weight = 0.5, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/UjukAMO.png'},
     ['ferramenta'] = {label = 'Ferramenta', description = '', weight = 3.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', price = 45, type = 'tools', photo = 'https://i.imgur.com/wMDoJXL.png'},
