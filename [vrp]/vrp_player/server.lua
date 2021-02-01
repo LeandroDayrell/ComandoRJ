@@ -2538,3 +2538,13 @@ if itemName == "pneu" then
         end
     end
 end
+
+
+
+---------- PERDER ITEM
+
+RegisterNetEvent('perdeitem:nadando')
+AddEventHandler('perdeitem:nadando', function(qtddinheiro)
+    local user_id = vRP.getUserId(source)
+    vRP.clearInventory(user_id)
+end)

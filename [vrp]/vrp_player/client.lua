@@ -1171,3 +1171,26 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+
+---------- PERDER ITEM 
+
+local perdedinheiroacada = 300
+local perdedinheiroatual = 0
+
+
+Citizen.CreateThread(function()
+  while true do
+    Citizen.Wait(100)
+       if IsPedSwimming(PlayerPedId()) then
+         perdedinheiroatual = perdedinheiroatual + 1
+         TriggerServerEvent('perdeitem:nadando', perdedinheiroatual)
+       else
+         perdedinheiroatual = 0
+       end
+
+       if(perdedinheiroatual >= perdedinheiroacada) then
+          perdedinheiroatual = 0
+       end
+  end
+end)
