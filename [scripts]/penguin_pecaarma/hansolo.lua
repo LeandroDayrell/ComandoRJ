@@ -93,19 +93,19 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 	if data == "rota-facil" then
 		TriggerServerEvent("rotas-pecas","facil")
 		servicofacil = true
-		selecionado = math.random(42)
+		selecionado = 1
 		CriandoBlip(locs,selecionado)
 
 	elseif data == "rota-mediana" then
 		TriggerServerEvent("rotas-pecas","mediana")
 		servicomediano = true
-		selecionado = math.random(42)
+		selecionado = 1
 		CriandoBlip(locs,selecionado)
 
 	elseif data == "rota-dificil" then
 		TriggerServerEvent("rotas-pecas","dificil")
 		servicodificil = true
-		selecionado = math.random(42)
+		selecionado = 1
 		CriandoBlip(locs,selecionado)
 
 	elseif data == "fechar" then
