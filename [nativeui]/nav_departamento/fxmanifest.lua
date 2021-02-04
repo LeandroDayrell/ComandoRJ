@@ -37,6 +37,7 @@ files {
 	'nui/images/tequila.png',
 	'nui/images/vodka.png',
 	'nui/images/whisky.png',
+	'nui/images/militec.png',
 	'nui/images/conhaque.png',
 	'nui/images/absinto.png',
 	'nui/images/celular.png',

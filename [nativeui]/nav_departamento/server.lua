@@ -7,31 +7,30 @@ vRP = Proxy.getInterface("vRP")
 local valores = {
 	{ item = "isca", quantidade = 10, compra = 300, venda = 150 },
 	{ item = "garrafavazia", quantidade = 5, compra = 15, venda = 7 },
-	--{ item = "militec", quantidade = 1, compra = 2500, venda = 1250 },
-	{ item = "repairkit", quantidade = 1, compra = 5000, venda = 500 },
+	{ item = "pneu", quantidade = 1, compra = 1000, venda = 200 },
+	{ item = "repairkit", quantidade = 1, compra = 8000, venda = 500 },
 	{ item = "ferramenta", quantidade = 2, compra = 20, venda = 10 },
-	{ item = "bandagem", quantidade = 3, compra = 3000, venda = 1500 },
+	{ item = "sandwich", quantidade = 1, compra = 10, venda = 1 },
 	{ item = "serra", quantidade = 1, compra = 2500, venda = 5000 },
-	{ item = "furadeira", quantidade = 1, compra = 2500, venda = 5000 },
-	{ item = "radio", quantidade = 1, compra = 300, venda = 500 },
+	{ item = "limonada", quantidade = 1, compra = 12, venda = 1 },
+	{ item = "walkietalkie", quantidade = 1, compra = 1000, venda = 500 },
 
-	{ item = "agua", quantidade = 1, compra = 5, venda = 100 },
+	{ item = "agua", quantidade = 1, compra = 8, venda = 1 },
 	{ item = "refri", quantidade = 1, compra = 10, venda = 50 },
-	{ item = "hamburguer", quantidade = 1, compra = 50, venda = 25 },
-	{ item = "sanduiche", quantidade = 1, compra = 25, venda = 50 },
+	{ item = "hamburguer", quantidade = 1, compra = 20, venda = 25 },
+	{ item = "militec", quantidade = 1, compra = 5000, venda = 50 },
 
-	{ item = "mochila", quantidade = 1, compra = 5000, venda = 5000 },
-	{ item = "roupas", quantidade = 1, compra = 2500, venda = 500 },
+	{ item = "mochila", quantidade = 1, compra = 15000, venda = 5000 },
+	{ item = "roupas", quantidade = 1, compra = 5000, venda = 500 },
 	{ item = "alianca", quantidade = 1, compra = 500, venda = 150 },
-	{ item = "celular", quantidade = 1, compra = 2300, venda = 1000 },
+	{ item = "celular", quantidade = 1, compra = 3000, venda = 1000 },
 
-	{ item = "cerveja", quantidade = 3, compra = 18, venda = 9 },
+	{ item = "gin", quantidade = 1, compra = 50, venda = 9 },
 	{ item = "tequila", quantidade = 3, compra = 30, venda = 15 },
-	{ item = "vodka", quantidade = 3, compra = 48, venda = 24 },
-	{ item = "whisky", quantidade = 3, compra = 60, venda = 30 },
-	{ item = "conhaque", quantidade = 3, compra = 72, venda = 36 },
-	{ item = "absinto", quantidade = 3, compra = 90, venda = 45 },
-	{ item = "energetico", quantidade = 3, compra = 500, venda = 100 }
+	{ item = "donut", quantidade = 1, compra = 15, venda = 1 },
+	{ item = "caipirinha", quantidade = 3, compra = 60, venda = 30 },
+	{ item = "kebab", quantidade = 3, compra = 72, venda = 36 },
+	{ item = "energetico", quantidade = 1, compra = 30, venda = 5 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- COMPRAR

@@ -26,32 +26,30 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("departamento-comprar","garrafavazia")
 	elseif data == "utilidades-comprar-militec" then
 		TriggerServerEvent("departamento-comprar","militec")
-	elseif data == "utilidades-comprar-reparos" then
-		TriggerServerEvent("departamento-comprar","repairkit")
+	elseif data == "utilidades-comprar-pneu" then
+		TriggerServerEvent("departamento-comprar","pneu")
 	elseif data == "utilidades-comprar-ferramentas" then
 		TriggerServerEvent("departamento-comprar","ferramenta")
-	elseif data == "utilidades-comprar-bandagem" then
-		TriggerServerEvent("departamento-comprar","bandagem")
+	elseif data == "alimentos-comprar-sandwich" then
+		TriggerServerEvent("departamento-comprar","sandwich")
 	elseif data == "utilidades-comprar-serra" then
 		TriggerServerEvent("departamento-comprar","serra")
-	elseif data == "utilidades-comprar-furadeira" then
-		TriggerServerEvent("departamento-comprar","furadeira")	
-	elseif data == "utilidades-comprar-radio" then
-		TriggerServerEvent("departamento-comprar","radio")
+	elseif data == "utilidades-comprar-limonada" then
+		TriggerServerEvent("departamento-comprar","limonada")	
+	elseif data == "utilidades-comprar-walkietalkie" then
+		TriggerServerEvent("departamento-comprar","walkietalkie")
 	elseif data == "utilidades-vender-isca" then
 		TriggerServerEvent("departamento-vender","isca")
 	elseif data == "utilidades-vender-garrafa" then
 		TriggerServerEvent("departamento-vender","garrafavazia")
 	elseif data == "utilidades-vender-militec" then
 		TriggerServerEvent("departamento-vender","militec")
-	elseif data == "utilidades-vender-reparos" then
-		TriggerServerEvent("departamento-vender","repairkit")
+	elseif data == "utilidades-comprar-repairkit" then
+		TriggerServerEvent("departamento-comprar","repairkit")
 	elseif data == "utilidades-vender-ferramentas" then
 		TriggerServerEvent("departamento-vender","ferramenta")
 	elseif data == "utilidades-vender-serra" then
 		TriggerServerEvent("departamento-vender","serra")
-	elseif data == "utilidades-vender-furadeira" then
-		TriggerServerEvent("departamento-vender","furadeira")	
 	elseif data == "vestuario-comprar-mochila" then
 		TriggerServerEvent("departamento-comprar","mochila")
 	elseif data == "vestuario-comprar-roupas" then
@@ -62,28 +60,28 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("departamento-vender","mochila")
 	elseif data == "vestuario-vender-alianca" then
 		TriggerServerEvent("departamento-vender","alianca")
-	elseif data == "bebidas-comprar-cerveja" then
-		TriggerServerEvent("departamento-comprar","cerveja")
+	elseif data == "bebidas-comprar-gin" then
+		TriggerServerEvent("departamento-comprar","gin")
 	elseif data == "bebidas-comprar-tequila" then
 		TriggerServerEvent("departamento-comprar","tequila")
-	elseif data == "bebidas-comprar-vodka" then
-		TriggerServerEvent("departamento-comprar","vodka")
-	elseif data == "bebidas-comprar-whisky" then
-		TriggerServerEvent("departamento-comprar","whisky")
-	elseif data == "bebidas-comprar-conhaque" then
-		TriggerServerEvent("departamento-comprar","conhaque")
-	elseif data == "bebidas-comprar-absinto" then
-		TriggerServerEvent("departamento-comprar","absinto")
+	elseif data == "alimentos-comprar-donut" then
+		TriggerServerEvent("departamento-comprar","donut")
+	elseif data == "bebidas-comprar-caipirinha" then
+		TriggerServerEvent("departamento-comprar","caipirinha")
+	elseif data == "alimentos-comprar-kebab" then
+		TriggerServerEvent("departamento-comprar","kebab")
+	elseif data == "bebidas-comprar-tacos" then
+		TriggerServerEvent("departamento-comprar","tacos")
 	elseif data == "bebidas-comprar-energetico" then
 		TriggerServerEvent("departamento-comprar","energetico")
-	elseif data == "alimentos-comprar-agua" then
+	elseif data == "bebidas-comprar-agua" then
 		TriggerServerEvent("departamento-comprar","agua")
-	elseif data == "alimentos-comprar-refri" then
+	elseif data == "bebidas-comprar-refri" then
 		TriggerServerEvent("departamento-comprar","refri")
 	elseif data == "alimentos-comprar-hamburguer" then
 		TriggerServerEvent("departamento-comprar","hamburguer")
-	elseif data == "alimentos-comprar-sanduiche" then
-		TriggerServerEvent("departamento-comprar","sanduiche")
+	elseif data == "bebidas-comprar-limonada" then
+		TriggerServerEvent("departamento-comprar","limonada")
 	elseif data == "bebidas-vender-cerveja" then
 		TriggerServerEvent("departamento-vender","cerveja")
 	elseif data == "bebidas-vender-tequila" then

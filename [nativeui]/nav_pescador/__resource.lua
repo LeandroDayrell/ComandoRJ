@@ -15,5 +15,14 @@ server_scripts {
 files {
 	"nui/ui.html",
 	"nui/ui.js",
-	"nui/ui.css"
+	"nui/ui.css",
+	"nui/corvina.png",
+	"nui/dourado.png",
+	"nui/lambari.png",
+	"nui/pacu.png",
+	"nui/pintado.png",
+	"nui/pirarucu.png",
+	"nui/salmao.png",
+	"nui/tilapia.png",
+	"nui/tucunare.png"
 }

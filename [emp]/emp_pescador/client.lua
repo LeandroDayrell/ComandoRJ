@@ -16,12 +16,11 @@ local segundos = 0
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep 500
+		Citizen.Wait(1)
 		if not processo then
 			local ped = PlayerPedId()
 			local distancia = GetDistanceBetweenCoords(GetEntityCoords(ped),720.15,3868.12,28.42)
-			if distancia <= 150 then
-			crjSleep = 1
+			if distancia <= 180 then
 				DrawMarker(1,720.15,3868.12,28.42-1.5,0,0,0,0,0,0,350.0,350.0,50.0,255,255,255,30,0,0,0,0)
 				if distancia <= 180 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR A PESCARIA",4,0.5,0.93,0.50,255,255,255,180)
@@ -39,10 +38,8 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
-		crjSleep = 1 
 			drawTxt("AGUARDE ~b~"..segundos.."~w~ SEGUNDOS ATÉ FISGAR UM PEIXE",4,0.5,0.93,0.50,255,255,255,180)
 		end
-		Citizen.Wait(crjSleep)
 	end
 end)
 

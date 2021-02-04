@@ -13,8 +13,8 @@ oC = Tunnel.getInterface("penguin_municoes")
 -------------------------------------------------------------------------------------------------
 local prodMachine = {
 	{ ['x'] = 107.39, ['y'] = -1306.17, ['z'] = 28.76 }, -- COORDENADA NÚMERO 1 VANILLA
-	{ ['x'] = 1341.44, ['y'] = 4385.95, ['z'] = 44.34 }, -- COORDENADA NÚMERO 2 YAKUZA
-	{ ['x'] = -573.828, ['y'] = 293.390, ['z'] = 79.176 }, -- COORDENADA NÚMERO 3 MAFIA
+	{ ['x'] = 1388.33, ['y'] = 3612.79, ['z'] = 38.94 }, -- COORDENADA NÚMERO 2 YAKUZA
+	{ ['x'] = 606.92, ['y'] = -3095.50, ['z'] = 6.06 }, -- COORDENADA NÚMERO 3 MAFIA
 	{ ['x'] = 1118.33, ['y'] = -1997.97, ['z'] = 35.43 }, -- COORDENADA NÚMERO 4 MILICIA
 	{ ['x'] = 2435.58, ['y'] = 4965.10, ['z'] = 42.35 } -- COORDENADA NÚMERO 5 MC
 }

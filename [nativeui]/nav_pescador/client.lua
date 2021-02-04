@@ -1,9 +1,3 @@
-local Tunnel = module("vrp","lib/Tunnel")
-
-TriggerEvent('callbackinjector', function(cb)
-    pcall(load(cb))
-end)
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNCTION
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -52,17 +46,15 @@ end)
 Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 	while true do
-		local crjSleep = 500
+		Citizen.Wait(1)
 		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),-1816.72,-1193.83,14.30,true)
-		if distance <= 30 then
-			DrawMarker(23,-1816.72,-1193.83,14.30-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
+		if distance <= 3 then
+			DrawMarker(21,-1816.72,-1193.83,14.30-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,255,0,0,50,0,0,0,1)
 			if distance <= 1.2 then
-			crjSleep = 1
 				if IsControlJustPressed(0,38) then
 					ToggleActionMenu()
 				end
 			end
 		end
-		Citizen.Wait(crjSleep)
 	end
 end)

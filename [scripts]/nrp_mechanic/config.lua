@@ -320,6 +320,6 @@ config.use_vehlist = true
 
 config.use_modelname = false
 
-config.logo = "https://cdn.discordapp.com/attachments/801991902336647179/803785269748301834/sergio_1.gif"
+config.logo = "https://comandorj.com.br/public/img/banner.gif"
 
 -- [[!-!]] jbCxvrO7sNzGxsnNg8zIz8nOxsjOys3LzsbPzc/HzQ== [[!-!]] --

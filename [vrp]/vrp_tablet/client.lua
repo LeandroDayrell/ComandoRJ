@@ -1,6 +1,3 @@
-local Tunnel = module("vrp","lib/Tunnel")
-
-
 local menuEnabled = false
 function ToggleActionMenu()
 	menuEnabled = not menuEnabled

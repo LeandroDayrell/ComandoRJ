@@ -2,15 +2,21 @@ div { border: 0; outline: 0; vertical-align: baseline; background: transparent; 
 :focus { outline: 0; }
 ::selection { background: transparent; }
 
+
 #actionmenu {
 	top: 50%;
 	left: 50%;
 	display: none;
 	position: fixed;
 	transform: translate(-50%,-50%);
+	background-color: rgba(0, 0, 0, 0.432);
+	width: 758px;
+	padding: 35px;
+    border-radius: 32px;
+	transition: all linear .1s;
 }
 
-#actionmenu button {
+.menuoption{
 	background: rgba(20,20,20,0.95);
 	width: 250px;
 	height: 40px;
@@ -27,8 +33,8 @@ div { border: 0; outline: 0; vertical-align: baseline; background: transparent; 
 	border-bottom: 1px solid rgba(5,5,5,0.9);
 }
 
-#actionmenu button:hover {
-	background: #a8244e;
+.menuoption:hover {
+	background: #a200ff;
 	border-bottom: 1px solid rgba(5,5,5,0.9);
 }
 
@@ -43,4 +49,35 @@ r {
 	width: 25%;
 	text-align: right;
 	float: left;
+}
+
+.ze{
+	display: inline-block !important;
+}
+
+img{
+	margin-left: 65px;
+}
+
+
+.close{
+	color: white !important;
+	font-family: 'Unica One', cursive !important;
+	font-size: 32px !important;
+	cursor: pointer !important;
+	text-transform: uppercase !important;
+	width: 9% !important;
+	height: 5% !important;
+	opacity: 0.8 !important;
+	bottom: 250px !important;
+	transition: all ease-in-out .1s !important;
+	background-color: transparent !important;
+	border: 0 !important;
+	margin-left: 705px !important;
+	margin-top: -25px !important;
+}
+
+.close:hover{
+	color: rgb(141, 141, 141);
+
 }

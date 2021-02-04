@@ -43,7 +43,7 @@
     width: 20%;
     height: 100%;
     text-transform: uppercase;
-    color: #05ED87;
+    color:#67b3f1;
     font-size: 1vw;
     font-family: "Aftika Regular";
     text-align: right;
@@ -88,7 +88,7 @@
 
 .opcao-focus {
     background-color: rgba(255, 255, 255, 0.137);
-    border-bottom: solid 4px #2894CD;
+    border-bottom: solid 4px #7e09c2;
 }
 
 .secao {
@@ -140,12 +140,12 @@
 }
 
 .item:hover {
-    background-color: rgba(0, 38, 48, 0.452);
+    background-color: rgba(175, 2, 255, 0.452);
 }
 
 .item-focus {
-    background-color: rgba(0, 38, 48, 0.452);
-    border-right: solid 5px rgb(0, 195, 255);
+    background-color: rgba(175, 2, 255, 0.452);
+    border-right: solid 5px rgb(175, 2, 255, 0.452);
 }
 
 .item img {
@@ -183,7 +183,7 @@
     color: white;
     font-family: "Aftika Bold";
     text-align: center;
-    border-bottom: 3px solid rgb(0, 195, 255);
+    border-bottom: 3px solid #67b3f1;
     align-items: center;
 }
 
@@ -219,7 +219,7 @@
     margin: 5% auto;
     text-align: center;
     font-size: 1.2vw;
-    color: #05F98E;
+    color: #67b3f1;
 }
 
 
@@ -229,7 +229,7 @@
 .comprar {
     font-size: 0.8vw;
     text-transform: uppercase;
-    background-color: #05F98E;
+    background-color: #67b3f1;
     font-family: "Aftika Bold";
     width: 8%;
     height: 3%;
@@ -242,7 +242,7 @@
 }
 
 .comprar:hover {
-    background-color: #fa2e2e;
+    background-color: #ca2efa;
     color: white;
 }
 

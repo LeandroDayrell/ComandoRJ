@@ -1,6 +1,35 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
+src = {}
+Tunnel.bindInterface("gcphone",src)
+vRPclient = Tunnel.getInterface("vRP", "gcphone")
+local Tools = module("vrp","lib/Tools")
+local idgens = Tools.newIDGenerator()
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- WEBHOOK
+-----------------------------------------------------------------------------------------------------------------------------------------
+local webhookbanco = "https://discordapp.com/api/webhooks/733668370913951757/ONw3TcF7G9ub0I1d_2z--9oAJIlJ4gXCjQvqNkIjWLETAvqlpWz7mQhHr72FCvoQnuwj"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
+function src.checkItemPhone()
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.getInventoryItemAmount(user_id,"celular") >= 1 then
+            return true 
+        else
+            TriggerClientEvent("Notify",source,"negado","Você não possui um celular em sua mochila.") 
+            return false
+        end
+    end
+end
 
 math.randomseed(os.time())
 
@@ -101,26 +130,26 @@ function notifyContactChange(source,identifier)
 	local sourcePlayer = tonumber(source)
 	local identifier = identifier
 	if sourcePlayer ~= nil then 
-		TriggerClientEvent("gcPhone:contactList1333",sourcePlayer,getContacts(identifier))
+		TriggerClientEvent("gcPhone:contactList",sourcePlayer,getContacts(identifier))
 	end
 end
 
-RegisterServerEvent('gcPhone:addContact1333')
-AddEventHandler('gcPhone:addContact1333',function(display,phoneNumber)
+RegisterServerEvent('gcPhone:addContact')
+AddEventHandler('gcPhone:addContact',function(display,phoneNumber)
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	addContact(sourcePlayer,identifier,phoneNumber,display)
 end)
 
-RegisterServerEvent('gcPhone:updateContact1333')
-AddEventHandler('gcPhone:updateContact1333',function(id,display,phoneNumber)
+RegisterServerEvent('gcPhone:updateContact')
+AddEventHandler('gcPhone:updateContact',function(id,display,phoneNumber)
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	updateContact(sourcePlayer,identifier,id,phoneNumber,display)
 end)
 
-RegisterServerEvent('gcPhone:deleteContact1333')
-AddEventHandler('gcPhone:deleteContact1333',function(id)
+RegisterServerEvent('gcPhone:deleteContact')
+AddEventHandler('gcPhone:deleteContact',function(id)
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	deleteContact(sourcePlayer,identifier,id)
@@ -131,8 +160,8 @@ function getMessages(identifier)
 	return result
 end
 
-RegisterServerEvent('gcPhone:_internalAddMessage1333')
-AddEventHandler('gcPhone:_internalAddMessage1333',function(transmitter,receiver,message,owner,cb)
+RegisterServerEvent('gcPhone:_internalAddMessage')
+AddEventHandler('gcPhone:_internalAddMessage',function(transmitter,receiver,message,owner,cb)
 	cb(_internalAddMessage(transmitter,receiver,message,owner))
 end)
 
@@ -150,15 +179,17 @@ function _internalAddMessage(transmitter, receiver, message, owner)
 end
 
 function addMessage(source,identifier,phone_number,message)
-	local sourcePlayer = tonumber(source)
-	local otherIdentifier = getIdentifierByPhoneNumber(phone_number)
-	local myPhone = getNumberPhone(identifier)
-	if otherIdentifier ~= nil and vRP.getUserSource(otherIdentifier) ~= nil then
-		local tomess = _internalAddMessage(myPhone,phone_number,message,0)
-		TriggerClientEvent("gcPhone:receiveMessage1333",tonumber(vRP.getUserSource(otherIdentifier)),tomess)
-	end
-	local memess = _internalAddMessage(phone_number,myPhone,message,1)
-	TriggerClientEvent("gcPhone:receiveMessage1333",sourcePlayer,memess)
+    local sourcePlayer = tonumber(source)
+    local otherIdentifier = getIdentifierByPhoneNumber(phone_number)
+    local myPhone = getNumberPhone(identifier)
+    if otherIdentifier ~= nil and vRP.getUserSource(otherIdentifier) ~= nil then
+        local tomess = _internalAddMessage(myPhone,phone_number,message,0)
+        TriggerClientEvent("gcPhone:receiveMessage",tonumber(vRP.getUserSource(otherIdentifier)),tomess)
+    else
+        _internalAddMessage(myPhone,phone_number,message,0)
+    end
+    local memess = _internalAddMessage(phone_number,myPhone,message,1)
+    TriggerClientEvent("gcPhone:receiveMessage",sourcePlayer,memess)
 end
 
 function setReadMessageNumber(identifier, num)
@@ -189,48 +220,165 @@ function deleteAllMessage(identifier)
 	})
 end
 
-RegisterServerEvent('gcPhone:sendMessage1333')
-AddEventHandler('gcPhone:sendMessage1333',function(phoneNumber,message)
-    local sourcePlayer = tonumber(source)
-    local identifier = getPlayerID(source)
-    addMessage(sourcePlayer,identifier,phoneNumber,message)
+local blips = {}
+local inEmergency = { }
+function serviceMessage(phone, sourcePlayer, message, type)
+	local source = sourcePlayer
+	local user_id = vRP.getUserId(source)
+	local answered = false
+	if user_id then
+		TriggerClientEvent("gcPhone:forceClosePhone", source)
+		Citizen.Wait(500)
+		local descricao 
+		if type == "call" then
+			descricao = vRP.prompt(source,"Descrição:","")
+			if descricao == "" then
+				return
+			end
+		else
+			descricao = message
+			if descricao == "" then
+				return
+			end
+		end
+		local x,y,z = vRPclient.getPosition(source)
+		local players = {}
+		local especialidade = false
+		if phone == "911" then
+			if inEmergency[user_id] == "911" then 
+				TriggerClientEvent("Notify",source,"negado","Já Existe um chamado sendo averiguado!")
+				return
+			end
+			players = vRP.getUsersByPermission("policia.permissao")
+			especialidade = "policiais"
+		elseif phone == "112" then
+			if inEmergency[user_id] == "112" then 
+				TriggerClientEvent("Notify",source,"negado","Já Existe um chamado sendo averiguado!")
+				return
+			end
+			players = vRP.getUsersByPermission("paramedico.permissao")
+			especialidade = "paramédicos"
+		elseif phone == "mechanic" then
+			if inEmergency[user_id] == "mechanic" then 
+				TriggerClientEvent("Notify",source,"negado","Já Existe um chamado sendo averiguado!")
+				return
+			end
+			players = vRP.getUsersByPermission("mecanico.permissao")
+			especialidade = "mecânicos"
+		elseif phone == "taxi" then
+			if inEmergency[user_id] == "taxi" then 
+				TriggerClientEvent("Notify",source,"negado","Já Existe um chamado sendo averiguado!")
+				return
+			end
+			players = vRP.getUsersByPermission("taxista.permissao")
+			especialidade = "taxistas"
+		elseif phone == "ADM" then
+			if inEmergency[user_id] == "ADM" then 
+				TriggerClientEvent("Notify",source,"negado","Já Existe um chamado sendo averiguado!")
+				return
+			end
+			players = vRP.getUsersByPermission("admin.permissao")	
+			especialidade = "Administradores"
+		end
+		local adm = ""
+		if especialidade == "Administradores" then
+			adm = "[ADM] "
+		end
+		
+		vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
+		if #players == 0  and especialidade ~= "policiais" then
+			TriggerClientEvent("Notify",source,"importante","Não há "..especialidade.." em serviço.")
+		else
+			local identitys = vRP.getUserIdentity(user_id)
+			TriggerClientEvent("Notify",source,"sucesso","Chamado enviado com sucesso.")
+			inEmergency[user_id] = phone
+			for l,w in pairs(players) do
+				local player = vRP.getUserSource(parseInt(w))
+				local nuser_id = vRP.getUserId(player)
+				if player and player ~= source then
+					async(function()
+						vRPclient.playSound(player,"Out_Of_Area","DLC_Lowrider_Relay_Race_Sounds")
+						TriggerClientEvent('chatMessage',player,"CHAMADO",{19,197,43},adm.."Enviado por ^1"..identitys.name.." "..identitys.firstname.."^0 ["..user_id.."], "..descricao)
+						SetTimeout(30000, function() inEmergency[user_id] = false end)
+						local ok = vRP.request(player,"Aceitar o chamado de <b>"..identitys.name.." "..identitys.firstname.."</b>?",30)
+						if ok then
+							if not answered then
+								answered = true
+								local identity = vRP.getUserIdentity(nuser_id)
+								TriggerClientEvent("Notify",source,"importante","Chamado atendido por <b>"..identity.name.." "..identity.firstname.."</b>, aguarde no local.")
+								vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
+								vRPclient._setGPS(player,x,y)
+							else
+								TriggerClientEvent("Notify",player,"importante","Chamado ja foi atendido por outra pessoa.")
+								vRPclient.playSound(player,"CHECKPOINT_MISSED","HUD_MINI_GAME_SOUNDSET")
+							end
+						end
+						local id = idgens:gen()
+						blips[id] = vRPclient.addBlip(player,x,y,z,358,71,"Chamado",0.6,false)
+						
+						SetTimeout(300000,function() vRPclient.removeBlip(player,blips[id]) idgens:free(id)  end)
+					end)
+				end
+			end
+		end
+	end
+end
+
+RegisterServerEvent('gcPhone:sendMessage')
+AddEventHandler('gcPhone:sendMessage',function(phoneNumber,message)
+	local sourcePlayer = tonumber(source)
+	phoneNumber = string.gsub(phoneNumber,"%s+","")
+	if phoneNumber == "911" then
+		serviceMessage(phoneNumber, sourcePlayer, message, "message")
+	elseif phoneNumber == "112" then
+		serviceMessage(phoneNumber, sourcePlayer, message, "message")
+	elseif phoneNumber == "taxi" then
+		serviceMessage(phoneNumber, sourcePlayer, message, "message")
+	elseif phoneNumber == "mechanic" then
+		serviceMessage(phoneNumber, sourcePlayer, message, "message")
+	elseif phoneNumber == "ADM" then
+		serviceMessage(phoneNumber, sourcePlayer, message, "message")
+	else 
+		local identifier = getPlayerID(source)
+		addMessage(sourcePlayer,identifier,phoneNumber,message)
+	end
 end)
 
-RegisterServerEvent('gcPhone:deleteMessage1333')
-AddEventHandler('gcPhone:deleteMessage1333',function(msgId)
+RegisterServerEvent('gcPhone:deleteMessage')
+AddEventHandler('gcPhone:deleteMessage',function(msgId)
 	deleteMessage(msgId)
 end)
 
-RegisterServerEvent('gcPhone:deleteMessageNumber1333')
-AddEventHandler('gcPhone:deleteMessageNumber1333',function(number)
+RegisterServerEvent('gcPhone:deleteMessageNumber')
+AddEventHandler('gcPhone:deleteMessageNumber',function(number)
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	deleteAllMessageFromPhoneNumber(sourcePlayer,identifier,number)
 end)
 
-RegisterServerEvent('gcPhone:deleteAllMessage1333')
-AddEventHandler('gcPhone:deleteAllMessage1333',function()
+RegisterServerEvent('gcPhone:deleteAllMessage')
+AddEventHandler('gcPhone:deleteAllMessage',function()
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	deleteAllMessage(identifier)
 end)
 
-RegisterServerEvent('gcPhone:setReadMessageNumber1333')
-AddEventHandler('gcPhone:setReadMessageNumber1333',function(num)
+RegisterServerEvent('gcPhone:setReadMessageNumber')
+AddEventHandler('gcPhone:setReadMessageNumber',function(num)
 	local sourcePlayer = tonumber(source)  
 	local identifier = getPlayerID(source)
 	setReadMessageNumber(identifier,num)
 end)
 
-RegisterServerEvent('gcPhone:deleteALL1333')
-AddEventHandler('gcPhone:deleteALL1333',function()
+RegisterServerEvent('gcPhone:deleteALL')
+AddEventHandler('gcPhone:deleteALL',function()
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	deleteAllMessage(identifier)
 	deleteAllContact(identifier)
 	appelsDeleteAllHistorique(identifier)
-	TriggerClientEvent("gcPhone:contactList1333",sourcePlayer,{})
-	TriggerClientEvent("gcPhone:allMessage1333",sourcePlayer,{})
+	TriggerClientEvent("gcPhone:contactList",sourcePlayer,{})
+	TriggerClientEvent("gcPhone:allMessage",sourcePlayer,{})
 	TriggerClientEvent("appelsDeleteAllHistorique",sourcePlayer,{})
 end)
 
@@ -244,7 +392,7 @@ end
 
 function sendHistoriqueCall(src,num)
 	local histo = getHistoriqueCall(num)
-	TriggerClientEvent('gcPhone:historiqueCall1333',src,histo)
+	TriggerClientEvent('gcPhone:historiqueCall',src,histo)
 end
 
 function saveAppels(appelInfo)
@@ -270,16 +418,16 @@ function notifyNewAppelsHisto(src,num)
 	sendHistoriqueCall(src,num)
 end
 
-RegisterServerEvent('gcPhone:getHistoriqueCall1333')
-AddEventHandler('gcPhone:getHistoriqueCall1333',function()
+RegisterServerEvent('gcPhone:getHistoriqueCall')
+AddEventHandler('gcPhone:getHistoriqueCall',function()
 	local sourcePlayer = tonumber(source)
 	local srcIdentifier = getPlayerID(source)
 	local srcPhone = getNumberPhone(srcIdentifier)
 	sendHistoriqueCall(sourcePlayer,num)
 end)
 
-RegisterServerEvent('gcPhone:internal_startCall1333')
-AddEventHandler('gcPhone:internal_startCall1333',function(source,phone_number,rtcOffer,extraData)
+RegisterServerEvent('gcPhone:internal_startCall')
+AddEventHandler('gcPhone:internal_startCall',function(source,phone_number,rtcOffer,extraData)
 	local rtcOffer = rtcOffer
 	if phone_number == nil or phone_number == '' then
 		return
@@ -312,75 +460,89 @@ AddEventHandler('gcPhone:internal_startCall1333',function(source,phone_number,rt
 			srcTo = tonumber(vRP.getUserSource(destPlayer))
 			if srcTo ~= nill then
 				AppelsEnCours[indexCall].receiver_src = srcTo
-				--TriggerEvent('gcPhone:addCall1333',AppelsEnCours[indexCall])
-				TriggerClientEvent('gcPhone:waitingCall1333',sourcePlayer,AppelsEnCours[indexCall],true)
-				TriggerClientEvent('gcPhone:waitingCall1333',srcTo,AppelsEnCours[indexCall],false)
+				--TriggerEvent('gcPhone:addCall',AppelsEnCours[indexCall])
+				TriggerClientEvent('gcPhone:waitingCall',sourcePlayer,AppelsEnCours[indexCall],true)
+				TriggerClientEvent('gcPhone:waitingCall',srcTo,AppelsEnCours[indexCall],false)
 			else
-				--TriggerEvent('gcPhone:addCall1333',AppelsEnCours[indexCall])
-				TriggerClientEvent('gcPhone:waitingCall1333',sourcePlayer,AppelsEnCours[indexCall],true)
+				--TriggerEvent('gcPhone:addCall',AppelsEnCours[indexCall])
+				TriggerClientEvent('gcPhone:waitingCall',sourcePlayer,AppelsEnCours[indexCall],true)
 			end
 		end
 	else
-		TriggerEvent('gcPhone:addCall1333',AppelsEnCours[indexCall])
-		TriggerClientEvent('gcPhone:waitingCall1333',sourcePlayer,AppelsEnCours[indexCall],true)
+		TriggerEvent('gcPhone:addCall',AppelsEnCours[indexCall])
+		TriggerClientEvent('gcPhone:waitingCall',sourcePlayer,AppelsEnCours[indexCall],true)
 	end
 end)
 
-RegisterServerEvent('gcPhone:startCall1333')
-AddEventHandler('gcPhone:startCall1333',function(phone_number,rtcOffer,extraData)
-	TriggerEvent('gcPhone:internal_startCall1333',source,phone_number,rtcOffer,extraData)
+RegisterServerEvent('gcPhone:startCall')
+AddEventHandler('gcPhone:startCall',function(phone_number,rtcOffer,extraData)
+	local source = source
+	phoneNumber = string.gsub(phone_number,"%s+","")
+	if phoneNumber == "911" then
+		serviceMessage(phoneNumber, source, "", "call")
+	elseif phoneNumber == "112" then
+		serviceMessage(phoneNumber, source, "", "call")
+	elseif phoneNumber == "taxi" then
+		serviceMessage(phoneNumber, source, "", "call")
+	elseif phoneNumber == "mechanic" then
+		serviceMessage(phoneNumber, source, "", "call")
+	elseif phoneNumber == "ADM" then
+		serviceMessage(phoneNumber, source, "", "call")
+	else 
+		TriggerEvent('gcPhone:internal_startCall',source,phone_number,rtcOffer,extraData)
+	end
+
+	
 end)
 
-RegisterServerEvent('gcPhone:candidates1333')
-AddEventHandler('gcPhone:candidates1333',function(callId,candidates)
+RegisterServerEvent('gcPhone:candidates')
+AddEventHandler('gcPhone:candidates',function(callId,candidates)
 	if AppelsEnCours[callId] ~= nil then
 		local source = source
 		local to = AppelsEnCours[callId].transmitter_src
 		if source == to then 
 			to = AppelsEnCours[callId].receiver_src
 		end
-		TriggerClientEvent('gcPhone:candidates1333',to,candidates)
+		TriggerClientEvent('gcPhone:candidates',to,candidates)
 	end
 end)
 
-RegisterServerEvent('gcPhone:acceptCall1333')
-AddEventHandler('gcPhone:acceptCall1333',function(infoCall,rtcAnswer)
+RegisterServerEvent('gcPhone:acceptCall')
+AddEventHandler('gcPhone:acceptCall',function(infoCall,rtcAnswer)
 	local id = infoCall.id
 	if AppelsEnCours[id] ~= nil then
 		AppelsEnCours[id].receiver_src = infoCall.receiver_src or AppelsEnCours[id].receiver_src
 		if AppelsEnCours[id].transmitter_src ~= nil and AppelsEnCours[id].receiver_src ~= nil then
 			AppelsEnCours[id].is_accepts = true
 			AppelsEnCours[id].rtcAnswer = rtcAnswer
-			TriggerClientEvent('gcPhone:acceptCall1333',AppelsEnCours[id].transmitter_src,AppelsEnCours[id],true)
-			TriggerClientEvent('gcPhone:acceptCall1333',AppelsEnCours[id].receiver_src,AppelsEnCours[id],false)
-			exports['saltychat']:EstablishCall(AppelsEnCours[id].transmitter_src, AppelsEnCours[id].receiver_src)
+			TriggerClientEvent('gcPhone:acceptCall',AppelsEnCours[id].transmitter_src,AppelsEnCours[id],true)
+			TriggerClientEvent('gcPhone:acceptCall',AppelsEnCours[id].receiver_src,AppelsEnCours[id],false)
 			saveAppels(AppelsEnCours[id])
 		end
 	end
 end)
 
-RegisterServerEvent('gcPhone:rejectCall1333')
-AddEventHandler('gcPhone:rejectCall1333',function(infoCall)
+RegisterServerEvent('gcPhone:rejectCall')
+AddEventHandler('gcPhone:rejectCall',function(infoCall)
 	local id = infoCall.id
 	if AppelsEnCours[id] ~= nil then
 		if AppelsEnCours[id].transmitter_src ~= nil then
-			TriggerClientEvent('gcPhone:rejectCall1333',AppelsEnCours[id].transmitter_src)
+			TriggerClientEvent('gcPhone:rejectCall',AppelsEnCours[id].transmitter_src)
 		end
 		if AppelsEnCours[id].receiver_src ~= nil then
-			TriggerClientEvent('gcPhone:rejectCall1333',AppelsEnCours[id].receiver_src)
+			TriggerClientEvent('gcPhone:rejectCall',AppelsEnCours[id].receiver_src)
 		end
 
 		if AppelsEnCours[id].is_accepts == false then 
 			saveAppels(AppelsEnCours[id])
 		end
-		TriggerEvent('gcPhone:removeCall1333',AppelsEnCours)
-		exports['saltychat']:EndCall(AppelsEnCours[id].transmitter_src, AppelsEnCours[id].receiver_src)
+		TriggerEvent('gcPhone:removeCall',AppelsEnCours)
 		AppelsEnCours[id] = nil
 	end
 end)
 
-RegisterServerEvent('gcPhone:appelsDeleteHistorique1333')
-AddEventHandler('gcPhone:appelsDeleteHistorique1333',function(numero)
+RegisterServerEvent('gcPhone:appelsDeleteHistorique')
+AddEventHandler('gcPhone:appelsDeleteHistorique',function(numero)
 	local sourcePlayer = tonumber(source)
 	local srcIdentifier = getPlayerID(source)
 	local srcPhone = getNumberPhone(srcIdentifier)
@@ -395,8 +557,8 @@ function appelsDeleteAllHistorique(srcIdentifier)
 	MySQL.Sync.execute("DELETE FROM phone_calls WHERE `owner` = @owner",{ ['@owner'] = srcPhone })
 end
 
-RegisterServerEvent('gcPhone:appelsDeleteAllHistorique1333')
-AddEventHandler('gcPhone:appelsDeleteAllHistorique1333',function()
+RegisterServerEvent('gcPhone:appelsDeleteAllHistorique')
+AddEventHandler('gcPhone:appelsDeleteAllHistorique',function()
 	local sourcePlayer = tonumber(source)
 	local srcIdentifier = getPlayerID(source)
 	appelsDeleteAllHistorique(srcIdentifier)
@@ -406,23 +568,72 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	getOrGeneratePhoneNumber(sourcePlayer,identifier,function(myPhoneNumber)
-		TriggerClientEvent("gcPhone:myPhoneNumber1333",sourcePlayer,myPhoneNumber)
-		TriggerClientEvent("gcPhone:contactList1333",sourcePlayer,getContacts(identifier))
-		TriggerClientEvent("gcPhone:allMessage1333",sourcePlayer,getMessages(identifier))
+		TriggerClientEvent("gcPhone:myPhoneNumber",sourcePlayer,myPhoneNumber)
+		TriggerClientEvent("vRP:updateBalanceGc", source, bmoney)
+		TriggerClientEvent("gcPhone:contactList",sourcePlayer,getContacts(identifier))
+		TriggerClientEvent("gcPhone:allMessage",sourcePlayer,getMessages(identifier))
 	end)
 end)
 
-RegisterServerEvent('gcPhone:allUpdate1333')
-AddEventHandler('gcPhone:allUpdate1333',function()
+RegisterServerEvent('gcPhone:allUpdate')
+AddEventHandler('gcPhone:allUpdate',function()
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	local num = getNumberPhone(identifier)
-	TriggerClientEvent("gcPhone:myPhoneNumber1333",sourcePlayer,num)
-	TriggerClientEvent("gcPhone:contactList1333",sourcePlayer,getContacts(identifier))
-	TriggerClientEvent("gcPhone:allMessage1333",sourcePlayer,getMessages(identifier))
+	TriggerClientEvent("gcPhone:myPhoneNumber",sourcePlayer,num)
+		TriggerClientEvent("vRP:updateBalanceGc", source, bmoney)
+		TriggerClientEvent("gcPhone:contactList",sourcePlayer,getContacts(identifier))
+	TriggerClientEvent("gcPhone:allMessage",sourcePlayer,getMessages(identifier))
 	sendHistoriqueCall(sourcePlayer,num)
 end)
 
 AddEventHandler('onMySQLReady',function()
 	MySQL.Async.fetchAll("DELETE FROM phone_messages WHERE (DATEDIFF(CURRENT_DATE,time) > 10)")
+end)
+
+RegisterNetEvent("vRP/update_gc_phone")
+AddEventHandler("vRP/update_gc_phone", function()
+    if source ~= nil then
+        local user_id = vRP.getUserId(source)
+        if user_id ~= nil then
+            local bmoney = vRP.getBankMoney(user_id)
+            TriggerClientEvent("vRP:updateBalanceGc", source, bmoney)
+        end
+    end
+end)
+
+AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
+    if user_id ~= nil then
+        local money = vRP.getBankMoney(user_id)
+        TriggerClientEvent("vRP:updateBalanceGc", source, money)
+    end
+end)
+
+RegisterServerEvent('bank:transfer')
+AddEventHandler('bank:transfer', function(id, amount)
+    local _source = source
+    local user_id = vRP.getUserId(source)
+    local targetPlayer = vRP.getUserSource(tonumber(id))
+    local amount =  tonumber(amount)
+	if amount <= 0 then
+		return TriggerClientEvent("Notify",_source,"sucesso","Você digitou uma quantia inválida.")
+	end
+    local identity = vRP.getUserIdentity(user_id)
+    local identityT = vRP.getUserIdentity(tonumber(id))    
+    if targetPlayer == nil then
+        return TriggerClientEvent("Notify",_source,"sucesso","Usuario invalido.")
+    else
+		local myBank = vRP.getBankMoney(user_id)
+		if tonumber(user_id) ~= tonumber(id) then
+			if myBank >= amount then
+				vRP.setBankMoney(user_id, myBank - amount)
+				vRP.giveBankMoney(tonumber(id),amount)
+				TriggerClientEvent("Notify",targetPlayer,"sucesso","Você rebeu $" .. amount .." de "  ..identity.name.. " ID: " .. tostring(user_id))
+				TriggerClientEvent("Notify",_source,"sucesso","Tranferencia sucedida")       
+				SendWebhookMessage(webhookbanco,"```prolog\n[ID]: "..user_id.." "..identity.name.." "..identity.firstname.." \n[ENVIOU CELULAR]: $"..vRP.format(parseInt(amount)).."\n[PARA]:"..tonumber(id).."  "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
+			else
+				TriggerClientEvent("Notify",_source,"sucesso","SEM MONEY") 
+			end
+		end
+    end
 end)
