@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="background"></div>
+        <div id="menubackgroundtop">
+            <p id="menubackgroundnametop">POLICIA - COMANDO RJ</p>
+            <p id="menubackgroundnameplayertop"></p>
+            <div id="menubackgroundbuttonstop">
+                <button id="procurarnome" type="button">Procurar Nome</button>
+                <button id="procurarmatricula" type="button">Procurar Matricula</button>
+                <button id="pessoasprocuradas" type="button">Pessoas Procuradas</button>
+                <button id="veiculosprocurados" type="button">Matriculas Procuradas</button>
+                <button id="codigopenal" type="button">Codigo Penal</button>
+            </div>
+        </div>
+        <div id="menubackgroundbot">
+            <div id="procurarnome_main">
+                <input id="procurarnome_firstname" type="text" placeholder="Primeiro Nome" />
+                <input id="procurarnome_lastname" type="text" placeholder="Ultimo Nome" />
+                <button id="procurarnome_procurar" type="button">Procurar</button>
+            </div>
+            <div id="procurarmatricula_main">
+                <input id="procurarmatricula_matricula" type="text" placeholder="Matricula" />
+                <button id="procurarmatricula_procurar" type="button">Procurar</button>
+            </div>
+            <div id="veiculo_procurados_adicionar">
+                <input id="veiculo_procurados_adicionar_input" type="text" placeholder="Matricula" />
+                <button id="veiculo_procurados_adicionarbutton" type="button">Adicionar</button>
+            </div>
+            <div id="player">
+                <img id="procurarnome_playericon" src="https://i.imgur.com/pJ6hmOK.png" img>
+                <p id="procurarnome_playername"></p>
+                <p id="procurarnome_playerapelido"></p>
+                <p id="procurarnome_playeridade"></p>
+                <p id="procurarnome_playerregistro"></p>
+                <p id="procurarnome_playertelemovel"></p>
+                <p id="procurarnome_playerportearmas"></p>
+                <input id="procurarnome_player_imageinput" type="text" placeholder="https://example.com" />
+                <button id="procurarnome_player_imagebutton" type="button">Submeter</button>
+                <button id="procurarnome_player_criaraviso" type="button">Criar Aviso</button>
+                <button id="procurarnome_player_criarmulta" type="button">Criar Multas</button>
+                <button id="procurarnome_player_criarrelatorio" type="button">Criar Relatorio de Detenção</button>
+                <button id="procurarnome_player_criarmandato" type="button">Criar Mandato de Captura</button>
+                <button id="procurarnome_player_limpar_aviso" type="button">Limpar</button>
+                <button id="procurarnome_player_limpar_multas" type="button">Limpar</button>
+                <button id="procurarnome_player_limpar_detenções" type="button">Limpar</button>
+                <button id="procurarnome_player_limpar_mandato" type="button">Limpar</button>
+                <p id="player_arrests_name">Detenções</p>
+                <div id="player_arrests"></div>
+                <p id="player_avisos_name">Avisos</p>
+                <div id="player_avisos"></div>
+                <p id="player_multas_name">Multas</p>
+                <div id="player_multas"></div>
+                <p id="player_mandato_name">Mandato de Captura</p>
+                <div id="player_mandato"></div>
+            </div>
+            <div id="veiculos">
+                <img id="veiculos_playericon" src="https://i.imgur.com/pJ6hmOK.png" img>
+                <p id="veiculos_playername"></p>
+                <p id="veiculos_playerapelido"></p>
+                <p id="veiculos_playeridade"></p>
+                <p id="veiculos_playerregistro"></p>
+                <p id="veiculos_playertelemovel"></p>
+                <p id="veiculos_playerportearmas"></p>
+                <button id="veiculos_eliminar" type="button">Remover</button>
+                <div id="veiculos_carros"></div>
+            </div>
+            <div id="codigo">
+                <p id="codigo_multas_name">Multas</p>
+                <p id="codigo_prisao_name">Detenções</p>
+                <div id="codigo_multas"></div>
+                <div id="codigo_prisao"></div>
+            </div>
+            <div id="player_procurados"></div>
+            <div id="veiculo_procurados"></div>
+            <div id="procurarnome_resultados"></div>
+            <div id="criaravisos">
+                <p id="criaravisos_name">Avisos</p>
+                <p class="criaravisos_text"></p>
+                <textarea id="criaravisos_input" rows="4" cols="50" placeholder="Texto de Aviso" maxlength="100"></textarea>
+                <button id="criar_avisos_button" type="button">Submeter</button>
+            </div>
+            <div id="criardetencao">
+                <p id="criardetencao_name">Relatorio de Detenção</p>
+                <p class="criardetencao_text">02/06/2020</p>
+                <textarea id="criardetencao_input" rows="4" cols="50" placeholder="Texto de Relatorio de Detenção" maxlength="100"></textarea>
+                <button id="criar_detencao_button" type="button">Submeter</button>
+            </div>
+            <div id="criarmandato">
+                <p id="criarmandato_name">Mandato de Captura</p>
+                <p class="criarmandato_text">02/06/2020</p>
+                <textarea id="criarmandato_input" rows="4" cols="50" placeholder="Texto de Mandato de Captura" maxlength="100"></textarea>
+                <button id="criar_mandato_button" type="button">Submeter</button>
+            </div>
+            <div id="criarmultas">
+                <p id="criarmultas_name">Multas</p>
+                <p class="criarmultas_text">02/06/2020</p>
+                <div id="criarmultas_multas"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js" type="text/javascript"></script>
+</body>
+
+</html>

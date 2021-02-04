@@ -1,0 +1,1047 @@
+body {
+    background: none;
+}
+
+#background {
+    /* Posições */
+    top: 0%;
+    right: 0%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Dimensões */
+    height: 100%;
+    width: 100%;
+}
+
+#menubackgroundtop {
+    top: 5%;
+    right: 12.5%;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.7);
+    height: 20%;
+    width: 75%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#menubackgroundnametop {
+    color: white;
+    font: bold 150% arial, sans-serif;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+#menubackgroundnameplayertop {
+    color: white;
+    font: bold 125% arial, sans-serif;
+    top: 25%;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+#menubackgroundbuttonstop {
+    bottom: -75%;
+    left: 12.5%;
+    position: relative;
+}
+
+#menubackgroundbot {
+    top: 25%;
+    right: 12.5%;
+    position: fixed;
+    background-color: rgb(43, 43, 43, 0.3);
+    border: solid 1px;
+    height: 70%;
+    width: 75%;
+}
+
+#procurarnome_main {
+    top: 1%;
+    left: 1%;
+    position: relative;
+    background-color: rgba(43, 43, 43, 0.3);
+    height: 5%;
+    width: 98%;
+    display: none;
+}
+
+#procurarnome_firstname {
+    top: 10%;
+    left: 1%;
+    position: relative;
+    height: 75%;
+}
+
+#procurarnome_lastname {
+    top: 10%;
+    left: 2%;
+    position: relative;
+    height: 75%;
+}
+
+#procurarnome_procurar {
+    top: 10%;
+    left: 3%;
+    position: relative;
+    height: 75%;
+    background-color: rgb(61, 103, 131);
+    border-style: solid;
+}
+
+#procurarmatricula_main {
+    top: 1%;
+    left: 1%;
+    position: relative;
+    background-color: rgba(61, 103, 131, 1.0);
+    height: 5%;
+    width: 98%;
+    display: none;
+}
+
+#procurarmatricula_matricula {
+    top: 10%;
+    left: 1%;
+    position: relative;
+    height: 75%;
+}
+
+#procurarmatricula_procurar {
+    top: 10%;
+    left: 3%;
+    position: relative;
+    height: 75%;
+    background-color: rgb(17, 248, 17);
+    border-style: solid;
+}
+
+#procurarnome_resultados {
+    background-color: rgb(30, 34, 30, 0.5);
+    top: 10%;
+    left: 5%;
+    position: relative;
+    height: 65%;
+    width: 80%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#procurarnome_resultados div {
+    background-color: rgb(59, 164, 255);
+    top: 5%;
+    left: 15%;
+    position: relative;
+    height: 7%;
+    width: 38%;
+    font-size: 12px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 3%;
+}
+
+#procurarnome_resultados .name {
+    top: 25%;
+    position: relative;
+    font: bold 125% arial, sans-serif;
+    text-align: center;
+}
+
+#player {
+    background-color: rgba(50, 50, 50, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 40%;
+    width: 40%;
+}
+
+#procurarnome_playericon {
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    background-repeat: no-repeat;
+    max-width: 165px;
+    max-height: 195px;
+}
+
+#procurarnome_playername {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 10%;
+}
+
+#procurarnome_playerapelido {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 13%;
+}
+
+#procurarnome_playeridade {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 16%;
+}
+
+#procurarnome_playerregistro {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 19%;
+}
+
+#procurarnome_playertelemovel {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 22%;
+}
+
+#procurarnome_playerportearmas {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 25%;
+}
+
+#procurarnome_player_imageinput {
+    top: -10%;
+    left: 25%;
+    position: absolute;
+    width: 75%;
+    background-color: rgba(75, 75, 75, 1.0);
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+}
+
+#procurarnome_player_imagebutton {
+    top: -10%;
+    left: 0%;
+    position: absolute;
+    height: 8%;
+    width: 20%;
+}
+
+#procurarnome_player_criaraviso {
+    font: bold 75% arial, sans-serif;
+    position: absolute;
+    left: 2%;
+    bottom: 5%;
+    height: 15%;
+    width: 20%;
+}
+
+#procurarnome_player_criarmulta {
+    font: bold 75% arial, sans-serif;
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    height: 15%;
+    width: 20%;
+}
+
+#procurarnome_player_criarrelatorio {
+    font: bold 75% arial, sans-serif;
+    position: absolute;
+    left: 48%;
+    bottom: 5%;
+    height: 15%;
+    width: 20%;
+}
+
+#procurarnome_player_criarmandato {
+    font: bold 75% arial, sans-serif;
+    position: absolute;
+    left: 71%;
+    bottom: 5%;
+    height: 15%;
+    width: 20%;
+}
+
+#player_arrests {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: -100%;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#player_arrests div {
+    background-color: rgba(80, 80, 80, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 15%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#player_arrests .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#player_arrests_name {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: fixed;
+    bottom: 38%;
+    left: 16.25%;
+}
+
+#player_avisos {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: 25%;
+    left: 125%;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#player_avisos div {
+    background-color: rgba(80, 80, 80, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 15%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#player_avisos .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#player_avisos_name {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: fixed;
+    bottom: 71.75%;
+    left: 53.75%;
+}
+
+#player_multas {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: -60%;
+    left: 125%;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#player_multas div {
+    background-color: rgba(80, 80, 80, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 15%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#player_multas .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#player_multas_name {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: fixed;
+    bottom: 48%;
+    left: 53.75%;
+}
+
+#player_mandato {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: -120%;
+    left: 125%;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#player_mandato div {
+    background-color: rgb(116, 58, 58);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 15%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#player_mandato .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#player_mandato_name {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: fixed;
+    bottom: 24.25%;
+    left: 53.75%;
+}
+
+#player_procurados {
+    background-color: rgba(50, 50, 50, 1.0);
+    top: 10%;
+    left: 35%;
+    position: relative;
+    height: 60%;
+    width: 32.5%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#player_procurados div {
+    background-color: rgba(17, 79, 134, 1.0);
+    top: 5%;
+    left: 10%;
+    position: relative;
+    height: 10%;
+    width: 80%;
+    color: white;
+    margin-bottom: 3%;
+}
+
+#player_procurados .name {
+    top: 25%;
+    position: relative;
+    font: bold 125% arial, sans-serif;
+    text-align: center;
+}
+
+#veiculo_procurados {
+    background-color: rgba(50, 50, 50, 1.0);
+    top: 10%;
+    left: 35%;
+    position: relative;
+    height: 60%;
+    width: 32.5%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#veiculo_procurados div {
+    background-color: rgba(17, 79, 134, 1.0);
+    top: 5%;
+    left: 10%;
+    position: relative;
+    height: 10%;
+    width: 80%;
+    color: white;
+    margin-bottom: 3%;
+}
+
+#veiculo_procurados .name {
+    top: 25%;
+    position: relative;
+    font: bold 125% arial, sans-serif;
+    text-align: center;
+}
+
+#veiculos {
+    background-color: rgba(50, 50, 50, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 40%;
+    width: 40%;
+}
+
+#veiculos_playericon {
+    position: absolute;
+    left: 2%;
+    top: 5%;
+}
+
+#veiculos_playername {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 10%;
+}
+
+#veiculos_playerapelido {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 13%;
+}
+
+#veiculos_playeridade {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 16%;
+}
+
+#veiculos_playerregistro {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 19%;
+}
+
+#veiculos_playertelemovel {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 22%;
+}
+
+#veiculos_playerportearmas {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    position: relative;
+    left: 35%;
+    top: 25%;
+}
+
+#veiculos_eliminar {
+    font: bold 75% arial, sans-serif;
+    position: absolute;
+    left: 2%;
+    bottom: 5%;
+    height: 15%;
+    width: 20%;
+}
+
+#veiculos_carros {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: -75%;
+    left: 125%;
+    position: absolute;
+    height: 175%;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#veiculos_carros div {
+    background-color: rgba(80, 80, 80, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 5%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#veiculos_carros .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#codigo_multas {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: 10%;
+    left: 5%;
+    position: absolute;
+    height: 75%;
+    width: 40%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#codigo_multas_name {
+    top: 30%;
+    left: 28%;
+    position: fixed;
+    color: white;
+    font: bold 200% arial, sans-serif;
+    text-align: center;
+}
+
+#codigo_multas div {
+    background-color: rgba(80, 80, 80, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 5%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#codigo_multas .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#codigo_prisao {
+    background-color: rgba(50, 50, 50, 1.0);
+    bottom: 10%;
+    right: 5%;
+    position: absolute;
+    height: 75%;
+    width: 40%;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#codigo_prisao_name {
+    top: 30%;
+    left: 64.5%;
+    position: fixed;
+    color: white;
+    font: bold 200% arial, sans-serif;
+    text-align: center;
+}
+
+#codigo_prisao div {
+    background-color: rgba(80, 80, 80, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 5%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#codigo_prisao .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#procurarnome_player_limpar_detenções {
+    top: 116%;
+    left: 80%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#procurarnome_player_limpar_aviso {
+    top: -9%;
+    left: 205%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#procurarnome_player_limpar_multas {
+    top: 76%;
+    left: 205%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#procurarnome_player_limpar_mandato {
+    top: 161%;
+    left: 205%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#criaravisos {
+    top: 15%;
+    left: 25.5%;
+    position: absolute;
+    background-color: rgba(50, 50, 50, 1.0);
+    height: 60%;
+    width: 50%;
+}
+
+#criaravisos_name {
+    top: 32%;
+    left: 47.5%;
+    position: fixed;
+    color: white;
+    font: bold 200% arial, sans-serif;
+    text-align: center;
+}
+
+.criaravisos_text {
+    position: relative;
+    left: 2%;
+    top: 2%;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    text-align: left;
+}
+
+#criaravisos_input {
+    left: 2%;
+    top: 15%;
+    position: absolute;
+    background-color: rgba(75, 75, 75, 1.0);
+    width: 96%;
+    height: 75%;
+    border-style: solid;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    resize: none;
+}
+
+#criar_avisos_button {
+    left: 40%;
+    top: 91%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#criardetencao {
+    top: 15%;
+    left: 25.5%;
+    position: absolute;
+    background-color: rgba(50, 50, 50, 1.0);
+    height: 60%;
+    width: 50%;
+}
+
+#criardetencao_name {
+    top: 32%;
+    left: 42%;
+    position: fixed;
+    color: white;
+    font: bold 200% arial, sans-serif;
+    text-align: center;
+}
+
+.criardetencao_text {
+    position: relative;
+    left: 2%;
+    top: 2%;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    text-align: left;
+}
+
+#criardetencao_input {
+    left: 2%;
+    top: 15%;
+    position: absolute;
+    background-color: rgba(75, 75, 75, 1.0);
+    width: 96%;
+    height: 75%;
+    border-style: solid;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    resize: none;
+}
+
+#criar_detencao_button {
+    left: 40%;
+    top: 91%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#criarmandato {
+    top: 15%;
+    left: 25.5%;
+    position: absolute;
+    background-color: rgba(50, 50, 50, 1.0);
+    height: 60%;
+    width: 50%;
+}
+
+#criarmandato_name {
+    top: 32%;
+    left: 42%;
+    position: fixed;
+    color: white;
+    font: bold 200% arial, sans-serif;
+    text-align: center;
+}
+
+.criarmandato_text {
+    position: relative;
+    left: 2%;
+    top: 2%;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    text-align: left;
+}
+
+#criarmandato_input {
+    left: 2%;
+    top: 15%;
+    position: absolute;
+    background-color: rgba(75, 75, 75, 1.0);
+    width: 96%;
+    height: 75%;
+    border-style: solid;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    resize: none;
+}
+
+#criar_mandato_button {
+    left: 40%;
+    top: 91%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#criarmultas {
+    top: 15%;
+    left: 25.5%;
+    position: absolute;
+    background-color: rgba(50, 50, 50, 1.0);
+    height: 60%;
+    width: 50%;
+}
+
+#criarmultas_name {
+    top: 32%;
+    left: 47.5%;
+    position: fixed;
+    color: white;
+    font: bold 200% arial, sans-serif;
+    text-align: center;
+}
+
+.criarmultas_text {
+    position: relative;
+    left: 2%;
+    top: 2%;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    text-align: left;
+}
+
+#criarmultas_multas {
+    left: 2%;
+    top: 15%;
+    position: absolute;
+    background-color: rgba(75, 75, 75, 1.0);
+    width: 96%;
+    height: 82%;
+    border-style: solid;
+    color: white;
+    font: bold 100% arial, sans-serif;
+    resize: none;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#criarmultas_multas div {
+    background-color: rgba(17, 79, 134, 1.0);
+    top: 5%;
+    left: 5%;
+    position: relative;
+    height: 8%;
+    width: 90%;
+    color: white;
+    margin-bottom: 3%;
+    border: 1px solid white;
+}
+
+#criarmultas_multas .name {
+    top: 25%;
+    position: relative;
+    font: bold 75% arial, sans-serif;
+    text-align: center;
+}
+
+#criar_multas_button {
+    left: 40%;
+    top: 91%;
+    position: absolute;
+    width: 20%;
+    height: 8%;
+}
+
+#veiculo_procurados_adicionar {
+    top: 1%;
+    left: 1%;
+    position: relative;
+    background-color: rgba(100, 100, 100, 1.0);
+    height: 5%;
+    width: 98%;
+    display: none;
+}
+
+#veiculo_procurados_adicionar_input {
+    top: 10%;
+    left: 1%;
+    position: relative;
+    height: 75%;
+}
+
+#veiculo_procurados_adicionarbutton {
+    top: 10%;
+    left: 3%;
+    position: relative;
+    height: 75%;
+    background-color: rgba(75, 75, 75, 1.0);
+    border-style: solid;
+}
+
+button {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    background-color: rgba(17, 79, 134, 1.0);
+    border-style: none;
+    height: 15%;
+    width: 15%;
+}
+
+#codigo_multas div:hover,
+#codigo_prisao div:hover,
+#veiculos_carros div:hover,
+#player_multas div:hover,
+#player_avisos div:hover,
+#player_arrests div:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+#player_mandato div:hover {
+    background-color: rgb(201, 99, 99);
+}
+
+#criarmultas_multas div:hover,
+#veiculo_procurados div:hover,
+#player_procurados div:hover,
+#procurarnome_resultados div:hover {
+    background-color: rgb(41, 141, 228);
+    border: 1px solid white;
+}
+
+button:hover {
+    background-color: rgb(41, 141, 228);
+    border: 1px solid white;
+}
+
+input {
+    color: white;
+    font: bold 100% arial, sans-serif;
+    background-color: rgba(75, 75, 75, 1.0);
+    width: 20%;
+    border-style: solid;
+    text-align: center;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font: bold 100% arial, sans-serif;
+    text-align: center;
+}
+
+#criarmultas_multas::-webkit-scrollbar-track,
+#codigo_prisao::-webkit-scrollbar-track,
+#codigo_multas::-webkit-scrollbar-track,
+#veiculos_carros::-webkit-scrollbar-track,
+#veiculo_procurados::-webkit-scrollbar-track,
+#player_procurados::-webkit-scrollbar-track,
+#player_mandato::-webkit-scrollbar-track,
+#player_multas::-webkit-scrollbar-track,
+#player_avisos::-webkit-scrollbar-track,
+#player_arrests::-webkit-scrollbar-track,
+#procurarnome_resultados::-webkit-scrollbar-track {
+    background-color: none;
+    border: none;
+}
+
+#criarmultas_multas::-webkit-scrollbar,
+#codigo_prisao::-webkit-scrollbar,
+#codigo_multas::-webkit-scrollbar,
+#veiculos_carros::-webkit-scrollbar,
+#veiculo_procurados::-webkit-scrollbar,
+#player_procurados::-webkit-scrollbar,
+#player_mandato::-webkit-scrollbar,
+#player_multas::-webkit-scrollbar,
+#player_avisos::-webkit-scrollbar,
+#player_arrests::-webkit-scrollbar,
+#procurarnome_resultados::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 154, 243, 0.2);
+}
+
+#criarmultas_multas::-webkit-scrollbar-thumb,
+#codigo_prisao::-webkit-scrollbar-thumb,
+#codigo_multas::-webkit-scrollbar-thumb,
+#veiculos_carros::-webkit-scrollbar-thumb,
+#veiculo_procurados::-webkit-scrollbar-thumb,
+#player_procurados::-webkit-scrollbar-thumb,
+#player_mandato::-webkit-scrollbar-thumb,
+#player_multas::-webkit-scrollbar-thumb,
+#player_avisos::-webkit-scrollbar-thumb,
+#player_arrests::-webkit-scrollbar-thumb,
+#procurarnome_resultados::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 1);
+    border: 2px solid rgba(0, 0, 0, 1);
+}
