@@ -1217,3 +1217,14 @@ AddReplaceTexture('vehshare', 'plate02_n', 'duiTxd', 'duiTex2')
 AddReplaceTexture('vehshare', 'plate03_n', 'duiTxd', 'duiTex2') 
 AddReplaceTexture('vehshare', 'plate04_n', 'duiTxd', 'duiTex2')
 AddReplaceTexture('vehshare', 'plate05_n', 'duiTxd', 'duiTex2') 
+
+
+----- MINI MAPA DA NOVA ILHA 
+
+Citizen.CreateThread(function()
+  while true do
+    Citizen.Wait(0)
+      SetRadarAsExteriorThisFrame()
+      SetRadarAsInteriorThisFrame("h4_fake_islandx",vec(4700.0,-5145.0),0,0)
+  end
+end)
