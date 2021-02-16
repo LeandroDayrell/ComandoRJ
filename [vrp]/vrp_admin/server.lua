@@ -463,6 +463,8 @@ RegisterCommand('hash',function(source,args,rawCommand)
 		end
 	end
 end)
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- HASH
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -484,6 +486,27 @@ RegisterCommand('wl',function(source,args,rawCommand)
 	vRP.logInfoToFile("logRJ/wl.txt",user_id.." setou na wl "..rawCommand.." .")
 		if args[1] then
 			vRP.setWhitelisted(parseInt(args[1]),true)
+		end
+	end
+end)
+
+--------- comando mandar pro aeroporto
+RegisterCommand('aeroporto',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	local nplayer = vRPclient.getNearestPlayer(source,5)
+
+	if vRP.hasPermission(user_id,"wl.permissao") then
+		if vRPclient.isInComa(nplayer,source) then 
+			TriggerClientEvent("Notify",source,"sucesso"," Você enviou o player para o aeroporto ")
+			vRPclient.teleport(nplayer,-1037.431640625,-2737.6997070313,13.786103248596)
+			vRPclient.killGod(nplayer)
+			vRPclient.setHealth(nplayer,230)
+			vRP.giveInventoryItem(user_id,"wbody|"..k,1)
+			vRP.giveInventoryItem(nplayer,"wammo|"..k,v.ammo)
+			vRP.setMoney(nplayer, 0)
+			vRP.clearInventory(nplayer)
+		else
+			TriggerClientEvent("Notify",source,"negado","O cidadao nao esta em coma.")
 		end
 	end
 end)

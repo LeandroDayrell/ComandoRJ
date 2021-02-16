@@ -1,5 +1,5 @@
 {
-  "reseau": "FalidoV5",
+  "reseau": "CMDRJ 2.0",
   "warningMessageCount": 250,
   "themeColor": "#2a98df",
   "themeColorTitle": "#0000",
@@ -40,24 +40,20 @@
 
   "background": {
     "White desert": "back001.jpg",
-    "Palms": "back002.jpg",
-    "Santa Mónica Beach": "back003.jpg",
-
+    "ComandoRJ": "back002.jpg",
     "Route 66": "color.jpg",
     "Classic tokyo": "humo.jpg",
     "Dark planet": "iluminacion.jpg",
-
     "AstroNeon": "neon.jpg",
     "Illuminated planet": "oscuridad.jpg",
     "Wild beach": "playa.jpg",
     "Winter landscape": "paisajes.jpg",
     "Tokio neon": "tokio.jpg",
-    "Gks Shop": "sahesiz.png",
     "Custom URL": "URL"
   },
   "background_default": {
-    "label": "Santa Mónica Beach",
-    "value": "back003.jpg"
+    "label": "ComandoRJ",
+    "value": "back002.jpg"
   },
 
 
@@ -74,11 +70,9 @@
   "sonido": {
     "Astronomia": "ring.ogg",
     "Safaera": "safaera.ogg",
-    "Bella Ciao": "bella_ciao.ogg",
-    "Casa Papel": "casa_papel.ogg",
-    "Iphone 11": "iphone_11.ogg",
-    "Tusa": "tusa.ogg",
-    "XXXTentacion": "xtentacion.ogg"
+    "ComandoRJ": "bella_ciao.ogg",
+    "Comando RJ 2.0": "casa_papel.ogg",
+    "Tusa": "tusa.ogg"
   },
 
   "coque_default": {
@@ -87,7 +81,7 @@
   },
 
   "sonido_default": {
-    "label": "Casa Papel",
+    "label": "Comando RJ 2.0",
     "value": "casa_papel.ogg"
   },
 
@@ -122,7 +116,7 @@
 
 
     {
-      "name": "Contacts",
+      "name": "Contatos",
       "fr_FR__name": "Contacts",
       "en_US__name": "Contacts",
       "cs_CZ__name": "Kontakty",
@@ -134,7 +128,7 @@
       "inMenuPage": true
     },
     {
-      "name": "Messages",
+      "name": "Mensagens",
       "fr_FR__name": "Messages",
       "en_US__name": "Messages",
       "cs_CZ__name": "Zprávy",
@@ -147,7 +141,7 @@
       "puceRef": "nbMessagesUnread"
     },
     {
-      "name": "Configurações",
+      "name": "Ajustes",
       "fr_FR__name": "Paramètres",
       "en_US__name": "System",
       "cs_CZ__name": "Nastavení",

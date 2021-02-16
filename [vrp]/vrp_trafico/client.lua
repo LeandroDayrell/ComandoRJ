@@ -148,7 +148,8 @@ local locais = {
 	{ ['id'] = 40, ['x'] = 1268.80,['y'] = -1709.97,['z'] = 54.77, ['text'] = "Pegar Pen Drive Hacker", ['perm'] = "bordel.permissao" },
 	{ ['id'] = 41, ['x'] = 711.5194091,['y'] = -971.457397,['z'] = 30.395322, ['text'] = "Cortar Tecido e pegar Kit Costura", ['perm'] = "bordel.permissao" },
 	{ ['id'] = 42, ['x'] = 714.8349,['y'] = -969.943603,['z'] = 30.3953227, ['text'] = "Fabricar mochila", ['perm'] = "bordel.permissao" },
-
+	
+	
 	 	-- MC 
 	--{ ['id'] = 43, ['x'] = -570.93157958984, ['y'] = -1606.6187744141, ['z'] = 27.015922546387, ['text'] = "Munição AK103", ['perm'] = "motoclub.permissao" }, 
 	--{ ['id'] = 44, ['x'] = -560.18682861328, ['y'] = -1601.4606933594, ['z'] = 27.010789871216, ['text'] = "Munição SigSauer", ['perm'] = "motoclub.permissao" }, 

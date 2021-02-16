@@ -781,6 +781,19 @@ vAZ.config.garages.personal = {
 		}
 	},
 	[35] ={
+		name = 'Garagem barco 01',
+		type = 'personal',
+		availables = {'boat'},
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 357},
+		point = {
+			{ x = -719.331115, y = -1367.63952, z = 1.59211301 }
+		},
+		spaces = {
+			{ x = -721.779, y = -1365.881, z = -0.3999133, h = 308.65 }
+		}
+	},
+	[36] ={
 		name = 'Garagem Aeroporto',
 		type = 'personal',
 		availables = {'car', 'motorcycle'},

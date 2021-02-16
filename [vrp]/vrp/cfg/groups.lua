@@ -2978,13 +2978,6 @@ cfg.groups = {
 	"lavagem.vip",
 	"color.weapon",
   },
-  ["VIP Empresarial"] = {
-    _config = {
-      gtype = "vip",
-    },
-	"lavagem.vip",
-	"color.weapon",
-  },
   
   --== Sets ==--
   --== Sets ==--

@@ -66,6 +66,8 @@ local carros = {
 	{id = 38,  nome = "osiris", 		precocarro = 1100000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/iBA6LzV.png"},
 	{id = 39,  nome = "zentorno", 		precocarro = 1300000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/2Tdr3GP.png"},
 	{id = 40,  nome = "italigto", 		precocarro = 1500000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/5fLFtJ4.png"},
+	{id = 41,  nome = "weevil", 		precocarro = 22500,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/x3HiTPY.png"},
+	{id = 42,  nome = "asbo", 			precocarro = 25000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/jTWfqBF.png"},
 	-- BARCOS
 	{id = 200,  nome = "dinghy", 		precocarro = 250000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/Mj4qUQk.png"},
 	{id = 201,  nome = "jetmax", 		precocarro = 260000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/p8ocPuB.png"},
