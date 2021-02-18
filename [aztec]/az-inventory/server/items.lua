@@ -9,34 +9,43 @@ async(function()
 end)
 
 vAZ.handlers = {
-    ['mochila'] = function(source, user_id, item, amount, cb)
+    ['tabletd'] = function(source, user_id, item, amount, cb)
         if vAZ.cooldown.get(user_id, item) <= 0 then
-            if vRP.tryGetInventoryItem(user_id, item, 1) then
-                vAZ.cooldown.push(user_id, item, 5)
-                vRPclient._playAnim(source, true, {{"clothingshirt", "try_shirt_positive_d"}}, false)
-                vRP.varyExp(user_id,"physical","strength",650)
-                Citizen.Wait(2500)
-                vRPclient._stopAnim(source, true)
-                cb(true)
-            end
+            TriggerClientEvent('az-dynasty8:item', source)
         else
             TriggerClientEvent("Notify", source, "importante", "Aguarde "..vRPclient.getTimeFunction(source, vAZ.cooldown.get(user_id, item))..".")
         end
         cb(false)
     end,
-    ['coletebalistico'] = function(source, user_id, item, amount, cb)
-        if vAZ.cooldown.get(user_id, item) <= 0 then
-            if vRPclient.getArmour(source) <= 90 and vRP.tryGetInventoryItem(user_id, item, 1) then
-                vAZ.cooldown.push(user_id, item, 5)
-                vRPclient._playAnim(source, true, {{"switch@franklin@getting_ready", "002334_02_fras_v2_11_getting_dressed_exit"}}, false)
-                TriggerClientEvent("progress", source, 2700, "vestindo colete")                
-                SetTimeout(2700, function()
-                    vRPclient.setArmour(source, 100)
-                    cb(true)
-                end)
-            end
+    ['mochila'] = function(source, user_id, item, amount, cb)        
+        local bag = vRP.getExp(user_id, "physical", "strength")
+        if bag < 520 then
+            if vRP.tryGetInventoryItem(user_id, item, 1, false) then
+                vRP.varyExp(user_id, "physical", "strength", 520)
+                cb(true)
+			end
+		elseif bag >= 520 and bag < 1320 then
+			if vRP.tryGetInventoryItem(user_id, item, 1, false) then
+                vRP.varyExp(user_id, "physical", "strength", 800)
+                cb(true)
+			end
+		elseif bag >= 1320 and bag < 3300 and vRP.hasPermission(user_id, 'mochila.permissao') then
+			if vRP.tryGetInventoryItem(user_id, item, 1, false) then
+                vRP.varyExp(user_id, "physical", "strength", 1980)
+                cb(true)
+			end
+        end
+        cb(false)
+    end,
+    ['colete'] = function(source, user_id, item, amount, cb)
+        if vRPclient.getArmour(source) > 0 then
+            TriggerClientEvent('Notify', source, 'aviso', 'Você já está usando colete.')
         else
-            TriggerClientEvent("Notify", source, "importante", "Aguarde "..vRPclient.getTimeFunction(source, vAZ.cooldown.get(user_id, item))..".")
+            if vRP.tryGetInventoryItem(user_id, item, 1, false) then
+                vRPclient._playAnim(source, true, {{"switch@franklin@getting_ready", "002334_02_fras_v2_11_getting_dressed_exit"}}, false)
+                vRPclient.setArmour(source, 100)
+                cb(true)
+            end
         end
         cb(false)
     end,

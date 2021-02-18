@@ -316,7 +316,7 @@ config.locais = {
 
 config.permissao = 	"admin.permissao"
 
-config.use_vehlist = true
+config.use_vehlist = false
 
 config.use_modelname = false
 

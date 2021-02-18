@@ -25,7 +25,8 @@ Config.FixePhone = {
 Config.KeyOpenClose = 311 -- F1
 Config.KeyTakeCall  = 38  -- E
 
-Config.UseMumbleVoIP = false -- Use Frazzle's Mumble-VoIP Resource (Recomended!) https://github.com/FrazzIe/mumble-voip
-Config.UseTokoVoIP   = true
+Config.UseMumbleVoIP  = false -- Use Frazzle's Mumble-VoIP Resource (Recomended!) https://github.com/FrazzIe/mumble-voip
+Config.UseTokoVoIP    = false
+Config.UseSaltyChat   = true
 
 Config.ShowNumberNotification = true -- Show Number or Contact Name when you receive new SMS

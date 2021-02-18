@@ -14,9 +14,10 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0)
+        local sleep = 1000
 		local ply = PlayerPedId()
 		if IsPedInAnyVehicle(ply, false) then
+			sleep = 5
 			local vehicle = GetVehiclePedIsIn(ply, false)
 			if vAZ.whitelistClassVehicle(vAZ.config.class, vehicle) then
 				SetVehicleDoorsLocked(vehicle, 1)
@@ -25,8 +26,9 @@ Citizen.CreateThread(function()
 				DisableControlAction(0, 75)
 			elseif GetVehicleDoorLockStatus(vehicle) == 1 then
 				EnableControlAction(0, 75)
-			end
+			end			
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 

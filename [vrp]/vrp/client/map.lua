@@ -76,13 +76,16 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
-		for k,v in pairs(markers) do
-			local px,py,pz = tvRP.getPosition()
-			if GetDistanceBetweenCoords(v.x,v.y,v.z,px,py,pz,true) <= v.visible_distance then
-				DrawMarker(v.m,v.x,v.y,v.z,0,0,0,0,0,0,v.sx,v.sy,v.sz,v.r,v.g,v.b,v.a,0,0,0,1)
-			end
-		end
+		local thread = 1000
+        local ply = PlayerPedId()
+        local plyCoords = GetEntityCoords(ply)
+        for k,v in pairs(markers) do
+            if #(plyCoords - vector3(v.x, v.y, v.z)) <= v.visible_distance then
+                thread = 5
+                DrawMarker(v.type, v.x, v.y, v.z, 0, 0, 0, 0, 0, 0, v.sx, v.sy, v.sz, v.r, v.g, v.b, v.a, 0, 0, 0, 0)
+            end
+        end
+        Citizen.Wait(thread)
 	end
 end)
 
@@ -99,7 +102,7 @@ function tvRP.removeArea(name)
 	end
 end
 
-RegisterCommand("procurado",function(source,args)
+RegisterCommand("procurado", function(source,args)
 	if standby > 0 then
 		TriggerEvent("Notify","aviso","Aguarde <b>"..standby.." segundos</b> até que tudo se acalme.")
 	else
@@ -109,28 +112,19 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
-		local px,py,pz = tvRP.getPosition()
-		for k,v in pairs(areas) do
-			local player_in = (GetDistanceBetweenCoords(v.x,v.y,v.z,px,py,pz,true) <= v.radius and math.abs(pz-v.z) <= v.height)
-
-			if v.player_in and not player_in then
-				vRPserver._leaveArea(k)
-				v.player_in = false
-			end
-			if IsControlJustPressed(0,38) then
-				if not v.player_in and player_in then
-					vRPserver._enterArea(k)
-					v.player_in = player_in
-				end
-			end
-
-			if IsControlJustPressed(0,194) or IsControlJustPressed(0,25) or IsControlJustPressed(0,200) then
-				if v.player_in and player_in then
-					vRPserver._leaveArea(k)
-					v.player_in = false
-				end
-			end
-		end
+		local thread = 1000
+        local ply = PlayerPedId()
+        local plyCoords = GetEntityCoords(ply)
+        for k,v in pairs(areas) do
+            local player_in = (#(plyCoords - vector3(v.x, v.y, v.z)) <= v.radius and math.abs(plyCoords.z-v.z) <= v.height)
+            if v.player_in and not player_in then
+                vRPserver._leaveArea(k)
+            elseif not v.player_in and player_in then
+                thread = 250
+                vRPserver._enterArea(k)
+            end
+            v.player_in = player_in
+        end
+        Citizen.Wait(thread)
 	end
 end)

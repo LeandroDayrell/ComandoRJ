@@ -1,5 +1,6 @@
-let salesman = 0;
+let salesman = -1;
 let permission = false;
+let types = [];
 
 var arr = ['home', 'sale', 'details'];
 var i = 0;
@@ -18,21 +19,22 @@ function prevItem() {
     return arr[i];
 }
 
-$(document).keyup(function(e) {
-    if (e.key === "Escape") {
-        $('.content-dynasty > .home, .content-dynasty > .sale, .content-dynasty > .details').fadeOut();
-        i = 0;
-        $.post('http://az-dynasty8/NUIFocusOff', JSON.stringify({}));
-        resetInput();
-    }
-});
-
 $(document).ready(function() {
+    $(document).keyup(function(e) {
+        if (e.key === "Escape") {
+            $('.content-dynasty > .home, .content-dynasty > .sale, .content-dynasty > .details').fadeOut();
+            i = 0;
+            $.post('http://az-dynasty8/NUIFocusOff', JSON.stringify({}));
+            resetInput();
+        }
+    });
+
     window.addEventListener('message', function(event) {
         let data = event.data;
         if (data.action == 'open') {
             salesman = data.salesman;
             permission = data.permission;
+            types = data.types;
             $('.borderTablet').fadeIn();
             $('.titulo').html('<p>A melhor mudança da sua vida</p>');
             $('#url-link').html('www.dynasty8realestate.com');
@@ -42,9 +44,7 @@ $(document).ready(function() {
             $('.borderTablet').fadeOut();
         }
     });
-});
-
-$(() => {
+        
     $('.url-acao > .home').on('click', function() {
         if (i != 0) {
             i = 0;
@@ -64,46 +64,42 @@ $(() => {
             let prev = prevItem();
             if (prev == 'sale') {
                 $('#url-link').html('www.dynasty8realestate.com/a-venda');
-                $.post('http://az-dynasty8/GetHomesTypes', JSON.stringify({}), (types) => {
-                    $('.titulo').html('');
-                    $('.titulo').css('padding', '6px');
-                    $.each(types, function(key, type) {
-                        if (type == 'casa') {
-                            $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">SIMPLES</button>`);
-                        }else if (type == 'streamer') {
-                            //$('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">NOBRES</button>`);
-                        }else if (type == 'casasvip') {
-                            //$('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">MANSÕES</button>`);
-                        }else if (type == 'casasShevi') {
-                            $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">MOSQUITO</button>`);
-                        }else{
-                            $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">${type}</button>`);
-                        }
-                    });
+                $('.titulo').html('');
+                $('.titulo').css('padding', '6px');
+                $.each(types, function(key, type) {
+                    if (type == 'casa') {
+                        $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">SIMPLES</button>`);
+                    }else if (type == 'streamer') {
+                        $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">NOBRES</button>`);
+                    }else if (type == 'casasvip') {
+                        $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">MANSÕES</button>`);
+                    }else{
+                        $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">${type}</button>`);
+                    }
                 });
                 setTimeout(function(){
                     $('.wrapHome').html('');
                     $.post('http://az-dynasty8/GetHomesList', JSON.stringify({}), (homes) => {
                         $('#CasasTotal').html('0');
-                        $.each(homes, function(key, home) {   
-                            setTimeout(function(){
-                                $('.wrapHome').append(`
-                                <div class="boxSell" data-category="${home.categoria}" style="display:none;">
+                        for (let i = 0; i < homes.length; i++) {
+                            let home = homes[i];
+                            $('.wrapHome').append(`
+                                <div class="boxSell" data-category="${home.category}" style="display:none;">
                                     <div class="homeSell">
-                                        <div class="item-casa" onclick="changeHome(this)" data-photo="${home.img}" data-id="${home.id}" data-price="${home.preco}" data-name="${home.nome}" data-chest="${home.chest}" data-coords="${JSON.stringify(home.entry)}">
-                                            <div class="item-imagem" style="background-image: url(${home.img});">
-                                                <div class="item-titulo"><span style="text-transform: uppercase">${home.nome}</span></div>
+                                        <div class="item-casa" onclick="changeHome(this)" data-photo="${home.image}" data-id="${home.id}" data-price="${home.price}" data-name="${home.home}" data-chest="${home.chest}" data-coords="${JSON.stringify(home.entry)}">
+                                            <div class="item-imagem" style="background-image: url(${home.image});">
+                                                <div class="item-titulo"><span style="text-transform: uppercase">${home.home}</span></div>
                                             </div>
-                                            <p>${home.categoria}</p>
+                                            <p>${home.category}</p>
                                             <div class="item-compra">
-                                                <span>${formatMoney(home.preco, 'R$')}</span>                                
+                                                <span>${formatMoney(home.price, 'R$')}</span>                                
                                             </div>
                                             <p>${home.street}</p>
                                         </div>
                                     </div>
-                                </div>`);
-                            }, 50);
-                        });
+                                </div>`
+                            );
+                        }                        
                         setTimeout(function(){
                             $('#CasasTotal').html($('.wrapHome').find(`.boxSell[data-category="casa"]`).length);
                             $(`.boxSell[data-category="casa"]`).fadeIn('slow');
@@ -181,7 +177,7 @@ $(() => {
         $('.options, .editButton').hide();
         $('.edit, .editCancelButton').show();        
     });
-    
+
     $('.editCancelButton').on('click', function() {
         $('.edit, .editCancelButton').hide();
         $('.options, .editButton').show();
@@ -205,45 +201,42 @@ $(() => {
         nextItem();
         $('#url-link').html('www.dynasty8realestate.com/casas');
         progressUp('.content-dynasty > .home', '.content-dynasty > .sale');
-        $.post('http://az-dynasty8/GetHomesTypes', JSON.stringify({}), (types) => {
-            $('.titulo').html('');
-            $('.titulo').css('padding', '6px');
-            $.each(types, function(key, type) {
-                if (type == 'casa') {
-                    $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">SIMPLES</button>`);
-                }else if (type == 'streamer') {
-                    //$('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">NOBRES</button>`);
-                }else if (type == 'casasvip') {
-                    //$('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">MANSÕES</button>`);
-                }else if (type == 'casasShevi') {
-                    $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">MOSQUITO</button>`);
-                }else{
-                    $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">${type}</button>`);
-                }
-            });
+        $('.titulo').html('');
+        $('.titulo').css('padding', '6px');
+        $.each(types, function(key, type) {
+            if (type == 'casa') {
+                $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">SIMPLES</button>`);
+            }else if (type == 'streamer') {
+                $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">NOBRES</button>`);
+            }else if (type == 'casasvip') {
+                $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">MANSÕES</button>`);
+            }else{
+                $('.titulo').append(`<button class="menu-button" data-category="${type}" onclick="selectItem(this)">${type}</button>`);
+            }
         });
         setTimeout(function(){
+            $('.wrapHome').html('');
             $.post('http://az-dynasty8/GetHomesList', JSON.stringify({}), (homes) => {
                 $('#CasasTotal').html('0');
-                $.each(homes, function(key, home) {   
-                    setTimeout(function(){
-                        $('.wrapHome').append(`
-                        <div class="boxSell" data-category="${home.categoria}" style="display:none;">
+                for (let i = 0; i < homes.length; i++) {
+                    let home = homes[i];
+                    $('.wrapHome').append(`
+                        <div class="boxSell" data-category="${home.category}" style="display:none;">
                             <div class="homeSell">
-                                <div class="item-casa" onclick="changeHome(this)" data-photo="${home.img}" data-id="${home.id}" data-price="${home.preco}" data-name="${home.nome}" data-chest="${home.chest}" data-coords="${JSON.stringify(home.entry)}">
-                                    <div class="item-imagem" style="background-image: url(${home.img});">
-                                        <div class="item-titulo"><span style="text-transform: uppercase">${home.nome}</span></div>
+                                <div class="item-casa" onclick="changeHome(this)" data-photo="${home.image}" data-id="${home.id}" data-price="${home.price}" data-name="${home.home}" data-chest="${home.chest}" data-coords="${JSON.stringify(home.entry)}">
+                                    <div class="item-imagem" style="background-image: url(${home.image});">
+                                        <div class="item-titulo"><span style="text-transform: uppercase">${home.home}</span></div>
                                     </div>
-                                    <p>${home.categoria}</p>
+                                    <p>${home.category}</p>
                                     <div class="item-compra">
-                                        <span>${formatMoney(home.preco, 'R$')}</span>                                
+                                        <span>${formatMoney(home.price, 'R$')}</span>                                
                                     </div>
                                     <p>${home.street}</p>
                                 </div>
                             </div>
-                        </div>`);
-                    }, 50);
-                });
+                        </div>`
+                    );
+                }                        
                 setTimeout(function(){
                     $('#CasasTotal').html($('.wrapHome').find(`.boxSell[data-category="casa"]`).length);
                     $(`.boxSell[data-category="casa"]`).fadeIn('slow');
@@ -289,6 +282,7 @@ function changeHome(element) {
 }
 
 function formatMoney(n, currency) {
+    if (typeof n != "number") n = 0;
     return currency + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 }
 

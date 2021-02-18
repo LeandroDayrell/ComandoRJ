@@ -23,10 +23,11 @@ local timedeath = 400
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local sleep = 500
 		local ped = PlayerPedId()
 		local health = GetEntityHealth(ped)
 		if health <= 100 and timedeath > 0 then
+			sleep = 5
 			if not nocauteado then
 				if IsEntityDead(ped) then
 					local x,y,z = tvRP.getPosition()
@@ -47,6 +48,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 
@@ -73,38 +75,40 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1000)
+		local sleep = 500
 		if nocauteado then
+			sleep = 1000
 			timedeath = timedeath - 1
 		end
+		SetPlayerHealthRechargeMultiplier(PlayerId(), 0)
+		Citizen.Wait(sleep)
 	end
 end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(100)
-		SetPlayerHealthRechargeMultiplier(PlayerId(),0)
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		if nocauteado and timedeath <= 0 and IsControlJustPressed(0,38) then
-			nocauteado = false
-			SetEntityInvincible(PlayerPedId(),false)
-			SetEntityHealth(PlayerPedId(),0)
-			SetTimeout(5000,function()
-				timedeath = 400
-			end)
+		local sleep = 500
+		if nocauteado and timedeath <= 0 then
+			sleep = 5
+			if IsControlJustPressed(0, 38) then
+				nocauteado = false
+				local player = PlayerPedId()
+				SetEntityInvincible(player, false)
+				SetEntityHealth(player, 0)
+				SetTimeout(5000, function()
+					timedeath = 400
+				end)
+			end
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local sleep = 500
 		if nocauteado then
+			sleep = 5
 			if timedeath > 0 then
 				drawTxt("VOCE TEM ~r~"..timedeath.." ~w~SEGUNDOS DE VIDA, CHAME OS PARAMEDICOS",4,0.5,0.93,0.50,255,255,255,255)
 			else
@@ -152,6 +156,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(0,188,true)
 			DisableControlAction(0,311,true)
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 

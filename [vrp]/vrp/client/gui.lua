@@ -41,8 +41,9 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local sleep = 500
 		if menu_celular then
+			sleep = 5
 			BlockWeaponWheelThisFrame()
 			DisableControlAction(0,288,true)
 			DisableControlAction(0,289,true)
@@ -65,6 +66,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(0,24,true)
 			DisableControlAction(0,25,true)
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 
@@ -345,9 +347,10 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
-		local ped = PlayerPedId()
+		local sleep = 500
 		if apontar then
+			sleep = 5
+			local ped = PlayerPedId()
 			local camPitch = GetGameplayCamRelativePitch()
 			if camPitch < -70.0 then
 				camPitch = -70.0
@@ -377,6 +380,7 @@ Citizen.CreateThread(function()
 			Citizen.InvokeNative(0xB0A6CFD2C69C1088,ped,"isBlocked",blocked)
 			Citizen.InvokeNative(0xB0A6CFD2C69C1088,ped,"isFirstPerson",Citizen.InvokeNative(0xEE778F8C7E1142E2,Citizen.InvokeNative(0x19CAFA3C87F7C2FF))==4)
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -398,11 +402,13 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local sleep = 500
 		if block then
+			sleep = 5
 			BlockWeaponWheelThisFrame()
 			DisableControlAction(0,25,true)
 		end
+		Citizen.Wait(sleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -493,16 +499,6 @@ Citizen.CreateThread(function()
 				end
 			end
 			LastWeapon = GetSelectedPedWeapon(ped)
-		end
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		if block then
-			BlockWeaponWheelThisFrame()
-			DisableControlAction(0,25,true)
 		end
 	end
 end)

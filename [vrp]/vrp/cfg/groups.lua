@@ -2915,6 +2915,7 @@ cfg.groups = {
       gtype = "vip",
     },
     "vip.permissao",
+	"mochila.permissao",
 	"bronze.permissao",
 	"color.weapon",
   },

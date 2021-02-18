@@ -6,18 +6,18 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 vRPgarage = Tunnel.getInterface("vrp_adv_garages")
 
-vAZgarageClient = Tunnel.getInterface("az-garages")
+vAZgarage = Proxy.getInterface('az-garages')
 
-vRP._prepare("vRP/move_vehicle","UPDATE vrp_user_vehicles SET user_id = @tuser_id WHERE user_id = @user_id AND model = @vehicle")
-vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id,model,plate,trunk,tuning) VALUES(@user_id,@vehicle,@plate,'[]','[]')")
-vRP._prepare("vRP/remove_vehicle","DELETE FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @vehicle")
+vRP._prepare("vRP/move_vehicle","UPDATE vrp_user_vehicles SET user_id = @tuser_id WHERE user_id = @user_id AND model = @model")
+vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id,model,plate,trunk,tuning) VALUES(@user_id,@model,@plate,'[]','[]')")
+vRP._prepare("vRP/remove_vehicle","DELETE FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model")
 vRP._prepare("vRP/get_vehicles","SELECT model FROM vrp_user_vehicles WHERE user_id = @user_id")
-vRP._prepare("vRP/get_vehicle","SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @vehicle")
-vRP._prepare("vRP/get_detido","SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @vehicle")
-vRP._prepare("vRP/set_detido","UPDATE vrp_user_vehicles SET state = @detido, time = @time WHERE user_id = @user_id AND model = @vehicle")
+vRP._prepare("vRP/get_vehicle","SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model")
+vRP._prepare("vRP/get_detido","SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model")
+vRP._prepare("vRP/set_detido","UPDATE vrp_user_vehicles SET state = @detido, time = @time WHERE user_id = @user_id AND model = @model")
 vRP._prepare("vRP/get_maxcars","SELECT COUNT(model) as quantidade FROM vrp_user_vehicles WHERE user_id = @user_id")
-vRP._prepare("vRP/set_vehstatus","UPDATE vrp_user_vehicles SET engine = @engine, body = @body, fuel = @fuel WHERE user_id = @user_id AND model = @vehicle")
-vRP._prepare("vRP/count_vehicle","SELECT COUNT(*) as qtd FROM vrp_user_vehicles WHERE model = @vehicle")
+vRP._prepare("vRP/set_vehstatus","UPDATE vrp_user_vehicles SET engine = @engine, body = @body, fuel = @fuel WHERE user_id = @user_id AND model = @model")
+vRP._prepare("vRP/count_vehicle","SELECT COUNT(*) as qtd FROM vrp_user_vehicles WHERE model = @model")
 
 local cfg = module("vrp_adv_garages","cfg/garages")
 local cfg_inventory = module("vrp","cfg/inventory")
@@ -96,9 +96,9 @@ AddEventHandler("vrp_adv_garages_id",function(netid,enginehealth,bodyhealth,fuel
 			fuel = 100
 		end
 
-		local rows = vRP.query("vRP/get_detido",{ user_id = user_id, vehicle = carname })
+		local rows = vRP.query("vRP/get_detido",{ user_id = user_id, model = carname })
 		if #rows > 0 then
-			vRP.execute("vRP/set_vehstatus",{ user_id = user_id, vehicle = carname, engine = parseInt(enginehealth), body = parseInt(bodyhealth), fuel = parseInt(fuel) })
+			vRP.execute("vRP/set_vehstatus",{ user_id = user_id, model = carname, engine = parseInt(enginehealth), body = parseInt(bodyhealth), fuel = parseInt(fuel) })
 		end
 	end
 end)
@@ -125,7 +125,7 @@ function openGarage(source,gid,payprice,location)
 					local choose = function(player,choice)
 						local vname = kitems[choice]
 						if vname then
-							local rows = vRP.query("vRP/get_detido",{ user_id = user_id, vehicle = vname })
+							local rows = vRP.query("vRP/get_detido",{ user_id = user_id, model = vname })
 							local data = vRP.getSData("custom:u"..user_id.."veh_"..vname)
 							local custom = json.decode(data) or ""
 							if not payprice then
@@ -159,7 +159,7 @@ function openGarage(source,gid,payprice,location)
 							if ok then
 								if vRP.tryFullPayment(user_id,parseInt(carros[vname].price*0.1)) then
 									vRP.closeMenu(source)
-									vRP.execute("vRP/set_detido",{ user_id = user_id, vehicle = vname, detido = 0, time = 0 })
+									vRP.execute("vRP/set_detido",{ user_id = user_id, model = vname, detido = 0, time = 0 })
 									TriggerClientEvent("Notify",source,"sucesso","Veículo liberado.")
 								else
 									TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.")
@@ -178,7 +178,7 @@ function openGarage(source,gid,payprice,location)
 									TriggerClientEvent("Notify",source,"sucesso","Seguradora foi acionada, aguarde a notificação da liberação.")
 									TriggerClientEvent("progress",source,30000,"liberando")
 									SetTimeout(30000,function()
-										vRP.execute("vRP/set_detido",{ user_id = user_id, vehicle = vname, detido = 0, time = 0 })
+										vRP.execute("vRP/set_detido",{ user_id = user_id, model = vname, detido = 0, time = 0 })
 										TriggerClientEvent("Notify",source,"sucesso","Veículo liberado.")
 									end)
 								else
@@ -197,14 +197,14 @@ function openGarage(source,gid,payprice,location)
 						end
 
 						if vehicle then
-							local rows = vRP.query("vRP/get_detido",{ user_id = user_id, vehicle = v.vehicle })
+							local rows = vRP.query("vRP/get_detido",{ user_id = user_id, model = v.vehicle })
 							if parseInt(rows[1].state) <= 0 then
-								submenu[vehicle[1]] = { choose,"<text01>Lataria:</text01> <text02>"..vRP.format(parseInt(rows[1].body*0.1)).."%</text02><text01>Motor:</text01> <text02>"..vRP.format(parseInt(rows[1].engine*0.1)).."%</text02><text01>Gasolina:</text01> <text02>"..vRP.format(parseInt(rows[1].fuel)).."%</text02><text01>Seguro:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.005)).."</text02><text01>Detenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.1)).."</text02><text01>Retenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.5)).."</text02>" }
+								submenu[vehicle[1]] = { choose,"<text01>Lataria:</text01> <text02>"..vRP.format(parseInt(rows[1].body*0.1)).."%</text02><text01>Motor:</text01> <text02>"..vRP.format(parseInt(rows[1].engine*0.1)).."%</text02><text01>Gasolina:</text01> <text02>"..vRP.format(parseInt(rows[1].fuel)).."%</text02><text01>Seguro:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.005)).."</text02><text01>Detenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.1)).."</text02><text01>Retenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.5)).."</text02>" }
 							else
 								if os.time() <= parseInt(rows[1].time+24*60*60) then
-									submenu[vehicle[1]] = { choosedetidotime,"<text01>Lataria:</text01> <text02>"..vRP.format(parseInt(rows[1].body*0.1)).."%</text02><text01>Motor:</text01> <text02>"..vRP.format(parseInt(rows[1].engine*0.1)).."%</text02><text01>Gasolina:</text01> <text02>"..vRP.format(parseInt(rows[1].fuel)).."%</text02><text01>Seguro:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.005)).."</text02><text01>Detenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.1)).."</text02><text01>Retenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.5)).."</text02>" }
+									submenu[vehicle[1]] = { choosedetidotime,"<text01>Lataria:</text01> <text02>"..vRP.format(parseInt(rows[1].body*0.1)).."%</text02><text01>Motor:</text01> <text02>"..vRP.format(parseInt(rows[1].engine*0.1)).."%</text02><text01>Gasolina:</text01> <text02>"..vRP.format(parseInt(rows[1].fuel)).."%</text02><text01>Seguro:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.005)).."</text02><text01>Detenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.1)).."</text02><text01>Retenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.5)).."</text02>" }
 								else
-									submenu[vehicle[1]] = { choosedetido,"<text01>Lataria:</text01> <text02>"..vRP.format(parseInt(rows[1].body*0.1)).."%</text02><text01>Motor:</text01> <text02>"..vRP.format(parseInt(rows[1].engine*0.1)).."%</text02><text01>Gasolina:</text01> <text02>"..vRP.format(parseInt(rows[1].fuel)).."%</text02><text01>Seguro:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.005)).."</text02><text01>Detenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.1)).."</text02><text01>Retenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].vehicle].price*0.5)).."</text02>" }
+									submenu[vehicle[1]] = { choosedetido,"<text01>Lataria:</text01> <text02>"..vRP.format(parseInt(rows[1].body*0.1)).."%</text02><text01>Motor:</text01> <text02>"..vRP.format(parseInt(rows[1].engine*0.1)).."%</text02><text01>Gasolina:</text01> <text02>"..vRP.format(parseInt(rows[1].fuel)).."%</text02><text01>Seguro:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.005)).."</text02><text01>Detenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.1)).."</text02><text01>Retenção:</text01> <text02>$"..vRP.format(parseInt(carros[rows[1].model].price*0.5)).."</text02>" }
 								end
 							end
 							kitems[vehicle[1]] = v.vehicle
@@ -282,7 +282,7 @@ function openGarage(source,gid,payprice,location)
 							if vehicle then
 								local ok = vRP.request(source,"Tem certeza que deseja <b>comprar</b> este veículo?",30)
 								if ok then
-									local rows = vRP.query("vRP/count_vehicle",{ vehicle = vname })
+									local rows = vRP.query("vRP/count_vehicle",{ model = vname })
 									if vehicle[4] ~= -1 and parseInt(rows[1].qtd) >= vehicle[4] then
 										TriggerClientEvent("Notify",source,"importante","Estoque indisponivel.")
 									else
@@ -334,7 +334,7 @@ function openGarage(source,gid,payprice,location)
 											end
 										end
 										if vRP.tryFullPayment(user_id,vehicle[2]) then
-											vRP.execute("vRP/add_vehicle",{ user_id = user_id, vehicle = vname, plate = vAZgarageClient.GeneratePlate(source)})
+											vRP.execute("vRP/add_vehicle",{ user_id = user_id, model = vname, plate = vAZgarage.generatePlate()})
 											if vehicle[2] > 0 then
 												TriggerClientEvent("Notify",source,"sucesso","Pagou <b>$"..vRP.format(parseInt(vehicle[2])).." dólares</b>.")
 											end
@@ -384,7 +384,7 @@ function openGarage(source,gid,payprice,location)
 								local ok = vRP.request(source,"Tem certeza que deseja <b>vender</b> este veículo?",30)
 								if ok then
 									local price = math.ceil(vehicle[2]*0.7)
-									local rows = vRP.query("vRP/get_vehicle",{ user_id = user_id, vehicle = vname })
+									local rows = vRP.query("vRP/get_vehicle",{ user_id = user_id, model = vname })
 									if #rows <= 0 then
 										return
 									end
@@ -392,7 +392,7 @@ function openGarage(source,gid,payprice,location)
 										TriggerClientEvent("Notify",source,"importante","Acione a seguradora antes de vender.")
 										return
 									end
-									vRP.execute("vRP/remove_vehicle",{ user_id = user_id, vehicle = vname })
+									vRP.execute("vRP/remove_vehicle",{ user_id = user_id, model = vname })
 									vRP.setSData("custom:u"..user_id.."veh_"..vname,json.encode())
 									vRP.giveMoney(user_id,parseInt(price))
 									if parseInt(price) > 0 then
@@ -801,14 +801,14 @@ RegisterCommand('vehs',function(source,args,rawCommand)
 							return
 						end
 					end
-					local owned = vRP.query("vRP/get_vehicle",{ user_id = tuser_id, vehicle = vname })
+					local owned = vRP.query("vRP/get_vehicle",{ user_id = tuser_id, model = vname })
 					if #owned == 0 then
 						local price = tonumber(sanitizeString(vRP.prompt(source,"Valor:",""),"\"[]{}+=?!_()#@%/\\|,.",false))
 						local ok = vRP.request(nplayer,"Aceita comprar um <b>"..vehicle.."</b> por <b>$"..vRP.format(parseInt(price)).."</b> dólares?",30)
 						if ok then
 							if parseInt(price) > 0 then
 								if vRP.tryFullPayment(tuser_id,parseInt(price)) then
-									vRP.execute("vRP/move_vehicle",{ user_id = user_id, tuser_id = tuser_id, vehicle = vname })
+									vRP.execute("vRP/move_vehicle",{ user_id = user_id, tuser_id = tuser_id, model = vname })
 									--local data = vRP.getSData("custom:u"..user_id.."veh_"..vname)
 									--local custom = json.decode(data) or ""
 									--vRP.setSData("custom:u"..tuser_id.."veh_"..vname, json.encode(custom))

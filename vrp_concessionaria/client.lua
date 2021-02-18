@@ -15,7 +15,7 @@ Citizen.CreateThread(function()
         Wait(5)
 
         local distance = GetDistanceBetweenCoords(
-                             GetEntityCoords(GetPlayerPed(-1)),
+                             GetEntityCoords(PlayerPedId()),
                              -792.11199951172,334.80032348633,85.700408935547 - 0.97, true)
 
         if distance <= 100 then

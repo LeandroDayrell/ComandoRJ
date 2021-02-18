@@ -114,7 +114,8 @@ vAZ.spawnGarageVehicle = function(model, plate, engine, body, fuel, custom)
 							end
 
 							if custom then
-								vAZ.setVehicleMods(custom, nveh)
+								-- vAZ.setVehicleMods(custom, nveh)
+								TriggerEvent("nation:applymods", vehicle, false)
 							end
 			
 							return true, vehicle, vehicleNet

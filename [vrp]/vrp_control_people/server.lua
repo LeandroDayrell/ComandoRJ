@@ -30,11 +30,11 @@ vRP._prepare("vRP/update_foragido",
 vRP._prepare("vRP/delete_foragido",
              "DELETE FROM policia WHERE dkey = 'foragido' AND user_id = @user_id")
 -- vRP._prepare("vRP/count_vehicle",
---              "SELECT COUNT(*) as qtd FROM vrp_user_vehicles WHERE vehicle = @vehicle")
+--              "SELECT COUNT(*) as qtd FROM vrp_user_vehicles WHERE model = @model")
 -- vRP._prepare("vRP/get_maxcars",
---              "SELECT COUNT(vehicle) as quantidade FROM vrp_user_vehicles WHERE user_id = @user_id")
+--              "SELECT COUNT(model) as quantidade FROM vrp_user_vehicles WHERE user_id = @user_id")
 -- vRP._prepare("vRP/get_total_carros_tipo",
---              "SELECT vehicle, count(1) total FROM vrp.vrp_user_vehicles GROUP BY vehicle")
+--              "SELECT model, count(1) total FROM vrp.vrp_user_vehicles GROUP BY model")
 
 function func.setRegistro(passaporte, dkey, dvalue, img, valor, id_pai)
     local source = source

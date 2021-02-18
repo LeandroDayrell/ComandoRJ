@@ -389,9 +389,12 @@ AddEventHandler('gcPhone:acceptCall', function(infoCall, rtcAnswer)
             AppelsEnCours[id].is_accepts = true
             AppelsEnCours[id].rtcAnswer = rtcAnswer
             TriggerClientEvent('gcPhone:acceptCall', AppelsEnCours[id].transmitter_src, AppelsEnCours[id], true)
-	    SetTimeout(1000, function() -- change to +1000, if necessary.
-       		TriggerClientEvent('gcPhone:acceptCall', AppelsEnCours[id].receiver_src, AppelsEnCours[id], false)
-	    end)
+			SetTimeout(1000, function() -- change to +1000, if necessary.
+				TriggerClientEvent('gcPhone:acceptCall', AppelsEnCours[id].receiver_src, AppelsEnCours[id], false)
+				if Config.UseSaltyChat then
+					exports['saltychat']:EstablishCall(AppelsEnCours[id].transmitter_src, AppelsEnCours[id].receiver_src)
+				end
+			end)
             saveAppels(AppelsEnCours[id])
         end
     end
@@ -417,6 +420,9 @@ AddEventHandler('gcPhone:rejectCall', function (infoCall)
             saveAppels(AppelsEnCours[id])
         end
         TriggerEvent('gcPhone:removeCall', AppelsEnCours)
+		if Config.UseSaltyChat then
+			exports['saltychat']:EndCall(AppelsEnCours[id].transmitter_src, AppelsEnCours[id].receiver_src)
+		end
         AppelsEnCours[id] = nil
     end
 end)

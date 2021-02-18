@@ -7,18 +7,11 @@ vAZ = {}
 Proxy.addInterface('az-homes', vAZ)
 Tunnel.bindInterface('az-homes', vAZ)
 
-vRP._prepare("sRP/obter_todos_enderecos", "SELECT * FROM vrp_user_homes")
-vRP._prepare("sRP/update_lock", "UPDATE vrp_user_homes SET locked = @locked WHERE home = @home")
-vRP._prepare("sRP/obter_endereco_pelo_nome", "SELECT * FROM vrp_user_homes WHERE home = @home")
-vRP._prepare("sRP/obter_dono_casa", "SELECT user_id FROM vrp_user_homes WHERE home = @home AND number = @number")
-vRP._prepare("sRP/rm_endereco", "DELETE FROM vrp_user_homes WHERE user_id = @user_id")
-vRP._prepare("sRP/novo_rm_endereco", "DELETE FROM vrp_user_homes WHERE user_id = @user_id AND home = @home")
-vRP._prepare("NL/set_endereco", "INSERT INTO vrp_user_homes(user_id,home,number,locked,guardaRoupa,chest,bauLimite) VALUES(@user_id,@home,@number,@locked,@guardaRoupa,@bau,@bauLimite)")
-vRP._prepare("NL/get_casa", "SELECT * FROM vrp_user_homes WHERE home = @home")
-
-vRP._prepare("vAZ/updateHomeWardrobe", "UPDATE vrp_user_homes SET guardaRoupa = @guardaRoupa WHERE home = @home")
-vRP._prepare("vAZ/getHomeWardrobe", "SELECT guardaRoupa FROM vrp_user_homes WHERE home = @home")
-vRP._prepare("vAZ/updatePlayerDataPosition", "UPDATE vrp_user_data SET dvalue = JSON_SET(dvalue, CONCAT(\"$.\", \"position\"), JSON_OBJECT('x', @x, 'y', @Y, 'z', @z)) WHERE dkey = 'vRP:datatable' AND user_id = @user_id")
+vRP._prepare("vRP/get_users_homes", "SELECT * FROM vrp_user_homes")
+vRP._prepare("vRP/upt_home_lock", "UPDATE vrp_user_homes SET locked = @locked WHERE home = @home")
+vRP._prepare("vRP/upt_home_wardrobe", "UPDATE vrp_user_homes SET guardaRoupa = @guardaRoupa WHERE home = @home")
+vRP._prepare("vRP/get_home_wardrobe", "SELECT guardaRoupa FROM vrp_user_homes WHERE home = @home")
+vRP._prepare("vRP/upt_user_position", "UPDATE vrp_user_data SET dvalue = JSON_SET(dvalue, CONCAT(\"$.\", \"position\"), JSON_OBJECT('x', @x, 'y', @Y, 'z', @z)) WHERE dkey = 'vRP:datatable' AND user_id = @user_id")
 
 local items = module("cfg/items").items
 local casa = module("cfg/homes").casas
@@ -43,7 +36,7 @@ async(function()
         }
         vAZ.area[id] = {}
     end
-    for id,home in pairs(vRP.query("sRP/obter_todos_enderecos")) do
+    for id,home in pairs(vRP.query("vRP/get_users_homes")) do
         if vAZ.homes[home.home] then
             vAZ.homes[home.home].name = home.home
             vAZ.homes[home.home].owner = home.user_id
@@ -136,7 +129,7 @@ vAZ.ChangeHomeStatus = function(name, locked)
             else
                 vAZ.homes[name].locked = locked
             end
-            vRP.execute("sRP/update_lock", {home = name, locked = vAZ.homes[name].locked})
+            vRP.execute("vRP/upt_home_lock", {home = name, locked = vAZ.homes[name].locked})
             for id,user in pairs(vAZ.GetUsersAreaSlot(name)) do
                 local target = vRP.getUserSource(user)
                 if target then
@@ -157,7 +150,7 @@ vAZ.GetWardrobeClothes = function(name)
     local user_id = vRP.getUserId(source)
     if vAZ.slots[user_id] and vAZ.slots[user_id].name == name then
         local clothes = {}
-        local wardrobe = vRP.query("vAZ/getHomeWardrobe", {home = name})
+        local wardrobe = vRP.query("vRP/get_home_wardrobe", {home = name})
         if #wardrobe > 0 then
             for key,value in pairs(json.decode(wardrobe[1].guardaRoupa) or {}) do
                 clothes[key] = {['nomeSet'] = key}
@@ -172,7 +165,7 @@ vAZ.WearWardrobeClothes = function(name, set)
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.slots[user_id] and vAZ.slots[user_id].name == name then
-        local wardrobe = vRP.query("vAZ/getHomeWardrobe", {home = name})
+        local wardrobe = vRP.query("vRP/get_home_wardrobe", {home = name})
         if #wardrobe > 0 then
             wardrobe = json.decode(wardrobe[1].guardaRoupa) or {}
             if wardrobe[set] then
@@ -186,12 +179,12 @@ vAZ.DeleteWardrobeClothes = function(name, set)
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.slots[user_id] and vAZ.slots[user_id].name == name and vAZ.homes[name].owner == user_id or vAZ.SearchUserPermission(json.decode(vRP.getSData('permission:'..name)) or {}, user_id) then
-        local wardrobe = vRP.query("vAZ/getHomeWardrobe", {home = name})
+        local wardrobe = vRP.query("vRP/get_home_wardrobe", {home = name})
         if #wardrobe > 0 then
             wardrobe = json.decode(wardrobe[1].guardaRoupa) or {}
             if wardrobe[set] then
                 wardrobe[set] = nil
-                vRP.execute("vAZ/updateHomeWardrobe", {home = name, guardaRoupa = json.encode(wardrobe)})
+                vRP.execute("vRP/upt_home_wardrobe", {home = name, guardaRoupa = json.encode(wardrobe)})
                 vAZclient.UpdateWardrobeClothes(source)
             end
         end
@@ -202,18 +195,18 @@ vAZ.SaveWearWardrobeClothes = function(name, set)
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.slots[user_id] and vAZ.slots[user_id].name == name and vAZ.homes[name].owner == user_id or vAZ.SearchUserPermission(json.decode(vRP.getSData('permission:'..name)) or {}, user_id) then
-        local wardrobe = vRP.query("vAZ/getHomeWardrobe", {home = name})
+        local wardrobe = vRP.query("vRP/get_home_wardrobe", {home = name})
         if #wardrobe > 0 then
             wardrobe = json.decode(wardrobe[1].guardaRoupa) or {}
             if wardrobe[set] then
                 local ok = vRP.request(source, "Ja existe um cabide com esse nome, deseja substituir ?", 30)
                 if ok then
                     wardrobe[set] = vRPclient.getCustomization(source)
-                    vRP.execute("vAZ/updateHomeWardrobe", {home = name, guardaRoupa = json.encode(wardrobe)})
+                    vRP.execute("vRP/upt_home_wardrobe", {home = name, guardaRoupa = json.encode(wardrobe)})
                 end
             else
                 wardrobe[set] = vRPclient.getCustomization(source)
-                vRP.execute("vAZ/updateHomeWardrobe", {home = name, guardaRoupa = json.encode(wardrobe)})
+                vRP.execute("vRP/upt_home_wardrobe", {home = name, guardaRoupa = json.encode(wardrobe)})
             end
             vAZclient.UpdateWardrobeClothes(source)
         end
@@ -236,7 +229,7 @@ AddEventHandler("vRP:playerLeave", function(user_id, source)
         if user_id == user then
             vAZ.RemoveUserAreaSlotByName(user_id, slot.name)
             SetTimeout(5000, function()
-                vRP.execute("vAZ/updatePlayerDataPosition", {user_id = user_id, x = vAZ.homes[slot.name].entry.x, y = vAZ.homes[slot.name].entry.y, z = vAZ.homes[slot.name].entry.z})
+                vRP.execute("vRP/upt_user_position", {user_id = user_id, x = vAZ.homes[slot.name].entry.x, y = vAZ.homes[slot.name].entry.y, z = vAZ.homes[slot.name].entry.z})
                 vAZ.slots[user_id] = nil
             end)
         end
@@ -248,7 +241,7 @@ RegisterCommand("hchave", function(source,args,rawCommand)
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.slots[user_id] and #args == 1 then
-        local home_user = vRP.query("sRP/obter_endereco_pelo_nome", {home = vAZ.slots[user_id].name})
+        local home_user = vRP.query("vRP/get_home", {home = vAZ.slots[user_id].name})
         if #home_user > 0 then
             if home_user[1].user_id == user_id and args[1] then                
                 local target_source = vRPclient.getNearestPlayer(source, 7)
@@ -269,12 +262,12 @@ RegisterCommand("hchave", function(source,args,rawCommand)
                             if ok then
                                 table.insert(home_key, target_id)
                                 vRP.setSData('permission:'..vAZ.slots[user_id].name, json.encode(home_key))
-                                TriggerClientEvent('az-notify:default', source, vAZ.slots[user_id].name, "Você entregou a chave da residencia!")
+                                TriggerClientEvent('Notify', source, 'sucesso', "Você entregou a chave da residencia!")
                                 updateCasas(target_source)
-                                TriggerClientEvent('az-notify:default', target_source, vAZ.slots[user_id].name, 'O proprietário te deu a chave da residencia!')                                
+                                TriggerClientEvent('Notify', target_source, 'importante', 'O proprietário te deu a chave da residencia!')                                
                             end                            
                         else
-                            TriggerClientEvent('az-notify:default', source, vAZ.slots[user_id].name, "Essa pessoa já tem a chave dessa residencia!")
+                            TriggerClientEvent('Notify', source, 'importante', "Essa pessoa já tem a chave dessa residencia!")
                         end
                     elseif args[1] == 'tirar' then
                         target_permission, target_key = vAZ.SearchUserPermission(home_key, target_id)
@@ -283,19 +276,19 @@ RegisterCommand("hchave", function(source,args,rawCommand)
                             if ok then
                                 table.remove(home_key, target_key)
                                 vRP.setSData('permission:'..vAZ.slots[user_id].name, json.encode(home_key))
-                                TriggerClientEvent('az-notify:default', source, vAZ.slots[user_id].name, "Você pegou a chave da residencia!")
-                                TriggerClientEvent('az-notify:default', target_source, vAZ.slots[user_id].name, 'O proprietário pegou a chave de você!')
+                                TriggerClientEvent('Notify', source, 'importante', "Você pegou a chave da residencia!")
+                                TriggerClientEvent('Notify', target_source, 'importante', 'O proprietário pegou a chave de você!')
                                 updateCasas(target_source)
                             end                            
                         else
-                            TriggerClientEvent('az-notify:default', source, vAZ.slots[user_id].name, "Essa pessoa não tem a chave dessa residencia!")
+                            TriggerClientEvent('Notify', source, 'importante', "Essa pessoa não tem a chave dessa residencia!")
                         end
                     end
                 else
-                    TriggerClientEvent('az-notify:default', source, vAZ.slots[user_id].name, "Não tem ninguem perto de você!")
+                    TriggerClientEvent('Notify', source, 'importante', "Não tem ninguem perto de você!")
                 end
             else                
-                TriggerClientEvent('az-notify:default', source, vAZ.slots[user_id].name, "Você não e dono dessa residencia!")
+                TriggerClientEvent('Notify', source, 'importante', "Você não e dono dessa residencia!")
             end
         end
     end
@@ -338,19 +331,9 @@ AddEventHandler('az-homes:chest', function(casa)
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.slots[user_id] and vAZ.slots[user_id].name == casa then
-        local rows = vRP.query("NL/get_casa", {home = casa})
+        local rows = vRP.query("vRP/get_home", {home = casa})
         if #rows > 0 then
-            local weight = 0
-            local chest, max = json.decode(rows[1].bau), rows[1].bauLimite
-            for name,item in pairs(chest) do
-                if items[name] then
-                    local reajust = items[name]
-                    reajust.item, reajust.amount = name, item.amount
-                    weight = weight + vRP.getItemWeight(name) * item.amount
-                    table.insert(inventory, reajust)
-                end
-            end
-            TriggerClientEvent('az-inventory:home', source, {home = casa, weight = weight, maxweight = max, items = inventory}) 
+            TriggerClientEvent('az-inventory:home', source, rows[1].user_id, casa) 
         end
     end
 end)
@@ -358,11 +341,4 @@ end)
 RegisterCommand("ggc", function(source,args,rawCommand)
     local source = source
     vAZclient.SetHomes(-1, vAZ.homes)
-end)
-
-RegisterCommand("bc", function(source,args,rawCommand)
-    local source = source
-    local user_id = vRP.getUserId(source)
-
-    TriggerEvent('az-homes:purchase', user_id, 'Casa PH CITY nº56')
 end)

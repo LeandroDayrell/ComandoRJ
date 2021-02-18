@@ -255,7 +255,7 @@ Citizen.CreateThread(function()
 	RequestIpl("gr_heist_yacht2_lounge_lod")
 	RequestIpl("gr_heist_yacht2_slod")----
 -------------------
-
+--[[
 	RequestIpl("h4_islandairstrip")
 	RequestIpl("h4_islandairstrip_props")
 	RequestIpl("h4_islandx_mansion")
@@ -355,10 +355,10 @@ Citizen.CreateThread(function()
 	RequestIpl("h4_islandxdock_water_hatch")
 	RequestIpl("h4_beach_party")
 	SetDeepOceanScaler(0.0)
-
+	]]
 	
---[[	
-RequestIpl("h4_mph4_terrain_occ_09")
+	
+	RequestIpl("h4_mph4_terrain_occ_09")
 RequestIpl("h4_mph4_terrain_occ_06")
 RequestIpl("h4_mph4_terrain_occ_05")
 RequestIpl("h4_mph4_terrain_occ_01")
@@ -665,7 +665,7 @@ RequestIpl("h4_islandxtower_slod")
 RequestIpl("h4_beach_props")
 RequestIpl("h4_islandx_mansion_b_slod")
 RequestIpl("h4_islandx_maindock_props_slod")
-equestIpl("h4_sw_ipl_07_slod")
+RequestIpl("h4_sw_ipl_07_slod")
 RequestIpl("h4_ne_ipl_07")
 RequestIpl("h4_islandxdock_props_2")
 RequestIpl("h4_ne_ipl_09_lod")
@@ -688,5 +688,5 @@ RequestIpl("h4_islandx_props")
 RequestIpl("h4_int_placement_h4_interior_1_dlc_int_02_h4_milo_")
 RequestIpl("h4_int_placement_h4_interior_0_int_sub_h4_milo_")
 RequestIpl("h4_int_placement_h4")
-	]]
+	
 end)

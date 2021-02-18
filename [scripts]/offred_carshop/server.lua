@@ -6,7 +6,7 @@ vRPclient = Tunnel.getInterface("vRP")
 vRP._prepare("vRP/get_vehiclesList","SELECT * FROM concessionaria WHERE id = @id")
 vRP._prepare("vRP/remove_stock","UPDATE concessionaria SET estoquecarro = estoquecarro - 1 WHERE id = @id")
 
-vAZgarageClient = Tunnel.getInterface("az-garages")
+vAZgarage = Proxy.getInterface('az-garages')
 
 function vRP.logInfoToFile(file,info)
   file = io.open(file, "a")
@@ -224,7 +224,7 @@ AddEventHandler('offred_carshop:comprarCarropacorabane',function(value)
 				end
 				-- compra o veiculo
 				if vRP.tryFullPayment(user_id,v.precocarro,false) then
-					local compra = vRP.execute("vRP/add_vehicle",{ user_id = user_id, vehicle = v.nome, plate = vAZgarageClient.GeneratePlate(src) })
+					local compra = vRP.execute("vRP/add_vehicle",{ user_id = user_id, model = v.nome, plate = vAZgarage.generatePlate() })
 					vRP.logInfoToFile("logRJ/comprarcarro.txt",user_id.." comprou "..v.nome.." pelo valor " ..v.precocarro.. ".")
 					SendWebhookMessage(webhooklinkcompracarro,  "```" ..user_id.." comprou "..v.nome.." pelo valor " ..v.precocarro.. "```")
 

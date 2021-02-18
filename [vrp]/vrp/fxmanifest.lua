@@ -1,4 +1,5 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'bodacious'
+game 'gta5'
 
 ui_page "gui/index.html"
 
@@ -40,23 +41,16 @@ client_scripts {
 
 files {
 	"loading/index.html",
-	"loading/background.jpg",
-	"loading/logo.png",
-	"loading/css.css",
+	"loading/*.jpg",
+	"loading/*.css",
 	"lib/Tunnel.lua",
 	"lib/Proxy.lua",
 	"lib/Luaseq.lua",
 	"lib/Tools.lua",
-	"gui/index.html",
-	"gui/design.css",
-	"gui/main.js",
-	"gui/Menu.js",
-	"gui/WPrompt.js",
-	"gui/RequestManager.js",
-	"gui/Div.js",
-	"gui/dynamic_classes.js",
-	"gui/bebas.ttf",
-	"gui/ProgressBar.js",
+	"gui/*.html",
+	"gui/*.css",
+	"gui/*.js",
+	"gui/*.ttf"
 }
 
 loadscreen "loading/index.html"

@@ -1,3 +1,6 @@
+fx_version 'bodacious'
+game 'gta5'
+
 description "Concessionaria NoLife RP"
 
 client_script {

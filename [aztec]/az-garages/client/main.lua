@@ -11,11 +11,6 @@ vAZ.player = {
     end
 }
 
-RegisterNetEvent('vrp_garages:mods')
-AddEventHandler('vrp_garages:mods',function(vnet,custom)
-  src.vehicleMods(NetToVeh(vnet),custom)
-end)
-
 Citizen.CreateThread(function()	
 	while true do
 		local thread = 1000

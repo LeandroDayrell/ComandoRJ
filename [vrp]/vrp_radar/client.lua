@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         for k,v in pairs(radares) do
-            local ped = GetPlayerPed(-1)
+            local ped = PlayerPedId()
             local x,y,z = table.unpack(GetEntityCoords(ped))
             local bowz,cdz = GetGroundZFor_3dCoord(v.position.x,v.position.y,v.position.z)
             local distance = GetDistanceBetweenCoords(v.position.x,v.position.y,cdz,x,y,z,true)

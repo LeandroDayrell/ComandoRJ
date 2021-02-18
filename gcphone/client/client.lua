@@ -196,7 +196,7 @@ local registeredPhones = {}
 Citizen.CreateThread(function()
   if not Config.AutoFindFixePhones then return end
   while true do
-    local playerPed = GetPlayerPed(-1)
+    local playerPed = PlayerPedId()
     local coords = GetEntityCoords(playerPed)
     for _, key in pairs({'p_phonebox_01b_s', 'p_phonebox_02_s', 'prop_phonebox_01a', 'prop_phonebox_01b', 'prop_phonebox_01c', 'prop_phonebox_02', 'prop_phonebox_03', 'prop_phonebox_04'}) do
       local closestPhone = GetClosestObjectOfType(coords.x, coords.y, coords.z, 25.0, key, false)
@@ -420,6 +420,7 @@ AddEventHandler("gcPhone:acceptCall", function(infoCall, initiator)
     elseif Config.UseTokoVoIP then
       exports.tokovoip_script:addPlayerToRadio(infoCall.id + 120)
       TokoVoipID = infoCall.id + 120
+    elseif Config.UseSaltyChat then
     else
       NetworkSetVoiceChannel(infoCall.id + 1)
       NetworkSetTalkerProximity(0.0)
@@ -433,19 +434,6 @@ AddEventHandler("gcPhone:acceptCall", function(infoCall, initiator)
 end)
 
 
-
-RegisterNetEvent("gcPhone:rejectCall")
-AddEventHandler("gcPhone:rejectCall", function(infoCall)
-  if inCall == true then
-    inCall = false
-    exports["mumble-voip"]:SetCallChannel(0)
-    --Citizen.InvokeNative(0xE036A705F989E049)
-   -- NetworkSetTalkerProximity(2.5)
-  end
-  PhonePlayText()
-  SendNUIMessage({event = 'rejectCall', infoCall = infoCall})
-end)
-
 RegisterNetEvent("gcPhone:rejectCall")
 AddEventHandler("gcPhone:rejectCall", function(infoCall)
   if inCall == true then
@@ -455,6 +443,7 @@ AddEventHandler("gcPhone:rejectCall", function(infoCall)
     elseif Config.UseTokoVoIP then
       exports.tokovoip_script:removePlayerFromRadio(TokoVoipID)
       TokoVoipID = nil
+    elseif Config.UseSaltyChat then
     else
       Citizen.InvokeNative(0xE036A705F989E049)
       NetworkSetTalkerProximity(2.5)
@@ -530,11 +519,12 @@ RegisterNUICallback('notififyUseRTC', function (use, cb)
   USE_RTC = use
   if USE_RTC == true and inCall == true then
     inCall = false
-    Citizen.InvokeNative(0xE036A705F989E049)
     if Config.UseTokoVoIP then
       exports.tokovoip_script:removePlayerFromRadio(TokoVoipID)
       TokoVoipID = nil
+    elseif Config.UseSaltyChat then
     else
+      Citizen.InvokeNative(0xE036A705F989E049)
       NetworkSetTalkerProximity(2.5)
     end
   end

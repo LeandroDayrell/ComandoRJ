@@ -195,6 +195,7 @@ $(document).ready(function () {
                 $('#weight-other').html(`Weight: ${data.inventory.weight.toFixed(2)} / ${data.inventory.maxweight.toFixed(2)}`);
                 $('#other-inventory').fadeIn('fast');
             } else if (data.type == 'home') {
+                console.log(JSON.stringify(data))
                 inventory.setup('other', data.inventory.items);
                 other.attr({'data-type': data.type, 'data-target': data.inventory.home, 'data-entity': data.entity});
                 $('#title-other').html(`home-${data.inventory.home.toLowerCase()}`);

@@ -74,8 +74,7 @@ function tvRP.getNearestPlayers(radius)
 		local player = GetPlayerFromServerId(k)
 		if player ~= pid and NetworkIsPlayerConnected(player) then
 			local oped = GetPlayerPed(player)
-			local x,y,z = table.unpack(GetEntityCoords(oped,true))
-			local distance = GetDistanceBetweenCoords(x,y,z,px,py,pz,true)
+			local distance = #(GetEntityCoords(oped, true) - vector3(px, py, pz))
 			if distance <= radius then
 				r[GetPlayerServerId(player)] = distance
 			end

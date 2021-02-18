@@ -7,15 +7,18 @@ Tunnel.bindInterface("nation_bennys",API)
 
 local using_bennys = {}
 
+vAZgarages = Proxy.getInterface('az-garages')
+
 function API.checkPermission()
-    local source = source
-    print("sdfdfed")
     return vRP.hasPermission(vRP.getUserId(source), "admin.permissao")
 end
 
-function API.getSavedMods(vehicle_name, vehicle_plate)
-    local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
-    return json.decode(vRP.getSData("custom:u" .. vehicle_owner_id .. "veh_" .. tostring(vehicle_name)) or {}) or {}
+function API.getSavedMods(vehicle_plate)
+    local vehicle = vAZgarages.getServerVehicleByPlate(vehicle_plate)
+    if vehicle ~= nil then
+        return json.decode(vehicle.tuning) or {}
+    end
+    return nil
 end
 
 function API.checkPayment(amount)
@@ -51,9 +54,8 @@ function API.checkVehicle(vehicle)
     using_bennys[vehicle] = true
     return true
 end
-function API.saveVehicle(vehicle_name, vehicle_plate, vehicle_mods)
-    local vehicle_owner_id = vRP.getUserByRegistration(vehicle_plate)
-    vRP.setSData("custom:u" .. vehicle_owner_id .. "veh_" .. tostring(vehicle_name),json.encode(vehicle_mods))
+function API.saveVehicle(vehicle_plate, vehicle_mods)
+    vAZgarages.setTuningVehicleByPlate(vehicle_plate, vehicle_mods)
     return true
 end
 

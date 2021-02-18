@@ -83,10 +83,8 @@ local wheeltype = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADS
 -----------------------------------------------------------------------------------------------------------------------------------------
-
 Citizen.CreateThread(function()
 	local bennys = false
-	SetNuiFocus(false,false)
 	while true do 
 		local idle = 500
 		if not bennys then
@@ -197,7 +195,7 @@ RegisterNUICallback("pagar",function(data)
 				Wait(500)
 			end
 		end
-		func.saveVehicle(vehname,vehplate,myveh)
+		func.saveVehicle(vehplate,myveh)
 		fclient.closeNui()
 	end
 end)
@@ -1034,7 +1032,7 @@ AddEventHandler("nation:applymods", function(veh,vname)
 			vehname = vname
 		end
 		local vehplate = GetVehicleNumberPlateText(veh)
-		local custom = func.getSavedMods(vehname,vehplate)
+		local custom = func.getSavedMods(vehplate)
 		print(json.encode(custom))
 		if custom then
 			TriggerServerEvent("nation:syncApplyMods",custom,VehToNet(veh))

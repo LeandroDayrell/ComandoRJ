@@ -1,11 +1,14 @@
-local Tunnel = module("vrp", "lib/Tunnel")
-local Proxy = module("vrp", "lib/Proxy")
+local Tunnel = module('vrp', 'lib/Tunnel')
+local Proxy = module('vrp', 'lib/Proxy')
+vRP = Proxy.getInterface('vRP')
+vRPclient = Tunnel.getInterface('vRP')
+vCNclient = Tunnel.getInterface('vrp_concessionaria')
+vCN = {}
+Tunnel.bindInterface('vrp_concessionaria', vCN)
+
 local cfg = module("vrp_concessionaria", "cfg/config")
 
-vRP = Proxy.getInterface("vRP")
-vRPclient = Tunnel.getInterface("vRP")
-
-vAZgarageClient = Tunnel.getInterface("az-garages")
+vAZgarage = Proxy.getInterface('az-garages')
 
 vRP._prepare("sRP/concessionaria",[[
     CREATE TABLE IF NOT EXISTS vrp_concessionaria(
@@ -30,23 +33,6 @@ async(function()
 end)
 
 local conce = cfg.concessionaria
-
-function criarCarros()
-    local rows = vRP.query("sRP/selecionar_veh")
-    for k,v in pairs(conce) do
-        if #rows == 0 then
-            vRP.execute("sRP/inserir_veh", {
-                modelo = conce[k].modelo,
-                nome = conce[k].nome,
-                preco = conce[k].preco,
-                quantidade = conce[k].quantidade,
-                descricao = conce[k].descricao,
-                img = conce[k].img
-            })
-        end
-    end
-    return false
-end
 
 RegisterServerEvent('get:carros')
 AddEventHandler('get:carros', function()
@@ -81,13 +67,13 @@ AddEventHandler('comprar:carro', function(veh)
         local valor = veiculo.preco
         local nome = veiculo.nome
         local quantidade = veiculo.quantidade
-        local get_veh = vRP.query("vRP/get_vehicle", {user_id = user_id, vehicle = modelo})
+        local get_veh = vRP.query("vRP/get_vehicle", {user_id = user_id, model = modelo})
         if #get_veh <= 0 then
             if quantidade > 0 then
                 if vRP.tryFullPayment(user_id, valor) then
                     TriggerClientEvent("Notify",source,"sucesso","Parabéns, você comprou  um(a) <b>"..nome.."</b> por  <b>$"..valor.." dólares</b> .")
                     vRP.execute("sRP/set_quantidade", {id = veh})
-                    vRP.execute("vRP/add_vehicle",{ user_id = user_id, vehicle = modelo, plate = vAZgarageClient.GeneratePlate(source)})
+                    vRP.execute("vRP/add_vehicle",{ user_id = user_id, model = modelo, plate = vAZgarage.generatePlate()})
                 else
                     TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.")
                 end
@@ -101,5 +87,17 @@ AddEventHandler('comprar:carro', function(veh)
 end)
 
 Citizen.CreateThread(function()
-    criarCarros()
+    local rows = vRP.query("sRP/selecionar_veh")
+    for k,v in pairs(conce) do
+        if #rows == 0 then
+            vRP.execute("sRP/inserir_veh", {
+                modelo = conce[k].modelo,
+                nome = conce[k].nome,
+                preco = conce[k].preco,
+                quantidade = conce[k].quantidade,
+                descricao = conce[k].descricao,
+                img = conce[k].img
+            })
+        end
+    end
 end)

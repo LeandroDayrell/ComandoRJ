@@ -3,17 +3,16 @@
 vAZ.homes = module('cfg/homes')
 vAZ.temp.homes = {}
 
-vRP._prepare('vAZ/getHomeByName', 'SELECT * FROM vrp_homes_permissions WHERE home = @home AND user_id = @user_id')
-vRP._prepare('vAZ/updateChestHome', 'UPDATE vrp_homes_permissions SET chest = @chest WHERE home = @home AND user_id = @user_id')
+vRP._prepare('vAZ/getHomeByName', 'SELECT * FROM vrp_user_homes WHERE home = @home AND user_id = @user_id')
+vRP._prepare('vAZ/updateChestHome', 'UPDATE vrp_user_homes SET chest = @chest WHERE home = @home AND user_id = @user_id')
 
 vAZ.getHomeInventory = function(owner_id, slot)
     local source = source
     local user_id = vRP.getUserId(source)
-    local shome = vAZ.findHomeBySlot(slot)
-    if shome ~= nil then
+    --if shome ~= nil then
         local name = slot..':'..owner_id
         if vAZ.temp.homes[name] == nil then
-            local home = vRP.query('vAZ/getHomeByName', {home = shome.name, user_id = owner_id})
+            local home = vRP.query('vAZ/getHomeByName', {home = slot, user_id = owner_id})
             if #home > 0 then                
                 if home[1].chest == nil or home[1].chest == '' then
                     chest = {}
@@ -23,7 +22,7 @@ vAZ.getHomeInventory = function(owner_id, slot)
                         chest = {}
                     end
                 end            
-                vAZ.temp.homes[name] = {owner = home[1].user_id, name = name, maxweight = shome.weight, players = {}, inventory = chest}
+                vAZ.temp.homes[name] = {owner = home[1].user_id, name = name, maxweight = home[1].bauLimite, players = {}, inventory = chest}
             end
         end
         if vAZ.temp.homes[name] ~= nil then
@@ -48,9 +47,9 @@ vAZ.getHomeInventory = function(owner_id, slot)
                 print('[az-inventory][home]['..name..'] chest request by user_id: '..user_id)
             end
             vAZ.addPlayerInHomeChest(source, name)
-            return {home = name, weight = vAZ.getChestWeight(vAZ.temp.homes[name].inventory), maxweight = vAZ.temp.homes[name].maxweight, items = inventory}
+            return {home = slot, weight = vAZ.getChestWeight(vAZ.temp.homes[name].inventory), maxweight = vAZ.temp.homes[name].maxweight, items = inventory}
         end 
-    end       
+    --end       
     return {}
 end
 
@@ -176,8 +175,8 @@ vAZ.removePlayerInHomeChest = function(source, name)
     local source = source
     local user_id = vRP.getUserId(source)
     local home = vAZ.splitHomeName(name)
-    local shome = vAZ.findHomeBySlot(home.slot)
-    if shome ~= nil then
+    --local shome = vAZ.findHomeBySlot(home.slot)
+    --if shome ~= nil then
         if vAZ.temp.homes[name] then
             if vAZ.temp.homes[name].players ~= nil then
                 for id,user in pairs(vAZ.temp.homes[name].players) do
@@ -192,19 +191,19 @@ vAZ.removePlayerInHomeChest = function(source, name)
                     if vAZ.config.debug then
                         print('[az-inventory][home]['..name..'] chest saved')
                     end
-                    vRP.execute('vAZ/updateChestHome', {home = shome.name, user_id = vAZ.temp.homes[name].owner, chest = json.encode(vAZ.temp.homes[name].inventory)})       
+                    vRP.execute('vAZ/updateChestHome', {home = home.slot, user_id = vAZ.temp.homes[name].owner, chest = json.encode(vAZ.temp.homes[name].inventory)})       
                     vAZ.temp.homes[name] = nil
                 end
             end
         end
-    end    
+    --end    
 end
 
 AddEventHandler("vRP:playerLeave", function(user_id, source)
     for name,home in pairs(vAZ.temp.homes) do
         local vhome = vAZ.splitHomeName(name)
-        local shome = vAZ.findHomeBySlot(vhome.slot)
-        if shome ~= nil then
+        --local shome = vAZ.findHomeBySlot(vhome.slot)
+        --if shome ~= nil then
             for id,user in pairs(home.players) do
                 if user_id == user then
                     table.remove(vAZ.temp.homes[name].players, id)
@@ -212,12 +211,12 @@ AddEventHandler("vRP:playerLeave", function(user_id, source)
                         if vAZ.config.debug then
                             print('[az-inventory][home]['..name..'] chest saved')
                         end
-                        vRP.execute('vAZ/updateChestHome', {home = shome.name, user_id = vAZ.temp.homes[name].owner, chest = json.encode(vAZ.temp.homes[name].inventory)})       
+                        vRP.execute('vAZ/updateChestHome', {home = home.slot, user_id = vAZ.temp.homes[name].owner, chest = json.encode(vAZ.temp.homes[name].inventory)})       
                         vAZ.temp.homes[name] = nil
                     end
                 end
             end
-        end
+        --end
     end
 end)
 

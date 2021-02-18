@@ -336,7 +336,7 @@ RegisterCommand('gcolete',function(source,args,rawCommand)
 	local player = vRP.getUserSource(user_id)
 	local armour = vRPclient.getArmour(player)
 	local descricao = vRP.prompt(source,"Deseja guarda o colete ?, Digite (Sim/Nao)","")
-			if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
+	if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 	if armour > 95 then
        vRPclient.setArmour(source,0)
        vRP.giveInventoryItem(user_id,"colete",1,true)

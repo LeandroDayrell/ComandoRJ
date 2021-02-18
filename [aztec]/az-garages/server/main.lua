@@ -22,7 +22,7 @@ vRP._prepare('vAZ/SetPlayerStateVehicle', 'UPDATE vrp_user_vehicles SET state = 
 vRP._prepare('vAZ/SetPlayerFareVehicle', 'UPDATE vrp_user_vehicles SET state = @state, time = @time WHERE user_id = @user_id AND plate = @plate')
 vRP._prepare('vAZ/SetPlayerSpecificVehicle', 'UPDATE vrp_user_vehicles SET engine = @engine, body = @body, fuel = @fuel WHERE user_id = @user_id AND model = @model')
 vRP._prepare('vAZ/SetPlayerIpvaVehicle', 'UPDATE vrp_user_vehicles SET ipva = @ipva WHERE plate = @plate AND model = @model')
-vRP._prepare('vAZ/SetPlayerModsVehicle', 'UPDATE vrp_user_vehicles SET mods = @mods WHERE plate = @plate')
+vRP._prepare('vAZ/SetPlayerTuningVehicle', 'UPDATE vrp_user_vehicles SET tuning = @tuning WHERE plate = @plate')
 vRP._prepare('vAZ/SetPlayerTrunkVehicle', 'UPDATE vrp_user_vehicles SET trunk = @trunk WHERE plate = @plate')
 
 vAZ.server = {}
@@ -121,7 +121,7 @@ end
 vAZ.getUserGarageVehicles = function(type, id, availables)
     local source = source
     local user_id = vRP.getUserId(source)
-    local identity = vRP.getUserIdentity(user_id)
+    local identity = vRP.getUserIdentity(user_id) or 'CMRJ'
     local registration = identity.registration:gsub("% ", "")
 
     vAZ.temp.list[user_id], vAZ.temp.vehicles[user_id] = {}, {}
@@ -245,6 +245,15 @@ vAZ.getServerVehicleByPlate = function(plate)
     return nil
 end
 
+vAZ.setTuningVehicleByPlate = function(plate, custom)
+    local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})    
+	if #vehicle > 0 then
+		vRP.execute("vAZ/SetPlayerTuningVehicle", {plate = plate, tuning = json.encode(custom)})
+        return true
+    end
+    return false
+end
+
 vAZ.spawnUserVehicle = function(model, plate, garage)
     local source = source
     local user_id = vRP.getUserId(source)
@@ -350,6 +359,12 @@ end
 vAZ.despawnUserVehicle = function(model, plate)
     local source = source
     local user_id = vRP.getUserId(source)
+    if vAZ.user.vehicles[user_id] == nil then
+        vAZ.user.vehicles[user_id] = {}
+    end
+    if vAZ.user.cooldown[user_id] == nil then
+        vAZ.user.cooldown[user_id] = 0
+    end
     if vAZ.user.cooldown[user_id] > 0 then
         TriggerClientEvent('Notify', source, 'negado', 'Aguarde '..vAZ.user.cooldown[user_id]..' segundos.')
         return false
@@ -392,6 +407,12 @@ end
 vAZ.forceDespawnUserVehicle = function(source, entity)
     local source = source
     local user_id = vRP.getUserId(source)
+    if vAZ.user.vehicles[user_id] == nil then
+        vAZ.user.vehicles[user_id] = {}
+    end
+    if vAZ.user.cooldown[user_id] == nil then
+        vAZ.user.cooldown[user_id] = 0
+    end
     local garage = false
     for user,vehicles in pairs(vAZ.user.vehicles) do
         for id,vehicle in pairs(vehicles) do
@@ -420,6 +441,12 @@ end
 vAZ.fareUserVehicle = function(model, plate)
     local source = source
     local user_id = vRP.getUserId(source)
+    if vAZ.user.vehicles[user_id] == nil then
+        vAZ.user.vehicles[user_id] = {}
+    end
+    if vAZ.user.cooldown[user_id] == nil then
+        vAZ.user.cooldown[user_id] = 0
+    end
     if vAZ.user.cooldown[user_id] > 0 then
         TriggerClientEvent('Notify', source, 'negado', 'Aguarde '..vAZ.user.cooldown[user_id]..' segundos.')
         return false
@@ -598,4 +625,128 @@ RegisterCommand('remcar',function(source,args,rawCommand)
             end
         end
     end
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- VENDER O VEÍCULO PARA OUTRO JOGADOR
+-----------------------------------------------------------------------------------------------------------------------------------------
+local webhooklinkvendercarroplayer = "https://discordapp.com/api/webhooks/713456914532663327/ANAgUN4IvSHL6oE7ljDO-pYZSp6lojHupQJgS4N8YlBBr8HXKy7ha6lrEDfeEhQ2KmQp"
+local totalgaragem = 4
+
+RegisterCommand('vehs',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		local menu = vRP.buildMenu("vehicle",{ user_id = user_id, player = source, vname = name })
+		menu.name = "Veículos"
+
+		local kitems = {}
+		local choose = function(source,choice)
+			local tosub = false
+			local vehicle = choice
+			local vname = kitems[vehicle]
+			local submenu = { name = vehicle }
+			submenu.onclose = function()
+				tosub = false
+				vRP.openMenu(source,menu)
+			end
+
+			local ch_sell = function(source,choice)
+				local nplayer = vRPclient.getNearestPlayer(source,3)
+				if nplayer then
+					local tuser_id = vRP.getUserId(nplayer)
+					local totalv = vRP.query("vRP/get_maxcars",{ user_id = tuser_id })
+					if vRP.hasPermission(tuser_id,"bronze.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 3 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"prata.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 4 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"ouro.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 5 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"platina.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 8 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"diamante.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 10 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"mafioso5.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 10 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"supremo.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 12 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"magnata.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 12 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					else
+						if parseInt(totalv[1].quantidade) >= totalgaragem then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					end
+					local owned = vRP.query("vRP/get_vehicle",{ user_id = tuser_id, model = vname })
+					if #owned == 0 then
+						local price = tonumber(sanitizeString(vRP.prompt(source,"Valor:",""),"\"[]{}+=?!_()#@%/\\|,.",false))
+						local ok = vRP.request(nplayer,"Aceita comprar um <b>"..vehicle.."</b> por <b>$"..vRP.format(parseInt(price)).."</b> dólares?",30)
+						if ok then
+							if parseInt(price) > 0 then
+								if vRP.tryFullPayment(tuser_id,parseInt(price)) then
+									vRP.execute("vRP/move_vehicle",{ user_id = user_id, tuser_id = tuser_id, model = vname })
+									vRP.giveMoney(user_id,parseInt(price))
+									--vRP.logInfoToFile("logRJ/vendercarropraplayer.txt","[User_ID:]"..user_id.." vendeu " ..vname.. " Para [User_ID]" ..tuser_id.. " valor " ..price.. " .") -- LOGS 
+									--SendWebhookMessage(webhooklinkvendercarroplayer,  "```" ..user_id.." VENDEU " ..vname.. " PARA " ..tuser_id.. " VALOR " ..price.. "```")
+									TriggerClientEvent("Notify",nplayer,"sucesso","Pagou <b>$"..vRP.format(parseInt(price)).." dólares</b>.")
+									TriggerClientEvent("Notify",source,"sucesso","Recebeu <b>$"..vRP.format(parseInt(price)).." dólares</b>.")
+								else
+									TriggerClientEvent("Notify",nplayer,"negado","Dinheiro insuficiente.")
+									TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.")
+								end
+							end
+						end
+					else
+						TriggerClientEvent("Notify",nplayer,"importante","Veículo ja possuído.")
+						TriggerClientEvent("Notify",source,"importante","Veículo ja possuído.")
+					end
+				end
+			end
+			submenu["Vender"] = { ch_sell }
+			tosub = true
+			vRP.openMenu(source,submenu)
+		end
+
+		local choosedetido = function(source,choice)
+			TriggerClientEvent("Notify",source,"importante","Veículo roubado ou detido pela policia, acione a seguradora.")
+		end
+
+		local pvehicles = vRP.query("vAZ/GetPlayerVehicles",{ user_id = user_id })
+		if #pvehicles > 0 then
+			for id,vehicle in pairs(pvehicles) do
+				if parseInt(vehicle.state) <= 2 then
+					menu[vehicle.model] = { choose }
+				else
+					menu[vehicle.model] = { choosedetido }
+				end
+				kitems[vehicle.model] = vehicle.model
+			end
+		end
+
+		vRP.openMenu(source,menu)
+	end
 end)

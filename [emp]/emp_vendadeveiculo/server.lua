@@ -86,9 +86,9 @@ function emP.removeVehicles(plate, vnet)
 	if #owner > 0 then
 		local model = vRP.query('vAZ/getVehicleByModel', {model = owner[1].model})    
 		if #model > 0 then
-			--vRP.execute("vRP/set_detido", { user_id = owner[1].user_id, vehicle = owner[1].model, detido = 4, time = parseInt(os.time()) })
+			--vRP.execute("vRP/set_detido", { user_id = owner[1].user_id, model = owner[1].model, detido = 4, time = parseInt(os.time()) })
 			TriggerClientEvent("Notify",source,"sucesso","Você vendeu seu veículo por " ..parseInt(model[1].price) * 0.4 .. "R$" )
-			vRP.execute("vRP/remove_vehicle",{ user_id = owner[1].user_id, vehicle = owner[1].model })
+			vRP.execute("vRP/remove_vehicle",{ user_id = owner[1].user_id, model = owner[1].model })
 			--vRP.giveInventoryItem(user_id, "dinheirosujo", parseInt(model[1].price) * 0.5)
 			vRP.giveMoney(user_id,parseInt(model[1].price) * 0.4)
 			SendWebhookMessage(webhooklinkvendadeveiculo,  "``` vendadeveiculo [" ..user_id.."] Placa; " ..plate.. " por " .. parseInt(model[1].price) * 0.4 .."```")

@@ -177,38 +177,38 @@ vAZ.usablePlayerItem = function(item, amount)
                 if vAZ.match(item, "wammo", string.gsub(item, "wammo|", "")) then
                     local wammo = splitString(item, '|')
                     if wammo[2] then
-                        if item == 'wammo|'..wammo[2] then
-                            local amount = vRP.getInventoryItemAmount(user_id, 'wammo|'..wammo[2])
-                            local ramount = tonumber(amount)
-                            local uweapons = vRPclient.getWeapons(source)
-                            if uweapons[wammo[2]] then
-                                if vRP.tryGetInventoryItem(user_id, 'wammo|'..wammo[2], ramount, true) then
-                                    local weapons = {}
-                                    weapons[wammo[2]] = {ammo = ramount}
-                                    vRPclient._giveWeapons(source, weapons, false)
-                                    if vAZ.config.logs then
-                                        vAZ.webhook('items', 'user_id: '..user_id..', recarregou ('..amount..'x '..wammo[2]..')')
-                                    end
+                        if amount == 1 then
+                            amount = vRP.getInventoryItemAmount(user_id, item)
+                            if amount > 250 then
+                                amount = 250
+                            end
+                        end
+                        local uweapons = vRPclient.getWeapons(source)
+                        if uweapons[wammo[2]] then
+                            if vRP.tryGetInventoryItem(user_id, item, amount, false) then
+                                local weapons = {}
+                                weapons[wammo[2]] = {ammo = amount}
+                                vRPclient._giveWeapons(source, weapons, false)
+                                if vAZ.config.logs then
+                                    vAZ.webhook('items', 'user_id: '..user_id..', recarregou ('..amount..'x '..wammo[2]..')')
                                 end
                             end
                         end
                     end
                 elseif vAZ.match(item, "wbody", string.gsub(item, "wbody|", "")) then
                     local wbody = splitString(item, '|')
-                    if item == 'wbody|'..wbody[2] then
-                        local uweapons = vRPclient.getWeapons(source)
-                        if not uweapons[wbody[2]] then
-                            if vRP.tryGetInventoryItem(user_id, 'wbody|'..wbody[2], tonumber(amount), true) then
-                                local weapons = {}
-                                if wbody[2] == 'WEAPON_PETROLCAN' then
-                                    weapons[wbody[2]] = {ammo = 4500}
-                                else
-                                    weapons[wbody[2]] = {ammo = 0}
-                                end
-                                vRPclient._giveWeapons(source, weapons)
-                                if vAZ.config.logs then
-                                    vAZ.webhook('items', 'user_id: '..user_id..', equipou ('..amount..'x '..wbody[2]..')')
-                                end
+                    local uweapons = vRPclient.getWeapons(source)
+                    if not uweapons[wbody[2]] then
+                        if vRP.tryGetInventoryItem(user_id, item, amount, false) then
+                            local weapons = {}
+                            if wbody[2] == 'WEAPON_PETROLCAN' then
+                                weapons[wbody[2]] = {ammo = 4500}
+                            else
+                                weapons[wbody[2]] = {ammo = 0}
+                            end
+                            vRPclient._giveWeapons(source, weapons)
+                            if vAZ.config.logs then
+                                vAZ.webhook('items', 'user_id: '..user_id..', equipou ('..amount..'x '..wbody[2]..')')
                             end
                         end
                     end
