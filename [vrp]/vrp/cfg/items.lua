@@ -22,6 +22,10 @@ cfg.items = {
     ['gin'] = {label = 'Gin', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_champ_01a', price = 120, type = 'drink', photo = 'https://i.imgur.com/EgRVcd3.png'},
     ['blackvelvet'] = {label = 'Black Velvet', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_champ_01a', price = 120, type = 'drink', photo = 'https://i.imgur.com/HYm7Roc.png'},
 
+    -- BANDAGEM
+
+    ['bandagem'] = {label = 'Bandagem', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 3, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/nwFRLph.png'},
+
     -- COMIDAS
     ['donut'] = {label = 'Donut', description = '', weight = 0.2, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = -15, thirst = 0}, prop = 'prop_donut_02', price = 25, type = 'food', photo = 'https://i.imgur.com/T18DH6N.png'},    
     ['hamburguer'] = {label = 'X-Hamburguer', description = '', weight = 0.1, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = -35, thirst = 0}, prop = 'prop_cs_burger_01', price = 17,  type = 'food', photo = 'https://i.imgur.com/NPy8RTn.png'},

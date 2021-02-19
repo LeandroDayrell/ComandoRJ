@@ -110,3 +110,17 @@ RegisterCommand('diagnostic',function(source,args,rawCommand)
 		end
 	end
 end)
+
+RegisterCommand('testetratamento',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"paramedico.permissao") then
+		local nplayer = vRPclient.getNearestPlayer(source,2)
+		if nplayer then
+			if vRP.tryGetInventoryItem(nuser_id,'bandagem',1,true) then
+			TriggerClientEvent('bandagem',nplayer)
+			else
+				TriggerClientEvent("Notify",source,'negado', "Voce nao tem bandagem com voce, lixu")
+			end
+		end
+	end
+end)

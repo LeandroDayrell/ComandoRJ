@@ -51,7 +51,7 @@ vAZ.handlers = {
     end,
     ['bandagem'] = function(source, user_id, item, amount, cb)  
         local user_health = vRPclient.getHealth(source)      
-        if user_health > 101 and user_health < 251 then
+        if user_health > 101 and user_health < 229 then
             if vAZ.cooldown.get(user_id, item) <= 0 then
                 if vRP.tryGetInventoryItem(user_id, item, 1) then
                     vAZ.cooldown.push(user_id, item, 120)
@@ -62,6 +62,7 @@ vAZ.handlers = {
                     SetTimeout(20000, function()
                         TriggerClientEvent('cancelando', source, false)
                         vRPclient._DeletarObjeto(source)
+                        TriggerClientEvent('bandagem',user_id)
                         TriggerClientEvent("Notify", source, "sucesso", "Bandagem utilizada com sucesso.", 8000)
                     end)
                 end
