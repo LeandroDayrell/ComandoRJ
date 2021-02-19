@@ -4,6 +4,10 @@ local Proxy = module("vrp", "lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 
+function vRP.setPorte(user_id,porte)
+	vRP.execute("vRP/set_porte",{ user_id = user_id, porte = porte })
+end
+
 vRP.prepare("vRP/police_mdt_table",[[
 CREATE TABLE IF NOT EXISTS `vrp_tablet_users` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,

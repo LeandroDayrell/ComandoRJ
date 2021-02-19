@@ -38,12 +38,17 @@ AddEventHandler("bordel-comprar",function(item)
 			for k,v in pairs(valores) do
 				if item == v.item then
 					if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
+						if vRP.hasPermission(user_id,"bordelnav.permissao") then
 						if vRP.tryPayment(user_id,parseInt(v.compra)) then
 							vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
 							TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." dólares</b>.")
 						else
 							TriggerClientEvent("Notify",source,"negado","Dinheiro insuficiente.")
 						end
+					else
+						TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao.")
+					end
+					
 					else
 						TriggerClientEvent("Notify",source,"negado","Espaço insuficiente.")
 					end

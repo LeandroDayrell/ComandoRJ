@@ -52,12 +52,16 @@ AddEventHandler("driftking-comprar",function(item)
 		for k,v in pairs(valores) do
 			if item == v.item then
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
+					if vRP.hasPermission(user_id,"driftking.permissao") then
 					if vRP.tryGetInventoryItem(user_id,"dinheirosujo",v.compra) then
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
 						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." dólares sujos</b>.")
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro sujo insuficiente.")
 					end
+				else 
+					TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao")
+				end
 				else
 					TriggerClientEvent("Notify",source,"negado","Espaço insuficiente.")
 				end

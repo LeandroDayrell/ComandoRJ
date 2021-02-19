@@ -386,6 +386,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- BUG CRIAÇÃO
 -----------------------------------------------------------------------------------------------------------------------------------------
+--[[
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
@@ -400,7 +401,7 @@ Citizen.CreateThread(function()
 			end
 		end
 	end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- /EQUIPAR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -1858,6 +1859,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- USE
 -----------------------------------------------------------------------------------------------------------------------------------------
+--[[
 local bandagem = {}
 Citizen.CreateThread(function()
 	while true do
@@ -1869,6 +1871,7 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+]]
 
 RegisterCommand('use',function(source,args,rawCommand)
 	if args[1] == nil then
@@ -2513,55 +2516,6 @@ RegisterCommand('jornal',function(source,args,rawCommand)
 end)
 
 
------------------------------------------------------------------------------------------------------------------------------------------
--- arrumar carro
-local actived = {}
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand('pneu',function(source,args,rawCommand)
-		local vehicle = vRPclient.getNearestVehicle(source,7)
-		if vehicle then
-		active[parseInt(user_id)] = 20
-            vRPclient.stopactive(source)
-            TriggerClientEvent("progress",source,20000)
-            vRPclient._playAnim(source,false,{"mini@repair","fixing_a_player"},true)
-			repeat
-                if active[parseInt(user_id)] == 0 then
-                    active[parseInt(user_id)] = -1
-                    if vRP.tryGetInventoryItem(user_id,"pneu",1) then
-                        TriggerClientEvent('arrumarpneu',source)             
-                        vRPclient._stopAnim(source,false)
-					end
-				end
-				Citizen.Wait(0)
-				until active[parseInt(user_id)] == -1
-			
-		end
-end)
---[[
-if itemName == "pneu" then
-    if not vRPclient.inVehicle(source) then
-            local vehicle,vehNet = vRPclient.vehList(source,5)
-        if vehicle then
-            active[parseInt(user_id)] = 20
-            vRPclient.stopactive(source)
-            TriggerClientEvent("progress",source,20000)
-            vRPclient._playAnim(source,false,{"mini@repair","fixing_a_player"},true)
-
-            repeat
-                if active[parseInt(user_id)] == 0 then
-                    active[parseInt(user_id)] = -1
-                    if vRP.tryGetInventoryItem(user_id,itemName,1) then
-                        TriggerClientEvent('arrumarpneu',source)
-                        vCLIENT.blockButtons(source,false)
-                        vRPclient._stopAnim(source,false)
-                    end
-                end
-                Citizen.Wait(0)
-            until active[parseInt(user_id)] == -1
-        end
-    end
-end
-]]
 
 --[[
 ---------- PERDER ITEM

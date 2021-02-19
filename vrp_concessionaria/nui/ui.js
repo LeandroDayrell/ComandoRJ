@@ -4,7 +4,7 @@ $(function () {
             $('#concessionaria').fadeIn();
             $(".menu").empty();
             $(".packages-content").empty();
-            $(".packages-content").append("<div class='row'><div class='col-lg-12'><center><strong>Carregando veículos...<strong></center></div></div>");
+            $(".packages-content").append("<div class='row'><div class='col-lg-12'><center><strong>Carregando...<strong></center></div></div>");
 
             $("#carros").height($('#concessionaria').height() - $(".top-area").height() - 100);
             getData();
@@ -54,9 +54,9 @@ function criarCatalogo(veiculos, totalTipo, aberto, isVendedor) {
                 });
                 var preco = "Consulte"
                 if (aberto || isVendedor) {
-                    preco = "$ " + addCommas(parseInt(dataV.preco))
+                    preco = "R$ " + addCommas(parseInt(dataV.preco))
                     if (isVendedor) {
-                        preco = "U$ " + addCommas(parseInt(dataV.preco * 0.8))
+                        preco = "R$ " + addCommas(parseInt(dataV.preco * 0.7))
                     }
                 }
 
@@ -104,10 +104,10 @@ function criarMeus(veiculos, meusVeiculos, aberto, isVendedor) {
             $(meusVeiculos).each(function (i3, data3) {
                 if (data3.vehicle == dataV.model) {
 
-                    // var preco = "$ " + addCommas(dataV.preco * 0.7)
+                    var preco = "R$ " + addCommas(dataV.preco * 0.7)
                     var preco = "";
                     if (aberto || isVendedor) {
-                        preco = "$ " + addCommas(parseInt(dataV.preco * 0.8));
+                        preco = "R$ " + addCommas(parseInt(dataV.preco * 0.7));
                     }
 
                     var htmlCarro = '<div class="col-md-4 col-sm-6">';
@@ -123,14 +123,14 @@ function criarMeus(veiculos, meusVeiculos, aberto, isVendedor) {
                     htmlCarro += '</div>';
                     htmlCarro += '<div class="about-btn">';
                     htmlCarro += '<button class="about-view packages-btn" onclick="vender(\'' + i + '\',\'' + i2 + '\')">';
-                    htmlCarro += 'VENDER';
+                    htmlCarro += 'Vender Veiculo';
                     htmlCarro += '</button>';
                     htmlCarro += '</div>';
                     htmlCarro += '</div>';
                     htmlCarro += '</div>';
                     htmlCarro += '</div>';
 
-                    // var htmlCarro = '<div class="carro vender"><img src="img/carros/' + dataV.model + '.png" /><h1>' + dataV.title + ' - ' + preco + '</h1><h2>P. Malas: ' + dataV.mala + 'kg</h2><button type="button" onclick="vender(\'' + i + '\',\'' + i2 + '\')">VENDER</button></div>';
+                    //var htmlCarro = '<div class="carro vender"><img src="img/carros/' + dataV.model + '.png" /><h1>' + dataV.title + ' - ' + preco + '</h1><h2>P. Malas: ' + dataV.mala + 'kg</h2><button type="button" onclick="vender(\'' + i + '\',\'' + i2 + '\')">VENDER</button></div>';
 
                     $(".packages-content #div_meus").append(htmlCarro);
                     return false;

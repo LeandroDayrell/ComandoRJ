@@ -11,6 +11,7 @@ local webhooklinkresamu = "https://discordapp.com/api/webhooks/73190761763438596
 local webhooklinktooglepmrj = "https://discordapp.com/api/webhooks/734176997474828288/7S3pGgTM0toYlKUvzSXBzQQobMesSDWF3pUN2TRpkfB7ZyYAjBLPNkr0X4eY93QidxHf"
 local webhooklinktoogleprf = "https://discordapp.com/api/webhooks/750590195211960390/5cIKATNczxh8Cg33tcHA6EZA9xV5pbYlhIGg_VyFmdO676G7k-cFcWdtLke1-Fk5twOD"
 local webhooklinkplacadk = "https://discordapp.com/api/webhooks/750067417283035166/1ZRF18dL3TWC2TAyqU7kO-S8sWqC-HEZL77wAn0mA_-L-LFxAeZDrZoNmgKIAwACol40"
+local webhooklinkhackereulen = "https://discordapp.com/api/webhooks/750067417283035166/1ZRF18dL3TWC2TAyqU7kO-S8sWqC-HEZL77wAn0mA_-L-LFxAeZDrZoNmgKIAwACol40"
 
 
 function SendWebhookMessage(webhook,message)
@@ -529,8 +530,10 @@ RegisterServerEvent("crj:pagamento")
 AddEventHandler("crj:pagamento",function()
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		pagamento = math.random(1000,4000)
+		pagamento = math.random(1000,1000)
 		vRP.giveMoney(user_id,pagamento)
+		SendWebhookMessage(webhooklinkhackereulen,  "```" ..user_id.." esta gerando dinheiro R$" ..valor.. "```")
+		------------------------- hacker lixo
 		TriggerClientEvent("Notify",source,"sucesso","Recebeu <b>$"..pagamento.." dólares</b> de gorjeta do americano.")
 	end
 end)

@@ -106,3 +106,12 @@ AddEventHandler("resetWarfarina",function()
 	until bleeding <= 0
 		TriggerEvent("Notify","Importante","Sangramento paralisado.",8000)
 end)
+
+
+RegisterNetEvent("bandagem")
+AddEventHandler("bandagem",function()
+	repeat
+		bleeding = bleeding - 1
+	until bleeding <= 0
+		TriggerEvent("Notify","Importante","Sangramento paralisado.",8000)
+end)

@@ -692,10 +692,23 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('tpway',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
+	xb,yb,zb = vRPclient.getPosition(source)
 	if vRP.hasPermission(user_id,"tp.permissao") then
 		TriggerClientEvent('tptoway',source)
 	end
 end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- TPB voltar ao ponto inicial
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('tpb',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.permissao") then
+        vRPclient.teleport(source,xb,yb,zb)
+    end
+end)
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CAR
 -----------------------------------------------------------------------------------------------------------------------------------------

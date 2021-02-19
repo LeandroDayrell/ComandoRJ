@@ -207,27 +207,31 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 1308.6176757813,-253.87768554688,95.571754455566,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(1308.6176757813,-253.87768554688,95.571754455566+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('crj_coca:permissao')
 			end
 		end
 		if emservico then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ MACONHA",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 			--		DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -248,6 +252,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -255,27 +260,31 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 73.068321228027,3605.1357421875,39.410427093506,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(73.068321228027,3605.1357421875,39.410427093506+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_crack:permissao') 
 			end
 		end
 		if crackd then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ CRACK",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 			--		DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -296,33 +305,38 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- COCAINA ADA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), -1038.7147216797,4922.5014648438,207.15811157227,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(-1038.7147216797,4922.5014648438,207.15811157227+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	-- COMEÇAR MISSÃO
 				TriggerEvent('crj_maconha:permissao')
 			end
 		end
 		if entregamaconha then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	-- VER MISSÃO
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ COCAINAS",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 			--		DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -343,33 +357,38 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- OPIO
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 1427.2727050781,-2321.3911132812,67.001007080078,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(1427.2727050781,-2321.3911132812,67.001007080078+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_opio:permissao')
 			end
 		end
 		if entregaopio then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ OPIOS",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -390,33 +409,38 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- METANFETAMINA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 943.94317626953,1032.4880371094,262.14920043945,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(943.94317626953,1032.4880371094,262.14920043945+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('crj_metafetamina:permissao') 
 			end
 		end
 		if entregameta then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ METAS",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -437,33 +461,38 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- PEÇAS
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 2344.2751464844,3126.8037109375,48.2087059021,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(2344.2751464844,3126.8037109375,48.2087059021+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_pecas:permissao')
 			end
 		end
 		if entregapecas then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ PEÇAS ROUBADAS",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -484,6 +513,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -491,27 +521,31 @@ end)
 -- MAQUINA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 852.33172607422,3053.3684082031,42.789367675781,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(852.33172607422,3053.3684082031,42.789367675781+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_maquinacacaniquel:permissao') 
 			end
 		end
 		if entregamaquina then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ MAQUINA CAÇA NIQUEL",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] MONTE AS MAQUINA LOGO MANO")
@@ -532,33 +566,38 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- LSD
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), -588.71252441406,-1642.9379882812,19.750120162964,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(-588.71252441406,-1642.9379882812,19.750120162964+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_lsd:permissao') 
 			end
 		end
 		if entregalsd then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ LSD",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -579,33 +618,38 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- MORFINA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), -2674.2543945313,1336.1904296875,144.25773620605,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(-2674.2543945313,1336.1904296875,144.25773620605+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_morfina:permissao') 
 			end
 		end
 		if entregamorfina then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ MORFINA",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 				--	DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR ESSA PORRA")
@@ -626,6 +670,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
@@ -633,26 +678,30 @@ end)
 -- EXTASE
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), -946.28350830078,-1479.7908935547,6.7955188751221,true) <= 1 then
+			crjSleep = 1
 			DrawText3Ds(-946.28350830078,-1479.7908935547,6.7955188751221+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('entrega_extase:permissao') 
 			end
 		end
 		if entregaextase then
+			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
 			if IsControlJustPressed(0,246) then	
 				statuses = not statuses
 			end
 			if statuses then
+				crjSleep = 1
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.076,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.058,1.0,1.0,0.45,"ENTREGUE ~g~"..quantidade.."~w~ EXTASE",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
-			if distance <= 50 then
+			if distance <= 30 then
+				crjSleep = 1
 				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
 				if distance < 3 then
 					DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
@@ -673,6 +722,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 

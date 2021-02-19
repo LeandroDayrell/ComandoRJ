@@ -19,42 +19,6 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
-		if IsControlJustPressed(0,127) then -- NUMPAD 8
-			func.buttonNumOito()
-		end
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		if IsControlJustPressed(0,125) then -- NUMPAD 6
-			func.buttonNumSeis()
-		end
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		if IsControlJustPressed(0,172) then -- SETA CIMA
-			func.buttonSetaCima()
-		end
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		if IsControlJustPressed(0,172) then -- SETA BAIXO
-			func.buttonSetaBaixo()
-		end
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
 		if IsControlJustPressed(0,288) then -- F1
 			func.buttonfUm()
 		end
@@ -64,7 +28,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
-		if IsControlJustPressed(0,344) then -- F1
+		if IsControlJustPressed(0,344) then -- F11
 			func.buttonfOnze()
 		end
 	end
