@@ -17,7 +17,7 @@ local Teleport = {
 	["TRAFICO02"] = { -- Bunker
 		positionFrom = { ['x'] = 1571.876953125, ['y'] = 2229.5288085938, ['z'] = 78.567794799805, ['perm'] = "yakuzaentrada.permissao" }, 
 		positionTo = { ['x'] = 911.04437255859, ['y'] = -3213.6423339844, ['z'] = -98.231483459473, ['perm'] = "yakuzaentrada.permissao" }
-	},
+	},]]--
 	["TRAFICO04"] = { -- Bunker
 		positionFrom = { ['x'] = -923.83, ['y'] = -1508.83, ['z'] = 5.17, ['perm'] = "yakuzaliderentrada.permissao" }, 
 		positionTo = { ['x'] = 1137.69, ['y'] = -3194.23, ['z'] = -40.39, ['perm'] = "yakuzaliderentrada.permissao" }
@@ -26,7 +26,7 @@ local Teleport = {
 		positionFrom = { ['x'] = -613.12841796875, ['y'] = -1625.1003417969, ['z'] = 33.010540008545, ['perm'] = "motoclubliderentrada.permissao" }, 
 		positionTo = { ['x'] = 1123.71, ['y'] = -3196.79, ['z'] = -40.39, ['perm'] = "motoclubliderentrada.permissao" }
 	},
-	["TRAFICO06"] = { -- Bunker milicia   
+	--[[["TRAFICO06"] = { -- Bunker milicia   
 		positionFrom = { ['x'] = -3167.980, ['y'] = 1375.336, ['z'] = 18.380, ['perm'] = "milicia.permissao" }, 
 		positionTo = { ['x'] = 1004.2105, ['y'] = -2997.5007, ['z'] = -39.6469, ['perm'] = "milicia.permissao" }
 	},]]--
