@@ -47,6 +47,19 @@ RegisterCommand('reset',function(source,args,rawCommand)
     end
 end)
 
+RegisterCommand('trocasexo',function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.permissao") then
+        if parseInt(args[1]) then
+            local nplayer = vRP.getUserSource(parseInt(args[1]))
+            if nplayer then
+                TriggerClientEvent("skinmenu",nplayer,args[2])
+                TriggerClientEvent("Notify",source,"sucesso","Voce setou a skin <b>"..args[2].."</b> no passaporte <b>"..parseInt(args[1]).."</b>.")
+            end
+        end
+    end
+end)
+
 ------
 -----------------------------------------------------------------------------------------------------------------------------------
 -- RESET PLAYER    / >>> IREI TESTAR ANTES

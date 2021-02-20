@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link href="ui.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="actionmenu">
+        <div id="mainmenu">
+            <button class="menuoption" id="costura" data-sub="costura-comprar">Produzir</button>
+            <button class="menuoption" data-action="fechar">Fechar</button>
+        </div>
+
+        <div data-parent="mainmenu" id="costura-comprar">
+            <button class="menuoption" data-action="wbody|WEAPON_SPECIALCARBINE">
+				<l>Parafal</l>
+				<r>
+					1x Pack de Parafal<br>
+					300x Pecas de arma<br>
+				</r>
+			</button>
+            <button class="menuoption" data-action="wbody|WEAPON_MUSKET">
+				<l>Musket</l>
+				<r>
+					1x Pack de Musket<br>
+					300x Pecas de arma<br>
+				</r>
+			</button>
+            <button class="menuoption" data-action="wammo|WEAPON_SPECIALCARBINE">
+				<l>50x Municao Parafal</l>
+				<r>
+					1x Pack de Municao da Parafal<br>
+				</r>
+			</button>
+            <button class="menuoption" data-action="wammo|WEAPON_MUSKET">
+				<l>20x Municao de Musket</l>
+				<r>
+					1x Pack de Musket<br>
+				</r>
+			</button>
+
+        </div>
+    </div>
+    <script src="ui.js" type="text/javascript"></script>
+</body>
+
+</html>

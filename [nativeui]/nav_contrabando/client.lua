@@ -46,6 +46,16 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		------
 		elseif data == "utilidades-armas-ak103pack" then
 		TriggerServerEvent("contrabandoarmas-comprar","ak103pack")
+-----
+		elseif data == "utilidades-armas-municaomusketpack" then
+		TriggerServerEvent("contrabandoarmas-comprar","municaomusketpack")
+		elseif data == "utilidades-armas-municaoparafalpack" then
+		TriggerServerEvent("contrabandoarmas-comprar","municaoparafalpack")
+		elseif data == "utilidades-armas-musketpack" then
+		TriggerServerEvent("contrabandoarmas-comprar","musketpack")
+		elseif data == "utilidades-armas-parafalpack" then
+		TriggerServerEvent("contrabandoarmas-comprar","parafalpack")
+-----		
 		elseif data == "utilidades-armas-mtarpack" then
 		TriggerServerEvent("contrabandoarmas-comprar","mtarpack")
 		elseif data == "utilidades-armas-miniakpack" then
@@ -99,9 +109,9 @@ Citizen.CreateThread(function()
 	SetNuiFocus(false,false)
 	while true do
 		local nyoSleep = 500
-		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),-2169.0158691406,5221.4038085938,20.015119552612,true)
+		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),-2169.01,5221.40,20.01,true)
 		if distance <= 30 then
-			DrawMarker(20,-2169.0158691406,5221.4038085938,20.015119552612-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,100,1,0,0,0)
+			DrawMarker(20,-2169.01,5221.40,20.01-0.97,0,0,0,0,0,0,1.0,1.0,0.5,128,1,210,100,1,0,0,0)
 			if distance <= 1.1 then
 			nyoSleep = 1
 				if IsControlJustPressed(0,38) and emP.checkPermission() then

@@ -56,7 +56,7 @@ Citizen.CreateThread(function()
 		local crjSleep = 500
 		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),707.31,-966.99,30.41,true)
 		if distance <= 30 then
-			DrawMarker(23,707.31,-966.99,30.41-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
+			DrawMarker(23,707.31,-966.99,30.41-0.97,0,0,0,0,0,0,1.0,1.0,0.5,128,1,210,20,0,0,0,0)
 			if distance <= 1.2 then
 			crjSleep = 1
 				if IsControlJustPressed(0,38) then

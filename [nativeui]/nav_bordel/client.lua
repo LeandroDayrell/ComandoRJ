@@ -34,20 +34,20 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 	elseif data == "bordel-comprar-sinalizador" then
 		TriggerServerEvent("bordel-comprar","wbody|WEAPON_FLARE")
 	
-	elseif data == "bordel-comprar-mochila" then
-		TriggerServerEvent("bordel-comprar","mochila")
-	elseif data == "bordel-comprar-vodka" then
-		TriggerServerEvent("bordel-comprar","vodka")	
+	elseif data == "bordel-comprar-energetico" then
+		TriggerServerEvent("bordel-comprar","energetico")
+	elseif data == "bordel-comprar-caipirinha" then
+		TriggerServerEvent("bordel-comprar","caipirinha")	
 	elseif data == "bordel-comprar-tequila" then
 		TriggerServerEvent("bordel-comprar","tequila")
-	elseif data == "bordel-comprar-cerveja" then
-		TriggerServerEvent("bordel-comprar","cerveja")
-	elseif data == "bordel-comprar-whisky" then
-		TriggerServerEvent("bordel-comprar","whisky")
-	elseif data == "bordel-comprar-conhaque" then
-		TriggerServerEvent("bordel-comprar","conhaque")
-	elseif data == "bordel-comprar-absinto" then
-		TriggerServerEvent("bordel-comprar","absinto")
+	elseif data == "bordel-comprar-gin" then
+		TriggerServerEvent("bordel-comprar","gin")
+	elseif data == "bordel-comprar-refrigerante" then
+		TriggerServerEvent("bordel-comprar","refrigerante")
+	elseif data == "bordel-comprar-agua" then
+		TriggerServerEvent("bordel-comprar","agua")
+	elseif data == "bordel-comprar-blackvelvet" then
+		TriggerServerEvent("bordel-comprar","blackvelvet")
 		
 	elseif data == "bordel-comprar-cocaina" then
 		TriggerServerEvent("bordel-comprar","cocaina")
@@ -55,6 +55,10 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("bordel-comprar","crack")
 	elseif data == "bordel-comprar-maconha" then
 		TriggerServerEvent("bordel-comprar","maconha")
+	elseif data == "bordel-comprar-pendrive" then
+		TriggerServerEvent("bordel-comprar","pendrive")
+		elseif data == "bordel-comprar-kitcostura" then
+		TriggerServerEvent("bordel-comprar","kitcostura")
 
 
 

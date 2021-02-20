@@ -8,15 +8,17 @@ Tunnel.bindInterface("nav_bordel",emP)
 -- ARRAY
 -----------------------------------------------------------------------------------------------------------------------------------------
 local valores = {
-	{ item = "mochila", quantidade = 1, compra = 4000, venda = 25 },
-	{ item = "vodka", quantidade = 1, compra = 50, venda = 25 },
+	{ item = "energetico", quantidade = 1, compra = 30, venda = 1 },
+	{ item = "caipirinha", quantidade = 1, compra = 30, venda = 1 },
 	{ item = "tequila", quantidade = 1, compra = 50, venda = 25 },
-	{ item = "cerveja", quantidade = 1, compra = 50, venda = 25 },
-	{ item = "whisky", quantidade = 1, compra = 50, venda = 25 },
-	{ item = "conhaque", quantidade = 1, compra = 50, venda = 25 },
-	{ item = "absinto", quantidade = 1, compra = 50, venda = 25 },
+	{ item = "gin", quantidade = 1, compra = 30, venda = 1 },
+	{ item = "refrigerante", quantidade = 1, compra = 20, venda = 1 },
+	{ item = "agua", quantidade = 1, compra = 15, venda = 1 },
+	{ item = "blackvelvet", quantidade = 1, compra = 50, venda = 25 },
 	{ item = "maconha", quantidade = 1, compra = 1000, venda = 500 },
 	{ item = "crack", quantidade = 1, compra = 1000, venda = 25 },
+	{ item = "pendrive", quantidade = 1, compra = 10000, venda = 25 },
+	{ item = "kitcostura", quantidade = 1, compra = 7000, venda = 25 },
 	{ item = "cocaina", quantidade = 1, compra = 1000, venda = 25 },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

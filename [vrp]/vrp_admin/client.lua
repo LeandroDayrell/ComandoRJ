@@ -18,6 +18,19 @@ AddEventHandler("blips:adminStart",function()
     showblips = true
 end)
 
+RegisterNetEvent("skinmenu")
+AddEventHandler("skinmenu",function(mhash)
+    while not HasModelLoaded(mhash) do
+        RequestModel(mhash)
+        Citizen.Wait(10)
+    end
+
+    if HasModelLoaded(mhash) then
+        SetPlayerModel(PlayerId(),mhash)
+        SetModelAsNoLongerNeeded(mhash)
+    end
+end)
+
 Citizen.CreateThread(function()
     while true do
         if showblips then

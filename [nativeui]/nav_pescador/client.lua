@@ -49,8 +49,8 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),-1816.72,-1193.83,14.30,true)
 		if distance <= 3 then
-			DrawMarker(21,-1816.72,-1193.83,14.30-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,255,0,0,50,0,0,0,1)
-			if distance <= 1.2 then
+			DrawMarker(21,-1816.72,-1193.83,14.30-0.97,0,0,0,0,0,0,1.0,1.0,0.5,128,1,210,20,0,0,0,0)
+			if distance <= 1.1 then
 				if IsControlJustPressed(0,38) then
 					ToggleActionMenu()
 				end

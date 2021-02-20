@@ -1,8 +1,4 @@
 local Teleport = {
-	["HOSPITAL"] = {
-		positionFrom = { ['x'] = 332.26, ['y'] = -595.56, ['z'] = 43.28 },
-		positionTo = { ['x'] = 338.53, ['y'] = -583.79, ['z'] = 74.16 }
-	},
 	["ESCRITORIO"] = {
 		positionFrom = { ['x'] = -70.93, ['y'] = -801.04, ['z'] = 44.22 },
 		positionTo = { ['x'] = -74.57, ['y'] = -820.91, ['z'] = 243.38 }
@@ -27,10 +23,10 @@ local Teleport = {
 		positionFrom = { ['x'] = -80.89, ['y'] = 214.78, ['z'] = 96.55 },
 		positionTo = { ['x'] = 1120.96, ['y'] = -3152.57, ['z'] = -37.06 }
 	},
-	["MOTOCLUB2"] = {
+	--[[["MOTOCLUB2"] = {
 		positionFrom = { ['x'] = 224.60, ['y'] = -1511.02, ['z'] = 29.29 },
 		positionTo = { ['x'] = 997.24, ['y'] = -3158.00, ['z'] = -38.90 }
-	},
+	},]]--
 	["ESCRITORIO2"] = {
 		positionFrom = { ['x'] = -1194.46, ['y'] = -1189.31, ['z'] = 7.69 },
 		positionTo = { ['x'] = 1173.55, ['y'] = -3196.68, ['z'] = -39.00 }
@@ -82,3 +78,4 @@ Citizen.CreateThread(function()
 		Citizen.Wait(crjSleep)
 	end
 end)
+

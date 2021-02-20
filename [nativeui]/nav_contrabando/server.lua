@@ -19,6 +19,12 @@ local valores = {
 	{ item = "walkietalkie", quantidade = 1, compra = 5000, venda = 2500 },
 	--CONFERIR
 	{ item = "ak103pack", quantidade = 1, compra = 110000, venda = 10000 },
+	---
+	{ item = "municaomusketpack", quantidade = 1, compra = 22000, venda = 10000 },
+	{ item = "municaoparafalpack", quantidade = 1, compra = 22000, venda = 10000 },
+	{ item = "musketpack", quantidade = 1, compra = 220000, venda = 10000 },
+	{ item = "parafalpack", quantidade = 1, compra = 220000, venda = 10000 },
+	---
 	{ item = "mtarpack", quantidade = 1, compra = 71000, venda = 10000 },
 	{ item = "sigpack", quantidade = 1, compra = 71000, venda = 10000 },
 	{ item = "pumpshotgunpack", quantidade = 1, compra = 60000, venda = 10000 },

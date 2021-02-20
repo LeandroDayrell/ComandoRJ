@@ -23,8 +23,8 @@ end
 -- BUTTON
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNUICallback("ButtonClick",function(data,cb)
-	if data == "utilidades-comprar-nitro" then
-		TriggerServerEvent("mecanicos-comprar","nitro")
+	if data == "utilidades-comprar-pneu" then
+		TriggerServerEvent("mecanicos-comprar","pneu")
 	elseif data == "utilidades-vender-nitro" then
 		TriggerServerEvent("mecanicos-vender","nitro")
 	elseif data == "utilidades-comprar-reparo" then
@@ -46,7 +46,7 @@ Citizen.CreateThread(function()
 		local crjSleep = 500
 		local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),953.294,-973.394,39.753,true)
 		if distance <= 30 then
-			DrawMarker(23,953.294,-973.394,39.753-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,50,0,0,0,0)
+			DrawMarker(23,953.294,-973.394,39.753-0.97,0,0,0,0,0,0,1.0,1.0,0.5,128,1,210,50,0,0,0,0)
 			if distance <= 1.1 then
 			crjSleep = 1
 				if IsControlJustPressed(0,38) and emP.checkPermission() then

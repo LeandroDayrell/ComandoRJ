@@ -1,15 +1,22 @@
+resource_manifest_version '77731fab-63ca-442c-a67b-abc70f28dfa5'
 files {
-    'index.html',
-    'assets/js/ui.js',
-	'parado.mp3',
-	'logo.png',
-	'Loading.mp3',
-	'doremi.ogg',
-    'assets/css/style.css',
-    'assets/img/background.png',
-    'assets/img/CRJ.png'
+    'background.png',
+    'logo.png',
+	'discord.png',
+	'audio.ogg',
+    'background.mp4',
+	
+	'smoke.png',
+	'smoke-2.png',
+	'grid.png',	
+	'three.js',
+	'settings.js',
+	'app.js',
+    'player.js',
+	'smoke.js',
+	'logo.js',
+	'style.css',
+    'index.html'
 }
 
 loadscreen 'index.html'
-
-resource_manifest_version '77731fab-63ca-442c-a67b-abc70f28dfa5'

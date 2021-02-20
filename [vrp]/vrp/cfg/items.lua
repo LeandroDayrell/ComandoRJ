@@ -2,7 +2,7 @@ local cfg = {}
 
 cfg.items = {
     -- BEBIDAS
-    ['agua'] = {label = 'Água', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_ld_flow_bottle', price = 10, type = 'drink', photo = 'https://assets.webiconspng.com/uploads/2017/09/Water-Bottle-PNG-Image-91822.png'},
+    ['agua'] = {label = 'Água', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_ld_flow_bottle', price = 10, type = 'drink', photo = 'https://i.imgur.com/k6d95qf.png'},
     ['milk'] = {label = 'Super Milk', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -5}, prop = 'prop_cs_milk_01', price = 10, type = 'drink', photo = 'https://i.imgur.com/wB7uwBf.png'},
     ['coffee'] = {label = 'Starbucks ', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -10}, prop = 'ng_proc_coffee_01a', price = 10, type = 'drink', photo = 'https://i.imgur.com/Is5PBNm.png'},
     ['tea'] = {label = 'Chá Pêssego', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -15}, prop = 'prop_cs_script_bottle_01', price = 10,  type = 'drink', photo = 'https://i.imgur.com/D5xmpdl.png'},
@@ -118,7 +118,7 @@ cfg.items = {
     ['opio'] = {label = 'Opio', description = 'OPIO', weight = 0.5, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/d3O6Aw2.png'},
     ['fertilizante'] = {label = 'Fertilizante', description = 'Fertilizante', weight = 0.8, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/0Owgrot.png'},
     ['capsulas'] = {label = 'Capsulas', description = 'Capsula para fabricação de Munição', weight = 0.2, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/bgMtUWU.png'},
-    ['placa'] = {label = 'Placa', description = 'Placa', weight = 1, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = '[img]https://i.imgur.com/b1haArG.png[/img]'},
+    ['placa'] = {label = 'Placa', description = 'Placa', weight = 1, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/b1haArG.png'},
     ['polvora'] = {label = 'Polvora', description = 'Polvora para fabricação de Munição', weight = 0.2, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/xUpVPwW.png'},
     ['orgao'] = {label = 'Órgão', description = 'Órgão', weight = 1.2, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/kmMDpIS.png'},
     ['etiqueta'] = {label = 'Etiqueta', description = 'Etiqueta', weight = 0.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/dzwEXTt.png'},
@@ -162,6 +162,10 @@ cfg.items = {
 	
 	-- PACKS ARMAS
 	['sigpack'] = {label = 'Sig-Sauer Pack', description = 'Sig-Sauer Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/sMXd5Zs.png'},
+	['parafalpack'] = {label = 'Parafal Pack', description = 'Parafal Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/38e9ays.png'},
+	['musketpack'] = {label = 'Musket Pack', description = 'Musket Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/EgfZI5w.png'},
+	['municaoparafalpack'] = {label = 'Pack de Municao de Parafal', description = 'Pack de Municao de Parafal', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/wOkTjSJ.png'},
+	['municaomusketpack'] = {label = 'Pack de Municao de Musket', description = 'Pack de Municao de Musket', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/ewc47Bo.png'},
 	['municaosigpack'] = {label = 'Municao Sig-Sauer Pack', description = 'Municao Sig-Sauer Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/LYLI4PM.png'},
 	['ak103pack'] = {label = 'Ak 103 Pack', description = 'Ak 103 Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/EJOo7dY.png'},
 	['mtarpack'] = {label = 'Mtar Pack', description = 'Mtar Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/mzCiMSP.png'},

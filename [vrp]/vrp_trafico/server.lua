@@ -68,8 +68,8 @@ local src = {
 	--[39] = { ['re'] = "municaopumppack", ['reqtd'] = 1, ['item'] = "wammo|WEAPON_PUMPSHOTGUN_MK2", ['itemqtd'] = 50 },--
 		-- VANILLA
 	[40] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "pendriveh", ['itemqtd'] = 3 },
-	[41] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "tecidoekitcostura", ['itemqtd'] = 1 },
-	[42] = { ['re'] = "tecidoekitcostura", ['reqtd'] = 10, ['item'] = "mochila", ['itemqtd'] = 1 },
+	[41] = { ['re'] = "kitcostura", ['reqtd'] = 1, ['item'] = "tecidoekitcostura", ['itemqtd'] = 1 },
+	[42] = { ['re'] = "tecidoekitcostura", ['reqtd'] = 1, ['item'] = "mochila", ['itemqtd'] = 1 },
 		--MC
 	--[43] = { ['re'] = "municaoakpack",['reqtd'] = 1, ['item'] = "wammo|WEAPON_ASSAULTRIFLE", ['itemqtd'] = 50 },
 	--[44] = { ['re'] = "municaosigpack", ['reqtd'] = 1, ['item'] = "wammo|WEAPON_COMBATPDW", ['itemqtd'] = 50 },
