@@ -3001,7 +3001,6 @@ cfg.selectors = {
   ["Agência de Empregos"] = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 351, blipcolor = 47},
 	"UBER",
-	"Entregador iFood",
 	"Pescador",
 	"Leiteiro",
 	"Minerador de Diamante",
@@ -3016,8 +3015,6 @@ cfg.selectors = {
 	"Traficante de Cocaína",
 	"Traficante de Metanfetamina",
 	"Traficante de Tartaruga",
-	"Contrabandista de Armas",
-	"Ladrão de carros",
 	"Hacker",
   },
 }

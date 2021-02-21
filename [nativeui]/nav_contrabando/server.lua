@@ -82,7 +82,7 @@ AddEventHandler("crj-comprar",function(item)
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
 					if vRP.tryFullPayment(user_id,parseInt(v.compra),true) then
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
-						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." dólares sujos</b>.")
+						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro sujo insuficiente.")
 					end

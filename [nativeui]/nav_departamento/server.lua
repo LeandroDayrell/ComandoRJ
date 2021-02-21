@@ -45,7 +45,7 @@ AddEventHandler("departamento-comprar",function(item)
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
 					if vRP.tryFullPayment(user_id,parseInt(v.compra),true) then
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
-						TriggerClientEvent("Notify",source,"bom","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.itemNameList(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
+						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
 					else
 						TriggerClientEvent("Notify",source,"aviso","Dinheiro insuficiente.")
 					end
