@@ -175,7 +175,7 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		Citizen.Wait(10)
 		local ped = PlayerPedId()
 		if menu_state.opened then
 			DisableControlAction(0,75)
@@ -329,9 +329,10 @@ local anims = {
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		for _,block in pairs(anims) do
 			if IsEntityPlayingAnim(PlayerPedId(),block.dict,block.anim,3) or object then
+				crjSleep = 1
 				DisableControlAction(0,16,true)
 				DisableControlAction(0,17,true)
 				DisableControlAction(0,24,true)
@@ -340,6 +341,7 @@ Citizen.CreateThread(function()
 				BlockWeaponWheelThisFrame()
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

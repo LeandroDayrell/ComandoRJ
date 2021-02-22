@@ -36,10 +36,11 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		local x,y,z = table.unpack(GetEntityCoords(PlayerPedId()))
 		for k,v in pairs(doors) do
 			if GetDistanceBetweenCoords(x,y,z,v.x,v.y,v.z,true) <= 3 then
+				crjSleep = 1
 				local door = GetClosestObjectOfType(v.x,v.y,v.z,1.0,v.hash,false,false,false)
 				if door ~= 0 then
 					SetEntityCanBeDamaged(door,false)
@@ -62,6 +63,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 

@@ -173,10 +173,12 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        local crjSleep = 500
         if IsControlJustReleased(1,  118) then
+			crjSleep = 1
             TriggerServerEvent("offred:qthPolicepacorabane")
         end
+		Citizen.Wait(crjSleep)
     end
 end)
 

@@ -16,8 +16,8 @@ function checkDistance()
 	local ped = PlayerPedId()
 	local x,y,z = table.unpack(GetEntityCoords(ped))
 	local bowz,cdz = GetGroundZFor_3dCoord(x,y,z)
-	local distance = GetDistanceBetweenCoords(x,y,cdz,-551.03857421875,-192.28303527832,38.223083496094,true)
-	if distance < 10 then
+	local distance = GetDistanceBetweenCoords(x,y,cdz,-545.06341552734,-204.16027832031,38.215148925781,true)
+	if distance < 5 then
 		return true
 	else
 		return false
@@ -26,12 +26,14 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		local crjSleep = 500
 		if checkDistance() then
-			DrawMarker(23,-551.03857421875,-192.28303527832,38.223083496094-0.99,1,1,0,0,0,0,1.0,1.0,1.0,255,255,255,50,0,1,0,0)
-			DrawText3D(-551.03857421875,-192.28303527832,38.223083496094, "Mudar Nome", 2.0, 7, 100)
-			DrawText3D(-551.03857421875,-192.28303527832,38.223083496094-0.4, "/identidade [nome] [sobrenome] [idade]", 2.0, 1, 100)
+			crjSleep = 1
+			DrawMarker(23,-545.06341552734,-204.16027832031,38.215148925781-0.99,1,1,0,0,0,0,1.0,1.0,1.0,255,255,255,50,0,1,0,0)
+			DrawText3D(-545.06341552734,-204.16027832031,38.215148925781, "Mudar Nome", 2.0, 7, 100)
+			DrawText3D(-545.06341552734,-204.16027832031,38.215148925781-0.4, "/identidade [nome] [sobrenome] [idade]", 2.0, 1, 100)
 		end	 
+		Citizen.Wait(crjSleep)
 	end
 end)
 

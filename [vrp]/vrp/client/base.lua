@@ -234,10 +234,12 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if NetworkIsSessionStarted() then
+			crjSleep = 1
 			TriggerServerEvent("Queue:playerActivated")
 			return
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)

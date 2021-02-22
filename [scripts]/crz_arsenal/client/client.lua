@@ -19,23 +19,25 @@ local arsenal = {
 if Menu then
 	Citizen.CreateThread(function()
 	while true do
-		Wait(0)
+		local crjSleep = 500
 		for _,lugares in pairs(arsenal) do
 			local x,y,z = table.unpack(lugares)
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),x,y,z,true)
 			DrawMarker(25,x,y+0.33,z-0.90,0,0,0,0,180.0,130.0,2.0,2.0,1.0,25,25,122,50,0,0,0,0)
 			if distance <= 2 then
+				crjSleep = 1
 				if IsControlJustPressed(0, 51) then
 					TriggerServerEvent('crz_arsenal:permissao')
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
-		if IsControlJustPressed(1, 3) then
-		  inMenu = false
-		  SetNuiFocus(false)
-		  SendNUIMessage({type = 'close'})
-		end
+			if IsControlJustPressed(1, 3) then
+			inMenu = false
+			SetNuiFocus(false)
+			SendNUIMessage({type = 'close'})
+			end
 	end)
 end
 
