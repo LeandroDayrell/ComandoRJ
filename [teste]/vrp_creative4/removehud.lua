@@ -1,5 +1,5 @@
 Citizen.CreateThread(function()
-	AddTextEntry("FE_THDR_GTAO","Tenha um Bom RP!")
+	AddTextEntry("FE_THDR_GTAO","ComandoRJ")
 	while true do
 		Citizen.Wait(0)
 		N_0xf4f2c0d4ee209e20()

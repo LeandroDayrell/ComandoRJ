@@ -4,10 +4,10 @@ cfg.items = {
     -- BEBIDAS
     ['agua'] = {label = 'Água', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_ld_flow_bottle', price = 10, type = 'drink', photo = 'https://i.imgur.com/k6d95qf.png'},
     ['milk'] = {label = 'Super Milk', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -5}, prop = 'prop_cs_milk_01', price = 10, type = 'drink', photo = 'https://i.imgur.com/wB7uwBf.png'},
-    ['coffee'] = {label = 'Starbucks ', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -10}, prop = 'ng_proc_coffee_01a', price = 10, type = 'drink', photo = 'https://i.imgur.com/Is5PBNm.png'},
+    ['coffee'] = {label = 'Starbucks ', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -10}, prop = 'ng_proc_coffee_01a', price = 10, type = 'drink', photo = 'https://i.imgur.com/3SlSQB0.png'},
     ['tea'] = {label = 'Chá Pêssego', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -15}, prop = 'prop_cs_script_bottle_01', price = 10,  type = 'drink', photo = 'https://i.imgur.com/D5xmpdl.png'},
     ['icetea'] = {label = 'Chá Citrus', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -20}, prop = 'prop_cs_script_bottle_01', price = 10, type = 'drink', photo = 'https://i.imgur.com/I17C5nx.png'},
-    ['orangejuice'] = {label = 'Suco de Laranja', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_paper_bag_small', price = 8, type = 'drink', photo = 'https://i.imgur.com/eDzhhFT.png'},
+    ['orangejuice'] = {label = 'Suco de Laranja', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_paper_bag_small', price = 8, type = 'drink', photo = 'https://i.imgur.com/GgWO3pl.png'},
     ['refri'] = {label = 'Refrigerante', description = '', weight = 0.3, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -35}, prop = 'ng_proc_sodacan_01a', price = 15, type = 'drink', photo = 'https://i.imgur.com/NzABqPU.png'},
     ['redgull'] = {label = 'RedBull', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -40}, prop = 'prop_energy_drink', price = 25, type = 'drink', photo = 'https://i.imgur.com/j3XAefO.png'},
     ['limonada'] = {label = 'Refrigerante de Limao', description = '', weight = 0.3, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -45}, prop = 'ng_proc_sodacan_01b', price = 12, type = 'drink', photo = 'https://i.imgur.com/xqnMILD.png'},
@@ -17,13 +17,12 @@ cfg.items = {
     ['cocaina'] = {label = 'Cocaina', description = 'Cocaina', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/aQtkY2A.png'},
     ['whisk'] = {label = 'Azterec Whisky', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_whiskey_bottle', price = 99, type = 'drink', photo = 'https://i.imgur.com/K8NfDv2.png'},
     ['caipirinha'] = {label = 'Caipirinha de Limão', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_tequila', price = 9, type = 'drink', photo = 'https://i.imgur.com/GTQTctH.png'},
-    ['energetico'] = {label = 'Monster', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_energy_drink', price = 12, type = 'drink', photo = 'https://i.imgur.com/sXgGuD0.png'},
+    ['energetico'] = {label = 'Energetico', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_energy_drink', price = 12, type = 'drink', photo = 'https://i.imgur.com/UtljhVq.png'},
     ['cerveja'] = {label = 'Tribe Cerveja', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_amb_beer_bottle', price = 6, type = 'drink', photo = 'https://i.imgur.com/bYDkQ6A.png'},
-    ['gin'] = {label = 'Gin', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_champ_01a', price = 120, type = 'drink', photo = 'https://i.imgur.com/EgRVcd3.png'},
+    ['gin'] = {label = 'Gin', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_champ_01a', price = 120, type = 'drink', photo = 'https://i.imgur.com/GjsZvHD.png'},
     ['blackvelvet'] = {label = 'Black Velvet', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, increase = {hunger = 0, thirst = -25}, prop = 'prop_champ_01a', price = 120, type = 'drink', photo = 'https://i.imgur.com/HYm7Roc.png'},
 
     -- BANDAGEM
-
     ['bandagem'] = {label = 'Bandagem', description = '', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 3, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/nwFRLph.png'},
 
     -- COMIDAS
@@ -36,7 +35,7 @@ cfg.items = {
 
 	-- OUTROS
     ['wcard'] = {label = 'Identidade', description = 'Identificação pessoal', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/fG8DMiz.png'},
-    ['celular'] = {label = 'Celular', description = 'Celular', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/5AURJqp.png'},
+    ['celular'] = {label = 'Celular', description = 'Celular', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/qzvR30m.png'},
     ['tabletd'] = {label = 'Tablet', description = 'Tablet', usable = true, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/arOzb3s.png'},
     ['wplicense'] = {label = 'Porte de Arma', description = 'Sem registro', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/4TiCw78.png'},
     ['drlicense'] = {label = 'Habilitação', description = 'Sem registro', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/25Ispn3.png'},
@@ -108,8 +107,8 @@ cfg.items = {
     ['tilapia'] = {label = 'Tilapia', description = 'Tilapia', weight = 0.6, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/z3wQ8Ty.png'},
     ['tucunare'] = {label = 'Tucunare', description = 'Tucunare', weight = 0.6, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/VzJmRd1.png'},
     ['lambari'] = {label = 'Lambari', description = 'Lambari', weight = 0.6, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/kCE4Spe.png'},
-    ['plantademaconha'] = {label = 'Planta de Maconha', description = 'Maconha', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/cN98aA7.png'},
-    ['buddeskunk'] = {label = 'Bud de CRJ HAZE', description = 'Bud', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/8Gs9jns.png'},
+    ['plantacrj'] = {label = 'Planta de CRJ Haze', description = 'Planta de CRJ Haze', weight = 0.8, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/ZXmlY7f.png'},
+    ['budcrj'] = {label = 'Bud de CRJ HAZE', description = 'Bud de CRJ Haze', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/8Gs9jns.png'},
     ['crjhaze'] = {label = 'Maco de CRJ HAZE', description = 'CRJ HAZE', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/129hwyz.png'},
     ['maconha'] = {label = 'Maconha', description = 'Maconha', weight = 0.5, usable = true, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/xPmTPjB.png'},
     ['cannabis'] = {label = 'Cannabis', description = 'Cannabis', weight = 0.5, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/YsTDtpj.png'},

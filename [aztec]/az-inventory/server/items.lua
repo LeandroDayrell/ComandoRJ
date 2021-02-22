@@ -153,6 +153,23 @@ vAZ.handlers = {
         end
         cb(false)
     end,
+    ['crjhaze'] = function(source, user_id, item, amount, cb)    
+        if vRP.tryGetInventoryItem(user_id, "crjhaze", 1, false) then
+            TriggerClientEvent("Notify", source, "aviso", "Fumando CRJ Haze.")
+            vRPclient._playAnim(source, true, {task="WORLD_HUMAN_SMOKING_POT"}, false)
+            SetTimeout(10000,function()
+                vRPclient._stopAnim(source, true)
+                vRPclient._stopAnim(source, false) 
+                vRPclient.playMovement(source, "MOVE_M@DRUNK@SLIGHTLYDRUNK",true,true,false,false)
+                vRPclient.playScreenEffect(source, "DMT_flight", 120) 
+            end)
+            SetTimeout(120000,function()
+                vRPclient.resetMovement(source, false) 
+            end)
+            cb(true)
+        end
+        cb(false)
+    end,
     ['cocaina'] = function(source, user_id, item, amount, cb)    
         if vRP.tryGetInventoryItem(user_id, "cocaina", 1, false) then
             TriggerClientEvent("Notify",source,"aviso","Cheirando Cocaina.")

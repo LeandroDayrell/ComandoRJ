@@ -66,6 +66,10 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("departamento-comprar","tequila")
 	elseif data == "alimentos-comprar-donut" then
 		TriggerServerEvent("departamento-comprar","donut")
+	elseif data == "alimentos-comprar-bread" then
+		TriggerServerEvent("departamento-comprar","bread")
+	elseif data == "alimentos-comprar-tacos" then
+		TriggerServerEvent("departamento-comprar","tacos")
 	elseif data == "bebidas-comprar-caipirinha" then
 		TriggerServerEvent("departamento-comprar","caipirinha")
 	elseif data == "alimentos-comprar-kebab" then
@@ -78,24 +82,13 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("departamento-comprar","agua")
 	elseif data == "bebidas-comprar-refri" then
 		TriggerServerEvent("departamento-comprar","refri")
+	elseif data == "bebidas-comprar-coffee" then
+		TriggerServerEvent("departamento-comprar","coffee")
 	elseif data == "alimentos-comprar-hamburguer" then
 		TriggerServerEvent("departamento-comprar","hamburguer")
 	elseif data == "bebidas-comprar-limonada" then
 		TriggerServerEvent("departamento-comprar","limonada")
 	elseif data == "bebidas-vender-cerveja" then
-		TriggerServerEvent("departamento-vender","cerveja")
-	elseif data == "bebidas-vender-tequila" then
-		TriggerServerEvent("departamento-vender","tequila")
-	elseif data == "bebidas-vender-vodka" then
-		TriggerServerEvent("departamento-vender","vodka")
-	elseif data == "bebidas-vender-whisky" then
-		TriggerServerEvent("departamento-vender","whisky")
-	elseif data == "bebidas-vender-conhaque" then
-		TriggerServerEvent("departamento-vender","conhaque")
-	elseif data == "bebidas-vender-absinto" then
-		TriggerServerEvent("departamento-vender","absinto")
-	elseif data == "bebidas-vender-energetico" then
-		TriggerServerEvent("departamento-vender","energetico")
 	elseif data == "fechar" then
 		ToggleActionMenu()
 	end

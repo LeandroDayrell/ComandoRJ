@@ -14,6 +14,8 @@ local webhooklinkplacadk = "https://discordapp.com/api/webhooks/7500674172830351
 local webhooklinkhackereulen = "https://discord.com/api/webhooks/812350352069492777/7vJrMTs5Pb07Uq9V005J9lssusZ9aYxGZgjfLn-B_I6z0EUXhm_c0XgD_GbGgBYd8VAM"
 
 
+vAZgarage = Proxy.getInterface('az-garages')
+
 function SendWebhookMessage(webhook,message)
 	if webhook ~= nil and webhook ~= "" then
 		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
@@ -36,7 +38,7 @@ RegisterCommand('placa',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"policia.permissao") then
 		if args[1] then
-			local vehicle = vRP.query("vAZ/GetVehiclesByPlate", {plate = args[1]})    
+			local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = args[1]})    
 			if #vehicle > 0 then
 				local identity = vRP.getUserIdentity(vehicle[1].user_id)
 				if identity then
@@ -51,7 +53,7 @@ RegisterCommand('placa',function(source,args,rawCommand)
 			if vehicle then
 				local plate = vRPclient.getPlateVehicle(source, vehicle)
 				if plate ~= nil then
-					local vehicle = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})    
+					local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})    
 					if #vehicle > 0 then
 						local identity = vRP.getUserIdentity(vehicle[1].user_id)
 						if identity then
@@ -72,7 +74,7 @@ RegisterCommand('placadk',function(source,args,rawCommand)
 	local x,y,z = vRPclient.getPosition(source)
 	if vRP.hasPermission(user_id,"driftking.permissao") then
 		if args[1] then
-			local vehicle = vRP.query("vAZ/GetVehiclesByPlate", {plate = args[1]})    
+			local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = args[1]})    
 			if #vehicle > 0 then
 				local identity = vRP.getUserIdentity(vehicle[1].user_id)
 				if identity then
@@ -89,7 +91,7 @@ RegisterCommand('placadk',function(source,args,rawCommand)
 			if vehicle then
 				local plate = vRPclient.getPlateVehicle(source, vehicle)
 				if plate ~= nil then
-					local vehicle = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})    
+					local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})    
 					if #vehicle > 0 then
 						local identity = vRP.getUserIdentity(vehicle[1].user_id)
 						if identity then
@@ -548,7 +550,7 @@ RegisterCommand('detido',function(source,args,rawCommand)
 		local vehicle = vRPclient.getNearestVehicle(source, 5)
 		if vehicle then
 			local plate = vRPclient.getPlateVehicle(source, vehicle)
-			local owner = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})
+			local owner = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})
 			if #owner > 0 then
 				if owner[1].state == 3 then				
 					TriggerClientEvent('Notify', source, 'importante', "Este veículo já se encontra detido<br><b>Detido em:</b> "..os.date('%d/%b/%Y %H:%M:%S', owner[1].time)..".")					

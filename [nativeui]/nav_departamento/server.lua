@@ -14,6 +14,9 @@ local valores = {
 	{ item = "serra", quantidade = 1, compra = 2500, venda = 5000 },
 	{ item = "limonada", quantidade = 1, compra = 12, venda = 1 },
 	{ item = "walkietalkie", quantidade = 1, compra = 1000, venda = 500 },
+	{ item = "coffee", quantidade = 1, compra = 10, venda = 1 },
+	{ item = "bread", quantidade = 1, compra = 15, venda = 1 },
+	{ item = "tacos", quantidade = 1, compra = 20, venda = 1 },
 
 	{ item = "agua", quantidade = 1, compra = 8, venda = 1 },
 	{ item = "refri", quantidade = 1, compra = 10, venda = 50 },

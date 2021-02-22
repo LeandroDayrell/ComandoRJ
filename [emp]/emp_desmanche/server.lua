@@ -28,7 +28,7 @@ function emP.checkVehicle()
 	local vehicle = vRPclient.getNearestVehicle(source, 5)
 	if vehicle then
 		local plate = vRPclient.getPlateVehicle(source, vehicle)  
-		local owner = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})
+		local owner = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})
 		if #owner <= 0 then
 			TriggerClientEvent("Notify",source,"aviso","Veículo não encontrado na lista do proprietário.")
 			return false
@@ -58,7 +58,7 @@ end
 function emP.removeVehicles(plate, vnet)
 	local source = source
 	local user_id = vRP.getUserId(source)
-	local owner = vRP.query("vAZ/GetVehiclesByPlate", {plate = plate})
+	local owner = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})
 	if #owner > 0 then
 		local model = vRP.query('vAZ/getVehicleByModel', {model = owner[1].model})    
 		if #model > 0 then

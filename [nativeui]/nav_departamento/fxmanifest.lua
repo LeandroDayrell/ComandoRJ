@@ -46,4 +46,7 @@ files {
 	'nui/images/refri.png',
 	'nui/images/hamburguer.png',
 	'nui/images/sanduiche.png',
+	'nui/images/coffee.png',
+	'nui/images/bread.png',
+	'nui/images/tacos.png',
 }

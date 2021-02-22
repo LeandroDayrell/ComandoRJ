@@ -18,7 +18,7 @@ Citizen.CreateThread(function()
         local dist = #(cds - cfg.cds[bancos])
         if dist < 10.0 then 
             likizao = 5
-            DrawMarker(20, cfg.cds[bancos][1],cfg.cds[bancos][2],cfg.cds[bancos][3] - 0.95, 0, 0, 0, 0.0, 0, 0, 0.9, 0.9, 0.9, 255, 140, 0, 150, 0, 0, 0, 1)
+            DrawMarker(20, cfg.cds[bancos][1],cfg.cds[bancos][2],cfg.cds[bancos][3] - 0.95, 0, 0, 0, 0.0, 0, 0, 0.9, 0.9, 0.9, 138, 43, 226, 150, 0, 0, 0, 1)
             if dist <= 3.0 then 
                 if IsControlJustPressed(0, 38) then 
                     UFclient.clOpenNui()
