@@ -13,7 +13,14 @@ local valores = {
 	{ item = "pirarucu", venda = 165 },
 	{ item = "tilapia", venda = 150 },
 	{ item = "tucunare", venda = 140 },
-	{ item = "lambari", venda = 160 }
+	{ item = "lambari", venda = 160 },
+	{ item = "graos", venda = 20 },
+	{ item = "mouro", venda = 25 },
+	{ item = "mferro", venda = 15 },
+	{ item = "mbronze", venda = 14 },
+	{ item = "mrubi", venda = 25 },
+	{ item = "mesmeralda", venda = 35 },
+	{ item = "diamante", venda = 50 }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VENDER
@@ -38,7 +45,7 @@ AddEventHandler("pescador-vender",function(item)
 						TriggerClientEvent("Notify",source,"sucesso","Vendeu <b>"..quantidade.."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.venda*quantidade)).." reais</b>.")
 					end
 				else
-					TriggerClientEvent("Notify",source,"negado","Não possui <b>"..vRP.itemNameList(v.item).."s</b> em sua mochila.")
+					TriggerClientEvent("Notify",source,"aviso","Não possui <b>"..vRP.getItemName(v.item).."</b> em sua mochila.")
 				end
 			end
 		end

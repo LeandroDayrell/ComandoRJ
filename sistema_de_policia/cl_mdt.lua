@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
             -- if GetVehicleNumberPlateText(getVehicleInFront()) then
                 -- TriggerServerEvent("mdt:performVehicleSearchInFront", GetVehicleNumberPlateText(getVehicleInFront()))
             -- end
-        if IsControlJustPressed(0, 289) then
+        if IsControlJustPressed(0, 56) then
             TriggerServerEvent("mdt:hotKeyOpen")
         end
         if DoesEntityExist(playerPed) and IsPedUsingActionMode(playerPed) then -- disable action mode/combat stance when engaged in combat (thing which makes you run around like an idiot when shooting)

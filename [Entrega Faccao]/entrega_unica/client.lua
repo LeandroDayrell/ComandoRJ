@@ -731,110 +731,130 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and emservico then
+			crjSleep = 1
 			emservico = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- CRACK
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and crackd then
+			crjSleep = 1
 			crackd = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- MACONHA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregamaconha then
+			crjSleep = 1
 			entregamaconha = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- OPIO
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregaopio then
+			crjSleep = 1
 			entregaopio = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- META
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregameta then
+			crjSleep = 1
 			entregameta = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- PEÇAS
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregapecas then
+			crjSleep = 1
 			entregapecas = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- MAQUINA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregamaquina then
+			crjSleep = 1
 			entregamaquina = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- LSD
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregalsd then
+			crjSleep = 1
 			entregalsd = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- MORFINA
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregamorfina then
+			crjSleep = 1
 			entregamorfina = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 
 -- EXTASE
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if IsControlJustPressed(0,303) and entregaextase then
+			crjSleep = 1
 			entregaextase = false
 			RemoveBlip(blip)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 

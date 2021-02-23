@@ -9,15 +9,6 @@ end)
 -- TELEPORT
 -----------------------------------------------------------------------------------------------------------------------------------------
 local Teleport = {
-	--[[["TRAFICO01"] = { -- Bunker
-		positionFrom = { ['x'] = -3033.40, ['y'] = 3333.93, ['z'] = 10.27, ['perm'] = "entrada.permissao" },
-		positionTo = { ['x'] = 894.49, ['y'] = -3245.88, ['z'] = -98.25, ['perm'] = "entrada.permissao" },
-	},
-
-	["TRAFICO02"] = { -- Bunker
-		positionFrom = { ['x'] = 1571.876953125, ['y'] = 2229.5288085938, ['z'] = 78.567794799805, ['perm'] = "yakuzaentrada.permissao" }, 
-		positionTo = { ['x'] = 911.04437255859, ['y'] = -3213.6423339844, ['z'] = -98.231483459473, ['perm'] = "yakuzaentrada.permissao" }
-	},]]--
 	["TRAFICO04"] = { -- Bunker
 		positionFrom = { ['x'] = -923.83, ['y'] = -1508.83, ['z'] = 5.17, ['perm'] = "yakuzaliderentrada.permissao" }, 
 		positionTo = { ['x'] = 1137.69, ['y'] = -3194.23, ['z'] = -40.39, ['perm'] = "yakuzaliderentrada.permissao" }
@@ -25,26 +16,6 @@ local Teleport = {
 	["TRAFICO05"] = { -- Bunker
 		positionFrom = { ['x'] = -613.12841796875, ['y'] = -1625.1003417969, ['z'] = 33.010540008545, ['perm'] = "motoclubliderentrada.permissao" }, 
 		positionTo = { ['x'] = 1123.71, ['y'] = -3196.79, ['z'] = -40.39, ['perm'] = "motoclubliderentrada.permissao" }
-	},
-	--[[["TRAFICO06"] = { -- Bunker milicia   
-		positionFrom = { ['x'] = -3167.980, ['y'] = 1375.336, ['z'] = 18.380, ['perm'] = "milicia.permissao" }, 
-		positionTo = { ['x'] = 1004.2105, ['y'] = -2997.5007, ['z'] = -39.6469, ['perm'] = "milicia.permissao" }
-	},]]--
-	["LAVAGEMVIP"] = { -- Bunker
-		positionFrom = { ['x'] = -1078.2286376953, ['y'] = -254.19456481934, ['z'] = 37.763320922852, ['perm'] = "money.permissao" }, 
-		positionTo = { ['x'] = -1578.0603027344, ['y'] = -564.0244140625, ['z'] = 108.5228729248, ['perm'] = "money.permissao" }
-	},
-	["HELISAMU"] = { -- SAMU ELEVADOR
-		positionFrom = { ['x'] = -490.51, ['y'] = -327.66, ['z'] = 42.303320922852, ['perm'] = "paramedico.permissao" }, 
-		positionTo = { ['x'] = -500.11, ['y'] = -324.28, ['z'] = 73.16, ['perm'] = "paramedico.permissao" }
-	},
-	["ELEVADORSAMU"] = { -- SAMU ELEVADOR CIVIL
-		positionFrom = { ['x'] = -421.67, ['y'] = -345.82, ['z'] = 24.22, ['perm'] = "playerzin.permissao" }, 
-		positionTo = { ['x'] = -452.54, ['y'] = -288.56, ['z'] = 34.94, ['perm'] = "playerzin.permissao" }
-	},
-	["ELEVADORIMOBILIARIA"] = { -- SAMU ELEVADOR CIVIL
-		positionFrom = { ['x'] = -140.08, ['y'] = -624.34, ['z'] = 168.82, ['perm'] = "playerzin.permissao" }, 
-		positionTo = { ['x'] = -152.46, ['y'] = -630.93, ['z'] = 48.41, ['perm'] = "playerzin.permissao" }
 	},
 }
 

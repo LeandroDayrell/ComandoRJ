@@ -233,13 +233,11 @@ AddEventHandler("playerSpawned",function()
 end)
 
 Citizen.CreateThread(function()
-	while true do
-		local crjSleep = 500
-		if NetworkIsSessionStarted() then
-			crjSleep = 1
-			TriggerServerEvent("Queue:playerActivated")
-			return
-		end
-		Citizen.Wait(crjSleep)
-	end
+    while true do
+        Citizen.Wait(1)
+        if NetworkIsSessionStarted() then
+            TriggerServerEvent("Queue:playerActivated")
+            return
+        end
+    end
 end)

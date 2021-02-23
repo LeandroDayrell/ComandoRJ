@@ -5,7 +5,7 @@ codigopenal = {}
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)	
-		if IsControlJustPressed(math.floor(1), math.floor(289)) then
+		if IsControlJustPressed(math.floor(1), math.floor(56)) then
 			TriggerServerEvent("vrp_menu_policia:open_s")
 		end
 	end

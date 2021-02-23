@@ -24,5 +24,12 @@ files {
 	"nui/pirarucu.png",
 	"nui/salmao.png",
 	"nui/tilapia.png",
-	"nui/tucunare.png"
+	"nui/tucunare.png",
+	"nui/graos.png",
+	"nui/diamante.png",
+	"nui/ouro.png",
+	"nui/ferro.png",
+	"nui/bronze.png",
+	"nui/esmeralda.png",
+	"nui/rubi.png"
 }

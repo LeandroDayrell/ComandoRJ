@@ -35,6 +35,8 @@ cfg.items = {
 
 	-- OUTROS
     ['wcard'] = {label = 'Identidade', description = 'Identificação pessoal', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/fG8DMiz.png'},
+    ['graosimpuros'] = {label = 'Graos Impuros', description = 'Graos Impuros', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/FR7hraq.png'},
+    ['graos'] = {label = 'Graos', description = 'Graos', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/XtPYz4F.png'},
     ['celular'] = {label = 'Celular', description = 'Celular', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/qzvR30m.png'},
     ['tabletd'] = {label = 'Tablet', description = 'Tablet', usable = true, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/arOzb3s.png'},
     ['wplicense'] = {label = 'Porte de Arma', description = 'Sem registro', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/4TiCw78.png'},

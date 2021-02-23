@@ -173,12 +173,10 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
     while true do
-        local crjSleep = 500
+        Citizen.Wait(1)
         if IsControlJustReleased(1,  118) then
-			crjSleep = 1
             TriggerServerEvent("offred:qthPolicepacorabane")
         end
-		Citizen.Wait(crjSleep)
     end
 end)
 
@@ -1233,4 +1231,34 @@ Citizen.CreateThread(function()
       SetRadarAsExteriorThisFrame()
       SetRadarAsInteriorThisFrame("h4_fake_islandx",vec(4700.0,-5145.0),0,0)
   end
+end)
+
+---- RASTREADOR DE VEICULO
+
+RegisterNetEvent('rastrear')
+AddEventHandler('rastrear',function() 
+	local player = PlayerPedId()
+	if (IsPedSittingInAnyVehicle(player)) then 
+		saveVehicle = GetVehiclePedIsIn(player,true)
+		local vehicle = saveVehicle
+		targetBlip = AddBlipForEntity(vehicle)
+		SetBlipSprite(targetBlip,225)
+		if not i then i = 0 end
+		SetBlipColour(targetBlip,i)
+		i=i+1
+		ShowNotification("~g~Instalando rastreador.")
+	else ShowNotification("~r~Você deve instalar um rastreador em um veículo.") end
+end)
+
+function ShowNotification( text )
+    SetNotificationTextEntry( "STRING" )
+    AddTextComponentString( text )
+    DrawNotification( false, false )
+end
+
+
+RegisterCommand("chuveiro",function()
+    local ped = PlayerPedId()
+    ClearPedBloodDamage(ped)
+    --print("limpado")
 end)

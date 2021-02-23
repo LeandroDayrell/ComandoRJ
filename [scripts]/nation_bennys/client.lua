@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
 			bennys = getNearestBennys()
 		elseif not nui then
 			idle = 5
-			DrawMarker(27, bennys[1],bennys[2],bennys[3]-0.97 ,0,0,0,0,0,0,3.0,3.0,1.0,255, 102, 0,200,0,0,0,1)
+			DrawMarker(27, bennys[1],bennys[2],bennys[3]-0.97 ,0,0,0,0,0,0,3.0,3.0,1.0,128,1,210,200,0,0,0,1)
 			--DrawMarker(36, bennys,0,0,0,0,0,0,1.0,3.0,1.0,255, 102, 0,200,0,0,0,1)
 			local playercoords = GetEntityCoords(PlayerPedId())
 			local distance = #(playercoords - bennys)

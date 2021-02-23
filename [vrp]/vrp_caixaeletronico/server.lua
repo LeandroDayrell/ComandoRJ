@@ -51,7 +51,7 @@ function func.checkRobbery(id,x,y,z,head)
 			dinheirosujo = {}
 			dinheirosujo[user_id] = caixas[id].seconds
 			vRPclient.setStandBY(source,parseInt(700))
-			recompensa = parseInt(math.random(13000,17000)/caixas[id].seconds)
+			recompensa = parseInt(math.random(2000,3000)/caixas[id].seconds)
 			TriggerClientEvent('iniciandocaixaeletronico',source,x,y,z,caixas[id].seconds,head)
 			vRPclient._playAnim(source,false,{{"anim@heists@ornate_bank@grab_cash_heels","grab"}},true)
 			for l,w in pairs(policia) do

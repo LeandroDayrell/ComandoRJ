@@ -175,7 +175,7 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(10)
+		Citizen.Wait(1)
 		local ped = PlayerPedId()
 		if menu_state.opened then
 			DisableControlAction(0,75)
@@ -192,7 +192,7 @@ Citizen.CreateThread(function()
 		-- AGUARDAR (F1)
 		if IsControlJustPressed(0,288) then
 			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 100 and not menu_state.opened and not menu_celular then
-				if IsEntityPlayingAnim(ped,"anim@heists@heist_corona@single_team","single_team_loop_boss",3) then
+				if IsEntityPlayingAnim(ped,"anim@heists@heist_corona@single_team","single_team_loop_boss",1) then
 					tvRP.DeletarObjeto()
 				else
 					tvRP.playAnim(true,{{"anim@heists@heist_corona@single_team","single_team_loop_boss"}},true)
@@ -200,14 +200,39 @@ Citizen.CreateThread(function()
         	end
 		end
 
+		-- AGUARDAR (F2)
+		if IsControlJustPressed(0,289) then
+			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 101 and not menu_state.opened and not menu_celular then
+				if IsEntityPlayingAnim(ped,"mini@strip_club@idles@bouncer@base","base",1) then
+					tvRP.DeletarObjeto()
+				else
+					tvRP.playAnim(true,{{"mini@strip_club@idles@bouncer@base","base"}},true)
+				end
+        	end
+		end
+
 		 --DEDO DO MEIO (F3)
 		if IsControlJustPressed(0,170) then
 			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 100 and not menu_state.opened and not menu_celular then
-				if IsEntityPlayingAnim(ped,"anim@mp_player_intupperfinger","idle_a_fp",3) then
+				if IsEntityPlayingAnim(ped,"anim@mp_player_intupperfinger","idle_a_fp",1) then
 					tvRP.DeletarObjeto()
 				else
 					tvRP.playAnim(true,{{"anim@mp_player_intupperfinger","idle_a_fp"}},true)
 				end
+        	end
+		end
+
+		-- PUTO (F5)
+		if IsControlJustPressed(0,166) then
+			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 101 and not menu_state.opened and not menu_celular then
+				tvRP.playAnim(true,{{"misscarsteal4@actor","actor_berating_loop"}},false)
+        	end
+		end
+
+		-- BLZ (DEL)
+		if IsControlJustPressed(0,178) then
+			if not IsPedInAnyVehicle(ped) and GetEntityHealth(ped) > 101 and not menu_state.opened and not menu_celular then
+				tvRP.playAnim(true,{{"anim@mp_player_intincarthumbs_upbodhi@ps@","enter"}},false)
         	end
 		end
 
@@ -329,10 +354,9 @@ local anims = {
 
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
+		Citizen.Wait(1)
 		for _,block in pairs(anims) do
 			if IsEntityPlayingAnim(PlayerPedId(),block.dict,block.anim,3) or object then
-				crjSleep = 1
 				DisableControlAction(0,16,true)
 				DisableControlAction(0,17,true)
 				DisableControlAction(0,24,true)
@@ -341,7 +365,6 @@ Citizen.CreateThread(function()
 				BlockWeaponWheelThisFrame()
 			end
 		end
-		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
