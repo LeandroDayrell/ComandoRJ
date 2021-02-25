@@ -57,22 +57,22 @@ AddEventHandler("gcPhone:faturapayBill", function(id, sender, amount, target, sh
 						xPlayer.removeAccountMoney('bank', amount)
 						xTarget.addAccountMoney('bank',amount)
 
-						TriggerClientEvent("esx:showNotification", src, "Fatura ödendi $" .. amount)
-						TriggerClientEvent("esx:showNotification", sender, "Yeterli paran yok.")
-						TriggerClientEvent("esx:showNotification", xTarget.source, "Fatura Ödendi $" .. amount)
+						TriggerClientEvent("esx:showNotification335", src, "Fatura ödendi $" .. amount)
+						TriggerClientEvent("esx:showNotification335", sender, "Yeterli paran yok.")
+						TriggerClientEvent("esx:showNotification335", xTarget.source, "Fatura Ödendi $" .. amount)
 
 					end)
 					
 				else
-					TriggerClientEvent("esx:showNotification", sender, "Yeterli paran yok.")
-					TriggerClientEvent("esx:showNotification", src, "Fatura ödendi $" .. amount)
+					TriggerClientEvent("esx:showNotification335", sender, "Yeterli paran yok.")
+					TriggerClientEvent("esx:showNotification335", src, "Fatura ödendi $" .. amount)
 
 
 				end
 
 			else
 				
-				TriggerClientEvent("esx:showNotification", xTarget.source, "Fatura Ödendi of $" .. amount)
+				TriggerClientEvent("esx:showNotification335", xTarget.source, "Fatura Ödendi of $" .. amount)
 
 			end				
 	
@@ -82,7 +82,7 @@ AddEventHandler("gcPhone:faturapayBill", function(id, sender, amount, target, sh
 	
 	
 	else
-TriggerEvent('esx_addonaccount:getSharedAccount', target, function(account)	
+TriggerEvent('esx_addonaccount:getSharedAccount335', target, function(account)	
 
 if xTarget ~= nil then	
     if amount ~= nil then
@@ -94,22 +94,22 @@ if xTarget ~= nil then
 						xPlayer.removeAccountMoney('bank', amount)
 						account.addMoney(amount)
 
-						TriggerClientEvent("esx:showNotification", src, "Fatura ödendi $" .. amount)
-						TriggerClientEvent("esx:showNotification", sender, "Yeterli paran yok.")
-						TriggerClientEvent("esx:showNotification", xTarget.source, "Fatura Ödendi $" .. amount)
+						TriggerClientEvent("esx:showNotification335", src, "Fatura ödendi $" .. amount)
+						TriggerClientEvent("esx:showNotification335", sender, "Yeterli paran yok.")
+						TriggerClientEvent("esx:showNotification335", xTarget.source, "Fatura Ödendi $" .. amount)
 
 					end)
 					
 				else
-					TriggerClientEvent("esx:showNotification", sender, "Yeterli paran yok.")
-					TriggerClientEvent("esx:showNotification", src, "Fatura ödendi $" .. amount)
+					TriggerClientEvent("esx:showNotification335", sender, "Yeterli paran yok.")
+					TriggerClientEvent("esx:showNotification335", src, "Fatura ödendi $" .. amount)
 
 
 				end
 
 			else
 				
-				TriggerClientEvent("esx:showNotification", xTarget.source, "Fatura Ödendi of $" .. amount)
+				TriggerClientEvent("esx:showNotification335", xTarget.source, "Fatura Ödendi of $" .. amount)
 
 			end				
 	

@@ -1,6 +1,6 @@
 ESX = nil
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+TriggerEvent('esx:getSharedObject335', function(obj) ESX = obj end)
 
 ESX.RegisterServerCallback('gcPhone:getCars', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
@@ -27,7 +27,7 @@ RegisterServerEvent('gcPhone:finish')
 AddEventHandler('gcPhone:finish', function(plate)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	--TriggerClientEvent('esx:showNotification', _source, _U('vale_get'))
+	--TriggerClientEvent('esx:showNotification335', _source, _U('vale_get'))
 	xPlayer.removeAccountMoney('bank', Config.ValePrice)
 end)
 

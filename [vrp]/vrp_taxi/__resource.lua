@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 ------------------------------------------------------
 ----------https://github.com/DaviReisVieira-----------
 ------------EMAIL:VIEIRA08DAVI38@GMAIL.COM------------

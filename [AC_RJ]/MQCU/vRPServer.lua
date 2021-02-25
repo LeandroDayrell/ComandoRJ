@@ -4,37 +4,26 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP","vRP")
 
 -------LOG BANIMENTOS--------
-ac_webhook_anthack = "https://discordapp.com/api/webhooks/720475566347649066/-giS9Hox0XI_YdncklX_WLKrn4nd1qWew_X53s2d1cDpGP1Gddh2wzBfCNAQAtJMiDYW"
+ac_webhook_anthack = "https://discord.com/api/webhooks/813573975179264010/XKHE34_tVoZRGKnR8jPzQM1T5v8EFTdO0w7Ifos_apGVmxDFqd-eInhMghR3TQahAlSl"
 -----------------------------
 
 -------LOG SUSPEITOS---------
-ac_webhook_suspeitos = "https://discordapp.com/api/webhooks/751626825045770340/YdDkFPe00UYSeyUOC6s_-vEJcoONIxag_gldyfNwL-UDT3EXh-_8RpwLWJDstq4PvjyZ"	
+ac_webhook_suspeitos = "https://discord.com/api/webhooks/813574042777813023/3pW_UZBy-GjE1C84qbZN23UDSmUNVfJQ_U9tBzYPfYAY5UAGjZ70qkJdedORFIgDFaeU"	
 -----------------------------
 
 -------LOG COMANDOS----------
-ac_webhook_logstaff = "https://discordapp.com/api/webhooks/758821656407441419/P1fInwemEtCayQ_cUYy4-ltuoYdeO5GhU0lzzHc_OA2zEs1AvkMU-ZxQBZlcd0dDrUb5"
+ac_webhook_logstaff = "https://discord.com/api/webhooks/813574185736863764/iTxhxz8CkAa6B_MLqlIYGbrqx9DeL67isBlo7sY5pX9CS84YqVLG7nIwEyEbEn9nXQ7w"
 -----------------------------
 
 -------------------------------
 -------GETHACK PARAMETROS------
-local banir_blacklisted = true
+local banir_blacklisted = false
 local minimo_bans = 5
 local excecao = {}
 excecao[1]=true
 --oque fica entre os [] é o id de quem não deve ser banido por mais q tenha ultrapassado o limite de bans
 ------------------------------
-
-
-
-Citizen.CreateThread(function()
-	
-	function SendWebhookMessage(webhook,message)
-		if webhook ~= "none" then
-			PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
-		end
-	end
-end)
-
+Citizen.CreateThread(function()function SendWebhookMessage(webhook,message)	if webhook ~= "none" then PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' }) end end end)
 
 local sistemas = {}
 sistemas["[COLETE_HACK]"]=true
@@ -49,12 +38,28 @@ sistemas["[Monster_Injetado2]"]=false --IGNORA, ISSO JA FUNCIONOU E NO MOMENTO S
 sistemas["[Monster_Injetado3]"]=false --IGNORA, ISSO JA FUNCIONOU E NO MOMENTO SÓ DA ALARME FALSO
 sistemas["[Monster_Diretor]"]=true
 sistemas["[PROP]"]=true
-sistemas["[NOCLIP]"]=false
+sistemas["[NOCLIP]"]=true
 sistemas["[GODMOD]"]=true
 sistemas["[MODMENU]"]=true
 sistemas["[OUTROS2]"]=false
-sistemas["[REMOVE_GIVE_WEAPON]"]=false
+sistemas["[REMOVE_GIVE_WEAPON]"]=true
+sistemas["[Multiplicador_Dano]"]=true
+sistemas["[SPAWN_DINHEIRO]"]=true
+sistemas["[OUTROS4]"]=true
+sistemas["[TELEPORT]"]=true
+sistemas["[STOPCLIENT]"]=true
+sistemas["[STOPCLIENT2]"]=true
+sistemas["[STOPCLIENT3]"]=false
 
+sistemas["[WALL2]"]=false
+sistemas["[EXPLOSAO3]"]=false
+sistemas["[Modo_Spawner]"]=true
+sistemas["[SPAWN_VEICULOS]"]=false
+sistemas["[SPAWN_PROP]"]=false
+sistemas["[SPAWN_NPC]"]=false
+sistemas["[SPAWN_VEICULO]"]=false
+sistemas["[EXPLOSAO4]"]=true
+sistemas["[MODMENU4]"]=true
 
 local banidos = {}
 AddEventHandler("MQCU:LixoDetectado", function(user_id,msg,cb)
@@ -64,8 +69,11 @@ AddEventHandler("MQCU:LixoDetectado", function(user_id,msg,cb)
 				banidos[user_id]=true
 				local id = user_id
 				local source = vRP.getUserSource(user_id)
-				local x,y,z = vRPclient.getPosition(source)
-				local reason = "ANTI HACK: 	localização:	"..x..","..y..","..z
+				
+				local ped = GetPlayerPed(source)
+				local loc = GetEntityCoords(ped)
+				local reason = "ANTI HACK: 	localização:	"..loc.x..","..loc.y..","..loc.z
+				
 				vRP.setBanned(id,true)					
 				local temp = os.date("%x  %X")
 				--vRP.logs("savedata/BANIMENTOS.txt","ANTI HACK	[ID]: "..id.."		"..temp.."[BAN]		[MOTIVO:"..msg.."]	"..reason)
@@ -84,7 +92,7 @@ AddEventHandler("MQCU:LixoDetectado", function(user_id,msg,cb)
 			SendWebhookMessage(ac_webhook_suspeitos, "ANTI HACK     Suspeito	[ID]: "..user_id.."		"..temp.."[BAN]		[MOTIVO:"..msg.."]	")
 		end
 	else
-		SendWebhookMessage(ac_webhook_anthack, "Função não mapeada => "..msg.."          ["..user_id.."]")
+		SendWebhookMessage(ac_webhook_suspeitos, "Função não mapeada => "..msg.."          ["..user_id.."]")
 	end
 end)
 
@@ -123,9 +131,46 @@ if data.colete then
 end
 ]]
 
+RegisterServerEvent("MCU:Load")
+AddEventHandler("MCU:Load",function(cb)
+	local vrpobj = {
+		MQCU = GetCurrentResourceName(),
+		getUserId = vRP.getUserId,
+		getUserIdByIdentifier = vRP.getUserIdByIdentifier,
+		isBanned = vRP.isBanned,
+		getUserSource = vRP.getUserSource,
+		setSData = vRP.setSData,
+		getSData = vRP.getSData,
+		hasPermission = vRP.hasPermission,
+		tryPayment = vRP.tryPayment,
+		tryFullPayment = vRP.tryFullPayment,
+		getUData = vRP.getUData,
+		setUData = vRP.setUData,
+		giveMoney = vRP.giveMoney,
+		giveBankMoney = vRP.giveBankMoney,
+		getUserIdentity = vRP.getUserIdentity,
+		Log = RegistraLog,
+		getPlacas = getAllPlacas,
+		placas = {}
+	}	
+	cb(vrpobj)
+end)
+vRP._prepare("mqcu/get_AllPlacas","SELECT plate FROM vrp_user_vehicles WHERE user_id = @user_id")
+function getAllPlacas(user_id)
+	return vRP.query("mqcu/get_AllPlacas", {user_id = user_id})
+end
 
 
-
+function RegistraLog(a,arquivo)
+	if(a~=nil)then
+		a = "\n"..a
+		archive = io.open(arquivo..".txt","a")
+		if archive then	
+			archive:write(a)
+		end
+		archive:close()
+	end
+end
 
 
 
@@ -137,22 +182,12 @@ AddEventHandler("MQCU:LogProp", function(msg, flag)
 end)
 
 
-function vRP.logInfoToFile(file,info)
-  file = io.open(file, "a")
-  if file then
-    file:write(os.date("%c").." => "..info.."\n")
-  end
-  file:close()
-end
-
 
 AddEventHandler('MQCU:BlackList', function (user_id, qtd)
 	if(banir_blacklisted and parseInt(qtd)>= minimo_bans and excecao[user_id]==nil)then
         vRP.setBanned(user_id,true)                    
         local temp = os.date("%x  %X")
 		GravaLog("[ID]: "..user_id.."        "..temp.."[BAN]        [MOTIVO:BLACKLIST (QTD BANIMENTOS:"..qtd..")]")
-		vRP.logInfoToFile("logRJ/wl.txt","[ID]: "..user_id.."        "..temp.."[BAN]        [MOTIVO:BLACKLIST (QTD BANIMENTOS:"..qtd..")]")
-		
     end
 end)
 
@@ -231,7 +266,6 @@ end)
 AddEventHandler("MCU:getUData", function(user_id,key,cb)
 	cb(vRP.getUData( user_id,key))	
 end)
-
 AddEventHandler("MCU:setUData", function(user_id,key,data)
 	 vRP.setUData(user_id,key, data)	
 end)
@@ -263,6 +297,3 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source,first_spawn)
 		end
 	end
 end)
-
-
-

@@ -10,7 +10,7 @@ div { border: 0; outline: 0; vertical-align: baseline; background: transparent; 
 	position: fixed;
 	transform: translate(-50%,-50%);
 	background-color: rgba(0, 0, 0, 0.432);
-	width: 758px;
+	width: 1020px;
 	padding: 35px;
     border-radius: 32px;
 	transition: all linear .1s;
@@ -66,7 +66,7 @@ img{
 	font-size: 32px !important;
 	cursor: pointer !important;
 	text-transform: uppercase !important;
-	width: 9% !important;
+	width: 58% !important;
 	height: 5% !important;
 	opacity: 0.8 !important;
 	bottom: 250px !important;
@@ -74,7 +74,7 @@ img{
 	background-color: transparent !important;
 	border: 0 !important;
 	margin-left: 705px !important;
-	margin-top: -25px !important;
+	margin-top: -40px !important;
 }
 
 .close:hover{

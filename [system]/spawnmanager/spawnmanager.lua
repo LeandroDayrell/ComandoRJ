@@ -133,7 +133,7 @@ local function freezePlayer(id,freeze)
 
 		SetEntityCollision(ped,false)
 		FreezeEntityPosition(ped,true)
-		SetPlayerInvincible(player,false)--mqcu
+		SetPlayerInvincible(player,true)
 
 		if not IsPedFatallyInjured(ped) then
 			ClearPedTasksImmediately(ped)

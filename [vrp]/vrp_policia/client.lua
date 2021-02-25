@@ -258,7 +258,7 @@ AddEventHandler('prisioneiro',function(status)
 	reducaopenal = false
 	local ped = PlayerPedId()
 	if prisioneiro then
-	--	SetEntityInvincible(ped,true)
+	--	SetEntityInvincible(ped,false) --mqcu
 		FreezeEntityPosition(ped,true)
 		SetEntityVisible(ped,false,false)
 		SetTimeout(10000,function()

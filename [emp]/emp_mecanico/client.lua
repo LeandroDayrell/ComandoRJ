@@ -80,7 +80,7 @@ Citizen.CreateThread(function()
 				if distance <= 2.5 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA ENTREGAR FERRAMENTA",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) and emP.checkPermission() then
-						if IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("flatbed")) then
+						if IsVehicleModel(GetVehiclePedIsUsing(ped),GetHashKey("slamtruck")) then
 							if emP.checkPayment() then
 								RemoveBlip(blips)
 								backentrega = selecionado

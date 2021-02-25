@@ -1,3 +1,6 @@
+local Tunnel = module('vrp', 'lib/Tunnel')
+local Proxy = module('vrp', 'lib/Proxy')
+vRP = Proxy.getInterface('vRP')
 
 local isNearPump = false
 local isFueling = false
@@ -118,7 +121,8 @@ end)
 
 RegisterNetEvent('vrp_legacyfuel:galaopejout')
 AddEventHandler('vrp_legacyfuel:galaopejout',function()
-	GiveWeaponToPed(PlayerPedId(),883325847,4500,false,true)
+	--GiveWeaponToPed(PlayerPedId(),883325847,4500,false,true)
+	vRP.giveWeapons({["WEAPON_PETROLCAN"] = { ammo = 4500 }})
 end)
 
 function Round(num,numDecimalPlaces)

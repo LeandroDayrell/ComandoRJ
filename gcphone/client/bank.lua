@@ -19,8 +19,8 @@ function setBankBalance (value)
       SendNUIMessage({event = 'updateBankbalance', banking = bank})
 end
 
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(playerData)
+RegisterNetEvent('esx:playerLoaded335')
+AddEventHandler('esx:playerLoaded335', function(playerData)
       local accounts = playerData.accounts or {}
       for index, account in ipairs(accounts) do 
             if account.name == 'bank' then
@@ -30,8 +30,8 @@ AddEventHandler('esx:playerLoaded', function(playerData)
       end
 end)
 
-RegisterNetEvent('esx:setAccountMoney')
-AddEventHandler('esx:setAccountMoney', function(account)
+RegisterNetEvent('esx:setAccountMoney335')
+AddEventHandler('esx:setAccountMoney335', function(account)
       if account.name == 'bank' then
             setBankBalance(account.money)
       end

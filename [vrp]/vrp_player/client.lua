@@ -1131,18 +1131,7 @@ function drawNotification(Notification)
     DrawNotification(false, false)
 end
 
-RegisterNetEvent("arrumarpneu")
-AddEventHandler("arrumarpneu",function()
-    local vehicle = vRP.getNearestVehicle(7)
-    if vehicle then
-        SetVehicleTyreFixed(vehicle,0,2)
-        SetVehicleTyreFixed(vehicle,0,3)
-        SetVehicleTyreFixed(vehicle,0,4)
-        SetVehicleTyreFixed(vehicle,0,5)
-    else
-        TriggerEvent("Notify","negado","Você precisa estar próximo de um <b>veículo</b>.")
-    end
-end)
+
 
 Citizen.CreateThread(function()
     while true do

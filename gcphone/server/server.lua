@@ -453,7 +453,7 @@ end)
 --====================================================================================
 --  OnLoad
 --====================================================================================
-AddEventHandler('esx:playerLoaded',function(playerId, xPlayer)
+AddEventHandler('esx:playerLoaded335',function(playerId, xPlayer)
 	local sourcePlayer = tonumber(source)
 	local identifier = getPlayerID(source)
 	getOrGeneratePhoneNumber(sourcePlayer,identifier,function(myPhoneNumber)

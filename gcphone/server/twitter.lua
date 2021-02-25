@@ -4,7 +4,7 @@
 
 ESX = nil
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+TriggerEvent('esx:getSharedObject335', function(obj) ESX = obj end)
 
 function TwitterGetTweets (accountId, cb)
   if accountId == nil then

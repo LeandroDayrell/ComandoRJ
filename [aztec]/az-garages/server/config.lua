@@ -58,7 +58,8 @@ vAZ.config.garages.service = {
     [7] = {  
         permission = 'mecanico.permissao',
         vehicles = {
-            "flatbed"
+            "flatbed",
+            "slamtruck"
         }
     },
     [8] = {
@@ -151,6 +152,16 @@ vAZ.config.garages.service = {
 	[21] = {
         vehicles = {
             "seashark3",
+        }
+    },
+	[22] = {
+        vehicles = {
+            "avisa",
+        }
+    },
+	[23] = {
+        vehicles = {
+            "rebel",
         }
     }
 }

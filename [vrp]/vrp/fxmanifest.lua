@@ -1,3 +1,5 @@
+client_script "lib/lib.lua"
+
 fx_version 'bodacious'
 game 'gta5'
 

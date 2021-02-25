@@ -53,7 +53,7 @@ AddEventHandler('gcPhone:buyMarket', function(itemName, amount, price)
             while (time ~= 0) do -- Whist we have time to wait
                Wait( 1000 ) -- Wait a second
                time = time - 1
-		       TriggerClientEvent('esx:showNotification', _source, "Time Remaining " .. time)
+		       TriggerClientEvent('esx:showNotification335', _source, "Time Remaining " .. time)
                -- 1 Second should have past by now
 			end
 		
@@ -61,7 +61,7 @@ AddEventHandler('gcPhone:buyMarket', function(itemName, amount, price)
 			TriggerClientEvent("Notify",source,"sucesso","Você comprou um "..itemName.." por"..price.."Doláres")
 	else
 		local missingMoney = price - xPlayer.getBank()
-		TriggerClientEvent('esx:showNotification', _source, "you do not have ~r~enough~s~ money, you\'re ~y~missing~s~ ~r~" .. missingMoney .. "$~s~!")
+		TriggerClientEvent('esx:showNotification335', _source, "you do not have ~r~enough~s~ money, you\'re ~y~missing~s~ ~r~" .. missingMoney .. "$~s~!")
 	end
 end)
 

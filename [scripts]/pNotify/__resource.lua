@@ -1,3 +1,5 @@
+client_script "@vrp/lib/lib.lua" --Para remover esta pendencia de todos scripts, execute no console o comando "uninstall"
+
 description "Simple Notification Script using https://notifyjs.com/"
 
 ui_page "html/index.html"

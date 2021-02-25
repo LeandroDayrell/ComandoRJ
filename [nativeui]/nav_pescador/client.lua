@@ -48,7 +48,8 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("pescador-vender","mesmeralda")	
 	elseif data == "diamante" then
 		TriggerServerEvent("pescador-vender","diamante")
-
+	elseif data == "perolatratada" then
+		TriggerServerEvent("pescador-vender","perolatratada")
 
 	elseif data == "fechar" then
 		ToggleActionMenu()

@@ -49,6 +49,23 @@ vAZ.handlers = {
         end
         cb(false)
     end,
+    ['pneu'] = function(source, user_id, item, amount, cb)
+        if not vRPclient.inVehicle(source) then
+            TriggerClientEvent("progress",source,20000)
+                if vRP.tryGetInventoryItem(user_id,item,1, false) then 
+                    TriggerClientEvent('arrumarpneu', source)
+                else 
+                    TriggerClientEvent("Notify", source,"negado", 'Voce nao tem pneu no seu inventario' )
+                end
+        else
+            TriggerClientEvent("Notify", source,"negado", 'Voce precisar estar fora do veiculo') 
+        end 
+
+        cb(false)
+    end,
+
+
+
     ['bandagem'] = function(source, user_id, item, amount, cb)  
         local user_health = vRPclient.getHealth(source)      
         if user_health > 101 and user_health < 229 then

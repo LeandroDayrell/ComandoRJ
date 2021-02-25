@@ -54,7 +54,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(10)
         if ESX == nil then
-            TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+            TriggerEvent('esx:getSharedObject335', function(obj) ESX = obj end)
             Citizen.Wait(200)
         end
     end
@@ -71,7 +71,7 @@ function ShowNoPhoneWarning ()
   ESX.ShowNotification("Vous n'avez pas de ~r~téléphone~s~")
 end --]] 
 
-AddEventHandler('esx:onPlayerDeath', function()
+AddEventHandler('esx:onPlayerDeath335', function()
   if menuIsOpen then
     menuIsOpen = false
     TriggerEvent('gcPhone:setMenuStatus', false)
@@ -81,7 +81,7 @@ AddEventHandler('esx:onPlayerDeath', function()
   end
 end)
 
-AddEventHandler('esx:playerLoaded', function()
+AddEventHandler('esx:playerLoaded335', function()
   TriggerServerEvent('gcPhone:allUpdate')
 end)
 --====================================================================================

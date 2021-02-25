@@ -261,7 +261,29 @@ vAZ.config.garages.service = {
 			{ ['x'] = -1605.90, ['y'] = -1160.71, ['z'] = 1.33 }
 		},
 		spaces = {
-			{ ['x'] =  -1609.9, ['y'] = -1161.08, ['z'] = 0.89, ['h'] = 75.0 }
+			{ ['x'] = -1609.9, ['y'] = -1161.08, ['z'] = 0.89, ['h'] = 75.0 }
+		}
+	},
+	[22] = {
+		name = 'Submarino',
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 357},
+		point = {
+			{ ['x'] = -1604.53, ['y'] = 5256.67, ['z'] = 2.074 }
+		},
+		spaces = {
+			{ ['x'] = -1600.654, ['y'] = 5255.96, ['z'] = -0.47, ['h'] = 75.0 }
+		}
+	},
+	[23] = {
+		name = 'Submarino 2',
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 357},
+		point = {
+			{ ['x'] = -1580.15, ['y'] = 5173.99, ['z'] = 19.56 }
+		},
+		spaces = {
+			{ ['x'] = -1578.95, ['y'] = 5168.25, ['z'] = 19.55, ['h'] = 75.0 }
 		}
 	}
 }
@@ -385,6 +407,32 @@ vAZ.config.garages.personal = {
 		},
 		spaces = {
 			{ x = -721.779, y = -1365.881, z = -0.3999133, h = 308.65 }
+		}
+	},
+	[6] ={
+		name = 'Garagem ilha',
+		type = 'personal',
+		availables = {'Off-road'},
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 357},
+		point = {
+			{ x = 5000.39, y = -5147.79, z = 2.57 }
+		},
+		spaces = {
+			{ x = 5005.17, y = -5140.97, z = 2.57, h = 308.65 }
+		}
+	},
+	[7] ={
+		name = 'Garagem barco 03',
+		type = 'personal',
+		availables = {'boat'},
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 357},
+		point = {
+			{ x = 4976.70, y = -5168.32, z = 2.40 }
+		},
+		spaces = {
+			{ x = 4968.26, y = -5169.38, z = 1.93, h = 50.0 }
 		}
 	}
 }

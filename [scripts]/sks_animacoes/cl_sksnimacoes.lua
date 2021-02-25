@@ -2,14 +2,15 @@
 ---       OTIMIZADO E CORRIGIDO POR SkipS#0001
 ---  MAIS SCRIPTS NO MEU DISCORD: discord.gg/nEjFW2m
 ---------------------------------------------------------------------
-
+local Tunnel = module("vrp","lib/Tunnel")
+local Proxy = module("vrp","lib/Proxy")
+vRP = Proxy.getInterface("vRP")
 ------------------------------------------------------------------------------
 -- CARREGAR NO OMBRO
 --------------------------------------------------------------------------------
 local carryingBackInProgress = false
 
 RegisterCommand("carregar",function(source, args)
-	print("carrying")
 	if not carryingBackInProgress then
 		carryingBackInProgress = true
 		local player = PlayerPedId()	
@@ -28,42 +29,42 @@ RegisterCommand("carregar",function(source, args)
 		local closestPlayer = GetClosestPlayer(3)
 		target = GetPlayerServerId(closestPlayer)
 		if closestPlayer ~= nil then
-			print("triggering cmg2_animations:sync")
-			TriggerServerEvent('cmg2_animations:sync', closestPlayer, lib,lib2, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget)
+			--print("triggering cmg2_animations:syncSCRIPTFODIDO")
+			TriggerServerEvent('cmg2_animations:syncSCRIPTFODIDO', closestPlayer, lib,lib2, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget)
 		else
 			print("[CMG Anim] Nenhum jogador por perto")
 		end
 	else
 		carryingBackInProgress = false
-		ClearPedSecondaryTask(PlayerPedId())
-		DetachEntity(PlayerPedId(), true, false)
+		ClearPedSecondaryTask(GetPlayerPed(-1))
+		DetachEntity(GetPlayerPed(-1), true, false)
 		local closestPlayer = GetClosestPlayer(3)
 		target = GetPlayerServerId(closestPlayer)
-		TriggerServerEvent("cmg2_animations:stop",target)
+		TriggerServerEvent("cmg2_animations:stopSCRIPTFODIDO",target)
 	end
 end,false)
 
-RegisterNetEvent('cmg2_animations:syncTarget')
-AddEventHandler('cmg2_animations:syncTarget', function(target, animationLib, animation2, distans, distans2, height, length,spin,controlFlag)
-	local playerPed = PlayerPedId()
+RegisterNetEvent('cmg2_animations:syncTargetSCRIPTFODIDO')
+AddEventHandler('cmg2_animations:syncTargetSCRIPTFODIDO', function(target, animationLib, animation2, distans, distans2, height, length,spin,controlFlag)
+	local playerPed = GetPlayerPed(-1)
 	local targetPed = GetPlayerPed(GetPlayerFromServerId(target))
 	carryingBackInProgress = true
-	print("triggered cmg2_animations:syncTarget")
+	--print("triggered cmg2_animations:syncTargetSCRIPTFODIDO")
 	RequestAnimDict(animationLib)
 
 	while not HasAnimDictLoaded(animationLib) do
 		Citizen.Wait(10)
 	end
 	if spin == nil then spin = 180.0 end
-	AttachEntityToEntity(PlayerPedId(), targetPed, 0, distans2, distans, height, 0.5, 0.5, spin, false, false, false, false, 2, false)
+	AttachEntityToEntity(GetPlayerPed(-1), targetPed, 0, distans2, distans, height, 0.5, 0.5, spin, false, false, false, false, 2, false)
 	if controlFlag == nil then controlFlag = 0 end
 	TaskPlayAnim(playerPed, animationLib, animation2, 8.0, -8.0, length, controlFlag, 0, false, false, false)
 end)
 
-RegisterNetEvent('cmg2_animations:syncMe')
-AddEventHandler('cmg2_animations:syncMe', function(animationLib, animation,length,controlFlag,animFlag)
-	local playerPed = PlayerPedId()
-	print("triggered cmg2_animations:syncMe")
+RegisterNetEvent('cmg2_animations:syncMeSCRIPTFODIDO')
+AddEventHandler('cmg2_animations:syncMeSCRIPTFODIDO', function(animationLib, animation,length,controlFlag,animFlag)
+	local playerPed = GetPlayerPed(-1)
+	--print("triggered cmg2_animations:syncMeSCRIPTFODIDO")
 	RequestAnimDict(animationLib)
 
 	while not HasAnimDictLoaded(animationLib) do
@@ -76,11 +77,11 @@ AddEventHandler('cmg2_animations:syncMe', function(animationLib, animation,lengt
 	Citizen.Wait(length)
 end)
 
-RegisterNetEvent('cmg2_animations:cl_stop')
-AddEventHandler('cmg2_animations:cl_stop', function()
+RegisterNetEvent('cmg2_animations:cl_stopSCRIPTFODIDO')
+AddEventHandler('cmg2_animations:cl_stopSCRIPTFODIDO', function()
 	carryingBackInProgress = false
-	ClearPedSecondaryTask(PlayerPedId())
-	DetachEntity(PlayerPedId(), true, false)
+	ClearPedSecondaryTask(GetPlayerPed(-1))
+	DetachEntity(GetPlayerPed(-1), true, false)
 end)
 
 function GetPlayers()
@@ -99,7 +100,7 @@ function GetClosestPlayer(radius)
     local players = GetPlayers()
     local closestDistance = -1
     local closestPlayer = -1
-    local ply = PlayerPedId()
+    local ply = GetPlayerPed(-1)
     local plyCoords = GetEntityCoords(ply, 0)
 
     for index,value in ipairs(players) do
@@ -113,7 +114,7 @@ function GetClosestPlayer(radius)
             end
         end
     end
-	print("jogador mais próximo é dist: " .. tostring(closestDistance))
+	--print("jogador mais próximo é dist: " .. tostring(closestDistance))
 	if closestDistance <= radius then
 		return closestPlayer
 	else
@@ -144,42 +145,42 @@ RegisterCommand("cavalinho",function(source, args)
 		local closestPlayer = GetClosestPlayer(3)
 		target = GetPlayerServerId(closestPlayer)
 		if closestPlayer ~= nil then
-			print("triggering cmg2_animations:sync")
-			TriggerServerEvent('cmg2_animations:sync', closestPlayer, lib, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget)
+			--print("triggering cmg2_animations:syncSCRIPTFODIDO")
+			TriggerServerEvent('cmg2_animations:syncSCRIPTFODIDO_2', closestPlayer, lib, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget)
 		else
 			print("[CMG Anim] No player nearby")
 		end
 	else
 		piggyBackInProgress = false
-		ClearPedSecondaryTask(PlayerPedId())
-		DetachEntity(PlayerPedId(), true, false)
+		ClearPedSecondaryTask(GetPlayerPed(-1))
+		DetachEntity(GetPlayerPed(-1), true, false)
 		local closestPlayer = GetClosestPlayer(3)
 		target = GetPlayerServerId(closestPlayer)
-		TriggerServerEvent("cmg2_animations:stop",target)
+		TriggerServerEvent("cmg2_animations:stopSCRIPTFODIDO",target)
 	end
 end,false)
 
-RegisterNetEvent('cmg2_animations:syncTarget')
-AddEventHandler('cmg2_animations:syncTarget', function(target, animationLib, animation2, distans, distans2, height, length,spin,controlFlag)
-	local playerPed = PlayerPedId()
+RegisterNetEvent('cmg2_animations:syncTargetSCRIPTFODIDO')
+AddEventHandler('cmg2_animations:syncTargetSCRIPTFODIDO', function(target, animationLib, animation2, distans, distans2, height, length,spin,controlFlag)
+	local playerPed = GetPlayerPed(-1)
 	local targetPed = GetPlayerPed(GetPlayerFromServerId(target))
 	piggyBackInProgress = true
-	print("triggered cmg2_animations:syncTarget")
+	--print("triggered cmg2_animations:syncTargetSCRIPTFODIDO")
 	RequestAnimDict(animationLib)
 
 	while not HasAnimDictLoaded(animationLib) do
 		Citizen.Wait(10)
 	end
 	if spin == nil then spin = 180.0 end
-	AttachEntityToEntity(PlayerPedId(), targetPed, 0, distans2, distans, height, 0.5, 0.5, spin, false, false, false, false, 2, false)
+	AttachEntityToEntity(GetPlayerPed(-1), targetPed, 0, distans2, distans, height, 0.5, 0.5, spin, false, false, false, false, 2, false)
 	if controlFlag == nil then controlFlag = 0 end
 	TaskPlayAnim(playerPed, animationLib, animation2, 8.0, -8.0, length, controlFlag, 0, false, false, false)
 end)
 
-RegisterNetEvent('cmg2_animations:syncMe')
-AddEventHandler('cmg2_animations:syncMe', function(animationLib, animation,length,controlFlag,animFlag)
-	local playerPed = PlayerPedId()
-	print("triggered cmg2_animations:syncMe")
+RegisterNetEvent('cmg2_animations:syncMeSCRIPTFODIDO')
+AddEventHandler('cmg2_animations:syncMeSCRIPTFODIDO', function(animationLib, animation,length,controlFlag,animFlag)
+	local playerPed = GetPlayerPed(-1)
+	--print("triggered cmg2_animations:syncMeSCRIPTFODIDO")
 	RequestAnimDict(animationLib)
 
 	while not HasAnimDictLoaded(animationLib) do
@@ -192,11 +193,11 @@ AddEventHandler('cmg2_animations:syncMe', function(animationLib, animation,lengt
 	Citizen.Wait(length)
 end)
 
-RegisterNetEvent('cmg2_animations:cl_stop')
-AddEventHandler('cmg2_animations:cl_stop', function()
+RegisterNetEvent('cmg2_animations:cl_stopSCRIPTFODIDO')
+AddEventHandler('cmg2_animations:cl_stopSCRIPTFODIDO', function()
 	piggyBackInProgress = false
-	ClearPedSecondaryTask(PlayerPedId())
-	DetachEntity(PlayerPedId(), true, false)
+	ClearPedSecondaryTask(GetPlayerPed(-1))
+	DetachEntity(GetPlayerPed(-1), true, false)
 end)
 
 function GetPlayers()
@@ -215,7 +216,7 @@ function GetClosestPlayer(radius)
     local players = GetPlayers()
     local closestDistance = -1
     local closestPlayer = -1
-    local ply = PlayerPedId()
+    local ply = GetPlayerPed(-1)
     local plyCoords = GetEntityCoords(ply, 0)
 
     for index,value in ipairs(players) do
@@ -229,7 +230,7 @@ function GetClosestPlayer(radius)
             end
         end
     end
-	print("closest player is dist: " .. tostring(closestDistance))
+	--print("closest player is dist: " .. tostring(closestDistance))
 	if closestDistance <= radius then
 		return closestPlayer
 	else
@@ -242,8 +243,15 @@ end
 ------------------------------------------------------------------
 
 local hostageAllowedWeapons = {
-	"WEAPON_PISTOL",
 	"WEAPON_COMBATPISTOL",
+	"WEAPON_REVOLVER_MK2",
+	"WEAPON_REVOLVER",
+	"WEAPON_PISTOL_MK2",
+	"WEAPON_PISTOL50",
+	"WEAPON_PISTOL",
+	"WEAPON_SNSPISTOL",
+	"WEAPON_SNSPISTOL_MK2",
+	"WEAPON_HEAVYPISTOL"
 	--etc add guns you want
 }
 
@@ -258,11 +266,11 @@ RegisterCommand("srefem",function()
 end)
 
 function takeHostage()
-	ClearPedSecondaryTask(PlayerPedId())
-	DetachEntity(PlayerPedId(), true, false)
+	ClearPedSecondaryTask(GetPlayerPed(-1))
+	DetachEntity(GetPlayerPed(-1), true, false)
 	for i=1, #hostageAllowedWeapons do
-		if HasPedGotWeapon(PlayerPedId(), GetHashKey(hostageAllowedWeapons[i]), false) then
-			if GetAmmoInPedWeapon(PlayerPedId(), GetHashKey(hostageAllowedWeapons[i])) > 0 then
+		if HasPedGotWeapon(GetPlayerPed(-1), GetHashKey(hostageAllowedWeapons[i]), false) then
+			if GetAmmoInPedWeapon(GetPlayerPed(-1), GetHashKey(hostageAllowedWeapons[i])) > 0 then
 				canTakeHostage = true 
 				foundWeapon = GetHashKey(hostageAllowedWeapons[i])
 				break
@@ -296,7 +304,7 @@ function takeHostage()
 		local closestPlayer = GetClosestPlayer(2)
 		target = GetPlayerServerId(closestPlayer)
 		if closestPlayer ~= nil then
-			SetCurrentPedWeapon(PlayerPedId(), foundWeapon, true)
+			SetCurrentPedWeapon(GetPlayerPed(-1), foundWeapon, true)
 			holdingHostageInProgress = true
 			holdingHostage = true 
 			--print("triggering cmg3_animations:sync")
@@ -311,7 +319,7 @@ end
 
 RegisterNetEvent('cmg3_animations:syncTarget')
 AddEventHandler('cmg3_animations:syncTarget', function(target, animationLib, animation2, distans, distans2, height, length,spin,controlFlag,animFlagTarget,attach)
-	local playerPed = PlayerPedId()
+	local playerPed = GetPlayerPed(-1)
 	local targetPed = GetPlayerPed(GetPlayerFromServerId(target))
 	if holdingHostageInProgress then 
 		holdingHostageInProgress = false 
@@ -328,7 +336,7 @@ AddEventHandler('cmg3_animations:syncTarget', function(target, animationLib, ani
 	if spin == nil then spin = 180.0 end
 	if attach then 
 		--print("attaching entity")
-		AttachEntityToEntity(PlayerPedId(), targetPed, 0, distans2, distans, height, 0.5, 0.5, spin, false, false, false, false, 2, false)
+		AttachEntityToEntity(GetPlayerPed(-1), targetPed, 0, distans2, distans, height, 0.5, 0.5, spin, false, false, false, false, 2, false)
 	else 
 		--print("not attaching entity")
 	end
@@ -336,14 +344,14 @@ AddEventHandler('cmg3_animations:syncTarget', function(target, animationLib, ani
 	if controlFlag == nil then controlFlag = 0 end
 	
 	if animation2 == "victim_fail" then 
-		SetEntityHealth(PlayerPedId(),0)
-		DetachEntity(PlayerPedId(), true, false)
+		SetEntityHealth(GetPlayerPed(-1),0)
+		DetachEntity(GetPlayerPed(-1), true, false)
 		TaskPlayAnim(playerPed, animationLib, animation2, 8.0, -8.0, length, controlFlag, 0, false, false, false)
 		beingHeldHostage = false 
 		holdingHostageInProgress = false 
 	elseif animation2 == "shoved_back" then 
 		holdingHostageInProgress = false 
-		DetachEntity(PlayerPedId(), true, false)
+		DetachEntity(GetPlayerPed(-1), true, false)
 		TaskPlayAnim(playerPed, animationLib, animation2, 8.0, -8.0, length, controlFlag, 0, false, false, false)
 		beingHeldHostage = false 
 	else
@@ -353,9 +361,9 @@ end)
 
 RegisterNetEvent('cmg3_animations:syncMe')
 AddEventHandler('cmg3_animations:syncMe', function(animationLib, animation,length,controlFlag,animFlag)
-	local playerPed = PlayerPedId()
+	local playerPed = GetPlayerPed(-1)
 	--print("triggered cmg3_animations:syncMe")
-	ClearPedSecondaryTask(PlayerPedId())
+	ClearPedSecondaryTask(GetPlayerPed(-1))
 	RequestAnimDict(animationLib)
 	while not HasAnimDictLoaded(animationLib) do
 		Citizen.Wait(10)
@@ -363,12 +371,12 @@ AddEventHandler('cmg3_animations:syncMe', function(animationLib, animation,lengt
 	if controlFlag == nil then controlFlag = 0 end
 	TaskPlayAnim(playerPed, animationLib, animation, 8.0, -8.0, length, controlFlag, 0, false, false, false)
 	if animation == "perp_fail" then 
-		SetPedShootsAtCoord(PlayerPedId(), 0.0, 0.0, 0.0, 0)
+		SetPedShootsAtCoord(GetPlayerPed(-1), 0.0, 0.0, 0.0, 0)
 		holdingHostageInProgress = false 
 	end
 	if animation == "shove_var_a" then 
 		Wait(900)
-		ClearPedSecondaryTask(PlayerPedId())
+		ClearPedSecondaryTask(GetPlayerPed(-1))
 		holdingHostageInProgress = false 
 	end
 end)
@@ -378,8 +386,8 @@ AddEventHandler('cmg3_animations:cl_stop', function()
 	holdingHostageInProgress = false
 	beingHeldHostage = false 
 	holdingHostage = false 
-	ClearPedSecondaryTask(PlayerPedId())
-	DetachEntity(PlayerPedId(), true, false)
+	ClearPedSecondaryTask(GetPlayerPed(-1))
+	DetachEntity(GetPlayerPed(-1), true, false)
 end)
 
 function GetPlayers()
@@ -396,7 +404,7 @@ function GetClosestPlayer(radius)
     local players = GetPlayers()
     local closestDistance = -1
     local closestPlayer = -1
-    local ply = PlayerPedId()
+    local ply = GetPlayerPed(-1)
     local plyCoords = GetEntityCoords(ply, 0)
 
     for index,value in ipairs(players) do
@@ -410,7 +418,7 @@ function GetClosestPlayer(radius)
             end
         end
     end
-	print("closest player is dist: " .. tostring(closestDistance))
+	--print("closest player is dist: " .. tostring(closestDistance))
 	if closestDistance <= radius then
 		return closestPlayer
 	else
@@ -421,7 +429,7 @@ end
 Citizen.CreateThread(function()
 	while true do 
 		if holdingHostage then
-			if IsEntityDead(PlayerPedId()) then
+			if IsEntityDead(GetPlayerPed(-1)) then
 				--print("release this mofo")			
 				holdingHostage = false
 				holdingHostageInProgress = false 
@@ -435,8 +443,8 @@ Citizen.CreateThread(function()
 			DisableControlAction(0,25,true) -- disable aim
 			DisableControlAction(0,47,true) -- disable weapon
 			DisableControlAction(0,58,true) -- disable weapon
-			DisablePlayerFiring(PlayerPedId(),true)
-			local playerCoords = GetEntityCoords(PlayerPedId())
+			DisablePlayerFiring(GetPlayerPed(-1),true)
+			local playerCoords = GetEntityCoords(GetPlayerPed(-1))
 			DrawText3D(playerCoords.x,playerCoords.y,playerCoords.z,"Pressione [Q] para soltar, [E] para matar")
 			if IsDisabledControlJustPressed(0,44) then --release
 				--print("release this mofo")			
@@ -525,7 +533,7 @@ function releaseHostage()
 	local closestPlayer = GetClosestPlayer(2)
 	target = GetPlayerServerId(closestPlayer)
 	if closestPlayer ~= nil then
-		print("triggering cmg3_animations:sync")
+		--print("triggering cmg3_animations:sync")
 		TriggerServerEvent('cmg3_animations:sync', closestPlayer, lib,lib2, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget,attachFlag)
 	else
 		print("[CMG Anim] No player nearby")
@@ -550,7 +558,7 @@ function killHostage()
 	local closestPlayer = GetClosestPlayer(2)
 	target = GetPlayerServerId(closestPlayer)
 	if closestPlayer ~= nil then
-		print("triggering cmg3_animations:sync")
+		--print("triggering cmg3_animations:sync")
 		TriggerServerEvent('cmg3_animations:sync', closestPlayer, lib,lib2, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget,attachFlag)
 	else
 		print("[CMG Anim] No player nearby")

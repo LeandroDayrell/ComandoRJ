@@ -68,6 +68,16 @@ cfg.groups = {
 	"player.secret",
 	"player.wall",
 	"mqcu.permissao",
+	
+	------- MQCU
+
+	"player.blips",
+	"player.noclip",
+	"player.teleport",
+	"player.secret",
+	"player.spec",        -- acesso ao /spec id (tela outros jogadores)
+	"player.wall",        -- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+	"mqcu.permissao",     -- acesso ao /mqcu (deletar props/npcs/veiculos)
 	},
  
 	["god"] = {

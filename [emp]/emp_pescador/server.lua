@@ -8,13 +8,12 @@ Tunnel.bindInterface("emp_pescador",emP)
 -----------------------------------------------------------------------------------------------------------------------------------------
 local peixes = {
 	[1] = { x = "dourado" },
-	[2] = { x = "corvina" },
-	[3] = { x = "salmao" },
-	[4] = { x = "pacu" },
-	[5] = { x = "pintado" },
-	[6] = { x = "pirarucu" },
-	[7] = { x = "tilapia" },
-	[8] = { x = "tucunare" }
+	[2] = { x = "salmao" },
+	[3] = { x = "pacu" },
+	[4] = { x = "pintado" },
+	[5] = { x = "pirarucu" },
+	[6] = { x = "tilapia" },
+	[7] = { x = "tucunare" }
 }
 
 function emP.checkPayment()
@@ -26,7 +25,7 @@ function emP.checkPayment()
 				if math.random(100) >= 98 then
 					vRP.giveInventoryItem(user_id,"lambari",1)
 				else
-					vRP.giveInventoryItem(user_id,peixes[math.random(8)].x,1)
+					vRP.giveInventoryItem(user_id,peixes[math.random(7)].x,1)
 				end
 				return true
 			end

@@ -500,7 +500,7 @@ local animacoes = {
 	{ nome = "escorar2" , dict = "misscarstealfinale" , anim = "packer_idle_1_trevor" , andar = false , loop = true },
 	{ nome = "escorar3" , dict = "misscarstealfinalecar_5_ig_1" , anim = "waitloop_lamar" , andar = false , loop = true },
 	{ nome = "escorar4" , dict = "rcmjosh2" , anim = "josh_2_intp1_base" , andar = false , loop = true },
-	{ nome = "meditar" , dict = "rcmcollect_paperleadinout@" , anim = "meditiate_idle" , andar = false , loop = true },
+	--{ nome = "meditar" , dict = "rcmcollect_paperleadinout@" , anim = "meditiate_idle" , andar = false , loop = true },
 	{ nome = "meditar2" , dict = "rcmepsilonism3" , anim = "ep_3_rcm_marnie_meditating" , andar = false , loop = true },
 	{ nome = "meditar3" , dict = "rcmepsilonism3" , anim = "base_loop" , andar = false , loop = true },
 	{ nome = "meleca2" , dict = "anim@mp_player_intcelebrationfemale@nose_pick" , anim = "nose_pick" , andar = false , loop = false },
@@ -661,7 +661,8 @@ AddEventHandler('snowball',function()
 		if not IsPlayerFreeAiming(ped) and not IsPedSwimming(ped) and not IsPedSwimmingUnderWater(ped) and not IsPedRagdoll(ped) and not IsPedFalling(ped) and not IsPedRunning(ped) and not IsPedSprinting(ped) and GetInteriorFromEntity(ped) == 0 and not IsPedShooting(ped) and not IsPedUsingAnyScenario(ped) and not IsPedInCover(ped,0) then
 			vRP._playAnim(false,{{"anim@mp_snowball","pickup_snowball"}},false)
 			Citizen.Wait(1950)
-			GiveWeaponToPed(ped,GetHashKey('WEAPON_SNOWBALL'),2,false,true)
+			--GiveWeaponToPed(ped,GetHashKey('WEAPON_SNOWBALL'),2,false,true)]
+			vRP.giveWeapons({["WEAPON_SNOWBALL"] = { ammo = 2 }})
 		end
 	end
 end)

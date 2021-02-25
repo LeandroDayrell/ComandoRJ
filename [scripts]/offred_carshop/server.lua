@@ -26,7 +26,7 @@ end
 
 
 local carros = {
-	{id = 1,   nome = "blista2", 			precocarro = 15000,		pesocarro = 20, imagemcarro = "https://i.imgur.com/m0zrxrN.png"},
+	{id = 1,   nome = "blista2", 		precocarro = 15000,			pesocarro = 20, imagemcarro = "https://i.imgur.com/m0zrxrN.png"},
 	{id = 2,   nome = "panto", 			precocarro = 17000,	 		pesocarro = 20, imagemcarro = "https://i.imgur.com/Hv2XOOF.png"},
 	{id = 3,   nome = "brioso", 		precocarro = 22000,			pesocarro = 20, imagemcarro = "https://i.imgur.com/oilpd8K.png"},
 	{id = 4,  nome = "regina", 			precocarro = 200000,  		pesocarro = 30, imagemcarro = "https://i.imgur.com/TjPAvuo.png"},	
@@ -68,31 +68,38 @@ local carros = {
 	{id = 40,  nome = "italigto", 		precocarro = 1500000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/5fLFtJ4.png"},
 	{id = 41,  nome = "weevil", 		precocarro = 22500,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/x3HiTPY.png"},
 	{id = 42,  nome = "asbo", 			precocarro = 25000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/jTWfqBF.png"},
+	
+	-- OFF-ROAD (ILHA)
+	{id = 43,  nome = "winky", 			precocarro = 80000,  		pesocarro = 20, imagemcarro = "https://i.imgur.com/lWmZ6fi.png"},
+	{id = 44,  nome = "verus", 			precocarro = 60000,  		pesocarro = 10, imagemcarro = "https://i.imgur.com/DYwNlmj.png"},
+	{id = 45,  nome = "sandking2", 		precocarro = 250000,  		pesocarro = 50, imagemcarro = "https://i.imgur.com/f1QV7i1.png"},
+	
+	
 	-- BARCOS
 	{id = 200,  nome = "dinghy", 		precocarro = 250000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/Mj4qUQk.png"},
 	{id = 201,  nome = "jetmax", 		precocarro = 260000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/p8ocPuB.png"},
 	{id = 202,  nome = "seashark3", 	precocarro = 170000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/T4h5wdz.png"},
 	{id = 203,  nome = "speeder2", 		precocarro = 250000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/AuhR5A1.png"},
 	{id = 204,  nome = "suntrap", 		precocarro = 230000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/le7enqJ.png"},
-	{id = 205,  nome = "toro2", 		precocarro = 290000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/HsrzUjc.png"},
+	{id = 205,  nome = "longfin", 		precocarro = 1000000,  		pesocarro = 50, imagemcarro = "https://i.imgur.com/a5TYVEs.png"},
 	{id = 206,  nome = "tropic", 		precocarro = 270000,  		pesocarro = 15, imagemcarro = "https://i.imgur.com/KabZLrT.png"},
 	
 	-- MOTOS
 	{id = 500, nome = "akuma", 			precocarro = 50000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/JNilgDw.png"},
-	{id = 501, nome = "diablous", 			precocarro = 55000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/DsT1dA2.png"},
-	{id = 502, nome = "faggio", 		precocarro = 7000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/56MTJwX.png"},
-	{id = 503, nome = "esskey", 			precocarro = 20000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/pbwJ9c7.png"},
-	{id = 504, nome = "pcj", 		precocarro = 15000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/l0y2Bti.png"},
-	{id = 505, nome = "ruffian", 			precocarro = 30000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/tvyyfTM.png"},
-	{id = 506, nome = "bati", 		precocarro = 120000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/dpI9J8u.png"},
+	{id = 501, nome = "diablous", 		precocarro = 55000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/DsT1dA2.png"},
+	{id = 502, nome = "faggio", 		precocarro = 7000, 			pesocarro = 15, imagemcarro = "https://i.imgur.com/56MTJwX.png"},
+	{id = 503, nome = "esskey", 		precocarro = 20000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/pbwJ9c7.png"},
+	{id = 504, nome = "pcj", 			precocarro = 15000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/l0y2Bti.png"},
+	{id = 505, nome = "ruffian", 		precocarro = 30000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/tvyyfTM.png"},
+	{id = 506, nome = "bati", 			precocarro = 120000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/dpI9J8u.png"},
 	{id = 507, nome = "carbonrs", 		precocarro = 120000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/qqzawtM.png"},
-	{id = 508, nome = "hakuchou", 			precocarro = 150000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/pX74rwZ.png"},
-	{id = 509, nome = "bf400", 		precocarro = 120000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/GTwPz3Z.png"},
+	{id = 508, nome = "hakuchou", 		precocarro = 150000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/pX74rwZ.png"},
+	{id = 509, nome = "bf400", 			precocarro = 120000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/GTwPz3Z.png"},
     {id = 510, nome = "sanchez2", 		precocarro = 100000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/yuCO2bx.png"},
-	{id = 511, nome = "nightblade", 			precocarro = 150000, 	pesocarro = 15, imagemcarro = "https://i.imgur.com/IF6qv4h.png"},
-	{id = 512, nome = "wolfsbane",		precocarro = 90000, 	pesocarro = 15, imagemcarro = "https://i.imgur.com/qA9wjm4.png"},
-	{id = 513, nome = "daemon",		precocarro = 130000, 	pesocarro = 15, imagemcarro = "https://i.imgur.com/RH7WFP3.png"},
-	{id = 514, nome = "zombieb",		precocarro = 110000, 	pesocarro = 15, imagemcarro = "https://i.imgur.com/RkIoZgF.png"},
+	{id = 511, nome = "nightblade", 	precocarro = 150000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/IF6qv4h.png"},
+	{id = 512, nome = "wolfsbane",		precocarro = 90000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/qA9wjm4.png"},
+	{id = 513, nome = "daemon",			precocarro = 130000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/RH7WFP3.png"},
+	{id = 514, nome = "zombieb",		precocarro = 110000, 		pesocarro = 15, imagemcarro = "https://i.imgur.com/RkIoZgF.png"},
 }
 
 -----------------------------------------------------------------------------------------------------------------------------------------

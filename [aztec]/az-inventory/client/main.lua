@@ -196,3 +196,18 @@ end
 vAZ.updateInventory = function(type, entity, inventory)
     SendNUIMessage({action = "update", type = type, entity = entity, inventory = inventory})
 end
+
+
+RegisterNetEvent("arrumarpneu")
+AddEventHandler("arrumarpneu",function()
+    local vehicle = vRP.getNearestVehicle(5)
+    if vehicle then
+        
+        SetVehicleTyreFixed(vehicle,-1,2)
+        SetVehicleTyreFixed(vehicle,-1,3)
+        SetVehicleTyreFixed(vehicle,-1,4)
+        SetVehicleTyreFixed(vehicle,-1,5)
+    else
+        TriggerEvent("Notify","negado","Você precisa estar próximo de um <b>veículo</b>.")
+    end
+end)

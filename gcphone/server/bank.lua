@@ -18,7 +18,7 @@ AddEventHandler('gcPhone:transfer', function(to, amountt)
         
         if tonumber(_source) == tonumber(to) then
             -- advanced notification with bank icon
-            TriggerClientEvent('esx:showAdvancedNotification', _source, 'Bank',
+            TriggerClientEvent('esx:showAdvancedNotification335', _source, 'Bank',
                                'Transfer Money',
                                'You cannot transfer to your self!',
                                'CHAR_BANK_MAZE', 9)
@@ -26,7 +26,7 @@ AddEventHandler('gcPhone:transfer', function(to, amountt)
             if balance <= 0 or balance < tonumber(amountt) or tonumber(amountt) <=
                 0 then
                 -- advanced notification with bank icon
-                TriggerClientEvent('esx:showAdvancedNotification', _source,
+                TriggerClientEvent('esx:showAdvancedNotification335', _source,
                                    'Bank', 'Transfer Money',
                                    'Not enough money to transfer!',
                                    'CHAR_BANK_MAZE', 9)
@@ -34,12 +34,12 @@ AddEventHandler('gcPhone:transfer', function(to, amountt)
                 xPlayer.removeAccountMoney('bank', tonumber(amountt))
                 zPlayer.addAccountMoney('bank', tonumber(amountt))
                 -- advanced notification with bank icon
-                TriggerClientEvent('esx:showAdvancedNotification', _source,
+                TriggerClientEvent('esx:showAdvancedNotification335', _source,
                                    'Bank', 'Transfer Money',
                                    'You transfered ~r~$' .. amountt ..
                                        '~s~ to ~r~' .. to .. ' .',
                                    'CHAR_BANK_MAZE', 9)
-                TriggerClientEvent('esx:showAdvancedNotification', to, 'Bank',
+                TriggerClientEvent('esx:showAdvancedNotification335', to, 'Bank',
                                    'Transfer Money', 'You received ~r~$' ..
                                        amountt .. '~s~ from ~r~' .. _source ..
                                        ' .', 'CHAR_BANK_MAZE', 9)

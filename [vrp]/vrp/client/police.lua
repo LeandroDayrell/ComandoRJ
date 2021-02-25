@@ -106,7 +106,7 @@ function tvRP.toggleMalas()
 		if mala then
 			AttachEntityToEntity(ped,vehicle,GetEntityBoneIndexByName(vehicle,"bumper_r"),0.6,-0.4,-0.1,60.0,-90.0,180.0,false,false,false,true,2,true)
 			SetEntityVisible(ped,false)
-			--SetEntityInvincible(ped,true)
+			--SetEntityInvincible(ped,false) -- mqcu
 		else
 			DetachEntity(ped,true,true)
 			SetEntityVisible(ped,true)

@@ -247,7 +247,7 @@ end)
 
 RegisterNetEvent("mdt:billPlayer")
 AddEventHandler("mdt:billPlayer", function(src, sharedAccountName, label, amount)
-    TriggerServerEvent("esx_billing:sendBill", src, sharedAccountName, label, amount)
+    TriggerServerEvent("esx_billing:sendBill335", src, sharedAccountName, label, amount)
 end)
 
 function ToggleGUI(explicit_status)

@@ -6,7 +6,7 @@ if IsDuplicityVersion() then
         local Proxy = module("vrp", "lib/Proxy")
         vRP = Proxy.getInterface("vRP")
     elseif GetResourceState('es_extended') ~= 'missing' then
-        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        TriggerEvent('esx:getSharedObject335', function(obj) ESX = obj end)
     else
         print('Não foi encontrado vRP ou es_extended em sua base')
     end
