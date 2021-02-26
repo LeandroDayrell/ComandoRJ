@@ -2693,7 +2693,7 @@ cfg.groups = {
 	},
   
   ["Pescador"] = {
-    _config = { gtype = "job" },
+    _config = { gtype = "cargo" },
 	"pescador.service",
 	"pescador.garagem",
 	"pescador.paycheck",

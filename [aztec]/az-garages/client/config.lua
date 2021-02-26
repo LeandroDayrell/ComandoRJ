@@ -197,7 +197,7 @@ vAZ.config.garages.service = {
 			{ ['x'] = 1185.20, ['y'] = -3251.40, ['z'] = 6.02, ['h'] = 91.07 }
 		}
 	},
-	[16] = {
+	--[[[16] = {
 		name = 'Garagem Embarcações',
 		marker = 36,
 		blip = {color = 4, scale = 0.4, type = 357},
@@ -218,7 +218,7 @@ vAZ.config.garages.service = {
 		spaces = {
 			{ ['x'] = -1526.63, ['y'] = 1499.64, ['z'] = 109.08, ['h'] = 350.0 }
 		}
-	},
+	},]]--
 	[18] = {
 		name = 'Garagem Embarcações',
 		marker = 36,
@@ -401,7 +401,7 @@ vAZ.config.garages.personal = {
 		type = 'personal',
 		availables = {'boat'},
 		marker = 36,
-		blip = {color = 4, scale = 0.4, type = 357},
+		blip = {color = 4, scale = 0.4, type = 471},
 		point = {
 			{ x = -719.331115, y = -1367.63952, z = 1.59211301 }
 		},
@@ -423,11 +423,24 @@ vAZ.config.garages.personal = {
 		}
 	},
 	[7] ={
+		name = 'Garagem Heli',
+		type = 'personal',
+		availables = {'Helicopters'},
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 43},
+		point = {
+			{ x = -708.01, y = -1462.22, z = 5.00 }
+		},
+		spaces = {
+			{ x = -724.60, y = -1444.07, z = 5.00, h = 308.65 }
+		}
+	},
+	[8] ={
 		name = 'Garagem barco 03',
 		type = 'personal',
 		availables = {'boat'},
 		marker = 36,
-		blip = {color = 4, scale = 0.4, type = 357},
+		blip = {color = 4, scale = 0.4, type = 471},
 		point = {
 			{ x = 4976.70, y = -5168.32, z = 2.40 }
 		},
