@@ -39,6 +39,7 @@ cfg.groups = {
 	"admin.spawnveh",
 	"admin.godmode",
 	"admin.tickets",
+	"owner.permissao",
     "admin.announce",
     "player.list",
 	"admin.crun",

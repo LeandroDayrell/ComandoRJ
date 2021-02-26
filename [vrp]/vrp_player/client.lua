@@ -48,6 +48,31 @@ end)
 		end
 	end
   end)
+
+
+
+
+
+-------------------REMOVER ARMA ABAIXO DE 0MPH DENTRO DO CARRO----------------------------------------
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(1000)
+        local ped = PlayerPedId()
+        if IsPedInAnyVehicle(ped) then
+            local vehicle = GetVehiclePedIsIn(PlayerPedId())
+            if GetPedInVehicleSeat(vehicle,-1) == ped then
+                local speed = GetEntitySpeed(vehicle)*2.236936
+                if speed >= 0 then
+                    SetPlayerCanDoDriveBy(PlayerId(),false)
+                else
+                    SetPlayerCanDoDriveBy(PlayerId(),true)
+                end
+            end
+        end
+    end
+end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- AFKSYSTEM
 -----------------------------------------------------------------------------------------------------------------------------------------

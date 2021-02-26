@@ -31,6 +31,8 @@ AddEventHandler("skinmenu",function(mhash)
     end
 end)
 
+
+
 Citizen.CreateThread(function()
     while true do
         if showblips then
@@ -76,6 +78,39 @@ Citizen.CreateThread(function()
     end
 end)
 
+
+
+----------------- CONGELAR JOGADOR
+
+RegisterNetEvent('Congelar')
+AddEventHandler('Congelar',function(source)
+    local ped = PlayerPedId(-1)
+    if not congelar then
+        congelar = true
+        Citizen.Wait(100)
+        FreezeEntityPosition(ped, true);
+    else
+        congelar = false
+        FreezeEntityPosition(ped, false);
+    end
+end)
+
+
+-------------- FOGO EM JOGADOR
+
+
+RegisterNetEvent('FOGO')
+AddEventHandler('FOGO',function(source)
+    local ped = PlayerPedId(-1)
+    if not kravinho then
+        kravinho = true
+        Citizen.Wait(100)
+        StartEntityFire(ped);
+    else
+        kravinho = false
+        StopEntityFire(ped);
+    end
+end)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- APAGAO -- COLOCAR NO CLIENT.LUA DO VRP_ADMIN

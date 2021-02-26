@@ -71,6 +71,13 @@ local user_id = vRP.getUserId(source)
 end)]]
 
 
+--[ /BVIDA ]-----------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('bvida',function(source,rawCommand)
+	local user_id = vRP.getUserId(source)
+		vRPclient._setCustomization(source,vRPclient.getCustomization(source))
+		vRP.removeCloak(source)
+end)
+
 RegisterCommand('status',function(source,args,rawCommand)
     local onlinePlayers = GetNumPlayerIndices()
     local policia = vRP.getUsersByPermission("policia.permissao")

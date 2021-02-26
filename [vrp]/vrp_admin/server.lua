@@ -47,6 +47,56 @@ RegisterCommand('reset',function(source,args,rawCommand)
     end
 end)
 
+RegisterCommand('Congelar', function(source, args,rawCommand) ----muda o comando aqui se quiser
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.permissao") then
+        if args[1] then
+            local nplayer = vRP.getUserSource(parseInt(args[1]))
+            if nplayer then
+                TriggerClientEvent('Congelar', source)
+            end
+        end    
+    end
+end)
+
+--[ /BVIDA ]-----------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('bvida',function(source,rawCommand)
+        local user_id = vRP.getUserId(source)
+            vRPclient._setCustomization(source,vRPclient.getCustomization(source))
+            vRP.removeCloak(source)
+    end)
+
+RegisterCommand('dados',function(source,args,rawCommand)
+    local ip = GetPlayerEndpoint(source)
+    local steamhex = GetPlayerIdentifier(source)
+    local ping = GetPlayerPing(source)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"owner.permissao") then
+        if args[1] then
+            local nplayer = vRP.getUserSource(parseInt(args[1]))
+            if nplayer then
+                local ip2 = GetPlayerEndpoint(nplayer)
+                local steamhex2 = GetPlayerIdentifier(nplayer)
+                local ping2 = GetPlayerPing(nplayer)
+               TriggerClientEvent("Notify",source,"aviso","IP do player:"  ..ip2.."")
+               TriggerClientEvent("Notify",source,"aviso","Player Hex:" ..steamhex2.."")
+               TriggerClientEvent("Notify",source,"aviso","Ping do player:" ..ping2.."")
+            end
+        else
+            TriggerClientEvent("Notify",source,"aviso","Seu IP:"  ..ip.."")
+            TriggerClientEvent("Notify",source,"aviso","Sua hex:"  ..steamhex.."")
+            TriggerClientEvent("Notify",source,"aviso","Seu ping:"  ..ping.."")
+        end
+    end
+end)
+
+RegisterCommand('fogo', function(source)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.permissao") then
+        TriggerClientEvent('FOGO', source)
+    end
+end)
+
 RegisterCommand('trocasexo',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
     if vRP.hasPermission(user_id,"admin.permissao") then
