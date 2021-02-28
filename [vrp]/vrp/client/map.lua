@@ -15,8 +15,70 @@ function tvRP.addBlip(x,y,z,idtype,idcolor,text,scale)
 	return blip
 end
 
+function tvRP.addBlipProperty(x,y,z,idtype,idcolor,text,scale)
+	local blip = AddBlipForCoord(x+0.001,y+0.001,z+0.001) 
+	SetBlipSprite(blip, idtype)
+	SetBlipCategory(blip, 10)
+	SetBlipAsShortRange(blip, true)
+	SetBlipColour(blip,idcolor)
+	SetBlipScale(blip, scale)
+  
+	if text ~= nil then
+		BeginTextCommandSetBlipName("STRING")
+		AddTextComponentString(text)
+		EndTextCommandSetBlipName(blip)
+	end
+  
+	if scale == nil then
+		SetBlipScale(blip, 0.4)
+	end
+  
+	return blip
+end
+
+function tvRP.addBlipToEntity(id,idtype,idcolor,text,scale)
+	local player = GetPlayerFromServerId(id)
+	local ped = GetPlayerPed(player)
+	if ped ~= PlayerPedId() then
+		local blip = AddBlipForEntity(ped)
+		SetBlipSprite(blip, idtype)
+		SetBlipColour(blip, idcolor)
+		SetBlipScale(blip,scale)
+	  
+		if text ~= nil then
+			BeginTextCommandSetBlipName("STRING")
+			AddTextComponentString(text)
+			EndTextCommandSetBlipName(blip)
+		end
+  
+		if scale == nil then
+			SetBlipScale(blip, 0.8)
+		end
+  
+		return blip
+	end
+	
+	return false
+end
+
 function tvRP.removeBlip(id)
 	RemoveBlip(id)
+end
+
+local named_blips = {}
+
+function tvRP.setNamedBlip(name,x,y,z,idtype,idcolor,text)
+	tvRP.removeNamedBlip(name)
+
+	named_blips[name] = tvRP.addBlip(x,y,z,idtype,idcolor,text)
+	return named_blips[name]
+end
+
+function tvRP.removeNamedBlip(name)
+	if named_blips[name] ~= nil then
+		tvRP.removeBlip(named_blips[name])
+		named_blips[name] = nil
+	end
 end
 
 function tvRP.setGPS(x,y)

@@ -35,11 +35,11 @@ cfg.items = {
 
 	-- OUTROS
     ['wcard'] = {label = 'Identidade', description = 'Identificação pessoal', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/fG8DMiz.png'},
-    ['graosimpuros'] = {label = 'Graos Impuros', description = 'Graos Impuros', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/FR7hraq.png'},
-    ['graos'] = {label = 'Graos', description = 'Graos', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/XtPYz4F.png'},
-    ['perola'] = {label = 'Perola', description = 'Perola', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/jAGTCsT.png'},
-    ['perolatratada'] = {label = 'Perola Tratada', description = 'Perola Tratada', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/Jhl55W8.png'},
-    ['celular'] = {label = 'Celular', description = 'Celular', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/qzvR30m.png'},
+    ['graosimpuros'] = {label = 'Graos Impuros', description = 'Graos Impuros', usable = false, dropable = true, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/FR7hraq.png'},
+    ['graos'] = {label = 'Graos', description = 'Graos', usable = false, dropable = true, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/XtPYz4F.png'},
+    ['perola'] = {label = 'Perola', description = 'Perola', usable = false, dropable = true, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/jAGTCsT.png'},
+    ['perolatratada'] = {label = 'Perola Tratada', description = 'Perola Tratada', usable = false, dropable = true, sendable = true, limit = 1, weight = 0.6, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/Jhl55W8.png'},
+    ['celular'] = {label = 'Celular', description = 'Celular', usable = false, dropable = true, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/qzvR30m.png'},
     ['tabletd'] = {label = 'Tablet', description = 'Tablet', usable = true, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/arOzb3s.png'},
     ['wplicense'] = {label = 'Porte de Arma', description = 'Sem registro', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/4TiCw78.png'},
     ['drlicense'] = {label = 'Habilitação', description = 'Sem registro', usable = false, dropable = false, sendable = true, limit = 1, weight = 0.0, prop = 'p_ld_id_card_01', type = 'other', photo = 'https://i.imgur.com/25Ispn3.png'},
@@ -165,6 +165,7 @@ cfg.items = {
     ['topazio'] = {label = 'Topazio', description = 'Topazio', weight = 0.5, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/qG7Qom2.png'},
     ['ametista'] = {label = 'Ametista', description = 'Ametista', weight = 0.6, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/joQShvg.png'},
     ['jornal'] = {label = 'Jornal', description = 'Jornal para entrega', weight = 0.1, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/aHk1Nik.png'},
+    ['sacolamolhada'] = {label = 'Sacola', description = 'Sacola molhada', weight = 0.1, usable = false, dropable = true, sendable = true, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/cotP28d.png'},
 	
 	-- PACKS ARMAS
 	['sigpack'] = {label = 'Sig-Sauer Pack', description = 'Sig-Sauer Pack', weight = 5.0, usable = false, dropable = true, sendable = false, limit = 0, prop = 'prop_paper_bag_small', type = 'other', photo = 'https://i.imgur.com/sMXd5Zs.png'},

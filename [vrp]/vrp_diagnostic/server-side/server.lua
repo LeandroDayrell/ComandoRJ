@@ -110,7 +110,7 @@ RegisterCommand('diagnostic',function(source,args,rawCommand)
 		end
 	end
 end)
-
+--[[
 RegisterCommand('testetratamento',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"paramedico.permissao") then
@@ -124,3 +124,19 @@ RegisterCommand('testetratamento',function(source,args,rawCommand)
 		end
 	end
 end)
+
+RegisterCommand('tratamento',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"paramedico.permissao") or vRP.hasPermission(user_id,"admin.permissao") then
+		local nplayer = vRPclient.getNearestPlayer(source,2)
+		if nplayer then
+			TriggerClientEvent('resetWarfarina',nplayer,source)
+			TriggerClientEvent("Notify",source,"sucesso","Seu ferimento foi estabilizado.",8000)
+		else
+			TriggerClientEvent("Notify",source,"Aviso","Nenhum jogador encontrado.",8000)
+		end
+	else
+		TriggerClientEvent("Notify",source,"Aviso","Voce nao tem permissao para usar esse comando.",8000)
+	end
+end)
+]]

@@ -11,7 +11,7 @@ local cfg = {}
 
 cfg.groups = {
 
- ["FundadorCMDRJ20"] = {
+ ["FundadorCMDRJ21"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"dv.permissao",
@@ -39,7 +39,6 @@ cfg.groups = {
 	"admin.spawnveh",
 	"admin.godmode",
 	"admin.tickets",
-	"owner.permissao",
     "admin.announce",
     "player.list",
 	"admin.crun",
@@ -94,7 +93,7 @@ cfg.groups = {
 	},
  
  --== ADMINISTRAÇÃO ==--
-  ["AdmCMDRJ"] = {
+  ["AdmCMDRJ21"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"dv.permissao",
@@ -143,17 +142,31 @@ cfg.groups = {
 	-- Salario
 	"Administrador.permissao",
 	"admin.ajuda",
+
+------- MQCU
+
 	"player.blips",
-	"player.spec",
 	"player.noclip",
+	"player.teleport",
 	"player.secret",
-	"player.wall",
-	"mqcu.permissao",
+	"player.spec",        -- acesso ao /spec id (tela outros jogadores)
+	"player.wall",        -- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+	"mqcu.permissao",     -- acesso ao /mqcu (deletar props/npcs/veiculos)
+
+
 	},
-	["BlipsCMDRJ"] = {
+
+
+	------------- BLIPS ----------------
+	--------------------------------------
+	["BlipsCMDRJ21"] = {
 	"blips.permissao"
 	},
-	["ModeradorCMDRJ"] = {
+
+
+	------------- MODERADOR ----------------
+	--------------------------------------
+	["ModeradorCMDRJ21"] = {
 	"player.group.add",
 	"admin.tptowaypoint",
 	"player.coords",
@@ -178,10 +191,12 @@ cfg.groups = {
 	"admin.ajuda",
 	"player.blips",
 	"player.spec",
-	"player.noclip",
 	"player.secret",
 	--"player.wall",
 	"mqcu.permissao",
+	"player.noclip",
+	"player.teleport",
+	
 	},
 	["SuporteCMDRJ"] = {
 	"ticket.permissao",
@@ -196,6 +211,7 @@ cfg.groups = {
 	--"player.secret",
 	--"player.wall",
 	"mqcu.permissao",
+	"player.teleport",
 
 	-- Salario
 	"Suporte.permissao",
@@ -2875,7 +2891,7 @@ cfg.groups = {
 
   ["Desempregado"] = {
     _config = { 
-		gtype = "job",
+		gtype = "cargo",
 		onspawn = function(player) vRPclient._notify(player,"~b~Desempregado ~w~arrume um Emprego.") end
 	},
     "desempregado.permissao"
@@ -2999,8 +3015,7 @@ cfg.groups = {
 -- groups are added dynamically using the API or the menu, but you can add group when an user join here
 cfg.users = {
   [1] = { -- give superadmin and admin group to the first created user on the database
-    "PC-superadmin",
-    "PC-admin"
+    "FundadorCMDRJ20"
   }
 }
 

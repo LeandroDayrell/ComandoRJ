@@ -63,7 +63,7 @@ Citizen.CreateThread(function()
             local vehicle = GetVehiclePedIsIn(PlayerPedId())
             if GetPedInVehicleSeat(vehicle,-1) == ped then
                 local speed = GetEntitySpeed(vehicle)*2.236936
-                if speed >= 0 then
+                if speed >= 40 then
                     SetPlayerCanDoDriveBy(PlayerId(),false)
                 else
                     SetPlayerCanDoDriveBy(PlayerId(),true)

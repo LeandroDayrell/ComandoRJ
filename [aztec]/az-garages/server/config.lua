@@ -135,6 +135,7 @@ vAZ.config.garages.service = {
         }
     },
     [18] = {
+		permission = 'pescador.garagem',
         vehicles = {
             "dinghy"
         }
@@ -146,7 +147,6 @@ vAZ.config.garages.service = {
     },
     [20] = {
         vehicles = {
-            "coach",
             "bus"
         }
     },

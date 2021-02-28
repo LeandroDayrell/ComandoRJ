@@ -20,7 +20,7 @@ function emP.checkPayment()
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.tryGetInventoryItem(user_id,"garrafadeleite",quantidade[source]) then
-			vRP.giveMoney(user_id,math.random(25,30)*quantidade[source])
+			vRP.giveMoney(user_id,math.random(45,50)*quantidade[source])
 			quantidade[source] = nil
 			return true
 		else

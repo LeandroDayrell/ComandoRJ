@@ -53,18 +53,11 @@ RegisterCommand('Congelar', function(source, args,rawCommand) ----muda o comando
         if args[1] then
             local nplayer = vRP.getUserSource(parseInt(args[1]))
             if nplayer then
-                TriggerClientEvent('Congelar', source)
+                TriggerClientEvent('Congelar', nplayer,source)
             end
         end    
     end
 end)
-
---[ /BVIDA ]-----------------------------------------------------------------------------------------------------------------------------
-RegisterCommand('bvida',function(source,rawCommand)
-        local user_id = vRP.getUserId(source)
-            vRPclient._setCustomization(source,vRPclient.getCustomization(source))
-            vRP.removeCloak(source)
-    end)
 
 RegisterCommand('dados',function(source,args,rawCommand)
     local ip = GetPlayerEndpoint(source)
@@ -90,11 +83,17 @@ RegisterCommand('dados',function(source,args,rawCommand)
     end
 end)
 
-RegisterCommand('fogo', function(source)
+
+RegisterCommand('fogo', function(source, args,rawCommand) ----muda o comando aqui se quiser
     local user_id = vRP.getUserId(source)
     if vRP.hasPermission(user_id,"admin.permissao") then
-        TriggerClientEvent('FOGO', source)
-    end
+        if args[1] then
+            local nplayer = vRP.getUserSource(parseInt(args[1]))
+            if nplayer then
+        TriggerClientEvent('FOGO',nplayer, source)
+			end
+		end    
+	end
 end)
 
 RegisterCommand('trocasexo',function(source,args,rawCommand)

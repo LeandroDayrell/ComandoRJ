@@ -227,7 +227,7 @@ vAZ.config.garages.service = {
 			{ ['x'] = 1337.36, ['y'] = 4269.71, ['z'] = 31.50 }
 		},
 		spaces = {
-			{ ['x'] = 1343.24, ['y'] = 4269.59, ['z'] = 30.11, ['h'] = 190.0 }
+			{ ['x'] = 1341.15, ['y'] = 4269.55, ['z'] = 29.78, ['h'] = 190.0 }
 		}
 	},
 	[19] = {
@@ -457,7 +457,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 119.47, z = 55.46, x = -835.07}
 		},
-		name = 'LX12',
+		name = 'Mega Luxury nº12',
 		spaces = {
 			{y = 112.3, z = 54.43, h = 210.36, x = -839.12}
 		}
@@ -466,9 +466,9 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 299.58, z = 66.0, x = -1058.75}
+			{y = 299.58, z = 66.0, x = -1058.75} 
 		},
-		name = 'LX13',
+		name = 'Mega Luxury nº13',
 		spaces = {
 			{y = 305.25, z = 65.13, h = 353.81, x = -1061.49}
 		}
@@ -479,7 +479,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 267.95, z = 86.2, x = -827.87}
 		},
-		name = 'LX14',
+		name = 'Mega Luxury nº14',
 		spaces = {
 			{y = 273.44, z = 85.68, h = 342.78, x = -824.72}
 		}
@@ -490,7 +490,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 322.71, z = 83.97, x = -869.56}
 		},
-		name = 'LX15',
+		name = 'Mega Luxury nº15',
 		spaces = {
 			{y = 317.83, z = 83.13, h = 186.23, x = -870.29}
 		}
@@ -501,7 +501,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 360.73, z = 85.04, x = -887.96}
 		},
-		name = 'LX16',
+		name = 'Mega Luxury nº16',
 		spaces = {
 			{y = 367.35, z = 84.55, h = 3.4, x = -888.36}
 		}
@@ -512,7 +512,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 363.75, z = 71.36, x = -1026.73}
 		},
-		name = 'LX17',
+		name = 'Mega Luxury nº17',
 		spaces = {
 			{y = 360.01, z = 70.05, h = 331.43, x = -1011.08}
 		}
@@ -523,7 +523,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 426.75, z = 109.62, x = -1555.85}
 		},
-		name = 'LX18',
+		name = 'Mega Luxury nº18',
 		spaces = {
 			{y = 426.58, z = 109.09, h = 272.82, x = -1547.98}
 		}
@@ -534,7 +534,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 274.79, z = 69.51, x = -1211.88}
 		},
-		name = 'LX19',
+		name = 'Mega Luxury nº19',
 		spaces = {
 			{y = 267.12, z = 68.69, h = 284.35, x = -1204.83}
 		}
@@ -545,7 +545,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 354.46, z = 68.48, x = -1101.71}
 		},
-		name = 'LX20',
+		name = 'Mega Luxury nº20',
 		spaces = {
 			{y = 360.3, z = 67.69, h = 357.45, x = -1096.63}
 		}
@@ -556,7 +556,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 18.76, z = 54.71, x = -1490.24}
 		},
-		name = 'LX21',
+		name = 'Mega Luxury nº21',
 		spaces = {
 			{y = 23.07, z = 53.88, h = 354.88, x = -1490.16}
 		}
@@ -567,7 +567,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -50.22, z = 54.65, x = -1457.65}
 		},
-		name = 'LX22',
+		name = 'Mega Luxury nº22',
 		spaces = {
 			{y = -55.37, z = 52.6, h = 240.6, x = -1455.68}
 		}
@@ -578,7 +578,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 19.84, z = 56.4, x = -1504.43}
 		},
-		name = 'LX23',
+		name = 'Mega Luxury nº23',
 		spaces = {
 			{y = 26.86, z = 55.15, h = 8.38, x = -1503.75}
 		}
@@ -589,7 +589,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -81.3, z = 54.2, x = -1581.46}
 		},
-		name = 'LX24',
+		name = 'Mega Luxury nº24',
 		spaces = {
 			{y = -86.02, z = 53.29, h = 270.66, x = -1577.19}
 		}
@@ -600,7 +600,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -55.63, z = 56.48, x = -1585.69}
 		},
-		name = 'LX25',
+		name = 'Mega Luxury nº25',
 		spaces = {
 			{y = -61.06, z = 55.64, h = 270.18, x = -1582.02}
 		}
@@ -611,7 +611,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 17.86, z = 58.83, x = -1558.52}
 		},
-		name = 'LX26',
+		name = 'Mega Luxury nº26',
 		spaces = {
 			{y = 22.78, z = 57.7, h = 347.5, x = -1552.69}
 		}
@@ -622,7 +622,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 14.71, z = 62.17, x = -1616.73}
 		},
-		name = 'LX27',
+		name = 'Mega Luxury nº27',
 		spaces = {
 			{y = 20.02, z = 61.32, h = 335.94, x = -1613.07}
 		}
@@ -633,7 +633,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 120.59, z = 81.64, x = -1892.99}
 		},
-		name = 'LX28',
+		name = 'Mega Luxury nº28',
 		spaces = {
 			{y = 123.26, z = 80.86, h = 338.84, x = -1887.23}
 		}
@@ -644,7 +644,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 179.1, z = 84.66, x = -1940.13}
 		},
-		name = 'LX29',
+		name = 'Mega Luxury nº29',
 		spaces = {
 			{y = 182.84, z = 83.68, h = 307.83, x = -1932.93}
 		}
@@ -655,7 +655,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 296.59, z = 91.76, x = -2000.65}
 		},
-		name = 'LX32',
+		name = 'Mega Luxury nº32',
 		spaces = {
 			{y = 290.29, z = 90.85, h = 221.21, x = -1994.21}
 		}
@@ -666,7 +666,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 381.84, z = 94.49, x = -2000.61}
 		},
-		name = 'LX33',
+		name = 'Mega Luxury nº33',
 		spaces = {
 			{y = 378.0, z = 94.49, h = 267.46, x = -1996.29}
 		}
@@ -677,7 +677,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 453.64, z = 102.67, x = -2013.18}
 		},
-		name = 'LX34',
+		name = 'Mega Luxury nº34',
 		spaces = {
 			{y = 454.86, z = 101.79, h = 276.63, x = -2006.95}
 		}
@@ -688,7 +688,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 485.7, z = 107.18, x = -2016.62}
 		},
-		name = 'LX35',
+		name = 'Mega Luxury nº35',
 		spaces = {
 			{y = 482.71, z = 106.07, h = 255.38, x = -2011.39}
 		}
@@ -699,7 +699,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 192.09, z = 84.29, x = -1868.36}
 		},
-		name = 'LX36',
+		name = 'Mega Luxury nº36',
 		spaces = {
 			{y = 194.45, z = 83.77, h = 126.46, x = -1874.17}
 		}
@@ -710,7 +710,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 241.7, z = 86.26, x = -1899.62}
 		},
-		name = 'LX37',
+		name = 'Mega Luxury nº37',
 		spaces = {
 			{y = 242.14, z = 85.6, h = 27.89, x = -1904.45}
 		}
@@ -721,7 +721,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 285.25, z = 89.07, x = -1918.91}
 		},
-		name = 'LX38',
+		name = 'Mega Luxury nº38',
 		spaces = {
 			{y = 283.01, z = 88.23, h = 182.84, x = -1925.28}
 		}
@@ -732,7 +732,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 366.09, z = 93.82, x = -1935.69}
 		},
-		name = 'LX39',
+		name = 'Mega Luxury nº39',
 		spaces = {
 			{y = 360.31, z = 92.55, h = 160.68, x = -1940.58}
 		}
@@ -743,7 +743,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 386.17, z = 96.5, x = -1938.82}
 		},
-		name = 'LX40',
+		name = 'Mega Luxury nº40',
 		spaces = {
 			{y = 385.19, z = 95.6, h = 96.89, x = -1943.95}
 		}
@@ -754,7 +754,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 462.55, z = 102.42, x = -1937.4}
 		},
-		name = 'LX41',
+		name = 'Mega Luxury nº41',
 		spaces = {
 			{y = 462.9, z = 101.12, h = 99.05, x = -1947.37}
 		}
@@ -765,7 +765,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 322.6, z = 88.72, x = -1856.34}
 		},
-		name = 'LX42',
+		name = 'Mega Luxury nº42',
 		spaces = {
 			{y = 328.42, z = 87.8, h = 11.41, x = -1857.45}
 		}
@@ -776,7 +776,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 345.73, z = 88.55, x = -1789.94}
 		},
-		name = 'LX43',
+		name = 'Mega Luxury nº43',
 		spaces = {
 			{y = 353.87, z = 87.72, h = 64.22, x = -1790.72}
 		}
@@ -787,7 +787,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 368.33, z = 89.72, x = -1745.31}
 		},
-		name = 'LX44',
+		name = 'Mega Luxury nº44',
 		spaces = {
 			{y = 365.56, z = 88.85, h = 114.91, x = -1750.77}
 		}
@@ -798,7 +798,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 385.25, z = 89.49, x = -1665.21}
 		},
-		name = 'LX45',
+		name = 'Mega Luxury nº45',
 		spaces = {
 			{y = 391.43, z = 88.39, h = 9.57, x = -1663.42}
 		}
@@ -809,7 +809,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 456.14, z = 128.3, x = -1785.52}
 		},
-		name = 'LX46',
+		name = 'Mega Luxury nº46',
 		spaces = {
 			{y = 459.4, z = 127.46, h = 98.09, x = -1794.11}
 		}
@@ -820,7 +820,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 605.61, z = 117.9, x = -1991.66}
 		},
-		name = 'LX47',
+		name = 'Mega Luxury nº47',
 		spaces = {
 			{y = 602.72, z = 117.28, h = 238.48, x = -1985.63}
 		}
@@ -831,7 +831,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 529.39, z = 110.73, x = -1937.7}
 		},
-		name = 'LX48',
+		name = 'Mega Luxury nº48',
 		spaces = {
 			{y = 521.99, z = 108.31, h = 71.0, x = -1944.07}
 		}
@@ -842,7 +842,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 624.88, z = 122.53, x = -1977.58}
 		},
-		name = 'LX50',
+		name = 'Mega Luxury nº50',
 		spaces = {
 			{y = 620.69, z = 121.14, h = 246.1, x = -1971.35}
 		}
@@ -853,7 +853,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 919.61, z = 235.65, x = -165.4}
 		},
-		name = 'LX51',
+		name = 'Mega Luxury nº51',
 		spaces = {
 			{y = 926.68, z = 234.8, h = 234.16, x = -162.36}
 		}
@@ -864,7 +864,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 966.12, z = 237.53, x = -172.67}
 		},
-		name = 'LX52',
+		name = 'Mega Luxury nº52',
 		spaces = {
 			{y = 970.73, z = 235.79, h = 316.56, x = -167.03}
 		}
@@ -875,7 +875,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 1010.75, z = 235.73, x = -124.76}
 		},
-		name = 'LX53',
+		name = 'Mega Luxury nº53',
 		spaces = {
 			{y = 1001.16, z = 234.88, h = 198.68, x = -127.89}
 		}
@@ -886,7 +886,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 823.95, z = 235.72, x = -101.17}
 		},
-		name = 'LX54',
+		name = 'Mega Luxury nº54',
 		spaces = {
 			{y = 832.61, z = 234.86, h = 10.25, x = -105.63}
 		}
@@ -897,7 +897,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 755.29, z = 204.85, x = 220.71}
 		},
-		name = 'LX55',
+		name = 'Mega Luxury nº55',
 		spaces = {
 			{y = 759.38, z = 203.83, h = 47.56, x = 215.84}
 		}
@@ -908,7 +908,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 563.99, z = 182.94, x = 100.21}
 		},
-		name = 'LX58',
+		name = 'Mega Luxury nº58',
 		spaces = {
 			{y = 575.77, z = 182.13, h = 86.85, x = 93.13}
 		}
@@ -919,7 +919,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 559.77, z = 180.21, x = 52.84}
 		},
-		name = 'LX59',
+		name = 'Mega Luxury nº59',
 		spaces = {
 			{y = 563.71, z = 179.54, h = 21.7, x = 53.19}
 		}
@@ -930,7 +930,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 593.14, z = 203.9, x = -143.65}
 		},
-		name = 'LX60',
+		name = 'Mega Luxury nº60',
 		spaces = {
 			{y = 597.23, z = 203.12, h = 358.34, x = -142.21}
 		}
@@ -941,7 +941,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 621.58, z = 197.91, x = -196.6}
 		},
-		name = 'LX61',
+		name = 'Mega Luxury nº61',
 		spaces = {
 			{y = 615.31, z = 196.21, h = 178.98, x = -199.24}
 		}
@@ -952,7 +952,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 590.04, z = 197.63, x = -174.92}
 		},
-		name = 'LX62',
+		name = 'Mega Luxury nº62',
 		spaces = {
 			{y = 587.21, z = 197.03, h = 359.63, x = -178.23}
 		}
@@ -963,7 +963,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 588.93, z = 190.02, x = -224.87}
 		},
-		name = 'LX63',
+		name = 'Mega Luxury nº63',
 		spaces = {
 			{y = 593.25, z = 189.61, h = 331.22, x = -221.77}
 		}
@@ -974,7 +974,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 599.1, z = 181.68, x = -271.65}
 		},
-		name = 'LX64',
+		name = 'Mega Luxury nº64',
 		spaces = {
 			{y = 603.6, z = 181.15, h = 346.6, x = -272.26}
 		}
@@ -985,7 +985,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 614.9, z = 187.77, x = -241.91}
 		},
-		name = 'LX65',
+		name = 'Mega Luxury nº65',
 		spaces = {
 			{y = 610.79, z = 186.09, h = 149.22, x = -244.12}
 		}
@@ -996,7 +996,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 630.36, z = 172.35, x = -338.28}
 		},
-		name = 'LX66',
+		name = 'Mega Luxury nº66',
 		spaces = {
 			{y = 634.83, z = 171.43, h = 52.04, x = -343.97}
 		}
@@ -1007,7 +1007,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 566.57, z = 154.53, x = 312.7}
 		},
-		name = 'LX67',
+		name = 'Mega Luxury nº67',
 		spaces = {
 			{y = 568.06, z = 153.55, h = 220.69, x = 316.29}
 		}
@@ -1018,7 +1018,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 493.62, z = 153.14, x = 315.32}
 		},
-		name = 'LX68',
+		name = 'Mega Luxury nº68',
 		spaces = {
 			{y = 494.12, z = 151.61, h = 283.1, x = 321.07}
 		}
@@ -1029,7 +1029,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 481.25, z = 151.26, x = 326.54}
 		},
-		name = 'LX69',
+		name = 'Mega Luxury nº69',
 		spaces = {
 			{y = 482.12, z = 149.86, h = 195.82, x = 330.37}
 		}
@@ -1040,7 +1040,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 526.58, z = 140.58, x = 238.09}
 		},
-		name = 'LX70',
+		name = 'Mega Luxury nº70',
 		spaces = {
 			{y = 536.62, z = 139.88, h = 114.71, x = 236.21}
 		}
@@ -1049,9 +1049,9 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -585.69, z = 71.75, x = 1290.05}
+			{y = -585.69, z = 71.75, x = 1290.05} --1290.05,-585.69,71.75
 		},
-		name = 'LS01',
+		name = 'Casa CRJ nº01',
 		spaces = {
 			{y = -567.62, z = 71.49, h = 344.65, x = 1295.49}
 		}
@@ -1060,9 +1060,9 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -593.07, z = 72.93, x = 1311.03}
+			{y = -593.07, z = 72.93, x = 1311.03} --1311.03,-593.07,72.93
 		},
-		name = 'LS02',
+		name = 'Casa CRJ nº02',
 		spaces = {
 			{y = -575.18, z = 73.25, h = 336.97, x = 1319.19}
 		}
@@ -1073,7 +1073,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -609.86, z = 74.36, x = 1344.65}
 		},
-		name = 'LS03',
+		name = 'Casa CRJ nº03',
 		spaces = {
 			{y = -603.76, z = 74.64, h = 334.73, x = 1348.97}
 		}
@@ -1084,7 +1084,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -620.48, z = 74.34, x = 1359.91}
 		},
-		name = 'LS04',
+		name = 'Casa CRJ nº04',
 		spaces = {
 			{y = -601.83, z = 74.62, h = 359.42, x = 1360.55}
 		}
@@ -1095,7 +1095,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -607.72, z = 74.35, x = 1392.87}
 		},
-		name = 'LS05',
+		name = 'Casa CRJ nº05',
 		spaces = {
 			{y = -596.21, z = 74.61, h = 52.88, x = 1378.33}
 		}
@@ -1106,7 +1106,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -570.68, z = 74.35, x = 1404.84}
 		},
-		name = 'LS06',
+		name = 'Casa CRJ nº06',
 		spaces = {
 			{y = -577.37, z = 74.62, h = 113.2, x = 1387.73}
 		}
@@ -1117,7 +1117,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -544.46, z = 74.34, x = 1366.95}
 		},
-		name = 'LS07',
+		name = 'Casa CRJ nº07',
 		spaces = {
 			{y = -551.94, z = 74.62, h = 157.25, x = 1363.05}
 		}
@@ -1128,7 +1128,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -536.8, z = 73.78, x = 1360.66}
 		},
-		name = 'LS08',
+		name = 'Casa CRJ nº08',
 		spaces = {
 			{y = -553.3, z = 74.31, h = 156.76, x = 1352.89}
 		}
@@ -1139,7 +1139,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -524.9, z = 72.13, x = 1322.0}
 		},
-		name = 'LS09',
+		name = 'Casa CRJ nº09',
 		spaces = {
 			{y = -532.96, z = 72.35, h = 160.86, x = 1318.24}
 		}
@@ -1150,7 +1150,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -516.59, z = 71.41, x = 1314.79}
 		},
-		name = 'LS10',
+		name = 'Casa CRJ nº10',
 		spaces = {
 			{y = -533.58, z = 71.56, h = 160.38, x = 1307.96}
 		}
@@ -1161,7 +1161,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -518.7, z = 69.0, x = 1245.08}
 		},
-		name = 'LS11',
+		name = 'Casa CRJ nº11',
 		spaces = {
 			{y = -522.7, z = 69.25, h = 257.36, x = 1247.17}
 		}
@@ -1172,7 +1172,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -490.29, z = 69.5, x = 1251.25}
 		},
-		name = 'LS12',
+		name = 'Casa CRJ nº12',
 		spaces = {
 			{y = -494.22, z = 69.59, h = 255.66, x = 1260.63}
 		}
@@ -1183,7 +1183,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -477.81, z = 70.19, x = 1259.55}
 		},
-		name = 'LS13',
+		name = 'Casa CRJ nº13',
 		spaces = {
 			{y = -472.81, z = 69.24, h = 170.02, x = 1280.06}
 		}
@@ -1194,7 +1194,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -461.81, z = 69.84, x = 1268.56}
 		},
-		name = 'LS14',
+		name = 'Casa CRJ nº14',
 		spaces = {
 			{y = -463.9, z = 69.87, h = 328.18, x = 1270.98}
 		}
@@ -1205,7 +1205,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -426.7, z = 69.81, x = 1261.12}
 		},
-		name = 'LS15',
+		name = 'Casa CRJ nº15',
 		spaces = {
 			{y = -419.35, z = 69.58, h = 297.04, x = 1261.45}
 		}
@@ -1216,7 +1216,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -578.25, z = 69.49, x = 1234.75}
 		},
-		name = 'LS16',
+		name = 'Casa CRJ nº16',
 		spaces = {
 			{y = -579.36, z = 69.64, h = 271.53, x = 1243.86}
 		}
@@ -1227,7 +1227,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -589.55, z = 69.79, x = 1236.79}
 		},
-		name = 'LS17',
+		name = 'Casa CRJ nº17',
 		spaces = {
 			{y = -586.85, z = 69.55, h = 269.57, x = 1242.92}
 		}
@@ -1238,7 +1238,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -626.17, z = 69.35, x = 1250.47}
 		},
-		name = 'LS18',
+		name = 'Casa CRJ nº18',
 		spaces = {
 			{y = -624.91, z = 69.58, h = 296.96, x = 1259.06}
 		}
@@ -1249,7 +1249,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -660.38, z = 67.93, x = 1257.67}
 		},
-		name = 'LS19',
+		name = 'Casa CRJ nº19',
 		spaces = {
 			{y = -659.12, z = 68.0, h = 293.69, x = 1271.84}
 		}
@@ -1260,7 +1260,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -673.65, z = 65.75, x = 1267.25}
 		},
-		name = 'LS20',
+		name = 'Casa CRJ nº20',
 		spaces = {
 			{y = -673.42, z = 66.25, h = 277.48, x = 1276.75}
 		}
@@ -1271,7 +1271,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -711.08, z = 64.72, x = 1259.79}
 		},
-		name = 'LS21',
+		name = 'Casa CRJ nº21',
 		spaces = {
 			{y = -716.66, z = 64.75, h = 239.07, x = 1263.72}
 		}
@@ -1282,7 +1282,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -723.04, z = 60.64, x = 1225.19}
 		},
-		name = 'LS22',
+		name = 'Casa CRJ nº22',
 		spaces = {
 			{y = -730.21, z = 60.4, h = 163.48, x = 1223.46}
 		}
@@ -1293,7 +1293,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -703.47, z = 60.68, x = 1228.5}
 		},
-		name = 'LS23',
+		name = 'Casa CRJ nº23',
 		spaces = {
 			{y = -704.09, z = 60.7, h = 97.24, x = 1217.85}
 		}
@@ -1304,7 +1304,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -664.18, z = 63.13, x = 1220.91}
 		},
-		name = 'LS24',
+		name = 'Casa CRJ nº24',
 		spaces = {
 			{y = -665.12, z = 62.85, h = 103.07, x = 1214.36}
 		}
@@ -1315,7 +1315,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -614.0, z = 66.12, x = 1206.75}
 		},
-		name = 'LS25',
+		name = 'Casa CRJ nº25',
 		spaces = {
 			{y = -612.47, z = 65.36, h = 94.4, x = 1199.98}
 		}
@@ -1326,7 +1326,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -597.08, z = 64.01, x = 1192.48}
 		},
-		name = 'LS26',
+		name = 'Casa CRJ nº26',
 		spaces = {
 			{y = -595.06, z = 64.23, h = 34.45, x = 1188.28}
 		}
@@ -1337,7 +1337,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -573.78, z = 64.32, x = 1189.79}
 		},
-		name = 'LS27',
+		name = 'Casa CRJ nº27',
 		spaces = {
 			{y = -569.96, z = 64.56, h = 25.68, x = 1185.82}
 		}
@@ -1348,7 +1348,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -554.97, z = 64.71, x = 1191.61}
 		},
-		name = 'LS28',
+		name = 'Casa CRJ nº28',
 		spaces = {
 			{y = -550.38, z = 64.83, h = 86.85, x = 1187.47}
 		}
@@ -1359,7 +1359,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -495.42, z = 65.07, x = 1089.59}
 		},
-		name = 'LS29',
+		name = 'Casa CRJ nº29',
 		spaces = {
 			{y = -493.34, z = 64.4, h = 79.01, x = 1084.78}
 		}
@@ -1370,7 +1370,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -468.42, z = 67.06, x = 1101.7}
 		},
-		name = 'LS30',
+		name = 'Casa CRJ nº30',
 		spaces = {
 			{y = -470.87, z = 65.47, h = 77.7, x = 1091.28}
 		}
@@ -1381,7 +1381,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -417.0, z = 67.16, x = 1111.03}
 		},
-		name = 'LS31',
+		name = 'Casa CRJ nº31',
 		spaces = {
 			{y = -419.57, z = 67.43, h = 83.31, x = 1111.15}
 		}
@@ -1392,7 +1392,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -394.29, z = 68.74, x = 1112.77}
 		},
-		name = 'LS32',
+		name = 'Casa CRJ nº32',
 		spaces = {
 			{y = -399.24, z = 68.2, h = 78.01, x = 1106.07}
 		}
@@ -1403,7 +1403,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -384.09, z = 67.86, x = 1057.42}
 		},
-		name = 'LS33',
+		name = 'Casa CRJ nº33',
 		spaces = {
 			{y = -388.45, z = 68.09, h = 221.13, x = 1056.9}
 		}
@@ -1414,7 +1414,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -414.33, z = 65.95, x = 1021.13}
 		},
-		name = 'LS34',
+		name = 'Casa CRJ nº34',
 		spaces = {
 			{y = -419.52, z = 66.05, h = 219.15, x = 1022.37}
 		}
@@ -1425,7 +1425,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -418.88, z = 64.96, x = 1009.82}
 		},
-		name = 'LS35',
+		name = 'Casa CRJ nº35',
 		spaces = {
 			{y = -423.87, z = 65.32, h = 217.1, x = 1015.92}
 		}
@@ -1436,7 +1436,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -438.07, z = 63.75, x = 987.71}
 		},
-		name = 'LS36',
+		name = 'Casa CRJ nº36',
 		spaces = {
 			{y = -435.43, z = 64.23, h = 271.01, x = 995.76}
 		}
@@ -1447,7 +1447,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -447.94, z = 62.41, x = 971.53}
 		},
-		name = 'LS37',
+		name = 'Casa CRJ nº37',
 		spaces = {
 			{y = -454.41, z = 62.86, h = 213.74, x = 975.54}
 		}
@@ -1458,7 +1458,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -463.22, z = 61.26, x = 939.3}
 		},
-		name = 'LS38',
+		name = 'Casa CRJ nº38',
 		spaces = {
 			{y = -469.79, z = 61.53, h = 212.33, x = 942.05}
 		}
@@ -1469,7 +1469,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -475.65, z = 60.7, x = 928.77}
 		},
-		name = 'LS39',
+		name = 'Casa CRJ nº39',
 		spaces = {
 			{y = -480.49, z = 60.88, h = 203.27, x = 933.31}
 		}
@@ -1480,7 +1480,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -489.73, z = 59.02, x = 909.42}
 		},
-		name = 'LS40',
+		name = 'Casa CRJ nº40',
 		spaces = {
 			{y = -490.17, z = 59.29, h = 204.27, x = 914.46}
 		}
@@ -1491,7 +1491,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -503.77, z = 57.5, x = 873.98}
 		},
-		name = 'LS41',
+		name = 'Casa CRJ nº41',
 		spaces = {
 			{y = -507.45, z = 57.72, h = 226.29, x = 874.77}
 		}
@@ -1502,7 +1502,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -516.17, z = 57.33, x = 854.95}
 		},
-		name = 'LS42',
+		name = 'Casa CRJ nº42',
 		spaces = {
 			{y = -522.39, z = 57.59, h = 227.66, x = 858.81}
 		}
@@ -1513,7 +1513,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -540.12, z = 57.33, x = 848.57}
 		},
-		name = 'LS43',
+		name = 'Casa CRJ nº43',
 		spaces = {
 			{y = -542.76, z = 57.6, h = 266.06, x = 853.51}
 		}
@@ -1524,7 +1524,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -567.41, z = 57.71, x = 842.1}
 		},
-		name = 'LS44',
+		name = 'Casa CRJ nº44',
 		spaces = {
 			{y = -567.47, z = 57.99, h = 279.71, x = 849.29}
 		}
@@ -1535,7 +1535,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -594.02, z = 58.3, x = 868.47}
 		},
-		name = 'LS45',
+		name = 'Casa CRJ nº45',
 		spaces = {
 			{y = -590.11, z = 58.28, h = 317.23, x = 872.86}
 		}
@@ -1546,7 +1546,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -602.34, z = 58.45, x = 875.58}
 		},
-		name = 'LS46',
+		name = 'Casa CRJ nº46',
 		spaces = {
 			{y = -598.36, z = 58.45, h = 316.61, x = 875.55}
 		}
@@ -1557,7 +1557,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -631.81, z = 58.05, x = 912.15}
 		},
-		name = 'LS47',
+		name = 'Casa CRJ nº47',
 		spaces = {
 			{y = -627.46, z = 58.32, h = 319.36, x = 917.67}
 		}
@@ -1568,7 +1568,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -645.12, z = 57.87, x = 913.03}
 		},
-		name = 'LS48',
+		name = 'Casa CRJ nº48',
 		spaces = {
 			{y = -639.77, z = 58.14, h = 318.18, x = 917.96}
 		}
@@ -1579,7 +1579,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -657.5, z = 58.02, x = 946.14}
 		},
-		name = 'LS49',
+		name = 'Casa CRJ nº49',
 		spaces = {
 			{y = -654.13, z = 58.16, h = 309.34, x = 951.67}
 		}
@@ -1590,7 +1590,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -672.19, z = 58.02, x = 940.18}
 		},
-		name = 'LS50',
+		name = 'Casa CRJ nº50',
 		spaces = {
 			{y = -669.22, z = 58.29, h = 297.96, x = 946.99}
 		}
@@ -1601,7 +1601,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -688.32, z = 57.95, x = 969.7}
 		},
-		name = 'LS51',
+		name = 'Casa CRJ nº51',
 		spaces = {
 			{y = -685.58, z = 57.91, h = 309.99, x = 973.59}
 		}
@@ -1612,7 +1612,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -713.97, z = 57.87, x = 976.24}
 		},
-		name = 'LS52',
+		name = 'Casa CRJ nº52',
 		spaces = {
 			{y = -709.42, z = 57.88, h = 312.02, x = 982.5}
 		}
@@ -1623,7 +1623,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -734.1, z = 57.46, x = 1004.32}
 		},
-		name = 'LS53',
+		name = 'Casa CRJ nº53',
 		spaces = {
 			{y = -731.13, z = 57.88, h = 311.05, x = 1008.02}
 		}
@@ -1634,7 +1634,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -614.8, z = 58.84, x = 981.21}
 		},
-		name = 'LS54',
+		name = 'Casa CRJ nº54',
 		spaces = {
 			{y = -619.61, z = 59.1, h = 128.1, x = 973.52}
 		}
@@ -1645,7 +1645,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -601.7, z = 59.5, x = 959.79}
 		},
-		name = 'LS55',
+		name = 'Casa CRJ nº55',
 		spaces = {
 			{y = -598.08, z = 59.65, h = 27.96, x = 955.45}
 		}
@@ -1656,7 +1656,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -579.14, z = 59.28, x = 984.25}
 		},
-		name = 'LS56',
+		name = 'Casa CRJ nº56',
 		spaces = {
 			{y = -572.6, z = 59.53, h = 31.32, x = 982.93}
 		}
@@ -1667,29 +1667,29 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -565.15, z = 60.2, x = 1008.54}
 		},
-		name = 'LS57',
+		name = 'Casa CRJ nº57',
 		spaces = {
 			{y = -563.56, z = 60.44, h = 263.72, x = 1012.51}
 		}
 	},
-	[112] = {
+	--[[[112] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -243.89, z = 68.63, x = 943.81}
+			{y = -243.89, z = 68.63, x = 943.81}  --943.81,-243.89,68.63
 		},
-		name = 'LS58',
+		name = 'Casa CRJ nº58',
 		spaces = {
 			{y = -250.12, z = 68.69, h = 150.37, x = 939.22}
 		}
-	},
+	},]]--
 	[113] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = -588.12, z = 59.14, x = 1003.79}
 		},
-		name = 'LS59',
+		name = 'Casa CRJ nº58',
 		spaces = {
 			{y = -590.25, z = 59.2, h = 258.95, x = 1009.07}
 		}
@@ -1700,7 +1700,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -564.06, z = 57.97, x = 922.71}
 		},
-		name = 'LS60',
+		name = 'Casa CRJ nº59',
 		spaces = {
 			{y = -567.39, z = 58.24, h = 206.14, x = 926.46}
 		}
@@ -1711,7 +1711,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -546.73, z = 59.53, x = 956.87}
 		},
-		name = 'LS61',
+		name = 'Casa CRJ nº60',
 		spaces = {
 			{y = -552.49, z = 59.55, h = 211.12, x = 957.91}
 		}
@@ -1722,7 +1722,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -530.0, z = 60.12, x = 981.96}
 		},
-		name = 'LS62',
+		name = 'Casa CRJ nº61',
 		spaces = {
 			{y = -536.41, z = 60.19, h = 211.11, x = 983.27}
 		}
@@ -1733,7 +1733,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -510.47, z = 60.7, x = 1001.36}
 		},
-		name = 'LS63',
+		name = 'Casa CRJ nº62',
 		spaces = {
 			{y = -518.48, z = 60.98, h = 205.24, x = 1003.89}
 		}
@@ -1744,7 +1744,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -495.92, z = 64.08, x = 1045.95}
 		},
-		name = 'LS64',
+		name = 'Casa CRJ nº63',
 		spaces = {
 			{y = -488.79, z = 64.19, h = 257.03, x = 1049.91}
 		}
@@ -1755,7 +1755,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -479.89, z = 64.1, x = 1049.12}
 		},
-		name = 'LS65',
+		name = 'Casa CRJ nº64',
 		spaces = {
 			{y = -483.32, z = 64.11, h = 257.85, x = 1056.64}
 		}
@@ -1766,7 +1766,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -445.56, z = 65.97, x = 1055.36}
 		},
-		name = 'LS66',
+		name = 'Casa CRJ nº65',
 		spaces = {
 			{y = -445.67, z = 66.16, h = 257.58, x = 1062.56}
 		}
@@ -1777,7 +1777,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -464.4, z = 63.9, x = 1020.06}
 		},
-		name = 'LS67',
+		name = 'Casa CRJ nº66',
 		spaces = {
 			{y = -459.29, z = 64.37, h = 38.05, x = 1019.04}
 		}
@@ -1788,7 +1788,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -505.37, z = 61.74, x = 966.19}
 		},
-		name = 'LS68',
+		name = 'Casa CRJ nº67',
 		spaces = {
 			{y = -500.52, z = 61.65, h = 29.8, x = 960.86}
 		}
@@ -1799,7 +1799,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -516.97, z = 60.25, x = 950.42}
 		},
-		name = 'LS69',
+		name = 'Casa CRJ nº68',
 		spaces = {
 			{y = -511.66, z = 60.5, h = 29.22, x = 948.5}
 		}
@@ -1810,7 +1810,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -527.47, z = 59.58, x = 921.11}
 		},
-		name = 'LS70',
+		name = 'Casa CRJ nº69',
 		spaces = {
 			{y = -522.63, z = 59.03, h = 25.35, x = 915.83}
 		}
@@ -1819,9 +1819,9 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -547.44, z = 58.17, x = 893.88}
+			{y = -547.44, z = 58.17, x = 893.88} 
 		},
-		name = 'LS71',
+		name = 'Casa CRJ nº71',
 		spaces = {
 			{y = -551.92, z = 58.24, h = 115.0, x = 888.36}
 		}
@@ -1832,16 +1832,16 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -429.62, z = 67.4, x = 1103.28}
 		},
-		name = 'LS72',
+		name = 'Casa CRJ nº72',
 		spaces = {
 			{y = -428.24, z = 66.68, h = 80.97, x = 1097.86}
 		}
 	},
-	[127] = {
+	--[[[127] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 2190.1, z = 78.85, x = 1551.96}
+			{y = 2190.1, z = 78.85, x = 1551.96} --1551.96,2190.1,78.85
 		},
 		name = 'SS01',
 		spaces = {
@@ -1858,19 +1858,19 @@ vAZ.config.garages.home = {
 		spaces = {
 			{y = -571.43, z = 10.93, h = 319.54, x = -1886.63}
 		}
-	},
+	},]]--
 	[129] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 463.46, z = 88.22, x = -864.47}
+			{y = 463.46, z = 88.22, x = -864.47} ---864.47,463.46,88.22
 		},
-		name = 'FH01',
+		name = 'Mega Luxury nº172',
 		spaces = {
 			{y = 462.66, z = 86.93, h = 276.73, x = -861.31}
 		}
 	},
-	[130] = {
+	--[[[130] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
@@ -1885,29 +1885,29 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 688.21, z = 25.48, x = -2996.32}
+			{y = 688.21, z = 25.48, x = -2996.32} ---2996.32,688.21,25.48
 		},
 		name = 'MS07',
 		spaces = {
 			{y = 690.09, z = 23.7, h = 109.64, x = -3002.79}
 		}
-	},
+	},]]--
 	[132] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 522.18, z = 90.62, x = -850.62}
+			{y = 522.18, z = 90.62, x = -850.62} ---850.62,522.18,90.62
 		},
-		name = 'FH04',
+		name = 'Mega Luxury nº73',
 		spaces = {
 			{y = 514.29, z = 90.15, h = 106.56, x = -851.05}
 		}
 	},
-	[133] = {
+	--[[[133] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 740.75, z = 27.58, x = -3014.84}
+			{y = 740.75, z = 27.58, x = -3014.84} ---3014.84,740.75,27.58
 		},
 		name = 'MS05',
 		spaces = {
@@ -1918,20 +1918,20 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 1927.04, z = 167.31, x = -2596.87}
+			{y = 1927.04, z = 167.31, x = -2596.87} ---2596.87,1927.04,167.31
 		},
 		name = 'MS04',
 		spaces = {
 			{y = 1929.85, z = 166.46, h = 275.01, x = -2588.73}
 		}
-	},
+	},]]--
 	[135] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 901.64, z = 230.57, x = -681.48}
+			{y = 901.64, z = 230.57, x = -681.48} ---681.48,901.64,230.57
 		},
-		name = 'MS03',
+		name = 'Mansão 10',
 		spaces = {
 			{y = 903.59, z = 229.73, h = 326.35, x = -675.44}
 		}
@@ -1940,9 +1940,9 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 551.97, z = 95.62, x = -912.38}
+			{y = 551.97, z = 95.62, x = -912.38} ---912.38,551.97,95.62
 		},
-		name = 'FH08',
+		name = 'Mega Luxury nº78',
 		spaces = {
 			{y = 553.88, z = 96.49, h = 311.55, x = -907.51}
 		}
@@ -1951,7 +1951,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 184.23, z = 72.47, x = -813.06}
+			{y = 184.23, z = 72.47, x = -813.06} ---813.06,184.23,72.47
 		},
 		name = 'MS02',
 		spaces = {
@@ -1962,7 +1962,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 548.3, z = 176.02, x = 21.41}
+			{y = 548.3, z = 176.02, x = 21.41} --21.41,548.3,176.02
 		},
 		name = 'MS01',
 		spaces = {
@@ -1973,9 +1973,9 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 445.34, z = 80.42, x = -938.56}
+			{y = 445.34, z = 80.42, x = -938.56} ---938.56,445.34,80.42
 		},
-		name = 'FH11',
+		name = 'Mega Luxury nº81',
 		spaces = {
 			{y = 443.81, z = 79.99, h = 198.88, x = -942.71}
 		}
@@ -1984,7 +1984,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6644.04, z = 31.93, x = 81.27}
+			{y = 6644.04, z = 31.93, x = 81.27} --81.27,6644.04,31.93
 		},
 		name = 'PB31',
 		spaces = {
@@ -1995,7 +1995,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6659.22, z = 31.65, x = 24.79}
+			{y = 6659.22, z = 31.65, x = 24.79} --24.79,6659.22,31.65
 		},
 		name = 'PB30',
 		spaces = {
@@ -2006,7 +2006,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6601.97, z = 32.48, x = 25.06}
+			{y = 6601.97, z = 32.48, x = 25.06} --25.06,6601.97,32.48
 		},
 		name = 'PB29',
 		spaces = {
@@ -2017,18 +2017,18 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 468.75, z = 77.82, x = -1074.27}
+			{y = 468.75, z = 77.82, x = -1074.27} ---1074.27,468.75,77.82
 		},
-		name = 'FH15',
+		name = 'Mega Luxury nº85',
 		spaces = {
 			{y = 465.49, z = 76.79, h = 144.79, x = -1079.1}
 		}
 	},
-	[144] = {
+	--[[[144] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1872.65, z = 26.25, x = 396.69}
+			{y = -1872.65, z = 26.25, x = 396.69} --396.69,-1872.65,26.25
 		},
 		name = 'LV25',
 		spaces = {
@@ -2039,7 +2039,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1894.9, z = 24.99, x = 360.06}
+			{y = -1894.9, z = 24.99, x = 360.06} --360.06,-1894.9,24.99
 		},
 		name = 'LV27',
 		spaces = {
@@ -2050,29 +2050,29 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1937.5, z = 24.82, x = 315.73}
+			{y = -1937.5, z = 24.82, x = 315.73} --315.73,-1937.5,24.82
 		},
 		name = 'LV28',
 		spaces = {
 			{y = -1942.05, z = 24.92, h = 230.52, x = 315.5}
 		}
-	},
+	},]]--
 	[147] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 455.98, z = 79.82, x = -971.31}
+			{y = 455.98, z = 79.82, x = -971.31} ---971.31,455.98,79.82
 		},
-		name = 'FH19',
+		name = 'Mega Luxury nº89',
 		spaces = {
 			{y = 450.03, z = 78.97, h = 199.58, x = -967.03}
 		}
 	},
-	[148] = {
+	--[[[148] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1965.91, z = 23.74, x = 310.66}
+			{y = -1965.91, z = 23.74, x = 310.66} --310.66,-1965.91,23.74
 		},
 		name = 'LV29',
 		spaces = {
@@ -2083,7 +2083,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1980.29, z = 21.4, x = 282.89}
+			{y = -1980.29, z = 21.4, x = 282.89} --282.89,-1980.29,21.4
 		},
 		name = 'LV31',
 		spaces = {
@@ -2094,20 +2094,20 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1991.24, z = 20.46, x = 280.83}
+			{y = -1991.24, z = 20.46, x = 280.83} --280.83,-1991.24,20.46
 		},
 		name = 'LV32',
 		spaces = {
 			{y = -1992.54, z = 20.81, h = 228.61, x = 286.37}
 		}
-	},
+	},]]--
 	[151] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 439.85, z = 106.9, x = -736.59}
 		},
-		name = 'FH23',
+		name = 'Mega Luxury nº93',
 		spaces = {
 			{y = 446.59, z = 105.88, h = 3.21, x = -736.19}
 		}
@@ -2116,40 +2116,40 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 500.53, z = 109.27, x = -716.59}
+			{y = 500.53, z = 109.27, x = -716.59} ---716.59,500.53,109.27
 		},
-		name = 'FH24',
+		name = 'Mega Luxury nº94',
 		spaces = {
 			{y = 495.36, z = 108.43, h = 206.78, x = -716.94}
 		}
 	},
-	[153] = {
+	--[[[153] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6265.04, z = 31.53, x = -360.84}
+			{y = 6265.04, z = 31.53, x = -360.84} ---360.84,6265.04,31.53
 		},
 		name = 'PB06',
 		spaces = {
 			{y = 6265.07, z = 31.32, h = 46.14, x = -352.17}
 		}
-	},
+	},]]--
 	[154] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 507.84, z = 110.36, x = -692.91}
 		},
-		name = 'FH26',
+		name = 'Mega Luxury nº96',
 		spaces = {
 			{y = 500.77, z = 109.21, h = 201.51, x = -688.85}
 		}
 	},
-	[155] = {
+	--[[[155] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6412.01, z = 31.92, x = -187.33}
+			{y = 6412.01, z = 31.92, x = -187.33} ---187.33,6412.01,31.92
 		},
 		name = 'PB19',
 		spaces = {
@@ -2164,38 +2164,38 @@ vAZ.config.garages.home = {
 		},
 		name = 'LV01',
 		spaces = {
-			{y = -1927.99, z = 24.39, h = 319.7, x = 240.16}
+			{y = -1927.99, z = 24.39, h = 319.7, x = 240.16} --240.16,-1927.99,24.39
 		}
-	},
+	},]]--
 	[157] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 492.54, z = 106.97, x = -574.21}
 		},
-		name = 'FH29',
+		name = 'Mega Luxury nº99',
 		spaces = {
 			{y = 498.15, z = 105.38, h = 9.46, x = -573.79}
 		}
 	},
-	[158] = {
+	--[[[158] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1914.8, z = 25.81, x = 270.61}
+			{y = -1914.8, z = 25.81, x = 270.61} --270.61,-1914.8,25.81
 		},
 		name = 'LV03',
 		spaces = {
 			{y = -1905.53, z = 26.78, h = 51.02, x = 270.12}
 		}
-	},
+	},]]--
 	[159] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 531.83, z = 108.17, x = -589.59}
 		},
-		name = 'FH31',
+		name = 'Mega Luxury nº101',
 		spaces = {
 			{y = 526.68, z = 106.72, h = 215.41, x = -586.67}
 		}
@@ -2206,16 +2206,16 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 394.76, z = 100.67, x = -574.01}
 		},
-		name = 'FH32',
+		name = 'Mega Luxury nº102',
 		spaces = {
 			{y = 401.65, z = 99.82, h = 19.61, x = -574.73}
 		}
 	},
-	[161] = {
+	--[[[161] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1849.98, z = 27.77, x = 340.81}
+			{y = -1849.98, z = 27.77, x = 340.81} --340.81,-1849.98,27.77
 		},
 		name = 'LV06',
 		spaces = {
@@ -2226,7 +2226,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1828.31, z = 27.95, x = 344.21}
+			{y = -1828.31, z = 27.95, x = 344.21} --344.21,-1828.31,27.95
 		},
 		name = 'LV07',
 		spaces = {
@@ -2237,7 +2237,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1811.51, z = 28.8, x = 350.15}
+			{y = -1811.51, z = 28.8, x = 350.15} --350.15,-1811.51,28.8
 		},
 		name = 'LV08',
 		spaces = {
@@ -2248,7 +2248,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1753.91, z = 29.37, x = 404.54}
+			{y = -1753.91, z = 29.37, x = 404.54} --404.54,-1753.91,29.37
 		},
 		name = 'LV09',
 		spaces = {
@@ -2259,7 +2259,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1741.22, z = 29.61, x = 430.66}
+			{y = -1741.22, z = 29.61, x = 430.66} --430.66,-1741.22,29.61
 		},
 		name = 'LV10',
 		spaces = {
@@ -2270,7 +2270,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1715.43, z = 29.33, x = 434.96}
+			{y = -1715.43, z = 29.33, x = 434.96} --434.96,-1715.43,29.33
 		},
 		name = 'LV11',
 		spaces = {
@@ -2281,7 +2281,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1698.41, z = 29.38, x = 442.86}
+			{y = -1698.41, z = 29.38, x = 442.86} --442.86,-1698.41,29.38
 		},
 		name = 'LV12',
 		spaces = {
@@ -2292,7 +2292,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1698.89, z = 29.41, x = 498.38}
+			{y = -1698.89, z = 29.41, x = 498.38}  --498.38,-1698.89,29.41
 		},
 		name = 'LV13',
 		spaces = {
@@ -2303,7 +2303,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1718.03, z = 29.37, x = 479.02}
+			{y = -1718.03, z = 29.37, x = 479.02} --479.02,-1718.03,29.37
 		},
 		name = 'LV14',
 		spaces = {
@@ -2314,7 +2314,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1740.78, z = 29.11, x = 464.62}
+			{y = -1740.78, z = 29.11, x = 464.62} --464.62,-1740.78,29.11
 		},
 		name = 'LV15',
 		spaces = {
@@ -2325,7 +2325,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1755.13, z = 28.76, x = 475.52}
+			{y = -1755.13, z = 28.76, x = 475.52} --475.52,-1755.13,28.76
 		},
 		name = 'LV16',
 		spaces = {
@@ -2336,29 +2336,29 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1772.84, z = 28.7, x = 475.02}
+			{y = -1772.84, z = 28.7, x = 475.02} --475.02,-1772.84,28.7
 		},
 		name = 'LV17',
 		spaces = {
 			{y = -1779.06, z = 28.93, h = 270.19, x = 478.21}
 		}
-	},
+	},]]--
 	[173] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 376.54, z = 104.77, x = -447.07}
 		},
-		name = 'FH45',
+		name = 'Mega Luxury nº115',
 		spaces = {
 			{y = 372.48, z = 103.93, h = 358.58, x = -456.49}
 		}
 	},
-	[174] = {
+	--[[[174] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1799.04, z = 28.49, x = 504.82}
+			{y = -1799.04, z = 28.49, x = 504.82} --504.82,-1799.04,28.49
 		},
 		name = 'LV19',
 		spaces = {
@@ -2369,20 +2369,20 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1808.65, z = 28.51, x = 504.77}
+			{y = -1808.65, z = 28.51, x = 504.77} --504.77,-1808.65,28.51
 		},
 		name = 'LV20',
 		spaces = {
 			{y = -1805.02, z = 28.65, h = 138.92, x = 491.87}
 		}
-	},
+	},]]--
 	[176] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 525.26, z = 112.44, x = -523.67}
 		},
-		name = 'FH48',
+		name = 'Mega Luxury nº118',
 		spaces = {
 			{y = 530.68, z = 110.95, h = 44.11, x = -526.66}
 		}
@@ -2393,16 +2393,16 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 573.16, z = 121.24, x = -524.63}
 		},
-		name = 'FH49',
+		name = 'Mega Luxury nº119',
 		spaces = {
 			{y = 574.05, z = 120.61, h = 281.57, x = -519.47}
 		}
 	},
-	[178] = {
+	--[[[178] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1839.65, z = 28.08, x = 428.72}
+			{y = -1839.65, z = 28.08, x = 428.72} --428.72,-1839.65,28.08
 		},
 		name = 'LV23',
 		spaces = {
@@ -2413,25 +2413,25 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1844.77, z = 26.84, x = 395.08}
+			{y = -1844.77, z = 26.84, x = 395.08} --395.08,-1844.77,26.84
 		},
 		name = 'LV24',
 		spaces = {
-			{y = -1850.26, z = 26.2, h = 223.86, x = 395.69}
+			{y = -1850.26, z = 26.2, h = 223.86, x = 395.69} 
 		}
-	},
+	},]]--
 	[180] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 538.11, z = 121.46, x = -470.24}
+			{y = 538.11, z = 121.46, x = -470.24}  ---470.24,538.11,121.46
 		},
-		name = 'FH52',
+		name = 'Mega Luxury nº122',
 		spaces = {
 			{y = 542.62, z = 119.92, h = 355.06, x = -468.04}
 		}
 	},
-	[181] = {
+	--[[[181] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
@@ -2441,14 +2441,14 @@ vAZ.config.garages.home = {
 		spaces = {
 			{y = -1896.36, z = 25.21, h = 222.83, x = 384.63}
 		}
-	},
+	},]]--
 	[182] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 512.34, z = 120.19, x = -397.25}
 		},
-		name = 'FH54',
+		name = 'Mega Luxury nº124',
 		spaces = {
 			{y = 518.94, z = 119.68, h = 355.21, x = -398.63}
 		}
@@ -2459,7 +2459,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 473.56, z = 112.52, x = -356.43}
 		},
-		name = 'FH55',
+		name = 'Mega Luxury nº125',
 		spaces = {
 			{y = 474.7, z = 111.89, h = 299.59, x = -351.33}
 		}
@@ -2470,29 +2470,29 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 566.28, z = 124.62, x = -404.09}
 		},
-		name = 'FH56',
+		name = 'Mega Luxury nº126',
 		spaces = {
 			{y = 559.97, z = 123.79, h = 152.09, x = -409.68}
 		}
 	},
-	[185] = {
+	--[[[185] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1971.96, z = 22.49, x = 299.42}
+			{y = -1971.96, z = 22.49, x = 299.42} --299.42,-1971.96,22.49
 		},
 		name = 'LV30',
 		spaces = {
 			{y = -1982.39, z = 22.39, h = 139.63, x = 306.82}
 		}
-	},
+	},]]--
 	[186] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 517.38, z = 120.15, x = -357.14}
 		},
-		name = 'FH58',
+		name = 'Mega Luxury nº128',
 		spaces = {
 			{y = 514.72, z = 118.67, h = 134.89, x = -362.62}
 		}
@@ -2503,16 +2503,16 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 483.18, z = 113.46, x = -312.45}
 		},
-		name = 'FH59',
+		name = 'Mega Luxury nº129',
 		spaces = {
 			{y = 480.85, z = 111.44, h = 118.55, x = -320.42}
 		}
 	},
-	[188] = {
+	--[[[188] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -2026.71, z = 18.86, x = 256.42}
+			{y = -2026.71, z = 18.86, x = 256.42} --256.42,-2026.71,18.86
 		},
 		name = 'LV33',
 		spaces = {
@@ -2523,7 +2523,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -2021.42, z = 18.71, x = 240.68}
+			{y = -2021.42, z = 18.71, x = 240.68} --240.68,-2021.42,18.71
 		},
 		name = 'LV34',
 		spaces = {
@@ -2534,7 +2534,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -2042.78, z = 18.02, x = 241.9}
+			{y = -2042.78, z = 18.02, x = 241.9} --241.9,-2042.78,18.02
 		},
 		name = 'LV35',
 		spaces = {
@@ -2556,7 +2556,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6187.37, z = 31.54, x = -375.5}
+			{y = 6187.37, z = 31.54, x = -375.5} ---375.5,6187.37,31.54
 		},
 		name = 'PB02',
 		spaces = {
@@ -2567,7 +2567,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6204.76, z = 31.58, x = -361.91}
+			{y = 6204.76, z = 31.58, x = -361.91} ---361.91,6204.76,31.58
 		},
 		name = 'PB03',
 		spaces = {
@@ -2595,23 +2595,23 @@ vAZ.config.garages.home = {
 		spaces = {
 			{y = 6273.42, z = 30.02, h = 50.83, x = -388.73}
 		}
-	},
+	},]]--
 	[196] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 451.89, z = 105.34, x = -1371.63}
+			{y = 451.89, z = 105.34, x = -1371.63} ---1371.63,451.89,105.34
 		},
-		name = 'FH68',
+		name = 'Mega Luxury nº138',
 		spaces = {
 			{y = 453.26, z = 104.04, h = 80.28, x = -1376.73}
 		}
 	},
-	[197] = {
+	--[[[197] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6264.1, z = 30.09, x = -436.46}
+			{y = 6264.1, z = 30.09, x = -436.46} ---436.46,6264.1,30.09
 		},
 		name = 'PB07',
 		spaces = {
@@ -2738,23 +2738,23 @@ vAZ.config.garages.home = {
 		spaces = {
 			{y = 6435.29, z = 31.11, h = 22964, x = -224.33}
 		}
-	},
+	},]]--
 	[209] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 676.11, z = 148.54, x = -463.57}
+			{y = 676.11, z = 148.54, x = -463.57} ---463.57,676.11,148.54
 		},
-		name = 'FH81',
+		name = 'Mega Luxury nº151',
 		spaces = {
 			{y = 673.46, z = 146.8, h = 148.4, x = -467.37}
 		}
 	},
-	[210] = {
+	--[[[210] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 6561.7, z = 29.53, x = -122.88}
+			{y = 6561.7, z = 29.53, x = -122.88} 
 		},
 		name = 'PB20',
 		spaces = {
@@ -2848,14 +2848,14 @@ vAZ.config.garages.home = {
 		spaces = {
 			{y = 6618.68, z = 31.34, h = 60.09, x = -5.0}
 		}
-	},
+	},]]--
 	[219] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = 804.188, z = 177.56, x = -956.88}
 		},
-		name = 'FH91',
+		name = 'Mega Luxury nº161',
 		spaces = {
 			{y = 800.59, z = 176.76, h = 152.94, x = -958.62}
 		}
@@ -2866,7 +2866,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 813.8, z = 184.33, x = -921.15}
 		},
-		name = 'FH92',
+		name = 'Mega Luxury nº162',
 		spaces = {
 			{y = 806.38, z = 183.37, h = 189.06, x = -920.0}
 		}
@@ -2877,7 +2877,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 783.99, z = 171.38, x = -1004.0}
 		},
-		name = 'FH93',
+		name = 'Mega Luxury nº163',
 		spaces = {
 			{y = 786.76, z = 171.06, h = 293.5, x = -997.95}
 		}
@@ -2886,14 +2886,14 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = 803.55, z = 202.18, x = -810.25}
+			{y = 803.55, z = 202.18, x = -810.25} ---810.25,803.55,202.18
 		},
-		name = 'FH94',
+		name = 'Mega Luxury nº164',
 		spaces = {
 			{y = 809.51, z = 201.24, h = 19.71, x = -811.6}
 		}
 	},
-	[223] = {
+	--[[[223] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
@@ -2908,7 +2908,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1826.73, z = 28.53, x = 487.7}
+			{y = -1826.73, z = 28.53, x = 487.7} --487.7,-1826.73,28.53
 		},
 		name = 'LV21',
 		spaces = {
@@ -2919,7 +2919,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1778.19, z = 28.51, x = 511.46}
+			{y = -1778.19, z = 28.51, x = 511.46} --511.46,-1778.19,28.51
 		},
 		name = 'LV18',
 		spaces = {
@@ -2930,7 +2930,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1856.29, z = 27.11, x = 318.07}
+			{y = -1856.29, z = 27.11, x = 318.07} --318.07,-1856.29,27.11
 		},
 		name = 'LV05',
 		spaces = {
@@ -2941,7 +2941,7 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1899.45, z = 26.89, x = 279.17}
+			{y = -1899.45, z = 26.89, x = 279.17} --279.17,-1899.45,26.89
 		},
 		name = 'LV04',
 		spaces = {
@@ -2952,20 +2952,20 @@ vAZ.config.garages.home = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -1932.86, z = 25.44, x = 269.8}
+			{y = -1932.86, z = 25.44, x = 269.8} --269.8,-1932.86,25.44
 		},
 		name = 'LV02',
 		spaces = {
 			{y = -1925.64, z = 25.52, h = 47.52, x = 267.71}
 		}
-	},
+	},]]--
 	[229] = {
 		marker = 36,
 		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
 			{y = -57.11, z = 38.05, x = -876.54}
 		},
-		name = 'LX01',
+		name = 'Mega Luxury nº01',
 		spaces = {
 			{y = -54.25, z = 37.6, h = 281.38, x = -869.45}
 		}
@@ -2976,7 +2976,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = -17.35, z = 43.1, x = -890.55}
 		},
-		name = 'LX02',
+		name = 'Mega Luxury nº02',
 		spaces = {
 			{y = -16.18, z = 42.15, h = 304.12, x = -885.98}
 		}
@@ -2987,7 +2987,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 51.35, z = 48.78, x = -872.28}
 		},
-		name = 'LX03',
+		name = 'Mega Luxury nº03',
 		spaces = {
 			{y = 46.86, z = 48.39, h = 195.46, x = -875.02}
 		}
@@ -2998,7 +2998,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 107.74, z = 55.66, x = -969.08}
 		},
-		name = 'LX04',
+		name = 'Mega Luxury nº04',
 		spaces = {
 			{y = 109.36, z = 55.49, h = 314.26, x = -960.77}
 		}
@@ -3009,7 +3009,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 629.92, z = 129.99, x = -1885.63}
 		},
-		name = 'LX05',
+		name = 'Mega Luxury nº05',
 		spaces = {
 			{y = 626.0, z = 129.15, h = 136.16, x = -1890.51}
 		}
@@ -3020,7 +3020,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 142.37, z = 60.66, x = -997.43}
 		},
-		name = 'LX06',
+		name = 'Mega Luxury nº06',
 		spaces = {
 			{y = 144.19, z = 59.81, h = 269.99, x = -992.02}
 		}
@@ -3031,7 +3031,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 224.98, z = 63.76, x = -1045.16}
 		},
-		name = 'LX07',
+		name = 'Mega Luxury nº07',
 		spaces = {
 			{y = 219.47, z = 62.91, h = 184.73, x = -1048.01}
 		}
@@ -3042,7 +3042,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 212.7, z = 67.46, x = -923.9}
 		},
-		name = 'LX08',
+		name = 'Mega Luxury nº08',
 		spaces = {
 			{y = 210.69, z = 66.61, h = 163.52, x = -933.57}
 		}
@@ -3053,7 +3053,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 196.27, z = 69.5, x = -905.04}
 		},
-		name = 'LX09',
+		name = 'Mega Luxury nº09',
 		spaces = {
 			{y = 190.68, z = 68.59, h = 179.92, x = -911.78}
 		}
@@ -3064,7 +3064,7 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 114.68, z = 55.31, x = -915.48}
 		},
-		name = 'LX10',
+		name = 'Mega Luxury nº10',
 		spaces = {
 			{y = 112.49, z = 54.47, h = 84.9, x = -920.41}
 		}
@@ -3075,20 +3075,318 @@ vAZ.config.garages.home = {
 		point = {
 			{y = 13.37, z = 47.91, x = -931.72}
 		},
-		name = 'LX11',
+		name = 'Mega Luxury nº11',
 		spaces = {
 			{y = 9.31, z = 46.87, h = 214.83, x = -925.27}
 		}
 	},
-	[240] = {
+	--[[[240] = {
 		marker = 36,
-		blip = {scale = 0.4, color = 4, type = 357},   -- -533.99,482.88,103.18
+		blip = {scale = 0.4, color = 4, type = 357},
 		point = {
-			{y = -533.99, z = 482.88, x = 103.18}
+			{y = 13.37, z = 47.91, x = -931.72}
 		},
-		name = 'FH47',
+		name = 'Mega Luxury nº11',
 		spaces = {
-			{y = 488.7, z = 103.25, h = 50.14, x = -539.37}    -- -539.37,488.7,103.25
+			{y = 9.31, z = 46.87, h = 214.83, x = -925.27}
+		}
+	},]]--
+	[241] = {
+		marker = 36,
+		blip = {scale = 0.4, color = 4, type = 357},
+		point = {
+			{y = -1959.889, z = 20.83, x = 104.27}
+		},
+		name = 'Casa Krondorss nº103',
+		spaces = {
+			{y = -1949.70, z = 20.72, h = 214.83, x = 103.57}
+		}
+	},
+	[242] = {
+		marker = 36,
+		blip = {scale = 0.4, color = 4, type = 357},
+		point = {
+			{y = -1925.50, z = 21.43, x = 67.98}
+		},
+		name = 'Casa Krondorss nº104',
+		spaces = {
+			{y = -1917.69, z = 21.23, h = 214.83, x = 72.43} 
+		}
+	},
+	[243] = {
+		marker = 36,
+		blip = {scale = 0.4, color = 4, type = 357},
+		point = {
+			{y = -1896.17, z = 22.27, x = 32.67}
+		},
+		name = 'Casa Krondorss nº105',
+		spaces = {
+			{y = -1888.72, z = 22.17, h = 214.83, x = 37.11}
+		}
+	},
+	[244] = {
+        marker = 36,
+		blip = {scale = 0.4, color = 4, type = 357},
+		point = {
+            {y = -1853.27, z = 24.22, x = 162.71}
+        },
+        name = 'Casa Krondorss nº114',
+        spaces = {
+            {y = -1878.73, z = 23.64, h = 214.83, x = 149.67}
+        }
+	},
+	[245] = {
+        marker = 36,
+		blip = {scale = 0.4, color = 4, type = 357},
+		point = {
+            {y = -1872.36, z =24.72, x = 189.60}
+        },
+        name = 'Casa Krondorss nº115',
+        spaces = {
+            {y = -1879.60, z = 24.46, h = 214.83, x = 186.44}
+        }
+	},
+	[246] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357}, 
+        point = {
+            {y = -1705.03, z =29.30, x = 271.22}  
+        },
+        name = 'Casa Krondorss nº117',
+        spaces = {
+            {y = -1697.33, z =29.16, h = 214.83, x =263.16} 
+        }
+    },
+	[247] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357}, 
+        point = {
+            {y = -1771.48, z =28.79, x =318.43}  --318.43182373047,-1771.4854736328,28.79298210144
+        },
+        name = 'Casa Krondorss nº118',
+        spaces = {
+            {y = -1774.65, z =28.57, h = 214.83, x =322.35} --322.35317993164,-1774.6578369141,28.577825546265
+        }
+    },
+	[248] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357}, 
+        point = {
+            {y = -1768.63, z = 28.99, x = 320.26}  --320.263671875,-1768.6364746094,28.993539810181
+        },
+        name = 'Casa Krondorss nº119',
+        spaces = {
+            {y = -1772.96, z = 28.62, h = 214.83, x = 324.16} --324.1657409668,-1772.9616699219,28.623506546021
+        }
+    },
+	[249] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357}, 
+        point = {
+            {y = -1833.43, z = 27.06, x = 141.97} --141.97526550293,-1833.4359130859,27.060483932495
+        },
+        name = 'Casa Krondorss nº120',
+        spaces = {
+            {y = -1824.50, z =26.98, h = 214.83, x =136.15} --136.15087890625,-1824.5056152344,26.985088348389
+        }
+    },
+	
+	[250] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357},
+        point = {
+            {y = -1973.9976806641, z = 20.92992401123, x = 83.597969055176} --83.597969055176,-1973.9976806641,20.92992401123
+        },
+        name = 'Casa Krondorss nº121',
+        spaces = {
+            {y = -1966.9732666016, z = 20.747440338135, h = 214.83, x = 88.05167388916} --88.05167388916,-1966.9732666016,20.747440338135
+        }
+    },
+	[251] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357},
+        point = {
+            {y = -1925.2750244141, z = 21.490228652954, x = 67.538513183594} --67.538513183594,-1925.2750244141,21.490228652954
+        },
+        name = 'Casa Krondorss nº122',
+        spaces = {
+            {y = -1918.7270507813, z = 21.176147460938, h = 214.83, x = 70.656684875488} --70.656684875488,-1918.7270507813,21.176147460938
+        }
+    },
+	[252] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1922.6676025391, z = 21.496412277222, x = 64.439819335938} --64.439819335938,-1922.6676025391,21.496412277222
+			},
+			name = 'Casa Krondorss nº123',
+			spaces = {
+				{y = -1917.8942871094, z = 21.255176544189, h = 214.83, x = 69.427993774414} --69.427993774414,-1917.8942871094,21.255176544189
+			}
+		},
+	[253] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1925.7279052734, z = 21.778972625732, x = 37.751861572266} --37.751861572266,-1925.7279052734,21.778972625732
+			},
+			name = 'Casa Krondorss nº124',
+			spaces = {
+				{y = -1921.3962402344, z = 21.666234970093, h = 214.83, x = 41.647857666016} --41.647857666016,-1921.3962402344,21.666234970093
+			}
+		},
+	[254] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1882.0408935547, z = 23.834011077881, x = -8.6275587081909} ---8.6275587081909,-1882.0408935547,23.834011077881
+			},
+			name = 'Casa Krondorss nº125',
+			spaces = {
+				{y = -1879.3410644531, z = 23.685586929321, h = 214.83, x = -0.64966821670532} ---0.64966821670532,-1879.3410644531,23.685586929321
+			}
+		},
+	[255] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1886.3784179688, z = 23.204216003418, x = 14.264624595642} --14.264624595642,-1886.3784179688,23.204216003418
+			},
+			name = 'Casa Krondorss nº126',
+			spaces = {
+				{y = -1878.6468505859, z = 22.948442459106, h = 214.83, x = 20.07693862915} --20.07693862915,-1878.6468505859,22.948442459106
+			}
+		},
+	[256] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1859.1103515625, z = 24.697450637817, x = -11.533075332642} ---11.533075332642,-1859.1103515625,24.697450637817
+			},
+			name = 'Casa Krondorss nº127',
+			spaces = {
+				{y = -1853.5905761719, z = 24.633060455322, h = 214.83, x = -8.1417961120605} ---8.1417961120605,-1853.5905761719,24.633060455322
+			}
+		},
+	[257] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1855.8718261719, z = 25.797021865845, x = -33.720790863037} 
+			},
+			name = 'Casa Krondorss nº128',
+			spaces = {
+				{y = -1843.5509033203, z = 25.204870223999, h = 214.83, x = -21.489665985107} 
+			}
+		},
+	[258] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1941.1506347656, z = 20.751314163208, x = 122.8130569458} 
+			},
+			name = 'Casa Krondorss nº129',
+			spaces = {
+				{y = -1938.9694824219, z = 20.598909378052, h = 214.83, x = 117.05977630615} 
+			}
+		},
+	[259] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1922.77917480477, z = 21.195209503174, x = 163.67306518555} 
+			},
+			name = 'Casa Krondorss nº131',
+			spaces = {
+				{y = -1929.7745361328, z = 21.012584686279, h = 214.83, x = 171.17652893066} 
+			}
+		},
+	[260] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357},
+        point = {
+            {y = -1956.4022216797, z = 19.311382293701, x = 162.32626342773}
+        },
+        name = 'Casa Krondorss nº132',
+        spaces = {
+            {y = -1963.1159667969, z = 18.879291534424, h = 214.83, x = 166.42904663086} 
+        }
+    },
+	[261] = {
+        marker = 36,
+        blip = {scale = 0.4, color = 4, type = 357},
+        point = {
+            {y = -1843.3864746094, z = 24.520708084106, x = 11.916719436646} 
+        },
+        name = 'Casa Krondorss nº134',
+        spaces = {
+            {y = -1851.2592773438, z = 24.037044525146, h = 214.83, x = 8.0349655151367} 
+        }
+    },
+	[262] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1854.3126220703, z = 24.281139373779, x = 168.36505126953} 
+			},
+			name = 'Casa Krondorss nº135',
+			spaces = {
+				{y = -1866.3347167969, z = 24.05958366394, h = 214.83, x = 164.25785827637} 
+			}
+		},
+	[263] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1771.2048339844, z = 29.063917160034, x = 317.90576171875} 
+			},
+			name = 'Casa Krondorss nº136',
+			spaces = {
+				{y = -1774.0004882813, z = 28.595209121704, h = 214.83, x = 323.05331420898} 
+			}
+		},
+	[264] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1783.0662841797, z = 27.960145950317, x = 286.09280395508}
+			},
+			name = 'Casa Krondorss nº138',
+			spaces = {
+				{y = -1793.8289794922, z = 27.825386047363, h = 214.83, x = 299.77395629883} 
+			}
+		},
+	[265] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1735.5659179688, z = 29.538743972778, x = 310.8923034668} 
+			},
+			name = 'Casa Krondorss nº139',
+			spaces = {
+				{y = -1743.6872558594, z = 29.370347976685, h = 214.83, x = 321.50225830078}
+			}
+		},
+	[266] = {
+			marker = 36,
+			blip = {scale = 0.4, color = 4, type = 357},
+			point = {
+				{y = -1727.265625, z = 29.274757385254, x = 269.71594238281} 
+			},
+			name = 'Casa Krondorss nº140',
+			spaces = {
+				{y = -1715.5543212891, z = 29.29977607727, h = 214.83, x = 260.99029541016} 
+			}
+		},
+	[267] = {
+		marker = 36,
+		blip = {scale = 0.4, color = 4, type = 357},
+		point = {
+			{y = -1704.90, z = 29.30, x = 271.41} 
+		},
+		name = 'Casa Krondorss nº141',
+		spaces = {
+			{y = -1698.11, z = 29.20, h = 214.83, x = 263.23}
 		}
 	}
 }

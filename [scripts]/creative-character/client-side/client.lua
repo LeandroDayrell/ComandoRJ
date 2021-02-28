@@ -242,30 +242,30 @@ RegisterNUICallback('cDoneSave',function(data,cb)
 	if GetEntityModel(PlayerPedId()) == GetHashKey("mp_m_freemode_01") then
 		SetPedComponentVariation(PlayerPedId(),1,-1,0,2)
 		SetPedComponentVariation(PlayerPedId(),3,15,0,2)
-		SetPedComponentVariation(PlayerPedId(),4,61,0,2)
-		SetPedComponentVariation(PlayerPedId(),5,-1,0,2)
-		SetPedComponentVariation(PlayerPedId(),6,16,0,2)
+		SetPedComponentVariation(PlayerPedId(),4,16,1,2)
+		SetPedComponentVariation(PlayerPedId(),5,23,9,2)
+		SetPedComponentVariation(PlayerPedId(),6,18,4,2)
 		SetPedComponentVariation(PlayerPedId(),7,-1,0,2)
 		SetPedComponentVariation(PlayerPedId(),8,15,0,2)
 		SetPedComponentVariation(PlayerPedId(),9,-1,0,2)
 		SetPedComponentVariation(PlayerPedId(),10,-1,0,2)
-		SetPedComponentVariation(PlayerPedId(),11,104,0,2)
+		SetPedComponentVariation(PlayerPedId(),11,20,2,2)
 		SetPedPropIndex(PlayerPedId(),0,-1,0,2)
 		SetPedPropIndex(PlayerPedId(),1,7,0,2)
 		SetPedPropIndex(PlayerPedId(),2,-1,0,2)
 		SetPedPropIndex(PlayerPedId(),6,-1,0,2)
 		SetPedPropIndex(PlayerPedId(),7,-1,0,2)
 	else
-		SetPedComponentVariation(PlayerPedId(),1,-1,0,2)
-		SetPedComponentVariation(PlayerPedId(),3,0,0,2)
-		SetPedComponentVariation(PlayerPedId(),4,57,0,2)
-		SetPedComponentVariation(PlayerPedId(),5,-1,0,2)
-		SetPedComponentVariation(PlayerPedId(),6,16,0,2)
-		SetPedComponentVariation(PlayerPedId(),7,-1,0,2)
-		SetPedComponentVariation(PlayerPedId(),8,7,0,2)
+		SetPedComponentVariation(PlayerPedId(),1,-1,0,2) -- MASCARA
+		SetPedComponentVariation(PlayerPedId(),3,1,0,2) -- MAOS 
+		SetPedComponentVariation(PlayerPedId(),4,21,2,2) -- CALCA 
+		SetPedComponentVariation(PlayerPedId(),5,-1,0,2) -- BOLSA / MOCHILA
+		SetPedComponentVariation(PlayerPedId(),6,26,0,2) -- SAPATOS
+		SetPedComponentVariation(PlayerPedId(),7,-1,0,2) -- ACESSORIOS
+		SetPedComponentVariation(PlayerPedId(),8,2,0,2)  -- BLUSA
 		SetPedComponentVariation(PlayerPedId(),9,-1,0,2)
 		SetPedComponentVariation(PlayerPedId(),10,-1,0,2)
-		SetPedComponentVariation(PlayerPedId(),11,105,0,2)
+		SetPedComponentVariation(PlayerPedId(),11,37,0,2) -- JAQUETA 
 		SetPedPropIndex(PlayerPedId(),0,-1,0,2)
 		SetPedPropIndex(PlayerPedId(),1,24,0,2)
 		SetPedPropIndex(PlayerPedId(),2,-1,0,2)

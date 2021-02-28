@@ -158,13 +158,13 @@ AddEventHandler('entrega_pecas:permissao',function()
 	if not entregapecas then
 		entregapecas = true
 		destino = math.random(1,38)
-		quantidade = math.random(5,6)
+		quantidade = math.random(3,4)
 		CriandoBlip6(entregas,destino)
 	end
 end)
 
-RegisterNetEvent('entrega_maquinacacaniquel:permissao')
-AddEventHandler('entrega_maquinacacaniquel:permissao',function()
+RegisterNetEvent('entrega_pendrive:permissao')
+AddEventHandler('entrega_pendrive:permissao',function()
 	if not entregamaquina then
 		entregamaquina = true
 		destino = math.random(1,38)
@@ -224,7 +224,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ MACONHA",255,255,255,255)
 			else
@@ -232,7 +232,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 			--		DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -277,7 +277,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ CRACK",255,255,255,255)
 			else
@@ -285,7 +285,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 			--		DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -329,7 +329,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ COCAINAS",255,255,255,255)
 			else
@@ -337,7 +337,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 			--		DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then -- ENTREGAR
@@ -381,7 +381,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ OPIOS",255,255,255,255)
 			else
@@ -389,7 +389,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -417,9 +417,9 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		local crjSleep = 500
-		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 943.94317626953,1032.4880371094,262.14920043945,true) <= 1 then
+		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 1001.9288330078,987.59240722656,234.48083496094,true) <= 1 then
 			crjSleep = 1
-			DrawText3Ds(943.94317626953,1032.4880371094,262.14920043945+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
+			DrawText3Ds(1001.9288330078,987.59240722656,234.48083496094+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('crj_metafetamina:permissao') 
 			end
@@ -433,15 +433,15 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ METAS",255,255,255,255)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ META",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -485,7 +485,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ PEÇAS ROUBADAS",255,255,255,255)
 			else
@@ -493,7 +493,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -522,11 +522,11 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		local crjSleep = 500
-		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 852.33172607422,3053.3684082031,42.789367675781,true) <= 1 then
+		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),93.25,-1291.42,29.26,true) <= 1 then
 			crjSleep = 1
-			DrawText3Ds(852.33172607422,3053.3684082031,42.789367675781+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
+			DrawText3Ds(93.25,-1291.42,29.26+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
-				TriggerEvent('entrega_maquinacacaniquel:permissao') 
+				TriggerEvent('entrega_pendrive:permissao') 
 			end
 		end
 		if entregamaquina then
@@ -538,21 +538,21 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ MAQUINA CAÇA NIQUEL",255,255,255,255)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ os Pen Drives Hacker",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] MONTE AS MAQUINA LOGO MANO")
                     if IsControlJustPressed(0,101) then
                         destinoantigo = destino
                         RemoveBlip(blip)
-                        TriggerServerEvent('entrega_maquinacacaniquel:itensReceber', quantidade)
+                        TriggerServerEvent('entrega_pendrive:itensReceber', quantidade)
                         while true do
                             if destinoantigo == destino then
                                 destino = math.random(1,38)
@@ -590,7 +590,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ LSD",255,255,255,255)
 			else
@@ -598,7 +598,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 					--DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -642,7 +642,7 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.080,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.065,1.0,1.0,0.35,"PRESSIONE ~r~H ~w~PARA ENTREGA A MISSÃO NO BLIP",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.050,1.0,1.0,0.45,"FAÇA O CORRE E ENTREGUE ~g~"..quantidade.."~w~ MORFINA",255,255,255,255)
 			else
@@ -650,7 +650,7 @@ Citizen.CreateThread(function()
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 				--	DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR ESSA PORRA")
                     if IsControlJustPressed(0,101) then
@@ -695,14 +695,14 @@ Citizen.CreateThread(function()
 			end
 			if statuses then
 				crjSleep = 1
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.076,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
+				drawTxt(ui.right_x+0.050,ui.bottom_y-0.076,1.0,1.0,0.35,"PRESSIONE ~r~F7 ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.058,1.0,1.0,0.45,"ENTREGUE ~g~"..quantidade.."~w~ EXTASE",255,255,255,255)
 			else
 				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
 			end
 			if distance <= 30 then
 				crjSleep = 1
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
+				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance < 3 then
 					DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
                     if IsControlJustPressed(0,101) then
@@ -731,8 +731,8 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and emservico then
+		local crjSleep = 200
+		if IsControlJustPressed(0,168) and emservico then
 			crjSleep = 1
 			emservico = false
 			RemoveBlip(blip)
@@ -744,8 +744,8 @@ end)
 -- CRACK
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and crackd then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and crackd then
 			crjSleep = 1
 			crackd = false
 			RemoveBlip(blip)
@@ -757,8 +757,8 @@ end)
 -- MACONHA
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregamaconha then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregamaconha then
 			crjSleep = 1
 			entregamaconha = false
 			RemoveBlip(blip)
@@ -770,8 +770,8 @@ end)
 -- OPIO
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregaopio then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregaopio then
 			crjSleep = 1
 			entregaopio = false
 			RemoveBlip(blip)
@@ -783,8 +783,8 @@ end)
 -- META
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregameta then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregameta then
 			crjSleep = 1
 			entregameta = false
 			RemoveBlip(blip)
@@ -796,8 +796,8 @@ end)
 -- PEÇAS
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregapecas then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregapecas then
 			crjSleep = 1
 			entregapecas = false
 			RemoveBlip(blip)
@@ -809,10 +809,10 @@ end)
 -- MAQUINA
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregamaquina then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and pendrive then
 			crjSleep = 1
-			entregamaquina = false
+			pendrive = false
 			RemoveBlip(blip)
 		end
 		Citizen.Wait(crjSleep)
@@ -822,8 +822,8 @@ end)
 -- LSD
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregalsd then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregalsd then
 			crjSleep = 1
 			entregalsd = false
 			RemoveBlip(blip)
@@ -835,8 +835,8 @@ end)
 -- MORFINA
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregamorfina then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregamorfina then
 			crjSleep = 1
 			entregamorfina = false
 			RemoveBlip(blip)
@@ -848,8 +848,8 @@ end)
 -- EXTASE
 Citizen.CreateThread(function()
 	while true do
-		local crjSleep = 500
-		if IsControlJustPressed(0,303) and entregaextase then
+		local PcrjSleep = 200
+		if IsControlJustPressed(0,168) and entregaextase then
 			crjSleep = 1
 			entregaextase = false
 			RemoveBlip(blip)
@@ -991,7 +991,7 @@ function CriandoBlip9(entregas,destino)
 	SetBlipAsShortRange(blip,false)
 	SetBlipRoute(blip,true)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentString("Entrega de Maquina")
+	AddTextComponentString("Pen Drive")
 	EndTextCommandSetBlipName(blip)
 end
 

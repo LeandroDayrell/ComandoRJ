@@ -41,7 +41,7 @@ Citizen.CreateThread(function()
             local bowz,cdz = GetGroundZFor_3dCoord(v.position.x,v.position.y,v.position.z)
             local distance = GetDistanceBetweenCoords(v.position.x,v.position.y,cdz,x,y,z,true)
             local vel = GetEntitySpeed(ped)*3.18
-            DrawMarker(21,v.position.x,v.position.y,v.position.z+4,1,1,0,0,0,0,2.0,2.0,2.0,255,0,0,50,1,1,1,1)
+            --DrawMarker(21,v.position.x,v.position.y,v.position.z+4,1,1,0,0,0,0,2.0,2.0,2.0,255,0,0,50,1,1,1,1)
             if distance < 30 and vel > v.position.maxvel then
                 if not funch.checkcop("policia.permissao") then
                     if not funch.checkcop("rota.permissao") then

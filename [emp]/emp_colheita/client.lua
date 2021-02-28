@@ -53,13 +53,14 @@ local locs = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(5)
+		local crjSleep = 500
 		if not servico then
 			local ped = PlayerPedId()
 			local x,y,z = table.unpack(GetEntityCoords(ped))
 			local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
 			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
-			if distance <= 80 then
+			if distance <= 60 then
+				crjSleep = 1
 				DrawMarker(21,CoordenadaX,CoordenadaY,CoordenadaZ-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 				if distance <= 1.2 then
 					drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A COLHEITA",4,0.5,0.93,0.50,255,255,255,180)
@@ -72,6 +73,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -137,7 +139,7 @@ local locais = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
+		local crjSleep = 500
 		if not processo then
 			for _,v in pairs(locais) do
 				local ped = PlayerPedId()
@@ -146,6 +148,7 @@ Citizen.CreateThread(function()
 				local distance2 = GetDistanceBetweenCoords(v.x,v.y,cdz,x,y,z,true)
 				local vehicle = GetPlayersLastVehicle()
 				if distance2 <= 20 then
+					crjSleep = 1
 					DrawMarker(21,1709.34,4729.58,42.16-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
 					if distance2 <= 2 and not andamento then
 						drawTxt("PRESSIONE  ~r~E~w~  PARA INICIAR A SEPARAÇÃO DOS GRÃOS",4,0.5,0.93,0.50,255,255,255,180)
@@ -162,8 +165,10 @@ Citizen.CreateThread(function()
 			end
 		end
 		if processo then
+			crjSleep = 1
 			drawTxt("AGUARDE ~g~"..segundos.."~w~ SEGUNDOS ATÉ FINALIZAR A SEPARAÇÃO DOS GRÃOS",4,0.5,0.93,0.50,255,255,255,180)
 		end
+		Citizen.Wait(crjSleep)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

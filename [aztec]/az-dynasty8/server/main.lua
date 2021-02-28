@@ -33,7 +33,7 @@ async(function()
         return false
     end
     for name,home in pairs(vAZhomes.getHomes()) do
-        if not search(name) then
+        if homes[name] and not search(name) then
             vRP.execute("vAZ/InsertHomeSale", {home = name, price = homes[name].price, category = homes[name].category, image = homes[name].image})
         end
     end
@@ -143,7 +143,7 @@ vAZ.PurchaseHome = function(data)
                         TriggerEvent('az-homes:purchase', user_id, data.name)
                         vAZclient.RemoveHomes(source_sales, data.name)
                         if source_sales then
-                            local commission = parseFloat(home[1].price*(20/100))
+                            local commission = parseFloat(home[1].price*(5/100))
                             vRP.giveMoney(user_sales, parseInt(commission))
                             TriggerClientEvent('Notify', source_sales, 'sucesso', 'Venda efetuada, Comissão de venda: <b>R$'..format(parseInt(commission))..'</b>!')                            
                         end

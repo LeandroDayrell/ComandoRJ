@@ -2451,8 +2451,69 @@ local roupas = {
 			["p6"] = { -1,0 },
 			["p7"] = { -1,0 }
 		}
-	}
+	},
+
+	["PMRJ"] = {
+		[1885233650] = {
+			[1] = { -1,0 },
+			[3] = { 47,0 },
+			[4] = { 114,1 },
+			[6] = { 49,0 },
+			[7] = { 1,0 },
+			[8] = { 6,0 },
+			[9] = { 7,0 },
+			[10] = { 0,0 },
+			[11] = { 257,0 },
+			["p0"] = { 10,1 },
+			["p1"] = { -1,0 },
+		},
+		[-1667301416] = {
+			[1] = { -1,0 },
+			[3] = { -1,0 },
+			[4] = { -1,0 },
+			[5] = { 15,0 },
+			[6] = { 15,3 },
+			[7] = { 7,0 },
+			[8] = { 5,0 },
+			[9] = { 5,0 },
+			[10] = { -1,0 },
+			[11] = { -1,0 },
+			["p0"] = { 29,1 },
+			["p6"] = { -1,0 },
+		}
+	},
 }
+
+function vRP.save_idle_custom(player,custom)
+	local r_idle = {}
+	local user_id = vRP.getUserId(player)
+	if user_id then
+		local data = vRP.getUserDataTable(user_id)
+		if data then
+			if data.cloakroom_idle == nil then
+				data.cloakroom_idle = custom
+			end
+
+			for k,v in pairs(data.cloakroom_idle) do
+				r_idle[k] = v
+			end
+		end
+	end
+	return r_idle
+end
+
+function vRP.removeCloak(player)
+	local user_id = vRP.getUserId(player)
+	if user_id then
+		local data = vRP.getUserDataTable(user_id)
+		if data then
+			if data.cloakroom_idle ~= nil then
+				vRPclient._setCustomization(player,data.cloakroom_idle)
+				data.cloakroom_idle = nil
+			end
+		end
+	end
+end
 
 
 RegisterCommand('roupas',function(source,args,rawCommand)
