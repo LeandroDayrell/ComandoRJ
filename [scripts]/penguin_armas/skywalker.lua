@@ -52,6 +52,9 @@ AddEventHandler("produzir-arma",function(item)
 											TriggerClientEvent("Notify",source,"sucesso","Você fabricou <b>1x AK-103</b>.")
 										end)
 									end
+								else
+                                TriggerClientEvent("fechar-nui-armas",source)
+                                TriggerClientEvent("Notify",source,"negado","Você necessita de <b>1x pack</b> para produzir uma <b>AK-103</b>.")
 								end
                             else
                                 TriggerClientEvent("fechar-nui-armas",source)
@@ -136,6 +139,9 @@ AddEventHandler("produzir-arma",function(item)
 											TriggerClientEvent("Notify",source,"sucesso","Você fabricou <b>1x SIG SAUER</b>.")
 										end)
 									end
+								else
+								TriggerClientEvent("fechar-nui-armas",source)
+								TriggerClientEvent("Notify",source,"negado","Você necessita de <b>1x pack</b> para produzir uma<b>SIG SAUER</b>.")	
 								end
                             else
                                 TriggerClientEvent("fechar-nui-armas",source)
@@ -190,6 +196,9 @@ AddEventHandler("produzir-arma",function(item)
 											TriggerClientEvent("Notify",source,"sucesso","Você fabricou <b>1x MICRO UZI</b>.")
 										end)
 									end
+								else
+                                TriggerClientEvent("fechar-nui-armas",source)
+                                TriggerClientEvent("Notify",source,"negado","Você necessita de <b>1x pack</b> para produzir uma <b>MICRO UZI</b>.")
 								end
                             else
                                 TriggerClientEvent("fechar-nui-armas",source)
@@ -218,6 +227,9 @@ AddEventHandler("produzir-arma",function(item)
 											TriggerClientEvent("Notify",source,"sucesso","Você fabricou <b>1x REMINGTON</b>.")
 										end)
 									end
+								else
+                                TriggerClientEvent("fechar-nui-armas",source)
+                                TriggerClientEvent("Notify",source,"negado","Você necessita de <b>1x pack</b> para produzir uma <b>REMINGTON</b>.")
 								end
                             else
                                 TriggerClientEvent("fechar-nui-armas",source)
@@ -246,6 +258,9 @@ AddEventHandler("produzir-arma",function(item)
 											TriggerClientEvent("Notify",source,"sucesso","Você fabricou <b>1x PISTOLA SNS</b>.")
 										end)
 									end
+								else
+                                TriggerClientEvent("fechar-nui-armas",source)
+                                TriggerClientEvent("Notify",source,"negado","Você necessita de <b>1x pack</b> para produzir uma <b>PISTOLA SNS</b>.")
 								end	
                             else
                                 TriggerClientEvent("fechar-nui-armas",source)
@@ -274,6 +289,9 @@ AddEventHandler("produzir-arma",function(item)
 											TriggerClientEvent("Notify",source,"sucesso","Você fabricou <b>1x PISTOLA FIVE-SEVEN</b>.")
 										end)
 									end
+								else
+                                TriggerClientEvent("fechar-nui-armas",source)
+                                TriggerClientEvent("Notify",source,"negado","Você necessita de <b>1x pack</b> para produzir uma <b>PISTOLA FIVE-SEVEN</b>.")
 								end
                             else
                                 TriggerClientEvent("fechar-nui-armas",source)

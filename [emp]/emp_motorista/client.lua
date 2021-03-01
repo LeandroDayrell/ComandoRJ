@@ -81,7 +81,7 @@ Citizen.CreateThread(function()
 				if distance <= 2.5 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA CONTINUAR A ROTA",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
-						if IsVehicleModel(GetVehiclePedIsUsing(PlayerPedId()),GetHashKey("coach")) or IsVehicleModel(GetVehiclePedIsUsing(PlayerPedId()),GetHashKey("bus")) then
+						if IsVehicleModel(GetVehiclePedIsUsing(PlayerPedId()),GetHashKey("bus")) then
 							RemoveBlip(blip)
 							if destino == 27 then
 								emP.checkPayment(600)

@@ -6,14 +6,12 @@ vRPclient = Tunnel.getInterface("vRP","vrp_payday")
 
 salarii = {
    -- Administração
-  {"Administrador.permissao", 1000},
-  {"Moderador.permissao", 800}, 
-  {"Suporte.permissao", 500},
-  {"AprovadorWL.permissao", 500},
-  {"Player.permissao", 500},
-  
-  -- UBER
-  {"uber.permissao", 2000},
+  {"Administrador.permissao", 1},
+  {"Moderador.permissao", 1}, 
+  {"Suporte.permissao", 1},
+  {"AprovadorWL.permissao", 1},
+  {"Player.permissao", 1},
+
   
   -- PMERJ
   {"CmdGeral.permissao", 6000},
@@ -30,10 +28,7 @@ salarii = {
   {"Major.permissao", 5000},
   {"TenenteCoronel.permissao", 5500},
   {"Coronel.permissao", 6000},
-  -- Recom PMERJ
-  {"recom.permissao", 500},
-  -- Choque PMERJ
-  {"Choque.permissao", 500},
+
   -- PRF
   {"prf.permissao", 1000},
   -- SAMU
@@ -53,9 +48,8 @@ salarii = {
   {"Juiz.permissao", 6000},
   {"PromotorDaJustica.permissao", 5000},
   {"PresidenteDaOAB.permissao", 4000},
-  {"Advogadopagamento.permissao", 3000},
 
-  {"desempregado.permissao", 500},
+  {"desempregado.permissao", 250},
 
   -- MECANICO
   {"srdono.permissao", 100},

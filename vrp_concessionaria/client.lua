@@ -3,7 +3,7 @@ local Proxy = module("vrp", "lib/Proxy")
 local Tools = module("vrp", "lib/Tools")
 
 vRP = Proxy.getInterface("vRP")
-func = Tunnel.getInterface("vrp_concessionaria")
+func = Tunnel.getInterface("vrp_concessionaria2")
 
 local open = false
 local categoriaSelecionada = nil

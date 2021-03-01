@@ -47,10 +47,6 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		elseif data == "utilidades-armas-ak103pack" then
 		TriggerServerEvent("contrabandoarmas-comprar","ak103pack")
 -----
-		elseif data == "utilidades-armas-municaomusketpack" then
-		TriggerServerEvent("contrabandoarmas-comprar","municaomusketpack")
-		elseif data == "utilidades-armas-municaoparafalpack" then
-		TriggerServerEvent("contrabandoarmas-comprar","municaoparafalpack")
 		elseif data == "utilidades-armas-musketpack" then
 		TriggerServerEvent("contrabandoarmas-comprar","musketpack")
 		elseif data == "utilidades-armas-parafalpack" then
@@ -66,20 +62,29 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("contrabandoarmas-comprar","fivesevenpack")
 		elseif data == "utilidades-armas-coletepack" then
 		TriggerServerEvent("contrabandoarmas-comprar","coletepack")
-		elseif data == "utilidades-armas-snspack" then
-		TriggerServerEvent("contrabandomuni-comprar","snspack")
-		--[[elseif data == "utilidades-armas-municaofamaspack" then
-		TriggerServerEvent("contrabandomuni-comprar","municaofamaspack")
-		elseif data == "utilidades-armas-municaominiakpack" then
-		TriggerServerEvent("contrabandomuni-comprar","municaosigpack")
-		elseif data == "utilidades-armas-municaopumppack" then
-		TriggerServerEvent("contrabandomuni-comprar","municaopumppack")
-		elseif data == "utilidades-armas-municaouzipack" then
-		TriggerServerEvent("contrabandomuni-comprar","municaouzipack")
-		elseif data == "utilidades-armas-municaopistolpack" then
-		TriggerServerEvent("contrabandomuni-comprar","municaopistolpack")]]
 		elseif data == "utilidades-armas-uzipack" then
 		TriggerServerEvent("contrabandoarmas-comprar","uzipack")
+		elseif data == "utilidades-armas-snspack" then
+		TriggerServerEvent("contrabandoarmas-comprar","snspack")
+		
+		elseif data == "utilidades-municao-municaosnspack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaosnspack")		
+		elseif data == "utilidades-municao-municaoakpack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaoakpack")
+		elseif data == "utilidades-municao-municaofamaspack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaofamaspack")
+		elseif data == "utilidades-municao-municaominiakpack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaosigpack")
+		elseif data == "utilidades-municao-municaopumppack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaopumppack")
+		elseif data == "utilidades-municao-municaouzipack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaouzipack")
+		elseif data == "utilidades-municao-municaopistolpack" then
+		TriggerServerEvent("contrabandomuni-comprar","municaopistolpack")
+		elseif data == "utilidades-municao-municaomusketpack" then
+		TriggerServerEvent("contrabandoarmas-comprar","municaomusketpack")
+		elseif data == "utilidades-municao-municaoparafalpack" then
+		TriggerServerEvent("contrabandoarmas-comprar","municaoparafalpack")
 -----------------
 	elseif data == "utilidades-vender-algemas" then
 		TriggerServerEvent("contrabando-vender","algemas")

@@ -24,8 +24,6 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("pescador-vender","salmao")
 	elseif data == "pacu" then
 		TriggerServerEvent("pescador-vender","pacu")
-	elseif data == "pintado" then
-		TriggerServerEvent("pescador-vender","pintado")
 	elseif data == "pirarucu" then
 		TriggerServerEvent("pescador-vender","pirarucu")
 	elseif data == "tilapia" then
@@ -48,6 +46,8 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("pescador-vender","mesmeralda")	
 	elseif data == "diamante" then
 		TriggerServerEvent("pescador-vender","diamante")
+	elseif data == "sacodelixo" then
+		TriggerServerEvent("pescador-vender","sacodelixo")
 	elseif data == "perolatratada" then
 		TriggerServerEvent("pescador-vender","perolatratada")
 

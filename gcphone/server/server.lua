@@ -4,6 +4,8 @@ local Tools = module("vrp","lib/Tools")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 local idgens = Tools.newIDGenerator()
+src = {}
+Tunnel.bindInterface("gcphone",src)
 
 
 math.randomseed(os.time())
@@ -29,6 +31,19 @@ function getIdentifierByPhoneNumber(phone_number)
 		return result[1].user_id
 	end
 	return nil
+end
+--- FUNCAO DE CHECAR CELULAR NA MAO
+function src.checkItemPhone()
+    local source = source
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.getInventoryItemAmount(user_id,"celular") >= 1 then
+            return true 
+        else
+            TriggerClientEvent("Notify",source,"negado","Você não possui um celular em sua mochila.") 
+            return false
+        end
+    end
 end
 
 

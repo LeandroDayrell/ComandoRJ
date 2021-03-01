@@ -10,7 +10,7 @@ local peixes = {
 	[1] = { x = "dourado" },
 	[2] = { x = "salmao" },
 	[3] = { x = "pacu" },
-	[4] = { x = "pintado" },
+	[4] = { x = "sacolamolhada" },
 	[5] = { x = "pirarucu" },
 	[6] = { x = "tilapia" },
 	[7] = { x = "tucunare" }
