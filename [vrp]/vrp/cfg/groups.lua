@@ -11,7 +11,7 @@ local cfg = {}
 
 cfg.groups = {
 
- ["FundadorCMDRJ21"] = {
+ ["FundadorCMDRJ23"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"dv.permissao",
@@ -93,7 +93,7 @@ cfg.groups = {
 	},
  
  --== ADMINISTRAÇÃO ==--
-  ["AdmCMDRJ21"] = {
+  ["AdmCMDRJ23"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"dv.permissao",
@@ -142,31 +142,18 @@ cfg.groups = {
 	-- Salario
 	"Administrador.permissao",
 	"admin.ajuda",
-
-------- MQCU
-
 	"player.blips",
+	"player.spec",
 	"player.noclip",
-	"player.teleport",
 	"player.secret",
-	"player.spec",        -- acesso ao /spec id (tela outros jogadores)
-	"player.wall",        -- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
-	"mqcu.permissao",     -- acesso ao /mqcu (deletar props/npcs/veiculos)
-
-
+	"player.teleport",
+	"player.wall",
+	"mqcu.permissao",
 	},
-
-
-	------------- BLIPS ----------------
-	--------------------------------------
-	["BlipsCMDRJ21"] = {
+	["BlipsCMDRJ23"] = {
 	"blips.permissao"
 	},
-
-
-	------------- MODERADOR ----------------
-	--------------------------------------
-	["ModeradorCMDRJ21"] = {
+	["ModeradorCMDRJ23"] = {
 	"player.group.add",
 	"admin.tptowaypoint",
 	"player.coords",
@@ -189,16 +176,15 @@ cfg.groups = {
 	"player.group.add",
     "player.group.remove",
 	"admin.ajuda",
+	"player.teleport",
 	"player.blips",
 	"player.spec",
+	"player.noclip",
 	"player.secret",
 	--"player.wall",
 	"mqcu.permissao",
-	"player.noclip",
-	"player.teleport",
-	
 	},
-	["SuporteCMDRJ"] = {
+	["SuporteCMDRJ23"] = {
 	"ticket.permissao",
 	"fix.permissao",
 	"ac.permissao",
@@ -211,7 +197,6 @@ cfg.groups = {
 	--"player.secret",
 	--"player.wall",
 	"mqcu.permissao",
-	"player.teleport",
 
 	-- Salario
 	"Suporte.permissao",
@@ -226,7 +211,7 @@ cfg.groups = {
 	"admin.ajuda",
 	},
 	
-	["StreamerCMDRJ1"] = {
+	["StreamerCMDRJ23"] = {
     "god.permissao",
     "noclip.permissao",
 	"adminskin.permissao",
@@ -266,7 +251,7 @@ cfg.groups = {
 	"Player.permissao"
   },
   
-  ["ADMZIN"] = {
+  ["ADMZIN23"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"polparcarregar.permissao",
@@ -2710,7 +2695,7 @@ cfg.groups = {
 	},
   
   ["Pescador"] = {
-    _config = { gtype = "cargo" },
+    _config = { gtype = "job" },
 	"pescador.service",
 	"pescador.garagem",
 	"pescador.paycheck",
@@ -2891,7 +2876,7 @@ cfg.groups = {
 
   ["Desempregado"] = {
     _config = { 
-		gtype = "cargo",
+		gtype = "job",
 		onspawn = function(player) vRPclient._notify(player,"~b~Desempregado ~w~arrume um Emprego.") end
 	},
     "desempregado.permissao"
@@ -3015,7 +3000,8 @@ cfg.groups = {
 -- groups are added dynamically using the API or the menu, but you can add group when an user join here
 cfg.users = {
   [1] = { -- give superadmin and admin group to the first created user on the database
-    "FundadorCMDRJ20"
+    "PC-superadmin",
+    "PC-admin"
   }
 }
 

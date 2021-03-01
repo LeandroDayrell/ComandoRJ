@@ -314,7 +314,7 @@ config.locais = {
 	[3] = vec3(922.12902832031,-980.06488037109,39.753131866455),
 }
 
-config.permissao = 	"admin.permissao"
+config.permissao = 	"bennyscar.permissao"
 
 config.use_vehlist = false
 
