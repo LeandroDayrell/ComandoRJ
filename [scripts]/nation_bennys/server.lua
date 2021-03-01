@@ -10,7 +10,7 @@ local using_bennys = {}
 vAZgarages = Proxy.getInterface('az-garages')
 
 function API.checkPermission()
-    return vRP.hasPermission(vRP.getUserId(source), "bennyscar.permissao")
+    return vRP.hasPermission(vRP.getUserId(source), "admin.permissao")
 end
 
 function API.getSavedMods(vehicle_plate)

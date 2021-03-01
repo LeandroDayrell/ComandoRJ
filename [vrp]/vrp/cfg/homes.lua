@@ -14,7 +14,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -848.64068603516, y = -34.68733215332, z = 27.00997467041},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/O12sKh1.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -27,7 +27,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -899.7829, y = -4.211022, z = 29.51437},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/PZXORF7.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -40,7 +40,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -890.96765136719, y = 55.213859558105, z = 36.019047546387},      
-    ['price'] = 10000000,
+    ['price'] = 7500000,
     ['image'] = "https://i.imgur.com/ySNPSMl.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -53,7 +53,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -970.3975, y = 112.9578, z = 40.22368},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/sz7KjWc.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -66,7 +66,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1878.976, y = 637.3817, z = 114.9411},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/RwoODei.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -79,7 +79,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -998.26702880859, y = 147.63313293457, z = 44.059552764893},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/MzRL9tJ.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -92,7 +92,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1030.894, y = 231.3444, z = 52.4098},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/w5Io3Iv.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -105,7 +105,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -945.9304, y = 215.8366, z = 55.59033},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/DeVPVk4.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -118,7 +118,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -901.7318, y = 195.5036, z = 54.90515},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/7guGq0j.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -131,7 +131,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -894.3851, y = 118.8535, z = 42.31136},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/xJoCdxp.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -144,7 +144,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -931.3041, y = 34.22704, z = 35.8109},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/QzwTjlJ.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -157,7 +157,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -815.8782, y =  119.8134, z = 42.51854},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/aszhOBa.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -170,7 +170,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1032.203, y = 313.6592, z = 54.33519},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/E3f6ATO.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -183,7 +183,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -809.90454101563, y = 273.90380859375, z = 67.437301635742},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/hFw2QZP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -196,7 +196,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -872.2471, y =  303.1838, z = 71.69515},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/3LULavm.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -209,7 +209,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -884.0305, y = 372.1072, z = 72.58249},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/H0I6gC9.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -222,7 +222,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1036.777, y = 372.4843, z = 57.5369},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/LU4z8k2.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -235,7 +235,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1541.9937744141, y = 416.39077758789, z = 95.056594848633},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/LU4z8k2.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -248,7 +248,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1182.51, y = 299.7954, z = 57.10642},
-    ['price'] = 10000000,
+    ['price'] = 7000000,
     ['image'] = "https://i.imgur.com/FKzyOTY.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -261,7 +261,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1125.953, y = 367.0878, z = 59.56155},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/03UU2vS.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -274,7 +274,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1461.869, y = 31.9533, z = 40.46888},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/IyTbMfv.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -287,7 +287,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1467.288, y = -43.11739, z = 43.82721},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/VGmbk8o.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -300,7 +300,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1516.501, y = 15.43213, z = 44.76974},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/wb6nutW.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -313,7 +313,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1555.17, y = -114.1355, z = 41.61317},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/fjbiMON.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -326,7 +326,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1584.4193115234, y = -41.583896636963, z = 47.243186950684},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/8d82L9V.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -339,7 +339,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1569.634, y = 20.96499, z = 48.60004},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/9IuuVKu.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -352,7 +352,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1626.715, y = 26.06623, z = 52.63255},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/h0sbff9.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -365,7 +365,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1893.549, y = 122.514, z = 69.39671},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/cAU4yJT.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -378,7 +378,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1936.937, y = 159.993, z = 72.56745},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/oTgy3RP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -391,7 +391,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1972.295, y = 209.5165, z = 75.2832},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/DiogCRx.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -404,7 +404,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1983.939, y = 253.1862, z = 73.77521},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/90EUeAc.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -417,7 +417,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1997.186, y = 309.774, z = 78.08987},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/93spjZ9.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -430,7 +430,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -2021.323, y = 382.2582, z = 83.36995},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/V21GEE1.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -443,7 +443,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -2013.616, y = 442.9631, z = 90.53285},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/DySMoCo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -456,7 +456,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -2025.765, y = 506.6601, z = 97.17349},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/y868sEA.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -469,7 +469,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1850.824, y = 208.255, z = 69.01904},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/eYscCrK.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -482,7 +482,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1890.0251464844, y = 244.47950744629, z = 75.899673461914},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/uTRlGyP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -495,7 +495,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1910.647, y = 287.7055, z = 76.39254},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/13mykVi.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -508,7 +508,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1918.851, y = 351.7013, z = 72.78286},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/ScN9xq0.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -521,7 +521,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1940.796, y = 405.7555, z = 83.17495},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/8kgBYSP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -534,7 +534,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1940.609, y = 451.7961, z = 88.23546},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/oc18CVn.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -547,7 +547,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1837.439, y = 311.696, z = 74.07857},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/uLkhVY8.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -560,7 +560,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1667.174, y = 385.2321, z = 71.83463},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/QZZIuTU.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -573,7 +573,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -2003.579, y = 608.2912, z = 106.2824},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/3PlLdFN.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -586,7 +586,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1933.183, y = 550.6957, z = 93.5751},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/bJk4Dan.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -599,7 +599,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1925.53, y = 599.6572, z = 100.0033},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/cbmF6bU.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -612,7 +612,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 233.9824, y = 768.2598, z = 188.2572},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/mGJViEp.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -625,7 +625,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 174.8293, y = 567.1079, z = 167.8292},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/UZ8AMXL.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -638,7 +638,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 92.78761, y = 557.6992, z = 161.1303},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/xfVx8cl.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -651,7 +651,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -115.5152, y = 586.6879, z = 178.6727},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/mOLHm3A.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -664,7 +664,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -184.1171, y = 633.7303, z = 186.1409},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/otkpOPw.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -677,7 +677,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -227.355, y = 585.4279, z = 172.9223},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/X5AgGhA.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -690,7 +690,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -255.0005, y = 625.9626, z = 169.782},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/1TriDhA.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -703,7 +703,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 302.7917, y = 555.4058, z = 137.4176},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/lIKkhzT.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -716,7 +716,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 314.8615, y = 472.734, z = 130.1192},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/oXMQVim.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -729,7 +729,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 216.3554, y = 502.1783, z = 118.8037},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/4yQdNVC.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -742,7 +742,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -903.1971, y = 491.1483, z = 74.91821},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/GtYsRIa.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -755,7 +755,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -836.938, y = 464.6176, z = 78.26781},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/abCGcy7.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -768,7 +768,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -848.5559, y = 528.3131, z = 81.53965},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/zFvLLwS.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -781,7 +781,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -852.7569, y = 558.8524, z = 82.45002},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/66O4SAi.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -794,7 +794,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -877.9011, y = 597.4498, z = 92.57639},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/tRrvzJP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -807,7 +807,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -925.2259, y = 630.1923, z = 96.5252},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/G3wAPFW.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -820,7 +820,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -919.4139, y = 524.5806, z = 79.74502},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/urkB9B0.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -833,7 +833,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1037.794, y = 569.5748, z = 86.76531},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/iKkio2U.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -846,7 +846,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1063.949, y = 547.1354, z = 85.34792},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/MYk07Hg.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -859,7 +859,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -929.4534, y = 460.8143, z = 73.39056},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/bJHNwXv.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -872,7 +872,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -947.2693, y = 521.576, z = 72.88907},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/OO4Bu6e.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -885,7 +885,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -994.941, y = 518.7355, z = 71.49509},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/h7gkJIl.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -895,7 +895,7 @@ cfg.casas = {
     ['exit'] = {x = -1054.048, y = 534.8409, z = 71.21504},
     ['bau'] = {x = -1064.927, y = 519.4796, z = 70.71669},
     ['guardaRoupa'] = {x = -1046.309, y = 538.6578, z = 69.98528},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/WKoEXaU.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -908,7 +908,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1073.326, y = 467.6219, z = 70.56356},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/pKiUzqP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -921,7 +921,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1014.639, y = 748.5568, z = 154.2682},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/6BdV1hZ.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -934,7 +934,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1035.249, y = 421.3687, z = 65.50254},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/0FBmWi5.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -947,7 +947,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1017.035, y = 454.1111, z = 67.61743},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/v96artA.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -960,7 +960,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -965.2175, y = 429.1782, z = 68.95429},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/fnh7Tay.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -973,7 +973,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1107.065, y = 606.5189, z = 94.12099},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/cEZvkIZ.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -986,7 +986,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -805.9741, y = 417.703, z = 80.65135},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/nNwiyMF.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -999,7 +999,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -768.9118, y = 406.3568, z = 85.93842},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/HDShdnk.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1012,7 +1012,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -727.3676, y = 436.4333, z = 97.29272},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/NLiNWV5.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1025,7 +1025,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -722.6545, y = 510.5769, z = 93.28001},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/1ho4uDP.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1038,7 +1038,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -763.1468, y = 470.4969, z = 90.64871},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/jRhS1k6.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1051,7 +1051,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -680.205, y = 514.7783, z = 99.61276},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/8PXFTKD.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1064,7 +1064,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -676.5554, y = 479.1597, z = 98.28894},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/5MHdhBT.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1077,7 +1077,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -649.3918, y = 519.8751, z = 99.51385},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/K3UHxil.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1090,7 +1090,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -570.8134, y = 467.6573, z = 98.7373},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/bA9IgRJ.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1103,7 +1103,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -831.5245, y = 789.9116, z = 188.0567},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/IXxEM0V.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1116,7 +1116,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -615.1039, y = 561.8776, z = 99.79259},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/h6LCAGF.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1129,7 +1129,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -551.5812, y = 378.2542, z = 81.63279},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/qD2P31g.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1142,7 +1142,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -584.7302, y = 367.6499, z = 79.06158},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/QzE7yMr.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1155,7 +1155,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -488.0572, y = 354.5708, z = 82.15281},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/FUc3U71.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1168,7 +1168,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -477.5829, y = 316.4824, z = 82.55428},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/CnJ7qal.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1181,7 +1181,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -426.0436, y = 315.3335, z = 81.60866},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/jlXq4Kv.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1194,7 +1194,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -415.5084, y = 325.9929, z = 94.35255},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/kPLjt9l.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1207,7 +1207,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -338.6526, y = 347.4362, z = 97.91109},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/UpX7ONY.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1220,7 +1220,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -297.3517, y = 374.5444, z = 101.406},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/o0cUIM5.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1233,7 +1233,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -237.9125, y = 388.085, z = 99.31314},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/5yVN4KI.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1246,7 +1246,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -216.629, y = 381.3463, z = 98.64304},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/bJY2K4d.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1259,7 +1259,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -177.273, y = 400.9887, z = 98.01619},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/a7qhp9b.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1272,7 +1272,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -361.3068, y = 401.9525, z = 100.0381},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/ShckKyY.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1285,7 +1285,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -319.4089, y = 411.754, z = 99.9319},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/4LakagT.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1298,7 +1298,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -453.757, y = 394.1001, z = 90.37415},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/iZkQyIq.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1311,7 +1311,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -517.9767, y = 443.3037, z = 87.1609},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/7fHuavG.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1324,7 +1324,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -512.7687, y = 473.671, z = 91.22162},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/rM0sF6D.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1337,7 +1337,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -506.5761, y = 502.2987, z = 94.36788},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/19yr7QQ.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1350,7 +1350,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -547.527, y = 577.2029, z = 109.7469},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/yCisVt5.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1363,7 +1363,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -469.4919, y = 608.3755, z = 116.8439},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/B5J0iaU.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1376,7 +1376,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -496.484, y = 517.8129, z = 99.98287},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/udjYiLk.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1389,7 +1389,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -477.963, y = 519.7509, z = 105.3169},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/p8YIpkm.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1402,7 +1402,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -440.9786, y = 522.311, z = 106.3032},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Plss1w8.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1415,7 +1415,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -378.1373, y = 496.5341, z = 108.7941},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/vj6cK6H.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1428,7 +1428,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -372.6175, y = 471.2262, z = 100.3718},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/4QxUekg.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1441,7 +1441,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -394.6395, y = 581.1053, z = 115.2035},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/EVTNTQp.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1454,7 +1454,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -387.9069, y = 548.7112, z = 113.9295},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/HtF8OAv.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1467,7 +1467,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -355.8877, y = 521.3161, z = 110.3903},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/fr6Kr8m.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1480,7 +1480,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -285.0204, y = 485.4223, z = 99.09814},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/uVnUXva.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1493,7 +1493,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -628.4977, y = 391.6203, z = 81.20995},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/wXUvRm2.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1506,7 +1506,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1189.83, y = 582.3624, z = 88.40773},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/W77Wtnm.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1519,7 +1519,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1100.129, y = 499.2246, z = 70.32942},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/KOvJQo0.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1532,7 +1532,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1147.676, y = 497.6263, z = 76.25079},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/XYutBML.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1545,7 +1545,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1208.813, y = 456.4578, z = 71.10201},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/86aqglZ.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1558,7 +1558,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1161.426, y = 425.5792, z = 73.22417},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/LSarqDb.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1571,7 +1571,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1105.671, y = 442.0464, z = 59.36868},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/aDuvt3H.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1584,7 +1584,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1321.475, y = 442.5052, z = 68.82455},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/rntBcTI.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1597,7 +1597,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1375.939, y = 431.5953, z = 89.5636},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/UF1Jr7F.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1610,7 +1610,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1417.599, y = 430.5289, z = 99.9231},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/1CzGA4P.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1623,7 +1623,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1344.064, y = 499.8817, z = 90.63146},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/XXrKpd4.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1636,7 +1636,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1495.982, y = 548.1143, z = 109.3464},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/sZ8dNTZ.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1649,7 +1649,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1457.534, y = 566.8394, z = 112.1035},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/49lmeyr.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1662,7 +1662,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1418.369, y = 561.4153, z = 112.2446},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/2fNjAM6.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1675,7 +1675,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1371.748, y = 590.8547, z = 119.5837},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/5a4klia.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1688,7 +1688,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1360.404, y = 618.1594, z = 119.8505},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Wgb9ijK.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1701,7 +1701,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1289.1, y = 669.6179, z =127.2541},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Wgb9ijK.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1714,7 +1714,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1271.333, y = 696.6133, z = 137.4829},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Wezr4Ry.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1727,7 +1727,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1189.046, y = 650.5649, z = 120.7458},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/7gzWnRa.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1740,7 +1740,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1174.072, y = 683.7645, z = 130.996},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/lCC8oBQ.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1753,7 +1753,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -506.025, y = 702.2869, z = 137.9288},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/aiIZ7AC.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1766,7 +1766,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -455.5713, y = 715.8016, z = 142.744},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Sfw9k1Z.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1779,7 +1779,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -577.1766, y = 702.907, z = 135.9283},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/VhLxyGe.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1792,7 +1792,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -542.0732, y = 739.6012, z = 146.0456},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/9js0QOf.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1805,7 +1805,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -349.9389, y = 697.5236, z = 161.9023},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/CyiJFL8.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1818,7 +1818,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -490.9603, y = 758.0145, z = 155.0059},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Mjpg3sY.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -1831,7 +1831,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -513.6766, y = 784.8253, z = 166.0147},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/ujiyrj5.jpg",
     ['category'] = "casasvip",
@@ -1845,7 +1845,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -12.52947, y = 421.6781, z = 108.6928},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/Yi9SOQe.jpg",
     ['category'] = "casasvip",
@@ -1859,7 +1859,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 32.46536, y = 383.3641, z = 106.651},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/2LrQrgk.jpg",
     ['category'] = "casasvip",
@@ -1873,7 +1873,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1147.261, y =  800.2049, z = 154.0099},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/5t2AaxQ.jpg",
     ['category'] = "casasvip",
@@ -1887,7 +1887,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -972.2677, y = 831.9188, z = 166.553},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/fOfDV6u.jpg",
     ['category'] = "casasvip",
@@ -1901,7 +1901,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -935.2778, y = 831.3636, z = 175.8705},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/8Zrj8W3.jpg",
     ['category'] = "casasvip",
@@ -1915,7 +1915,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -997.5294, y = 761.1975, z = 147.2131},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/rfByF8O.jpg",
     ['category'] = "casasvip",
@@ -1929,7 +1929,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -831.5245, y = 789.9116, z = 188.0567},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/SHhfIzh.png",
     ['category'] = "casasvip",
@@ -1943,7 +1943,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -102.1242, y = 504.9824, z = 120.5241},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/GGiAI1i.jpg",
     ['category'] = "casasvip",
@@ -1957,7 +1957,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -57.3726, y = 484.0963, z = 125.9075},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/Q85nqVA.jpg",
     ['category'] = "casasvip",
@@ -1971,7 +1971,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 39.42751, y = 498.9132, z = 136.9941},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/VchWaCV.jpg",
     ['category'] = "casasvip",
@@ -1985,7 +1985,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 87.18142, y = 506.941, z = 138.608},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/SSFe5FY.jpg",
     ['category'] = "casasvip",
@@ -1999,7 +1999,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 131.8864, y = 512.9544, z = 136.9635},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/2bYIRXB.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2012,7 +2012,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -111.3071, y = 439.3412, z = 102.4493},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Nf2L24s.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2025,7 +2025,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -335.8929, y = 614.9202, z = 154.8545},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/UueE89n.jpg",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2038,7 +2038,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -869.0229, y = 456.1514, z = 72.08653},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/BxeFpyN.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2051,7 +2051,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1796.018, y = 437.4059, z = 106.55},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/N0wq75H.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2064,7 +2064,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1792.445, y = 336.4102, z = 76.83113},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/zQgerVz.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2077,7 +2077,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1981.077, y = 646.3708, z = 110.1747},
-    ['price'] = 6000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Q1AQx7G.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2090,7 +2090,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -764.46807861328, y = 330.29614257813, z = 199.48649597168},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2103,7 +2103,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -792.50207519531, y = 326.56137084961, z = 210.79669189453},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2116,7 +2116,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -796.36602783203, y = 330.35546875, z = 201.41368103027},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2129,7 +2129,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -796.55096435547, y = 327.64657592773, z = 190.71360778809},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2142,7 +2142,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -760.04577636719, y = 326.8938293457, z = 170.59651184082},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2155,7 +2155,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -760.00909423828, y = 326.8017578125, z = 217.05043029785},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2168,7 +2168,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1450.0338134766, y = -548.03924560547, z = 72.843757629395},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2181,7 +2181,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1467.6839599609, y = -539.177734375, z = 63.349308013916},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2194,7 +2194,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1467.5590820313, y = -539.02789306641, z = 50.721687316895},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2207,7 +2207,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -904.76605224609, y = -364.10275268555, z = 113.07418823242},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2220,7 +2220,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -904.70471191406, y = -364.23648071289, z = 113.0740814209},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2233,7 +2233,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -926.17181396484, y = -383.19213867188, z = 103.23304748535},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2246,7 +2246,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -903.7548828125, y = -367.97232055664, z = 79.273208618164},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2259,7 +2259,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -901.14385986328, y = -433.87738037109, z = 89.253845214844},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2272,7 +2272,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -888.72735595703, y = -442.79196166992, z = 120.32722473145},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2285,7 +2285,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -903.7548828125, y = -367.97232055664, z = 79.273208618164},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2298,7 +2298,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -276.87634277344, y = -961.75299072266, z = 86.30362701416},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2311,7 +2311,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -266.26187133789, y = -946.53088378906, z = 71.024070739746},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2324,7 +2324,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -39.171119689941, y = -584.66833496094, z = 83.907600402832},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2337,7 +2337,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -37.51148223877, y = -590.14074707031, z = 78.83032989502},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2350,7 +2350,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -760.09777832031, y = 326.86233520508, z = 217.05044555664},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2363,7 +2363,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -595.73675537109, y = 56.135437011719, z = 96.999633789063},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2376,7 +2376,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -618.294921875, y = 55.421730041504, z = 101.8201675415},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2389,7 +2389,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1467.6245117188, y = -538.82055664063, z = 50.721691131592},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2402,7 +2402,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -468.01647949219, y = -686.75164794922, z = 70.87964630127},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2415,7 +2415,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -595.72723388672, y = 56.212169647217, z = 96.999649047852},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2428,7 +2428,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1450.0565185547, y = -547.98480224609, z = 72.843765258789},
-    ['price'] = 1000000,
+    ['price'] = 800000,
     ['image'] = "https://i.imgur.com/lfwGKXo.png",
     ['category'] = "casasvip",
     ['sale'] = true
@@ -2444,7 +2444,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1307.6147460938, y = -580.68469238281, z = 67.83797454834},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/mbujDGe.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2457,7 +2457,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1326.1920166016, y = -585.55126953125, z = 67.837997436523},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/mLVBjng.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2470,7 +2470,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1345.4987792969, y = -602.83056640625, z = 67.837997436523},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/fuNTmCX.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2483,7 +2483,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1371.4704589844, y = -607.21716308594, z = 67.837989807129},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/seolX4e.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2496,7 +2496,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1394.3566894531, y = -608.73559570313, z = 67.837982177734},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/seolX4e.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2509,7 +2509,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1405.9495849609, y = -569.51190185547, z = 67.837989807129},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/v8rSMfp.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2522,7 +2522,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1381.9969482422, y = -545.34045410156, z = 67.837997436523},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/JjAJeiI.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2535,7 +2535,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1362.5413818359, y = -532.58557128906, z = 67.837989807129},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/MxEKphW.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2548,7 +2548,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1339.6437988281, y = -524.677734375, z = 67.837982177734},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/yueYLz9.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2561,7 +2561,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1317.3295898438, y = -513.05139160156, z = 67.837921142578},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/RMaMdC8.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2574,7 +2574,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1249.5971679688, y = -514.79217529297, z = 63.451812744141},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/SWE7MBT.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -2587,7 +2587,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1253.0872802734, y = -499.5612487793, z = 63.44811630249},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/2fXrgIz.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2600,7 +2600,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1259.4645996094, y = -485.13909912109, z = 65.604675292969},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/IqxLx8a.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -2613,7 +2613,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1263.2883300781, y = -464.49542236328, z = 64.603805541992},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/ARAM5VZ.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2626,7 +2626,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1264.4349365234, y = -429.97232055664, z = 64.200134277344},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/DYOSXa1.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -2639,7 +2639,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1242.1215820313, y = -576.80596923828, z = 64.363555908203},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/lf97l2t.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -2652,7 +2652,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1229.9163818359, y = -594.08612060547, z = 62.051403045654},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/CmJuyTK.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -2665,7 +2665,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1253.2559814453, y = -621.09478759766, z = 65.114387512207},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/izwVdtq.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -2678,7 +2678,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1265.5583496094, y = -654.681640625, z = 63.333461761475},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/Uiw85zp.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2691,7 +2691,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1268.1942138672, y = -688.60723876953, z = 61.555522918701},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/xxNkzCZ.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2704,7 +2704,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1262.8959960938, y = -710.97406005859, z = 57.993511199951},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/YPNkihq.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2717,7 +2717,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1226.0883789063, y = -712.66809082031, z = 57.01753616333},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/Q19mIEj.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2730,7 +2730,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1220.6643066406, y = -689.85968017578, z = 55.225025177002},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/RGWr3WW.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2743,7 +2743,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1228.4614257813, y = -675.01525878906, z = 57.504768371582},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/OF1JKrl.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2756,7 +2756,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1217.5635986328, y = -619.30340576172, z = 61.262805938721},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/6LTs2H6.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2769,7 +2769,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1205.5690917969, y = -593.62274169922, z = 63.483249664307},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/GFybJma.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2782,7 +2782,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1202.2120361328, y = -571.91052246094, z = 63.457870483398},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/OrU25qE.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2795,7 +2795,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1210.8956298828, y = -558.28192138672, z = 62.555370330811},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/tRgVXvz.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2808,7 +2808,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1094.478515625, y = -482.21493530273, z = 59.267227172852},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/XfrzT3n.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2821,7 +2821,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1099.9609375, y = -470.66928100586, z = 60.632099151611},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/jLbtGJp.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2834,7 +2834,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1107.0725097656, y = -406.53073120117, z = 62.355194091797},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/MoJ67bh.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2847,7 +2847,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1110.1590576172, y = -387.67684936523, z = 61.801044464111},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/O1ZHkW2.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2860,7 +2860,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1058.8138427734, y = -381.19143676758, z = 62.448574066162},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/yDfrhbU.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2873,7 +2873,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1024.4284667969, y = -411.9069519043, z = 60.542728424072},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/YWIbk6o.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2886,7 +2886,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1009.0219726563, y = -424.5344543457, z = 59.460613250732},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/YWIbk6o.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2899,7 +2899,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 983.9638671875, y = -437.76898193359, z = 59.84204864502},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/ILuWxOP.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2912,7 +2912,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 964.61859130859, y = -452.34927368164, z = 55.242210388184},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/rFKZSAV.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2925,7 +2925,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 941.98712158203, y = -466.69644165039, z = 56.891883850098},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/Mrf9GRF.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2938,7 +2938,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 924.66674804688, y = -479.97830200195, z = 54.238842010498},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/tLs9BN4.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2951,7 +2951,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 899.61999511719, y = -488.91830444336, z = 54.975391387939},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['image'] = "https://i.imgur.com/7ZqqhYf.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2964,7 +2964,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 878.09124755859, y = -492.939453125, z = 51.845218658447},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/kvkQvqK.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2977,7 +2977,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 858.24450683594, y = -513.78399658203, z = 49.263076782227},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/fZUwrez.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -2990,7 +2990,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 847.95642089844, y = -533.61004638672, z = 52.091926574707},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/WjfPW4B.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3003,7 +3003,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 844.69732666016, y = -560.46368408203, z = 52.736068725586},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/dH29cHz.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3016,7 +3016,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 862.52453613281, y = -584.44494628906, z = 52.719993591309},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/q6rVwvK.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3029,7 +3029,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 886.54742431641, y = -604.30181884766, z = 51.934669494629},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/5rFnpS6.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3042,7 +3042,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 905.87365722656, y = -622.26733398438, z = 53.751842498779},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/abZiwwI.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3055,7 +3055,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 928.41705322266, y = -640.29290771484, z = 51.818832397461},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/VsT09fB.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3068,7 +3068,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 944.76080322266, y = -654.29144287109, z = 52.409809112549},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/VsT09fB.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3081,7 +3081,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 959.56024169922, y = -674.96539306641, z = 53.383377075195},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/QxW5AnG.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3094,7 +3094,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 970.82623291016, y = -702.43530273438, z = 52.711444854736},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/DE3FRUD.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3107,7 +3107,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 981.52862548828, y = -718.53491210938, z = 52.075180053711},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/IhYC9yi.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3120,7 +3120,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 995.8408203125, y = -730.86859130859, z = 50.976985931396},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/7k6ATul.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3133,7 +3133,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 980.90594482422, y = -622.20526123047, z = 54.266162872314},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/TcYYkTx.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3146,7 +3146,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 965.3916015625, y = -592.94647216797, z = 54.543827056885},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/CHQk8sH.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3159,7 +3159,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 983.96258544922, y = -576.31494140625, z = 54.835300445557},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/jQrdj8n.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3172,7 +3172,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1008.0941162109, y = -573.26123046875, z = 54.078186035156},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/R7AFkfC.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3185,7 +3185,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 999.91918945313, y = -596.7275390625, z = 54.539825439453},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/E62uYkx.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3198,7 +3198,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 914.25762939453, y = -568.63818359375, z = 53.054290771484},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/zwWZnHv.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3211,7 +3211,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 960.78167724609, y = -543.83697509766, z = 53.587619781494},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/862dZcy.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3224,7 +3224,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 986.20629882813, y = -530.41540527344, z = 54.560104370117},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/niiBUxS.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3237,7 +3237,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1004.3355712891, y = -514.49359130859, z = 56.0361328125},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/zkfxLfl.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3250,7 +3250,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1042.3286132813, y = -501.56655883789, z = 59.699199676514},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/JiUuMRE.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3263,7 +3263,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1049.8861083984, y = -475.87014770508, z = 58.33487701416},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/CZFIrkf.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3276,7 +3276,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1054.6403808594, y = -451.99053955078, z = 60.390670776367},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/vidRzqJ.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3289,7 +3289,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1014.5340576172, y = -465.60482788086, z = 58.091346740723},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/ZRoeDnF.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3302,7 +3302,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 973.09899902344, y = -501.20794677734, z = 55.081844329834},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/hYdyWOe.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3315,7 +3315,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 947.36303710938, y = -516.83123779297, z = 55.122943878174},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/PCwNL5M.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3328,7 +3328,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 925.88519287109, y = -523.52947998047, z = 54.055763244629},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/TRRost5.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -3341,7 +3341,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 891.50311279297, y = -538.43096923828, z = 53.944538116455},
-    ['price'] = 350000,
+    ['price'] = 200000,
     ['image'] = "https://i.imgur.com/EnCpsry.jpg",
     ['category'] = "casa",
     ['sale'] = true
@@ -3358,7 +3358,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 321.78564453125, y = -2109.5493164063, z = 13.25594997406},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3372,7 +3372,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 327.32363891602, y = -2105.8994140625, z = 13.13973903656},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3386,7 +3386,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 333.24234008789, y = -2102.3879394531, z = 5.015020370483},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3400,7 +3400,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 339.56127929688, y = -2098.0754394531, z = 13.510708808899},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3414,7 +3414,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 292.95852661133, y = -2078.2629394531, z = 13.174629211426},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3428,7 +3428,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 295.53393554688, y = -2084.9709472656, z = 13.093150138855},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3442,7 +3442,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 297.89971923828, y = -2091.916015625, z = 13.434380531311},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3456,7 +3456,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 314.66223144531, y = -2050.5026855469, z = 17.370079040527},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3470,7 +3470,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 319.78921508789, y = -2055.1962890625, z = 17.689584732056},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3484,7 +3484,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 325.31704711914, y = -2060.2526855469, z = 18.015865325928},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3498,7 +3498,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 331.10302734375, y = -2065.1520996094, z = 16.543462753296},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3512,7 +3512,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 337.04583740234, y = -2070.3830566406, z = 17.480304718018},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3526,7 +3526,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 361.89791870117, y = -2082.185546875, z = 18.35005569458},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3540,7 +3540,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 366.55328369141, y = -2076.3549804688, z = 18.276834487915},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3554,7 +3554,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 371.71408081055, y = -2070.4243164063, z = 18.542613983154},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3568,7 +3568,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 376.63220214844, y = -2064.2250976563, z = 18.845125198364},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3582,7 +3582,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 381.28302001953, y = -2058.0173339844, z = 18.387683868408},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3596,7 +3596,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 341.67877197266, y = -2015.38671875, z = 18.869955062866},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3610,7 +3610,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 347.65646362305, y = -2019.9377441406, z = 18.136814117432},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3624,7 +3624,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 353.70831298828, y = -2024.9372558594, z = 19.139804840088},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3638,7 +3638,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 359.59539794922, y = -2029.4847412109, z = 18.305074691772},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3652,7 +3652,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 365.94024658203, y = -2034.8875732422, z = 18.64617729187},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3666,7 +3666,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 390.24783325195, y = -2043.7874755859, z = 19.426906585693},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3680,7 +3680,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 393.31491088867, y = -2037.1440429688, z = 19.831205368042},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3694,7 +3694,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 396.45037841797, y = -2029.8347167969, z = 20.503784179688},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3708,7 +3708,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 399.83981323242, y = -2022.4426269531, z = 20.415508270264},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3722,7 +3722,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 402.89236450195, y = -2015.2254638672, z = 19.933811187744},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3736,7 +3736,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 386.08187866211, y = -1998.2598876953, z = 20.612010955811},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3750,7 +3750,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 378.79190063477, y = -1995.7424316406, z = 20.784557342529},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3764,7 +3764,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 371.77731323242, y = -1993.1588134766, z = 20.301866531372},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3778,7 +3778,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 364.75213623047, y = -1991.2578125, z = 20.447147369385},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3792,7 +3792,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 357.88760375977, y = -1988.6596679688, z = 20.135089874268},
-    ['price'] = 250000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/E5j9sl0.png",
     ['category'] = "casa",
@@ -3806,7 +3806,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 117.4408493042, y = -1961.3231201172, z = 15.779770851135},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/LCTztnH.png",
     ['category'] = "casa",
@@ -3820,7 +3820,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 71.341812133789, y = -1941.9779052734, z = 16.732704162598},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/895Zq3F.jpg",
     ['category'] = "casa",
@@ -3834,7 +3834,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 24.669328689575, y = -1898.7095947266, z = 16.981073379517},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/aqFJWYn.jpg",
     ['category'] = "casa",
@@ -3848,7 +3848,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 100.11730957031, y = -1909.6614990234, z = 16.094493865967},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/EKRvAQs.jpg",
     ['category'] = "casa",
@@ -3862,7 +3862,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 104.45613861084, y = -1890.1353759766, z = 18.070083618164},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/vhJB39d.jpg",
     ['category'] = "casa",
@@ -3876,7 +3876,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 150.52395629883, y = -1905.5810546875, z = 17.630645751953},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/VIp9sIK.png",
     ['category'] = "casa",
@@ -3890,7 +3890,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 161.03686523438, y = -1945.2747802734, z = 15.292579650879},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/71NZ5UG.jpg",
     ['category'] = "casa",
@@ -3904,7 +3904,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 145.76399230957, y = -1960.4996337891, z = 14.056848526001},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/qJ23zEa.jpg",
     ['category'] = "casa",
@@ -3918,7 +3918,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 54.223655700684, y = -1869.3934326172, z = 17.220634460449},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/xYknTDq.jpg",
     ['category'] = "casa",
@@ -3932,7 +3932,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = -40.675914764404, y = -1787.9421386719, z = 22.437803268433},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/NJESHnW.jpg",
     ['category'] = "casa",
@@ -3946,7 +3946,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = -51.990070343018, y = -1778.5986328125, z = 23.240755081177},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/fzIAUv9.jpg",
     ['category'] = "casa",
@@ -3960,7 +3960,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 148.5634765625, y = -1860.8465576172, z = 18.723964691162},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/cMB7aDX.jpg",
     ['category'] = "casa",
@@ -3974,7 +3974,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 189.91687011719, y = -1883.9437255859, z = 20.23543548584},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/YOgsIfw.jpg",
     ['category'] = "casa",
@@ -3988,7 +3988,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 253.64175415039, y = -1729.5013427734, z = 23.823875427246},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/1c1sfIE.jpg",
     ['category'] = "casa",
@@ -4002,7 +4002,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 283.83670043945, y = -1693.1497802734, z = 23.81273651123},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/nUtnI8G.png",
     ['category'] = "casa",
@@ -4016,7 +4016,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 305.65539550781, y = -1765.8187255859, z = 23.994295120239},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/0XrsH6P.png",
     ['category'] = "casa",
@@ -4030,7 +4030,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 318.30981445313, y = -1761.7596435547, z = 23.910205841064},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/PyeTYSS.jpg",
     ['category'] = "casa",
@@ -4044,7 +4044,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 154.45843505859, y = -1822.1378173828, z = 20.550136566162},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/cewS4iQ.png",
     ['category'] = "casa",
@@ -4058,7 +4058,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 86.075950622559, y = -1960.1312255859, z = 15.025713920593},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/aKSAmsR.png",
     ['category'] = "casa",
@@ -4072,7 +4072,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 74.632850646973, y = -1952.3582763672, z = 15.122425079346},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/QKpRpIA.png",
     ['category'] = "casa",
@@ -4086,7 +4086,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 55.513328552246, y = -1923.9556884766, z = 16.553628921509},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/abrgTHU.jpg",
     ['category'] = "casa",
@@ -4100,7 +4100,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 40.892208099365, y = -1913.8161621094, z = 15.581406593323},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/JqGU1aO.jpg",
     ['category'] = "casa",
@@ -4114,7 +4114,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 2.9268255233765, y = -1883.8518066406, z = 17.609920501709},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/vtFzZ8W.jpg",
     ['category'] = "casa",
@@ -4128,7 +4128,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = -6.3045177459717, y = -1874.1431884766, z = 17.668468475342},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/MJumXlo.jpg",
     ['category'] = "casa",
@@ -4142,7 +4142,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = -22.379259109497, y = -1859.9089355469, z = 19.212949752808},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/ltLtpuh.jpg",
     ['category'] = "casa",
@@ -4156,7 +4156,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = -34.460433959961, y = -1850.177734375, z = 19.312610626221},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/S9ywL6k.jpg",
     ['category'] = "casa",
@@ -4170,7 +4170,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 128.40562438965, y = -1926.6673583984, z = 14.776006698608},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/BLwKhXH.jpg",
     ['category'] = "casa",
@@ -4184,7 +4184,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 128.64552307129, y = -1898.4929199219, z = 17.100040435791},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/eiIyY7E.jpg",
     ['category'] = "casa",
@@ -4198,7 +4198,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 177.36260986328, y = -1924.1746826172, z = 14.832504272461},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/vfGgXlx.jpg",
     ['category'] = "casa",
@@ -4212,7 +4212,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 142.47955322266, y = -1971.1563720703, z = 14.221294403076},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/jQg5VbU.jpg",
     ['category'] = "casa",
@@ -4226,7 +4226,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 28.411031723022, y = -1852.5858154297, z = 15.45679473877},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/KMUCUJu.jpg",
     ['category'] = "casa",
@@ -4240,7 +4240,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 18.153007507324, y = -1843.2191162109, z = 17.333469390869},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/ocBcNdv.jpg",
     ['category'] = "casa",
@@ -4254,7 +4254,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 171.09297180176, y = -1869.5994873047, z = 16.927658081055},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/EDC1cAj.jpg",
     ['category'] = "casa",
@@ -4268,7 +4268,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 207.12159729004, y = -1892.9428710938, z = 18.562578201294},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/p5sGhfu.jpg",
     ['category'] = "casa",
@@ -4282,7 +4282,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 296.83508300781, y = -1784.2222900391, z = 21.056610107422},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/ohPayZ2.jpg",
     ['category'] = "casa",
@@ -4296,7 +4296,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 285.96740722656, y = -1793.9256591797, z = 19.554481506348},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/8NT09I9.png",
     ['category'] = "casa",
@@ -4310,7 +4310,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 329.56393432617, y = -1741.7777099609, z = 23.159099578857},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/bOV6zZq.png",
     ['category'] = "casa",
@@ -4324,7 +4324,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 261.19927978516, y = -1723.3218994141, z = 22.632188796997},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/mzFDJga.jpg",
     ['category'] = "casa",
@@ -4338,7 +4338,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 271.76779174805, y = -1710.8741455078, z = 22.669557571411},
-    ['price'] = 350000,
+    ['price'] = 120000,
     ['tipoCasa'] = "casa",
     ['image'] = "https://i.imgur.com/UXzRuh8.jpg",
     ['category'] = "casa",
@@ -4356,7 +4356,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1002.8854980469, y = 4981.7622070312, z = 196.66398620605},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4369,7 +4369,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1006.5647583008, y = 4946.7553710938, z = 201.2653503418},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4382,7 +4382,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1002.8854980469, y = 4981.7622070312, z = 196.66398620605},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4395,7 +4395,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1038.1522216797, y = 4959.1831054688, z = 205.81069946289},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4408,7 +4408,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1052.91015625, y = 4944.068359375, z = 215.0703125},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4421,7 +4421,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1052.91015625, y = 4944.068359375, z =215.0703125},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4434,7 +4434,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1058.1871337891, y = 4954.3627929688, z = 215.53507995605},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4447,7 +4447,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1002.8854980469, y = 4981.7622070312, z = 196.66398620605},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4460,7 +4460,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1088.8127441406, y = 4967.560546875, z = 225.49865722656},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4473,7 +4473,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1142.67578125, y = 4894.2099609375, z = 226.23295593262},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4486,7 +4486,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1164.4792480469, y = 4908.4877929688, z = 224.73413085938},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4499,7 +4499,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x =-1031.9735107422, y = 4945.51953125, z = 211.79486083984},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4514,7 +4514,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1556.4636230469, y = -94.919044494629, z = 165.74490356445},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4527,7 +4527,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1494.228515625, y = -98.228225708008, z = 157.43974304199},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4540,7 +4540,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1492.8793945313, y = -118.3745803833, z = 150.20706176758},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4553,7 +4553,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1459.6872558594, y = -131.8543548584, z = 143.07388305664},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4566,7 +4566,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1446.9858398438, y = -114.59531402588, z = 147.68925476074},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4579,7 +4579,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1411.6907958984, y = -135.21040344238, z = 134.95816040039},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4592,7 +4592,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1413.2934570313, y = -112.41683959961, z = 133.65852355957},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4605,7 +4605,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1398.9461669922, y = -131.95127868652, z = 132.72804260254},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4618,7 +4618,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1391.3347167969, y = -109.99964904785, z = 130.2808380127},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4631,7 +4631,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1361.8590087891, y = -124.41366577148, z = 126.83788299561},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4644,7 +4644,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1061.1029052734, y = 2838.6281738281, z = 49.78685760498},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4658,7 +4658,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1013.9638671875, y = 2852.3852539062, z = 48.649322509766},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4672,7 +4672,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1012.057800293, y = 2828.3718261719, z = 48.955322265625},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4686,7 +4686,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 933.47064208984, y = 2808.1323242188, z = 56.223434448242},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4699,7 +4699,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 917.99133300781, y = 2831.0703125, z = 56.689674377441},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4713,7 +4713,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 893.36547851562, y = 2808.3352050781, z = 59.364109039307},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4727,7 +4727,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 809.15417480469, y = 2826.8662109375, z = 62.194305419922},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4741,7 +4741,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 777.60693359375, y = 2842.6611328125, z = 61.234066009521},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4755,7 +4755,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 779.91424560547, y = 2866.7863769531, z = 60.929660797119},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4769,7 +4769,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 754.43603515625, y = 2860.5236816406, z = 59.719303131104},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4783,7 +4783,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 729.84588623047, y = 2904.203125, z = 51.614280700684},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4797,7 +4797,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 729.84588623047, y = 2904.203125, z = 51.614280700684},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4811,7 +4811,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 883.51733398438, y = 2884.48046875, z = 60.655258178711},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4825,7 +4825,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 836.8037109375, y = 2879.529296875, z = 61.88595199585},
-    ['price'] = 100000,
+    ['price'] = 50000,
  
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
@@ -4840,7 +4840,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 42.305511474609, y = 3622.0517578125, z = 43.788879394531},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4853,7 +4853,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 49.249225616455, y = 3622.0517578125, z = 43.772579193115},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4866,7 +4866,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 43.770622253418, y = 3653.287109375, z = 44.090843200684},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4879,7 +4879,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 38.571788787842, y = 3662.2243652344, z = 43.879940032959},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4892,7 +4892,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 30.936748504639, y = 3670.7094726563, z = 43.811634063721},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4905,7 +4905,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 63.505184173584, y = 3661.4855957031, z = 43.371406555176},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4918,7 +4918,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 113.13959503174, y = 3717.4084472656, z = 43.919227600098},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4931,7 +4931,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 108.21367645264, y = 3731.2746582031, z = 43.983116149902},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4944,7 +4944,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 29.905385971069, y = 3733.8486328125, z = 43.839637756348},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4957,7 +4957,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 41.964260101318, y = 3717.6301269531, z = 43.496116638184},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4970,7 +4970,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 89.917533874512, y = 3619.4724121094, z = 49.639446258545},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -4988,7 +4988,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 824.74578857422, y = 1114.4072265625, z = 313.74130249023},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5001,7 +5001,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 867.18920898438, y = 1095.1982421875, z = 297.11117553711},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5014,7 +5014,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 926.99530029297, y = 1071.9742431641, z = 281.65145874023},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5027,7 +5027,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1029.8286132813, y = 980.16888427734, z = 234.5975189209},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5040,7 +5040,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1016.5534667969, y = 943.70050048828, z = 224.072265625},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5053,7 +5053,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 1011.5861206055, y = 962.30712890625, z = 228.94313049316},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5066,7 +5066,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 976.06817626953, y = 1024.7060546875, z = 256.52807617188},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5079,7 +5079,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 949.36029052734, y = 1027.1279296875, z = 263.96405029297},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5092,7 +5092,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 929.84136962891, y = 1041.6352539063, z = 273.25790405273},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5105,7 +5105,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 915.1630859375, y = 1054.0555419922, z = 278.59130859375},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5118,7 +5118,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 894.81506347656, y = 1068.9157714844, z = 288.68426513672},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5131,7 +5131,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 857.86364746094, y = 1073.2586669922, z  = 299.27194213867},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5144,7 +5144,7 @@ cfg.casas = {
       ['limite'] = 250
     },
     ['guardaRoupa'] = {x = 807.05987548828, y = 1091.5090332031, z = 309.49600219727},
-    ['price'] = 100000,
+    ['price'] = 50000,
     ['image'] = "https://i.imgur.com/K7Mkjs2.png",
     ['category'] = "barraco",
     ['sale'] = true
@@ -5161,7 +5161,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 230.1889, y = 662.3552, z = 174.9129},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/Ep3XqFb.png",
     ['category'] = "streamer",
     ['sale'] = truewd
@@ -5174,7 +5174,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 1400.0316162109, y = 1139.7082519531, z = 114.3335723877},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/5up1nz5.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5187,7 +5187,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -91.596054077148, y = 1001.2415161133, z = 222.70159912109},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/ZX9jOjX.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5200,7 +5200,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -183.7367, y = 998.0189, z = 216.1763},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/EsAremL.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5213,7 +5213,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -163.8421, y = 905.501, z = 219.5363},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/sASGOdo.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5226,7 +5226,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -70.39752, y = 835.0583, z = 214.6735},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/fIyoNeA.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5239,7 +5239,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -176.2371, y = 583.6093, z = 171.5875},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/hChU9Dz.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5252,7 +5252,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 52.85447, y = 556.8156, z = 160.3603},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/CNd7lmB.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5265,7 +5265,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = 302.319, y = 506.4141, z = 135.126},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/3IMYNMO.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5278,7 +5278,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -601.9641, y = 825.8738, z = 181.4023},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/8fRNgFS.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5291,7 +5291,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -1731.909, y = 367.0338, z = 77.79642},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/hHO3f0E.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5304,7 +5304,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -633.2043, y = 470.238, z = 96.58772},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/wKgJbEe.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5317,7 +5317,7 @@ cfg.casas = {
       ['limite'] = 800
     },
     ['guardaRoupa'] = {x = -276.5528, y = 587.942, z = 159.3951},
-    ['price'] = 10000000,
+    ['price'] = 5000000,
     ['image'] = "https://i.imgur.com/lw1tLZa.png",
     ['category'] = "streamer",
     ['sale'] = true
@@ -5333,7 +5333,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 323.9216, y= -190.0784, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5346,7 +5346,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 318.2899, y= -187.8878, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5359,7 +5359,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 306.4911, y= -195.2202, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5372,7 +5372,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 304.3814, y= -200.4758, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5385,7 +5385,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 302.5428, y= -205.6632, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5398,7 +5398,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 300.6117, y= -211.0832, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5411,7 +5411,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 298.5685, y= -216.41, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5424,7 +5424,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 296.5697, y= -221.6209, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5437,7 +5437,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 306.5283, y= -223.4542, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5450,7 +5450,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 314.862, y= -227.033, z= 47.9327},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5463,7 +5463,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 327.5369, y= -232.6534, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5476,7 +5476,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 334.318, y= -235.201, z= 47.932},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5489,7 +5489,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 344.2911, y= -226.3653, z= 47.9327},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5502,7 +5502,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 346.8649, y= -219.9405, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5515,7 +5515,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 349.0013, y= -213.6621, z= 47.93273},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5528,7 +5528,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 350.9535, y= -207.6722, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5541,7 +5541,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 353.2473, y= -201.3337, z= 47.93274},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5554,7 +5554,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 318.3845, y= -171.5457, z= 69.79045},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5567,7 +5567,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 318.3845, y= -171.5457, z= 69.79045},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5580,7 +5580,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 294.7389, y= -161.4447, z= 69.79045},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5593,7 +5593,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 296.7424, y= -155.9484, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5606,7 +5606,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 298.8506, y= -150.4522, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5619,7 +5619,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 295.9467, y= -134.6695, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5632,7 +5632,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 298.6365, y= -127.5373, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5645,7 +5645,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 305.47775268555, y= -166.2497253418, z= 66.366218566895},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5658,7 +5658,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 307.5526, y= -159.9947, z= 66.45173},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5671,7 +5671,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 320.7572, y= -165.0959, z= 70.12989},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5684,7 +5684,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 322.9869, y= -159.1229, z= 70.12989},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5697,7 +5697,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 335.2707, y= -176.9056, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5710,7 +5710,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 337.1523, y= -171.1349, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5723,7 +5723,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 341.2696, y= -166.276, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5736,7 +5736,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 345.3857, y= -180.7855, z= 53.96494},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5749,7 +5749,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 347.5033, y= -175.2648, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5762,7 +5762,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 350.1993, y= -169.5891, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5775,7 +5775,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 343.6534, y= -159.905, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5788,7 +5788,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 343.2218, y= -151.9948, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5801,7 +5801,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 353.0955, y= -163.5268, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true
@@ -5814,7 +5814,7 @@ cfg.casas = {
 	   ['limite'] = 250
 	},
     ['guardaRoupa'] = {x = 354.6158, y= -155.477, z= 70.1299},
-	['price'] = 180000,
+	['price'] = 150000,
     ['image'] = "https://i.imgur.com/QJz9QMc.png",
     ['category'] = "casa",
     ['sale'] = true

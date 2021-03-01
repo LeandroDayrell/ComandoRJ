@@ -50,7 +50,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PRESSEDBLEEDING
 -----------------------------------------------------------------------------------------------------------------------------------------
---[[Citizen.CreateThread(function()
+Citizen.CreateThread(function()
 	while true do
 		local ped = PlayerPedId()
 
@@ -61,13 +61,13 @@ end)
 				bleedtype = "baixo"
 			elseif bleeding == 3 then
 				bleedtype = "médio"
-				SetEntityHealth(ped,GetEntityHealth(ped)-1)
+				SetEntityHealth(ped,GetEntityHealth(ped)-3)
 			elseif bleeding == 4 then
 				bleedtype = "alto"
-				SetEntityHealth(ped,GetEntityHealth(ped)-2)
+				SetEntityHealth(ped,GetEntityHealth(ped)-4)
 			elseif bleeding >= 5 then
 				bleedtype = "grave"
-				SetEntityHealth(ped,GetEntityHealth(ped)-3)
+				SetEntityHealth(ped,GetEntityHealth(ped)-5)
 			end
 			if bleeding >= 1 and GetEntityHealth(ped) > 101 then
 				TriggerEvent("Notify","Negado","Sangramento <b>"..bleedtype.."</b> encontrado.",3000)
@@ -80,7 +80,7 @@ end)
 
 		Citizen.Wait(15000)
 	end
-end)]]
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- RESETDIAGNOSTIC
 -----------------------------------------------------------------------------------------------------------------------------------------

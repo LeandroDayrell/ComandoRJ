@@ -31,8 +31,6 @@ AddEventHandler("skinmenu",function(mhash)
     end
 end)
 
-
-
 Citizen.CreateThread(function()
     while true do
         if showblips then
@@ -78,39 +76,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-
-
------------------ CONGELAR JOGADOR
-
-RegisterNetEvent('Congelar')
-AddEventHandler('Congelar',function(source)
-    local ped = PlayerPedId(-1)
-    if not congelar then
-        congelar = true
-        Citizen.Wait(100)
-        FreezeEntityPosition(ped, true);
-    else
-        congelar = false
-        FreezeEntityPosition(ped, false);
-    end
-end)
-
-
--------------- FOGO EM JOGADOR
-
-
-RegisterNetEvent('FOGO')
-AddEventHandler('FOGO',function(source)
-    local ped = PlayerPedId(-1)
-    if not kravinho then
-        kravinho = true
-        Citizen.Wait(100)
-        StartEntityFire(ped);
-    else
-        kravinho = false
-        StopEntityFire(ped);
-    end
-end)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- APAGAO -- COLOCAR NO CLIENT.LUA DO VRP_ADMIN
@@ -370,7 +335,7 @@ AddEventHandler("vehtuning",function(vehicle)
 		SetVehicleTyreSmokeColor(vehicle,0,0,127)
 		SetVehicleWindowTint(vehicle,1)
 		SetVehicleTyresCanBurst(vehicle,false)
-		--SetVehicleNumberPlateText(vehicle,"CRJ2021")
+		SetVehicleNumberPlateText(vehicle,"CRJ 3.0")
 		SetVehicleNumberPlateTextIndex(vehicle,5)
 		SetVehicleModColor_1(vehicle,4,12,0)
 		SetVehicleModColor_2(vehicle,4,12)

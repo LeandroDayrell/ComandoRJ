@@ -46,14 +46,14 @@ async(function()
             type = vehicle.type,
             name = vehicle.name,
             class = vehicle.class,
+            description = vehicle.description,
             trunk = vehicle.trunk,
             stock = vehicle.stock,
             price = vehicle.price,
-            description = vehicle.description,
-            vip = (vehicle.vip == 1) and true or false,
-            -- exclusive = vehicle.exclusive,
-            image = vehicle.image,
-            banned = (vehicle.banned == 1) and true or false
+            vip = vehicle.vip,
+            exclusive = vehicle.exclusive,
+            banned = vehicle.banned,            
+            image = vehicle.image
         })
     end
 end)
@@ -64,35 +64,18 @@ vAZ.hasPermission = function(permission)
     return vRP.hasPermission(user_id, permission)
 end
 
-vRP._prepare('vAZ/searchHomeByName', 'SELECT * FROM vrp_user_homes WHERE home = @home')
-
 vAZ.homePermission = function(name)
     local source = source
     local user_id = vRP.getUserId(source)
-        
-    local search = function(permissions, user_id)
-        for id,key in pairs(permissions) do
-            if key == user_id then
-                return true, id
-            end        
+    local home = vRP.query("homes/get_homepermissions", { home = name })
+    if #home > 0 then
+        for id,data in pairs(home) do
+            if data.owner == 1 then
+                return true
+            end
         end
-        return false, nil
     end
-
-    local home = vRP.query("vAZ/searchHomeByName", { home = name })
-    if #home > 0 and home[1].user_id == user_id then
-        return true
-    else
-        local home_key = vRP.getSData('permission:'..name)
-        if home_key == nil or home_key == "" then
-            home_key = {}
-            vRP.setSData('permission:'..name, json.encode({}))
-        else
-            home_key = json.decode(home_key)
-        end
-        local permission, key = search(home_key, user_id)
-        return permission
-    end
+    return false
 end
 
 vAZ.getServerVehicle = function(key, entry)
@@ -753,17 +736,16 @@ RegisterCommand('vehs',function(source,args,rawCommand)
 		end
 
 		local pvehicles = vRP.query("vAZ/GetPlayerVehicles",{ user_id = user_id })
-        for id,vehicle in pairs(pvehicles) do
-            local vdata = vAZ.getServerVehicle('model', vehicle.model)
-            if vdata ~= nil and not vdata.vip then
-                if parseInt(vehicle.state) <= 2 then
-                    menu[vehicle.model] = { choose }
-                else
-                    menu[vehicle.model] = { choosedetido }
-                end
-                kitems[vehicle.model] = vehicle.model
-            end
-        end
+		if #pvehicles > 0 then
+			for id,vehicle in pairs(pvehicles) do
+				if parseInt(vehicle.state) <= 2 then
+					menu[vehicle.model] = { choose }
+				else
+					menu[vehicle.model] = { choosedetido }
+				end
+				kitems[vehicle.model] = vehicle.model
+			end
+		end
 
 		vRP.openMenu(source,menu)
 	end

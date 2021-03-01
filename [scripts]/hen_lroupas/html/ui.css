@@ -33,7 +33,7 @@ body {
 .bottom .color {
     padding: 5px;
     border-radius: 50px;
-    background: linear-gradient(to bottom, #85a016, #60702f, #495834);
+    background: linear-gradient(to bottom, #4d90c7, #4d90c7, #4d90c7);
     width: 90px;
     height: 40px;
     color: #fff;
@@ -46,8 +46,8 @@ body {
     position: relative;
     left: -5px;
     top: 2px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .bottom img:hover {
@@ -58,14 +58,14 @@ body {
     width: 1.50px;
     height: 20px;
     margin: 0 10px 0 10px;
-    background-color: #3c4b11;
+    background-color: #4d90c7;
 }
 
 .selectors {
     display: inline-flex;
     float: right;
     margin: 5px;
-    color: #b8d155 !important;
+    color: #000000 !important;
 }
 
 .total {
@@ -76,7 +76,7 @@ body {
     margin-left: 5px;
     background-color: #e6e4e6;
     text-transform: uppercase;
-    color: #2c2b2c;
+    color: #2b2c2c;
 }
 
 .icon-cart {
@@ -92,7 +92,7 @@ body {
     padding: 5px;
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.397)
+    border: 1px solid rgba(93, 193, 240, 0.397)
 }
 
 .left-colum {
@@ -107,9 +107,9 @@ body {
     width: 60%;
     float: right;
     padding: 0 5px 3px 0;
-    background-color: rgba(60, 61, 65, 0.616);
+    background-color: rgba(39, 62, 105, 0.16);
     border-radius: 3rem;
-    border: 1px solid rgba(210, 206, 206, 0.397);
+    border: 1px solid rgba(0, 0, 0, 0.397);
     margin-bottom: 7px;
     box-sizing: border-box;
 }
@@ -139,8 +139,8 @@ body {
     float: right;
     width: 580px;
     height: 90%;
-    background-color: rgba(0, 0, 0, 0.301);
-    border: 1px solid rgba(210, 206, 206, 0.397);
+    background-color: rgba(0, 183, 255, 0.01);
+    border: 1px solid rgba(0, 75, 187, 0.397);
     border-radius: .4rem;
 }
 
@@ -264,7 +264,8 @@ body {
     background: linear-gradient(left, #22ADD4, #1E98BA);
 }
 
-@media only screen and (max-width: 1366px) { /* 1366x768 */
+@media only screen and (max-width: 1366px) {
+    /* 1366x768 */
     .loja-de-roupa {
         zoom: 0.9;
         margin-top: -3%;
@@ -274,7 +275,8 @@ body {
     }
 }
 
-@media only screen and (max-width: 1024px) { /* 1024x768 */
+@media only screen and (max-width: 1024px) {
+    /* 1024x768 */
     .loja-de-roupa {
         zoom: 0.9;
         margin-top: -3%;
@@ -284,11 +286,12 @@ body {
     }
 }
 
-.dropdown:focus, button:focus{
+.dropdown:focus,
+button:focus {
     outline: none;
 }
 
-body{
+body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

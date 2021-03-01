@@ -215,7 +215,7 @@ function updateCarroCompras()
     valor = 0
     for k, v in pairs(carroCompras) do
         if carroCompras[k] == true then
-            valor = valor + 100
+            valor = valor + 68
         end
     end
     precoTotal = valor

@@ -76,20 +76,21 @@ AddEventHandler('crj_metafetamina:permissao',function()
 		end
 	end
 end)
-
-RegisterServerEvent('entrega_pendrive:permissao')
-AddEventHandler('entrega_pendrive:permissao',function()
+--[[
+RegisterServerEvent('entrega_pecas:permissao')
+AddEventHandler('entrega_pecas:permissao',function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"[LR] - Lider") then 
-		if vRP.hasGroup(user_id,"[LR] - Gerente") then
-				if vRP.hasGroup(user_id,"[LR] - Membro") then
-				TriggerClientEvent('entrega_pendrive:permissao', player)
+	if vRP.hasGroup(user_id,"[D.K] - Lider") then 
+		if vRP.hasGroup(user_id,"[D.K] - Gerente") then
+				if vRP.hasGroup(user_id,"[D.K] - Membro") then
+				TriggerClientEvent('entrega_pecas:permissao', player)
 			end
 		end
 	end
 end)
+]]
 
 
 RegisterServerEvent('entrega_maquinacacaniquel:permissao')
@@ -256,15 +257,15 @@ AddEventHandler('crj_metafetamina:itensReceber', function(quantidade)
 end)
 
 -- PEÇAS
-RegisterServerEvent('entrega_pendrive:itensReceber')
-AddEventHandler('entrega_pendrive:itensReceber', function(quantidade)
+RegisterServerEvent('entrega_pecas:itensReceber')
+AddEventHandler('entrega_pecas:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(40,60)  
+    local pagamento = math.random(60,70)  
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
-            if vRP.tryGetInventoryItem(user_id,"pendriveh",quantidade,true) then
+            if vRP.tryGetInventoryItem(user_id,"pecasroubada",quantidade,true) then
                 vRPclient._playAnim(src,true,{{"mp_common","givetake1_a",1}},false)
 				vRP.giveInventoryItem(user_id,"dinheirosujo",pagamento*quantidade,false)
                 local typemessage = "sucesso"

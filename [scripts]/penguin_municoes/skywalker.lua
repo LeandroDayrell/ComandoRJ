@@ -89,29 +89,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-ak103" then
                     if vRP.hasPermission(user_id,"ak.permissao") then -- Permissão para produzir munição de AK-103
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_ASSAULTRIFLE") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 25 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 40 then
-									if vRP.getInventoryItemAmount(user_id,"municaoakpack") >= 1 then
-										if vRP.tryGetInventoryItem(user_id,"capsulas",25) and vRP.tryGetInventoryItem(user_id,"polvora",40) and vRP.tryGetInventoryItem(user_id,"municaoakpack",1) then
-											TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",20) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-											TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE AK-103")
-											vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE AK-103")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-											SetTimeout(20000,function()
-												vRPclient._stopAnim(source,false)
-												vRP.giveInventoryItem(user_id,"wammo|WEAPON_ASSAULTRIFLE",20)
-												TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de AK-103</b>.")
-											end)
-										end
-									else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-									end		
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_ASSAULTRIFLE",10)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de AK-103</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>40x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>10x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>25x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>10x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -122,29 +118,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-mtar" then
                     if vRP.hasPermission(user_id,"mtar.permissao") then -- Permissão para produzir munição de MTAR
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_ASSAULTSMG") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 30 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 50 then
-									if vRP.getInventoryItemAmount(user_id,"municaofamaspack") >= 1 then
-										if vRP.tryGetInventoryItem(user_id,"capsulas",30) and vRP.tryGetInventoryItem(user_id,"polvora",50) and vRP.tryGetInventoryItem(user_id,"municaofamaspack",1) then
-											TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",20) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-											TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE MTAR")
-											vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE MTAR")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-											SetTimeout(20000,function()
-												vRPclient._stopAnim(source,false)
-												vRP.giveInventoryItem(user_id,"wammo|WEAPON_ASSAULTSMG",30)
-												TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de MTAR</b>.")
-											end)
-										end
-									else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-									end	
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_ASSAULTSMG",20)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de MTAR</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>50x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>30x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -184,29 +176,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-zig" then
                     if vRP.hasPermission(user_id,"sig.permissao") then -- Permissão para produzir munição de SIG SAUER
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_COMBATPDW") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 30 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 50 then
-												if vRP.getInventoryItemAmount(user_id,"municaosigpack") >= 1 then
-													if vRP.tryGetInventoryItem(user_id,"capsulas",30) and vRP.tryGetInventoryItem(user_id,"polvora",50) and vRP.tryGetInventoryItem(user_id,"municaosigpack",1) then
-														TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",20) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-														TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE SIG SAUER")
-														vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE SIG SAUER")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-														SetTimeout(20000,function()
-															vRPclient._stopAnim(source,false)
-															vRP.giveInventoryItem(user_id,"wammo|WEAPON_COMBATPDW",30)
-															TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SIG SAUER</b>.")
-														end)
-													end	
-												else
-												TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-												end	
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_COMBATPDW",20)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SIG SAUER</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>50x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>30x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -230,9 +218,7 @@ AddEventHandler("produzir-municao",function(item)
                                             vRP.giveInventoryItem(user_id,"wammo|WEAPON_SMG",20)
                                             TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SMG</b>.")
                                         end)
-                                    else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-									end	
+                                    end
                                 else
                                     TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
@@ -248,29 +234,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-microuzi" then
                     if vRP.hasPermission(user_id,"uzi.permissao") then -- Permissão para produzir munição de MICRO UZI
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_MICROSMG") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 30 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 50 then
-									if vRP.getInventoryItemAmount(user_id,"municaouzipack") >= 1 then
-										if vRP.tryGetInventoryItem(user_id,"capsulas",30) and vRP.tryGetInventoryItem(user_id,"polvora",50)  and vRP.tryGetInventoryItem(user_id,"municaouzipack",1) then
-											TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",20) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-											TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE MICRO UZI")
-											vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE MICRO UZI")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-											SetTimeout(20000,function()
-												vRPclient._stopAnim(source,false)
-												vRP.giveInventoryItem(user_id,"wammo|WEAPON_MICROSMG",30)
-												TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de MICRO UZI</b>.")
-											end)
-										end
-									else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-									end	
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_MICROSMG",30)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de MICRO UZI</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>50x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>30x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -281,29 +263,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-shotgun" then
                     if vRP.hasPermission(user_id,"shotgun.permissao") then -- Permissão para produzir munição de SHOTGUN
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_PUMPSHOTGUN_MK2") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 30 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 60 then
-									if vRP.getInventoryItemAmount(user_id,"municaopumppack") >= 1 then
-										if vRP.tryGetInventoryItem(user_id,"capsulas",30) and vRP.tryGetInventoryItem(user_id,"polvora",60) and vRP.tryGetInventoryItem(user_id,"municaopumppack",1) then
-											TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",30) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-											TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE SHOTGUN")
-											vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE SHOTGUN")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-											SetTimeout(20000,function()
-												vRPclient._stopAnim(source,false)
-												vRP.giveInventoryItem(user_id,"wammo|WEAPON_PUMPSHOTGUN_MK2",30)
-												TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SHOTGUN</b>.")
-											end)
-										end
-									else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-									end	
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_PUMPSHOTGUN_MK2",20)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SHOTGUN</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>60x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>30x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -314,29 +292,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-fiveseven" then
                     if vRP.hasPermission(user_id,"fiveseven.permissao") then -- Permissão para produzir munição de FIVE-SEVEN
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_PISTOL_MK2") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 50 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 60 then
-									if vRP.getInventoryItemAmount(user_id,"municaopistolpack") >= 1 then
-										if vRP.tryGetInventoryItem(user_id,"capsulas",50) and vRP.tryGetInventoryItem(user_id,"polvora",60) and vRP.tryGetInventoryItem(user_id,"municaopistolpack",1) then
-											TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",20) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-											TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE FIVE-SEVEN")
-											vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE FIVE-SEVEN")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-											SetTimeout(20000,function()
-												vRPclient._stopAnim(source,false)
-												vRP.giveInventoryItem(user_id,"wammo|WEAPON_PISTOL_MK2",50)
-												TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de FIVE-SEVEN</b>.")
-											end)
-										end
-									else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack</b>.")
-									end	
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_PISTOL_MK2",40)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de FIVE-SEVEN</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>60x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>50x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -347,29 +321,25 @@ AddEventHandler("produzir-municao",function(item)
                 elseif item == "m-snspistol" then
                     if vRP.hasPermission(user_id,"bordel.permissao") then -- Permissão para produzir munição de SNS PISTOL
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("wammo|WEAPON_SNSPISTOL") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 50 then
-                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 60 then
-									if vRP.getInventoryItemAmount(user_id,"municaosnspack") >= 1 then
-										if vRP.tryGetInventoryItem(user_id,"capsulas",50) and vRP.tryGetInventoryItem(user_id,"polvora",60) and vRP.tryGetInventoryItem(user_id,"municaosnspack",1) then
-											TriggerClientEvent("fechar-nui-municao",source)
+                            if vRP.getInventoryItemAmount(user_id,"capsulas") >= 20 then
+                                if vRP.getInventoryItemAmount(user_id,"polvora") >= 20 then
+                                    if vRP.tryGetInventoryItem(user_id,"capsulas",20) and vRP.tryGetInventoryItem(user_id,"polvora",20) then
+                                        TriggerClientEvent("fechar-nui-municao",source)
 
-											TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE SNS PISTOL")
-											vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
+                                        TriggerClientEvent("progress",source,20000,"PRODUZINDO MUNIÇÕES DE SNS PISTOL")
+                                        vRPclient._playAnim(source,false,{{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"}},true)
 
-											SetTimeout(20000,function()
-												vRPclient._stopAnim(source,false)
-												vRP.giveInventoryItem(user_id,"wammo|WEAPON_SNSPISTOL",50)
-												TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SNS PISTOL</b>.")
-											end)
-										end
-									else
-										TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Pack de SNS PISTOL</b>.")
-									end	
+                                        SetTimeout(20000,function()
+                                            vRPclient._stopAnim(source,false)
+                                            vRP.giveInventoryItem(user_id,"wammo|WEAPON_SNSPISTOL",40)
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Munições de SNS PISTOL</b>.")
+                                        end)
+                                    end
                                 else
-                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>60x Polvoras peneradas</b>.")
+                                    TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Polvoras peneradas</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>50x Capsulas</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>20x Capsulas</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")
@@ -378,11 +348,11 @@ AddEventHandler("produzir-municao",function(item)
                         TriggerClientEvent("Notify",source,"negado","Você não tem permissão para <b>produzir</b> esta munição.")
                     end
                 elseif item == "m-pistol" then
-                    if vRP.hasPermission(user_id,"2colete.permissao") then -- Permissão para produzir Colete
+                    if vRP.hasPermission(user_id,"2colete.permissao") then -- Permissão para produzir COLETE
                         if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("colete") <= vRP.getInventoryMaxWeight(user_id) then
-                            if vRP.getInventoryItemAmount(user_id,"kitcostura") >= 5 then
-                                if vRP.getInventoryItemAmount(user_id,"coletepack") >= 1 then
-                                    if vRP.tryGetInventoryItem(user_id,"kitcostura",5) and vRP.tryGetInventoryItem(user_id,"coletepack",1) then
+                            if vRP.getInventoryItemAmount(user_id,"coletepack") >= 1 then
+                                if vRP.getInventoryItemAmount(user_id,"kitcostura") >= 5 then
+                                    if vRP.tryGetInventoryItem(user_id,"coletepack",1) and vRP.tryGetInventoryItem(user_id,"kitcostura",5) then
                                         TriggerClientEvent("fechar-nui-municao",source)
 
                                         TriggerClientEvent("progress",source,20000,"PRODUZINDO COLETE")
@@ -391,14 +361,14 @@ AddEventHandler("produzir-municao",function(item)
                                         SetTimeout(20000,function()
                                             vRPclient._stopAnim(source,false)
                                             vRP.giveInventoryItem(user_id,"colete",1)
-                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Coletes</b>.")
+                                            TriggerClientEvent("Notify",source,"sucesso","Você produziu <b>Colete</b>.")
                                         end)
                                     end
                                 else
                                     TriggerClientEvent("Notify",source,"negado","Você precisa de <b>5x Kit Costura</b>.")
                                 end
                             else
-                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x Colete Pack</b>.")
+                                TriggerClientEvent("Notify",source,"negado","Você precisa de <b>1x coletepack</b>.")
                             end
                         else
                             TriggerClientEvent("Notify",source,"negado","Espaço insuficiente na mochila.")

@@ -71,13 +71,6 @@ local user_id = vRP.getUserId(source)
 end)]]
 
 
---[ /BVIDA ]-----------------------------------------------------------------------------------------------------------------------------
-RegisterCommand('bvida',function(source,rawCommand)
-	local user_id = vRP.getUserId(source)
-		vRPclient._setCustomization(source,vRPclient.getCustomization(source))
-		vRP.removeCloak(source)
-end)
-
 RegisterCommand('status',function(source,args,rawCommand)
     local onlinePlayers = GetNumPlayerIndices()
     local policia = vRP.getUsersByPermission("policia.permissao")
@@ -2184,7 +2177,6 @@ end)
 -- ROUPAS
 -----------------------------------------------------------------------------------------------------------------------------------------
 local roupas = {
-	
 	["coletepmrj"] = {
         [1885233650] = {
             [9] = { 10,0 },
@@ -2454,35 +2446,36 @@ local roupas = {
 	},
 
 	["PMRJ"] = {
-		[1885233650] = {
-			[1] = { -1,0 },
-			[3] = { 47,0 },
-			[4] = { 114,1 },
-			[6] = { 49,0 },
-			[7] = { 1,0 },
-			[8] = { 6,0 },
-			[9] = { 7,0 },
-			[10] = { 0,0 },
-			[11] = { 257,0 },
-			["p0"] = { 10,1 },
-			["p1"] = { -1,0 },
+		permissao = {"pmerj.permissao"},
+			[1885233650] = { -- MASCULINO
+				[1] = { -1,0 }, --Mascara +25 (8-32)
+				[3] = { 47,0 }, --Maos + 25 (16-40)
+				[4] = { 112,1 }, --Calça + 25 (16-42)
+				[6] = { 49,0 }, --Sapatos +25 (16-40)
+				[7] = { 1,0 }, --Acessórios 50 (15-65)
+				[8] = { 6,0 }, --Blusa +50 (16-65)
+				[9] = { 7,0 }, --Colete
+				[10] = { 0,0 }, --Tatuagem
+				[11] = { 207,0 }, --Jaqueta +50 (16-65)
+				["p0"] = { 10,1 }, --Chapeu +15 (20-34)
+				["p1"] = { -1,0 }, -- Oculos 
+			},
+			[-1667301416] = { -- FEMININO
+				[1] = { -1,0 },--Mascara +25 (8-32)
+				[3] = { -1,0 }, --Maos + 25 (16-40)
+				[4] = { -1,0 }, --Calça + 25 (16-42)
+				[6] = { 15,3 }, --Sapatos +25 (16-40)
+				[7] = { 7,0 }, --Acessórios 50 (15-65)
+				[8] = { 5,0 }, --Blusa +50 (16-65)
+				[9] = { 5,0 }, --Colete
+				[10] = { -1,0 }, --Tatuagem
+				[11] = { -1,0 }, --Jaqueta +50 (16-65)
+				["p0"] = { 29,1 }, --Chapeu +15 (20-34)
+				["p1"] = { -1,0 }, -- Oculos 
+			}
 		},
-		[-1667301416] = {
-			[1] = { -1,0 },
-			[3] = { -1,0 },
-			[4] = { -1,0 },
-			[5] = { 15,0 },
-			[6] = { 15,3 },
-			[7] = { 7,0 },
-			[8] = { 5,0 },
-			[9] = { 5,0 },
-			[10] = { -1,0 },
-			[11] = { -1,0 },
-			["p0"] = { 29,1 },
-			["p6"] = { -1,0 },
-		}
-	},
 }
+
 
 function vRP.save_idle_custom(player,custom)
 	local r_idle = {}
@@ -2515,11 +2508,11 @@ function vRP.removeCloak(player)
 	end
 end
 
-
 RegisterCommand('roupas',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.getInventoryItemAmount(user_id,"roupas") >= 1 then
 --	if vRP.hasPermission(user_id,"polpar.permissao") then
+		if user_id and vRP.hasPermissions(user_id,permissions or {}) then
 		if args[1] then
 			local custom = roupas[tostring(args[1])]
 			if custom then
@@ -2537,6 +2530,9 @@ RegisterCommand('roupas',function(source,args,rawCommand)
 		else
 			vRP.removeCloak(source)
 		end
+	else 
+		TriggerClientEvent('chatMessage',source,"ALERTA",{255,70,50},"VOCE NAO TEM PERMISSAO BAHIANO DE MERDA.")
+	end
 		else
 		TriggerClientEvent('chatMessage',source,"ALERTA",{255,70,50},"Você precisa de ^1Roupas ^0para mudar de roupa.")
 	end

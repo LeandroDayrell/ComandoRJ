@@ -5,23 +5,23 @@ vRP = Proxy.getInterface("vRP")
 -- ARRAY
 -----------------------------------------------------------------------------------------------------------------------------------------
 local valores = {
-	{ item = "dourado", venda = 70 },
+	{ item = "dourado", venda = 170 },
 	--{ item = "corvina", venda = 160 },
-	{ item = "salmao", venda = 60 },
-	{ item = "pacu", venda = 50 },
-	{ item = "pirarucu", venda = 65 },
-	{ item = "tilapia", venda = 50 },
-	{ item = "tucunare", venda = 40 },
-	{ item = "lambari", venda = 60 },
+	{ item = "salmao", venda = 160 },
+	{ item = "pacu", venda = 150 },
+	{ item = "pintado", venda = 150 },
+	{ item = "pirarucu", venda = 165 },
+	{ item = "tilapia", venda = 150 },
+	{ item = "tucunare", venda = 140 },
+	{ item = "lambari", venda = 160 },
 	{ item = "graos", venda = 20 },
-	{ item = "mouro", venda = 20 },
-	{ item = "mferro", venda = 10 },
-	{ item = "mbronze", venda = 10 },
-	{ item = "mrubi", venda = 20 },
-	{ item = "mesmeralda", venda = 30 },
-	{ item = "diamante", venda = 45 },
-	{ item = "sacodelixo", venda = 33 },
-	{ item = "perolatratada", venda = 900 },
+	{ item = "mouro", venda = 25 },
+	{ item = "mferro", venda = 15 },
+	{ item = "mbronze", venda = 14 },
+	{ item = "mrubi", venda = 25 },
+	{ item = "mesmeralda", venda = 35 },
+	{ item = "diamante", venda = 50 },
+	{ item = "perolatratada", venda = 60 },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VENDER

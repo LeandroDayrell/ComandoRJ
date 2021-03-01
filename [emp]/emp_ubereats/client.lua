@@ -29,7 +29,7 @@ local npclocal = {
 
 local pegarlocal = {
 	[1] = {x=147.10,y=-1463.41,z=29.14}, 
-	[2] = {x=-177.95,y=-1424.13,z=31.48}, 
+	[2] = {x=-187.12,y=-1423.76,z=31.47}, 
 	[3] = {x=-845.79,y=-1141.37,z=6.75}, 
 	[4] = {x=788.74,y=-733.80,z=27.70}, 
 	[5] = {x=-641.96,y=236.11,z=81.69}, 
@@ -39,13 +39,14 @@ local pegarlocal = {
 
 local motolocal = {
 	[1] = {x=143.72,y=-1462.58,z=29.35},
-	[2] = {x=-177.95,y=-1424.13,z=31.48}, 
+	[2] = {x=-188.72,y=-1422.01,z=31.33}, 
 	[3] = {x=-843.08,y=-1146.02,z=6.79}, 
 	[4] = {x=785.54,y=-734.35,z=27.63}, 
 	[5] = {x=-644.88,y=232.17,z=80.77}, 
 	[6] = {x=95.43,y=285.05,z=110.20},
 	[7] = {x=1223.85,y=-353.38,z=68.97} 
 }
+
 local entregalocal = {
 	[1] = {x=8.68,y=-243.38,z=47.66}, 
 	[2] = {x=66.41,y=-255.80,z=52.35},
@@ -421,7 +422,7 @@ Citizen.CreateThread(function()
                     if IsControlJustPressed(0,38) then
                     	if quantidade == 0 then
                     		Fade(1200)
-                    		local pagamento = math.random(250,260)
+                    		local pagamento = math.random(30,45)
                     		destinoantigo = destino
 							pegando = false
 							encomendapega = false

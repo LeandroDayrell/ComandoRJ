@@ -62,13 +62,13 @@ Citizen.CreateThread(function()
 
 			if distance <= 10.0 then
 			crjSleep = 1
-				DrawMarker(21,CoordenadaX,CoordenadaY,CoordenadaZ-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
+				DrawMarker(23,CoordenadaX,CoordenadaY,CoordenadaZ-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
 				if distance <= 1.2 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR ENTREGAS",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
 					TriggerEvent('contrato_entregas:permissao')
 						servico = true
-						selecionado = math.random(17)
+						selecionado = math.random(9)
 						CriandoBlip(locs,selecionado)
 					end
 				end
@@ -90,7 +90,7 @@ Citizen.CreateThread(function()
 			local distance = GetDistanceBetweenCoords(locs[selecionado].x,locs[selecionado].y,cdz,x,y,z,true)
 
 			if distance <= 30.0 then
-				DrawMarker(21,locs[selecionado].x,locs[selecionado].y,locs[selecionado].z-0.6,0,0,0,0.0,0,0,0.5,0.5,0.4,128,1,210,50,0,0,0,1)
+				DrawMarker(23,locs[selecionado].x,locs[selecionado].y,locs[selecionado].z-0.97,0,0,0,0,0,0,1.0,1.0,0.5,240,200,80,20,0,0,0,0)
 				if distance <= 1.2 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA ENTREGAR OS CONTRATOS",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
@@ -99,7 +99,7 @@ Citizen.CreateThread(function()
 							backentrega = selecionado
 							while true do
 								if backentrega == selecionado then
-									selecionado = math.random(17)
+									selecionado = math.random(9)
 								else
 									break
 								end

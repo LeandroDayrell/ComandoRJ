@@ -70,33 +70,7 @@ local src = {
 	[40] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "pendriveh", ['itemqtd'] = 3 },
 	[41] = { ['re'] = "kitcostura", ['reqtd'] = 1, ['item'] = "tecidoekitcostura", ['itemqtd'] = 1 },
 	[42] = { ['re'] = "tecidoekitcostura", ['reqtd'] = 1, ['item'] = "mochila", ['itemqtd'] = 1 },
-	
-		-- samu
-	[43] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "remediosamu", ['itemqtd'] = 3 },
-	
-		-- carteiro
-	[44] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "encomenda", ['itemqtd'] = 3 },
-	
-	-- polvora e capsula
-	[45] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- unktec
-	[46] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
-	
-	[47] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- yakuza
-	[48] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 	
-	
-	
-	[49] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- mafia
-	[50] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
-
-	[51] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- milicia
-	[52] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
-
-	[53] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- mc
-	[54] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
-	
-	--kit costura
-	[55] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "kitcostura", ['itemqtd'] = 1 }, 
-	[56] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "kitcostura", ['itemqtd'] = 1 }, 
+		--MC
 	--[43] = { ['re'] = "municaoakpack",['reqtd'] = 1, ['item'] = "wammo|WEAPON_ASSAULTRIFLE", ['itemqtd'] = 50 },
 	--[44] = { ['re'] = "municaosigpack", ['reqtd'] = 1, ['item'] = "wammo|WEAPON_COMBATPDW", ['itemqtd'] = 50 },
 	--[45] = { ['re'] = "municaouzipack", ['reqtd'] = 1, ['item'] = "wammo|WEAPON_MICROSMG", ['itemqtd'] = 50 },

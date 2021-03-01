@@ -339,11 +339,6 @@ AddEventHandler('az-homes:chest', function(casa)
 end)
 
 RegisterCommand("ggc", function(source,args,rawCommand)
-    vAZclient.SetHomes(-1, vAZ.homes)
-end)
-
-RegisterCommand("ggb", function(source,args,rawCommand)
     local source = source
-    local user_id = vRP.getUserId(source)
-    TriggerEvent('az-homes:purchase', user_id, 'Casa CRJ nº55')
+    vAZclient.SetHomes(-1, vAZ.homes)
 end)

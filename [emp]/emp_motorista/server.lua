@@ -23,7 +23,7 @@ function emP.checkPayment(bonus)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		vRP.giveMoney(user_id,math.random(60,65)+bonus)
+		vRP.giveMoney(user_id,math.random(280,380)+bonus)
 	end
 end
 

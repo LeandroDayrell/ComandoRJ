@@ -1,8 +1,6 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
-src = Tunnel.getInterface("gcphone",src)
-
  
 -- Configuration
 local KeyToucheCloseEvent = {
@@ -32,7 +30,7 @@ local soundDistanceMax = 8.0
 
 
 --====================================================================================
---  Verifique se o jogador tem um telefone
+--  Check si le joueurs poséde un téléphone
 --  Callback true or false
 --====================================================================================
 function hasPhone (cb)
@@ -96,7 +94,7 @@ Citizen.CreateThread(function()
       DisableControlAction(0, 288, true)
     end
     if takePhoto ~= true then
-      if IsControlJustPressed(1, Config.KeyOpenClose) and src.checkItemPhone() then
+      if IsControlJustPressed(1, Config.KeyOpenClose) then
         hasPhone(function (hasPhone)
           if hasPhone == true then
             TooglePhone()
@@ -113,7 +111,7 @@ Citizen.CreateThread(function()
             SendNUIMessage({keyUp = value.event})
           end
         end
-        if useMouse == true and hasFocus == ignoreFocus then
+        if useMouse == false and hasFocus == ignoreFocus then
           local nuiFocus = not hasFocus
           SetNuiFocus(nuiFocus, nuiFocus)
           hasFocus = nuiFocus
@@ -131,9 +129,8 @@ end)
 
 
 
-
 --====================================================================================
---  Ativar ou desativar um aplicativo (appName => config.json)
+--  Active ou Deactive une application (appName => config.json)
 --====================================================================================
 RegisterNetEvent('gcPhone:setEnableApp')
 AddEventHandler('gcPhone:setEnableApp', function(appName, enable)
@@ -141,13 +138,13 @@ AddEventHandler('gcPhone:setEnableApp', function(appName, enable)
 end)
 
 --====================================================================================
---  Gerenciamento de chamadas fixas
+--  Gestion des appels fixe
 --====================================================================================
 function startFixeCall (fixeNumber)
   local number = ''
   DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 10)
   while (UpdateOnscreenKeyboard() == 0) do
-    --DisableAllControlActions(0);
+    DisableAllControlActions(0);
     Wait(0);
   end
   if (GetOnscreenKeyboardResult()) then
@@ -583,7 +580,7 @@ RegisterNUICallback('reponseText', function(data, cb)
   
   DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", text, "", "", "", limit)
   while (UpdateOnscreenKeyboard() == 0) do
-      --DisableAllControlActions(0);
+      DisableAllControlActions(0);
       Wait(0);
   end
   if (GetOnscreenKeyboardResult()) then

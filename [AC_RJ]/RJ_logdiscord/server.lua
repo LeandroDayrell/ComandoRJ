@@ -60,18 +60,15 @@ Citizen.CreateThread(function()
 end)
 
 AddEventHandler("vRP:playerJoin",function(user_id,source,name,last_login)
-local user_id = vRP.getUserId(source)
 local ip = GetPlayerEndpoint(source)
 	SendWebhookMessage(webhooklinkinout, "```["..Time.hora..":"..Time.min..":"..Time.seg.."] ".. name .." [user_id ".. user_id .."] conectou/entrou. IP:" ..ip.. "```")
 end)
 
 AddEventHandler("vRP:playerRejoin",function(user_id,source,name)
-	local user_id = vRP.getUserId(source)
 	SendWebhookMessage(webhooklinkinout, "```["..Time.hora..":"..Time.min..":"..Time.seg.."] ".. name .." [user_id ".. user_id .."] reconectou/reentrou.```")
 end)
 
 AddEventHandler("vRP:playerLeave",function(user_id, source)
-	local user_id = vRP.getUserId(source)
 	SendWebhookMessage(webhooklinkinout, "```["..Time.hora..":"..Time.min..":"..Time.seg.."] ".. GetPlayerName(source) .." [user_id ".. user_id .."] saiu.```")
 	SendWebhookMessage(webhooklinkgarmas, "```["..Time.hora..":"..Time.min..":"..Time.seg.."] ".. GetPlayerName(source) .." [user_id ".. user_id .."] saiu.```")
 

@@ -11,7 +11,7 @@ local cfg = {}
 
 cfg.groups = {
 
- ["FundadorCMDRJ23"] = {
+ ["FundadorCMDRJ20"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"dv.permissao",
@@ -93,7 +93,7 @@ cfg.groups = {
 	},
  
  --== ADMINISTRAÇÃO ==--
-  ["AdmCMDRJ23"] = {
+  ["AdmCMDRJ"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"dv.permissao",
@@ -146,14 +146,13 @@ cfg.groups = {
 	"player.spec",
 	"player.noclip",
 	"player.secret",
-	"player.teleport",
 	"player.wall",
 	"mqcu.permissao",
 	},
-	["BlipsCMDRJ23"] = {
+	["BlipsCMDRJ"] = {
 	"blips.permissao"
 	},
-	["ModeradorCMDRJ23"] = {
+	["ModeradorCMDRJ"] = {
 	"player.group.add",
 	"admin.tptowaypoint",
 	"player.coords",
@@ -176,7 +175,6 @@ cfg.groups = {
 	"player.group.add",
     "player.group.remove",
 	"admin.ajuda",
-	"player.teleport",
 	"player.blips",
 	"player.spec",
 	"player.noclip",
@@ -184,7 +182,7 @@ cfg.groups = {
 	--"player.wall",
 	"mqcu.permissao",
 	},
-	["SuporteCMDRJ23"] = {
+	["SuporteCMDRJ"] = {
 	"ticket.permissao",
 	"fix.permissao",
 	"ac.permissao",
@@ -211,7 +209,7 @@ cfg.groups = {
 	"admin.ajuda",
 	},
 	
-	["StreamerCMDRJ23"] = {
+	["StreamerCMDRJ1"] = {
     "god.permissao",
     "noclip.permissao",
 	"adminskin.permissao",
@@ -251,7 +249,7 @@ cfg.groups = {
 	"Player.permissao"
   },
   
-  ["ADMZIN23"] = {
+  ["ADMZIN"] = {
 	"admin.permissao",
 	"fix.permissao",
 	"polparcarregar.permissao",

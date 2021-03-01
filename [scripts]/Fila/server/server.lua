@@ -1,10 +1,3 @@
-local Tunnel = module("vrp", "lib/Tunnel")
-local Proxy = module("vrp", "lib/Proxy")
-
-vRP = Proxy.getInterface("vRP")
-vRPclient = Tunnel.getInterface("vRP","Fila")
-
-
 local Config = {}
 ----------------------------------------------------------------------------------------------------------------------
 -- Priority list can be any identifier. (hex steamid, steamid32, ip) Integer = power over other priorities
@@ -13,43 +6,42 @@ Config.Priority = {
     ["license:36cc5ae17b76ba3182d1b6fffb66b07b86ffb44f"] = 100, -- aztec
 	["license:8d8a8bb2f20f53fca1f08c65b05e13c71630d409"] = 100, -- SIMÃO
 	["license:55e793caa18ac48e460f802fd97e4718f3412bfd"] = 100, -- BIG PAMONHA
+	["license:1ada0febf6d6649dfe346184c70adf71a9cb8fc6"] = 100, -- NETO
+	["license:3b41a41aa133078081214933b9323e5e6cc86378"] = 100, -- Peral
+	["license:d6af15a3e76a4a6c6b77f4a1e39a1ad8664326b0"] = 100, -- Alan
+	["license:27ac8eea6880adaf1f325e2b64c8e0a178d43e9e"] = 85, -- Matheus MOD
+	["license:5e47e7077b5dc1303eb61033055a6bac0e4865c7"] = 90, -- Junin
+	["license:ffba6bdfc384df323cb3e675e9e51b2041107b82"] = 90, -- Gordeone
+	["license:ef5412db9ab0d8090a9c638726c54d721833a922"] = 90, -- netto
+	["license:14a2a66fb641758ad0cfd8c42249ffbfa094e68e"] = 90, -- JORIN
+	["license:410c5cd13087c13bfcc3c1154d0eda4d21a637f2"] = 90, -- CARIOCA
+	["license:9e30463247eb8f7fbc02433d03a05c6ea02609c0"] = 90, -- GUIZIM
+	["license:5e47e7077b5dc1303eb61033055a6bac0e4865c7"] = 95, -- Vinnox
+	["license:acb68a1a7d27eaf20996ff823e16cadfb6e904f0"] = 90, -- GHOST
+	["license:ef0507058d1768ed57ec146407240821737b79bc"] = 85, -- CHEROSO
+	["license:3d926b230a55cb8a4121b2925286069283c140ee"] = 85, -- RAFA
+	["138.117.61.49"] = 85, -- thiago
 	
-    ["license:18aa1a6b81d65a1c3b3590c790fb5e82ce8f0086"] = 70,
-    ["license:eb5d73077b6ad0ba1fa9908d2a53ddc2bc09aaa8"] = 70,
-    ["license:95dacd2b817da156f97a673b64f719ab9d792430"] = 70,
-    ["license:6bd13b060e1cabbbe88bbd9d35a49a425e0a0f09"] = 70,
-    ["license:1b5d0c07a4ee8ce1a0fe580f953e0356b930d000"] = 70,
-    ["license:ef0507058d1768ed57ec146407240821737b79bc"] = 70,
-    ["license:3749d7f395138f99a97b9e83db81dc4ce0d920a9"] = 70,
-    ["license:5ee202649a9bcbd931337209d7435e5cba0867e8"] = 70,
-    ["license:98aa4bc527de99273f7162551bf68244b65dcf5d"] = 70,
-    ["license:c83641337f63e1ab44c057eebfd1abd673fe0169"] = 70,
-    ["license:14a2a66fb641758ad0cfd8c42249ffbfa094e68e"] = 70,
-    ["license:69a38ff6fe994ebc7c7435338d56a0c52498d89b"] = 70,
-
-
 	-- STREAMING
-	["license:341edc362666a5b93f4a4d533056ff6861d9b3c0"] = 60, -- CABRITOZ
-	["license:f8fde2daf9fd14dd40cd7970d0dc1e33db7cee21"] = 60, -- AUDAZ
-	["license:ad220b560da722b78bf8262374d83e4270f04065"] = 60, -- FANHO
-	["license:124519fc4b7a8a989c09eaf41f95f1db0a959a9e"] = 60, -- GabePeixe
-	["license:2027c4678944e5c6a06f7edc91978c0dd81ed449"] = 60, -- Brkk
-	["license:71802252a979a894e1549a5b9171a401b51ffae4"] = 60, -- Jailson
-	["license:02f4d888a4e708ce931241d7c9929d53ffa24c9a"] = 60, -- Luquet4
-	["license:935b76bad00b33a2e47d8cb5697beba1fc3fb692"] = 60, -- ohboy
-	["license:a29b50bc1e40544d84541b2a33c3447846aac24f"] = 60, -- michaelmeireles
-	["license:821a7bbba56590550b9798bc9e8f8e226df287d7"] = 60, -- marcaorx
-	["license:82a639376db9ebacb20db60f1000b7db2b776625"] = 60, -- sconza
-	["license:344f80df1d1ba854d41b0ce9c3d407a452f3aa43"] = 60, -- ninha
-	["license:2767ba339c175334c323708c77543d02d4f370fe"] = 60, -- pezaum
-	["license:980c7960efba4b544df6536ef3584de71c4325cd"] = 60, -- ph1gamer
-	["license:0207d463006791667b8345a6795da2008476ac25"] = 60, -- negresco
-	["license:e203efe583fbef7822ab4f2345d7a1cbf4e0f358"] = 60, -- viniciusdiddy
-	["license:81ebf813b5a92078e8e2a3ef0bbb8b2930f82ab3"] = 60, -- diddy
-	["license:0f568a9a17245ffce9d709d007a0c4f4046c4355"] = 60, -- scalize
-	["license:6cc03ef5f150a6b9d7f23ff697acc2e783f1ef61"] = 60, -- microfone
-
-    ["license:1ada0febf6d6649dfe346184c70adf71a9cb8fc6"] = 80, -- NETO
+	["license:341edc362666a5b93f4a4d533056ff6861d9b3c0"] = 90, -- CABRITOZ
+	["license:f8fde2daf9fd14dd40cd7970d0dc1e33db7cee21"] = 90, -- AUDAZ
+	["license:ad220b560da722b78bf8262374d83e4270f04065"] = 90, -- FANHO
+	["license:124519fc4b7a8a989c09eaf41f95f1db0a959a9e"] = 100, -- GabePeixe
+	["license:2027c4678944e5c6a06f7edc91978c0dd81ed449"] = 100, -- Brkk
+	["license:71802252a979a894e1549a5b9171a401b51ffae4"] = 90, -- Jailson
+	["license:02f4d888a4e708ce931241d7c9929d53ffa24c9a"] = 90, -- Luquet4
+	["license:935b76bad00b33a2e47d8cb5697beba1fc3fb692"] = 100, -- ohboy
+	["license:a29b50bc1e40544d84541b2a33c3447846aac24f"] = 90, -- michaelmeireles
+	["license:821a7bbba56590550b9798bc9e8f8e226df287d7"] = 100, -- marcaorx
+	["license:82a639376db9ebacb20db60f1000b7db2b776625"] = 90, -- sconza
+	["license:344f80df1d1ba854d41b0ce9c3d407a452f3aa43"] = 100, -- ninha
+	["license:2767ba339c175334c323708c77543d02d4f370fe"] = 90, -- pezaum
+	["license:980c7960efba4b544df6536ef3584de71c4325cd"] = 90, -- ph1gamer
+	["license:0207d463006791667b8345a6795da2008476ac25"] = 90, -- negresco
+	["license:e203efe583fbef7822ab4f2345d7a1cbf4e0f358"] = 90, -- viniciusdiddy
+	["license:81ebf813b5a92078e8e2a3ef0bbb8b2930f82ab3"] = 100, -- diddy
+	["license:0f568a9a17245ffce9d709d007a0c4f4046c4355"] = 90, -- scalize
+	["license:6cc03ef5f150a6b9d7f23ff697acc2e783f1ef61"] = 90, -- microfone
 	
 } 
 
