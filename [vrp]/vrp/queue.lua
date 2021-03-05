@@ -1,5 +1,20 @@
 local Config = {}
-vRP.prepare("vRP/get_priority","SELECT * FROM vrp_priority")
+
+Config.Priority = {
+	['FundadorCMDRJ23'] = 100,
+	['AdmCMDRJ23'] = 95,
+	['ModeradorCMDRJ23'] = 90,
+	['SuporteCMDRJ23'] = 85,
+	['aprovadorwl'] = 80,
+	['StreamerCMDRJ23'] = 70,
+
+	------------ VIPS 
+	['VIP Magnata'] = 65,
+	['VIP Mafioso'] = 60,
+	['VIP Ouro'] = 55,
+	['VIP Prata'] = 50,
+	['VIP Bronze'] = 40,
+}
 
 Config.RequireSteam = false
 Config.PriorityOnly = false
@@ -31,7 +46,7 @@ Queue.ThreadCount = 0
 local debug = false
 local displayQueue = false
 local initHostName = false
-local maxPlayers = 100
+local maxPlayers = 250
 
 local tostring = tostring
 local tonumber = tonumber
@@ -92,7 +107,7 @@ function Queue:IsInQueue(ids,rtnTbl,bySource,connecting)
 end
 
 local function getDBPriorities()
-	local rows = vRP.query("vRP/get_priority",{})
+	local rows = vRP.query("vRP/get_prioridade",{})
 	DBPriority = {}
 
 	for i=1,#rows do
@@ -126,12 +141,22 @@ function Queue:AddToQueue(ids,connectTime,name,src,deferrals)
 		return
 	end
 
+	local user_id = vRP.getUserIdByIdentifiers(ids)
+  local datatable = vRP.getUData(user_id, 'vRP:datatable')
+  local priority = 0
+  if datatable ~= '' then
+    datatable = json.decode(datatable)
+    for k,v in pairs(datatable.groups or {}) do
+      priority = priority + (Config.Priority[k] or 0)
+    end
+  end
+
 	local tmp = {
 		source = src,
 		ids = ids,
 		name = name,
 		firstconnect = connectTime,
-		priority = self:IsPriority(ids) or (src == "debug" and math.random(0,15)),
+		priority = priority,
 		timeout = 0,
 		deferrals = deferrals
 	}
@@ -539,7 +564,7 @@ Citizen.CreateThread(function()
 					return
 				end
 
-				local msg = string_format("AllStar Roleplay\n\n"..Config.Language.pos.."%s\nEvite punições, fique por dentro das regras de conduta.\nAtualizações frequentes, deixe sua sugestão em nosso discord.",pos,Queue:GetSize(),dots)
+				local msg = string_format("Comando RJ\n\n"..Config.Language.pos.."%s\nDiscord.gg/ComandoRJ.\nAtualizações frequentes, deixe sua sugestão em nosso discord.",pos,Queue:GetSize(),dots)
 				data.deferrals.update(msg)
 			end
 		end)

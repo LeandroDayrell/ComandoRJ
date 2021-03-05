@@ -208,8 +208,8 @@ RegisterCommand('dv',function(source,args,rawCommand)
 			if plate ~= nil then
 				TriggerEvent('az-inventory:deleteTempTrunk', plate)
 			end
-			TriggerClientEvent('deletarveiculo',source,vehicle)
 			TriggerEvent('az-garages:deleteVehicle',source,vehicle)
+			TriggerClientEvent('deletarveiculo',source,vehicle)
 			SendWebhookMessage(webhooklinkchat,  "```" ..user_id.." Usou o comando " ..rawCommand.. "```")
         end
     end
@@ -536,6 +536,19 @@ RegisterCommand('tuning',function(source,args,rawCommand)
 		local vehicle = vRPclient.getNearestVehicle(source,7)
 		if vehicle then
 			TriggerClientEvent('vehtuning',source,vehicle)
+		end
+	end
+end)
+
+
+-- HASH
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand('KVERGST',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"admin.permissao") then
+		local vehicle = vRPclient.getNearestVehicle(source,7)
+		if vehicle then
+			TriggerClientEvent('vehtuning2',source,vehicle)
 		end
 	end
 end)

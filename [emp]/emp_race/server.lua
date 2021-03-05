@@ -29,7 +29,7 @@ function emP.paymentCheck(check,status)
 		if parseInt(#policia) == 0 then
 			vRP.giveInventoryItem(user_id,"dinheirosujo",parseInt(random*status))
 		else
-			vRP.giveInventoryItem(user_id,"dinheirosujo",parseInt(((random*#policia)*status)*0.7))
+			vRP.giveInventoryItem(user_id,"dinheirosujo",parseInt(((random*#policia)*status)*0.1))
 		end
 	end
 end
@@ -49,7 +49,7 @@ end
 function emP.startBombRace()
 	local source = source
 	local policia = vRP.getUsersByPermission("policia.permissao")
-	--TriggerEvent('eblips:add',{ name = "Corredor", src = source, color = 83 })
+	TriggerEvent('eblips:add',{ name = "Corredor", src = source, color = 83 })
 	for l,w in pairs(policia) do
 		local player = vRP.getUserSource(parseInt(w))
 		if player then
@@ -63,7 +63,7 @@ end
 
 function emP.removeBombRace()
 	local source = source
-	--TriggerEvent('eblips:remove',source)
+	TriggerEvent('eblips:remove',source)
 end
 
 RegisterCommand('defuse',function(source,args,rawCommand)

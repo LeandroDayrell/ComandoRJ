@@ -725,6 +725,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CASAS
 -----------------------------------------------------------------------------------------------------------------------------------------
+--[[
 RegisterCommand('casas',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if args[1] and vRP.hasPermission(user_id,"policia.permissao") then
@@ -764,6 +765,7 @@ RegisterCommand('casas',function(source,args,rawCommand)
 		end
 	end
 end)
+]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- MOTOR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -2643,7 +2645,7 @@ end)
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 						vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-						vRP.addUserGroup(parseInt(args[1]),"[Milicia] - Gerente")
+						vRP.addUserGroup(parseInt(args[1]),"[MILICIA] - Gerente")
 						TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -2658,7 +2660,7 @@ end)
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro?, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[Milicia] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[MILICIA] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro.")
 				end
 			else 
@@ -2673,7 +2675,7 @@ end)
 			if vRP.hasPermission(user_id,"contratar.milicia") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[Milicia] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[MILICIA] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -2687,7 +2689,7 @@ end)
 			if vRP.hasPermission(user_id,"contratar.milicia") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[Milicia] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[MILICIA] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -2974,7 +2976,7 @@ end)
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[MOTOCLUB] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[MOTOCLUBE] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -2990,7 +2992,7 @@ end)
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[MOTOCLUB] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[MOTOCLUBE] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro")
 				end
 			else 
@@ -3005,7 +3007,7 @@ end)
 			if vRP.hasPermission(user_id,"contratar.mc") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[MOTOCLUB] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[MOTOCLUBE] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3019,7 +3021,7 @@ end)
 			if vRP.hasPermission(user_id,"contratar.mc") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[MOTOCLUB] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[MOTOCLUBE] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3032,14 +3034,14 @@ end)
 		
 		
 		-- DK  CONTRATAR
-		RegisterCommand('contratardkgerente',function(source,args,rawCommand)
+		RegisterCommand('contratarlrgerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.dk") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[D.K] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[LR] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -3048,14 +3050,14 @@ end)
 			
 		end)
 		
-		RegisterCommand('contratardkmembro',function(source,args,rawCommand)
+		RegisterCommand('contratarlrmembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.dk") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[D.K] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[LR] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro")
 				end
 			else 
@@ -3065,12 +3067,12 @@ end)
 		end)
 		
 		-- DK DEMITIR
-		RegisterCommand('demitirdkgerente',function(source,args,rawCommand)
+		RegisterCommand('demitirlrgerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.dk") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[D.K] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[LR] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3079,12 +3081,12 @@ end)
 			
 		end)
 		
-		RegisterCommand('demitirdkmembro',function(source,args,rawCommand)
+		RegisterCommand('demitirlrmembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.dk") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[D.K] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[LR] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3095,14 +3097,14 @@ end)
 		
 		
 		-- BORDEL  CONTRATAR
-		RegisterCommand('contratarvanillagerente',function(source,args,rawCommand)
+		RegisterCommand('contratarunktecgerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.bordel") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[Vanilla] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[UNKTEC] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -3111,14 +3113,14 @@ end)
 			
 		end)
 		
-		RegisterCommand('contratarvanillamembro',function(source,args,rawCommand)
+		RegisterCommand('contratarunktecmembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.bordel") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[Vanilla] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[UNKTEC] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro")
 				end
 			else 
@@ -3128,12 +3130,12 @@ end)
 		end)
 		
 		-- BORDEL DEMITIR
-		RegisterCommand('demitirvanillagerente',function(source,args,rawCommand)
+		RegisterCommand('demitirnktecgerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.bordel") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[Vanilla] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[UNKTEC] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3142,12 +3144,12 @@ end)
 			
 		end)
 		
-		RegisterCommand('demitirvanillamembro',function(source,args,rawCommand)
+		RegisterCommand('demitirnktecmembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.bordel") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[Vanilla] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[UNKTEC] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3159,14 +3161,14 @@ end)
 		-------- FACÇÕES
 		
 		-- COMANDO VERMELHO  CONTRATAR
-		RegisterCommand('contratarcvgerente',function(source,args,rawCommand)
+		RegisterCommand('contratarvermelhogerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.cv") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[C.V] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[VERMELHO] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -3175,14 +3177,14 @@ end)
 			
 		end)
 		
-		RegisterCommand('contratarcvmembro',function(source,args,rawCommand)
+		RegisterCommand('contratarvermelhomembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.cv") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[C.V] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[VERMELHO] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro")
 				end
 			else 
@@ -3192,12 +3194,12 @@ end)
 		end)
 		
 		-- COMANDO VERMELHO DEMITIR
-		RegisterCommand('demitircvgerente',function(source,args,rawCommand)
+		RegisterCommand('demitirvermelhogerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.cv") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[C.V] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[VERMELHO] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3206,12 +3208,12 @@ end)
 			
 		end)
 		
-		RegisterCommand('demitircvmembro',function(source,args,rawCommand)
+		RegisterCommand('demitirvermelhomembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.cv") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[C.V] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[VERMELHO] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3221,14 +3223,14 @@ end)
 		end)
 		
 		-- PCC  CONTRATAR
-		RegisterCommand('contratarpccgerente',function(source,args,rawCommand)
+		RegisterCommand('contratarazulgerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.pcc") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[P.C.C] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[AZUL] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -3237,14 +3239,14 @@ end)
 			
 		end)
 		
-		RegisterCommand('contratarpccmembro',function(source,args,rawCommand)
+		RegisterCommand('contratarazulmembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.pcc") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[P.C.C] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[AZUL] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro")
 				end
 			else 
@@ -3254,12 +3256,12 @@ end)
 		end)
 		
 		-- PCC DEMITIR
-		RegisterCommand('demitirpccgerente',function(source,args,rawCommand)
+		RegisterCommand('demitirazulgerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.pcc") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[P.C.C] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[AZUL] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3268,12 +3270,12 @@ end)
 			
 		end)
 		
-		RegisterCommand('demitirpccmembro',function(source,args,rawCommand)
+		RegisterCommand('demitirazulmembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.pcc") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[P.C.C] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[AZUL] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3286,14 +3288,14 @@ end)
 		
 		
 		-- TCP  CONTRATAR
-		RegisterCommand('contratartcpgerente',function(source,args,rawCommand)
+		RegisterCommand('contratarverdegerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.tcp") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[T.C.P] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[VERDE] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um Gerente")
 				end
 			else 
@@ -3302,14 +3304,14 @@ end)
 			
 		end)
 		
-		RegisterCommand('contratartcpmembro',function(source,args,rawCommand)
+		RegisterCommand('contratarverdemembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.tcp") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro, Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[T.C.P] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[VERDE] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro")
 				end
 			else 
@@ -3319,12 +3321,12 @@ end)
 		end)
 		
 		-- TCP DEMITIR
-		RegisterCommand('demitirtcpgerente',function(source,args,rawCommand)
+		RegisterCommand('demitirverdegerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.tcp") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[T.C.P] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[VERDE] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3333,12 +3335,12 @@ end)
 			
 		end)
 		
-		RegisterCommand('demitirtcpmembro',function(source,args,rawCommand)
+		RegisterCommand('demitirverdemembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.tcp") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[T.C.P] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[VERDE] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3348,14 +3350,14 @@ end)
 		end)
 		
 		-- ADA  CONTRATAR
-		RegisterCommand('contrataradagerente',function(source,args,rawCommand)
+		RegisterCommand('contratarlaranjagerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.ada") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente Da ADA? Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[A.D.A] - Gerente")
+					vRP.addUserGroup(parseInt(args[1]),"[LARANJA] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -3364,14 +3366,14 @@ end)
 			
 		end)
 		
-		RegisterCommand('contrataradamembro',function(source,args,rawCommand)
+		RegisterCommand('contratarlaranjamembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.ada") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como membro Da ADA? Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"[A.D.A] - Membro")
+					vRP.addUserGroup(parseInt(args[1]),"[LARANJA] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um membro como Gerente")
 				end
 			else 
@@ -3381,12 +3383,12 @@ end)
 		end)
 		
 		-- ADA DEMITIR
-		RegisterCommand('demitiradagerente',function(source,args,rawCommand)
+		RegisterCommand('demitirlaranjagerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.ada") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[A.D.A] - Gerente")
+					vRP.removeUserGroup(parseInt(args[1]),"[LARANJA] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3395,12 +3397,12 @@ end)
 			
 		end)
 		
-		RegisterCommand('demitiradamembro',function(source,args,rawCommand)
+		RegisterCommand('demitirlaranjamembro',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.ada") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"[A.D.A] - Membro")
+					vRP.removeUserGroup(parseInt(args[1]),"[LARANJA] - Membro")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu um cidadão")
 				end
 			else 
@@ -3414,7 +3416,7 @@ end)
 		
 		
 		
-		-- TCA  CONTRATAR
+		--[[-- TCA  CONTRATAR
 		RegisterCommand('contratartcagerente',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
 			if vRP.hasPermission(user_id,"contratar.tca") then
@@ -3474,21 +3476,53 @@ end)
 			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
 			end
 			
-		end)
+		end)]]--
 		
 		
 		
 		
 		-- BENNYS
-		RegisterCommand('contratarbennys',function(source,args,rawCommand)
+		RegisterCommand('contratargerentemec',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
-			if vRP.hasPermission(user_id,"bennystoogledono.permissao") then
+			if vRP.hasPermission(user_id,"srdono.permissao") then
 				if args[1] then
 				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como ? Digite (Sim/Nao)","")
 					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
-					vRP.addUserGroup(parseInt(args[1]),"Bennys")
-					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um funcionario na bennys")
+					vRP.addUserGroup(parseInt(args[1]),"[SR] - Gerente")
+					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um gerente")
+				end
+			else 
+			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
+			end
+			
+		end)
+
+		RegisterCommand('contratarmec',function(source,args,rawCommand)
+			local user_id = vRP.getUserId(source)
+			if vRP.hasPermission(user_id,"srdono.permissao") then
+				if args[1] then
+				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como ? Digite (Sim/Nao)","")
+					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
+				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
+					vRP.addUserGroup(parseInt(args[1]),"[SR] - Mecanico")
+					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um mecanico")
+				end
+			else 
+			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
+			end
+			
+		end)
+
+		RegisterCommand('contratarauxmec',function(source,args,rawCommand)
+			local user_id = vRP.getUserId(source)
+			if vRP.hasPermission(user_id,"srdono.permissao") then
+				if args[1] then
+				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como ? Digite (Sim/Nao)","")
+					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
+				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
+					vRP.addUserGroup(parseInt(args[1]),"[SR] - Aux Mecanico")
+					TriggerClientEvent("Notify",source,"sucesso","Você adicionou um auxiliar mecanico")
 				end
 			else 
 			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
@@ -3498,13 +3532,77 @@ end)
 		
 		
 		-- BENNYS DEMITIR
-		RegisterCommand('demitirbennys',function(source,args,rawCommand)
+		RegisterCommand('demitirgerentemec',function(source,args,rawCommand)
 			local user_id = vRP.getUserId(source)
-			if vRP.hasPermission(user_id,"bennystoogledono.permissao") then
+			if vRP.hasPermission(user_id,"srdono.permissao") then
 				if args[1] then
 				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." removeu "..rawCommand.." .")
-					vRP.removeUserGroup(parseInt(args[1]),"Bennys")
+					vRP.removeUserGroup(parseInt(args[1]),"[SR] - Gerente")
 					TriggerClientEvent("Notify",source,"sucesso","Você demitiu ["..rawCommand"]")
+				end
+			else 
+			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
+			end
+			
+		end)
+
+		RegisterCommand('demitirmec',function(source,args,rawCommand)
+			local user_id = vRP.getUserId(source)
+			if vRP.hasPermission(user_id,"srdono.permissao") then
+				if args[1] then
+				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." removeu "..rawCommand.." .")
+					vRP.removeUserGroup(parseInt(args[1]),"[SR] - Mecanico")
+					TriggerClientEvent("Notify",source,"sucesso","Você demitiu ["..rawCommand"]")
+				end
+			else 
+			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
+			end
+			
+		end)
+
+		RegisterCommand('demitirauxmec',function(source,args,rawCommand)
+			local user_id = vRP.getUserId(source)
+			if vRP.hasPermission(user_id,"srdono.permissao") then
+				if args[1] then
+				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." removeu "..rawCommand.." .")
+					vRP.removeUserGroup(parseInt(args[1]),"[SR] - Aux Mecanico")
+					TriggerClientEvent("Notify",source,"sucesso","Você demitiu ["..rawCommand"]")
+				end
+			else 
+			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
+			end
+			
+		end)
+		
+		-- PM CONTRATAR
+		
+		-- RECRUTA
+		RegisterCommand('contratarrecruta',function(source,args,rawCommand)
+			local user_id = vRP.getUserId(source)
+			if vRP.hasPermission(user_id,"contratarpmerj.permissao") then
+				if args[1] then
+				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente Da ADA? Digite (Sim/Nao)","")
+					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
+				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
+					vRP.addUserGroup(parseInt(args[1]),"[PMRJ] - Recruta")
+					TriggerClientEvent("Notify",source,"sucesso","Você adicionou como Recruta")
+				end
+			else 
+			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")
+			end
+			
+		end)
+		
+			-- SOLDADO
+		RegisterCommand('contratarsoldado',function(source,args,rawCommand)
+			local user_id = vRP.getUserId(source)
+			if vRP.hasPermission(user_id,"contratarpmerj.permissao") then
+				if args[1] then
+				local descricao = vRP.prompt(source,"Quer contratar o Passaporte: "..parseInt(args[1]).." Como Gerente Da ADA? Digite (Sim/Nao)","")
+					if descricao == "" then return end if descricao == "nao" then return end if descricao == "NAO" then return end if descricao == "NÃO" then return end if descricao == "Nao" then return end if descricao == "não" then return end if descricao == "Não" then return end
+				vRP.logInfoToFile("logRJ/grupocontrato.txt",user_id.." deu grupo "..rawCommand.." .")
+					vRP.addUserGroup(parseInt(args[1]),"[PMRJ] - Recruta")
+					TriggerClientEvent("Notify",source,"sucesso","Você adicionou como Soldado")
 				end
 			else 
 			TriggerClientEvent("Notify",source,"importante","Você não tem permissão.")

@@ -37,7 +37,7 @@ config.prices = {
 	},
 ----------Neon--------
 	["neon"] = {
-		startprice = 13000,
+		startprice = 10000,
 	},
 ----------Pneu custom--------
 	["custom"] = {
@@ -49,17 +49,17 @@ config.prices = {
 	--},
 ----------Placa--------
 	["placa"] = {
-		startprice = 1000,
+		startprice = 500,
 		increaseby = 0
 	},
 ----------Vidro--------
 	["vidro"] = {
-		startprice = 3000,
+		startprice = 500,
 		increaseby = 0
 	},
 ----------Liveries--------
 	[48] = {
-		startprice = 5000,
+		startprice = 2000,
 		increaseby = 0
 	},
 	
@@ -205,7 +205,7 @@ config.prices = {
 	},
 ---------Headlights---------
 	[22] = {
-		startprice = 15000,
+		startprice = 5000,
 	},
 	
 ----------Turbo---------
@@ -215,8 +215,8 @@ config.prices = {
 	
 -----------Armor-------------
 	[16] = {
-		startprice = 20000,
-		increaseby = 20000
+		startprice = 10000,
+		increaseby = 10000
 	},
 
 ---------Suspension-----------
@@ -226,47 +226,47 @@ config.prices = {
 	},
 -----------Horn----------
     [14] = {
-        startprice = 2000,
+        startprice = 100,
 		increaseby = 0
     },
 -----------Transmission-------------
     [13] = {
-        startprice = 30000,
+        startprice = 10000,
 		increaseby = 10000
 	},
 	
 -----------Brakes-------------
 	[12] = {
-        startprice = 10000,
-		increaseby = 10000
+        startprice = 5000,
+		increaseby = 5000
 	},
 	
 ------------Engine----------
 	[11] = {
-        startprice = 10000,
-		increaseby = 10000
+        startprice = 7000,
+		increaseby = 7000
 	},
     ---------Roof----------
 	[10] = {
-		startprice = 2000,
+		startprice = 1000,
 		increaseby = 0
 	},
 	
 ------------Fenders---------
 	[8] = {
-		startprice = 4000,
+		startprice = 3000,
 		increaseby = 0
 	},
 	
 ------------Hood----------
 	[7] = {
-		startprice = 4000,
+		startprice = 3000,
 		increaseby = 0
 	},
 	
 ----------Grille----------
 	[6] = {
-		startprice = 4000,
+		startprice = 1000,
 		increaseby = 0
 	},
 	
@@ -278,31 +278,31 @@ config.prices = {
 	
 ----------Exhaust----------
 	[4] = {
-		startprice = 4000,
+		startprice = 1000,
 		increaseby = 0
 	},
 	
 ----------Skirts----------
 	[3] = {
-		startprice = 5000,
+		startprice = 3000,
 		increaseby = 0
 	},
 	
 -----------Rear bumpers----------
 	[2] = {
-		startprice = 5000,
+		startprice = 3000,
 		increaseby = 0
 	},
 	
 ----------Front bumpers----------
 	[1] = {
-		startprice = 5000,
+		startprice = 3000,
 		increaseby = 0
 	},
 	
 ----------Spoiler----------
 	[0] = {
-		startprice = 5000,
+		startprice = 1000,
 		increaseby = 0
 	},
 }

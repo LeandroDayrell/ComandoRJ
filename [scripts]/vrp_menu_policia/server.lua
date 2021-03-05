@@ -29,7 +29,7 @@ RegisterServerEvent('vrp_menu_policia:open_s')
 AddEventHandler('vrp_menu_policia:open_s', function()
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 		local rows = vRP.query("vRP/vrp_menu_policia_getname", {user_id = user_id})
 			
 		if #rows > math.floor(0) then
@@ -260,64 +260,78 @@ AddEventHandler('vrp_menu_policia:mostrarveiculo_veiculos_s', function(id)
 end)
 RegisterServerEvent('vrp_menu_policia:eliminarmatriculaprocurada_s')
 AddEventHandler('vrp_menu_policia:eliminarmatriculaprocurada_s', function(id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 		vRP.query("vRP/vrp_menu_policia_removerprocurado", {user_id = id})
+		TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 	else 
-		TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+		TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 	end
 end)
 RegisterServerEvent('vrp_menu_policia:eliminaraviso_s')
 AddEventHandler('vrp_menu_policia:eliminaraviso_s', function(id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 	vRP.query("vRP/vrp_menu_policia_avisos", {user_id = id,avisos = "[]"})
 		TriggerEvent('vrp_menu_policia:atualizar_s',source,id)
+		TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 	else 
-		TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+		TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 	end
 end)
 RegisterServerEvent('vrp_menu_policia:eliminarmultas_s')
 AddEventHandler('vrp_menu_policia:eliminarmultas_s', function(id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 	vRP.query("vRP/vrp_menu_policia_multas", {user_id = id,multas = "[]"})
 	TriggerEvent('vrp_menu_policia:atualizar_s',source,id)
+	TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 	else 
-		TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+		TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 	end
 end)
 RegisterServerEvent('vrp_menu_policia:eliminardetencoes_s')
 AddEventHandler('vrp_menu_policia:eliminardetencoes_s', function(id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 	vRP.query("vRP/vrp_menu_policia_arrests", {user_id = id,arrests = "[]"})
 	TriggerEvent('vrp_menu_policia:atualizar_s',source,id)
+	TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 else 
-	TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+	TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 end
 end)
 RegisterServerEvent('vrp_menu_policia:eliminarmandato_s')
 AddEventHandler('vrp_menu_policia:eliminarmandato_s', function(id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 	vRP.query("vRP/vrp_menu_policia_mandato", {user_id = id,mandato = "[]"})
 	TriggerEvent('vrp_menu_policia:atualizar_s',source,id)
+	TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 else 
-	TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+	TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 end
 end)
 RegisterServerEvent('vrp_menu_policia:avisos_s')
 AddEventHandler('vrp_menu_policia:avisos_s', function(avisos,id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 	addavisos(avisos,id)
 	TriggerEvent('vrp_menu_policia:atualizar_s',source,id)
+	TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 else 
-	TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+	TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 end
 end)
 RegisterServerEvent('vrp_menu_policia:detencao_s')
 AddEventHandler('vrp_menu_policia:detencao_s', function(data,id)
-	if vRP.hasPermission(user_id,"police.pc") then
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
 	adddetencao(data,id)
 	TriggerEvent('vrp_menu_policia:atualizar_s',source,id)
+	TriggerClientEvent("Notify",source,"sucesso","Você removeu com sucesso!")
 else 
-	TriggerClientEvent("Notify",source,"negado","Voce nao tem permissao pra isso.")
+	TriggerClientEvent("Notify",source,"negado","Você não tem permissão para isso!")
 end
 
 end)

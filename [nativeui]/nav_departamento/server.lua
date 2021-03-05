@@ -23,8 +23,8 @@ local valores = {
 	{ item = "hamburguer", quantidade = 1, compra = 20, venda = 25 },
 	{ item = "militec", quantidade = 1, compra = 5000, venda = 50 },
 
-	{ item = "mochila", quantidade = 1, compra = 15000, venda = 5000 },
-	{ item = "roupas", quantidade = 1, compra = 5000, venda = 500 },
+	{ item = "mochila", quantidade = 1, compra = 7000, venda = 700 },
+	{ item = "roupas", quantidade = 1, compra = 2500, venda = 500 },
 	{ item = "alianca", quantidade = 1, compra = 500, venda = 150 },
 	{ item = "celular", quantidade = 1, compra = 3000, venda = 1000 },
 

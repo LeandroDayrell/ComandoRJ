@@ -72,7 +72,7 @@ Citizen.CreateThread(function()
 					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR A COLETA",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) then
 						servico = true
-						selecionado = 1
+						selecionado = math.random(38)
 						CriandoBlip(locs,selecionado)
 					end
 				end
@@ -104,7 +104,7 @@ Citizen.CreateThread(function()
 								if selecionado == #locs then
 									selecionado = 1
 								else
-									selecionado = selecionado + 1
+									selecionado = math.random(38)
 								end
 								CriandoBlip(locs,selecionado)
 							end

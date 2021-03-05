@@ -63,7 +63,7 @@ AddEventHandler("crj-comprar",function(item)
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
 					if vRP.tryGetInventoryItem(user_id,"money",v.compra) then
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
-						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." dólares sujos</b>.")
+						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro sujo insuficiente.")
 					end
@@ -87,7 +87,7 @@ AddEventHandler("crj-comprar",function(item)
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
 						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
 					else
-						TriggerClientEvent("Notify",source,"negado","Dinheiro sujo insuficiente.")
+						TriggerClientEvent("Notify",source,"negado","Dinheiro LIMPO insuficiente.")
 					end
 				else
 					TriggerClientEvent("Notify",source,"negado","Espaço insuficiente.")
@@ -109,7 +109,7 @@ AddEventHandler("contrabandoarmas-comprar",function(item)
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
 					if vRP.tryFullPayment(user_id,parseInt(v.compra),true) then
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
-						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." dólares sujos</b>.")
+						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro sujo insuficiente.")
 					end
@@ -133,7 +133,7 @@ AddEventHandler("contrabandomuni-comprar",function(item)
 				if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(v.item)*v.quantidade <= vRP.getInventoryMaxWeight(user_id) then
 					if vRP.tryFullPayment(user_id,parseInt(v.compra),true) then
 						vRP.giveInventoryItem(user_id,v.item,parseInt(v.quantidade))
-						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." dólares sujos</b>.")
+						TriggerClientEvent("Notify",source,"sucesso","Comprou <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.compra)).." reais</b>.")
 					else
 						TriggerClientEvent("Notify",source,"negado","Dinheiro sujo insuficiente.")
 					end
@@ -156,7 +156,7 @@ AddEventHandler("contrabando-vender",function(item)
 			if item == v.item then
 				if vRP.tryGetInventoryItem(user_id,v.item,parseInt(v.quantidade)) then
 					vRP.giveInventoryItem(user_id,"dinheirosujo",parseInt(v.venda))
-					TriggerClientEvent("Notify",source,"sucesso","Vendeu <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.venda)).." dólares sujos</b>.")
+					TriggerClientEvent("Notify",source,"sucesso","Vendeu <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> por <b>$"..vRP.format(parseInt(v.venda)).." reais</b>.")
 				else
 					TriggerClientEvent("Notify",source,"negado","Não possui <b>"..parseInt(v.quantidade).."x "..vRP.getItemName(v.item).."</b> em sua mochila.")
 				end

@@ -1,12 +1,12 @@
-local minute = 45
+local minute = 30
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(60000) 
+		Citizen.Wait(30000) 
 		minute = minute - 1
 		if minute == 0  then
-			minute = 45
-			TriggerServerEvent('crj:dpt')
+			minute = 30
+			TriggerServerEvent('crj:lot')
 		end
 	end
 end)

@@ -12,9 +12,9 @@ AddEventHandler('crj_coca:permissao',function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"[C.V] - Lider") then 
-		if vRP.hasGroup(user_id,"[C.V] - Gerente") then
-			if vRP.hasGroup(user_id,"[C.V] - Membro") then
+	if vRP.hasGroup(user_id,"[VERMELHO] - Lider") then 
+		if vRP.hasGroup(user_id,"[VERMELHO] - Gerente") then
+			if vRP.hasGroup(user_id,"[VERMELHO] - Membro") then
 				TriggerClientEvent('crj_coca:permissao', player)
 			end
 		end
@@ -26,9 +26,9 @@ AddEventHandler('entrega_crack:permissao',function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"[P.C.C] - Lider") then
-		if vRP.hasGroup(user_id,"[P.C.C] - Gerente") then
-		    if vRP.hasGroup(user_id,"[P.C.C] - Membro") then
+	if vRP.hasGroup(user_id,"[AZUL] - Lider") then
+		if vRP.hasGroup(user_id,"[AZUL] - Gerente") then
+		    if vRP.hasGroup(user_id,"[AZUL] - Membro") then
 				TriggerClientEvent('entrega_crack:permissao', player)
 		    end
 		end
@@ -40,9 +40,9 @@ AddEventHandler('crj_maconha:permissao',function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"[A.D.A] - Lider") then 
-		if vRP.hasGroup(user_id,"[A.D.A] - Gerente") then
-			if vRP.hasGroup(user_id,"[A.D.A] - Membro") then	
+	if vRP.hasGroup(user_id,"[LARANJA] - Lider") then 
+		if vRP.hasGroup(user_id,"[LARANJA] - Gerente") then
+			if vRP.hasGroup(user_id,"[LARANJA] - Membro") then	
 				TriggerClientEvent('crj_maconha:permissao', player)
 			end
 		end
@@ -68,10 +68,24 @@ AddEventHandler('crj_metafetamina:permissao',function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"[T.C.P] - Lider") then
-		if vRP.hasGroup(user_id,"[T.C.P] - Gerente") then
-			if vRP.hasGroup(user_id,"[T.C.P] - Membro") then
+	if vRP.hasGroup(user_id,"[VERDE] - Lider") then
+		if vRP.hasGroup(user_id,"[VERDE] - Gerente") then
+			if vRP.hasGroup(user_id,"[VERDE] - Membro") then
 				TriggerClientEvent('crj_metafetamina:permissao', player)
+			end
+		end
+	end
+end)
+
+RegisterServerEvent('entrega_pecas:permissao')
+AddEventHandler('entrega_pecas:permissao',function()
+	local source = source
+	local user_id = vRP.getUserId(source)
+	local player = vRP.getUserSource(user_id)
+	if vRP.hasGroup(user_id,"[LR] - Lider") then 
+		if vRP.hasGroup(user_id,"[LR] - Gerente") then
+				if vRP.hasGroup(user_id,"[LR] - Membro") then
+				TriggerClientEvent('entrega_pecas:permissao', player)
 			end
 		end
 	end
@@ -82,25 +96,15 @@ AddEventHandler('entrega_pendrive:permissao',function()
 	local source = source
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"[LR] - Lider") then 
-		if vRP.hasGroup(user_id,"[LR] - Gerente") then
-				if vRP.hasGroup(user_id,"[LR] - Membro") then
+	if vRP.hasGroup(user_id,"[UNKTEC] - Lider") then 
+		if vRP.hasGroup(user_id,"[UNKTEC] - Gerente") then
+				if vRP.hasGroup(user_id,"[UNKTEC] - Membro") then
 				TriggerClientEvent('entrega_pendrive:permissao', player)
 			end
 		end
 	end
 end)
 
-
-RegisterServerEvent('entrega_maquinacacaniquel:permissao')
-AddEventHandler('entrega_maquinacacaniquel:permissao',function()
-	local source = source
-	local user_id = vRP.getUserId(source)
-	local player = vRP.getUserSource(user_id)
-	if vRP.hasGroup(user_id,"Amarelos") then
-	    TriggerClientEvent('entrega_maquinacacaniquel:permissao', player)
-	end
-end)
 
 RegisterServerEvent('entrega_lsd:permissao')
 AddEventHandler('entrega_lsd:permissao',function()
@@ -256,15 +260,15 @@ AddEventHandler('crj_metafetamina:itensReceber', function(quantidade)
 end)
 
 -- PEÇAS
-RegisterServerEvent('entrega_pendrive:itensReceber')
-AddEventHandler('entrega_pendrive:itensReceber', function(quantidade)
+RegisterServerEvent('entrega_pecas:itensReceber')
+AddEventHandler('entrega_pecas:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
     local pagamento = math.random(40,60)  
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
-            if vRP.tryGetInventoryItem(user_id,"pendriveh",quantidade,true) then
+            if vRP.tryGetInventoryItem(user_id,"pecasroubada",quantidade,true) then
                 vRPclient._playAnim(src,true,{{"mp_common","givetake1_a",1}},false)
 				vRP.giveInventoryItem(user_id,"dinheirosujo",pagamento*quantidade,false)
                 local typemessage = "sucesso"
@@ -281,15 +285,15 @@ end)
 
 
 -- MAQUINA
-RegisterServerEvent('entrega_maquinacacaniquel:itensReceber')
-AddEventHandler('entrega_maquinacacaniquel:itensReceber', function(quantidade)
+RegisterServerEvent('entrega_pendrive:itensReceber')
+AddEventHandler('entrega_pendrive:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
     local pagamento = math.random(45,60)
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
-            if vRP.tryGetInventoryItem(user_id,"maquinacacaniquel",quantidade,true) then
+            if vRP.tryGetInventoryItem(user_id,"pendriveh",quantidade,true) then
                 vRPclient._playAnim(src,true,{{"mp_common","givetake1_a",1}},false)
 				vRP.giveInventoryItem(user_id,"dinheirosujo",pagamento*quantidade,false)
                 local typemessage = "sucesso"

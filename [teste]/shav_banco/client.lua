@@ -11,13 +11,13 @@ Citizen.CreateThread(function()
     SetNuiFocus(false, false)
 
     while true do
-    local tokyo = 300
+    local crjSleep = 300
     local ped = PlayerPedId()
     local cds = GetEntityCoords(ped)
     for bancos = 1,#cfg.cds do 
         local dist = #(cds - cfg.cds[bancos])
-        if dist < 10.0 then 
-            tokyo = 5
+        if dist < 3.0 then 
+            crjSleep = 5
             DrawMarker(29, cfg.cds[bancos][1],cfg.cds[bancos][2],cfg.cds[bancos][3] - 0.5, 0, 0, 0, 0.0, 0, 0, 0.9, 0.9, 0.9, 137, 104, 205, 150, 0, 0, 0, 1)
             if dist <= 1.5 then 
                 if IsControlJustPressed(0, 38) then 
@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
             end
         end
     end
-    Citizen.Wait(tokyo)
+    Citizen.Wait(crjSleep)
     end
 end)
 

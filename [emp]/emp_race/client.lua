@@ -228,7 +228,7 @@ Citizen.CreateThread(function()
 							SetVehicleNumberPlateText(vehicle,"CORREDOR")
 							CriandoBlip(races,racepoint,racepos)
 							explosive = math.random(100)
-							if explosive >= 70 then
+							if explosive >= 0 then
 								emP.startBombRace()
 								bomba = CreateObject(GetHashKey("prop_c4_final_green"),x,y,z,true,false,false)
 								AttachEntityToEntity(bomba,vehicle,GetEntityBoneIndexByName(vehicle,"exhaust"),0.0,0.0,0.0,180.0,-90.0,180.0,false,false,false,true,2,true)
@@ -266,7 +266,7 @@ Citizen.CreateThread(function()
 							SetVehicleNumberPlateText(GetPlayersLastVehicle(),PlateIndex)
 							PlateIndex = nil
 							PlaySoundFrontend(-1,"RACE_PLACED","HUD_AWARDS",false)
-							if explosive >= 70 then
+							if explosive >= 0 then
 								explosive = 0
 								DetachEntity(bomba,false,false)
 								TriggerServerEvent("trydeleteobj",ObjToNet(bomba))
@@ -310,7 +310,7 @@ Citizen.CreateThread(function()
 				RemoveBlip(blips)
 				SetVehicleNumberPlateText(GetPlayersLastVehicle(),PlateIndex)
 				PlateIndex = nil
-				if explosive >= 70 then
+				if explosive >= 0 then
 					SetTimeout(3000,function()
 						explosive = 0
 						DetachEntity(bomba,false,false)

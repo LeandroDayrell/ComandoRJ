@@ -79,20 +79,20 @@ local src = {
 	
 	-- polvora e capsula
 	[45] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- unktec
-	[46] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
+	[46] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsulas", ['itemqtd'] = 20 }, 
 	
 	[47] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- yakuza
-	[48] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 	
+	[48] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsulas", ['itemqtd'] = 20 }, 	
 	
 	
 	[49] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- mafia
-	[50] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
+	[50] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsulas", ['itemqtd'] = 20 }, 
 
 	[51] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- milicia
-	[52] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
+	[52] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsulas", ['itemqtd'] = 20 },
 
 	[53] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "polvora", ['itemqtd'] = 20 }, -- mc
-	[54] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsula", ['itemqtd'] = 20 }, 
+	[54] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "capsulas", ['itemqtd'] = 20 }, 
 	
 	--kit costura
 	[55] = { ['re'] = nil, ['reqtd'] = nil, ['item'] = "kitcostura", ['itemqtd'] = 1 }, 

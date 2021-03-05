@@ -18,7 +18,7 @@ local valores = {
 	{ item = "maconha", quantidade = 1, compra = 1000, venda = 500 },
 	{ item = "crack", quantidade = 1, compra = 1000, venda = 25 },
 	{ item = "pendrive", quantidade = 1, compra = 10000, venda = 25 },
-	{ item = "kitcostura", quantidade = 1, compra = 7000, venda = 25 },
+	{ item = "kitcostura", quantidade = 1, compra = 3500, venda = 25 },
 	{ item = "cocaina", quantidade = 1, compra = 1000, venda = 25 },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

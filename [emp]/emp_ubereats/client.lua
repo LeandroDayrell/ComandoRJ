@@ -247,6 +247,7 @@ Citizen.CreateThread(function()
 			end
 			if distancecar <= 1.0 and not IsPedInAnyVehicle(ped) and pegando then
 				if model == 55628203 and GetVehicleNumberPlateText(veh) == vRP.getRegistrationNumber() then
+					DeletePed(npc) -- TENTATIVA DE DELETAR O PED QUANDO PEGAR A COMIDA
 					DrawText3Ds(coordsMoto.x,coordsMoto.y,coordsMoto.z+0.80,"~b~[E] ~w~Guardar")
 					local ui = GetMinimapAnchor()
             if statuses then	

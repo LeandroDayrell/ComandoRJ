@@ -4,6 +4,11 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 emP = {}
 Tunnel.bindInterface("emp_desmanche",emP)
+
+
+vRP._prepare("vAZ/SetStateVehicleDESMANCHE", "UPDATE vrp_user_vehicles SET state = @state, time = @time WHERE user_id = @user_id AND plate = @plate")
+vRP._prepare('vAZ/GetServerVehicles', 'SELECT * FROM vrp_vehicles')
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNÇÕES
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -14,6 +19,7 @@ function SendWebhookMessage(webhook,message)
 		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
 	end
 end
+
 
 
 function emP.checkPermission()
@@ -38,7 +44,7 @@ function emP.checkVehicle()
 					TriggerClientEvent("Notify",source,"aviso","Veículo encontra-se apreendido na seguradora.")
 					return false
 				end
-				local model = vRP.query('vAZ/getVehicleByModel', {model = owner[1].model})    
+				local model = vRP.query('vAZ/GetPlayerVehicleModel', {model = owner[1].model})    
 				if #model > 0 then
 					if model[1].banned then
 						TriggerClientEvent("Notify",source,"aviso","Veículos de serviço ou alugados não podem ser desmanchados.")
@@ -55,18 +61,24 @@ function emP.checkVehicle()
 	return false
 end
 
+
+
 function emP.removeVehicles(plate, vnet)
 	local source = source
 	local user_id = vRP.getUserId(source)
+	local plate = vRPclient.getPlateVehicle(source, vehicle)
 	local owner = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})
 	if #owner > 0 then
-		local model = vRP.query('vAZ/getVehicleByModel', {model = owner[1].model})    
-		if #model > 0 then
-			vRP.execute("vRP/set_detido", { user_id = owner[1].user_id, model = owner[1].model, detido = 4, time = parseInt(os.time()) })
+		local model = vRP.query('vAZ/GetServerVehicles', {model = owner[1].model})   
+		local price = price
+		--TriggerClientEvent("Notify",source,"aviso","CHEGOU ATE AQUI.") 
+		--if #model > 0 then
+			vRP.execute("vAZ/SetStateVehicleDESMANCHE", { user_id = owner[1].user_id, plate = owner[1].plate, state = 3, time = parseInt(os.time()) })
 			vRP.giveInventoryItem(user_id, "dinheirosujo", parseInt(model[1].price) * 0.06)
+			TriggerClientEvent("Notify",source,"sucesso","DESMANCHOU COM SUCESSO.") 
 			SendWebhookMessage(webhooklinkdesmanche,  "``` Desmanche [" ..user_id.."]  Placa; " ..plate.. " ```")
 			TriggerClientEvent('syncdeleteveh', -1, vnet)
 			TriggerEvent('az-garages:deleteVehicleArr', vnet)
-		end			
+		--end			
 	end
 end

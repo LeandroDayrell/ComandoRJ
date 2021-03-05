@@ -183,7 +183,7 @@ function DeleteCam()
 	RenderScriptCams(false, true, 0, true, true)
 	cam = nil
 end
-
+--[[
 
 RegisterCommand('tt', function(source, args, rawCommand)
     local ped = PlayerPedId()
@@ -200,7 +200,7 @@ RegisterCommand('tt', function(source, args, rawCommand)
         SetCamCoord(cam, camPos.x, camPos.y - 1, camPos.z+0.45)
         PointCamAtCoord(cam, pos.x, pos.y, pos.z+0.45)
     end
-end)
+end
 
 RegisterCommand('tt3', function(source, args, rawCommand)
     local ped = PlayerPedId()
@@ -240,6 +240,8 @@ end)
 RegisterCommand('rtt', function(source, args, rawCommand)
     DeleteCam()
 end)
+
+]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADS
 -----------------------------------------------------------------------------------------------------------------------------------------

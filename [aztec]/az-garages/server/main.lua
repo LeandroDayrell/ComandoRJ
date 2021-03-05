@@ -673,37 +673,22 @@ RegisterCommand('vehs',function(source,args,rawCommand)
 					local tuser_id = vRP.getUserId(nplayer)
 					local totalv = vRP.query("vRP/get_maxcars",{ user_id = tuser_id })
 					if vRP.hasPermission(tuser_id,"bronze.permissao") then
-						if parseInt(totalv[1].quantidade) >= totalgaragem + 3 then
-							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
-							return
-						end
-					elseif vRP.hasPermission(tuser_id,"prata.permissao") then
-						if parseInt(totalv[1].quantidade) >= totalgaragem + 4 then
-							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
-							return
-						end
-					elseif vRP.hasPermission(tuser_id,"ouro.permissao") then
 						if parseInt(totalv[1].quantidade) >= totalgaragem + 5 then
 							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
 							return
 						end
-					elseif vRP.hasPermission(tuser_id,"platina.permissao") then
+					elseif vRP.hasPermission(tuser_id,"prata.permissao") then
+						if parseInt(totalv[1].quantidade) >= totalgaragem + 6 then
+							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
+							return
+						end
+					elseif vRP.hasPermission(tuser_id,"ouro.permissao") then
 						if parseInt(totalv[1].quantidade) >= totalgaragem + 8 then
 							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
 							return
 						end
-					elseif vRP.hasPermission(tuser_id,"diamante.permissao") then
+					elseif vRP.hasPermission(tuser_id,"mafioso.permissao") then
 						if parseInt(totalv[1].quantidade) >= totalgaragem + 10 then
-							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
-							return
-						end
-					elseif vRP.hasPermission(tuser_id,"mafioso5.permissao") then
-						if parseInt(totalv[1].quantidade) >= totalgaragem + 10 then
-							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
-							return
-						end
-					elseif vRP.hasPermission(tuser_id,"supremo.permissao") then
-						if parseInt(totalv[1].quantidade) >= totalgaragem + 12 then
 							TriggerClientEvent("Notify",source,"importante","A pessoa atingiu o número máximo de veículos na garagem.")
 							return
 						end

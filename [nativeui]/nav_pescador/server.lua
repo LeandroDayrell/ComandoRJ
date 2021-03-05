@@ -20,7 +20,7 @@ local valores = {
 	{ item = "mrubi", venda = 20 },
 	{ item = "mesmeralda", venda = 30 },
 	{ item = "diamante", venda = 45 },
-	{ item = "sacodelixo", venda = 33 },
+	{ item = "sacodelixo", venda = 17 },
 	{ item = "perolatratada", venda = 900 },
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

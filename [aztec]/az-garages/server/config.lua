@@ -2,7 +2,7 @@ vAZ.config = {}
 
 vAZ.config.fines = true
 vAZ.config.fare = true
-vAZ.config.stolen = 0.20
+vAZ.config.stolen = 0.01
 vAZ.config.seized = 0.02
 vAZ.config.ipva = 0.02
 
@@ -59,7 +59,8 @@ vAZ.config.garages.service = {
         permission = 'mecanico.permissao',
         vehicles = {
             "flatbed",
-            "slamtruck"
+            "slamtruck",
+            "flatbed3",
         }
     },
     [8] = {
@@ -95,7 +96,7 @@ vAZ.config.garages.service = {
     [12] = {
         permission = 'dkfarm.permissao',
         vehicles = {
-            "buccaneer2",
+            "buccanner2",
             "faction2",
             "faction3",
             "moonbeam2",

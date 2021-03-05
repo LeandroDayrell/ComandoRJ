@@ -10,12 +10,12 @@
       <statMods />
       <slotNames />
       <liveryNames>
-        <Item>flatbed_LV1</Item>
-        <Item>flatbed_LV2</Item>
-        <Item>flatbed_LV3</Item>
-        <Item>flatbed_LV4</Item>
-        <Item>flatbed_LV5</Item>
-        <Item>flatbed_LV6</Item>
+        <Item>FLATBED3_LV1</Item>
+        <Item>FLATBED3_LV2</Item>
+        <Item>FLATBED3_LV3</Item>
+        <Item>FLATBED3_LV4</Item>
+        <Item>FLATBED3_LV5</Item>
+        <Item>FLATBED3_LV6</Item>
       </liveryNames>
     </Item>
 	</Kits>

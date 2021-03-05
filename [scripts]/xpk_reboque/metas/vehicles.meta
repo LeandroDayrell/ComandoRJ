@@ -4,8 +4,8 @@
   <residentAnims />
   <InitDatas>
     <Item>
-      <modelName>flatbed</modelName>
-      <txdName>flatbed</txdName>
+      <modelName>flatbed3</modelName>
+      <txdName>flatbed3</txdName>
       <handlingId>FLATBED</handlingId>
       <gameName>FLATBED</gameName>
       <vehicleMakeName>MTL</vehicleMakeName>
@@ -121,7 +121,7 @@
   <txdRelationships>
     <Item>
       <parent>vehshare_truck</parent>
-      <child>flatbed</child>
+      <child>flatbed3</child>
     </Item>
   </txdRelationships>
 </CVehicleModelInfo__InitDataList>	

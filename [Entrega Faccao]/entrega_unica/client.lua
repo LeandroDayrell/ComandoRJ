@@ -14,7 +14,7 @@ local entregamaconha = false
 local entregaopio = false
 local entregameta = false
 local entregapecas = false
-local entregamaquina = false
+local entregapendrive = false
 local entregalsd = false
 local entregamorfina = false
 local entregaextase = false
@@ -165,8 +165,8 @@ end)
 
 RegisterNetEvent('entrega_pendrive:permissao')
 AddEventHandler('entrega_pendrive:permissao',function()
-	if not entregamaquina then
-		entregamaquina = true
+	if not entregapendrive then
+		entregapendrive = true
 		destino = math.random(1,38)
 		quantidade = math.random(5,6)
 		CriandoBlip9(entregas,destino)
@@ -529,7 +529,7 @@ Citizen.CreateThread(function()
 				TriggerEvent('entrega_pendrive:permissao') 
 			end
 		end
-		if entregamaquina then
+		if entregapendrive then
 			crjSleep = 1
 			local ui = GetMinimapAnchor()
 			local distance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()),entregas[destino].x,entregas[destino].y,entregas[destino].z,true)
@@ -736,6 +736,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			emservico = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -749,6 +750,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			crackd = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -762,6 +764,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregamaconha = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -775,6 +778,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregaopio = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -788,6 +792,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregameta = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -801,6 +806,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregapecas = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -814,6 +820,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			pendrive = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -827,6 +834,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregalsd = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -840,6 +848,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregamorfina = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -853,6 +862,7 @@ Citizen.CreateThread(function()
 			crjSleep = 1
 			entregaextase = false
 			RemoveBlip(blip)
+			break
 		end
 		Citizen.Wait(crjSleep)
 	end
@@ -978,7 +988,7 @@ function CriandoBlip6(entregas,destino)
 	SetBlipAsShortRange(blip,false)
 	SetBlipRoute(blip,true)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentString("Entrega de Peças")
+	AddTextComponentString("Entrega de Pecas")
 	EndTextCommandSetBlipName(blip)
 end
 

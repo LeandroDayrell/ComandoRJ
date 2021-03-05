@@ -419,10 +419,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"Recruta.permissao"
+	"Recruta.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - Soldado"] = {
@@ -479,10 +479,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"Soldado.permissao"
+	"Soldado.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - Cabo"] = {
@@ -539,10 +539,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"Cabo.permissao"
+	"Cabo.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - 3° Sargento"] = {
@@ -599,10 +599,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"3Sargento.permissao"
+	"3Sargento.permissao",
+	"policiaheli.permissao"
   },
   
   ["[PMRJ] - 2° Sargento"] = {
@@ -659,10 +659,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"2Sargento.permissao"
+	"2Sargento.permissao",
+	"policiaheli.permissao"
   },
   
   ["[PMRJ] - 1° Sargento"] = {
@@ -718,11 +718,11 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"policiaradio.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"1Sargento.permissao"
+	"1Sargento.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - Subtenente"] = {
@@ -779,11 +779,11 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	"bau.pm",
 	-- Salario
-	"SubTenente.permissao"
+	"SubTenente.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - 2° Tenente"] = {
@@ -841,10 +841,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"2Tenente.permissao"
+	"2Tenente.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - 1° Tenente"] = {
@@ -902,10 +902,10 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"1Tenente.permissao"
+	"1Tenente.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - Capitão"] = {
@@ -957,7 +957,6 @@ cfg.groups = {
     "police.announce",
     "-police.seizable",
 	"polpar1.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- NOVOS
 	"pmcar.permissao",
@@ -966,7 +965,8 @@ cfg.groups = {
 	"helipmerj.permissao",
 	"policiaradio.permissao",
 	-- Salario
-	"Capitao.permissao"
+	"Capitao.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - Major"] = {
@@ -1024,10 +1024,10 @@ cfg.groups = {
 	"policiachamado.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"Major.permissao"
+	"Major.permissao",
+	"policiaheli.permissao"
   },
 
   ["[PMRJ] - Tenente Coronel"] = {
@@ -1085,10 +1085,11 @@ cfg.groups = {
 	"polpar1.permissao",
 	"helipmerj.permissao",
 	"policiaradio.permissao",
-	"policiaheli.permissao",
+	"contratarpmerj.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"TenenteCoronel.permissao"
+	"TenenteCoronel.permissao",
+	"policiaheli.permissao"
   },
   
   ["[PMRJ] - Coronel"] = {
@@ -1146,10 +1147,11 @@ cfg.groups = {
 	"pmheli.permissao",
 	"pmerj.permissao",
 	"helipmerj.permissao",
-	"policiaheli.permissao",
+	"contratarpmerj.permissao",
 	"pmerj.permissao",
 	-- Salario
-	"Coronel.permissao"
+	"Coronel.permissao",
+	"policiaheli.permissao"
   },
   
   ["AdminFRP"] = {
@@ -2360,7 +2362,6 @@ cfg.groups = {
 	"yakuzaliderentrada.permissao",
 	"metanfetamina.service",
 	"cocaina.service",
-	"lavar.dinheiro",
 	"maconha.service",
 	"sig.permissao",
 	"ak.permissao",
@@ -2431,7 +2432,6 @@ cfg.groups = {
 	"tartaruga.service",
 	"dkfarm.permissao",
 	"driftking.permissao",
-	"lavar.dinheiro",
 	"metanfetamina.service",
 	"cocaina.service",
 	"bau.dk",
@@ -2458,7 +2458,6 @@ cfg.groups = {
 	"contrabandista.service",
 	"tartaruga.service",
 	"driftking.permissao",
-	"lavar.dinheiro",
 	"dkfarm.permissao",
 	"metanfetamina.service",
 	"cocaina.service",
@@ -2487,7 +2486,6 @@ cfg.groups = {
 	"tartaruga.service",
 	"dkfarm.permissao",
 	"driftking.permissao",
-	"lavar.dinheiro",
 	"metanfetamina.service",
 	"cocaina.service",
 	"maconha.service",
@@ -2564,7 +2562,6 @@ cfg.groups = {
 	"police.bmcuff",
     "police.drag",
     "police.putinveh",
-	"lavar.dinheiro",
     "police.getoutveh",
     "police.check",
 	"motoclub.permissao",
@@ -2616,7 +2613,7 @@ cfg.groups = {
     "mission.UBER.passenger"
   },
   
-  ["UBER"] = {
+  ["CRJ Taxi"] = {
     _config = { gtype = "cargo" },
     "UBER.service",
 	"UBER.paycheck",
@@ -2926,8 +2923,6 @@ cfg.groups = {
     _config = {
       gtype = "vip",
     },
-    "vip.permissao",
-	"mochila.permissao",
 	"bronze.permissao",
 	"color.weapon",
   },
@@ -2935,7 +2930,6 @@ cfg.groups = {
     _config = {
       gtype = "vip",
     },
-    "vipp.permissao",
 	"prata.permissao",
 	"color.weapon",
   }, 
@@ -2943,27 +2937,27 @@ cfg.groups = {
     _config = {
       gtype = "vip",
     },
-    "vippp.permissao",
 	"ouro.permissao",
+	"mochila.permissao",
 	"color.weapon",
   }, 
-  ["VIP Diamante"] = {
+  ["VIP Mafioso"] = {
     _config = {
       gtype = "vip",
     },
-    "vipppp.permissao",
-	"diamante.permissao",
+	"mafioso.permissao",
+	"mochila.permissao",
 	"color.weapon",
   },
-   ["VIP Platina"] = {
+   ["VIP Magnata"] = {
     _config = {
       gtype = "vip",
     },
-    "vipppp.permissao",
-	"platina.permissao",
+	"magnata.permissao",
+	"mochila.permissao",
 	"color.weapon",
   },
-   ["VIP Mafioso"] = {
+  --[[ ["VIP Mafioso"] = {
     _config = {
       gtype = "vip",
     },
@@ -2990,7 +2984,7 @@ cfg.groups = {
 	"magnata.permissao",
 	"lavagem.vip",
 	"color.weapon",
-  },
+  },]]--
   
   --== Sets ==--
   --== Sets ==--
@@ -3012,7 +3006,7 @@ cfg.users = {
 cfg.selectors = {
   ["Agência de Empregos"] = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 351, blipcolor = 47},
-	"UBER",
+	"CRJ Taxi",
 	"Pescador",
 	"Leiteiro",
 	"Minerador de Diamante",
