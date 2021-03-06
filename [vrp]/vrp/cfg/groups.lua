@@ -602,7 +602,8 @@ cfg.groups = {
 	"pmerj.permissao",
 	-- Salario
 	"3Sargento.permissao",
-	"policiaheli.permissao"
+	"policiaheli.permissao",
+	"bau.pm",
   },
   
   ["[PMRJ] - 2° Sargento"] = {
@@ -662,7 +663,8 @@ cfg.groups = {
 	"pmerj.permissao",
 	-- Salario
 	"2Sargento.permissao",
-	"policiaheli.permissao"
+	"policiaheli.permissao",
+	"bau.pm",
   },
   
   ["[PMRJ] - 1° Sargento"] = {
@@ -713,6 +715,7 @@ cfg.groups = {
     "police.announce",
 	"polpar1.permissao",
     "-police.seizable",
+	"bau.pm",
 	-- NOVOS
 	"pmcar.permissao",
 	"pmheli.permissao",

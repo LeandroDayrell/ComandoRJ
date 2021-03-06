@@ -54,6 +54,7 @@ RegisterCommand('Congelar', function(source, args,rawCommand) ----muda o comando
             local nplayer = vRP.getUserSource(parseInt(args[1]))
             if nplayer then
                 TriggerClientEvent('Congelar', nplayer,source)
+				SendWebhookMessage(webhooklinkadm,  "```" ..user_id.." CONGELOU " ..nplayer.. "```")
             end
         end    
     end
@@ -91,6 +92,7 @@ RegisterCommand('fogo', function(source, args,rawCommand) ----muda o comando aqu
             local nplayer = vRP.getUserSource(parseInt(args[1]))
             if nplayer then
         TriggerClientEvent('FOGO',nplayer, source)
+		SendWebhookMessage(webhooklinkadm,  "```" ..user_id.." INCENDIOU " ..nplayer.. "```")
 			end
 		end    
 	end
@@ -319,6 +321,7 @@ RegisterCommand('kill',function(source,args,rawCommand)
 			local nplayer = vRP.getUserSource(parseInt(args[1]))
 			if nplayer then
 				vRPclient.setHealth(nplayer,50)
+				SendWebhookMessage(webhooklinkadm,  "```" ..user_id.." MATOU COM KILL O  " ..nplayer.. "```")
 			end
 		else
 			vRPclient.setHealth(source,50)
@@ -326,6 +329,7 @@ RegisterCommand('kill',function(source,args,rawCommand)
 		end
 	end
 end)
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TRYDELETEVEH
 -----------------------------------------------------------------------------------------------------------------------------------------

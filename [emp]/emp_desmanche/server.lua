@@ -74,7 +74,7 @@ function emP.removeVehicles(plate, vnet)
 		--TriggerClientEvent("Notify",source,"aviso","CHEGOU ATE AQUI.") 
 		--if #model > 0 then
 			vRP.execute("vAZ/SetStateVehicleDESMANCHE", { user_id = owner[1].user_id, plate = owner[1].plate, state = 3, time = parseInt(os.time()) })
-			vRP.giveInventoryItem(user_id, "dinheirosujo", parseInt(model[1].price) * 0.06)
+			vRP.giveInventoryItem(user_id, "dinheirosujo", parseInt(model[1].price) * 0.1)
 			TriggerClientEvent("Notify",source,"sucesso","DESMANCHOU COM SUCESSO.") 
 			SendWebhookMessage(webhooklinkdesmanche,  "``` Desmanche [" ..user_id.."]  Placa; " ..plate.. " ```")
 			TriggerClientEvent('syncdeleteveh', -1, vnet)

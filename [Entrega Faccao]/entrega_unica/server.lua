@@ -144,7 +144,7 @@ RegisterServerEvent('crj_coca:itensReceber')
 AddEventHandler('crj_coca:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(80,90)  
+    local pagamento = math.random(95,105)  
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
@@ -168,7 +168,7 @@ RegisterServerEvent('entrega_crack:itensReceber')
 AddEventHandler('entrega_crack:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(80,90)
+    local pagamento = math.random(95,105)
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
@@ -192,7 +192,7 @@ RegisterServerEvent('crj_maconha:itensReceber')
 AddEventHandler('crj_maconha:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(80,90)
+    local pagamento = math.random(95,105)
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
@@ -216,7 +216,7 @@ RegisterServerEvent('entrega_opio:itensReceber')
 AddEventHandler('entrega_opio:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(80,90)  
+    local pagamento = math.random(95,105)  
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then
@@ -240,7 +240,7 @@ RegisterServerEvent('crj_metafetamina:itensReceber')
 AddEventHandler('crj_metafetamina:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(80,90)
+    local pagamento = math.random(95,105)
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then

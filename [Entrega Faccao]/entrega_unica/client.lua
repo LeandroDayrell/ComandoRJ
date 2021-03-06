@@ -208,9 +208,9 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		local crjSleep = 500
-		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 1308.6176757813,-253.87768554688,95.571754455566,true) <= 1 then
+		if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), 1305.2414550781,-251.66925048828,95.694351196289,true) <= 1 then
 			crjSleep = 1
-			DrawText3Ds(1308.6176757813,-253.87768554688,95.571754455566+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
+			DrawText3Ds(1305.2414550781,-251.66925048828,95.694351196289+0.5,"PRESSIONE ~r~E~w~ PARA COMEÇAR MISSÃO")
             if IsControlJustPressed(0,38) then	
 				TriggerEvent('crj_coca:permissao')
 			end
