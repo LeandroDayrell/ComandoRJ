@@ -422,7 +422,7 @@ Citizen.CreateThread(function()
                     if IsControlJustPressed(0,38) then
                     	if quantidade == 0 then
                     		Fade(1200)
-                    		local pagamento = math.random(250,260)
+                    		local pagamento = math.random(290,310)
                     		destinoantigo = destino
 							pegando = false
 							encomendapega = false

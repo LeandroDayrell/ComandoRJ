@@ -60,52 +60,52 @@ vAZ.config.vaults = {
     ]]--
     -- ILEGAL
     ["BORDEL"] = {
-        weight = 1200,
+        weight = 1500,
         permission = "bau.bordel",
         webhook = "https://discord.com/api/webhooks/817414020906614805/EvqtO1cqZoZom3QAXnrgNGjSjUN5aaFM9X6qSa-U7h3tf2MpKIzOJfgtPV9Wh_2cs2WW"
     },
     ["ADA"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.ada",
         webhook = "https://discord.com/api/webhooks/817414065000677387/4jIzZ2c50_x5IOn4XHQKY8QvxBef0Md0jzZ52589rVeraWVRBNnmWiEE8PGLUwu4C3fd"
     },
     ["TCP"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.tcp",
         webhook = "https://discord.com/api/webhooks/817414110601936956/r7qB0nHzSemb-4gwyQTjcV6wKkr5WhyWcdF2LnErh8n7OUhnVnwbnf8kg5DfO0DeZcM6"
     },
     ["CV"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.cv",
         webhook = "https://discord.com/api/webhooks/817414166527606826/IPQ7OsJ3S-gNVH4pUUZ6-1YoFz9ftHIIjc_0HrZPFCD23A9oDfqXEO-jAy3JsGFam5Jy"
     },
     ["PCC"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.pcc",
         webhook = "https://discord.com/api/webhooks/817414211055124512/UqGeLSQpDY0KmTJPWnf15347hD20jJxT8lWwfSZgoWT-NQGV0qjl1Qg2tsASmWGp_ysp"
     },
     ["DK"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.dk",
         webhook = "https://discord.com/api/webhooks/817414276691656706/JsAERK5fwIy7aEYNTKj2TJrdXPx62a4UnoNcM_0c66bo1jIr2Whr0atO7Up3euIIQpx4"
     },
     ["MC"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.mc",
         webhook = "https://discord.com/api/webhooks/817414318777827379/Eie8HhOomzekbzTkQtwkf8CauLnbZ2tTLySaJDVBZvjEB-SUhsBuOZkdw4YdnWWCN9h5"
     },
     ["COSA NOSTRA"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.cosanostra",
         webhook = "https://discord.com/api/webhooks/817414355435782175/lInXQ8RQg5KFjCIctmB-DlorZO0WNKWhJZT8hTEGYh0k3n9s_1xzh_CYLkQ_dwmAp3Ry"
     },
     ["MILICIA"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.milicia",
         webhook = "https://discord.com/api/webhooks/817414402668101652/pPetCPND-CDZuD3j8LxQtrd1rFCVX6s8uhFytgqhbF9VIHBr6AqG-1S5KCze2LwwAahP"
     },
     ["YAKUZA"] = {
-        weight = 700,
+        weight = 1500,
         permission = "bau.yakuza",
         webhook = "https://discord.com/api/webhooks/817414436008361985/OIMdHybXbG9X-gXowU--D3nWnJYv4wgnlHwIM5VpklT76w7j4FTJaswn--lSRnVBFzMD"
     },

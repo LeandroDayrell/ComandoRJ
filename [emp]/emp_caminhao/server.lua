@@ -16,45 +16,45 @@ local diesel = 1
 -----------------------------------------------------------------------------------------------------------------------------------------
 local paylist = {
 	["diesel"] = {
-		[1] = { pay = math.random(720,770) },
-		[2] = { pay = math.random(570,600) },
-		[3] = { pay = math.random(570,600) },
-		[4] = { pay = math.random(680,710) },
-		[5] = { pay = math.random(940,1000) },
-		[6] = { pay = math.random(470,510) }
+		[1] = { pay = math.random(920,940) },
+		[2] = { pay = math.random(720,740) },
+		[3] = { pay = math.random(720,740) },
+		[4] = { pay = math.random(860,880) },
+		[5] = { pay = math.random(1200,1220) },
+		[6] = { pay = math.random(600,620) }
 	},
 	["gas"] = {
-		[1] = { pay = math.random(650,700) },
-		[2] = { pay = math.random(440,460) },
-		[3] = { pay = math.random(370,400) },
-		[4] = { pay = math.random(200,240) },
-		[5] = { pay = math.random(160,200) },
-		[6] = { pay = math.random(270,300) },
-		[7] = { pay = math.random(180,230) },
-		[8] = { pay = math.random(200,240) },
-		[9] = { pay = math.random(200,250) },
-		[10] = { pay = math.random(580,600) },
-		[11] = { pay = math.random(650,700) },
-		[12] = { pay = math.random(470,510) }
+		[1] = { pay = math.random(750,760) },
+		[2] = { pay = math.random(550,570) },
+		[3] = { pay = math.random(470,490) },
+		[4] = { pay = math.random(265,285) },
+		[5] = { pay = math.random(215,235) },
+		[6] = { pay = math.random(345,365) },
+		[7] = { pay = math.random(245,265) },
+		[8] = { pay = math.random(265,275) },
+		[9] = { pay = math.random(265,275) },
+		[10] = { pay = math.random(720,740) },
+		[11] = { pay = math.random(835,855) },
+		[12] = { pay = math.random(600,620) }
 	},
 	["carros"] = {
-		[1] = { pay = math.random(358,370) },
-		[2] = { pay = math.random(230,260) },
-		[3] = { pay = math.random(300,340) },
-		[4] = { pay = math.random(480,500) },
-		[5] = { pay = math.random(480,500) }
+		[1] = { pay = math.random(445,465) },
+		[2] = { pay = math.random(260,280) },
+		[3] = { pay = math.random(390,410) },
+		[4] = { pay = math.random(602,622) },
+		[5] = { pay = math.random(602,622) }
 	},
 	["madeira"] = {
-		[1] = { pay = math.random(850,900) },
-		[2] = { pay = math.random(660,700) },
-		[3] = { pay = math.random(170,200) },
-		[4] = { pay = math.random(400,450) }
+		[1] = { pay = math.random(1083,1103) },
+		[2] = { pay = math.random(840,86) },
+		[3] = { pay = math.random(221,241) },
+		[4] = { pay = math.random(521,541) }
 	},
 	["show"] = {
-		[1] = { pay = math.random(430,470) },
-		[2] = { pay = math.random(350,370) },
-		[3] = { pay = math.random(370,400) },
-		[4] = { pay = math.random(350,400) }
+		[1] = { pay = math.random(552,572) },
+		[2] = { pay = math.random(440,460) },
+		[3] = { pay = math.random(471,491) },
+		[4] = { pay = math.random(458,478) }
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

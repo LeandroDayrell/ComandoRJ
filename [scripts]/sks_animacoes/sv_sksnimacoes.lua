@@ -84,7 +84,7 @@ AddEventHandler('cmg2_animations:syncSCRIPTFODIDO_2', function(target, animation
 		source = vRP.getUserSource(user_id)
 		if source ~= nil then
 			local reason = "ANTI HACK: 	localização:	"..loc.x..","..loc.y..","..loc.z
-			vRP.setBanned(user_id,true)					
+			--vRP.setBanned(user_id,true)					
 			local temp = os.date("%x  %X")
 			local msg = "Puxando todos players!"
 			PerformHttpRequest(ac_webhook, function(err, text, headers) end, 'POST', json.encode({content = "ANTI HACK	[ID]: "..user_id.."		"..temp.."[BAN]		[MOTIVO:"..msg.."]	"..reason}), { ['Content-Type'] = 'application/json' }) 		

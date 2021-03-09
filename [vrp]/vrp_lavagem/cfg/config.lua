@@ -37,6 +37,6 @@ cfg.marker = { --Markers dos pontos de Hack
 
 cfg.permissao = "lavar.dinheiro" --PERMISSÃO PARA USAR A PLATAFORMA
 
-cfg.lavagemporcento = 0.7
+cfg.lavagemporcento = 0.75
 
 return cfg

@@ -37,8 +37,8 @@ Config.BankRobbery = {
             {Looted = false, Coords = vector3(256.83, 215.12, 100.8), Heading = 137.47, Cam = {From = {x = 256.3, y = 216.4, z = 102.5, rx = -25.0, ry = 0.0, rz = 200.0, r = 0}, To = {x = 260.92, y = 214.7, z = 102.5, rx = -25.0, ry = 0.0, rz = 123.0, r = 0}}},
         },
         Money = {
-            StartMoney = 1000000,
-            Amount = 1500000,
+            StartMoney = 800000,
+            Amount = 1000000,
             BoxPosition = vector3(264.31, 213.77, 101.54),
             --Coords = vector3(263.4, 214.08, 100.8),
             --Heading = 253.62,

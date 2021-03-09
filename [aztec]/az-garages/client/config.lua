@@ -447,6 +447,19 @@ vAZ.config.garages.personal = {
 		spaces = {
 			{ x = 4968.26, y = -5169.38, z = 1.93, h = 50.0 }
 		}
+	},
+	[9] ={
+		name = 'Garagem PMERJ',
+		type = 'personal',
+		availables = {'Service'},
+		marker = 36,
+		blip = {color = 4, scale = 0.4, type = 229},
+		point = {
+			{ x = -1087.92, y = -848.12, z = 4.88 }
+		},
+		spaces = {
+			{ x = -1076.87, y = -848.15, z = 4.88, h = 50.0 }
+		}
 	}
 }
 
