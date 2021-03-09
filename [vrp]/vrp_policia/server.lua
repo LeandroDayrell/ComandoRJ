@@ -69,6 +69,41 @@ RegisterCommand('placa',function(source,args,rawCommand)
 	end
 end)
 
+RegisterCommand('placa2',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"policia.permissao") then
+		if args[1] then
+			local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = args[1]})    
+			if #vehicle > 0 then
+				local identity = vRP.getUserIdentity(vehicle[1].user_id)
+				if identity then
+					vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
+                    TriggerClientEvent("NotifyPush",source,{ code = 28, title = "Verificando veículo", x = x, y = y, z = z, badge = identity.user_id.." "..vehicle[1].plate.." "..identity.name.." "..identity.firstname.." - "..identity.age.." ("..identity.phone..")", veh = identity.registration })
+				end
+			else
+				TriggerClientEvent("Notify",source,"importante","Placa inválida ou veículo de americano.")
+			end
+		else
+			local vehicle = vRPclient.getNearestVehicle(source, 7)
+			if vehicle then
+				local plate = vRPclient.getPlateVehicle(source, vehicle)
+				if plate ~= nil then
+					local vehicle = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})    
+					if #vehicle > 0 then
+						local identity = vRP.getUserIdentity(vehicle[1].user_id)
+						if identity then
+							vRPclient.playSound(source,"Event_Message_Purple","GTAO_FM_Events_Soundset")
+							TriggerClientEvent("NotifyPush",source,{ code = 28, title = "Verificando veículo", x = x, y = y, z = z, badge = identity.user_id.." - "..vehicle[1].plate.." "..identity.name.." "..identity.firstname.." - "..identity.age.." ("..identity.phone..")", veh = identity.registration })
+						end
+					else
+						TriggerClientEvent("Notify",source,"importante","Placa inválida ou veículo de americano.")
+					end
+				end
+			end
+		end
+	end
+end)
+
 RegisterCommand('placadk',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	local x,y,z = vRPclient.getPosition(source)
