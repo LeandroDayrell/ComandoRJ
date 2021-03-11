@@ -531,6 +531,29 @@ AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
         end
         if vAZ.server.dropped[user_id] ~= nil then
             for id,vehicle in pairs(vAZ.user.vehicles[user_id]) do
+                local occupants = vAZclient.getVehicleOccupants(source, true, vehicle.net) or {}
+                if #occupants <= 0 then
+                    local street = vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate)
+                    if street then
+                        if vehicle.type == 'personal' or vehicle.type == 'home' then
+                            local status,engine,body,fuel = vAZclient.getVehicleEngine(source, vehicle.net)
+                            if status then
+                                vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })
+                                vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = vehicle.owner, model = vehicle.model, engine = engine, body = body, fuel = fuel })
+                            end
+                        end
+                        TriggerClientEvent('az-garages:deletevehicle', source, vehicle.id)
+                    else
+                        if vehicle.type == 'personal' or vehicle.type == 'home' then
+                            vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })
+                        end
+                        table.remove(vAZ.user.vehicles[user_id], id)
+                        TriggerEvent('az-inventory:deleteTempTrunk', vehicle.plate)
+                    end
+                    table.remove(vAZ.user.vehicles[user_id], id)
+                    TriggerEvent('az-inventory:deleteTempTrunk', vehicle.plate)
+                end
+                --[[
                 local street = vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate)
                 if street then
                     local occupants = vAZclient.getVehicleOccupants(source, true, vehicle.net)
@@ -551,6 +574,7 @@ AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
                     end
                     table.remove(vAZ.user.vehicles[user_id], id)
                 end
+                ]]--                
             end
             vAZ.server.dropped[user_id] = nil
         end

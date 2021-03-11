@@ -623,7 +623,7 @@
 		<Item>
 				<modelName>amarokrj</modelName>
 				<txdName>amarokrj</txdName>
-				<handlingId>everon</handlingId>
+				<handlingId>frontierpolicia</handlingId>
 				<gameName>amarokrj</gameName>
 				<vehicleMakeName>VW</vehicleMakeName>
 				<expressionDictName>null</expressionDictName>
@@ -732,7 +732,7 @@
 		<Item>
 				<modelName>amarokprf</modelName>
 				<txdName>amarokprf</txdName>
-				<handlingId>everon</handlingId>
+				<handlingId>frontierpolicia</handlingId>
 				<gameName>amarokprf</gameName>
 				<vehicleMakeName>VW</vehicleMakeName>
 				<expressionDictName>null</expressionDictName>
@@ -841,7 +841,7 @@
 		<Item>
 				<modelName>amarokbope</modelName>
 				<txdName>amarokbope</txdName>
-				<handlingId>everon</handlingId>
+				<handlingId>frontierpolicia</handlingId>
 				<gameName>amarokbope</gameName>
 				<vehicleMakeName>VW</vehicleMakeName>
 				<expressionDictName>null</expressionDictName>
@@ -950,7 +950,7 @@
 		<Item>
 				<modelName>frontierrj</modelName>
 				<txdName>frontierrj</txdName>
-				<handlingId>everon</handlingId>
+				<handlingId>frontierpolicia</handlingId>
 				<gameName>frontierrj</gameName>
 				<vehicleMakeName>Nissan</vehicleMakeName>
 				<expressionDictName>null</expressionDictName>
@@ -1059,7 +1059,7 @@
 		<Item>
 				<modelName>frontierbope</modelName>
 				<txdName>frontierbope</txdName>
-				<handlingId>everon</handlingId>
+				<handlingId>frontierpolicia</handlingId>
 				<gameName>frontierbope</gameName>
 				<vehicleMakeName>Nissan</vehicleMakeName>
 				<expressionDictName>null</expressionDictName>
@@ -1408,7 +1408,7 @@
 		<Item>
 			<modelName>corollarj</modelName> 
 			<txdName>corollarj</txdName> 
-			<handlingId>alpha</handlingId> 
+			<handlingId>corollarj</handlingId> 
 			<gameName>corollarj</gameName> 
 			<vehicleMakeName>toyota</vehicleMakeName> 
 			<expressionDictName>null</expressionDictName> 
@@ -1525,7 +1525,7 @@
 		<Item>
 				<modelName>hiluxpolicia</modelName>
 				<txdName>hiluxpolicia</txdName>
-				<handlingId>everon</handlingId>
+				<handlingId>frontierpolicia</handlingId>
 				<gameName>hiluxpolicia</gameName>
 				<vehicleMakeName />
 				<expressionDictName>null</expressionDictName>

@@ -30,6 +30,17 @@ end
 
 RegisterServerEvent("creative-character:finishedCharacter")
 AddEventHandler("creative-character:finishedCharacter",function(characterNome,characterSobrenome,characterAge,currentCharacterMode)
+	
+	if(string.find(characterNome, "onload") or string.find(characterSobrenome,"onload"))then        
+		local user_id = vRP.getUserId(source)    
+		vRP.setBanned(user_id, true)        
+		DropPlayer(source, "PORRA, TU E BURRO EM IRMAO! KKKKKKKKKKKKK")
+		local webhook = "https://discord.com/api/webhooks/819022533885165568/f5KUP9sznUoWYY0QupDFlmBjLImYeulirJ-obReAwobsgjY42BE7481DCxhGNPOlV1X6"
+		local message = "BUGANDO NUI: "..user_id
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+		return
+	  end
+	
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if user_id then

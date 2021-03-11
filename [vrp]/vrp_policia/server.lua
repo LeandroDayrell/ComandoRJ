@@ -34,6 +34,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PLACA
 -----------------------------------------------------------------------------------------------------------------------------------------
+--[[
 RegisterCommand('placa',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"policia.permissao") then
@@ -67,9 +68,9 @@ RegisterCommand('placa',function(source,args,rawCommand)
 			end
 		end
 	end
-end)
+end)]]
 
-RegisterCommand('placa2',function(source,args,rawCommand)
+RegisterCommand('placa',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"policia.permissao") then
 		if args[1] then

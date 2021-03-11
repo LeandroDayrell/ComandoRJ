@@ -11,7 +11,7 @@ AddEventHandler("az-inventory:deleteTempTrunk", function(plate)
         for id,user in pairs(vAZ.temp.vehicles[plate].players) do
             local player = vRP.getUserSource(parseInt(user))  
             if player ~= nil then
-                vAZserver.closeInventory(player)
+                vAZclient.closeInventory(player)
             end
         end
         if vAZ.temp.vehicles[plate].owner ~= 'temporary' then

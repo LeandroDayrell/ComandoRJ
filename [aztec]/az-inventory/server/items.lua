@@ -11,6 +11,7 @@ end)
 vAZ.handlers = {
     ['tabletd'] = function(source, user_id, item, amount, cb)
         if vAZ.cooldown.get(user_id, item) <= 0 then
+            vAZclient.closeInventory(source)
             TriggerClientEvent('az-dynasty8:item', source)
         else
             TriggerClientEvent("Notify", source, "importante", "Aguarde "..vRPclient.getTimeFunction(source, vAZ.cooldown.get(user_id, item))..".")

@@ -56,7 +56,7 @@ local carros = {
     {id = 12, nome = "vamos", 			precocarro = 65000, 		pesocarro = 20, imagemcarro = "https://i.imgur.com/xANZ7Z6.png"},
     {id = 13, nome = "serrano", 		precocarro = 65000,			pesocarro = 40, imagemcarro = "https://i.imgur.com/AQ7XHtP.png"},
     {id = 14,  nome = "gresley", 		precocarro = 67000,			pesocarro = 40, imagemcarro = "https://i.imgur.com/40b49wd.png"},
-    {id = 15, nome = "dubstar", 		precocarro = 70000, 		pesocarro = 40, imagemcarro = "https://i.imgur.com/VpWrN0O.png"},
+    {id = 15, nome = "dubsta", 		precocarro = 70000, 		pesocarro = 40, imagemcarro = "https://i.imgur.com/VpWrN0O.png"},
 	{id = 16, nome = "baller3", 		precocarro = 77000, 		pesocarro = 40, imagemcarro = "https://i.imgur.com/y9iWB4J.png"},
 	{id = 17,  nome = "minivan", 		precocarro = 80000,  		pesocarro = 60, imagemcarro = "https://i.imgur.com/v16RtPA.png"},
 	{id = 18,  nome = "paradise", 		precocarro = 87000, 		pesocarro = 60, imagemcarro = "https://i.imgur.com/QcDOCy1.png"},

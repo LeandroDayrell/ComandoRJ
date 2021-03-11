@@ -621,9 +621,8 @@ RegisterCommand('banir',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
     if vRP.hasPermission(user_id,"ban.permissao") then
         if args[1] then
-            local id = vRP.getUserSource(parseInt(args[1]))
             vRP.setBanned(parseInt(args[1]),true)
-            vRP.kick(id,"Você foi expulso da cidade.")
+            vRP.kick(parseInt(args[1]),"Você foi expulso da cidade.")
 			SendWebhookMessage(webhooklinkban,  "```" ..user_id.." BANIU " ..rawCommand.. "```")
             vRP.setWhitelisted(parseInt(args[1]),false)
 			
