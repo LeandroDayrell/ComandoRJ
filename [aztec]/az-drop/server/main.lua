@@ -34,7 +34,7 @@ AddEventHandler('az-drop:takeItem', function(drop)
 	local source = source
 	local user_id = vRP.getUserId(source)
 	if drops[tostring(drop)] ~= nil then
-		local item, amount = drops[tostring(drop)].item, parseInt(drops[tostring(drop)].amount)
+		local item, amount, coords = drops[tostring(drop)].item, parseInt(drops[tostring(drop)].amount), {x = drops[tostring(drop)].x, y = drops[tostring(drop)].y, z = drops[tostring(drop)].z}
 		if item == 'money' then
 			drops[tostring(drop)] = nil
 			IDGenerator:free(parseInt(drop))
@@ -43,7 +43,9 @@ AddEventHandler('az-drop:takeItem', function(drop)
 			vRPclient.playSound(source, "HUD_FRONTEND_DEFAULT_SOUNDSET", "PICK_UP")
 			vRPclient.playAnim(source, true, {{"pickup_object", "pickup_low", 1}}, false)
 			SendWebhookMessage(webhooklinkdrop,  "```" ..user_id.." Pegou R$" ..amount.. "```")
-
+			--SendWebhookMessage(webhooklinkdrop, 'user_id ' ..user_id.. ', Pegou R$' ..amount.. ' nas cordenadas: '..coords.x..', '..coords.y..', '..coords.z)
+			--vAZ.webhook('items', 'user_id: '..user_id..', dropou ('..amount..'x '..item..') nas cordenadas: '..coords.x..', '..coords.y..', '..coords.z)
+---
 		else
 			if vRP.getInventoryWeight(user_id) + vRP.getItemWeight(item) * amount <= vRP.getInventoryMaxWeight(user_id) then
 				drops[tostring(drop)] = nil
@@ -52,7 +54,8 @@ AddEventHandler('az-drop:takeItem', function(drop)
 				vRP.giveInventoryItem(user_id, item, amount)
 				vRPclient.playSound(source, "HUD_FRONTEND_DEFAULT_SOUNDSET", "PICK_UP")
 				vRPclient.playAnim(source, true, {{"pickup_object", "pickup_low", 1}}, false)
-				SendWebhookMessage(webhooklinkdrop,  "```" ..user_id.." Pegou- Item:" ..item.. " Qnt:"..amount.. "```")
+				--SendWebhookMessage(webhooklinkdrop,  "```" ..user_id.." Pegou- Item:" ..item.. " Qnt:"..amount.. "```")
+				SendWebhookMessage(webhooklinkdrop, 'user_id ' ..user_id.. ', Pegou Item:' ..item.. ' Qnt:'..amount.. ' nas cordenadas: '..coords.x..', '..coords.y..', '..coords.z)
 			else
 				TriggerClientEvent('Notify', source, 'negado', "Inventário cheio")
 			end

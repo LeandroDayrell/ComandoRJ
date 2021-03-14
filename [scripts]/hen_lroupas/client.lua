@@ -15,7 +15,7 @@ local lojaderoupa = {
     { name = "Loja de Roupas", id = 73, color = 13, x = -1450.320, y = -237.514, z = 49.810, provador = {x = -1450.320, y = -237.514, z = 49.810, heading = 0.0}},
     { name = "Loja de Roupas", id = 73, color = 13, x = 12.138, y = 6514.402, z = 31.877, provador = {x = 12.138, y = 6514.402, z = 31.877, heading = 0.0}},
     { name = "Loja de Roupas", id = 73, color = 13, x = 125.112, y = -223.696, z = 54.557, provador = {x = 125.112, y = -223.696, z = 54.557, heading = 0.0}},
-    { name = "Loja de Roupas", id = 73, color = 13, x = 451.90, y = -991.48, z = 30.68, provador = {x = 451.90, y = -991.48, z = 30.68, heading = 0.0}},
+    --{ name = "Loja de Roupas", id = 73, color = 13, x = 451.90, y = -991.48, z = 30.68, provador = {x = 451.90, y = -991.48, z = 30.68, heading = 0.0}},
     --{ name = "Loja de Roupas", id = 73, color = 13, x = 337.21, y = -579.29, z = 43.31, provador = {x = 337.21, y = -579.29, z = 43.31, heading = 154.50}},
 }
 

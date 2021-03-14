@@ -1761,6 +1761,7 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check",
 	"pccfarm.permissao",
 	"bau.pcc",
@@ -1785,6 +1786,7 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check",
 	"pccfarm.permissao",
 	"bau.pcc",
@@ -1810,6 +1812,7 @@ cfg.groups = {
     "police.putinveh",
     "police.getoutveh",
     "police.check",
+	"ilegal.permissao",
 	"pccfarm.permissao",
   },
   ["[VERMELHO] - Lider"] = {
@@ -1833,6 +1836,7 @@ cfg.groups = {
 	"police.menu",
 	"police.bmcuff",
     "police.drag",
+	"ilegal.permissao",
     "police.putinveh",
     "police.getoutveh",
     "police.check",
@@ -1859,6 +1863,7 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check",
 	"cvfarm.permissao",
   },  
@@ -1881,6 +1886,7 @@ cfg.groups = {
 	"police.bmcuff",
     "police.drag",
     "police.putinveh",
+	"ilegal.permissao",
     "police.getoutveh",
     "police.check",
 	"cvfarm.permissao",
@@ -1906,6 +1912,7 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check",
 	"build.gun.cv",
 	"tcpfarm.permissao",
@@ -1933,6 +1940,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
 	"tcpfarm.permissao",
+	"ilegal.permissao",
 	"bau.tcp",
   },  
   ["[VERDE] - Membro"] = {
@@ -1956,6 +1964,7 @@ cfg.groups = {
     "police.putinveh",
     "police.getoutveh",
     "police.check",
+	"ilegal.permissao",
 	"tcpfarm.permissao",
   },  
   ["[LARANJA] - Lider"] = {
@@ -1981,6 +1990,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
 	"adafarm.permissao",
+	"ilegal.permissao",
 	"adaarma.permissao",
 	"bau.ada",
   },  
@@ -2006,6 +2016,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
 	"adafarm.permissao",
+	"ilegal.permissao",
 	"adaarma.permissao",
 	"bau.ada",
   },  
@@ -2030,6 +2041,7 @@ cfg.groups = {
     "police.putinveh",
 	"adaarma.permissao",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check",
 	"adafarm.permissao",
   },
@@ -2064,6 +2076,7 @@ cfg.groups = {
     "police.check",
 	"miliciarmas.permissao",
 	"miliciaentrada.permissao",
+	"ilegal.permissao",
 	"miliciafarm.permissao",
 	"bau.milicia",
 	"milicia.permissao",
@@ -2097,6 +2110,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
 	"miliciarmas.permissao",
+	"ilegal.permissao",
 	"miliciaentrada.permissao",
 	"miliciafarm.permissao",
 	"bau.milicia",
@@ -2126,6 +2140,7 @@ cfg.groups = {
 	-----------------
 	"police.menu",
 	"police.bmcuff",
+	"ilegal.permissao",
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
@@ -2154,12 +2169,14 @@ cfg.groups = {
 	"metanfetamina.service",
 	"cocaina.service",
 	"maconha.service",
+	"auzi.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
 	"police.bmcuff",
     "police.drag",
 	"bordel.permissao",
+	"ilegal.permissao",
     "police.putinveh",
     "police.getoutveh",
     "police.check",
@@ -2180,6 +2197,7 @@ cfg.groups = {
 	"cocaina.service",
 	"maconha.service",
 	"bordel.permissao",
+	"auzi.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2190,6 +2208,7 @@ cfg.groups = {
     "police.putinveh",
     "police.getoutveh",
     "police.check",
+	"ilegal.permissao",
   },
   ["[UNKTEC] - Membro"] = {
     _config = { 
@@ -2205,6 +2224,7 @@ cfg.groups = {
 	"metanfetamina.service",
 	"cocaina.service",
 	"maconha.service",
+	"auzi.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2212,6 +2232,7 @@ cfg.groups = {
 	"police.bmcuff",
     "police.drag",
     "police.putinveh",
+	"ilegal.permissao",
     "police.getoutveh",
     "police.check",
   },
@@ -2247,6 +2268,7 @@ cfg.groups = {
     "police.check",
 	"mafiafarm.permissao",
 	"mafiaarmas.permissao",
+	"ilegal.permissao",
 	"bau.cosanostra",
 	"mafia.permissao",
   },
@@ -2278,6 +2300,7 @@ cfg.groups = {
     "police.putinveh",
     "police.getoutveh",
     "police.check",
+	"ilegal.permissao",
 	"mafiafarm.permissao",
 	"mafiaarmas.permissao",
 	"bau.cosanostra",
@@ -2312,6 +2335,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.check",
 	"mafiafarm.permissao",
+	"ilegal.permissao",
 	"mafiaarmas.permissao",
 	"mafia.permissao",
   },
@@ -2334,8 +2358,7 @@ cfg.groups = {
 	"ak.permissao",
 	"fiveseven.permissao",
 	"2colete.permissao",
-	"apump.permissao",
-	"auzi.permissao",
+	"amtar.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2348,6 +2371,7 @@ cfg.groups = {
 	"yakuzaentrada.permissao",
 	"yakuzaarmas.permissao",
 	"yakuzaliderentrada.permissao",
+	"ilegal.permissao",
 	"bau.yakuza",
 	"yakuza.permissao",
   },  
@@ -2370,8 +2394,7 @@ cfg.groups = {
 	"ak.permissao",
 	"fiveseven.permissao",
 	"2colete.permissao",
-	"apump.permissao",
-	"auzi.permissao",
+	"amtar.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2384,6 +2407,7 @@ cfg.groups = {
 	"yakuzaentrada.permissao",
 	"bau.yakuza",
 	"yakuzaarmas.permissao",
+	"ilegal.permissao",
 	"yakuza.permissao",
   },  
   ["[YAKUZA] - Membro"] = {
@@ -2404,8 +2428,7 @@ cfg.groups = {
 	"ak.permissao",
 	"fiveseven.permissao",
 	"2colete.permissao",
-	"apump.permissao",
-	"auzi.permissao",
+	"amtar.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2417,6 +2440,7 @@ cfg.groups = {
 	"yakuzafarm.permissao",
 	"yakuzaentrada.permissao",
 	"yakuzaarmas.permissao",
+	"ilegal.permissao",
 	"yakuza.permissao",
   },  
   
@@ -2447,6 +2471,7 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check"
   },  
   ["[LR] - Gerente"] = {
@@ -2474,6 +2499,7 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
+	"ilegal.permissao",
     "police.check"
   },
   ["[LR] - Membro"] = {
@@ -2500,7 +2526,8 @@ cfg.groups = {
     "police.drag",
     "police.putinveh",
     "police.getoutveh",
-    "police.check"
+    "police.check",
+	"ilegal.permissao",
   },
   
   ["[MOTOCLUBE] - Lider"] = {
@@ -2537,6 +2564,7 @@ cfg.groups = {
 	"entrada.permissao",
 	"motoclub.permissao",
 	"motoclubliderentrada.permissao",
+	"ilegal.permissao",
 	"bau.mc",
 	"mcfarm.permissao",
   },  
@@ -2572,6 +2600,7 @@ cfg.groups = {
 	"motoclubliderentrada.permissao",
 	"bau.mc",
 	"mcfarm.permissao",
+	"ilegal.permissao",
   },  
   ["[MOTOCLUBE] - Membro"] = {
     _config = { 
@@ -2603,6 +2632,7 @@ cfg.groups = {
 	"motoclub.permissao",
 	"entrada.permissao",
 	"motoclub.permissao",
+	"ilegal.permissao",
   },  
 
 ----------------------------------------- EMPREGOS LEGAIS --------------------------------------------- 
