@@ -198,7 +198,7 @@ vAZ.VisitHomeTask = function(id, info)
                                 TriggerEvent('az-homes:purchase', user_id, info.name)
                                 vAZclient.RemoveHomes(source_sales, info.name)
                                 if source_sales then
-                                    local commission = parseFloat(home[1].price*(20/100))
+                                    local commission = parseFloat(home[1].price*(5/100))
                                     vRP.giveMoney(user_sales, parseInt(commission))
                                     TriggerClientEvent('Notify', source_sales, 'sucesso', 'Venda efetuada, Comissão de venda: R$'..format(parseInt(commission))..'!')
                                 end
