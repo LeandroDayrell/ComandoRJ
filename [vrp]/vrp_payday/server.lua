@@ -38,6 +38,13 @@ salarii = {
   {"PromotorDaJustica.permissao", 2500},
   {"PresidenteDaOAB.permissao", 2000},
   {"desempregado.permissao", 250},
+  -- VIP
+  {"bronze.permissao", 650},
+  {"prata.permissao", 1000},
+  {"ouro.permissao", 1500},
+  {"mafioso.permissao", 2000},
+  {"magnata.permissao", 2500},
+  
   -- MECANICO
   {"srdono.permissao", 700},
   {"srgerente.permissao", 700},

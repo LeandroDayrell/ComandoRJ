@@ -12,7 +12,7 @@ local toggle_rappel = 154 -- control id to rappel out of the heli. Default: INPU
 local toggle_spotlight = 183 -- control id to toggle the front spotlight Default: INPUT_PhoneCameraGrid (G)
 local toggle_lock_on = 22 -- control id to lock onto a vehicle with the camera. Default is INPUT_SPRINT (spacebar)
 local minHeightAboveGround = 1.5 -- default: 1.5. Minimum height above ground to activate Heli Cam (in metres). Should be between 1 and 20.
-local useMilesPerHour = 0 -- 0 is kmh; 1 is mph
+local useMilesPerHour = 1 -- 0 is kmh; 1 is mph
 
 -- Script starts here
 local helicam = false -- is in helicam
@@ -215,8 +215,8 @@ Citizen.CreateThread(function()
                     if useMilesPerHour then
                         vehspd = string.format(
                                      "%." .. (numDecimalPlaces or 0) .. "f",
-                                     GetEntitySpeed(vehicle) * 2.236936) ..
-                                     " mph"
+                                     GetEntitySpeed(vehicle) * 3.6) ..
+                                     " kmh"
                     else
                         vehspd = string.format(
                                      "%." .. (numDecimalPlaces or 0) .. "f",

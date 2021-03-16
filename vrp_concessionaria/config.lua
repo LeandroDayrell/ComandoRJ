@@ -24,6 +24,7 @@ Config.Veiculos = {
 			{title = "Imorgon", model="imorgon", mala=10, preco =  900000, estoque = 15},
 			{title = "Furia", model="furia", mala=10, preco =  1500000, estoque = 15},
 			{title = "Sultan2", model="sultan2", mala=10, preco =  600000, estoque = 15},
+			{title = "Mule", model="mule", mala=150, preco=1000000, estoque = 15}, 
 			{title = "Everon", model="everon", mala=10, preco =  750000, estoque = 15},
         }
     },
@@ -79,18 +80,13 @@ Config.Veiculos = {
             {title = "Raptor", model="raptor", mala=10, preco =  200000, estoque = 15},           
         }
     },
-    --[[{
+    {
         categoria = {title="Serviço", id="caminhao"},
         veiculos = {
-            {title = "Benson", model="benson", mala=500, preco=500000, estoque = 3},            
-            {title = "burrito", model="burrito", mala=100, preco=200000, estoque = 3},            
-            {title = "gburrito", model="gburrito", mala=100, preco=100000, estoque = 2},            
-            {title = "burrito 2", model="burrito2", mala=100, preco=150000, estoque = 3},            
-            {title = "rumpo", model="rumpo", mala=100, preco=100000, estoque = 3},            
-            {title = "stretch", model="stretch", mala=60, preco=1500000, estoque = 5},            
+            {title = "Mule", model="mule", mala=150, preco=1000000, estoque = 15},         
         }
     },
-    {
+    --[[{
         categoria = {title="Importados", id="importados"},
         veiculos = {
             {title = "bmx", model="bmx", mala=15, preco=1, estoque = 5},        

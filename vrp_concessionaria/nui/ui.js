@@ -56,7 +56,7 @@ function criarCatalogo(veiculos, totalTipo, aberto, isVendedor) {
                 if (aberto || isVendedor) {
                     preco = "R$ " + addCommas(parseInt(dataV.preco))
                     if (isVendedor) {
-                        preco = "R$ " + addCommas(parseInt(dataV.preco * 0.7))
+                        preco = "R$ " + addCommas(parseInt(dataV.preco * 1))
                     }
                 }
 

@@ -2972,6 +2972,7 @@ cfg.groups = {
     },
 	"ouro.permissao",
 	"mochila.permissao",
+	"concessionariavip.permissao",
 	"color.weapon",
   }, 
   ["VIP Mafioso"] = {
