@@ -232,7 +232,7 @@ vAZ.handlers = {
         cb(false)
     end,
     ['lockpick'] = function(source, user_id, item, amount, cb)
-        if #vRP.getUsersByPermission("policia.permissao") < 3 then
+        if #vRP.getUsersByPermission("policia.permissao") < 0 then
             TriggerClientEvent("Notify", source, "aviso", "Número insuficiente de policiais no momento para iniciar o roubo.")
             return true
         end
@@ -248,11 +248,14 @@ vAZ.handlers = {
                     SetTimeout(30000, function()
                         TriggerClientEvent('cancelando', source, false)
                         vRPclient._stopAnim(source, false)
+                        local x,y,z = vRPclient.getPosition(source)
                         if math.random(100) >= 50 then
                             vAZgarage.ToggleLock(vehicle.net)
                             TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
+                            SendWebhookMessage(webhooklinklockpick,  "``` LockPick [" ..user_id.."]  Placa; " ..plate.. " local "..x..","..y..","..z..  "```")
                             if math.random(100) >= 70 then
                                 vRP.tryGetInventoryItem(user_id, item, 1)
+                                SendWebhookMessage(webhooklinklockpick,  "``` 2 LockPick [" ..user_id.."]  Placa; " ..plate.. " local "..x..","..y..","..z..  "```")
                             end
                             cb(true)
                         else

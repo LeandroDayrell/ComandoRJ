@@ -45,8 +45,8 @@ local paylist = {
 		[5] = { pay = math.random(602,622) }
 	},
 	["madeira"] = {
-		[1] = { pay = math.random(1083,1103) },
-		[2] = { pay = math.random(840,86) },
+		[1] = { pay = math.random(1083,1103)},
+		[2] = { pay = math.random(840,860) },
 		[3] = { pay = math.random(221,241) },
 		[4] = { pay = math.random(521,541) }
 	},

