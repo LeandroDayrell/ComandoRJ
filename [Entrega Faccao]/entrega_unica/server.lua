@@ -289,7 +289,7 @@ RegisterServerEvent('entrega_pendrive:itensReceber')
 AddEventHandler('entrega_pendrive:itensReceber', function(quantidade)
 	local src = source
 	local user_id = vRP.getUserId(src)
-    local pagamento = math.random(105,115)
+    local pagamento = math.random(100,110)
     if user_id then
         local new_weight = vRP.getInventoryWeight(user_id)+vRP.getItemWeight("dinheirosujo")*pagamento*quantidade
         if new_weight <= vRP.getInventoryMaxWeight(user_id) then

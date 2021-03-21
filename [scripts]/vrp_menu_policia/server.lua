@@ -24,8 +24,47 @@ vRP._prepare("vRP/vrp_menu_policia_mandato", "UPDATE vrp_menu_policia SET mandat
 vRP._prepare("vRP/vrp_menu_policia_imagem", "UPDATE vrp_menu_policia SET image = @image WHERE user_id = @user_id")
 vRP._prepare("vRP/vrp_menu_policia_adicionarprocurado", "UPDATE vrp_menu_policia SET matriculawanted = true WHERE user_id = @user_id")
 
+-- PORTE DE ARMA
+vRP.prepare("vRP/vrp_menu_policia_porte","UPDATE vrp_users SET porte = @porte WHERE id = @user_id")
 
-RegisterServerEvent('vrp_menu_policia:open_s')
+
+
+local webhooklinkportedearma = "https://discord.com/api/webhooks/822657169555324979/bXN0S5cZKdrG3LB5pKmb3W3XQj9f2wswjXdm9vq5Si1AGcgvoxpSlEe0841eMTkapB3z"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
+RegisterCommand('addporte',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
+		if args[1] then
+			vRP.setPortedearma(parseInt(args[1]),true)
+            SendWebhookMessage(webhooklinkportedearma,  "```" ..user_id.." deu porte para "..id.. "```")
+		end
+	end
+end)
+
+RegisterCommand('removeporte',function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if vRP.hasPermission(user_id,"pmerj.permissao") then
+		if args[1] then
+			vRP.setPortedearma(parseInt(args[1]),false)
+            SendWebhookMessage(webhooklinkportedearma,  "```" ..user_id.." removeu porte de "..id.. "```")
+		end
+	end
+end)
+
+function vRP.setPortedearma(user_id,porte)
+	vRP.execute("vRP/vrp_menu_policia_porte",{ user_id = user_id, porte = porte })
+end
+
+
+
+
+RegisterServerEvent('vrp_menu_policia:open_s')--
 AddEventHandler('vrp_menu_policia:open_s', function()
 	local user_id = vRP.getUserId(source)
 	local player = vRP.getUserSource(user_id)

@@ -8,6 +8,14 @@ async(function()
     end
 end)
 
+local webhooklinklockpick = "https://discord.com/api/webhooks/821421203180093490/LaoVZqJ2TxSGIPPXWh4YacSO0C0Xj2Gwhuze1MAHgSxlMyUV-m42evSKhpc3QAPIZbfL"
+
+function SendWebhookMessage(webhook,message)
+	if webhook ~= nil and webhook ~= "" then
+		PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
+	end
+end
+
 vAZ.handlers = {
     ['tabletd'] = function(source, user_id, item, amount, cb)
         if vAZ.cooldown.get(user_id, item) <= 0 then
@@ -237,6 +245,7 @@ vAZ.handlers = {
             return true
         end
         local vehicle = vRPclient.getNearestVehicle(source, 5)
+        local x,y,z = vRPclient.getPosition(source)
 		if vehicle then
             local plate = vRPclient.getPlateVehicle(source, vehicle)
             if plate ~= nil then
@@ -248,14 +257,13 @@ vAZ.handlers = {
                     SetTimeout(30000, function()
                         TriggerClientEvent('cancelando', source, false)
                         vRPclient._stopAnim(source, false)
-                        local x,y,z = vRPclient.getPosition(source)
                         if math.random(100) >= 50 then
+                            TriggerClientEvent("Notify", source, "sucesso", "VOCE ROUBOU O VEICULO, AGORA CORRA.")
                             vAZgarage.ToggleLock(vehicle.net)
                             TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1)
                             SendWebhookMessage(webhooklinklockpick,  "``` LockPick [" ..user_id.."]  Placa; " ..plate.. " local "..x..","..y..","..z..  "```")
                             if math.random(100) >= 70 then
                                 vRP.tryGetInventoryItem(user_id, item, 1)
-                                SendWebhookMessage(webhooklinklockpick,  "``` 2 LockPick [" ..user_id.."]  Placa; " ..plate.. " local "..x..","..y..","..z..  "```")
                             end
                             cb(true)
                         else
@@ -283,6 +291,8 @@ vAZ.handlers = {
                         local vnet = vRPclient.getNetVehicle(source, vehicle)
                         vAZgarage.ToggleLock(vnet) 
                         TriggerClientEvent("vrp_sound:source", source, 'lock', 0.1) 
+                        TriggerClientEvent("Notify", source, "sucesso", "Voce destrancou o veiculo do cidadao.")
+                        SendWebhookMessage(webhooklinklockpick,  "``` [POLICIA] LockPick [" ..user_id.."]  Placa; " ..plate.. " local "..x..","..y..","..z..  "```")
                         cb(true)
                     end
                 end
@@ -290,6 +300,7 @@ vAZ.handlers = {
         end
         cb(false)
     end,
+    --[[
     ['masterpick'] = function(source, user_id, item, amount, cb)
         if #vRP.getUsersByPermission("policia.permissao") < 4 then
             TriggerClientEvent("Notify", source, "aviso", "Número insuficiente de policiais no momento para iniciar o roubo.")
@@ -342,7 +353,7 @@ vAZ.handlers = {
             end
         end
         cb(false)
-    end,
+    end,]]
     ['repairkit'] = function(source, user_id, item, amount, cb)
         if not vRPclient.isInVehicle(source) then
             local vehicle = vRPclient.getNearestVehicle(source, 7)		

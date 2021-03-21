@@ -2065,7 +2065,6 @@ cfg.groups = {
 	"fiveseven.permissao",
 	"mtar.permissao",
 	"asig.permissao",
-	"auzi.permissao",
 	"aak103.permissao",
 	-----------------
 	"police.menu",
@@ -2100,7 +2099,6 @@ cfg.groups = {
 	"fiveseven.permissao",
 	"mtar.permissao",
 	"asig.permissao",
-	"auzi.permissao",
 	"aak103.permissao",
 	-----------------
 	"police.menu",
@@ -2135,7 +2133,6 @@ cfg.groups = {
 	"fiveseven.permissao",
 	"mtar.permissao",
 	"asig.permissao",
-	"auzi.permissao",
 	"aak103.permissao",
 	-----------------
 	"police.menu",

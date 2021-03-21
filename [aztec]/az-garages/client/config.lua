@@ -253,7 +253,7 @@ vAZ.config.garages.service = {
 			{ ['x'] = 462.22, ['y'] = -605.06, ['z'] = 28.49, ['h'] = 220.0 }
 		}
 	},
-	[21] = {
+	--[[[21] = {
 		name = 'AluguelPrancha',
 		marker = 36,
 		blip = {color = 4, scale = 0.4, type = 357},
@@ -263,7 +263,7 @@ vAZ.config.garages.service = {
 		spaces = {
 			{ ['x'] = -1609.9, ['y'] = -1161.08, ['z'] = 0.89, ['h'] = 75.0 }
 		}
-	},
+	},]]--
 	[22] = {
 		name = 'Submarino',
 		marker = 36,

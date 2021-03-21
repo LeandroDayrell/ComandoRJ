@@ -3615,3 +3615,13 @@ end)
 
 
 --- ARRUMAR PNEU
+
+RegisterCommand("fps",function(source,args)
+    if args[1] == "on" then
+        SetTimecycleModifier("cinema")
+        TriggerEvent("Notify","sucesso","Sucesso","Boost de fps ligado!")
+    elseif args[1] == "off" then
+        SetTimecycleModifier("default")
+        TriggerEvent("Notify","sucesso","Sucesso","Boost de fps desligado!")
+    end
+end)

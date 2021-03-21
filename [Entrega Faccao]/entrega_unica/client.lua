@@ -168,7 +168,7 @@ AddEventHandler('entrega_pendrive:permissao',function()
 	if not entregapendrive then
 		entregapendrive = true
 		destino = math.random(1,38)
-		quantidade = math.random(5,6)
+		quantidade = math.random(4,5)
 		CriandoBlip9(entregas,destino)
 	end
 end)
