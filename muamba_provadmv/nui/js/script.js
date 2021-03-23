@@ -66,7 +66,7 @@ function inicioProva(){
         $('#iniciando').html(`
             TESTE CNH<BR>PRIMEIRA HABILITAÇÃO <br> <br>
             <img src="bg/logo.png"/> <br>
-            STAY CITY <br><br><br>
+            ComandoRJ<br><br><br>
 
 
             <button id="bIniciar">INICIAR TESTE</button>

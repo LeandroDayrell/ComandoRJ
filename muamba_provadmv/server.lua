@@ -27,8 +27,8 @@ function mB.pagamentoProva()
     local source = source 
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.tryPayment(user_id,5000) then
-            TriggerClientEvent('Notify',source,"sucesso","Você pagou R$5.000 para realizar o teste teórico de habilitação.")
+        if vRP.tryPayment(user_id,500) then
+            TriggerClientEvent('Notify',source,"sucesso","Você pagou R$500 para realizar o teste teórico de habilitação.")
             return true
         else
             TriggerClientEvent('Notify',source,"negado","Você não tem dinheiro em sua carteira!")

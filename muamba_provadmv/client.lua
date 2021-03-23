@@ -109,7 +109,7 @@ Citizen.CreateThread(function()
 			idle = 5
 			DrawMarker(3,216.16,-1399.8,30.59-0.6,0,0,0,0.0,0,0,0.3,0.3,0.3,5, 161, 242,100,0,0,0,1)
 			if distance <= 1.1 then
-				drawTxt("PROVA ~b~TEÓRICA~w~ PARA RETIRAR SUA CNH. ~g~[R$5.000]~w~",4,0.5,0.87,0.50,255,255,255,180)
+				drawTxt("PROVA ~b~TEÓRICA~w~ PARA RETIRAR SUA CNH. ~g~[R$500]~w~",4,0.5,0.87,0.50,255,255,255,180)
 				if IsControlJustPressed(0,38) and mB.pagamentoProva() then
 					vRP._CarregarObjeto("amb@medic@standing@timeofdeath@base","base","prop_notepad_01",15,60309)
 					ToggleActionMenu()
