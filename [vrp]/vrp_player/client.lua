@@ -1286,3 +1286,31 @@ RegisterCommand("fps",function(source,args)
         TriggerEvent("Notify","sucesso","Sucesso","Boost de fps desligado!")
     end
 end)
+
+
+-------- TESTE DE SCRIP
+
+-- ATIRAR DE DENTRO DO CARRO, FAZ COM QUE A MIRA FICA MEXENDO
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+		local ped = PlayerPedId()
+	   local shot = IsPedShooting(ped)
+		if shot == 1 and IsPedInAnyVehicle(ped) then
+			ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.06) -- só alterar o valor --
+		end
+	end
+end)
+
+-- DESABILITAR CAPACETE NA MOTO
+
+Citizen.CreateThread( function()
+    while true do
+        Citizen.Wait(5)  
+        local veh = GetVehiclePedIsUsing(PlayerPedId())
+        if veh ~= 0 then 
+            SetPedConfigFlag(PlayerPedId(),35,false) 
+        end
+    end
+end)

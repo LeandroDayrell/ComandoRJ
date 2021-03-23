@@ -7,10 +7,11 @@ Tunnel.bindInterface("nav_driftking",emP)
 -- ARRAY
 -----------------------------------------------------------------------------------------------------------------------------------------
 local valores = {
-	{ item = "lockpick", quantidade = 1, compra = 2000, venda = 200 },
+	{ item = "lockpick", quantidade = 1, compra = 1000, venda = 200 },
 	{ item = "bombaadesiva", quantidade = 1, compra = 15000, venda = 7500 },
+	{ item = "c4", quantidade = 1, compra = 250, venda = 100 },
 	{ item = "masterpick", quantidade = 1, compra = 50000, venda = 25000 },
-	{ item = "placa", quantidade = 1, compra = 1000, venda = 100 },
+	{ item = "placa", quantidade = 1, compra = 750, venda = 100 },
 	{ item = "kitcostura", quantidade = 1, compra = 8000},
 }
 -----------------------------------------------------------------------------------------------------------------------------------------

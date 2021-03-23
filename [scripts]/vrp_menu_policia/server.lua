@@ -25,7 +25,7 @@ vRP._prepare("vRP/vrp_menu_policia_imagem", "UPDATE vrp_menu_policia SET image =
 vRP._prepare("vRP/vrp_menu_policia_adicionarprocurado", "UPDATE vrp_menu_policia SET matriculawanted = true WHERE user_id = @user_id")
 
 -- PORTE DE ARMA
-vRP.prepare("vRP/vrp_menu_policia_porte","UPDATE vrp_users SET porte = @porte WHERE id = @user_id")
+vRP.prepare("vRP/vrp_menu_policia_porte","UPDATE vrp_menu_policia SET porte = @porte WHERE user_id = @user_id")
 
 
 
@@ -40,9 +40,9 @@ end
 RegisterCommand('addporte',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"pmerj.permissao") then
+		SendWebhookMessage(webhooklinkportedearma,  "```" ..user_id.." deu porte para "..parseInt(args[1]).. "```")
 		if args[1] then
 			vRP.setPortedearma(parseInt(args[1]),true)
-            SendWebhookMessage(webhooklinkportedearma,  "```" ..user_id.." deu porte para "..id.. "```")
 		end
 	end
 end)
@@ -50,9 +50,9 @@ end)
 RegisterCommand('removeporte',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if vRP.hasPermission(user_id,"pmerj.permissao") then
+		SendWebhookMessage(webhooklinkportedearma,  "```" ..user_id.." removeu porte de "..parseInt(args[1]).. "```")
 		if args[1] then
 			vRP.setPortedearma(parseInt(args[1]),false)
-            SendWebhookMessage(webhooklinkportedearma,  "```" ..user_id.." removeu porte de "..id.. "```")
 		end
 	end
 end)

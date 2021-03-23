@@ -27,6 +27,7 @@ files {
 	'nui/images/ak103pack.png',
 	'nui/images/algemas.png',
 	'nui/images/bombaadesiva.png',
+	'nui/images/c4.png',
 	'nui/images/capuz.png',
 	'nui/images/coletepack.png',
 	'nui/images/fivesevenpack.png',

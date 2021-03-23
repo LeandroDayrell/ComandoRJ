@@ -545,6 +545,28 @@ local animacoes = {
     { nome = "louco" , dict = "anim@mp_player_intincaryou_locobodhi@ds@" , anim = "idle_a" , andar = true , loop = true },
     { nome = "xiu" , dict = "anim@mp_player_intincarshushbodhi@ds@" , anim = "idle_a_fp" , andar = true , loop = true },
     { nome = "cruzar" , dict = "amb@world_human_cop_idles@female@idle_b" , anim = "idle_e" , andar = true , loop = true },
+	{ nome = "twerk" , dict = "switch@trevor@mocks_lapdance" , anim = "001443_01_trvs_28_idle_stripper" , andar = true, loop = true, extra = function() 
+        local ped = GetPlayerPed()
+        if IsPedArmed(ped, 7) then
+            SetCurrentPedWeapon(ped, 0xA2719263, true)
+        end
+
+        RequestAnimDict("switch@trevor@mocks_lapdance")
+        while not HasAnimDictLoaded("switch@trevor@mocks_lapdance") and
+            not handCuffed do Citizen.Wait(0) end
+
+        if IsEntityPlayingAnim(ped, "switch@trevor@mocks_lapdance",
+                               "001443_01_trvs_28_idle_stripper", 3) then
+            ClearPedSecondaryTask(ped)
+        else
+            local animLength = GetAnimDuration("switch@trevor@mocks_lapdance",
+                                               "001443_01_trvs_28_idle_stripper")
+            TaskPlayAnim(PlayerPedId(), 'switch@trevor@mocks_lapdance',
+                         '001443_01_trvs_28_idle_stripper', 1.0, 4.0,
+                         animLength, 1, 0, 0, 0, 0)
+        end
+    end },
+
 	{ nome = "binoculos" , dict = "amb@world_human_binoculars@male@enter" , anim = "enter" , prop = "prop_binoc_01" , flag = 50 , hand = 28422 , extra = function()
 		binoculos = true
 	end },

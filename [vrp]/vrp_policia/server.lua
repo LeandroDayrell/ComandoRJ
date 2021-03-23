@@ -1097,6 +1097,7 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 -- DISPAROS
 --------------------------------------------------------------------------------------------------------------------------------------------------
+--[[
 RegisterServerEvent('atirando')
 AddEventHandler('atirando',function(x,y,z)
 	local user_id = vRP.getUserId(source)
@@ -1111,6 +1112,25 @@ AddEventHandler('atirando',function(x,y,z)
 			end
 		end
 	end
+end) ]]
+
+RegisterServerEvent('atirando')
+AddEventHandler('atirando',function(x,y,z)
+    local user_id = vRP.getUserId(source)
+    if user_id then
+        if vRP.hasPermission(user_id,"policia.permissao") then
+            return
+        end
+        local policia = vRP.getUsersByPermission("policia.permissao")
+        for l,w in pairs(policia) do
+            local player = vRP.getUserSource(w)
+            if player then
+                async(function()
+                    TriggerClientEvent("NotifyPush",player,{ code = 10, title = "Ocorrência em andamento", x = x, y = y, z = z, badge = "Disparos de arma de fogo" })
+                end)
+            end
+        end
+    end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ANUNCIO
@@ -1187,4 +1207,32 @@ AddEventHandler("diminuirpenacrj",function()
 	else
 		TriggerClientEvent("Notify",source,"importante","Atingiu o limite da redução de pena, não precisa mais trabalhar.")
 	end
+end)
+
+
+local permissao = ""
+RegisterCommand("recrutar", function(source, args, rawCommand)
+    local user_id = vRP.getUserId(source)
+    local nplayer = vRP.getUserSource(parseInt(args[1]))
+    local nuser_id = vRP.getUserId(nplayer)
+    local nome_contratado = vRP.getUserIdentity(nplayer)
+    local nome_chefe = vRP.getUserIdentity(user_id)
+    if nuser_id and user_id ~= nuser_id then
+        if vRP.hasPermission(user_id,"pmerj.permissaoCoronel") then
+            permissao = "[PMRJ] - Recruta"
+        end
+        if permissao ~= "" then
+            if vRP.request(nplayer,"Tem a certeza que deseja ser contratado por: " ..nome_chefe.name.." "..nome_chefe.firstname.."",15) then
+                vRP.addUserGroup(parseInt(args[1]),permissao)
+                TriggerClientEvent("Notify",source,"aviso","Voce contratou com sucesso:"..nome_contratado.name.." "..nome_contratado.firstname.."")
+                TriggerClientEvent("Notify",nplayer,"aviso","Voce foi contratado por:"..nome_chefe.name.." "..nome_chefe.firstname.."")
+            else    
+                TriggerClientEvent("Notify", source,"aviso","solicitação recusada." )
+            end
+        else
+            TriggerClientEvent("Notify",source,"aviso","Voce não tem permissao." )
+        end
+    else
+        TriggerClientEvent("Notify",source,"aviso","Passaporte não encontrado ou Invalido" ) 
+    end    
 end)

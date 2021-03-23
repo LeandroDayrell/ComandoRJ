@@ -20,6 +20,8 @@ end
 RegisterNUICallback("ButtonClick",function(data,cb)
 	if data == "utilidades-comprar-algemas" then
 		TriggerServerEvent("contrabandista-comprar","algemas")
+	elseif data == "utilidades-comprar-c4" then
+		TriggerServerEvent("contrabandista-comprar","c4")
 	elseif data == "utilidades-comprar-capuz" then
 		TriggerServerEvent("contrabandista-comprar","capuz")
 	elseif data == "utilidades-comprar-lockpick" then

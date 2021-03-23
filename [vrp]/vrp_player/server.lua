@@ -542,9 +542,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand('chapeu',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
-	if vRP.getInventoryItemAmount(user_id,"roupas") >= 1 then
 		TriggerClientEvent('chapeu',source,args[1],args[2])
-	else
 		TriggerClientEvent('chatMessage',source,"ALERTA",{255,70,50},"Você precisa de ^1Roupas ^0para mudar de chapéu.")
 	end
 end)

@@ -2451,6 +2451,7 @@ cfg.groups = {
 	"mercadonegro.permissao",
 	-----------------
 	"contratar.dk",
+	"navdk.permissao",
 	"hacker.service",
 	"contrabandista.service",
 	"tartaruga.service",
@@ -2481,6 +2482,7 @@ cfg.groups = {
 	-----------------
 	"hacker.service",
 	"contrabandista.service",
+	"navdk.permissao",
 	"tartaruga.service",
 	"driftking.permissao",
 	"dkfarm.permissao",

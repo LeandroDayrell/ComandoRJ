@@ -6,6 +6,7 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 local valores = {
 	{ item = "algemas", quantidade = 1, compra = 1300, venda = 500 },
+	{ item = "c4", quantidade = 1, compra = 800, venda = 300 },
 	{ item = "capuz", quantidade = 1, compra = 2600, venda = 500 },
 	{ item = "lockpick", quantidade = 1, compra = 4500, venda = 1000 },
 	{ item = "bombaadesiva", quantidade = 1, compra = 13000, venda = 2000 },
@@ -31,7 +32,7 @@ local valores = {
 	{ item = "fivesevenpack", quantidade = 1, compra = 51975, venda = 10000 },
 	{ item = "coletepack", quantidade = 1, compra = 16200, venda = 10000 },
 	{ item = "snspack", quantidade = 1, compra = 30400, venda = 1000 },
-	{ item = "municaofamaspack", quantidade = 1, compra = 7830, venda = 10000 },
+	{ item = "municaofamaspack", quantidade = 1, compra = 7830, venda = 1000 },
 	{ item = "municaosigpack", quantidade = 1, compra = 9585, venda = 1000 },
 	{ item = "municaopumppack", quantidade = 1, compra = 9585, venda = 1000 },
 	{ item = "municaoakpack", quantidade = 1, compra = 24300, venda = 1000 },

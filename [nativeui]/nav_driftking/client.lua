@@ -31,6 +31,8 @@ RegisterNUICallback("ButtonClick",function(data,cb)
 		TriggerServerEvent("driftking-comprar","capuz")
 	elseif data == "utilidadesdk-comprar-lockpick" then
 		TriggerServerEvent("driftking-comprar","lockpick")
+	elseif data == "utilidadesdk-comprar-c4" then
+		TriggerServerEvent("driftking-comprar","c4")
 	elseif data == "utilidadesdk-comprar-masterpick" then
 		TriggerServerEvent("driftking-comprar","masterpick")
 	elseif data == "utilidades-comprar-pendrive" then
