@@ -12,6 +12,8 @@ vRP._prepare("vRP/upt_home_lock", "UPDATE vrp_user_homes SET locked = @locked WH
 vRP._prepare("vRP/upt_home_wardrobe", "UPDATE vrp_user_homes SET guardaRoupa = @guardaRoupa WHERE home = @home")
 vRP._prepare("vRP/get_home_wardrobe", "SELECT guardaRoupa FROM vrp_user_homes WHERE home = @home")
 vRP._prepare("vRP/upt_user_position", "UPDATE vrp_user_data SET dvalue = JSON_SET(dvalue, CONCAT(\"$.\", \"position\"), JSON_OBJECT('x', @x, 'y', @Y, 'z', @z)) WHERE dkey = 'vRP:datatable' AND user_id = @user_id")
+vRP._prepare("vRP/upt_home_tax", "UPDATE vrp_user_homes SET tax = @tax WHERE user_id = @user_id AND home = @home")
+
 
 local items = module("cfg/items").items
 local casa = module("cfg/homes").casas
@@ -21,6 +23,7 @@ local in_slot   = {}
 vAZ.homes = {}
 vAZ.slots = {}
 vAZ.area = {}
+vAZ.taxDay = 15
 
 -- Initializing
 async(function()
@@ -32,7 +35,8 @@ async(function()
             entry = home.entry,
             exit = home.exit,
             chest = home.bau.localizacao,
-            wardrobe = home.guardaRoupa
+            wardrobe = home.guardaRoupa,
+            price = home.price
         }
         vAZ.area[id] = {}
     end
@@ -41,6 +45,7 @@ async(function()
             vAZ.homes[home.home].name = home.home
             vAZ.homes[home.home].owner = home.user_id
             vAZ.homes[home.home].locked = home.locked
+            vAZ.homes[home.home].tax = home.tax
         end
     end
 end)
@@ -97,10 +102,24 @@ vAZ.RemoveUserAreaSlotByName = function(user_id, name)
 end
 
 -- Home
+vAZ.TaxHome = function(name)
+end
+
 vAZ.EnterHomeSlot = function(name)
     local source = source
     local user_id = vRP.getUserId(source)
     if vAZ.homes[name] and not vAZ.slots[user_id] and not vAZ.homes[name].locked then
+        local timestemp = parseInt(os.time())
+        if timestemp > parseInt(vAZ.homes[name].tax + 24 * 7 * 60 * 60) then
+            TriggerClientEvent("Notify", source, "negado", "O IPTU está atrasado.", 10000)
+            if timestemp > parseInt(vAZ.homes[name].tax + 24 * 8 * 60 * 60) then
+                TriggerClientEvent("Notify", source, "negado", "Dentro de alguns dias você perdera sua residência, regularize agora.", 10000)
+                if timestemp > parseInt(vAZ.homes[name].tax + 24 * 10 * 60 * 60) then
+                    -- remover casa do player e enviar log pro discord
+                end
+            end
+            return false
+        end
         vAZ.slots[user_id] = vAZ.homes[name]
         vRPclient.teleport(source, vAZ.homes[name].exit.x, vAZ.homes[name].exit.y, vAZ.homes[name].exit.z)
         return true
@@ -124,6 +143,17 @@ vAZ.ChangeHomeStatus = function(name, locked)
     local user_id = vRP.getUserId(source)
     if vAZ.homes[name] then
         if vAZ.homes[name].owner == user_id or vAZ.SearchUserPermission(json.decode(vRP.getSData('permission:'..name)) or {}, user_id) then
+            local timestemp = parseInt(os.time())
+            if timestemp > parseInt(vAZ.homes[name].tax + 24 * 7 * 60 * 60) then
+                TriggerClientEvent("Notify", source, "negado", "O IPTU está atrasado.", 10000)
+                if timestemp > parseInt(vAZ.homes[name].tax + 24 * 8 * 60 * 60) then
+                    TriggerClientEvent("Notify", source, "negado", "Dentro de alguns dias você perdera sua residência, regularize agora.", 10000)
+                    if timestemp > parseInt(vAZ.homes[name].tax + 24 * 10 * 60 * 60) then
+                        -- remover casa do player e enviar log pro discord
+                    end
+                end
+                return false
+            end
             if locked == nil then
                 vAZ.homes[name].locked = not vAZ.homes[name].locked
             else
@@ -310,6 +340,9 @@ AddEventHandler('az-homes:purchase', function(user_id, name)
         if vAZ.homes[name] then
             vRP.setUserAddress(user_id, name, 1, true, casa[name].bau.limite)
             vAZ.homes[name].owner = user_id
+            local timestemp = os.time()
+            vAZ.homes[name].tax = timestemp
+            vRP.execute("vRP/upt_home_tax", {user_id = user_id, home = name, tax = timestemp})
             vRPclient._addBlipProperty(source, vAZ.homes[name].entry.x, vAZ.homes[name].entry.y, vAZ.homes[name].entry.z, 40, 3, name, 0.6)
             for id,user in pairs(vAZ.GetUsersAreaSlot(name)) do
                 local target = vRP.getUserSource(user)
@@ -338,12 +371,43 @@ AddEventHandler('az-homes:chest', function(casa)
     end
 end)
 
+--[[
 RegisterCommand("ggc", function(source,args,rawCommand)
     vAZclient.SetHomes(-1, vAZ.homes)
 end)
+]]--
 
-RegisterCommand("ggb", function(source,args,rawCommand)
+RegisterCommand('casas',function(source,args,rawCommand)
+    local source = source
+	local user_id = vRP.getUserId(source)
+    local homes = ""
+    for name,home in pairs(vAZ.homes) do
+        if home.owner == user_id then
+            homes = homes..name..", "
+        end
+    end
+    TriggerClientEvent("Notify", source, "importante", "Residências: "..homes:sub(1, -3))
+end)
+
+RegisterCommand("iptu", function(source,args,rawCommand)
     local source = source
     local user_id = vRP.getUserId(source)
-    TriggerEvent('az-homes:purchase', user_id, 'Casa CRJ nº55')
+    local name = vRP.prompt(source, "Residencia:", "")
+    if name ~= nil and vAZ.homes[name] and vAZ.homes[name].owner == user_id then
+        if parseInt(os.time()) < parseInt(vAZ.homes[name].tax + 24 * 7 * 60 * 60) then
+            TriggerClientEvent("Notify", source, "importante", "IPTU em dia!")
+        else
+            local ok = vRP.request(source, "Deseja pagar o IPTU ? <b>"..parseInt(vAZ.homes[name].price * 0.02).."</b> ?", 30)
+            if ok then
+                if vRP.tryFullPayment(user_id, parseInt(vAZ.homes[name].price * 0.02)) then
+                    local timestemp = parseInt(os.time())
+                    vAZ.homes[name].tax = timestemp
+                    vRP.execute("vRP/upt_home_tax", {user_id = user_id, home = name, tax = timestemp})
+                    TriggerClientEvent("Notify", source, "sucesso", "O IPTU foi pago.", 10000)
+                else
+                    TriggerClientEvent("Notify", source, "negado", "Você não tem dinheiro.", 10000)
+                end
+            end
+        end
+    end
 end)

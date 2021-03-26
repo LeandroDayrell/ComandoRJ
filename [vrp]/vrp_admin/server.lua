@@ -3,6 +3,9 @@ local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 
+vRP._prepare('vAZ/SetPlayerStateVehicle', 'UPDATE vrp_user_vehicles SET state = @state WHERE user_id = @user_id AND model = @model')
+
+vAZgarage = Proxy.getInterface('az-garages')
 
 function vRP.logInfoToFile(file,info)
   file = io.open(file, "a")
@@ -11,9 +14,6 @@ function vRP.logInfoToFile(file,info)
   end
   file:close()
 end
-
-
-
 	
 local webhooklinkchat = "https://discordapp.com/api/webhooks/718956300964200478/AqO_hpEwFTrc1d3Kt6pHBNqWsIDWAzRiIExvxAwub53S-GwoDbDBQ0K9-IM_oj_ZGcPu"
 local webhooklinkadm = "https://discordapp.com/api/webhooks/722647370520854608/-WUXCvL1kKQct-5Z2N_S4XIE-AF0_LwYUacjz5d4swH-x8Z8KHapEftSwXXtgV5-k44x"
@@ -206,12 +206,7 @@ RegisterCommand('dv',function(source,args,rawCommand)
     if vRP.hasPermission(user_id,"admin.permissao") then --vRP.hasPermission(user_id,"mecanico.permissao") or vRP.hasPermission(user_id,"diretor.permissao") or vRP.hasPermission(user_id,"playerzin.permissao") then
         local vehicle = vRPclient.getNearestVehicle(source,7)
 		if vehicle then
-			local plate = vRPclient.getPlateVehicle(source, vehicle) 
-			if plate ~= nil then
-				TriggerEvent('az-inventory:deleteTempTrunk', plate)
-			end
-			TriggerEvent('az-garages:deleteVehicle',source,vehicle)
-			TriggerClientEvent('deletarveiculo',source,vehicle)
+			vAZgarage.forceDespawnUserVehicle(source, vRPclient.getNetVehicle(source, vehicle))
 			SendWebhookMessage(webhooklinkchat,  "```" ..user_id.." Usou o comando " ..rawCommand.. "```")
         end
     end

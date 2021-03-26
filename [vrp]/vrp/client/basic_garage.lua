@@ -46,8 +46,10 @@ function tvRP.getPlateVehicle(vehicle, radius)
 end
 
 function tvRP.getNetVehicle(vehicle, radius)
-	if radius == nil then radius = 2 end
-	if vehicle == nil then vehicle = tvRP.getNearestVehicle(radius) end
+	if vehicle == nil then
+		vehicle = tvRP.getNearestVehicle(radius)
+		if radius == nil then radius = 2 end
+	end
 	return VehToNet(vehicle)
 end
   

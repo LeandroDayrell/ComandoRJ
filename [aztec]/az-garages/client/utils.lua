@@ -48,6 +48,50 @@ vAZ.getSpaceNoVehicle = function(spaces)
 	return 0
 end
 
+vAZ.getSpawnLocation = function()
+	local plyPed = vAZ.player.ped()
+	local plyCoords = GetEntityCoords(plyPed)
+	for type,garages in pairs(vAZ.config.garages) do
+		for id,garage in pairs(garages) do
+			for key,value in pairs(garage.point) do
+				if  #(plyCoords - vector3(value.x, value.y, value.z)) <= 1 then
+					local spawnLocation = vAZ.getSpaceNoVehicle(garage.spaces)
+					if spawnLocation ~= 0 then
+						return spawnLocation
+					end
+				end
+			end
+		end
+	end
+	return nil
+end
+
+vAZ.getVehicleFromNetworkId = function(vehicle)
+	if NetworkDoesNetworkIdExist(vehicle) then
+		return NetworkGetEntityFromNetworkId(vehicle)
+	end
+	return nil
+end
+
+vAZ.setAttributesVehicle = function(networkId, plate, engine, body, fuel, custom)
+	if NetworkDoesNetworkIdExist(networkId) then
+		local vehicleId = NetworkGetEntityFromNetworkId(networkId)
+
+		SetVehicleNumberPlateText(vehicleId, plate)
+		SetVehicleEngineHealth(vehicleId, (engine + 0.00))
+		SetVehicleBodyHealth(vehicleId, (body + 0.00))
+		SetVehicleFuelLevel(vehicleId, (fuel + 0.00))
+
+		if not vAZ.whitelistClassVehicle(vAZ.config.class, vehicleId) then
+			SetVehicleDoorsLocked(vehicleId, 2)
+		end
+
+		if custom then
+			TriggerEvent("nation:applymods", vehicleId, false)
+		end
+	end
+end
+
 vAZ.spawnGarageVehicle = function(model, plate, engine, body, fuel, custom)
 	local plyPed = vAZ.player.ped()
 	local plyCoords = GetEntityCoords(plyPed)
@@ -75,42 +119,43 @@ vAZ.spawnGarageVehicle = function(model, plate, engine, body, fuel, custom)
 								Citizen.Wait(5)
 							end
 							FreezeEntityPosition(vehicle, false)
-			
+							
+							SetEntityAsMissionEntity(vehicle, true, true)
+							SetEntityAsNoLongerNeeded(vehicle)
+
 							NetworkRegisterEntityAsNetworked(vehicle)
 							while not NetworkGetEntityIsNetworked(vehicle) do
-								NetworkRegisterEntityAsNetworked(vehicle)
-								Citizen.Wait(1)
+								Citizen.Wait(10)
 							end
 			
-							if NetworkDoesNetworkIdExist(vehicleNet) then
-								SetEntitySomething(vehicle, true)
-								if NetworkGetEntityIsNetworked(vehicle) then
-									SetNetworkIdExistsOnAllMachines(vehicleNet, true)
-								end
+							vehicleNet = VehToNet(vehicle)
+
+							SetNetworkIdExistsOnAllMachines(vehicleNet, true)
+							NetworkSetNetworkIdDynamic(vehicleNet, true)
+							SetNetworkIdCanMigrate(vehicleNet, false)
+
+							for _,i in ipairs(GetActivePlayers()) do
+								SetNetworkIdSyncToPlayer(vehicleNet, i, true)
 							end
-							
-							local netVehicleEntity = NetToEnt(vehicleNet)
-							local netVehicle = NetToVeh(vehicleNet)
 			
-							NetworkFadeInEntity(netVehicleEntity, true)
-							SetVehicleIsStolen(netVehicle, false)
-							SetVehicleNeedsToBeHotwired(netVehicle, false)
-							SetEntityInvincible(netVehicle, false)
-							SetVehicleNumberPlateText(netVehicle, plate)
-							SetEntityAsMissionEntity(netVehicle, true, true)
-							SetVehicleHasBeenOwnedByPlayer(netVehicle, true)
+							NetworkFadeInEntity(vehicle, true)
+							SetVehicleIsStolen(vehicle, false)
+							SetVehicleNeedsToBeHotwired(vehicle, false)
+							SetEntityInvincible(vehicle, false)
+							SetVehicleNumberPlateText(vehicle, plate)
+							SetVehicleHasBeenOwnedByPlayer(vehicle, true)
 			
-							SetVehRadioStation(netVehicle, "OFF")
+							SetVehRadioStation(vehicle, "OFF")
 							
-							SetVehicleEngineHealth(netVehicle, (engine + 0.00))
-							SetVehicleBodyHealth(netVehicle, (body + 0.00))
-							SetVehicleFuelLevel(netVehicle, (fuel + 0.00))
+							SetVehicleEngineHealth(vehicle, (engine + 0.00))
+							SetVehicleBodyHealth(vehicle, (body + 0.00))
+							SetVehicleFuelLevel(vehicle, (fuel + 0.00))
 			
 							SetVehicleAsNoLongerNeeded(Citizen.PointerValueIntInitialized(vehicle))
 							SetModelAsNoLongerNeeded(vehicleHash)
 							
-							if not vAZ.whitelistClassVehicle(vAZ.config.class, netVehicle) then
-								SetVehicleDoorsLocked(netVehicle, 2)
+							if not vAZ.whitelistClassVehicle(vAZ.config.class, vehicle) then
+								SetVehicleDoorsLocked(vehicle, 2)
 							end
 
 							if custom then
@@ -309,21 +354,26 @@ vAZ.setVehicleMods = function(custom,veh)
 end
 
 RegisterNetEvent('az-garages:deletevehicle')
-AddEventHandler('az-garages:deletevehicle', function(vehicle)
-    NetworkRequestControlOfEntity(vehicle)    
-    local timeout = 2000
-    while timeout > 0 and not NetworkHasControlOfEntity(vehicle) do
-        Wait(100)
-        timeout = timeout - 100
-    end
-    SetEntityAsMissionEntity(vehicle, true, true)    
-    local timeout = 2000
-    while timeout > 0 and not IsEntityAMissionEntity(vehicle) do
-        Wait(100)
-        timeout = timeout - 100
-    end
-    Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized(vehicle))    
-    if DoesEntityExist(vehicle) then 
-        DeleteEntity(vehicle)
-    end 
+AddEventHandler('az-garages:deletevehicle', function(networkId)
+	if NetworkDoesNetworkIdExist(networkId) then
+		local vehicleId = NetworkGetEntityFromNetworkId(networkId)
+
+		NetworkRequestControlOfEntity(vehicleId)
+
+		local timeout = 2000
+		while timeout > 0 and not NetworkHasControlOfEntity(vehicleId) do
+			Wait(100)
+			timeout = timeout - 100
+		end
+		SetEntityAsMissionEntity(vehicleId, true, true)    
+		local timeout = 2000
+		while timeout > 0 and not IsEntityAMissionEntity(vehicleId) do
+			Wait(100)
+			timeout = timeout - 100
+		end
+		Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized(vehicleId))    
+		if DoesEntityExist(vehicleId) then 
+			DeleteEntity(vehicleId)
+		end 
+	end
 end)

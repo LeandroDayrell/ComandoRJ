@@ -543,6 +543,7 @@ end)
 RegisterCommand('chapeu',function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 		TriggerClientEvent('chapeu',source,args[1],args[2])
+		--TriggerClientEvent('chatMessage',source,"ALERTA",{255,70,50},"Você precisa de ^1Roupas ^0para mudar de chapéu.")
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- OCULOS

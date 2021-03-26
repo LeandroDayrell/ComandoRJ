@@ -1097,7 +1097,7 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 -- DISPAROS
 --------------------------------------------------------------------------------------------------------------------------------------------------
---[[
+
 RegisterServerEvent('atirando')
 AddEventHandler('atirando',function(x,y,z)
 	local user_id = vRP.getUserId(source)
@@ -1108,12 +1108,13 @@ AddEventHandler('atirando',function(x,y,z)
 				local player = vRP.getUserSource(w)
 				if player then
 					TriggerClientEvent('notificacao',player,x,y,z,user_id)
+					TriggerClientEvent("NotifyPush",player,{ code = 10, title = "Ocorrência em andamento", x = x, y = y, z = z, badge = "Disparos de arma de fogo" })
 				end
 			end
 		end
 	end
-end) ]]
-
+end)
+--[[
 RegisterServerEvent('atirando')
 AddEventHandler('atirando',function(x,y,z)
     local user_id = vRP.getUserId(source)
@@ -1131,7 +1132,7 @@ AddEventHandler('atirando',function(x,y,z)
             end
         end
     end
-end)
+end) ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ANUNCIO
 -----------------------------------------------------------------------------------------------------------------------------------------

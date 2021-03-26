@@ -31,6 +31,8 @@ end
 function emP.checkVehicle()
 	local source = source
 	local user_id = vRP.getUserId(source)
+	local vehicle = vRPclient.getNearestVehicle(source, 5)
+	if vehicle then
 		local plate = vRPclient.getPlateVehicle(source, vehicle)  
 		local owner = vRP.query("vAZ/GetPlayerVehiclePlate", {plate = plate})
 		if #owner <= 0 then
@@ -55,6 +57,7 @@ function emP.checkVehicle()
 			TriggerClientEvent("Notify",source,"aviso","Modelo do veículo não encontrado.")
 			return false
 		end
+	end
 	return false
 end
 
@@ -74,6 +77,8 @@ function emP.removeVehicles(plate, vnet)
 			vRP.giveInventoryItem(user_id, "dinheirosujo", parseInt(model[1].price) * 0.1)
 			TriggerClientEvent("Notify",source,"sucesso","DESMANCHOU COM SUCESSO.") 
 			SendWebhookMessage(webhooklinkdesmanche,  "``` Desmanche [" ..user_id.."]  Placa; " ..plate.. " ```")
+			TriggerClientEvent('syncdeleteveh', -1, vnet)
+			TriggerEvent('az-garages:deleteVehicleArr', vnet)
 		--end			
 	end
 end

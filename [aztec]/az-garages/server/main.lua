@@ -234,20 +234,9 @@ vAZ.getUserVehicle = function(user_id, value)
     for user,vehicles in pairs(vAZ.user.vehicles) do       
         if user == user_id then
             for id,vehicle in pairs(vehicles) do
-                if vehicle.model == value or vehicle.plate == value or vehicle.id == value or vehicle.net == value then
+                if vehicle.model == value or vehicle.plate == value or vehicle.net == value then
                     return true, vehicle
                 end
-            end
-        end
-    end
-    return false, nil
-end
-
-vAZ.getVehicle = function(value)
-    for user,vehicles in pairs(vAZ.user.vehicles) do       
-        for id,vehicle in pairs(vehicles) do
-            if vehicle.plate == value or vehicle.id == value or vehicle.net == value then
-                return true, vehicle
             end
         end
     end
@@ -269,6 +258,23 @@ vAZ.setTuningVehicleByPlate = function(plate, custom)
         return true
     end
     return false
+end
+
+vAZ.spawnServerVehicle = function(player, model)
+    local model = (type(model) == 'string') and GetHashKey(model) or model
+    local location = vAZclient.getSpawnLocation(player)
+    if location ~= nil then
+        local vehicle = CreateVehicle(model, location.x, location.y, location.z, location.h, true, true)
+        while not DoesEntityExist(vehicle) do
+            Wait(100)
+        end
+        local networkId = NetworkGetNetworkIdFromEntity(vehicle)
+        local vehicleId = vAZclient.getVehicleFromNetworkId(player, networkId)
+        if vehicleId ~= nil then
+            return networkId, vehicleId
+        end
+    end
+    return nil, nil
 end
 
 vAZ.spawnUserVehicle = function(model, plate, garage)
@@ -311,9 +317,10 @@ vAZ.spawnUserVehicle = function(model, plate, garage)
                         TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
                         return false
                     end
-                    local created,id,net = vAZclient.spawnGarageVehicle(source, model, plate, 1000, 1000, 100, {})
-                    if created then
-                        table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = registration, type = garage.type})
+                    local net,id = vAZ.spawnServerVehicle(source, model)
+                    if net ~= nil then
+                        vAZclient.setAttributesVehicle(source, net, plate, 1000, 1000, 100, false)
+                        table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})
                         TriggerClientEvent('Notify', source, 'sucesso', 'Veículo retirado com sucesso!')
                         return true
                     end
@@ -324,22 +331,26 @@ vAZ.spawnUserVehicle = function(model, plate, garage)
                                 TriggerClientEvent('Notify', source, 'sucesso', 'Veículo na detenção!', 10000)
                                 return false
                             elseif vehicle.state == 3 then
-                                TriggerClientEvent('Notify', source, 'sucesso', 'Veículo na retenção!', 10000)
+                                TriggerClientEvent('Notify', source, 'sucesso', 'Veículo na retenção!', 10000)                                
                                 return false
                             end
+                            --[[
                             if not vRP.hasPermission(user_id, 'platina.permissao') then
                                 if parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
                                     TriggerClientEvent("Notify", source, "negado", "O IPVA do seu veículo está atrasado.", 10000)
                                     return false
                                 end
                             end
+                            ]]--
                             if server_garage.price ~= nil and not vRP.tryFullPayment(user_id, server_garage.price) then
                                 TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
                                 return false
                             end
-                            local created,id,net = vAZclient.spawnGarageVehicle(source, model, plate, parseInt(vehicle.engine), parseInt(vehicle.body), parseInt(vehicle.fuel), json.decode(vehicle.tuning))
-                            if created then
+                            local net,id = vAZ.spawnServerVehicle(source, model)
+                            if net ~= nil then
+                                vAZclient.setAttributesVehicle(source, net, plate, parseInt(vehicle.engine), parseInt(vehicle.body), parseInt(vehicle.fuel), true)
                                 table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})
+                                TriggerClientEvent('Notify', source, 'sucesso', 'Veículo retirado com sucesso!')
                                 if garage.type == 'personal' or garage.type == 'home' then
                                     vRP.execute("vAZ/SetPlayerStateVehicle", {user_id = user_id, model = model, state = 1})
                                 end
@@ -401,7 +412,8 @@ vAZ.despawnUserVehicle = function(model, plate)
                             vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = user_id, model = model, engine = engine, body = body, fuel = fuel })
                         end
                     end
-                    TriggerClientEvent('az-garages:deletevehicle', source, vehicle.id)
+                    TriggerClientEvent('az-garages:deletevehicle', source, vehicle.net)
+                    vAZclient.despawnVehicle(-1, vehicle.net)
                 end
                 for id,vehicle in pairs(vAZ.user.vehicles[user_id]) do
                     if vehicle.model == model and vehicle.plate == plate then
@@ -433,7 +445,7 @@ vAZ.forceDespawnUserVehicle = function(source, entity)
     local garage = false
     for user,vehicles in pairs(vAZ.user.vehicles) do
         for id,vehicle in pairs(vehicles) do
-            if parseInt(vehicle.id) == parseInt(entity) then
+            if parseInt(vehicle.net) == parseInt(entity) then
                 garage = true
                 if vAZclient.checkVehicleAlreadyOnStreet(source, vehicle.model, vehicle.plate) then
                     if vehicle.type == 'personal' or vehicle.type == 'home' then
@@ -444,7 +456,7 @@ vAZ.forceDespawnUserVehicle = function(source, entity)
                         end
                     end
                     TriggerEvent('az-inventory:deleteTempTrunk', vehicle.plate)
-                    TriggerClientEvent('az-garages:deletevehicle', source, vehicle.id)
+                    TriggerClientEvent('az-garages:deletevehicle', source, vehicle.net)
                 end
                 table.remove(vAZ.user.vehicles[user], id)
             end
@@ -473,7 +485,7 @@ vAZ.fareUserVehicle = function(model, plate)
         vAZ.user.cooldown[user_id] = 3
         local vehicle = vAZ.getServerVehicleByPlate(plate)
         if vehicle ~= nil then
-            if vehicle.ipva == 0 or parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
+            if vehicle.ipva == 0 then -- or parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
                 local price = parseInt(data.price * vAZ.config.ipva)
                 local ok = vRP.request(source, "Pagar o IPVA do veículo "..data.name.." <b>R$"..vRP.format(price).."</b> ?", 60)
                 if ok then
@@ -542,7 +554,7 @@ AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
                                 vRP.execute("vAZ/SetPlayerSpecificVehicle", { user_id = vehicle.owner, model = vehicle.model, engine = engine, body = body, fuel = fuel })
                             end
                         end
-                        TriggerClientEvent('az-garages:deletevehicle', source, vehicle.id)
+                        TriggerClientEvent('az-garages:deletevehicle', source, vehicle.net)
                     else
                         if vehicle.type == 'personal' or vehicle.type == 'home' then
                             vRP.execute("vAZ/SetPlayerStateVehicle", { user_id = vehicle.owner, model = vehicle.model, state = 0 })

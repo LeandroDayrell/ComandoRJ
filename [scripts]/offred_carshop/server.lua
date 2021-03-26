@@ -24,7 +24,7 @@ function SendWebhookMessage(webhook,message)
 	end
 end
 
-vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id, model, plate, trunk, tuning) VALUES(@user_id, @model, @plate, '[]', '[]')")
+vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id, model, plate, trunk, tuning, ipva) VALUES(@user_id, @model, @plate, '[]', '[]')")
 --vRP._prepare("vRP/add_vehicle", "INSERT IGNORE INTO vrp_user_vehicles(user_id,model) VALUES(@user_id,@model)")
 vRP._prepare("vRP/remove_vehicle","DELETE FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model") --
 vRP._prepare("vRP/remove_vrp_srv_data","DELETE FROM vrp_srv_data WHERE dkey = @dkey")
@@ -216,7 +216,7 @@ AddEventHandler('offred_carshop:comprarCarropacorabane',function(value)
 				end
 				-- compra o veiculo
 				if vRP.tryFullPayment(user_id,v.precocarro,false) then
-					local compra = vRP.execute("vRP/add_vehicle",{ user_id = user_id, model = v.nome, plate = vAZgarage.generatePlate() })
+					local compra = vRP.execute("vRP/add_vehicle",{ user_id = user_id, model = v.nome, plate = vAZgarage.generatePlate(), ipva = os.time() })
 					vRP.logInfoToFile("logRJ/comprarcarro.txt",user_id.." comprou "..v.nome.." pelo valor " ..v.precocarro.. ".")
 					SendWebhookMessage(webhooklinkcompracarro,  "```" ..user_id.." comprou "..v.nome.." pelo valor " ..v.precocarro.. "```")
 
