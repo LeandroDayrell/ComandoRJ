@@ -1,0 +1,86 @@
+
+let porcemtageminicial = 1.7; // COLOQUE O VALOR QUE VAI DIVIDIR PELO NUMERO DE PERGUNTAS
+
+let questao = [
+    {id: 1,     
+        pergunta: 'Caso você esteja sendo ultrapassado por um veículo em uma rodovia, o que você deve fazer? ',                                             
+            a: 'Acelerar o carro para evitar ser ultrapassado',                             
+            b: 'Abrir a janela e xingar o outro motorista que está indo rápido demais.', 
+            c: 'Reduzir a velocidade para que o outro veículo consiga ultrapassar com segurança.', 
+            d: 'Jogar seu carro para cima do outro veículo para bater e jogar ele no acostamento.', 
+                resposta:'C1' //SEMPRE COLOCAR A RESPOSTA + O ID DA PERGUNTA
+    },
+    {id: 2,     
+        pergunta: 'Condutores que possuem habilitação A, podem dirigir quais veículos? ',                                                                  
+            a: 'Todos veículo, menos trem.',                                                
+            b: 'Avião de caça e carro hatch.', 
+            c: 'Veículos motorizados com duas/três rodas.', 
+            d: 'Apenas carro.', 
+                resposta:'C2'
+    },
+    {id: 3,     
+        pergunta: 'A remoção do veículo pode ocorrer quando o condutor:',                                                                                  
+            a: 'Não pagar seus impostos ou deixar carro estacionado em local impróprio,',   
+            b: 'Parar o veículo em um estacionamento', 
+            c: 'Dançar em lugar público', 
+            d: 'Andar com quantidade excessiva de pizzas em seu veículo', 
+                resposta:'A3'
+    },
+    {id: 4,     
+        pergunta: 'A carteira B, permite que o condutor transite com qual veículo? ',                                                                       
+            a: 'Veículos de 4 rodas',                                                                    
+            b: 'Moto', 
+            c: 'Caminhão', 
+            d: 'Trator', 
+                resposta:'A4'
+    },
+    {id: 5,     
+        pergunta: 'O condutor que for pego promovendo ou participando de competições esportivas na via pública, sem autorização, será punido com: ',       
+            a: 'Multa de quatrocentos dólares e pode ficar de 2 a 5 anos preso.',           
+            b: 'Multa, remoção da sua habilitação, apreensão do veículo.', 
+            c: 'Uma passagem para o Brasil', 
+            d: 'Multa e perde direito de utilizar o banco da cidade', 
+                resposta:'B5'
+    },
+    {id: 6,     
+        pergunta: 'O condutor que for pego andando de moto sem capacete, será punido com: ',                                                               
+            a: 'Amor e carinho.',                                                           
+            b: 'Multa, apreensão do veículo.', 
+            c: 'Somente uma multa.', 
+            d: 'Não será punido pois é permitido por lei', 
+                resposta:'D6'
+    },
+    {id: 7,     
+        pergunta: 'Estacionar o veículo na contramão, será punido com:',                                                                          
+            a: 'Multa de dez mil dólares.',                                                 
+            b: 'Não será punido, pois é permitido por lei.',
+			c: 'Multa e apreensão do veículo.', 
+            d: 'Apreensão do veículo, multa, condenado a cadeira elétrica.', 
+                resposta:'C7'
+    },
+    {id: 8,     
+        pergunta: 'Caso seu pneu fure, você deve: ',                                                                                                       
+            a: 'Parar meu carro e chamar um mecânico porque não é possível andar sem pneu.',                 
+            b: 'Andar devagar porque está furado e chamar a polícia.', 
+            c: 'Andar mais rápido possível para evitar capotar.', 
+            d: 'Acelerar máximo possível até perder a roda também.', 
+                resposta:'A8'
+    },
+    {id: 9,     
+        pergunta: 'Caso você possua apenas habilitação A e for pego dirigindo um carro, você pode ser punido:',                                            
+            a: 'Multa e apreensão do veículo.',                                             
+            b: 'Multa de 100 doláres, apreensão de veículo e retenção da sua habilitação.', 
+            c: 'Apreendido e encaminhado a prisão. ', 
+            d: 'Apenas com uma multa.', 
+                resposta:'A9'
+    },
+    {id: 10,    
+        pergunta: 'Transitar com o veículo em mau estado de conservação e segurança é considerada uma infração, podendo ser punida com: ',                  
+            a: 'Multa',                                                                     
+            b: 'Multa e apreensão do veículo.', 
+            c: 'Multa e retenção do veículo até ocorrer a regularização.', 
+            d: 'Cadeia.', 
+                resposta:'C10'
+    }, 
+];
+
