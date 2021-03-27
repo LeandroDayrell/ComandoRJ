@@ -59,8 +59,8 @@ function func.checkRobbery(x,y,z) --id,x,y,z,head
 		if #policia <= 3 then
 			TriggerClientEvent("Notify",source,"aviso","Número insuficiente de policiais no momento.",8000)
 			return false
-		elseif (os.time()-timers) <= 1800 then
-			TriggerClientEvent("Notify",source,"aviso","Os caixas estão vazios, aguarde <b>"..vRP.format(parseInt((1800-(os.time()-timers)))).." segundos</b> até que os civis depositem dinheiro.",8000)
+		elseif (os.time()-timers) <= 600 then
+			TriggerClientEvent("Notify",source,"aviso","Os caixas estão vazios, aguarde <b>"..vRP.format(parseInt((600-(os.time()-timers)))).." segundos</b> até que os civis depositem dinheiro.",8000)
 			return false
 		--[[else
 			andamento = true

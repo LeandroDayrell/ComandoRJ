@@ -317,7 +317,7 @@ vAZ.spawnUserVehicle = function(model, plate, garage)
                         TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
                         return false
                     end
-                    local net,id = vAZ.spawnServerVehicle(source, model)
+                    local net,id = vAZclient.spawnServerVehicle(source, model)
                     if net ~= nil then
                         vAZclient.setAttributesVehicle(source, net, plate, 1000, 1000, 100, false)
                         table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})
@@ -346,7 +346,7 @@ vAZ.spawnUserVehicle = function(model, plate, garage)
                                 TriggerClientEvent('Notify', source, 'negado', 'Você não possui dinheiro.')
                                 return false
                             end
-                            local net,id = vAZ.spawnServerVehicle(source, model)
+                            local net,id = vAZclient.spawnServerVehicle(source, model)
                             if net ~= nil then
                                 vAZclient.setAttributesVehicle(source, net, plate, parseInt(vehicle.engine), parseInt(vehicle.body), parseInt(vehicle.fuel), true)
                                 table.insert(vAZ.user.vehicles[user_id], {owner = user_id, id = id, net = net, model = model, plate = plate, type = garage.type})

@@ -151,7 +151,7 @@ AddEventHandler("MCU:Load",function(cb)
 		getUserIdentity = vRP.getUserIdentity,
 		Log = RegistraLog,
 		getPlacas = getAllPlacas,
-		placas = {}
+		placas = {"PLCXAD78"}
 	}	
 	cb(vrpobj)
 end)

@@ -10,6 +10,57 @@ vAZ.Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
+
+
+vehicle = nil
+vAZ.spawnServerVehicle = function(model)
+print("teste")
+print(model)
+--TriggerEvent("spawnarveiculo",model)
+    local model = (type(model) == 'string') and GetHashKey(model) or model
+    while not HasModelLoaded(model) do
+        RequestModel(model)
+        Citizen.Wait(10)
+    end
+    local location = vAZ.getSpawnLocation()
+    if location ~= nil then
+        --local vehicle = CreateVehicle(model, location.x, location.y, location.z, location.h, true, true)
+        TriggerEvent("nkjhkjhgkjgk",model,location)
+        
+        while not DoesEntityExist(vehicle) do
+            Wait(100)
+        end
+        print("teste4.1")
+        local networkId = NetworkGetNetworkIdFromEntity(vehicle)
+        local vehicleId = vAZ.getVehicleFromNetworkId(networkId)
+        if vehicleId ~= nil then
+            print("teste6")
+            return networkId, vehicleId
+        end
+    end
+    print("teste5")
+    return nil, nil
+end
+
+
+
+AddEventHandler("nkjhkjhgkjgk",function(model,location)
+    vehicle = CreateVehicle(model, location.x, location.y, location.z, location.h, true, true)    
+    SetVehicleNumberPlateText(vehicle,"PLCXAD78")
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
 vAZ.drawReactText = function(x, y, z, text, background)
 	local camCoords = GetGameplayCamCoord()
     local dist = #(vector3(x, y, z) - camCoords)
