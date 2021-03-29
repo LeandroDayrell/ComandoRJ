@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/style.css">
+   <meta name="author" content="! KyRinGa#7172">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: transparent;">
+   <div class="speedometer container" style="display: none;">
+      <svg width="15" height="10" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute;left: 145px;">
+         <g clip-path="url(#clip0)">
+            <path d="M20.6583 13.7215H12.5064V19.2405C12.5064 19.4937 12.2026 19.5949 12.0507 19.443L0.60762 9.8734C0.455722 9.77213 0.455722 9.51897 0.60762 9.4177L12.0507 0.556942C12.2532 0.405044 12.5064 0.556942 12.5064 0.810107V6.27846H20.6583C20.8102 6.27846 20.9621 6.43036 20.9621 6.58226V13.4683C20.9621 13.5696 20.8102 13.7215 20.6583 13.7215Z" stroke="white" stroke-opacity="1" stroke-width="1.5" stroke-miterlimit="10"></path>
+         </g>
+         <defs>
+            <clipPath id="clip0">
+               <rect width="21.4684" height="20" fill="white" transform="matrix(-1 0 0 1 21.4684 0)"></rect>
+            </clipPath>
+         </defs>
+      </svg>
+      <svg width="15" height="10" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute;right: 145px;">
+         <g clip-path="url(#clip1)">
+            <path d="M0.81013 13.7215H8.96203V19.2405C8.96203 19.4937 9.26583 19.5949 9.41773 19.443L20.8608 9.8734C21.0127 9.77213 21.0127 9.51897 20.8608 9.4177L9.41773 0.556942C9.21519 0.405044 8.96203 0.556942 8.96203 0.810107V6.27846H0.81013C0.658231 6.27846 0.506332 6.43036 0.506332 6.58226V13.4683C0.506332 13.5696 0.658231 13.7215 0.81013 13.7215Z" stroke="white" stroke-opacity="1" stroke-width="1.5" stroke-miterlimit="10"></path>
+         </g>
+         <defs>
+            <clipPath id="clip1">
+               <rect width="21.4684" height="20" fill="white"></rect>
+            </clipPath>
+         </defs>
+      </svg>
+      <img class="belt" src="assets/passenger.svg" style="position: absolute;right: 129px;top: 8px;width: 13px;animation: blink 1s infinite;">
+      <div class="box-hud">
+         <i class="icon fas fa-map-marker-alt"></i>
+         <span>19 STREET WALL</span>
+      </div>
+      <div class="huds">
+         <div class="hud dashboard">
+            <div class="clignotant clignotant-gauche" style="opacity: .0;">
+               <svg width="15" height="10"  viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0)">
+                     <path d="M20.6583 13.7215H12.5064V19.2405C12.5064 19.4937 12.2026 19.5949 12.0507 19.443L0.60762 9.8734C0.455722 9.77213 0.455722 9.51897 0.60762 9.4177L12.0507 0.556942C12.2532 0.405044 12.5064 0.556942 12.5064 0.810107V6.27846H20.6583C20.8102 6.27846 20.9621 6.43036 20.9621 6.58226V13.4683C20.9621 13.5696 20.8102 13.7215 20.6583 13.7215Z" stroke="white" stroke-opacity="1" stroke-width="1.5" stroke-miterlimit="10"/>
+                  </g>
+                  <defs>
+                     <clipPath id="clip0">
+                        <rect width="21.4684" height="20" fill="white" transform="matrix(-1 0 0 1 21.4684 0)"/>
+                     </clipPath>
+                  </defs>
+               </svg>
+               <i style="color: #fff;" class="fal fa-bell-school-slash"></i>
+            </div>
+            <div class="clignotant clignotant-droite" style="opacity: .0;">
+               <i style="color: #fff;transform: scaleX(-1);" class="fal fa-key"></i>
+               <svg width="15" height="10"  viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip1)">
+                     <path d="M0.81013 13.7215H8.96203V19.2405C8.96203 19.4937 9.26583 19.5949 9.41773 19.443L20.8608 9.8734C21.0127 9.77213 21.0127 9.51897 20.8608 9.4177L9.41773 0.556942C9.21519 0.405044 8.96203 0.556942 8.96203 0.810107V6.27846H0.81013C0.658231 6.27846 0.506332 6.43036 0.506332 6.58226V13.4683C0.506332 13.5696 0.658231 13.7215 0.81013 13.7215Z" stroke="white" stroke-opacity="1" stroke-width="1.5" stroke-miterlimit="10"/>
+                  </g>
+                  <defs>
+                     <clipPath id="clip1">
+                        <rect width="21.4684" height="20" fill="white"/>
+                     </clipPath>
+                  </defs>
+               </svg>
+            </div>
+            <div class="speedometer">
+               <svg class="circle" width="50" height="50">
+                  <circle class="outer" stroke="#BCDFD8" stroke-width="0.5" style="stroke-opacity: 0.2;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="80 80" stroke-dashoffset="0"/>
+                  <circle class="background" stroke="#BCDFD8" stroke-width="1.5" style="stroke-opacity: 0.2;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="80 80" stroke-dashoffset="0"/>
+                  <circle class="progress progress-speed" stroke="rgb(191, 112, 255)" stroke-width="1.5" style="stroke-opacity: 1;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="80 150" stroke-dashoffset="0"/>
+                  <defs>
+                     <linearGradient id="gradient">
+                        <stop offset="30%" stop-color="#FF0245" />
+                        <stop offset="100%" stop-color="#BBFFFE" />
+                     </linearGradient>
+                  </defs>
+               </svg>
+               <div class="text">
+                  <div class="kmh">
+                     <label>0</label>
+                     <p style="margin-block-start: -2em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;">&nbsp;</p>
+                  </div>
+                  <div class="marcha">N</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="hud fuel" style="display: none;">
+         <svg class="circle" width="40" height="40">
+            <circle class="background" stroke="#BCDFD8" stroke-width="3" style="stroke-opacity: .2;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 00" stroke-dashoffset="0"/>
+            <circle class="progress progress-fuel" stroke="rgb(191, 112, 255)" style="stroke-opacity: .7;" stroke-width="3" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 100" stroke-dashoffset="18"/>
+            <g opacity="1" clip-path="url(#clip0)">
+               <path d="M9.2084 4.27568V1.82575V1.59168V0.920676C9.2084 0.795839 9.09531 0.686606 8.96607 0.686606C8.83683 0.686606 8.72375 0.795839 8.72375 0.920676V1.56047C8.65913 1.90377 8.43296 2.85566 8.01292 3.24577C7.96446 3.29259 7.9483 3.35501 7.9483 3.41743V3.90117C7.9483 4.02601 8.06139 4.13524 8.19063 4.13524H8.72375V4.44733V4.46294C8.72375 4.58778 8.83683 4.69701 8.96607 4.69701C9.27302 4.69701 9.51535 4.93108 9.51535 5.22757V9.58127C9.51535 9.87776 9.27302 10.1118 8.96607 10.1118C8.65913 10.1118 8.4168 9.87776 8.4168 9.58127V8.20806C8.4168 8.08322 8.30371 7.97399 8.17447 7.97399H7.67367V4.43173C7.67367 4.22887 7.57674 4.04161 7.4475 3.91677V0.905072C7.4475 0.405722 7.02746 0 6.5105 0H1.69628C1.17932 0 0.759289 0.405722 0.759289 0.905072V3.91677C0.613893 4.04161 0.533118 4.22887 0.533118 4.43173V11.5319H0.242326C0.113086 11.5319 0 11.6411 0 11.7659C0 11.8908 0.113086 12 0.242326 12H0.759289H7.1567H7.9483C8.07754 12 8.19063 11.8908 8.19063 11.7659C8.19063 11.6411 8.07754 11.5319 7.9483 11.5319H7.65751V8.45774H7.91599V9.59688C7.91599 10.143 8.38449 10.5956 8.94992 10.5956C9.51535 10.5956 9.98384 10.143 9.98384 9.59688V5.24317C10 4.77503 9.66074 4.36931 9.2084 4.27568ZM1.69628 0.780234H6.5105C6.57512 0.780234 6.63974 0.842653 6.63974 0.905072V3.72952H1.56704V0.905072C1.56704 0.842653 1.63166 0.780234 1.69628 0.780234Z" fill="#BCDFD8"/>
+            </g>
+            <defs>
+               <clipPath id="clip0">
+                  <rect width="12" height="13" fill="white"/>
+               </clipPath>
+            </defs>
+         </svg>
+         <span></span>
+      </div>
+      <div class="engine">         
+         <div class="engineFill"></div>
+      </div>
+      <div class="km-speed">
+         <small>25 de Dezembro<i class="far fa-calendar-alt" style="margin-left: 4px;"></i></small>
+      </div>
+      <div style="position: absolute;left: 19px;top: 17px;display: flex;">
+         <p class="vfuel" style="color: rgb(242, 179, 255);font-size: 14px;">100%</p>
+         <i class="far fa-gas-pump" style="width: 12px;margin-left: 3px;opacity: .6;color: #fff;"></i>
+      </div>
+      <div style="position: absolute;right: 19px;top: 17px;display: flex;">         
+         <p class="vengine" style="color: rgb(242, 179, 255);font-size: 14px;">25%</p>         
+         <i class="far fa-car-crash" style="width: 14px;margin-left: 3px;opacity: .6;color: #fff;"></i>       
+      </div>
+   </div>
+   <div class="player hud-status">
+      <div class="box">
+         <div class="health">
+            <div style="display: flex;width: 35px;height: 35px;padding-right: 1px;margin-right: 10px;border-radius: 50%;align-items: center;justify-content: center;background-color: rgba(0, 0, 0, 0.411);clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);position: absolute;"></div>
+            <div style="display: flex;width: 35px;height: 35px;padding-right: 1px;margin-right: 10px;border-radius: 50%;align-items: center;justify-content: center;background-color: rgba(0, 0, 0, 0.411);clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+               <div style="color: #fff;font-size: 10px;display: none;"><span>0%</span></div>
+               <div class="blur" style="position: absolute;width: 15px;height: 5px;filter: blur(5px);border-radius: 100%;background-color: rgb(186, 51, 212);"></div>
+               <img src="assets/heart.svg" style="opacity: .7;max-width: 13px;max-height: 13px;">
+            </div>
+         </div>
+         <div class="mode" style="display: none;margin-left:unset">
+            <span style="color: #fff;">Normal</span>
+         </div>
+         <div class="modal" style="display: none;">
+            <span style="color: #fff;">Desconectado</span>
+         </div>
+         <div class="radio" style="display: none;">
+            <p style="margin-right: 25px;">Unknown</p>
+         </div>
+         <div class="microphone boxItem center">
+            <div class="blur"></div>
+            <img src="assets/microphone.svg">
+         </div>
+
+         <div class="armor">
+            <div style="display: flex;width: 35px;height: 35px;padding-right: 1px;margin-right: 10px;border-radius: 50%;align-items: center;justify-content: center;background-color: rgba(0, 0, 0, 0.411);clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);position: absolute;"></div>
+            <div style="display: flex;width: 35px;height: 35px;padding-right: 1px;margin-right: 10px;border-radius: 50%;align-items: center;justify-content: center;background-color: rgba(0, 0, 0, 0.411);clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+               <div style="color: #fff;font-size: 10px;display: none;"><span>0%</span></div>
+               <div class="blur" style="position: absolute;width: 15px;height: 5px;filter: blur(5px);border-radius: 100%;background-color: rgb(186, 51, 212);"></div>
+               <img src="assets/shield.svg" style="opacity: .7;max-width: 13px;max-height: 13px;">
+            </div>
+         </div>
+
+      </div>
+      <div class="box" style="padding-top: 15px;margin-right: 35px;">
+         <img width="50" height="50" src="https://media.discordapp.net/attachments/712795746633515099/713426948738777108/1000x_png.png?width=677&height=677">
+      </div>
+      <div class="box" style="padding-right: 20px;padding-top: 0;">
+         <small class="anim"><b>Comando</b> RJ RolePlay</small>
+         <span class="anim">discord.gg/ComandoRJ</span>
+      </div>
+   </div>
+   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+   <script src="js/font.js"></script>
+   <script src="js/index.js"></script>
+</body>
+</html>

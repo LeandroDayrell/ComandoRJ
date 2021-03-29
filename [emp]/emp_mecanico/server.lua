@@ -17,7 +17,7 @@ function emP.checkPayment()
 	local user_id = vRP.getUserId(source)
 	if user_id then
 		if vRP.tryGetInventoryItem(user_id,"ferramenta",2) then
-			vRP.giveMoney(user_id,math.random(50,70))
+			vRP.giveMoney(user_id,math.random(75,105))
 			return true
 		else
 			TriggerClientEvent("Notify",source,"aviso","Você precisa de <b>2x Ferramenta</b>.")

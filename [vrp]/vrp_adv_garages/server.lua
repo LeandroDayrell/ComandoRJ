@@ -9,7 +9,7 @@ vRPgarage = Tunnel.getInterface("vrp_adv_garages")
 vAZgarage = Proxy.getInterface('az-garages')
 
 vRP._prepare("vRP/move_vehicle","UPDATE vrp_user_vehicles SET user_id = @tuser_id WHERE user_id = @user_id AND model = @model")
-vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id,model,plate,trunk,tuning,ipva) VALUES(@user_id,@model,@plate,'[]','[]')")
+vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id,model,plate,trunk,tuning) VALUES(@user_id,@model,@plate,'[]','[]')")
 vRP._prepare("vRP/remove_vehicle","DELETE FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model")
 vRP._prepare("vRP/get_vehicles","SELECT model FROM vrp_user_vehicles WHERE user_id = @user_id")
 vRP._prepare("vRP/get_vehicle","SELECT * FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model")

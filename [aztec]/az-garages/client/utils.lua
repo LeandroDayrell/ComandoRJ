@@ -14,8 +14,8 @@ vAZ.Keys = {
 
 vehicle = nil
 vAZ.spawnServerVehicle = function(model)
-print("teste")
-print(model)
+--print("teste")
+--print(model)
 --TriggerEvent("spawnarveiculo",model)
     local model = (type(model) == 'string') and GetHashKey(model) or model
     while not HasModelLoaded(model) do
@@ -30,15 +30,15 @@ print(model)
         while not DoesEntityExist(vehicle) do
             Wait(100)
         end
-        print("teste4.1")
+        --print("teste4.1")
         local networkId = NetworkGetNetworkIdFromEntity(vehicle)
         local vehicleId = vAZ.getVehicleFromNetworkId(networkId)
         if vehicleId ~= nil then
-            print("teste6")
+            --print("teste6")
             return networkId, vehicleId
         end
     end
-    print("teste5")
+    --print("teste5")
     return nil, nil
 end
 

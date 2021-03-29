@@ -485,7 +485,7 @@ vAZ.fareUserVehicle = function(model, plate)
         vAZ.user.cooldown[user_id] = 3
         local vehicle = vAZ.getServerVehicleByPlate(plate)
         if vehicle ~= nil then
-            if vehicle.ipva == 0 then -- or parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
+            if parseInt(vehicle.ipva) == 0 then -- or parseInt(os.time()) > parseInt(vehicle.ipva + 24 * 15 * 60 * 60) then
                 local price = parseInt(data.price * vAZ.config.ipva)
                 local ok = vRP.request(source, "Pagar o IPVA do veículo "..data.name.." <b>R$"..vRP.format(price).."</b> ?", 60)
                 if ok then

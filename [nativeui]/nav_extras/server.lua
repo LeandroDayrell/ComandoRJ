@@ -16,7 +16,7 @@ Tunnel.bindInterface("nav_extras",src)
 function src.checkPermissao()
     local source = source
     local user_id = vRP.getUserId(source)
-    if vRP.hasPermission(user_id,"policia.permissao") then
+    if vRP.hasPermission(user_id,"naotoma.multa") then
         return true
     end
 end

@@ -134,9 +134,8 @@ end)
 -- EXTRAS
 -----------------------------------------------------------------------------------------------------------------------------------------
 local extras = {
-	{ -1078.0808105469,-846.10467529297,4.8840622901917 }, -- Delegacia Cidade
-	{ 1832.9324951172,2542.2690429688,45.412330627441 },
-	{ -453.46896362305,6000.8193359375,31.340545654297 }
+	{ 451.46,-1018.64,28.47 }, -- Delegacia Cidade
+	{ -454.78,-341.20,34.36 } --samu
 }
 
 RegisterCommand("extras",function(source,args)
@@ -149,13 +148,13 @@ RegisterCommand("extras",function(source,args)
 				if src.checkPermissao() then
 					ToggleActionMenu()
 				else
-					TriggerEvent("Notify","negado","Você não tem permissão pra dar esse comando você não é um policial.")
+					TriggerEvent("Notify","negado","Você não tem permissão pra dar esse comando você não é um servidor publico.")
 				end
 			else
-				TriggerEvent("Notify","negado","Você precisa estar no patio da dp.")
+				TriggerEvent("Notify","negado","Você precisa estar no patio.")
 			end
 		else
-			TriggerEvent("Notify","negado","Você precisa estar dentro de um veiculo da policia para usar o comando.")
+			TriggerEvent("Notify","negado","Você precisa estar dentro de um veiculo de serviço para usar o comando.")
 		end
 	end
 end)

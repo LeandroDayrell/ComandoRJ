@@ -8,7 +8,7 @@ vRP = Proxy.getInterface("vRP")
 func = {}
 Tunnel.bindInterface("vrp_concessionaria", func)
 
-vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id, model, plate, trunk, tuning, ipva) VALUES(@user_id, @model, @plate, '[]', '[]')")
+vRP._prepare("vRP/add_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id, model, plate, trunk, tuning) VALUES(@user_id, @model, @plate, '[]', '[]')")
 --vRP._prepare("vRP/add_vehicle", "INSERT IGNORE INTO vrp_user_vehicles(user_id,model) VALUES(@user_id,@model)")
 vRP._prepare("vRP/remove_vehicle","DELETE FROM vrp_user_vehicles WHERE user_id = @user_id AND model = @model") --
 vRP._prepare("vRP/remove_vrp_srv_data","DELETE FROM vrp_srv_data WHERE dkey = @dkey")

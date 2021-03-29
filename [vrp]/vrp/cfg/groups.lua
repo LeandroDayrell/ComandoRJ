@@ -2166,7 +2166,6 @@ cfg.groups = {
 	"metanfetamina.service",
 	"cocaina.service",
 	"maconha.service",
-	"auzi.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2194,7 +2193,6 @@ cfg.groups = {
 	"cocaina.service",
 	"maconha.service",
 	"bordel.permissao",
-	"auzi.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",
@@ -2221,7 +2219,6 @@ cfg.groups = {
 	"metanfetamina.service",
 	"cocaina.service",
 	"maconha.service",
-	"auzi.permissao",
 	-----------------
 	"build.gun.yakuza", -- ITEM TRANSFORME
 	"police.menu",

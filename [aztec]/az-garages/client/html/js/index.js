@@ -84,11 +84,27 @@ let garage = {
             }            
 
             /* tax */
+            /*
             if (vehicle.tax <= 0) {
                 infoVehicle.find(`.vehicle > .details > .tax > a`).html('Taxa'); 
                 infoVehicle.find(`.vehicle > .details > .tax > span`).html(`Paga`);
                 infoVehicle.find(`.vehicle > .details > .fare > span`).html(`-`);
             }else if (vehicle.tax > 0) {
+                if (vehicle.state === 3){
+                    infoVehicle.find(`.vehicle > .details > .tax > a`).html('Detido');
+                }else if (vehicle.state === 4){
+                    infoVehicle.find(`.vehicle > .details > .tax > a`).html('Roubado');
+                }
+                infoVehicle.find(`.vehicle > .details > .tax > span`).html(`${garage.time(vehicle.tax)}`);
+                infoVehicle.find(`.vehicle > .details > .fare > span`).html(`R$ ${garage.money(vehicle.fare)}`);
+            }
+            */
+
+            infoVehicle.find(`.vehicle > .details > .tax > a`).html('Taxa'); 
+            infoVehicle.find(`.vehicle > .details > .tax > span`).html(`Paga`);
+            infoVehicle.find(`.vehicle > .details > .fare > span`).html(`-`);
+
+            if (vehicle.state !== 0 && vehicle.state !== 1 && vehicle.state !== 2){
                 if (vehicle.state === 3){
                     infoVehicle.find(`.vehicle > .details > .tax > a`).html('Detido');
                 }else if (vehicle.state === 4){
@@ -107,10 +123,22 @@ let garage = {
                 $('.actions > button:nth-child(3)').attr('disabled', false);
             }
 
+            /*
             if (vehicle.time > 0 && vehicle.time > parseInt(vehicle.ipva + 24 * 15 * 60 * 60)) {
                 infoVehicle.find(`.vehicle > .infocar > .ipva > span`).html('Atrasado');
                 $('.actions > button').attr('disabled', true);
                 $('.actions > button:nth-child(3)').attr('disabled', false);
+            }else{
+                infoVehicle.find(`.vehicle > .infocar > .ipva > span`).html('Pago');
+            }
+            */
+
+            if (vehicle.ipva == 0) {
+                $('.actions > button').attr('disabled', true);
+                $('.actions > button:nth-child(3)').attr('disabled', false);
+                infoVehicle.find(`.vehicle > .details > .tax > a`).html('Taxa'); 
+                infoVehicle.find(`.vehicle > .details > .tax > span`).html(`-`);
+                infoVehicle.find(`.vehicle > .details > .ipva > span`).html(`Atrasado`);
             }else{
                 infoVehicle.find(`.vehicle > .infocar > .ipva > span`).html('Pago');
             }

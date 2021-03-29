@@ -18,6 +18,14 @@ vAZ.config.garages.service = {
             "urusrj",
             "frontierrj",
             "hiluxpolicia",
+            "jeepprf",
+            "bmwm8prf",
+            "amarokprf",
+            "q8pc",
+            "jeeppc",
+            "pranger",
+            "pbus",
+            "policet",
             "amarokrj"
         }
     },
@@ -40,6 +48,8 @@ vAZ.config.garages.service = {
             "mercambulancia",
 		    "fordambulancia",
 		    "wheelchair",
+		    "hiluxpolicia",
+		    "ambulance",
 		    "jeepsamu"
         }
     },
