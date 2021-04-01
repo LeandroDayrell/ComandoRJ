@@ -6,6 +6,16 @@ vRPClient =  Tunnel.getInterface("vRP")
 
 mB = {}
 Tunnel.bindInterface('muamba_provadmv',mB)
+
+
+vRP.prepare("vRP/vrp_menu_dmv_carteiraa","UPDATE vrp_users SET carteiraa = @carteiraa WHERE user_id = @user_id")
+vRP.prepare("vRP/vrp_menu_dmv_carteirab","UPDATE vrp_users SET carteirab = @carteirab WHERE user_id = @user_id")
+vRP.prepare("vRP/vrp_menu_dmv_carteiraab","UPDATE vrp_users SET carteiraab = @carteiraab WHERE user_id = @user_id")
+
+vRP.prepare("vRP/get_carteiraa","SELECT carteiraa FROM vrp_users WHERE id = @user_id")
+vRP.prepare("vRP/get_carteirab","SELECT carteirab FROM vrp_users WHERE id = @user_id")
+vRP.prepare("vRP/get_carteiraab","SELECT carteiraab FROM vrp_users WHERE id = @user_id")
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- COMPRAR
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +53,9 @@ AddEventHandler('selecionar:prova',function()
     if user_id then
         local menu = {name = "Prova Pratica"}
         menu["Habilitação A"] = {function(source,choice)
-            if vRP.hasPermission(user_id,"carteiraA.permissao") or vRP.hasPermission(user_id,"carteiraAB.permissao") then
+            print('teste 1')
+            if  mB.carteiraA(user_id) or  mB.carteiraAB(user_id) then
+                print('teste 2')
                 TriggerClientEvent('Notify',source,"aviso","Você já possui está habilitação.")
             else
                 TriggerClientEvent('prova_pratica:A',source)
@@ -52,7 +64,7 @@ AddEventHandler('selecionar:prova',function()
         end}
 
         menu["Habilitação B"] = {function(source,choice)
-            if vRP.hasPermission(user_id,"carteiraB.permissao") or vRP.hasPermission(user_id,"carteiraAB.permissao") then
+            if not mB.carteiraB(user_id) or not mB.carteiraAB(user_id) then
                 TriggerClientEvent('Notify',source,"aviso","Você já possui está habilitação.")
             else
                 TriggerClientEvent('prova_pratica:B',source)
@@ -69,19 +81,23 @@ AddEventHandler("dar:habilitacao",function(type)
     print(type)
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.hasPermission(user_id,"carteiraB.permissao") then
+        if not mB.carteiraB(user_id) then
             if type == "a" then
-                vRP.addUserGroup(user_id,"HabilitacaoAB")
+               -- vRP.addUserGroup(user_id,"HabilitacaoAB")
+               vRP.setCarteiraab(parseInt(user_id,true))
             end
-        elseif vRP.hasPermission(user_id,"carteiraA.permissao") then
+        elseif not mB.carteiraA(user_id) then
             if type == "b" then
-                vRP.addUserGroup(user_id,"HabilitacaoAB")
+               -- vRP.addUserGroup(user_id,"HabilitacaoAB")
+                vRP.setCarteiraab(parseInt(user_id,true))
             end
-        elseif not vRP.hasPermission(user_id,"carteiraA.permissao") and not vRP.hasPermission(user_id,"carteiraB.permissao") then
+        elseif mB.carteiraA(user_id) and mB.carteiraB(user_id) then
             if type == "b" then
-                vRP.addUserGroup(user_id,"HabilitacaoB")
+               -- vRP.addUserGroup(user_id,"HabilitacaoB")
+               vRP.setCarteirab(parseInt(user_id,true))
             elseif type == "a" then
-                vRP.addUserGroup(user_id,"HabilitacaoA")
+               -- vRP.addUserGroup(user_id,"HabilitacaoA")
+               vRP.setCarteiraa(parseInt(user_id,true))
             end
         end
     end 
@@ -127,3 +143,46 @@ AddEventHandler('remover:cnh',function(player,src_player)
         TriggerClientEvent('Notify',src_player,"aviso","Sua habilitação foi removida pelo policial!")
     end
 end)
+
+
+function vRP.setCarteiraa(user_id,carteiraa)
+	vRP.execute("vRP/vrp_menu_dmv_carteiraa",{ user_id = user_id, carteiraa = carteiraa })
+end
+
+
+function vRP.setCarteirab(user_id,carteirab)
+	vRP.execute("vRP/vrp_menu_dmv_carteirab",{ user_id = user_id, carteirab = carteirab })
+end
+
+
+function vRP.setCarteiraab(user_id,carteiraab)
+	vRP.execute("vRP/vrp_menu_dmv_carteiraab",{ user_id = user_id, carteiraab = carteiraab })
+end
+
+
+function mB.carteiraA(user_id)
+	local rows = vRP.query("vRP/get_carteiraa",{ user_id = user_id })
+	if #rows > 0 then
+		return rows[1].carteiraa
+	else
+		return false
+	end
+end
+
+function mB.carteiraB(user_id)
+	local rows = vRP.query("vRP/get_carteirab",{ user_id = user_id })
+	if #rows > 0 then
+		return rows[1].carteirab
+	else
+		return false
+	end
+end
+
+function mB.carteiraAB(user_id)
+	local rows = vRP.query("vRP/get_carteiraab",{ user_id = user_id })
+	if #rows > 0 then
+		return rows[1].carteiraab
+	else
+		return false
+	end
+end

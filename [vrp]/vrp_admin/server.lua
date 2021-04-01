@@ -27,6 +27,12 @@ function SendWebhookMessage(webhook,message)
 	end
 end
 
+RegisterCommand('cdsh',function(source,args,rawCommand)
+    local x,y,z = table.unpack(GetEntityCoords(PlayerPedId()))
+    local h = GetEntityHeading(PlayerPedId())
+    TriggerServerEvent("cdsh",x,y,z,h)
+end)
+
 RegisterCommand('reset',function(source,args,rawCommand)
     local user_id = vRP.getUserId(source)
     if user_id then

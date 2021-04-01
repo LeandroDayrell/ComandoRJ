@@ -31,8 +31,6 @@ AddEventHandler("skinmenu",function(mhash)
     end
 end)
 
-
-
 Citizen.CreateThread(function()
     while true do
         if showblips then
@@ -437,7 +435,17 @@ AddEventHandler("vehtuning2",function(vehicle)
 	end
 end)
 
-
+RegisterServerEvent("cdsh")
+AddEventHandler("cdsh", function(x,y,z,h)
+    local x = math.floor(x)
+    local y = math.floor(y)
+    local z = math.floor(z)
+    local h = math.floor(h)
+    local user_id = vRP.GetUserId(source)
+    if vRP.hasPermission(user_id, "admin.permissao") then
+         vRP.prompt(source,"Cordenadas:","['x'] = "..x..".0, ['y'] = "..y..".0, ['z'] = "..z..".0, ['h'] = "..h..".0")
+    end
+end)
 
 
 

@@ -688,5 +688,13 @@ RequestIpl("h4_islandx_props")
 RequestIpl("h4_int_placement_h4_interior_1_dlc_int_02_h4_milo_")
 RequestIpl("h4_int_placement_h4_interior_0_int_sub_h4_milo_")
 RequestIpl("h4_int_placement_h4")
+RequestIpl("vw_casino_main")
+RequestIpl("vw_casino_garage")
+RequestIpl("vw_casino_carpark")
+RequestIpl("vw_casino_penthouse")
+RequestIpl("vw_dlc_casino_door")
+RequestIpl("hei_dlc_casino_door")
+RequestIpl("hei_dlc_windows_casino")
+
 	
 end)
